@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav.page-navigation {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+nav.page-navigation button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    position: relative;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px; /* Set max-width here */
+    margin: 10px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Adjust the width of the columns */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    width: 40%; /* Adjust width of left column */
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    width: 60%; /* Adjust width of right column */
+}
+
+/* Adjust the order of the tables */
+#einkenniTable {
+    order: 1;
+}
+
+#skodunTable {
+    order: 3;
+}
+
+#planTable {
+    order: 1; /* Plan table order within its container */
+}
+
+.input-container {
+    order: 2; /* Input container order within its container */
+}
+
+/* Adjust the width of the responsive table */
+.responsive-table {
+    max-width: 100%; /* Ensures the table does not exceed the container's width */
+    width: 100%; /* Ensure the table width scales */
+    margin: 0 auto; /* Center the table if needed */
+}
+
+/* Adjust the width of the text editor container */
+.text-editor-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 800px; /* Set max-width here */
+    margin: 20px auto;
+}
+
+/* Adjust the width of the buttons and input fields */
+.text-editor-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.text-editor-buttons button,
+.text-editor-buttons select,
+.text-editor-buttons label {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Adjust the width of the text area */
+.text-editor {
+    flex: 1;
+    height: calc(75vh - 40px);
+    width: 75%; /* Set width here */
+}
+
+#journalTextbox {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+table th {
+    text-align: center;
+}
+
+.input-container {
+    margin: 20px 0;
+}
+
+/* Adjust the width of the input fields */
+.input-container label,
+.input-container select,
+.input-container input {
+    display: block;
+    margin-bottom: 10px;
+    max-width: 200px; /* Set max-width here */
+}
