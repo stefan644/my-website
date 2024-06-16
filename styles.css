@@ -37,98 +37,85 @@ main {
     flex: 1;
     padding: 20px;
     position: relative;
+    overflow-y: auto;
 }
 
-.flex-container {
+.flex-container-row {
     display: flex;
+    flex-direction: row;
+    gap: 20px;
     flex-wrap: wrap;
+}
+
+#einkenni-section, #skodun-section, #plan-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+#skodun-section h2, #plan-section h2 {
+    cursor: pointer;
+    color: blue; /* Change the color to indicate it's clickable */
+    text-decoration: underline; /* Add underline to indicate it's clickable */
+}
+
+#timalengd-section, #mettun-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-.flex-item {
-    flex: 1;
-    min-width: 200px;
-    max-width: 400px; /* Set max-width here */
-    margin: 10px;
+#timalengd-section {
+    margin-top: 20px;
 }
 
-.full-width {
-    width: 100%;
-}
-
-/* Adjust the width of the columns */
-.left-column {
-    display: flex;
-    flex-direction: column;
-    width: 40%; /* Adjust width of left column */
-}
-
-.right-column {
-    display: flex;
-    flex-direction: column;
-    width: 60%; /* Adjust width of right column */
-}
-
-/* Adjust the order of the tables */
-#einkenniTable {
-    order: 1;
-}
-
-#skodunTable {
-    order: 3;
-}
-
-#planTable {
-    order: 1; /* Plan table order within its container */
-}
-
-.input-container {
-    order: 2; /* Input container order within its container */
-}
-
-/* Adjust the width of the responsive table */
-.responsive-table {
-    max-width: 100%; /* Ensures the table does not exceed the container's width */
-    width: 100%; /* Ensure the table width scales */
-    margin: 0 auto; /* Center the table if needed */
-}
-
-/* Adjust the width of the text editor container */
-.text-editor-container {
+#mettun-section {
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-    max-width: 800px; /* Set max-width here */
-    margin: 20px auto;
+    flex-wrap: nowrap; /* Ensure items don't wrap to the next line */
+    gap: 5px; /* Adjust gap as necessary to bring items closer */
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
 }
 
-/* Adjust the width of the buttons and input fields */
+#mettun-section button {
+    flex: none; /* Prevent buttons from stretching */
+    width: auto; /* Ensure buttons have consistent width */
+}
+
+.text-editor-container {
+    display: flex;
+    flex-direction: row;  /* Ensure the buttons are in a row next to the textbox */
+    align-items: flex-end;  /* Align items to the bottom */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    width: auto;
+    max-width: 100%;
+}
+
 .text-editor-buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-right: 10px;
+    margin-right: 10px;  /* Adds space between buttons and the textbox */
 }
 
-.text-editor-buttons button,
-.text-editor-buttons select,
-.text-editor-buttons label {
+.text-editor-buttons button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
 }
 
-/* Adjust the width of the text area */
 .text-editor {
     flex: 1;
-    height: calc(75vh - 40px);
-    width: 75%; /* Set width here */
 }
 
 #journalTextbox {
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 200px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -137,33 +124,31 @@ main {
     overflow: auto;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+#einkenni, #skodun, #timalengd, #mettun, #plan {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-table,
-th,
-td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
+.small-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.data-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.data-row span {
+    min-width: 200px;
+}
+
+.data-row button {
+    padding: 5px 10px;
+    font-size: 16px;
     cursor: pointer;
-}
-
-table th {
-    text-align: center;
-}
-
-.input-container {
-    margin: 20px 0;
-}
-
-/* Adjust the width of the input fields */
-.input-container label,
-.input-container select,
-.input-container input {
-    display: block;
-    margin-bottom: 10px;
-    max-width: 200px; /* Set max-width here */
 }
