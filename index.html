@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Journal</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,6 +15,7 @@
             <button onclick="loadPage('Vírósa')">Vírósa</button>
             <button onclick="loadPage('LUTS')">LUTS</button>
             <button onclick="loadPage('Bakverkur')">Bakverkur</button>
+            <button onclick="parseCode()">Enter Code</button>
         </nav>
     </header>
     <main>
@@ -23,9 +24,12 @@
         </div>
         <div class="text-editor-container">
             <div class="text-editor-buttons">
+                <input type="number" id="retrievePatientNumber" placeholder="Enter Patient Number">
+                <button onclick="retrieveData()">Retrieve Data</button>
                 <button onclick="eraseText()">Erase</button>
                 <button onclick="undoLastText()">Tilbaka</button>
                 <button onclick="copyText()">Copy</button>
+                <button onclick="analyzeText()">AI Analyze</button>
             </div>
             <div class="text-editor">
                 <textarea id="journalTextbox" placeholder="Write your journal here..."></textarea>

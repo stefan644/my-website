@@ -5,12 +5,12 @@ const viruseinkenniData = [
     { name: 'Hósti', type: 'PlusMinus', positive: 'Hósti', negative: 'Ekki hósti' },
     { name: 'Uppgangur', type: 'PlusMinus', positive: 'Uppgangur', negative: 'Ekki uppgangur' },
     { name: 'Hiti', type: 'PlusMinus', positive: 'Hiti', negative: 'Ekki hiti' },
-    { name: 'Þrýstingur yfir ennisholum', type: 'PlusMinus', positive: 'Þrýstingur yfir ennisholum', negative: 'Ekki þrýstingur yfir ennisholum' },
-    { name: 'Eyrnaverkur hægra megin', type: 'PlusMinus', positive: 'Eyrnaverkur hægra megin', negative: 'Neitar einkennum frá eyrum' },
-    { name: 'Eyrnaverkur vinstra megin', type: 'PlusMinus', positive: 'Eyrnaverkur vinstra megin', negative: 'Neitar einkennum frá eyrum' },
-    { name: 'Eyrnaverkur beggja vegna', type: 'PlusMinus', positive: 'Eyrnaverkur beggja vegna', negative: 'Neitar einkennum frá eyrum' },
+    { name: 'Sinuseinkenni', type: 'PlusMinus', positive: 'Þrýstingur yfir ennisholum', negative: 'Ekki þrýstingur yfir ennisholum' },
+    { name: 'Eyrnaverkur hæ', type: 'PlusMinus', positive: 'Eyrnaverkur hægra megin', negative: 'Neitar einkennum frá eyrum' },
+    { name: 'Eyrnaverkur vi', type: 'PlusMinus', positive: 'Eyrnaverkur vinstra megin', negative: 'Neitar einkennum frá eyrum' },
+    { name: 'Eyrnaverkur bæði', type: 'PlusMinus', positive: 'Eyrnaverkur beggja vegna', negative: 'Neitar einkennum frá eyrum' },
     { name: 'Slappleiki', type: 'PlusMinus', positive: 'Slappleiki', negative: 'Ekki áberandi slappleiki' },
-    { name: 'Margir veikir á heimili', type: 'PlusMinus', positive: 'Margir veikir á heimili', negative: 'Enginn annar veikur í kringum hann' }
+    { name: 'Veikindi heima', type: 'PlusMinus', positive: 'Margir veikir á heimili', negative: 'Enginn annar veikur í kringum hann' }
 ];
 
 const lutsData = [
@@ -28,7 +28,7 @@ const lutsData = [
 const lutsSkodunData = [
     { name: 'Lasleg', type: 'PlusMinus', positive: 'Lasleg að sjá', negative: 'Ekki bráðveikindaleg að sjá' },
     { name: 'Laslegur', type: 'PlusMinus', positive: 'Laslegur að sjá', negative: 'Ekki bráðveikindalegur að sjá' },
-    { name: 'Bankum', type: 'Medium', display: ['Bankaum hæ', 'Bankaum vi', 'Ekki bankaum'], output: ['Bankaum yfir nýrnastað hæ megin', 'Bankaum yfir nýrnastað vi megin', 'Ekki bankeymsli yfir nýrnastað'] },
+    { name: 'Bankum', type: 'Medium', display: ['Hæ', 'Vi', '-'], output: ['Bankaum yfir nýrnastað hæ megin', 'Bankaum yfir nýrnastað vi megin', 'Ekki bankeymsli yfir nýrnastað'] },
     { name: 'Nítrít', type: 'PlusMinus', positive: 'Jákv nítrít í þvagi', negative: 'Þvagstix hreint' },
     { name: 'Hvít', type: 'PlusMinus', positive: 'Hvít í þvagi', negative: 'Þvagstix hreint' },
     { name: 'Þvagstix', type: 'PlusMinus', positive: 'Þvagstix jákv', negative: 'Þvagstix hreint' }
@@ -70,11 +70,12 @@ const timalengdData = [
 const skodunData = [
     { name: 'Laslegur', type: 'PlusMinus', positive: 'Laslegur að sjá', negative: 'Ekki bráðveikindalegur að sjá' },
     { name: 'Lasleg', type: 'PlusMinus', positive: 'Lasleg að sjá', negative: 'Ekki bráðveikindaleg að sjá' },
-    { name: 'Háls - Roði', type: 'PlusMinus', positive: 'Dálítill roði í koki', negative: 'Ekki roði í koki' },
+    { name: 'Háls - Roði', type: 'PlusMinus', positive: 'Roði í koki', negative: 'Ekki roði í koki' },
     { name: 'Háls - Gröftur', type: 'PlusMinus', positive: 'Gröftur á hálskirtlum', negative: 'Ekki gröftur á hálskirtlum' },
     { name: 'Stórir hálskirtlar', type: 'PlusMinus', positive: 'Hálskirtlar stórir', negative: 'Ekki áberandi stórir hálskirtlar' },
-    { name: 'Eitlastækkanir', type: 'PlusMinus', positive: 'Vægar eitlastækkanir á hálsi', negative: 'Ekki eitlastækkanir á hálsi' },
-    { name: 'Lungnahlustun', type: 'Medium', display: ['Hrein', 'Gróf', 'Slímhljóð basalt', 'Brak hæ', 'Brak vi'], output: ['Lungnahlustun hrein', 'Gróf lungnahlustun', 'Við lungnahlustun heyrast slímhljóð basalt, hrein a.ö.l', 'Við hlustun heyrist brak hægra megin', 'Við hlustun heyrist brak vinstra megin'] },
+    { name: 'Eitlastækkanir', type: 'PlusMinus', positive: 'Eitlastækkanir á hálsi', negative: 'Ekki eitlastækkanir á hálsi' },
+    { name: 'Lungnahlustun', type: 'Medium', display: ['Hrein', 'Slímhljóð basalt', 'Brak hæ', 'Brak vi'], output: ['Lungnahlustun hrein', 'Við lungnahlustun heyrast slímhljóð basalt, hrein a.ö.l', 'Við hlustun heyrist brak hægra megin', 'Við hlustun heyrist brak vinstra megin'] },
+    { name: '', type: 'Medium', display: ['Gróf'], output: ['Gróf lungnahlustun'] },
     { name: 'Hljóðhimnur', type: 'Medium', display: ['Roði hæ', 'Roði vi', 'Eðl hæ', 'Eðl vi'], output: ['Roði á hægri hljóðhimnu', 'Roði á vinstri hljóðhimnu', 'Hljóðhimna hægra megin eðlileg', 'Hljóðhimna vinstra megin eðlileg'] },
     { name: 'Mergur', type: 'Medium', display: ['Mergur hæ', 'Mergur vi'], output: ['Eyrnamergur hægra megin', 'Eyrnamergur vinstra megin'] },
     { name: 'Streptest', type: 'PlusMinus', positive: 'Strep jákv', negative: 'Strep neikv' }
@@ -99,12 +100,12 @@ const mettunData = [
 
 const planData = [
     { name: 'Greining', type: 'Medium', display: ['Strep', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'], output: ['Strep throat', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'] },
-    { name: 'Greining', type: 'Medium', display: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'], output: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'] },
+    { name: '', type: 'Medium', display: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'], output: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'] },
     { name: 'Rannsóknir', type: 'Medium', display: ['CRP hátt', 'CRP lágt', 'Streptest jákv', 'Streptest neikv'], output: ['CRP nokkuð hátt', 'CRP lágt', 'Streptest jákv', 'Streptest neikv'] },
     { name: 'Ofnæmi', type: 'Medium', display: ['Penisillinofnæmi', 'Keflex'], output: ['Ofnæmi fyrir penisillin', 'Set á keflex'] },
     { name: 'Meðferð', type: 'Medium', display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Stuðningsmeðferð'], output: ['Almennar ráðleggingar', 'Ráðlegg sýklalyf', 'Ráðlegg myndatöku', 'Ráðlegg stuðningsmeðferð'] },
-    { name: 'Meðferð', type: 'Medium', display: ['Slímlosandi', 'Kódein', 'Blóðprufa', 'BMT'], output: ['Reynum slímlosandi', 'Fær lyf við hósta', 'Panta blóðprufu', 'Vísa á bráðamóttöku'] },
-    { name: 'Meðferð', type: 'Medium', display: ['Azithromycin', 'Amoxin', 'Spectracillin', 'Kaavepenin'], output: ['Set á azithromycin', 'Set á amoxicillin', 'Set á spectracillin', 'Set á kaavepenin'] },
+    { name: '', type: 'Medium', display: ['Slímlosandi', 'Kódein', 'Blóðprufa', 'BMT'], output: ['Reynum slímlosandi', 'Fær lyf við hósta', 'Panta blóðprufu', 'Vísa á bráðamóttöku'] },
+    { name: '', type: 'Medium', display: ['Azithromycin', 'Amoxin', 'Spectracillin', 'Kaavepenin'], output: ['Set á azithromycin', 'Set á amoxicillin', 'Set á spectracillin', 'Set á kaavepenin'] },
     { name: 'Eftirfylgd', type: 'Medium', display: ['Endurmat pn', 'Endurmat ef versnar', 'Símatíma', 'Heilsugæsla'], output: ['Endurmat pn', 'Endurmat ef versnar', 'Pantar sér símatíma til að fá niðurstöður', 'Eftirfylgd á sinni heilsugæslu'] }
 ];
 
@@ -309,6 +310,64 @@ function makeTitleButton(sectionId, callback) {
     }
 }
 
+function retrieveData() {
+    const patientNumber = document.getElementById('retrievePatientNumber').value;
+    if (patientNumber) {
+        console.log(`Attempting to retrieve data for patient ${patientNumber}`);
+        fetch(`https://radiant-river-64232-2d5ca1213bef.herokuapp.com/retrieve/${patientNumber}`, {  // Updated URL
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                if (response.status === 404) {
+                    alert('No data found for this patient number.');
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data) {
+                const text = data.symptoms.join('. ') + '.';
+                document.getElementById('journalTextbox').value = text;
+            }
+        })
+        .catch(error => {
+            console.error('Error retrieving data:', error);
+            alert('An error occurred while retrieving data.');
+        });
+    } else {
+        alert('Please enter a patient number.');
+    }
+}
+
+
+function parseCode() {
+    const code = prompt('Enter the generated code:');
+    if (code) {
+        try {
+            const patientNumber = code.trim(); // Use the entered code as the patient number
+            if (patientNumber) {
+                document.getElementById('retrievePatientNumber').value = patientNumber;
+                retrieveData();
+            } else {
+                throw new Error('Invalid code format');
+            }
+        } catch (e) {
+            console.error('Error parsing code:', e); // More detailed error logging
+            alert('Invalid code format.');
+        }
+    }
+}
 document.addEventListener('DOMContentLoaded', function() {
-    loadPage('Komuástæða'); // Load default page on start
+    // Ensure default page load
+    loadPage('Komuástæða');
+
+    // Set up other necessary event listeners if any
+    document.querySelector('#enterCodeButton').addEventListener('click', parseCode); // Assuming there's a button with this ID
 });
