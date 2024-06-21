@@ -15,11 +15,10 @@ const ExamsViral = [
     { name: 'Háls - Roði', type: 'PlusMinus', positive: 'Roði í koki', negative: 'Ekki roði í koki' },
     { name: 'Háls - Gröftur', type: 'PlusMinus', positive: 'Gröftur á hálskirtlum', negative: 'Ekki gröftur á hálskirtlum' },
     { name: 'Stórir hálskirtlar', type: 'PlusMinus', positive: 'Hálskirtlar stórir', negative: 'Ekki áberandi stórir hálskirtlar' },
-    { name: 'Eitlastækkanir', type: 'PlusMinus', positive: 'Eitlastækkanir á hálsi', negative: 'Ekki eitlastækkanir á hálsi' },
-    { name: 'Lungnahlustun', type: 'Medium', display: ['Hrein', 'Slímhljóð basalt', 'Brak hæ', 'Brak vi'], output: ['Lungnahlustun hrein', 'Við lungnahlustun heyrast slímhljóð basalt, hrein a.ö.l', 'Við hlustun heyrist brak hægra megin', 'Við hlustun heyrist brak vinstra megin'] },
-    { name: '-', type: 'Medium', display: ['Gróf', 'Obstrúktíf'], output: ['Gróf lungnahlustun', 'Obstrúktíf lungnahlustun'] },
-    { name: 'Hljóðhimnur', type: 'Medium', display: ['Roði hæ', 'Roði vi', 'Eðl hæ', 'Eðl vi'], output: ['Roði á hægri hljóðhimnu', 'Roði á vinstri hljóðhimnu', 'Hljóðhimna hægra megin eðlileg', 'Hljóðhimna vinstra megin eðlileg'] },
-    { name: 'Mergur', type: 'Medium', display: ['Mergur hæ', 'Mergur vi'], output: ['Eyrnamergur hægra megin', 'Eyrnamergur vinstra megin'] },
+    { name: 'Eitlastækkanir', type: 'PlusMinus', positive: 'Eitlastækkanir á hálssvæði', negative: 'Ekki eitlastækkanir á hálssvæði' },
+    { name: 'Lungnahlustun', type: 'Medium', display: ['Hrein', 'Slímhljóð basalt', 'Brak hæ', 'Brak vi'], output: ['Hrein vesiculer öndunarhljóð', 'Slímhljóð basalt', 'Brak hægra megin', 'Brak vinstra megin'] },
+    { name: '-', type: 'Medium', display: ['Gróf', 'Obstrúktíf', 'Wheezing'], output: ['Gróf öndunarhljóð', 'Lengd útöndun', 'Wheezing'] },
+    { name: 'Hljóðhimnur', type: 'Medium', display: ['Eðl', 'Roði', 'Mergur'], output: ['Sjá function handlesideselection neðar', '', ''] },
     { name: 'Streptest/CRP', type: 'Medium', display: ['Strep +', 'Strep -', 'CRP hátt', 'CRP lágt'], output: ['Streptest jákvætt', 'Streptest neikvætt', 'CRP hátt', 'CRP lágt']}
 ];
 
@@ -31,37 +30,29 @@ const PlanViral = [
     { name: 'Meðferð', type: 'Medium', display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Stuðningsmeðferð'], output: ['Almennar ráðleggingar', 'Ráðlegg sýklalyf', 'Ráðlegg myndatöku', 'Ráðlegg stuðningsmeðferð'] },
     { name: '-', type: 'Medium', display: ['Slímlosandi', 'Kódein', 'Blóðprufa', 'BMT'], output: ['Reynum slímlosandi', 'Fær lyf við hósta', 'Panta blóðprufu', 'Vísa á bráðamóttöku'] },
     { name: '-', type: 'Medium', display: ['Nefstera', 'Merglosandi', 'Merghreinsun'], output: ['Ráðlegg nefstera', 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun', 'Hreinsum út eyrnamerg'] },
-    { name: 'Eftirfylgd', type: 'Medium', display: ['Endurmat pn', 'Endurmat ef versnar', 'Símatíma', 'Heilsugæsla'], output: ['Endurmat pn', 'Endurmat ef versnar eða lagast ekki', 'Pantar sér símatíma til að fá niðurstöður', 'Eftirfylgd á sinni heilsugæslu'] }
+    { name: 'Eftirfylgd', type: 'Medium', display: ['Endurmat pn', 'Endurmat ef versnar', 'Pantar símatíma', 'Heilsugæsla'], output: ['Endurmat pn', 'Endurmat ef versnar eða lagast ekki', 'Pantar sér símatíma til að fá niðurstöður', 'Eftirfylgd á sinni heilsugæslu'] },
+    { name: '-', type: 'Medium', display: ['Gef tíma', 'Gef símatíma'], output: ['Gef tíma í endurkomu', 'Fær símatíma til eftirfylgdar'] }
 ];
 
 const historyViralData = [
-    {
-        name: '',
-        type: 'Medium',
-        display: ['HTN', 'DM', 'IHD', 'Offita'],
-        output: ['Saga um háþrýsting', 'Saga um sykursýki', 'Saga um kransæðasjúkdóm', 'Saga um offitu']
-    },
-    {
-        name: '',
-        type: 'Medium',
-        display: ['Kæfisvefn', 'Nýrnasjúkdóm', 'Astmi', 'COPD'],
-        output: ['Saga um kæfisvefn', 'Saga um nýrnasjúkdóm', 'Saga um astma', 'Saga um langvinna lungnateppu']
-    },
-    {
-        name: '',
-        type: 'Medium',
-        display: ['Sinusitar', 'Eyrnabólgur', 'Ólétta', 'Ónæmisbælandi'],
-        output: ['Saga um endurteknar kinnholusýkingar', 'Saga um endurteknar eyrnabólgur', 'Ófrísk, gengin X vikur', 'Er á ónæmisbælandi meðferð']
-    }
+    { name: '', type: 'Medium', display: ['HTN', 'DM', 'IHD', 'Offita', 'Áfengi'], output: ['Saga um háþrýsting', 'Saga um sykursýki', 'Saga um kransæðasjúkdóm', 'Saga um offitu', 'Saga um áfengismisnotkun']},
+    { name: '', type: 'Medium', display: ['Kæfisvefn', 'Nýrnasjúkdóm', 'Astmi', 'COPD'], output: ['Saga um kæfisvefn', 'Saga um nýrnasjúkdóm', 'Saga um astma', 'Saga um langvinna lungnateppu']},
+    { name: '', type: 'Medium', display: ['Sinusitar', 'Eyrnabólgur', 'Ólétta', 'Ónæmisbælandi'], output: ['Saga um endurteknar kinnholusýkingar', 'Saga um endurteknar eyrnabólgur', 'Ófrísk, gengin X vikur', 'Er á ónæmisbælandi meðferð']}
 ];
 
 const HabitsViral = [
     { name: 'Reykingar', type: 'Reykingar', display: ['Já', 'Nei', 'Aldrei'], output: ['Reykir. X pakkaár að baki', 'Reykir ekki. Hætti fyrir X árum. Reykti Y pakkaár fram að því', 'Aldrei reykt'] },
-    { name: 'Áfengi', type: 'Medium', display: ['Já', 'Nei'], output: ['Drekkur. Meira en X á dag', 'Neitar áfengisdrykkju'] },
-    { name: 'Eiturlyf', type: 'Medium', display: ['Já', 'Nei'], output: ['Er að nota X', 'Neitar eiturlyfjanotkun'] },
+    { name: 'Áfengi', type: 'Medium', display: ['Já', 'Nei'], output: ['Drekkur áfengi', 'Neitar áfengisdrykkju'] },
+    { name: 'Eiturlyf', type: 'Medium', display: ['Já', 'Nei'], output: ['Játar eiturlyfjanotkun', 'Neitar eiturlyfjanotkun'] },
     { name: 'Ofnæmi', type: 'Medium', display: ['Penisillin', 'Sulfa'], output: ['Penisillinofnæmi', 'Sulfaofnæmi'] }
 ];
 
+/* const RedFlagViral = [
+    { name: 'Hnakkastífleiki', type: 'PlusMinus', positive: 'Lýsir', negative: 'Ekki roði í koki' },
+    { name: 'Ljósfælni', type: 'PlusMinus', positive: 'Lýsir ljósfælni', negative: 'Ekki ljósfælni' }
+
+];
+*/
 const SymptomsUrinary = [
     { name: 'Blöðrubólga', type: 'Medium', display: ['Grunur', 'Jákv stix heima'], output: ['Grunar sig vera með blöðrubólgu', 'Jákv stix heima'] },
     { name: 'Fengið áður', type: 'PlusMinus', positive: 'Þekkir einkennin', negative: 'Aldrei fengið áður' },
@@ -341,7 +332,7 @@ function createButtons(container, data) {
             label.textContent = item.name;
             row.appendChild(label);
         }
-
+	
         if (item.display && Array.isArray(item.display)) {
             item.display.forEach((displayText, index) => {
                 createButton(row, item, displayText, index);
@@ -361,12 +352,37 @@ function createButtons(container, data) {
     });
 }
 
+function handlePregnancyWeeks() {
+    console.log('handlePregnancyWeeks called'); // Debugging line
+    const weeks = prompt('Enter the number of weeks of pregnancy (between 6-43):');
+    if (weeks !== null) {
+        const weeksNumber = parseInt(weeks, 10);
+        if (weeksNumber >= 6 && weeksNumber <= 43) {
+            console.log(`Valid input: ${weeksNumber} weeks`); // Debugging line
+            insertText(`Ólétta, gengin ${weeksNumber} vikur`);
+        } else {
+            alert('Please enter a valid number of weeks between 6 and 43.');
+        }
+    }
+}
+let isFirstLungnahlustunClick = true; // Flag to track first click for Lungnahlustun
+let inLungnahlustunContext = false; // Flag to track context of Lungnahlustun
+
+// Mapping for special cases where grammar needs adjustment
+const specialCases = {
+    'obstrúktíf': 'lengda útöndun',
+    // Add other special cases here if needed
+};
+
 function createButton(row, item, displayText, index) {
+    console.log('Creating button for:', item.name, displayText); // Debugging line    
     const button = document.createElement('button');
     button.textContent = displayText;
-    console.log('Creating button:', displayText); // Debugging line
 
-    if (item.name === 'Reykingar') {
+ if (displayText === 'Ófrísk, gengin X vikur') {
+        button.onclick = handlePregnancyWeeks; // Assigning handlePregnancyWeeks function to button click
+	    }
+    else if (item.name === 'Reykingar') {
         button.onclick = () => {
             if (displayText === 'Já') {
                 handleReykingarYes();
@@ -395,9 +411,30 @@ function createButton(row, item, displayText, index) {
     } else if (item.name === 'Hósti' && displayText === '+') {
         button.onclick = () => showHostiOptions();
     } else if (item.name === 'Meðferð' && displayText === 'Sýklalyf') {
-        console.log('Attaching handleSyklalyfSelection to the Sýklalyf button'); // Debugging line
         button.onclick = () => handleSyklalyfSelection();
+    } else if (displayText.includes('Ófrísk, gengin')) {
+        button.onclick = () => {
+            console.log('Pregnancy button clicked'); // Debugging line
+            handlePregnancyWeeks();
+        };
+    } else if (item.name === 'Lungnahlustun' || (inLungnahlustunContext && item.name === '-')) {
+        inLungnahlustunContext = true;
+        button.onclick = () => {
+            let textToInsert = item.output[index];
+            if (isFirstLungnahlustunClick) {
+                if (specialCases[displayText.toLowerCase()]) {
+                    textToInsert = `Lungnahlustun sýnir ${specialCases[displayText.toLowerCase()]}`;
+                } else {
+                    textToInsert = `Lungnahlustun sýnir ${textToInsert.charAt(0).toLowerCase() + textToInsert.slice(1)}`;
+                }
+                isFirstLungnahlustunClick = false;
+            }
+            insertText(textToInsert);
+        };
+    } else if (item.name === 'Hljóðhimnur' && (displayText === 'Roði' || displayText === 'Eðl' || displayText === 'Mergur')) {
+        button.onclick = () => showSideSelectionModal(item, displayText, index);
     } else {
+        inLungnahlustunContext = false;
         button.onclick = () => {
             if (item.type === 'PlusMinus') {
                 insertText(index === 0 ? item.positive : item.negative);
@@ -408,6 +445,69 @@ function createButton(row, item, displayText, index) {
     }
 
     row.appendChild(button);
+}
+
+function showSideSelectionModal(item, displayText, index) {
+    const modal = document.createElement('div');
+    modal.id = 'sideSelectionModal';
+    modal.className = 'modal';
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+
+    const message = document.createElement('p');
+    message.textContent = 'Select side:';
+    modalContent.appendChild(message);
+
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'buttons-container';
+
+    const sides = ['Hægri', 'Vinstri', 'Beggja vegna'];
+    sides.forEach(side => {
+        const button = document.createElement('button');
+        button.textContent = side;
+        button.onclick = () => {
+            handleSideSelection(side, item, displayText, index);
+            closeModal(modal);
+        };
+        buttonsContainer.appendChild(button);
+    });
+
+    modalContent.appendChild(buttonsContainer);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    document.addEventListener('keydown', handleEscapeKey);
+}
+
+function handleSideSelection(side, item, displayText, index) {
+    let textToInsert = '';
+    if (displayText === 'Roði') {
+        if (side === 'Hægri') {
+            textToInsert = 'Roði á hægri hljóðhimnu';
+        } else if (side === 'Vinstri') {
+            textToInsert = 'Roði á vinstri hljóðhimnu';
+        } else if (side === 'Beggja vegna') {
+            textToInsert = 'Roði á hljóðhimnum beggja vegna';
+        }
+    } else if (displayText === 'Eðl') {
+        if (side === 'Hægri') {
+            textToInsert = 'Hljóðhimna hægra megin eðlileg';
+        } else if (side === 'Vinstri') {
+            textToInsert = 'Hljóðhimna vinstra megin eðlileg';
+        } else if (side === 'Beggja vegna') {
+            textToInsert = 'Hljóðhimnur eðlilegar beggja vegna';
+        }
+    } else if (displayText === 'Mergur') {
+        if (side === 'Hægri') {
+            textToInsert = 'Eyrnamergur hægra megin';
+        } else if (side === 'Vinstri') {
+            textToInsert = 'Eyrnamergur vinstra megin';
+        } else if (side === 'Beggja vegna') {
+            textToInsert = 'Eyrnamergur beggja vegna';
+        }
+    }
+    insertText(textToInsert);
 }
 
 function createHabitsSection(data) {
@@ -469,12 +569,13 @@ function loadPage(page) {
         leftColumn.appendChild(einkenniSection);
         leftColumn.appendChild(timalengdSection);
         leftColumn.appendChild(historyViralSection);
-        leftColumn.appendChild(habitsSection);
+  
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
         middleColumn.appendChild(mettunSection);
+        middleColumn.appendChild(habitsSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -597,6 +698,12 @@ function closeModal(modal) {
 
 function handleEscapeKey(event) {
     if (event.key === 'Escape') {
+        const modal = document.getElementById('sideSelectionModal');
+        if (modal) {
+            closeModal(modal);
+        }
+
+        // Include any other existing logic for escape key handling here
         const modals = [
             'genderPromptModal', 
             'eyrnaverkurModal', 
@@ -629,6 +736,8 @@ function eraseText() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before erasing
     textbox.value = '';
+    isFirstLungnahlustunClick = true; // Reset flag on erase
+    inLungnahlustunContext = false; // Reset context on erase
 }
 
 function undoLastText() {
