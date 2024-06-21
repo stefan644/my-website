@@ -29,7 +29,7 @@ const PlanViral = [
     { name: '-', type: 'Medium', display: ['Mergur'], output: ['Eyrnamergur'] },
     { name: 'Meðferð', type: 'Medium', display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Stuðningsmeðferð'], output: ['Almennar ráðleggingar', 'Ráðlegg sýklalyf', 'Ráðlegg myndatöku', 'Ráðlegg stuðningsmeðferð'] },
     { name: '-', type: 'Medium', display: ['Slímlosandi', 'Kódein', 'Blóðprufa', 'BMT'], output: ['Reynum slímlosandi', 'Fær lyf við hósta', 'Panta blóðprufu', 'Vísa á bráðamóttöku'] },
-    { name: '-', type: 'Medium', display: ['Nefstera', 'Merglosandi', 'Merghreinsun'], output: ['Ráðlegg nefstera', 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun', 'Hreinsum út eyrnamerg'] },
+    { name: '-', type: 'Medium', display: ['Nefstera', 'Púst', 'Merglosandi', 'Merghreinsun'], output: ['Ráðlegg nefstera', 'Ráðlegg púst', 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun', 'Hreinsum út eyrnamerg'] },
     { name: 'Eftirfylgd', type: 'Medium', display: ['Endurmat pn', 'Endurmat ef versnar', 'Pantar símatíma', 'Heilsugæsla'], output: ['Endurmat pn', 'Endurmat ef versnar eða lagast ekki', 'Pantar sér símatíma til að fá niðurstöður', 'Eftirfylgd á sinni heilsugæslu'] },
     { name: '-', type: 'Medium', display: ['Gef tíma', 'Gef símatíma'], output: ['Gef tíma í endurkomu', 'Fær símatíma til eftirfylgdar'] }
 ];
@@ -316,6 +316,9 @@ function handleHostiSelection(option) {
     closeModal(document.getElementById('hostiOptionsModal'));
     insertText(`${option} hósti`);
 }
+
+
+
 function createButtons(container, data) {
     if (!data || !Array.isArray(data)) {
         console.error('No valid data provided to create buttons.');
@@ -379,7 +382,8 @@ function createButton(row, item, displayText, index) {
     const button = document.createElement('button');
     button.textContent = displayText;
 
- if (displayText === 'Ófrísk, gengin X vikur') {
+
+    if (displayText === 'Ófrísk, gengin X vikur') {
         button.onclick = handlePregnancyWeeks; // Assigning handlePregnancyWeeks function to button click
 	    }
     else if (item.name === 'Reykingar') {
