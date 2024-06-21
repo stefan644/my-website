@@ -5,7 +5,7 @@ const SymptomsViral = [
     { name: 'Hósti', type: 'PlusMinus', positive: 'Hósti', negative: 'Ekki hósti' },
     { name: 'Hiti', type: 'PlusMinus', positive: 'Hiti', negative: 'Ekki hiti' },
     { name: 'Sinuseinkenni', type: 'PlusMinus', positive: 'Þrýstingur yfir ennisholum', negative: 'Ekki þrýstingur yfir ennisholum' },
-    { name: 'Eyrnaverkur', type: 'PlusMinus', positive: 'Eyrnaverkur', negative: 'Neitar eyrnaverk' },
+    { name: 'Eyru', type: 'Medium', display: ['Verkur', 'Hella', 'Óþægindi', '-'], output: ['Verkur', 'Hella', 'Óþægindi', 'Ekki einkenni frá eyrum']},
     { name: 'Slappleiki', type: 'PlusMinus', positive: 'Slappleiki', negative: 'Ekki áberandi slappleiki' },
     { name: 'Veikindi heima', type: 'PlusMinus', positive: 'Margir veikir á heimili', negative: 'Ekki aðrir veikir á heimili' }
 ];
@@ -282,6 +282,69 @@ function showEyrnaverkurModal() {
     document.addEventListener('keydown', handleEscapeKey);
 }
 
+function handleEyruSelection(actionType) {
+    const modal = document.createElement('div');
+    modal.id = 'eyruModal';
+    modal.className = 'modal';
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+
+    const message = document.createElement('p');
+    message.textContent = 'Select side:';
+    modalContent.appendChild(message);
+
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'buttons-container';
+
+    const sides = ['Hægri', 'Vinstri', 'Beggja vegna'];
+    sides.forEach(side => {
+        const button = document.createElement('button');
+        button.textContent = side;
+        button.onclick = () => {
+            handleSideSelectionEyru(side, actionType);
+            closeModal(modal);
+        };
+        buttonsContainer.appendChild(button);
+    });
+
+    modalContent.appendChild(buttonsContainer);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    document.addEventListener('keydown', handleEscapeKey);
+}
+
+function handleSideSelectionEyru(side, actionType) {
+    let textToInsert = '';
+    if (actionType === 'Verkur') {
+        if (side === 'Hægri') {
+            textToInsert = 'Verkur í hægra eyra';
+        } else if (side === 'Vinstri') {
+            textToInsert = 'Verkur í vinstra eyra';
+        } else if (side === 'Beggja vegna') {
+            textToInsert = 'Eyrnaverkur beggja vegna';
+        }
+    } else if (actionType === 'Hella') {
+        if (side === 'Hægri') {
+            textToInsert = 'Hella í hægra eyra';
+        } else if (side === 'Vinstri') {
+            textToInsert = 'Hella í vinstra eyra';
+        } else if (side === 'Beggja vegna') {
+            textToInsert = 'Hella fyrir báðum eyrum';
+        }
+    } else if (actionType === 'Óþægindi') {
+        if (side === 'Hægri') {
+            textToInsert = 'Óþægindi frá hægra eyra';
+        } else if (side === 'Vinstri') {
+            textToInsert = 'Óþægindi frá vinstra eyra';
+        } else if (side === 'Beggja vegna') {
+            textToInsert = 'Óþægindi frá báðum eyrum';
+        }
+    }
+    insertText(textToInsert);
+}
+
 function showHostiOptions() {
     const modal = document.createElement('div');
     modal.id = 'hostiOptionsModal';
@@ -382,20 +445,11 @@ function createButton(row, item, displayText, index) {
     const button = document.createElement('button');
     button.textContent = displayText;
 
-
-    if (displayText === 'Ófrísk, gengin X vikur') {
-        button.onclick = handlePregnancyWeeks; // Assigning handlePregnancyWeeks function to button click
-	    }
-    else if (item.name === 'Reykingar') {
-        button.onclick = () => {
-            if (displayText === 'Já') {
-                handleReykingarYes();
-            } else if (displayText === 'Nei') {
-                handleReykingarNo();
-            } else {
-                insertText(item.output[index]);
-            }
-        };
+    if (item.name === 'Eyru' && displayText === '-') {
+        button.onclick = () => insertText('Ekki einkenni frá eyrum');
+    }
+      else if (item.name === 'Eyru') {
+        button.onclick = () => handleEyruSelection(displayText);
     } else if (item.name === 'Eyrnaverkur') {
         button.onclick = () => {
             if (displayText === '+') {
@@ -621,18 +675,29 @@ function createTimalengdSection(data) {
     const section = createSection('timalengd', 'Tímalengd');
     const container = section.querySelector('#timalengd');
 
+    // Create the "nokkra daga" button separately
+    const nokkraDagaButton = document.createElement('button');
+    nokkraDagaButton.textContent = 'Nokkra daga';
+    nokkraDagaButton.classList.add('nokkra-daga-button');
+    nokkraDagaButton.onclick = () => insertText('Nokkra daga saga'); // Adjust the output text as needed
+    container.appendChild(nokkraDagaButton);
+
+    // Create and append the days container
     const daysContainer = document.createElement('div');
     daysContainer.className = 'timalengd-group';
     container.appendChild(daysContainer);
 
+    // Create and append the weeks container
     const weeksContainer = document.createElement('div');
     weeksContainer.className = 'timalengd-group';
     container.appendChild(weeksContainer);
 
+    // Create and append the months container
     const monthsContainer = document.createElement('div');
     monthsContainer.className = 'timalengd-group';
     container.appendChild(monthsContainer);
 
+    // Create and append the other buttons to their respective containers
     data.forEach(item => {
         const button = document.createElement('button');
         button.textContent = item.display;

@@ -143,6 +143,12 @@ main {
     cursor: pointer;
 }
 
+.nokkra-daga-button {
+    width: 160px; /* Set the desired width here */
+    /* Add any other styles you want */
+    margin-bottom: 0px; /* Optional: Add some margin to separate it from the containers below */
+}
+
 /* Modal styles */
 .modal {
     display: flex;
