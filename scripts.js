@@ -171,17 +171,21 @@ function handleGenderSelection(gender, actionType, itemName) {
 let reykingarFlag = false;
 
 function handleReykingarYes() {
+    console.log('handleReykingarYes called'); // Debugging line
     reykingarFlag = false; // Reset flag
     const packs = prompt('Enter the number of pack-years:');
     if (packs !== null) {
         insertText(`Reykir. ${packs} pakkaár að baki`);
         reykingarFlag = true; // Set flag if additional input is provided
+        console.log('Reykingar flag set to true'); // Debugging line
     } else {
         insertText('Reykir'); // Insert default text if prompt is cancelled
+        console.log('Reykingar flag remains false'); // Debugging line
     }
 }
 
 function handleReykingarNo() {
+    console.log('handleReykingarNo called'); // Debugging line
     const yearsStopped = prompt('Hætti fyrir hversu mörgum árum?');
     if (yearsStopped !== null) {
         const packYears = prompt('Reykti hversu mörg pakkaár fram að því?');
@@ -447,8 +451,7 @@ function createButton(row, item, displayText, index) {
 
     if (item.name === 'Eyru' && displayText === '-') {
         button.onclick = () => insertText('Ekki einkenni frá eyrum');
-    }
-      else if (item.name === 'Eyru') {
+    } else if (item.name === 'Eyru') {
         button.onclick = () => handleEyruSelection(displayText);
     } else if (item.name === 'Eyrnaverkur') {
         button.onclick = () => {
@@ -491,6 +494,16 @@ function createButton(row, item, displayText, index) {
         };
     } else if (item.name === 'Hljóðhimnur' && (displayText === 'Roði' || displayText === 'Eðl' || displayText === 'Mergur')) {
         button.onclick = () => showSideSelectionModal(item, displayText, index);
+    } else if (item.name === 'Reykingar') {
+        button.onclick = () => {
+            if (displayText === 'Já') {
+                handleReykingarYes();
+            } else if (displayText === 'Nei') {
+                handleReykingarNo();
+            } else if (displayText === 'Aldrei') {
+                insertText('Aldrei reykt');
+            }
+        };
     } else {
         inLungnahlustunContext = false;
         button.onclick = () => {
@@ -504,7 +517,6 @@ function createButton(row, item, displayText, index) {
 
     row.appendChild(button);
 }
-
 function showSideSelectionModal(item, displayText, index) {
     const modal = document.createElement('div');
     modal.id = 'sideSelectionModal';
