@@ -11,7 +11,27 @@ const SymptomsViral = [
 ];
 
 const ExamsViral = [
-    { name: 'Lasleg/ur', type: 'GenderPrompt' },
+    {
+        name: 'Útlit',
+        type: 'options',
+        display: ['Lasleg/ur', '-'],
+        options: [
+            {
+                display: 'Lasleg/ur',
+                subOptions: [
+                    { display: 'Laslegur', output: 'Laslegur að sjá' },
+                    { display: 'Lasleg', output: 'Lasleg að sjá' }
+                ]
+            },
+            {
+                display: '-',
+                subOptions: [
+                    { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
+                    { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
+                ]
+            }
+        ]
+    },
     { name: 'Háls - Roði', type: 'PlusMinus', positive: 'Roði í koki', negative: 'Ekki roði í koki' },
     { name: 'Háls - Gröftur', type: 'PlusMinus', positive: 'Gröftur á hálskirtlum', negative: 'Ekki gröftur á hálskirtlum' },
     { name: 'Stórir hálskirtlar', type: 'PlusMinus', positive: 'Hálskirtlar stórir', negative: 'Ekki áberandi stórir hálskirtlar' },
