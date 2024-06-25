@@ -22,7 +22,6 @@ const ExamsViral = [
     { name: 'Streptest/CRP', type: 'Medium', display: ['Strep +', 'Strep -', 'CRP hátt', 'CRP lágt'], output: ['Streptest jákvætt', 'Streptest neikvætt', 'CRP hátt', 'CRP lágt']}
 ];
 
-
 const PlanViral = [
     { name: 'Greining', type: 'Medium', display: ['Strep', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'], output: ['Strep throat', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'] },
     { name: '-', type: 'Medium', display: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'], output: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'] },
@@ -35,16 +34,63 @@ const PlanViral = [
 ];
 
 const historyViralData = [
-    { name: '', type: 'Medium', display: ['HTN', 'DM', 'IHD', 'Offita', 'Áfengi'], output: ['Saga um háþrýsting', 'Saga um sykursýki', 'Saga um kransæðasjúkdóm', 'Saga um offitu', 'Saga um áfengismisnotkun']},
-    { name: '', type: 'Medium', display: ['Kæfisvefn', 'Nýrnasjúkdóm', 'Astmi', 'COPD'], output: ['Saga um kæfisvefn', 'Saga um nýrnasjúkdóm', 'Saga um astma', 'Saga um langvinna lungnateppu']},
-    { name: '', type: 'Medium', display: ['Sinusitar', 'Eyrnabólgur', 'Ólétta', 'Ónæmisbælandi'], output: ['Saga um endurteknar kinnholusýkingar', 'Saga um endurteknar eyrnabólgur', 'Ófrísk, gengin X vikur', 'Er á ónæmisbælandi meðferð']}
-];
-
-const HabitsViral = [
-    { name: 'Reykingar', type: 'Reykingar', display: ['Já', 'Nei', 'Aldrei'], output: ['Reykir. X pakkaár að baki', 'Reykir ekki. Hætti fyrir X árum. Reykti Y pakkaár fram að því', 'Aldrei reykt'] },
-    { name: 'Áfengi', type: 'Medium', display: ['Já', 'Nei'], output: ['Drekkur áfengi', 'Neitar áfengisdrykkju'] },
-    { name: 'Eiturlyf', type: 'Medium', display: ['Já', 'Nei'], output: ['Játar eiturlyfjanotkun', 'Neitar eiturlyfjanotkun'] },
-    { name: 'Ofnæmi', type: 'Medium', display: ['Penisillin', 'Sulfa'], output: ['Penisillinofnæmi', 'Sulfaofnæmi'] }
+    {
+        name: '',
+        type: 'options',
+        display: ['Hraust/ur', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        options: [
+            {
+                display: 'Hraust/ur',
+                subOptions: [
+                    { display: 'Hraustur', output: 'Hraustur í gruninn' },
+                    { display: 'Hraust', output: 'Hraust í gruninn' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'HTN',
+                output: 'Saga um háþrýsting'
+            },
+            {
+                display: 'DM',
+                output: 'Saga um sykursýki'
+            },
+            {
+                display: 'IHD',
+                output: 'Saga um kransæðasjúkdóm'
+            },
+            {
+                display: 'Offita',
+                output: 'Saga um offitu'
+            },
+            {
+                display: 'Áfengi',
+                output: 'Saga um áfengismisnotkun'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Kæfisvefn', 'Nýrnasjúkdóm', 'Astmi', 'COPD'],
+        options: [
+            { display: 'Kæfisvefn', output: 'Saga um kæfisvefn' },
+            { display: 'Nýrnasjúkdóm', output: 'Saga um nýrnasjúkdóm' },
+            { display: 'Astmi', output: 'Saga um astma' },
+            { display: 'COPD', output: 'Saga um langvinna lungnateppu' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sinusitar', 'Eyrnabólgur', 'Ólétta', 'Ónæmisbælandi'],
+        options: [
+            { display: 'Sinusitar', output: 'Saga um endurteknar kinnholusýkingar' },
+            { display: 'Eyrnabólgur', output: 'Saga um endurteknar eyrnabólgur' },
+            { display: 'Ólétta', output: 'Ófrísk, gengin X vikur' },
+            { display: 'Ónæmisbælandi', output: 'Er á ónæmisbælandi meðferð' }
+        ]
+    }
 ];
 
 /* const RedFlagViral = [
@@ -82,6 +128,167 @@ const PlanUrinary = [
     { name: 'Meðferð', type: 'Medium', display: ['Furadantin', 'Amoxin', 'Keflex', 'Selexid'], output: ['Set á furadantin', 'Set á amoxicillin', 'Set á keflex', 'Set á selexíð'] },
     { name: 'Eftirfylgd', type: 'Medium', display: ['Endurmat pn', 'Endurmat ef versnar', 'Símatíma', 'Heilsugæsla'], output: ['Endurmat pn', 'Endurmat ef versnar', 'Pantar sér símatíma til að fá niðurstöður', 'Eftirfylgd á sinni heilsugæslu'] }
 ];
+
+const HistoryUrinary = [
+    { name: '', type: 'Medium', display: ['Hraust', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'], output: ['Heilsuhraust/ur í gruninn', 'Saga um háþrýsting', 'Saga um sykursýki', 'Saga um kransæðasjúkdóm', 'Saga um offitu', 'Saga um áfengismisnotkun']},
+    { name: '', type: 'Medium', display: ['Blöðrubólgur', 'Nýrnasjúkdóm', 'Nýrnasteinar', 'Prostatit'], output: ['Saga um endurteknar blöðrubólgur', 'Saga um nýrnasjúkdóm', 'Saga um nýrnasteina', 'Saga um prostatitis áður']},
+    { name: '', type: 'Medium', display: ['Pyelonephritis', 'Ólétta', 'Ónæmisbælandi'], output: ['Saga um pyelonephritis', 'Ófrísk, gengin X vikur', 'Er á ónæmisbælandi meðferð']}
+];
+
+const SymptomsEye = [
+    {
+        name: 'Einkenni',
+        type: 'options',
+        display: ['Auga', 'Efra augnlok', 'Neðra augnlok'],
+        options: [
+            {
+                display: 'Auga',
+                subOptions: [
+                    { display: 'Hægra', output: 'Einkenni frá hægra auga' },
+                    { display: 'Vinstra', output: 'Einkenni frá vinstra auga' },
+                    { display: 'Bæði', output: 'Einkenni frá báðum augum' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Efra augnlok',
+                subOptions: [
+                    { display: 'Hægra', output: 'Einkenni frá hægra efra augnloki' },
+                    { display: 'Vinstra', output: 'Einkenni frá vinstra efra augnloki' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Neðra augnlok',
+                subOptions: [
+                    { display: 'Hægra', output: 'Einkenni frá hægra neðra augnloki' },
+                    { display: 'Vinstra', output: 'Einkenni frá vinstra neðra augnloki' }
+                ],
+                cancelText: ''
+            }
+        ]
+    },
+    {
+        name: '-',
+        type: 'options',
+        display: ['Roði', 'Nabbi', 'Kláði', 'Rennsli'],
+        options: [
+            { display: 'Roði', output: 'Roði' },
+            { display: 'Nabbi', output: 'Nabbi' },
+            { display: 'Kláði', output: 'Kláði' },
+            { display: 'Rennsli', output: 'Aukin táramyndun' }
+        ]
+    },
+    {
+        name: 'Aðskotahlutur',
+        type: 'options',
+        display: ['Aðskotahlutstilfinning', '-'],
+        options: [
+            { display: 'Aðskotahlutstilfinning', output: 'Aðskotahlutstilfinning' },
+            { display: '-', output: 'Ekki aðskotahlutstilfinning' }
+        ]
+    },
+    {
+        name: '-',
+        type: 'options',
+        display: ['Gröftur', '-', 'Límd', '-'],
+        options: [
+            { display: 'Gröftur', output: 'Lekur gröftur' },
+            { display: '-', output: 'Ekki gröftur' },
+            { display: 'Límd', output: 'Augnlok límd saman á morgnanna' },
+             { display: '-', output: 'Augnlok ekki límd saman á morgnanna' }
+        ]
+    },
+    {
+        name: 'Rauð flögg',
+        type: 'options',
+        display: ['Sjóntap', '-', 'Móðusjón', '-'],
+        options: [
+            { display: 'Sjóntap', output: 'Lýsir versnun á sjón' },
+            { display: '-', output: 'Sjón í lagi' },
+            { display: 'Móðusjón', output: 'Lýsir móðusjón' },
+            { display: '-', output: 'Neitar móðusjón' }
+        ]
+    },
+    {
+        name: '-',
+        type: 'options',
+        display: ['Ljósfælni', '-', 'Verkur', '-'],
+        options: [
+            { display: 'Ljósfælni', output: 'Lýsir ljósfælni' },
+            { display: '-', output: 'Neitar ljósfælni' },
+            { display: 'Verkur', output: 'Verkjar' },
+            { display: '-', output: 'Neitar verk' }
+        ]
+    }
+];
+const ExamsEye = [
+    {
+        name: 'Glæra',
+        type: 'options',
+        display: ['Hrein', 'Injection'],
+        options: [
+            { display: 'Hrein', output: 'Ekki roði í glæru' },
+            { display: 'Injection', output: 'Conjunctival injection' }
+        ]
+    },
+    {
+        name: 'Augnlok',
+        type: 'options',
+        display: ['Roði', 'Nabbi'],
+        options: [
+            { display: 'Roði', output: 'Roði' },
+            { display: 'Nabbi', output: 'Graftarnabbi' }
+        ]
+    }
+];
+
+const PlanEye = [
+    {
+        name: 'Greining',
+        type: 'options',
+        display: ['Blepharitis', 'Vogris', 'Conjunctivitis'],
+        options: [
+            { display: 'Blepharitis', output: 'Blepharitis' },
+            { display: 'Vogris', output: 'Vogris' },
+            {
+                display: 'Conjunctivitis',
+                subOptions: [
+                    { display: 'Viral', output: 'Grunur um viral conjunctivitis' },
+                    { display: 'Bacterial', output: 'Grunur um bacterial conjunctivitis' }
+                ],
+                cancelText: 'Conjunctivitis'
+            }
+        ]
+    },
+    {
+        name: 'Meðferð',
+        type: 'options',
+        display: ['Heitir bakstrar', 'Sýkladropar (ef þarf)', 'Sting á'],
+        options: [
+            { display: 'Heitir bakstrar', output: 'Ráðlegg heita bakstra'},
+            {
+                display: 'Sýkladropar (ef þarf)',
+                subOptions: [
+                    { display: 'Fucithalmic', output: 'Set fucithalmic í gáttina, leysir út ef þarf' },
+                    { display: 'Oftan chlora', output: 'Set oftan chlora í gáttina, leysir út ef þarf' }
+                ],
+                cancelText: ''
+            },
+            { display: 'Sting á', output: 'Sting á graftarbólu'}
+        ]
+    },
+    {
+        name: 'Eftirfylgd',
+        type: 'options',
+        display: ['Endurkoma PN', 'Endurkoma ef lagast ekki'],
+        options: [
+            { display: 'Endurkoma PN', output: 'Endurkoma pn' },
+            { display: 'Endurkoma ef lagast ekki', output: 'Endurkoma ef lagast ekki eða versnar' }
+        ]
+    }
+];
+
 
 const bakverkurData = [
     // Add Bakverkur data here if needed
@@ -123,6 +330,144 @@ const Saturation = [
     { display: '87', output: 'Mettar 87%' }
 ];
 
+const Habits = [
+    { name: 'Reykingar', type: 'Reykingar', display: ['Já', 'Nei', 'Aldrei'], output: ['Reykir. X pakkaár að baki', 'Reykir ekki. Hætti fyrir X árum. Reykti Y pakkaár fram að því', 'Aldrei reykt'] },
+    { name: 'Áfengi', type: 'Medium', display: ['Já', 'Nei'], output: ['Drekkur áfengi', 'Neitar áfengisdrykkju'] },
+    { name: 'Eiturlyf', type: 'Medium', display: ['Já', 'Nei'], output: ['Játar eiturlyfjanotkun', 'Neitar eiturlyfjanotkun'] },
+    { name: 'Ofnæmi', type: 'Medium', display: ['Penisillin', 'Sulfa'], output: ['Penisillinofnæmi', 'Sulfaofnæmi'] }
+];
+
+function createBloodPressureInterface(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Container with ID ${containerId} not found.`);
+        return;
+    }
+
+    const bpContainer = document.createElement('div');
+    bpContainer.className = 'blood-pressure-container';
+
+    const systolicInput = document.createElement('input');
+    systolicInput.type = 'number';
+    systolicInput.placeholder = 'Systolic';
+    systolicInput.className = 'blood-pressure-input';
+    systolicInput.id = 'systolic-input';
+    systolicInput.readOnly = true;
+
+    const diastolicInput = document.createElement('input');
+    diastolicInput.type = 'number';
+    diastolicInput.placeholder = 'Diastolic';
+    diastolicInput.className = 'blood-pressure-input';
+    diastolicInput.id = 'diastolic-input';
+    diastolicInput.readOnly = true;
+
+    const systolicContainer = document.createElement('div');
+    systolicContainer.className = 'bp-buttons-container';
+
+    const diastolicContainer = document.createElement('div');
+    diastolicContainer.className = 'bp-buttons-container';
+
+    const systolicValues = [90, 100, 110, 120, 130, 140, 150, 160];
+    const diastolicValues = [60, 70, 80, 90, 100, 110];
+
+    systolicValues.forEach(value => {
+        const button = document.createElement('button');
+        button.className = 'bp-button';
+        button.textContent = value;
+        button.onclick = () => {
+            systolicInput.value = value;
+            systolicSlider.value = value;
+            systolicValueDisplay.textContent = value;
+        };
+        systolicContainer.appendChild(button);
+    });
+
+    diastolicValues.forEach(value => {
+        const button = document.createElement('button');
+        button.className = 'bp-button';
+        button.textContent = value;
+        button.onclick = () => {
+            diastolicInput.value = value;
+            diastolicSlider.value = value;
+            diastolicValueDisplay.textContent = value;
+        };
+        diastolicContainer.appendChild(button);
+    });
+
+    const systolicSliderContainer = document.createElement('div');
+    systolicSliderContainer.className = 'bp-slider-container';
+
+    const systolicSliderLabel = document.createElement('label');
+    systolicSliderLabel.textContent = 'Systolic';
+    systolicSliderLabel.className = 'bp-label';
+
+    const systolicSlider = document.createElement('input');
+    systolicSlider.type = 'range';
+    systolicSlider.min = 80;
+    systolicSlider.max = 200;
+    systolicSlider.value = 120;
+    systolicSlider.className = 'bp-slider';
+    systolicSlider.oninput = () => {
+        systolicInput.value = systolicSlider.value;
+        systolicValueDisplay.textContent = systolicSlider.value;
+    };
+
+    const systolicValueDisplay = document.createElement('span');
+    systolicValueDisplay.className = 'bp-value';
+    systolicValueDisplay.textContent = systolicSlider.value;
+
+    systolicSliderContainer.appendChild(systolicSliderLabel);
+    systolicSliderContainer.appendChild(systolicSlider);
+    systolicSliderContainer.appendChild(systolicValueDisplay);
+
+    const diastolicSliderContainer = document.createElement('div');
+    diastolicSliderContainer.className = 'bp-slider-container';
+
+    const diastolicSliderLabel = document.createElement('label');
+    diastolicSliderLabel.textContent = 'Diastolic';
+    diastolicSliderLabel.className = 'bp-label';
+
+    const diastolicSlider = document.createElement('input');
+    diastolicSlider.type = 'range';
+    diastolicSlider.min = 40;
+    diastolicSlider.max = 120;
+    diastolicSlider.value = 80;
+    diastolicSlider.className = 'bp-slider';
+    diastolicSlider.oninput = () => {
+        diastolicInput.value = diastolicSlider.value;
+        diastolicValueDisplay.textContent = diastolicSlider.value;
+    };
+
+    const diastolicValueDisplay = document.createElement('span');
+    diastolicValueDisplay.className = 'bp-value';
+    diastolicValueDisplay.textContent = diastolicSlider.value;
+
+    diastolicSliderContainer.appendChild(diastolicSliderLabel);
+    diastolicSliderContainer.appendChild(diastolicSlider);
+    diastolicSliderContainer.appendChild(diastolicValueDisplay);
+
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Enter BP';
+    submitButton.onclick = () => {
+        const systolic = systolicInput.value;
+        const diastolic = diastolicInput.value;
+        if (systolic && diastolic) {
+            insertText(`Bþr: ${systolic}/${diastolic} mmHg`);
+        } else {
+            alert('Please select both systolic and diastolic values.');
+        }
+    };
+
+    bpContainer.appendChild(document.createTextNode('Select Systolic:'));
+    bpContainer.appendChild(systolicContainer);
+    bpContainer.appendChild(systolicSliderContainer);
+    bpContainer.appendChild(document.createTextNode('Select Diastolic:'));
+    bpContainer.appendChild(diastolicContainer);
+    bpContainer.appendChild(diastolicSliderContainer);
+    bpContainer.appendChild(submitButton);
+
+    container.appendChild(bpContainer);
+}
 
 function showGenderPrompt(actionType, itemName) {
     const modal = document.createElement('div');
@@ -444,79 +789,147 @@ const specialCases = {
     // Add other special cases here if needed
 };
 
-function createButton(row, item, displayText, index) {
-    console.log('Creating button for:', item.name, displayText); // Debugging line    
+function createButton(row, item, displayText, index, context) {
     const button = document.createElement('button');
     button.textContent = displayText;
 
-    if (item.name === 'Eyru' && displayText === '-') {
-        button.onclick = () => insertText('Ekki einkenni frá eyrum');
-    } else if (item.name === 'Eyru') {
-        button.onclick = () => handleEyruSelection(displayText);
-    } else if (item.name === 'Eyrnaverkur') {
-        button.onclick = () => {
-            if (displayText === '+') {
-                handleEyrnaverkurPositive();
-            } else {
-                insertText('Neitar eyrnaverk'); // Insert "Neitar eyrnaverk" when "-" is clicked
-            }
-        };
-    } else if (item.type === 'GenderPrompt') {
-        button.onclick = () => {
-            if (displayText === '+') {
-                showGenderPrompt('positive', item.name);
-            } else {
-                showGenderPrompt('negative', item.name);
-            }
-        };
-    } else if (item.name === 'Hósti' && displayText === '+') {
-        button.onclick = () => showHostiOptions();
-    } else if (item.name === 'Meðferð' && displayText === 'Sýklalyf') {
-        button.onclick = () => handleSyklalyfSelection();
-    } else if (displayText.includes('Ófrísk, gengin')) {
-        button.onclick = () => {
-            console.log('Pregnancy button clicked'); // Debugging line
-            handlePregnancyWeeks();
-        };
-    } else if (item.name === 'Lungnahlustun' || (inLungnahlustunContext && item.name === '-')) {
-        inLungnahlustunContext = true;
-        button.onclick = () => {
-            let textToInsert = item.output[index];
-            if (isFirstLungnahlustunClick) {
-                if (specialCases[displayText.toLowerCase()]) {
-                    textToInsert = `Lungnahlustun sýnir ${specialCases[displayText.toLowerCase()]}`;
-                } else {
-                    textToInsert = `Lungnahlustun sýnir ${textToInsert.charAt(0).toLowerCase() + textToInsert.slice(1)}`;
+    button.onclick = (event) => {
+        // Remove any existing popup
+        const existingPopup = document.querySelector('.popup-modal');
+        if (existingPopup) {
+            existingPopup.remove();
+        }
+
+        if (item.type === 'options') {
+            // Find the selected option
+            const selectedOption = item.options[index];
+
+            if (selectedOption) {
+                if (selectedOption.subOptions) {
+                    // Create a new popup modal
+                    const popup = document.createElement('div');
+                    popup.className = 'popup-modal';
+
+                    // Position the popup next to the button
+                    const rect = event.target.getBoundingClientRect();
+                    popup.style.position = 'absolute';
+                    popup.style.top = `${rect.bottom + window.scrollY}px`;
+                    popup.style.left = `${rect.left + window.scrollX}px`;
+                    popup.style.backgroundColor = 'white';
+                    popup.style.border = '1px solid #ccc';
+                    popup.style.padding = '10px';
+                    popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                    popup.style.zIndex = '1000';
+
+                    // Function to create a button in the popup
+                    const createPopupButton = (popup, text, onClick) => {
+                        const btn = document.createElement('button');
+                        btn.textContent = text;
+                        btn.style.display = 'block';
+                        btn.style.margin = '5px 0';
+                        btn.onclick = () => {
+                            onClick();
+                            popup.remove();
+                        };
+                        popup.appendChild(btn);
+                    };
+
+                    // Add subOptions to the popup
+                    selectedOption.subOptions.forEach(subOption => {
+                        createPopupButton(popup, subOption.display, () => insertText(subOption.output));
+                    });
+
+                    // Append the popup to the document body
+                    document.body.appendChild(popup);
+
+                    // Close popup when clicking outside
+                    const cancelAction = () => {
+                        if (selectedOption.cancelText) {
+                            insertText(selectedOption.cancelText);
+                        }
+                        popup.remove();
+                    };
+
+                    document.addEventListener('click', (e) => {
+                        if (!popup.contains(e.target) && e.target !== button) {
+                            cancelAction();
+                        }
+                    }, { once: true });
+
+                    // Close popup on escape key
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape') {
+                            cancelAction();
+                        }
+                    }, { once: true });
+
+                } else if (selectedOption.output) {
+                    // Directly insert output for buttons without subOptions
+                    insertText(selectedOption.output);
+                } else if (selectedOption.negative && displayText === '-') {
+                    // Insert the negative output for '-' buttons
+                    insertText(selectedOption.negative);
                 }
-                isFirstLungnahlustunClick = false;
             }
-            insertText(textToInsert);
-        };
-    } else if (item.name === 'Hljóðhimnur' && (displayText === 'Roði' || displayText === 'Eðl' || displayText === 'Mergur')) {
-        button.onclick = () => showSideSelectionModal(item, displayText, index);
-    } else if (item.name === 'Reykingar') {
-        button.onclick = () => {
-            if (displayText === 'Já') {
-                handleReykingarYes();
-            } else if (displayText === 'Nei') {
-                handleReykingarNo();
-            } else if (displayText === 'Aldrei') {
-                insertText('Aldrei reykt');
-            }
-        };
-    } else {
-        inLungnahlustunContext = false;
-        button.onclick = () => {
-            if (item.type === 'PlusMinus') {
+        } else {
+            // Default behavior for other buttons
+            if (item.name === 'Eyru' && displayText === '-') {
+                insertText('Ekki einkenni frá eyrum');
+            } else if (item.name === 'Eyru') {
+                handleEyruSelection(displayText);
+            } else if (item.name === 'Eyrnaverkur') {
+                if (displayText === '+') {
+                    handleEyrnaverkurPositive();
+                } else {
+                    insertText('Neitar eyrnaverk');
+                }
+            } else if (item.type === 'GenderPrompt') {
+                if (displayText === '+') {
+                    showGenderPrompt('positive', item.name);
+                } else {
+                    showGenderPrompt('negative', item.name);
+                }
+            } else if (item.name === 'Hósti' && displayText === '+') {
+                showHostiOptions();
+            } else if (item.name === 'Meðferð' && displayText === 'Sýklalyf') {
+                handleSyklalyfSelection(context);
+            } else if (displayText.includes('Ófrísk, gengin')) {
+                handlePregnancyWeeks();
+            } else if (item.name === 'Lungnahlustun' || (inLungnahlustunContext && item.name === '-')) {
+                inLungnahlustunContext = true;
+                let textToInsert = item.output[index];
+                if (isFirstLungnahlustunClick) {
+                    if (specialCases[displayText.toLowerCase()]) {
+                        textToInsert = `Lungnahlustun sýnir ${specialCases[displayText.toLowerCase()]}`;
+                    } else {
+                        textToInsert = `Lungnahlustun sýnir ${textToInsert.charAt(0).toLowerCase() + textToInsert.slice(1)}`;
+                    }
+                    isFirstLungnahlustunClick = false;
+                }
+                insertText(textToInsert);
+            } else if (item.name === 'Hljóðhimnur' && (displayText === 'Roði' || displayText === 'Eðl' || displayText === 'Mergur')) {
+                showSideSelectionModal(item, displayText, index);
+            } else if (item.name === 'Reykingar') {
+                if (displayText === 'Já') {
+                    handleReykingarYes();
+                } else if (displayText === 'Nei') {
+                    handleReykingarNo();
+                } else if (displayText === 'Aldrei') {
+                    insertText('Aldrei reykt');
+                }
+            } else if (item.type === 'PlusMinus') {
                 insertText(index === 0 ? item.positive : item.negative);
             } else if (item.type === 'Medium') {
                 insertText(item.output[index]);
+            } else if (displayText === '-' && selectedOption.negative) {
+                insertText(selectedOption.negative);
             }
-        };
-    }
+        }
+    };
 
     row.appendChild(button);
 }
+
 function showSideSelectionModal(item, displayText, index) {
     const modal = document.createElement('div');
     modal.id = 'sideSelectionModal';
@@ -623,29 +1036,89 @@ function loadPage(page) {
     const container = document.getElementById('content-section');
     container.innerHTML = '';
 
-    let einkenniSection, skodunSection, planSection, timalengdSection, historyViralSection, mettunSection, habitsSection;
+    if (page === 'LUTS') {
+        const symptomsSection = createEinkenniSection(SymptomsUrinary);
+        const examsSection = createSkodunSection(ExamsUrinary);
+        const planSection = createPlanSection(PlanUrinary);
+        const durationSection = createTimalengdSection(Duration);
+        const historySection = createHistoryViralSection(HistoryUrinary);
+        const habitsSection = createHabitsSection(Habits);  // Add this line
 
-    if (page === 'Vírósa') {
-        einkenniSection = createEinkenniSection(SymptomsViral);
-        skodunSection = createSkodunSection(ExamsViral);
-        planSection = createPlanSection(PlanViral);
-        timalengdSection = createTimalengdSection(Duration);
-        historyViralSection = createHistoryViralSection(historyViralData);
-        mettunSection = createMettunSection(Saturation);
-        habitsSection = createHabitsSection(HabitsViral);
+        const symptomsColumn = document.createElement('div');
+        symptomsColumn.className = 'column';
+        symptomsColumn.appendChild(symptomsSection);
+        symptomsColumn.appendChild(durationSection);
+        symptomsColumn.appendChild(historySection);
+
+        const examsColumn = document.createElement('div');
+        examsColumn.className = 'column';
+        examsColumn.appendChild(examsSection);
+        examsColumn.appendChild(habitsSection);  // Add this line
+
+        const planColumn = document.createElement('div');
+        planColumn.className = 'column';
+        planColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(symptomsColumn);
+        horizontalContainer.appendChild(examsColumn);
+        horizontalContainer.appendChild(planColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Auga') {
+        const symptomsSection = createEinkenniSection(SymptomsEye);
+        const examsSection = createSkodunSection(ExamsEye);
+        const planSection = createPlanSection(PlanEye);
+
+        const symptomsColumn = document.createElement('div');
+        symptomsColumn.className = 'column';
+        symptomsColumn.appendChild(symptomsSection);
+
+        const examsColumn = document.createElement('div');
+        examsColumn.className = 'column';
+        examsColumn.appendChild(examsSection);
+
+        const planColumn = document.createElement('div');
+        planColumn.className = 'column';
+        planColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(symptomsColumn);
+        horizontalContainer.appendChild(examsColumn);
+        horizontalContainer.appendChild(planColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Vírósa') {
+        const einkenniSection = createEinkenniSection(SymptomsViral);
+        const skodunSection = createSkodunSection(ExamsViral);
+        const planSection = createPlanSection(PlanViral);
+        const timalengdSection = createTimalengdSection(Duration);
+        const historyViralSection = createHistoryViralSection(historyViralData);
+        const mettunSection = createMettunSection(Saturation);
+        const habitsSection = createHabitsSection(Habits);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
         leftColumn.appendChild(timalengdSection);
         leftColumn.appendChild(historyViralSection);
-  
+        leftColumn.appendChild(habitsSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
         middleColumn.appendChild(mettunSection);
-        middleColumn.appendChild(habitsSection);
+        
+                // Add placeholder for blood pressure section
+                const bpSection = document.createElement('div');
+                bpSection.id = 'blood-pressure-section';
+                middleColumn.appendChild(bpSection);
+
+        
+
+        
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -658,18 +1131,13 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
-    } else if (page === 'LUTS') {
-        einkenniSection = createEinkenniSection(SymptomsUrinary);
-        skodunSection = createSkodunSection(ExamsUrinary);
-        planSection = createPlanSection(PlanUrinary);
 
-        container.appendChild(einkenniSection);
-        container.appendChild(skodunSection);
-        container.appendChild(planSection);
+        // Create blood pressure interface
+        createBloodPressureInterface('blood-pressure-section');
     } else if (page === 'Bakverkur') {
-        einkenniSection = createEinkenniSection(bakverkurData);
-        skodunSection = createSkodunSection(ExamsViral);
-        planSection = createPlanSection(PlanViral);
+        const einkenniSection = createEinkenniSection(bakverkurData);
+        const skodunSection = createSkodunSection(ExamsViral);
+        const planSection = createPlanSection(PlanViral);
 
         container.appendChild(einkenniSection);
         container.appendChild(skodunSection);
@@ -682,6 +1150,7 @@ function loadPage(page) {
     makeTitleButton('skodun', addSkoðun);
     makeTitleButton('plan', addPlan);
 }
+
 
 function createTimalengdSection(data) {
     const section = createSection('timalengd', 'Tímalengd');
