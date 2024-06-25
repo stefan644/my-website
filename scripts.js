@@ -2,10 +2,61 @@ const SymptomsViral = [
     { name: 'Flensueinkenni', type: 'PlusMinus', positive: 'Flensueinkenni', negative: 'Ekki flensueinkenni' },
     { name: 'Hálsbólga', type: 'PlusMinus', positive: 'Hálsbólga', negative: 'Ekki hálsbólga' },
     { name: 'Kvef', type: 'PlusMinus', positive: 'Kvef', negative: 'Ekki kvef' },
-    { name: 'Hósti', type: 'PlusMinus', positive: 'Hósti', negative: 'Ekki hósti' },
+    {
+        name: 'Hósti',
+        type: 'options',
+        display: ['+', '-'],
+        options: [
+            {
+                display: '+',
+                subOptions: [
+                    { display: 'Blautur', output: 'Blautur hósti' },
+                    { display: 'Þurr', output: 'Þurr hósti' }
+                ]
+            },
+            {
+                display: '-',
+                output: 'Ekki hósti'
+            }
+        ]
+    },
     { name: 'Hiti', type: 'PlusMinus', positive: 'Hiti', negative: 'Ekki hiti' },
     { name: 'Sinuseinkenni', type: 'PlusMinus', positive: 'Þrýstingur yfir ennisholum', negative: 'Ekki þrýstingur yfir ennisholum' },
-    { name: 'Eyru', type: 'Medium', display: ['Verkur', 'Hella', 'Óþægindi', '-'], output: ['Verkur', 'Hella', 'Óþægindi', 'Ekki einkenni frá eyrum']},
+    {
+        name: 'Eyru',
+        type: 'options',
+        display: ['Verkur', 'Hella', 'Óþægindi', '-'],
+        options: [
+            {
+                display: 'Verkur',
+                subOptions: [
+                    { display: 'Hægri', output: 'Verkur í hægra eyra' },
+                    { display: 'Vinstri', output: 'Verkur í vinstra eyra' },
+                    { display: 'Beggja vegna', output: 'Verkur í báðum eyrum' }
+                ]
+            },
+            {
+                display: 'Hella',
+                subOptions: [
+                    { display: 'Hægri', output: 'Hella í hægra eyra' },
+                    { display: 'Vinstri', output: 'Hella í vinstra eyra' },
+                    { display: 'Beggja vegna', output: 'Hella í báðum eyrum' }
+                ]
+            },
+            {
+                display: 'Óþægindi',
+                subOptions: [
+                    { display: 'Hægri', output: 'Óþægindi í hægra eyra' },
+                    { display: 'Vinstri', output: 'Óþægindi í vinstra eyra' },
+                    { display: 'Beggja vegna', output: 'Óþægindi í báðum eyrum' }
+                ]
+            },
+            {
+                display: '-',
+                output: 'Ekki einkenni frá eyrum'
+            }
+        ]
+    },
     { name: 'Slappleiki', type: 'PlusMinus', positive: 'Slappleiki', negative: 'Ekki áberandi slappleiki' },
     { name: 'Veikindi heima', type: 'PlusMinus', positive: 'Margir veikir á heimili', negative: 'Ekki aðrir veikir á heimili' }
 ];
@@ -38,20 +89,101 @@ const ExamsViral = [
     { name: 'Eitlastækkanir', type: 'PlusMinus', positive: 'Eitlastækkanir á hálssvæði', negative: 'Ekki eitlastækkanir á hálssvæði' },
     { name: 'Lungnahlustun', type: 'Medium', display: ['Hrein', 'Slímhljóð basalt', 'Brak hæ', 'Brak vi'], output: ['Hrein vesiculer öndunarhljóð', 'Slímhljóð basalt', 'Brak hægra megin', 'Brak vinstra megin'] },
     { name: '-', type: 'Medium', display: ['Gróf', 'Obstrúktíf', 'Wheezing'], output: ['Gróf öndunarhljóð', 'Lengd útöndun', 'Wheezing'] },
-    { name: 'Hljóðhimnur', type: 'Medium', display: ['Eðl', 'Roði', 'Mergur'], output: ['Sjá function handlesideselection neðar', '', ''] },
-    { name: 'Streptest/CRP', type: 'Medium', display: ['Strep +', 'Strep -', 'CRP hátt', 'CRP lágt'], output: ['Streptest jákvætt', 'Streptest neikvætt', 'CRP hátt', 'CRP lágt']}
+    {
+        name: 'Hljóðhimnur',
+        type: 'options',
+        display: ['Eðl', 'Roði'],
+        options: [
+            {
+                display: 'Eðl',
+                subOptions: [
+                    { display: 'Hægri', output: 'Hljóðhimna hægra megin eðlileg' },
+                    { display: 'Vinstri', output: 'Hljóðhimna vinstra megin eðlileg' },
+                    { display: 'Beggja vegna', output: 'Hljóðhimnur eðlilegar beggja vegna' }
+                ]
+            },
+            {
+                display: 'Roði',
+                subOptions: [
+                    { display: 'Hægri', output: 'Roði á hægri hljóðhimnu' },
+                    { display: 'Vinstri', output: 'Roði á vinstri hljóðhimnu' },
+                    { display: 'Beggja vegna', output: 'Roði á hljóðhimnum beggja vegna' }
+                ]
+            }
+        ]
+    },
+    {
+        name: 'Hlust',
+        type: 'options',
+        display: ['Roði', 'Mergur'],
+        options: [
+            {
+                display: 'Roði',
+                subOptions: [
+                    { display: 'Hægri', output: 'Roði í hlust hægra megin' },
+                    { display: 'Vinstri', output: 'Roði í hlust vinstra megin' },
+                    { display: 'Beggja vegna', output: 'Roði í hlust báðum megin' }
+                ],
+                cancelText: 'Roði í hlust'
+            },
+            {
+                display: 'Mergur',
+                subOptions: [
+                    { display: 'Hægri', output: 'Eyrnamergur hægra megin' },
+                    { display: 'Vinstri', output: 'Eyrnamergur vinstra megin' },
+                    { display: 'Beggja vegna', output: 'Eyrnamergur beggja vegna' }
+                ]
+            }
+        ]
+    },
+    { name: 'Streptest/CRP', type: 'Medium', display: ['Strep +', 'Strep -', 'CRP hátt', 'CRP lágt'], output: ['Streptest jákvætt', 'Streptest neikvætt', 'CRP hátt', 'CRP lágt'] }
 ];
 
 const PlanViral = [
     { name: 'Greining', type: 'Medium', display: ['Strep', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'], output: ['Strep throat', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'] },
     { name: '-', type: 'Medium', display: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'], output: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'] },
-    { name: '-', type: 'Medium', display: ['Mergur'], output: ['Eyrnamergur'] },
-    { name: 'Meðferð', type: 'Medium', display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Stuðningsmeðferð'], output: ['Almennar ráðleggingar', 'Ráðlegg sýklalyf', 'Ráðlegg myndatöku', 'Ráðlegg stuðningsmeðferð'] },
+    { name: '-', type: 'Medium', display: ['Mergur', 'Otitis externa'], output: ['Eyrnamergur', 'Otitis externa'] },
+    {
+        name: 'Meðferð',
+        type: 'options',
+        display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Stuðningsmeðferð'],
+        options: [
+            { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
+            {
+                display: 'Sýklalyf',
+                subOptions: [
+                    { display: 'azithromycin', output: 'Ráðlegg sýklalyf. Fer á azithromycin' },
+                    { display: 'amoxin', output: 'Ráðlegg sýklalyf. Fer á amoxin' },
+                    { display: 'spectracillin', output: 'Ráðlegg sýklalyf. Fer á spectracillin' },
+                    { display: 'kaavepenin', output: 'Ráðlegg sýklalyf. Fer á kaavepenin' },
+                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Fer á keflex' }
+                ]
+            },
+            { display: 'Myndataka', output: 'Ráðlegg myndatöku' },
+            { display: 'Stuðningsmeðferð', output: 'Ráðlegg stuðningsmeðferð' }
+        ]
+    },
+    {
+        name: '-',
+        type: 'options',
+        display: ['Sýkladropar'],
+        options: [
+           {
+                display: 'Sýkladropar',
+                subOptions: [
+                    { display: 'HTP', output: 'Ráðlegg sýkladropa. Set á HTP dropa' },
+                    { display: 'Ciflox', output: 'Ráðlegg sýkladropa. Set á ciflox' }
+                ]
+            }
+        ]
+    },
+
     { name: '-', type: 'Medium', display: ['Slímlosandi', 'Kódein', 'Blóðprufa', 'BMT'], output: ['Reynum slímlosandi', 'Fær lyf við hósta', 'Panta blóðprufu', 'Vísa á bráðamóttöku'] },
     { name: '-', type: 'Medium', display: ['Nefstera', 'Púst', 'Merglosandi', 'Merghreinsun'], output: ['Ráðlegg nefstera', 'Ráðlegg púst', 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun', 'Hreinsum út eyrnamerg'] },
     { name: 'Eftirfylgd', type: 'Medium', display: ['Endurmat pn', 'Endurmat ef versnar', 'Pantar símatíma', 'Heilsugæsla'], output: ['Endurmat pn', 'Endurmat ef versnar eða lagast ekki', 'Pantar sér símatíma til að fá niðurstöður', 'Eftirfylgd á sinni heilsugæslu'] },
     { name: '-', type: 'Medium', display: ['Gef tíma', 'Gef símatíma'], output: ['Gef tíma í endurkomu', 'Fær símatíma til eftirfylgdar'] }
 ];
+
 
 const historyViralData = [
     {
@@ -191,6 +323,14 @@ const SymptomsEye = [
     {
         name: '-',
         type: 'options',
+        display: ['Flís'],
+        options: [
+            { display: 'Flís', output: 'Fékk flís í augað' }
+        ]
+    },
+    {
+        name: '-',
+        type: 'options',
         display: ['Roði', 'Nabbi', 'Kláði', 'Rennsli'],
         options: [
             { display: 'Roði', output: 'Roði' },
@@ -244,12 +384,21 @@ const SymptomsEye = [
 ];
 const ExamsEye = [
     {
+        name: 'Prepp',
+        type: 'options',
+        display: ['Deyfi og lita'],
+        options: [
+            { display: 'Deyfi og lita', output: 'Deyfi og lita' }
+        ]
+    },
+    {
         name: 'Glæra',
         type: 'options',
-        display: ['Hrein', 'Injection'],
+        display: ['Hrein', 'Injection', 'Aðskotahlutur'],
         options: [
             { display: 'Hrein', output: 'Ekki roði í glæru' },
-            { display: 'Injection', output: 'Conjunctival injection' }
+            { display: 'Injection', output: 'Conjunctival injection' },
+            { display: 'Aðskotahlutur', output: 'Sést aðskotahlutur' }
         ]
     },
     {
@@ -282,6 +431,14 @@ const PlanEye = [
         ]
     },
     {
+        name: '-',
+        type: 'options',
+        display: ['Aðskotahlutur'],
+        options: [
+            { display: 'Aðskotahlutur', output: 'Aðskotahlutur í auga' }
+        ]
+    },
+    {
         name: 'Meðferð',
         type: 'options',
         display: ['Heitir bakstrar', 'Sýkladropar (ef þarf)', 'Sting á'],
@@ -296,6 +453,22 @@ const PlanEye = [
                 cancelText: ''
             },
             { display: 'Sting á', output: 'Sting á graftarbólu'}
+        ]
+    },
+    {
+        name: '-',
+        type: 'options',
+        display: ['Fjarlægi aðskotahlut', 'Sýkladropar'],
+        options: [
+            { display: 'Fjarlægi aðskotahlut', output: 'Fjarlægi aðskotahlut'},
+            {
+                display: 'Sýkladropar',
+                subOptions: [
+                    { display: 'Fucithalmic', output: 'Ráðlegg sýkladropa, set á fucithalmic' },
+                    { display: 'Oftan chlora', output: 'Ráðlegg sýkladropa, set á oftan chlora' }
+                ],
+                cancelText: ''
+            }
         ]
     },
     {
@@ -489,49 +662,7 @@ function createBloodPressureInterface(containerId) {
     container.appendChild(bpContainer);
 }
 
-function showGenderPrompt(actionType, itemName) {
-    const modal = document.createElement('div');
-    modal.id = 'genderPromptModal';
-    modal.className = 'modal';
 
-    const modalContent = document.createElement('div');
-    modalContent.className = 'modal-content';
-
-    const message = document.createElement('p');
-    message.textContent = 'Select gender:';
-    modalContent.appendChild(message);
-
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.className = 'buttons-container';
-
-    const buttonKK = document.createElement('button');
-    buttonKK.textContent = 'KK';
-    buttonKK.onclick = () => handleGenderSelection('KK', actionType, itemName);
-    buttonsContainer.appendChild(buttonKK);
-
-    const buttonKVK = document.createElement('button');
-    buttonKVK.textContent = 'KVK';
-    buttonKVK.onclick = () => handleGenderSelection('KVK', actionType, itemName);
-    buttonsContainer.appendChild(buttonKVK);
-
-    modalContent.appendChild(buttonsContainer);
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-
-    document.addEventListener('keydown', handleEscapeKey);
-}
-
-function handleGenderSelection(gender, actionType, itemName) {
-    closeModal(document.getElementById('genderPromptModal'));
-
-    if (itemName === 'Lasleg/ur') {
-        if (actionType === 'positive') {
-            insertText(gender === 'KK' ? 'Laslegur að sjá' : 'Lasleg að sjá');
-        } else {
-            insertText(gender === 'KK' ? 'Ekki bráðveikindalegur að sjá' : 'Ekki bráðveikindaleg að sjá');
-        }
-    }
-}
 
 let reykingarFlag = false;
 
@@ -562,43 +693,6 @@ function handleReykingarNo() {
     } else {
         insertText('Reykir ekki');
     }
-}
-
-function handleSyklalyfSelection() {
-    console.log('handleSyklalyfSelection called'); // Debugging line
-    const modal = document.createElement('div');
-    modal.id = 'syklalyfModal';
-    modal.className = 'modal';
-
-    const modalContent = document.createElement('div');
-    modalContent.className = 'modal-content';
-
-    const message = document.createElement('p');
-    message.textContent = 'Select antibiotic:';
-    modalContent.appendChild(message);
-
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.className = 'buttons-container';
-
-    const antibiotics = ['azithromycin', 'amoxin', 'spectracillin', 'kaavepenin', 'keflex'];
-    antibiotics.forEach(antibiotic => {
-        const button = document.createElement('button');
-        button.textContent = antibiotic;
-        button.onclick = () => handleAntibioticSelection(antibiotic);
-        buttonsContainer.appendChild(button);
-    });
-
-    modalContent.appendChild(buttonsContainer);
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-
-    document.addEventListener('keydown', handleEscapeKey);
-}
-
-function handleAntibioticSelection(antibiotic) {
-    console.log(`Selected antibiotic: ${antibiotic}`); // Debugging line
-    closeModal(document.getElementById('syklalyfModal'));
-    insertText(`Ráðlegg sýklalyf. Fer á ${antibiotic}`);
 }
 
 function handleEyrnaverkurPositive() {
@@ -643,39 +737,6 @@ function showEyrnaverkurModal() {
         closeModal(modal);
     };
     buttonsContainer.appendChild(buttonBae);
-
-    modalContent.appendChild(buttonsContainer);
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-
-    document.addEventListener('keydown', handleEscapeKey);
-}
-
-function handleEyruSelection(actionType) {
-    const modal = document.createElement('div');
-    modal.id = 'eyruModal';
-    modal.className = 'modal';
-
-    const modalContent = document.createElement('div');
-    modalContent.className = 'modal-content';
-
-    const message = document.createElement('p');
-    message.textContent = 'Select side:';
-    modalContent.appendChild(message);
-
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.className = 'buttons-container';
-
-    const sides = ['Hægri', 'Vinstri', 'Beggja vegna'];
-    sides.forEach(side => {
-        const button = document.createElement('button');
-        button.textContent = side;
-        button.onclick = () => {
-            handleSideSelectionEyru(side, actionType);
-            closeModal(modal);
-        };
-        buttonsContainer.appendChild(button);
-    });
 
     modalContent.appendChild(buttonsContainer);
     modal.appendChild(modalContent);
