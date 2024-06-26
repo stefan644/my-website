@@ -1,18 +1,40 @@
 const SymptomsViral = [
-    { name: 'Flensueinkenni', type: 'PlusMinus', positive: 'Flensueinkenni', negative: 'Ekki flensueinkenni' },
-    { name: 'Hálsbólga', type: 'PlusMinus', positive: 'Hálsbólga', negative: 'Ekki hálsbólga' },
-    { name: 'Kvef', type: 'PlusMinus', positive: 'Kvef', negative: 'Ekki kvef' },
     {
-        name: 'Hósti',
+        name: '',
         type: 'options',
-        display: ['+', '-'],
+        display: ['Flensueinkenni', '-', 'Hálsbólga', '-', 'Kvef', '-', 'Hósti', '-'],
         options: [
             {
-                display: '+',
+                display: 'Flensueinkenni',
+                output: 'Flensueinkenni'
+            },
+            {
+                display: '-',
+                output: 'Ekki flensueinkenni'
+            },
+            {
+                display: 'Hálsbólga',
+                output: 'Hálsbólga'
+            },
+            {
+                display: '-',
+                output: 'Ekki hálsbólga'
+            },
+            {
+                display: 'Kvef',
+                output: 'Kvef'
+            },
+            {
+                display: '-',
+                output: 'Ekki kvef'
+            },
+            {
+                display: 'Hósti',
                 subOptions: [
                     { display: 'Blautur', output: 'Blautur hósti' },
                     { display: 'Þurr', output: 'Þurr hósti' }
-                ]
+                ],
+                cancelText: 'Hósti'
             },
             {
                 display: '-',
@@ -20,12 +42,86 @@ const SymptomsViral = [
             }
         ]
     },
-    { name: 'Hiti', type: 'PlusMinus', positive: 'Hiti', negative: 'Ekki hiti' },
-    { name: 'Sinuseinkenni', type: 'PlusMinus', positive: 'Þrýstingur yfir ennisholum', negative: 'Ekki þrýstingur yfir ennisholum' },
     {
-        name: 'Eyru',
+        name: '',
         type: 'options',
-        display: ['Verkur', 'Hella', 'Óþægindi', '-'],
+        display: ['Slappleiki', '-', 'Hæsi', '-', 'Munnangur', '-'],
+        options: [
+            {
+                display: 'Slappleiki',
+                output: 'Slappleiki'
+            },
+            {
+                display: '-',
+                output: 'Ekki áberandi slappleiki'
+            },
+            {
+                display: 'Hæsi',
+                output: 'Hæsi'
+            },
+            {
+                display: '-',
+                output: 'Ekki hæsi'
+            },
+            {
+                display: 'Munnangur',
+                output: 'Munnangur'
+            },
+            {
+                display: '-',
+                output: 'Ekki munnangur'
+            }
+        ]
+    },
+
+    
+    {
+        name: '',
+        type: 'options',
+        display: ['Hiti', '-', 'Hiti í byrjun veikinda', 'Ekki mælt'],
+        options: [
+            {
+                display: 'Hiti',
+                output: 'Verið með hita'
+            },
+            {
+                display: '-',
+                output: 'Ekki fengið hita'
+            },
+            {
+                display: 'Hiti í byrjun veikinda',
+                output: 'Hiti í byrjun veikinda en hann yfirstaðinn nú'
+            },
+            {
+                display: 'Ekki mælt',
+                output: 'Upplifað sig með hita en ekki mælt sig'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sinusþrýstingur', '-'],
+        options: [
+            {
+                display: 'Sinusþrýstingur',
+                subOptions: [
+                    { display: 'Hægra megin', output: 'Þrýstingur yfir ennisholum hægra megin' },
+                    { display: 'Vinstra megin', output: 'Þrýstingur yfir ennisholum vinstra megin' },
+                    { display: 'Beggja vegna', output: 'Þrýstingur yfir ennisholum beggja vegna' }
+                ],
+                cancelText: 'Þrýstingur yfir ennisholum'
+            },
+            {
+                display: '-',
+                output: 'Ekki þrýstingur yfir ennisholum'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Eyrnaverkur', 'Hella', 'Óþægindi', '-'],
         options: [
             {
                 display: 'Verkur',
@@ -57,9 +153,23 @@ const SymptomsViral = [
             }
         ]
     },
-    { name: 'Slappleiki', type: 'PlusMinus', positive: 'Slappleiki', negative: 'Ekki áberandi slappleiki' },
-    { name: 'Veikindi heima', type: 'PlusMinus', positive: 'Margir veikir á heimili', negative: 'Ekki aðrir veikir á heimili' }
+    {
+        name: '',
+        type: 'options',
+        display: ['Veikindi heima', '-'],
+        options: [
+            {
+                display: 'Veikindi heima',
+                output: 'Margir veikir á heimili'
+            },
+            {
+                display: '-',
+                output: 'Ekki aðrir veikir á heimili'
+            }
+        ]
+    }
 ];
+
 
 const ExamsViral = [
     {
@@ -140,11 +250,40 @@ const ExamsViral = [
 ];
 
 const PlanViral = [
-    { name: 'Greining', type: 'Medium', display: ['Strep', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'], output: ['Strep throat', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'] },
-    { name: '-', type: 'Medium', display: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'], output: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'] },
-    { name: '-', type: 'Medium', display: ['Mergur', 'Otitis externa'], output: ['Eyrnamergur', 'Otitis externa'] },
     {
-        name: 'Meðferð',
+        name: '',
+        type: 'options',
+        display: ['Strep', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'],
+        options: [
+            { display: 'Strep', output: 'Strep throat' },
+            { display: 'Vírósa', output: 'Vírósa' },
+            { display: 'Eyrnabólga', output: 'Eyrnabólga' },
+            { display: 'Lungnabólga', output: 'Lungnabólga' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'],
+        options: [
+            { display: 'Sinusitis', output: 'Sinusitis' },
+            { display: 'Bronchitis', output: 'Bronchitis' },
+            { display: 'Versnun á COPD', output: 'Versnun á COPD' },
+            { display: 'Astmi', output: 'Astmi' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Mergur', 'Otitis externa'],
+        options: [
+            { display: 'Mergur', output: 'Eyrnamergur' },
+            { display: 'Otitis externa', output: 'Otitis externa' }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
         type: 'options',
         display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Stuðningsmeðferð'],
         options: [
@@ -164,11 +303,11 @@ const PlanViral = [
         ]
     },
     {
-        name: '-',
+        name: '',
         type: 'options',
         display: ['Sýkladropar'],
         options: [
-           {
+            {
                 display: 'Sýkladropar',
                 subOptions: [
                     { display: 'HTP', output: 'Ráðlegg sýkladropa. Set á HTP dropa' },
@@ -177,12 +316,51 @@ const PlanViral = [
             }
         ]
     },
-
-    { name: '-', type: 'Medium', display: ['Slímlosandi', 'Kódein', 'Blóðprufa', 'BMT'], output: ['Reynum slímlosandi', 'Fær lyf við hósta', 'Panta blóðprufu', 'Vísa á bráðamóttöku'] },
-    { name: '-', type: 'Medium', display: ['Nefstera', 'Púst', 'Merglosandi', 'Merghreinsun'], output: ['Ráðlegg nefstera', 'Ráðlegg púst', 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun', 'Hreinsum út eyrnamerg'] },
-    { name: 'Eftirfylgd', type: 'Medium', display: ['Endurmat pn', 'Endurmat ef versnar', 'Pantar símatíma', 'Heilsugæsla'], output: ['Endurmat pn', 'Endurmat ef versnar eða lagast ekki', 'Pantar sér símatíma til að fá niðurstöður', 'Eftirfylgd á sinni heilsugæslu'] },
-    { name: '-', type: 'Medium', display: ['Gef tíma', 'Gef símatíma'], output: ['Gef tíma í endurkomu', 'Fær símatíma til eftirfylgdar'] }
+    {
+        name: '',
+        type: 'options',
+        display: ['Slímlosandi', 'Kódein', 'Blóðprufa', 'BMT'],
+        options: [
+            { display: 'Slímlosandi', output: 'Reynum slímlosandi' },
+            { display: 'Kódein', output: 'Fær lyf við hósta' },
+            { display: 'Blóðprufa', output: 'Panta blóðprufu' },
+            { display: 'BMT', output: 'Vísa á bráðamóttöku' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Nefstera', 'Púst', 'Merglosandi', 'Merghreinsun'],
+        options: [
+            { display: 'Nefstera', output: 'Ráðlegg nefstera' },
+            { display: 'Púst', output: 'Ráðlegg púst' },
+            { display: 'Merglosandi', output: 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun' },
+            { display: 'Merghreinsun', output: 'Hreinsum út eyrnamerg' }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat pn', 'Endurmat ef versnar', 'Pantar símatíma', 'Heilsugæsla'],
+        options: [
+            { display: 'Endurmat pn', output: 'Endurmat pn' },
+            { display: 'Endurmat ef versnar', output: 'Endurmat ef versnar eða lagast ekki' },
+            { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+            { display: 'Heilsugæsla', output: 'Eftirfylgd á sinni heilsugæslu' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Gef tíma', 'Gef símatíma'],
+        options: [
+            { display: 'Gef tíma', output: 'Gef tíma í endurkomu' },
+            { display: 'Gef símatíma', output: 'Fær símatíma til eftirfylgdar' }
+        ]
+    }
 ];
+
 
 
 const historyViralData = [
@@ -540,6 +718,11 @@ function createBloodPressureInterface(containerId) {
     const bpContainer = document.createElement('div');
     bpContainer.className = 'blood-pressure-container';
 
+    // Add title
+    const title = document.createElement('h3');
+    title.textContent = 'Blóðþrýstingur';
+    bpContainer.appendChild(title);
+
     const systolicInput = document.createElement('input');
     systolicInput.type = 'number';
     systolicInput.placeholder = 'Systolic';
@@ -640,26 +823,324 @@ function createBloodPressureInterface(containerId) {
     diastolicSliderContainer.appendChild(diastolicValueDisplay);
 
     const submitButton = document.createElement('button');
-    submitButton.textContent = 'Enter BP';
+    submitButton.textContent = 'Bþr';
     submitButton.onclick = () => {
         const systolic = systolicInput.value;
         const diastolic = diastolicInput.value;
         if (systolic && diastolic) {
             insertText(`Bþr: ${systolic}/${diastolic} mmHg`);
         } else {
-            alert('Please select both systolic and diastolic values.');
+            alert('Please select values for systolic and diastolic.');
         }
     };
 
-    bpContainer.appendChild(document.createTextNode('Select Systolic:'));
     bpContainer.appendChild(systolicContainer);
     bpContainer.appendChild(systolicSliderContainer);
-    bpContainer.appendChild(document.createTextNode('Select Diastolic:'));
     bpContainer.appendChild(diastolicContainer);
     bpContainer.appendChild(diastolicSliderContainer);
     bpContainer.appendChild(submitButton);
 
     container.appendChild(bpContainer);
+}
+
+function createPulseInterface(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Container with ID ${containerId} not found.`);
+        return;
+    }
+
+    const pulseContainer = document.createElement('div');
+    pulseContainer.className = 'pulse-container';
+
+    // Add title
+    const title = document.createElement('h3');
+    title.textContent = 'Púls';
+    pulseContainer.appendChild(title);
+
+    const pulseInput = document.createElement('input');
+    pulseInput.type = 'number';
+    pulseInput.placeholder = 'Pulse';
+    pulseInput.className = 'pulse-input';
+    pulseInput.id = 'pulse-input';
+    pulseInput.readOnly = true;
+
+    const pulseButtonsContainer = document.createElement('div');
+    pulseButtonsContainer.className = 'pulse-buttons-container';
+
+    // Add buttons for pulse values from 50 to 100 in increments of 10
+    for (let value = 50; value <= 100; value += 10) {
+        const button = document.createElement('button');
+        button.className = 'pulse-button';
+        button.textContent = value;
+        button.onclick = () => {
+            pulseInput.value = value;
+            pulseSlider.value = value;
+            pulseValueDisplay.textContent = value;
+        };
+        pulseButtonsContainer.appendChild(button);
+    }
+
+    const pulseSliderContainer = document.createElement('div');
+    pulseSliderContainer.className = 'pulse-slider-container';
+
+    const pulseSliderLabel = document.createElement('label');
+    pulseSliderLabel.textContent = 'Pulse';
+    pulseSliderLabel.className = 'pulse-label';
+
+    const pulseSlider = document.createElement('input');
+    pulseSlider.type = 'range';
+    pulseSlider.min = 30;
+    pulseSlider.max = 200;
+    pulseSlider.value = 80;
+    pulseSlider.className = 'pulse-slider';
+    pulseSlider.oninput = () => {
+        pulseInput.value = pulseSlider.value;
+        pulseValueDisplay.textContent = pulseSlider.value;
+    };
+
+    const pulseValueDisplay = document.createElement('span');
+    pulseValueDisplay.className = 'pulse-value';
+    pulseValueDisplay.textContent = pulseSlider.value;
+
+    pulseSliderContainer.appendChild(pulseSliderLabel);
+    pulseSliderContainer.appendChild(pulseSlider);
+    pulseSliderContainer.appendChild(pulseValueDisplay);
+
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Púls';
+    submitButton.onclick = () => {
+        const pulse = pulseInput.value;
+        if (pulse) {
+            insertText(`Púls: ${pulse} bpm`);
+        } else {
+            alert('Please select a value for pulse.');
+        }
+    };
+
+    pulseContainer.appendChild(pulseButtonsContainer);
+    pulseContainer.appendChild(pulseSliderContainer);
+    pulseContainer.appendChild(submitButton);
+
+    container.appendChild(pulseContainer);
+}
+
+
+
+function createTemperatureInterface(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Container with ID ${containerId} not found.`);
+        return;
+    }
+
+    const tempContainer = document.createElement('div');
+    tempContainer.className = 'temperature-container';
+
+    // Add title
+    const title = document.createElement('h3');
+    title.textContent = 'Hiti';
+    tempContainer.appendChild(title);
+
+    const tempInput = document.createElement('input');
+    tempInput.type = 'number';
+    tempInput.placeholder = 'Temperature (°C)';
+    tempInput.className = 'temperature-input';
+    tempInput.id = 'temperature-input';
+    tempInput.readOnly = true;
+
+    const tempValues = [35.0, 35.5, 36.0, 36.5, 37.0, 37.5, 38.0, 38.5, 39.0, 39.5, 40.0];
+
+    const tempButtonsContainer = document.createElement('div');
+    tempButtonsContainer.className = 'temp-buttons-container';
+
+    tempValues.forEach(value => {
+        const button = document.createElement('button');
+        button.className = 'temp-button';
+        button.textContent = value.toFixed(1);
+        button.onclick = () => {
+            tempInput.value = value.toFixed(1);
+            tempSlider.value = value;
+            tempValueDisplay.textContent = value.toFixed(1);
+        };
+        tempButtonsContainer.appendChild(button);
+    });
+
+    const tempSliderContainer = document.createElement('div');
+    tempSliderContainer.className = 'temp-slider-container';
+
+    const tempSliderLabel = document.createElement('label');
+    tempSliderLabel.textContent = 'Temperature (°C)';
+    tempSliderLabel.className = 'temp-label';
+
+    const tempSlider = document.createElement('input');
+    tempSlider.type = 'range';
+    tempSlider.min = 35.0;
+    tempSlider.max = 40.0;
+    tempSlider.step = 0.1;
+    tempSlider.value = 37.0;
+    tempSlider.className = 'temp-slider';
+    tempSlider.oninput = () => {
+        tempInput.value = tempSlider.value;
+        tempValueDisplay.textContent = tempSlider.value;
+    };
+
+    const tempValueDisplay = document.createElement('span');
+    tempValueDisplay.className = 'temp-value';
+    tempValueDisplay.textContent = tempSlider.value;
+
+    tempSliderContainer.appendChild(tempSliderLabel);
+    tempSliderContainer.appendChild(tempSlider);
+    tempSliderContainer.appendChild(tempValueDisplay);
+
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Enter Temperature';
+    submitButton.onclick = () => {
+        const temperature = tempInput.value;
+        if (temperature) {
+            insertText(`Hiti: ${temperature}°C`);
+        } else {
+            alert('Please select a temperature value.');
+        }
+    };
+
+    tempContainer.appendChild(tempButtonsContainer);
+    tempContainer.appendChild(tempSliderContainer);
+    tempContainer.appendChild(submitButton);
+
+    container.appendChild(tempContainer);
+}
+
+
+function createOxygenSaturationInterface(containerId) {
+    const container = document.getElementById(containerId);
+
+    const oxygenSaturationContainer = document.createElement('div');
+    oxygenSaturationContainer.className = 'oxygen-saturation-container';
+
+    const title = document.createElement('h3');
+    title.textContent = 'Mettun';
+    oxygenSaturationContainer.appendChild(title);
+
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'ox-sat-buttons-container';
+
+    // Add buttons for oxygen saturation values from 100 to 90 in intervals of 1
+    for (let value = 100; value >= 90; value--) {
+        const button = document.createElement('button');
+        button.className = 'ox-sat-button';
+        button.textContent = value + '%';
+        button.onclick = () => {
+            slider.value = value;
+            sliderValue.textContent = value + '%';
+        };
+        buttonsContainer.appendChild(button);
+    }
+
+    const sliderContainer = document.createElement('div');
+    sliderContainer.className = 'ox-sat-slider-container';
+
+    const sliderLabel = document.createElement('label');
+    sliderLabel.className = 'ox-sat-label';
+    sliderLabel.textContent = 'Adjust:';
+
+    const slider = document.createElement('input');
+    slider.type = 'range';
+    slider.min = '85';
+    slider.max = '100';
+    slider.value = '100';
+    slider.className = 'ox-sat-slider';
+    
+    const sliderValue = document.createElement('span');
+    sliderValue.className = 'ox-sat-value';
+    sliderValue.textContent = slider.value + '%';
+
+    slider.oninput = function() {
+        sliderValue.textContent = slider.value + '%';
+    };
+
+    const enterButton = document.createElement('button');
+    enterButton.className = 'enter-button';
+    enterButton.textContent = 'Enter';
+    enterButton.onclick = function() {
+        insertText('Mettar ' + slider.value + '%');
+    };
+
+    sliderContainer.appendChild(sliderLabel);
+    sliderContainer.appendChild(slider);
+    sliderContainer.appendChild(sliderValue);
+    sliderContainer.appendChild(enterButton);
+    
+    oxygenSaturationContainer.appendChild(buttonsContainer);
+    oxygenSaturationContainer.appendChild(sliderContainer);
+    container.appendChild(oxygenSaturationContainer);
+}
+
+
+
+function createRespiratoryRateInterface(containerId) {
+    const container = document.getElementById(containerId);
+
+    const respiratoryRateContainer = document.createElement('div');
+    respiratoryRateContainer.className = 'respiratory-rate-container';
+
+    const title = document.createElement('h3');
+    title.textContent = 'Öndunartíðni';
+    respiratoryRateContainer.appendChild(title);
+
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'resp-rate-buttons-container';
+
+    // Add fewer buttons for respiratory rate values
+    const respRateValues = [10, 15, 20, 25, 30];
+    respRateValues.forEach(value => {
+        const button = document.createElement('button');
+        button.className = 'resp-rate-button';
+        button.textContent = value;  // Just the value without "breaths/min"
+        button.onclick = () => {
+            slider.value = value;
+            sliderValue.textContent = value + ' breaths/min';
+        };
+        buttonsContainer.appendChild(button);
+    });
+
+    const sliderContainer = document.createElement('div');
+    sliderContainer.className = 'resp-rate-slider-container';
+
+    const sliderLabel = document.createElement('label');
+    sliderLabel.className = 'resp-rate-label';
+    sliderLabel.textContent = 'Adjust:';
+
+    const slider = document.createElement('input');
+    slider.type = 'range';
+    slider.min = '10';
+    slider.max = '30';
+    slider.value = '20';
+    slider.className = 'resp-rate-slider';
+    
+    const sliderValue = document.createElement('span');
+    sliderValue.className = 'resp-rate-value';
+    sliderValue.textContent = slider.value + ' breaths/min';
+
+    slider.oninput = function() {
+        sliderValue.textContent = slider.value + ' breaths/min';
+    };
+
+    const enterButton = document.createElement('button');
+    enterButton.className = 'enter-button';
+    enterButton.textContent = 'Enter';
+    enterButton.onclick = function() {
+        insertText('ÖT: ' + slider.value);
+    };
+
+    sliderContainer.appendChild(sliderLabel);
+    sliderContainer.appendChild(slider);
+    sliderContainer.appendChild(sliderValue);
+    sliderContainer.appendChild(enterButton);
+
+    respiratoryRateContainer.appendChild(buttonsContainer);
+    respiratoryRateContainer.appendChild(sliderContainer);
+    container.appendChild(respiratoryRateContainer);
 }
 
 
@@ -1177,7 +1658,6 @@ function loadPage(page) {
         const planSection = createPlanSection(PlanViral);
         const timalengdSection = createTimalengdSection(Duration);
         const historyViralSection = createHistoryViralSection(historyViralData);
-        const mettunSection = createMettunSection(Saturation);
         const habitsSection = createHabitsSection(Habits);
 
         const leftColumn = document.createElement('div');
@@ -1190,15 +1670,8 @@ function loadPage(page) {
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
-        middleColumn.appendChild(mettunSection);
-        
-                // Add placeholder for blood pressure section
-                const bpSection = document.createElement('div');
-                bpSection.id = 'blood-pressure-section';
-                middleColumn.appendChild(bpSection);
-
-        
-
+                
+        addLifsmorkButton(middleColumn); // Append the button at the end
         
 
         const rightColumn = document.createElement('div');
@@ -1212,9 +1685,7 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
-
-        // Create blood pressure interface
-        createBloodPressureInterface('blood-pressure-section');
+ 
     } else if (page === 'Bakverkur') {
         const einkenniSection = createEinkenniSection(bakverkurData);
         const skodunSection = createSkodunSection(ExamsViral);
@@ -1230,6 +1701,43 @@ function loadPage(page) {
     // Make titles clickable
     makeTitleButton('skodun', addSkoðun);
     makeTitleButton('plan', addPlan);
+}
+
+function addLifsmorkButton(parentElement) {
+    const lifsmorkButton = document.createElement('button');
+    lifsmorkButton.textContent = 'Lífsmörk';
+    lifsmorkButton.onclick = openLifsmorkModal;
+    lifsmorkButton.className = 'lifsmork-button'; // Add a class for styling
+    parentElement.appendChild(lifsmorkButton);
+}
+
+function openLifsmorkModal() {
+    let modal = document.getElementById('lifsmorkModal');
+    if (!modal) {
+        const modalElement = document.createElement('div');
+        modalElement.id = 'lifsmorkModal';
+        modalElement.className = 'modal';
+        modalElement.innerHTML = `
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal('lifsmorkModal')">&times;</span>
+                <div id="lifsmorkContainer"></div>
+            </div>
+        `;
+        document.body.appendChild(modalElement);
+        modal = modalElement;
+    } else {
+        modal.style.display = 'flex';
+    }
+    const container = document.getElementById('lifsmorkContainer');
+    container.innerHTML = ''; // Clear previous content
+    createBloodPressureInterface('lifsmorkContainer');
+    createPulseInterface('lifsmorkContainer');
+    createOxygenSaturationInterface('lifsmorkContainer');
+    createTemperatureInterface('lifsmorkContainer');
+    createRespiratoryRateInterface('lifsmorkContainer');
+
+
+    document.addEventListener('keydown', handleEscapeKey);
 }
 
 
@@ -1312,43 +1820,47 @@ function createHabitsSection(data) {
     return section;
 }
 
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+}
 
-
-function closeModal(modal) {
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
     if (modal) {
-        document.body.removeChild(modal);
+        modal.style.display = 'none';
         document.removeEventListener('keydown', handleEscapeKey);
 
         // Check if the modal being closed is the one from "Reykingar"
-        if (modal.id === 'reykingarModal' && !reykingarFlag) {
+        if (modalId === 'reykingarModal' && !reykingarFlag) {
             insertText('Reykir');
         }
     }
 }
 
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName('modal');
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            closeModal(modals[i].id);
+        }
+    }
+};
 
 function handleEscapeKey(event) {
     if (event.key === 'Escape') {
-        const modal = document.getElementById('sideSelectionModal');
-        if (modal) {
-            closeModal(modal);
-        }
-
-        // Include any other existing logic for escape key handling here
         const modals = [
             'genderPromptModal', 
             'eyrnaverkurModal', 
             'reykingarModal', 
             'syklalyfModal',
-            'hostiOptionsModal' // Added the new modal id here
+            'hostiOptionsModal',
+            'lifsmorkModal' // Added the new modal id here
         ];
         modals.forEach(modalId => {
             const modal = document.getElementById(modalId);
-            if (modal) {
-                closeModal(modal);
-                if (modalId === 'hostiOptionsModal') {
-                    insertText('Hósti');
-                }
+            if (modal && modal.style.display === 'flex') {
+                closeModal(modalId);
             }
         });
     }
