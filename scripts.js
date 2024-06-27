@@ -167,15 +167,69 @@ const SymptomsViral = [
                 output: 'Ekki aðrir veikir á heimili'
             }
         ]
-    }
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Ó.E. Eyrnaskoðun', 'Óvær', 'Toga', 'Eyrnabarn', 'Rör'],
+        options: [
+            {
+                display: 'Ó.E. Eyrnaskoðun',
+                output: 'Óska eftir að láta kíkja í eyru'
+            },
+            {
+                display: 'Óvær',
+                output: 'Verið óvær að nóttu til'
+            },
+            {
+                display: 'Toga',
+                output: 'Verið að toga mikið í eyru'
+            },
+            {
+                display: 'Eyrnabarn',
+                output: 'Eyrnabarn. Fengið tíðar eyrnabólgur'
+            },
+            {
+                display: 'Rör',
+                output: 'Með rör'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Næring', '-'],
+        options: [
+            {
+                display: 'Næring',
+                subOptions: [
+                    { display: 'Borðar vel', output: 'Borðar vel' },
+                    { display: 'Drekkur vel', output: 'Drekkur vel' },
+                    { display: 'Borðar og drekkur vel', output: 'Borðar og drekkur vel' }
+                ],
+                cancelText: 'Nærist vel'
+            },
+            {
+                display: '-',
+                subOptions: [
+                    { display: 'Borðar lítið', output: 'Borðað lítið' },
+                    { display: 'Drukkið lítið', output: 'Drukkið lítið' },
+                    { display: 'Borðað og drukkið lítið', output: 'Borðað og drukkið lítið' }
+                ],
+                cancelText: 'Nærist illa'
+            },
+        ]
+    },
+    
 ];
 
 
 const ExamsViral = [
     {
-        name: 'Útlit',
+        name: '',
         type: 'options',
-        display: ['Lasleg/ur', '-'],
+        display: ['Lasleg/ur', '-', 'Yfirþyngd'],
         options: [
             {
                 display: 'Lasleg/ur',
@@ -190,51 +244,100 @@ const ExamsViral = [
                     { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
                     { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
                 ]
-            }
+            },
+            { display: 'Yfirþyngd', output: 'Er í yfirþyngd' }
         ]
     },
-    { name: 'Háls - Roði', type: 'PlusMinus', positive: 'Roði í koki', negative: 'Ekki roði í koki' },
-    { name: 'Háls - Gröftur', type: 'PlusMinus', positive: 'Gröftur á hálskirtlum', negative: 'Ekki gröftur á hálskirtlum' },
-    { name: 'Stórir hálskirtlar', type: 'PlusMinus', positive: 'Hálskirtlar stórir', negative: 'Ekki áberandi stórir hálskirtlar' },
-    { name: 'Eitlastækkanir', type: 'PlusMinus', positive: 'Eitlastækkanir á hálssvæði', negative: 'Ekki eitlastækkanir á hálssvæði' },
-    { name: 'Lungnahlustun', type: 'Medium', display: ['Hrein', 'Slímhljóð basalt', 'Brak hæ', 'Brak vi'], output: ['Hrein vesiculer öndunarhljóð', 'Slímhljóð basalt', 'Brak hægra megin', 'Brak vinstra megin'] },
-    { name: '-', type: 'Medium', display: ['Gróf', 'Obstrúktíf', 'Wheezing'], output: ['Gróf öndunarhljóð', 'Lengd útöndun', 'Wheezing'] },
     {
-        name: 'Hljóðhimnur',
+        name: '',
         type: 'options',
-        display: ['Eðl', 'Roði'],
+        display: ['Roði í koki', '-', 'Gröftur', '-', 'Stórir', '-'],
+        options: [
+            { display: '+', output: 'Roði í koki' },
+            { display: '-', output: 'Ekki roði í koki' },
+            { display: '+', output: 'Gröftur á hálskirtlum' },
+            { display: '-', output: 'Ekki gröftur á hálskirtlum' },
+            { display: '+', output: 'Hálskirtlar stórir' },
+            { display: '-', output: 'Ekki áberandi stórir hálskirtlar' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Eitlastækkanir', '-'],
+        options: [
+            { display: 'Eitlastækkanir', output: 'Eitlastækkanir á hálssvæði' },
+            { display: '-', output: 'Ekki eitlastækkanir á hálssvæði' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hrein', 'Slímhljóð basalt', 'Gróf', 'Obstrúktíf'],
+        options: [
+            { display: 'Hrein', output: 'Lungnahlustun hrein' },
+            { display: 'Slímhljóð basalt', output: 'Lungnahlustun sýnir slímhljóð basalt' },
+            { display: 'Gróf', output: 'Lungnahlustun sýnir gróf öndunarhljóð' },
+            { display: 'Obstrúktíf', output: 'Lungnahlustun sýnir lengda útöndun' }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Brak', 'Wheezing', 'Hrein a.ö.l.'],
         options: [
             {
-                display: 'Eðl',
+                display: 'Brak',
                 subOptions: [
-                    { display: 'Hægri', output: 'Hljóðhimna hægra megin eðlileg' },
-                    { display: 'Vinstri', output: 'Hljóðhimna vinstra megin eðlileg' },
-                    { display: 'Beggja vegna', output: 'Hljóðhimnur eðlilegar beggja vegna' }
+                    { display: 'Brak hægra megin', output: 'Heyrist brak hægra megin basalt' },
+                    { display: 'Brak vinstra megin', output: 'Heyrist brak vinstra megin basalt' },
+                    { display: 'Brak basalt beggja vegna', output: 'Heyrist brak basalt beggja vegna' }
                 ]
             },
+            { display: 'Wheezing', output: 'Heyrist wheezing' },
+            { display: 'Hrein a.ö.l.', output: 'Hrein a.ö.l.' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Roði á hljóðhimnum', '-', 'Roði í hlust', '-', 'Mergur', '-'],
+        options: [
+           
             {
-                display: 'Roði',
+                display: 'Roði á hljóðhimnum',
                 subOptions: [
                     { display: 'Hægri', output: 'Roði á hægri hljóðhimnu' },
                     { display: 'Vinstri', output: 'Roði á vinstri hljóðhimnu' },
                     { display: 'Beggja vegna', output: 'Roði á hljóðhimnum beggja vegna' }
                 ]
-            }
-        ]
-    },
-    {
-        name: 'Hlust',
-        type: 'options',
-        display: ['Roði', 'Mergur'],
-        options: [
+            },
             {
-                display: 'Roði',
+                display: '-',
+                subOptions: [
+                    { display: 'Hægri', output: 'Hljóðhimna hægra megin eðlilega útlítandi' },
+                    { display: 'Vinstri', output: 'Hljóðhimna vinstra megin eðlilega útlítandi' },
+                    { display: 'Beggja vegna', output: 'Hljóðhimnur líta eðliega út beggja vegna' }
+                ]
+            },
+            {
+                display: 'Roði í hlust',
                 subOptions: [
                     { display: 'Hægri', output: 'Roði í hlust hægra megin' },
                     { display: 'Vinstri', output: 'Roði í hlust vinstra megin' },
-                    { display: 'Beggja vegna', output: 'Roði í hlust báðum megin' }
+                    { display: 'Beggja vegna', output: 'Roði í hlustum beggja vegna' }
                 ],
                 cancelText: 'Roði í hlust'
+            },
+            {
+                display: '-',
+                subOptions: [
+                    { display: 'Hægri', output: 'Ekki roði í hlust hægra megin' },
+                    { display: 'Vinstri', output: 'Ekki roði í hlust vinstra megin' },
+                    { display: 'Beggja vegna', output: 'Ekki að sjá roða í hlust hvorki hægra megin né vinstra megin' }
+                ],
+                cancelText: ''
             },
             {
                 display: 'Mergur',
@@ -243,11 +346,30 @@ const ExamsViral = [
                     { display: 'Vinstri', output: 'Eyrnamergur vinstra megin' },
                     { display: 'Beggja vegna', output: 'Eyrnamergur beggja vegna' }
                 ]
+            },
+            {
+                display: '-',
+                subOptions: [
+                    { display: 'Hægri', output: 'Ekki áberandi eyrnamergur hægra megin' },
+                    { display: 'Vinstri', output: 'Ekki áberandi eyrnamergur vinstra megin' },
+                    { display: 'Beggja vegna', output: 'Ekki eyrnamergur' }
+                ]
             }
         ]
     },
-    { name: 'Streptest/CRP', type: 'Medium', display: ['Strep +', 'Strep -', 'CRP hátt', 'CRP lágt'], output: ['Streptest jákvætt', 'Streptest neikvætt', 'CRP hátt', 'CRP lágt'] }
+    {
+        name: '',
+        type: 'options',
+        display: ['Strep +', 'Strep -', 'CRP hátt', 'CRP lágt'],
+        options: [
+            { display: 'Strep +', output: 'Streptest jákvætt' },
+            { display: 'Strep -', output: 'Streptest neikvætt' },
+            { display: 'CRP hátt', output: 'CRP hátt' },
+            { display: 'CRP lágt', output: 'CRP lágt' }
+        ]
+    }
 ];
+
 
 const PlanViral = [
     {
@@ -285,33 +407,36 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Stuðningsmeðferð'],
+        display: ['Ráðleggingar', 'Stuðningsmeðferð', 'Slímlosandi', 'Kódein'],
         options: [
             { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
-            {
-                display: 'Sýklalyf',
-                subOptions: [
-                    { display: 'azithromycin', output: 'Ráðlegg sýklalyf. Fer á azithromycin' },
-                    { display: 'amoxin', output: 'Ráðlegg sýklalyf. Fer á amoxin' },
-                    { display: 'spectracillin', output: 'Ráðlegg sýklalyf. Fer á spectracillin' },
-                    { display: 'kaavepenin', output: 'Ráðlegg sýklalyf. Fer á kaavepenin' },
-                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Fer á keflex' }
-                ]
-            },
-            { display: 'Myndataka', output: 'Ráðlegg myndatöku' },
-            { display: 'Stuðningsmeðferð', output: 'Ráðlegg stuðningsmeðferð' }
+            { display: 'Stuðningsmeðferð', output: 'Ráðlegg stuðningsmeðferð' },
+            { display: 'Slímlosandi', output: 'Reynum slímlosandi' },
+            { display: 'Kódein', output: 'Fær kódein við hósta' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Sýkladropar'],
+        display: ['Nefstera', 'Púst', 'Merglosandi', 'Merghreinsun', 'Sérfræðing'],
         options: [
+            { display: 'Nefstera', output: 'Ráðlegg nefstera' },
             {
-                display: 'Sýkladropar',
+                display: 'Púst',
                 subOptions: [
-                    { display: 'HTP', output: 'Ráðlegg sýkladropa. Set á HTP dropa' },
-                    { display: 'Ciflox', output: 'Ráðlegg sýkladropa. Set á ciflox' }
+                    { display: 'ventolin', output: 'Ráðlegg púst. Set ventolin í gáttina' },
+                    { display: 'flixotide', output: 'Ráðlegg púst. Set flixotide í gáttina' },
+                    { display: 'ventolin+flixotide', output: 'Ráðlegg púst. Set ventolin og flixotide í gáttina' },
+                    { display: 'seretide', output: 'Ráðlegg púst. Set seretide í gáttina' }
+                ],
+                cancelText: 'Ráðlegg púst'
+            },
+            { display: 'Merglosandi', output: 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun' },
+            { display: 'Merghreinsun', output: 'Hreinsum út eyrnamerg' },
+            {
+                display: 'Sérfræðing',
+                subOptions: [
+                    { display: 'HNE', output: 'Ráðlegg mat HNE læknis' }
                 ]
             }
         ]
@@ -319,25 +444,45 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Slímlosandi', 'Kódein', 'Blóðprufa', 'BMT'],
+        display: ['Sýklalyf', 'Sýkladropar', 'Ef lagast ekki'],
         options: [
-            { display: 'Slímlosandi', output: 'Reynum slímlosandi' },
-            { display: 'Kódein', output: 'Fær lyf við hósta' },
-            { display: 'Blóðprufa', output: 'Panta blóðprufu' },
-            { display: 'BMT', output: 'Vísa á bráðamóttöku' }
+            {
+                display: 'Sýklalyf',
+                subOptions: [
+                    { display: 'azithromycin', output: 'Ráðlegg sýklalyf. Set azithromycin í gáttina' },
+                    { display: 'amoxin', output: 'Ráðlegg sýklalyf. Set amoxin í gáttina' },
+                    { display: 'spectracillin', output: 'Ráðlegg sýklalyf. Set spectracillin í gáttina' },
+                    { display: 'kaavepenin', output: 'Ráðlegg sýklalyf. Set kaavepenin í gáttina' },
+                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' }
+                ]
+            },
+            {
+                display: 'Sýkladropar',
+                subOptions: [
+                    { display: 'HTP', output: 'Ráðlegg sýkladropa. Set HTP dropa í gáttina' },
+                    { display: 'Ciflox', output: 'Ráðlegg sýkladropa. Set ciflox í gáttina' }
+                ]
+            },
+            { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Nefstera', 'Púst', 'Merglosandi', 'Merghreinsun'],
+        display: ['Myndataka', 'Blóðprufa', 'BMT'],
         options: [
-            { display: 'Nefstera', output: 'Ráðlegg nefstera' },
-            { display: 'Púst', output: 'Ráðlegg púst' },
-            { display: 'Merglosandi', output: 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun' },
-            { display: 'Merghreinsun', output: 'Hreinsum út eyrnamerg' }
+            {
+                display: 'Myndataka',
+                subOptions: [
+                    { display: 'RTG lungu', output: 'Ráðlegg rtg lungu' },
+                    { display: 'TS sinusar', output: 'Ráðlegg TS af sinusum' }
+                ]
+            },
+            { display: 'Blóðprufa', output: 'Panta blóðprufu' },
+            { display: 'BMT', output: 'Vísa á bráðamóttöku' }
         ]
     },
+    
     {},{},{},
     {
         name: '',
