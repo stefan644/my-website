@@ -651,34 +651,216 @@ const historyViralData = [
 ];
 */
 const SymptomsUrinary = [
-    { name: 'Blöðrubólga', type: 'Medium', display: ['Grunur', 'Jákv stix heima'], output: ['Grunar sig vera með blöðrubólgu', 'Jákv stix heima'] },
-    { name: 'Fengið áður', type: 'PlusMinus', positive: 'Þekkir einkennin', negative: 'Aldrei fengið áður' },
-    { name: 'Óþægindi', type: 'PlusMinus', positive: 'Óþægindi við þvaglát', negative: 'Ekki óþægindi við þvaglát' },
-    { name: 'Sviði', type: 'PlusMinus', positive: 'Sviði við þvaglát', negative: 'Ekki sviði við þvaglát' },
-    { name: 'Tíð', type: 'PlusMinus', positive: 'Tíð þvaglát', negative: 'Ekki tíð þvaglát' },
-    { name: 'Blóð', type: 'PlusMinus', positive: 'Blóð í þvagi', negative: 'Ekki blóð í þvagi' },
-    { name: 'Hiti', type: 'PlusMinus', positive: 'Verið með hita', negative: 'Ekki fengið hita' },
-    { name: 'Bakverkur', type: 'PlusMinus', positive: 'Bakverkur, nýtilkominn', negative: 'Ekki nýtilkominn bakverkur' },
-    { name: 'Slappleiki', type: 'PlusMinus', positive: 'Almennur slappleiki', negative: 'Ekki fundið fyrir slappleika' }
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Grunur um blöðrubólgu', 'Jákv stix heima', 'Fengið áður', '-'], 
+        options: [
+            { display: 'Grunur', output: 'Grunar sig vera með blöðrubólgu' },
+            { display: 'Jákv stix heima', output: 'Jákv stix heima' },
+            { display: 'Fengið áður', output: 'Þekkir einkennin' },
+            { display: '-', output: 'Aldrei fengið áður' }
+        ]
+    },
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Óþægindi', '-', 'Sviði', '-', 'Tíð þvaglát', '-', 'Blóð', '-'], 
+        options: [
+            { display: 'Óþægindi', output: 'Óþægindi við þvaglát' },
+            { display: '-', output: 'Neitar óþægindum við þvaglát' },
+            { display: 'Sviði', output: 'Sviði við þvaglát' },
+            { display: '-', output: 'Ekki sviði við þvaglát' },
+            { display: 'Tíð þvaglát', output: 'Tíð þvaglát' },
+            { display: '-', output: 'Ekki tíð þvaglát' },
+            { display: 'Blóð', output: 'Blóð í þvagi' },
+            { display: '-', output: 'Ekki blóð í þvagi' }
+
+        ]
+    },
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Hiti', '-', 'Bakverkur', '-', 'Slappleiki', '-'], 
+        options: [
+            { display: '+', output: 'Verið með hita' },
+            { display: '-', output: 'Ekki fengið hita' },
+            { display: 'Bakverkur', output: 'Bakverkur, nýtilkominn' },
+            { display: '-', output: 'Ekki nýtilkominn bakverkur' },
+            { display: 'Slappleiki', output: 'Verið með slappleika' },
+            { display: '-', output: 'Ekki fundið fyrir slappleika' }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
+        options: [
+            {
+                display: 'Nokkrir dagar',
+                output: 'Nokkra daga saga'
+            },
+            {
+                display: 'Dagar',
+                subOptions: [
+                    { display: '1d', output: '1d saga' },
+                    { display: '2d', output: '2d saga' },
+                    { display: '3d', output: '3d saga' },
+                    { display: '4d', output: '4d saga' },
+                    { display: '5d', output: '5d saga' },
+                    { display: '6d', output: '6d saga' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Vikur',
+                subOptions: [
+                    { display: '1v', output: '1 vikna saga' },
+                    { display: '1,5v', output: '1,5 vikna saga' },
+                    { display: '2v', output: '2 vikna saga' },
+                    { display: '3v', output: '3 vikna saga' }
+    
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Mánuðir',
+                subOptions: [
+                    { display: '1m', output: '1 mán saga' },
+                    { display: '2m', output: '2 mán saga' },
+                    { display: '3m', output: '3 mán saga' },
+                    { display: '4m', output: '4 mán saga' },
+                    { display: '5m', output: '5 mán saga' },
+                    { display: '6m', output: '6 mán saga' }
+    
+                ],
+                cancelText: ''
+            }
+            
+        ]
+    }
 ];
+
 
 const ExamsUrinary = [
-    { name: 'Lasleg/ur', type: 'GenderPrompt' },
-    { name: 'Bankum', type: 'Medium', display: ['Hæ', 'Vi', '-'], output: ['Bankaum yfir nýrnastað hæ megin', 'Bankaum yfir nýrnastað vi megin', 'Ekki bankeymsli yfir nýrnastað'] },
-    { name: 'Nítrít', type: 'PlusMinus', positive: 'Jákv nítrít í þvagi', negative: 'Þvagstix hreint' },
-    { name: 'Hvít', type: 'PlusMinus', positive: 'Hvít í þvagi', negative: 'Þvagstix hreint' },
-    { name: 'Þvagstix', type: 'PlusMinus', positive: 'Þvagstix jákv', negative: 'Þvagstix hreint' }
+    {
+        name: '',
+        type: 'options',
+        display: ['Lasleg/ur', '-', 'Yfirþyngd'],
+        options: [
+            {
+                display: 'Lasleg/ur',
+                subOptions: [
+                    { display: 'Laslegur', output: 'Laslegur að sjá' },
+                    { display: 'Lasleg', output: 'Lasleg að sjá' }
+                ]
+            },
+            {
+                display: '-',
+                subOptions: [
+                    { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
+                    { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
+                ]
+            },
+            { display: 'Yfirþyngd', output: 'Er í yfirþyngd' }
+        ]
+    },
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Bankeymsli', '-'], 
+        options: [
+            {
+                display: 'Lasleg/ur',
+                subOptions: [
+                    { display: 'Bankeymsli hægra megin', output: 'Bankeymsli yfir nýrnastað hægra megin' },
+                    { display: 'Bankeymsli vinstra megin', output: 'Bankeymsli yfir nýrnastað vinstra megin' }
+                ]
+            },
+            { display: '-', output: 'Ekki bankeymsli yfir nýrnastað' }
+        ]
+    },
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Nítrít', '-', 'Hvít', '-'], 
+        options: [
+            { display: 'Nítrít', output: 'Jákv nítrít í þvagi' },
+            { display: '-', output: 'Þvagstix hreint' },
+            { display: 'Hvít', output: 'Hvít í þvagi' },
+            { display: '-', output: 'Þvagstix hreint' }
+        ]
+    }
 ];
 
+
 const PlanUrinary = [
-    { name: 'Greining', type: 'Medium', display: ['Blöðrubólga', 'Pyelonephritis', 'Prostatitis'], output: ['Grunur um blöðrubólgu', 'Grunur um pyelonephritis', 'Grunur um prostatitis'] },
-    { name: 'Rannsóknir', type: 'Medium', display: ['CRP hátt', 'CRP lágt'], output: ['CRP nokkuð hátt', 'CRP lágt'] },
-    { name: 'Ofnæmi', type: 'Medium', display: ['Penisillinofnæmi'], output: ['Ofnæmi fyrir penisillin'] },
-    { name: 'Meðferð', type: 'Medium', display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Stuðningsmeðferð'], output: ['Almennar ráðleggingar', 'Ráðlegg sýklalyf', 'Ráðlegg myndatöku', 'Ráðlegg stuðningsmeðferð'] },
-    { name: 'Meðferð', type: 'Medium', display: ['Blóðprufa', 'BMT', 'Idotrim'], output: ['Panta blóðprufu', 'Vísa á bráðamóttöku', 'Set á idotrim'] },
-    { name: 'Meðferð', type: 'Medium', display: ['Furadantin', 'Amoxin', 'Keflex', 'Selexid'], output: ['Set á furadantin', 'Set á amoxicillin', 'Set á keflex', 'Set á selexíð'] },
-    { name: 'Eftirfylgd', type: 'Medium', display: ['Endurmat pn', 'Endurmat ef versnar', 'Símatíma', 'Heilsugæsla'], output: ['Endurmat pn', 'Endurmat ef versnar', 'Pantar sér símatíma til að fá niðurstöður', 'Eftirfylgd á sinni heilsugæslu'] }
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Blöðrubólga', 'Pyelonephritis', 'Prostatitis'], 
+        options: [
+            { display: 'Blöðrubólga', output: 'Grunur um blöðrubólgu' },
+            { display: 'Pyelonephritis', output: 'Grunur um pyelonephritis' },
+            { display: 'Prostatitis', output: 'Grunur um prostatitis' }
+        ]
+    },
+    {},{},{},
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Blóðprufa'], 
+        options: [
+            { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
+
+            {
+                display: 'Sýklalyf',
+                subOptions: [
+                    { display: 'Idotrim', output: 'Ráðlegg sýklalyf. Set idotrim í gáttina' },
+                    { display: 'Selexid', output: 'Ráðlegg sýklalyf. Set selexid í gáttina' },
+                    { display: 'Furadantin', output: 'Ráðlegg sýklalyf. Set furadantin í gáttina' },
+                    { display: 'Keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' },
+                    { display: 'Síprox', output: 'Ráðlegg sýklalyf. Set siprox í gáttina' }
+                ]
+            },
+            { display: 'Myndataka', output: 'Ráðlegg myndatöku' },
+            {
+                display: 'Myndataka',
+                subOptions: [
+                    { display: 'TS þvagfærayfirlit', output: 'Ráðlegg TS þvagfærayfirlit' }
+                ]
+            },
+            { display: 'Blóðprufa', output: 'Panta blóðprufu' }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
+                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
+                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                ]
+            }
+
+        ]
+    }
 ];
+
 
 const HistoryUrinary = [
     { name: '', type: 'Medium', display: ['Hraust', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'], output: ['Heilsuhraust/ur í gruninn', 'Saga um háþrýsting', 'Saga um sykursýki', 'Saga um kransæðasjúkdóm', 'Saga um offitu', 'Saga um áfengismisnotkun']},
@@ -688,9 +870,9 @@ const HistoryUrinary = [
 
 const SymptomsEye = [
     {
-        name: 'Einkenni',
+        name: '',
         type: 'options',
-        display: ['Auga', 'Efra augnlok', 'Neðra augnlok'],
+        display: ['Einkenni frá auga', 'Efra augnlok', 'Neðra augnlok'],
         options: [
             {
                 display: 'Auga',
@@ -720,15 +902,41 @@ const SymptomsEye = [
         ]
     },
     {
-        name: '-',
+        name: '',
         type: 'options',
-        display: ['Flís'],
+        display: ['Aðskotahlutur', 'Áverki'],
         options: [
-            { display: 'Flís', output: 'Fékk flís í augað' }
+            {
+                display: 'Aðskotahlutur',
+                subOptions: [
+                    { display: 'Aðskotahlutur', output: 'Fékk aðskotahlut í augað' },
+                    { display: 'Tréflís', output: 'Tréflís' },
+                    { display: 'Járnflís', output: 'Járnflís' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Áverki',
+                subOptions: [
+                    { display: 'Áverki', output: 'Áverki á auga' },
+                    { display: 'Grein', output: 'Fékk grein í augað' },
+                    { display: 'Fingur', output: 'Fékk fingur í augað' }
+                ],
+                cancelText: ''
+            }
         ]
     },
     {
-        name: '-',
+        name: '',
+        type: 'options',
+        display: ['Aðskotahlutstilfinning', '-'],
+        options: [
+            { display: 'Aðskotahlutstilfinning', output: 'Finnur fyrir aðskotahlutstilfinningu' },
+            { display: '-', output: 'Ekki aðskotahlutstilfinning' }
+        ]
+    },
+    {
+        name: '',
         type: 'options',
         display: ['Roði', 'Nabbi', 'Kláði', 'Rennsli'],
         options: [
@@ -739,16 +947,7 @@ const SymptomsEye = [
         ]
     },
     {
-        name: 'Aðskotahlutur',
-        type: 'options',
-        display: ['Aðskotahlutstilfinning', '-'],
-        options: [
-            { display: 'Aðskotahlutstilfinning', output: 'Aðskotahlutstilfinning' },
-            { display: '-', output: 'Ekki aðskotahlutstilfinning' }
-        ]
-    },
-    {
-        name: '-',
+        name: '',
         type: 'options',
         display: ['Gröftur', '-', 'Límd', '-'],
         options: [
@@ -759,21 +958,14 @@ const SymptomsEye = [
         ]
     },
     {
-        name: 'Rauð flögg',
+        name: '',
         type: 'options',
-        display: ['Sjóntap', '-', 'Móðusjón', '-'],
+        display: ['Sjóntap', '-', 'Móðusjón', '-', 'Ljósfælni', '-', 'Verkur', '-'],
         options: [
             { display: 'Sjóntap', output: 'Lýsir versnun á sjón' },
             { display: '-', output: 'Sjón í lagi' },
             { display: 'Móðusjón', output: 'Lýsir móðusjón' },
-            { display: '-', output: 'Neitar móðusjón' }
-        ]
-    },
-    {
-        name: '-',
-        type: 'options',
-        display: ['Ljósfælni', '-', 'Verkur', '-'],
-        options: [
+            { display: '-', output: 'Neitar móðusjón' },
             { display: 'Ljósfælni', output: 'Lýsir ljósfælni' },
             { display: '-', output: 'Neitar ljósfælni' },
             { display: 'Verkur', output: 'Verkjar' },
@@ -783,7 +975,7 @@ const SymptomsEye = [
 ];
 const ExamsEye = [
     {
-        name: 'Prepp',
+        name: '',
         type: 'options',
         display: ['Deyfi og lita'],
         options: [
@@ -791,29 +983,48 @@ const ExamsEye = [
         ]
     },
     {
-        name: 'Glæra',
+        name: '',
         type: 'options',
-        display: ['Hrein', 'Injection', 'Aðskotahlutur'],
+        display: ['Glæra hrein', 'Injection', 'Aðskotahlutur', 'Rispa'],
         options: [
             { display: 'Hrein', output: 'Ekki roði í glæru' },
             { display: 'Injection', output: 'Conjunctival injection' },
-            { display: 'Aðskotahlutur', output: 'Sést aðskotahlutur' }
+            {
+                display: 'Aðskotahlutur',
+                subOptions: [
+                    { display: 'Í glæru', output: 'Sést aðskotahlutur í glæru' },
+                    { display: 'Á hornhimnu', output: 'Sést aðskotahlutur á hornhimnu' }
+                ]
+            },
+            {
+                display: 'Rispa',
+                subOptions: [
+                    { display: 'Í glæru', output: 'Sést rispa (litarupptaka) á glæru' },
+                    { display: 'Á hornhimnu', output: 'Sést rispa (litarupptaka) á hornhimnu' }
+                ]
+            }
         ]
     },
     {
-        name: 'Augnlok',
+        name: '',
         type: 'options',
-        display: ['Roði', 'Nabbi'],
+        display: ['Roði á augnloki', 'Nabbi'],
         options: [
             { display: 'Roði', output: 'Roði' },
-            { display: 'Nabbi', output: 'Graftarnabbi' }
+            {
+                display: 'Nabbi',
+                subOptions: [
+                    { display: 'Að innanverðu', output: 'Gratarnabbi sést innanvert á augnloki' },
+                    { display: 'Að utanverðu', output: 'Graftarnabbi sést utanvert á augnloki' }
+                ]
+            }
         ]
     }
 ];
 
 const PlanEye = [
     {
-        name: 'Greining',
+        name: '',
         type: 'options',
         display: ['Blepharitis', 'Vogris', 'Conjunctivitis'],
         options: [
@@ -830,15 +1041,17 @@ const PlanEye = [
         ]
     },
     {
-        name: '-',
+        name: '',
         type: 'options',
-        display: ['Aðskotahlutur'],
+        display: ['Aðskotahlutur', 'Rispa'],
         options: [
-            { display: 'Aðskotahlutur', output: 'Aðskotahlutur í auga' }
+            { display: 'Aðskotahlutur', output: 'Aðskotahlutur í auga' },
+            { display: 'Rispa', output: 'Rispa' }
         ]
     },
+    {},{},{},
     {
-        name: 'Meðferð',
+        name: '',
         type: 'options',
         display: ['Heitir bakstrar', 'Sýkladropar (ef þarf)', 'Sting á'],
         options: [
@@ -855,7 +1068,7 @@ const PlanEye = [
         ]
     },
     {
-        name: '-',
+        name: '',
         type: 'options',
         display: ['Fjarlægi aðskotahlut', 'Sýkladropar'],
         options: [
@@ -870,13 +1083,32 @@ const PlanEye = [
             }
         ]
     },
+    {},{},{},
     {
-        name: 'Eftirfylgd',
+        name: '',
         type: 'options',
-        display: ['Endurkoma PN', 'Endurkoma ef lagast ekki'],
+        display: ['Endurmat', 'Eftirfylgd'],
         options: [
-            { display: 'Endurkoma PN', output: 'Endurkoma pn' },
-            { display: 'Endurkoma ef lagast ekki', output: 'Endurkoma ef lagast ekki eða versnar' }
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' },
+                    { display: 'Á morgun', output: 'Endurmat á morgun' },
+                    { display: 'Eftir nokkra daga', output: 'Endurmat eftir nokkra daga' },
+                    { display: 'Eftir helgi', output: 'Endurmat eftir helgi' },
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
+                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
+                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                ]
+            }
+
         ]
     }
 ];
@@ -1830,7 +2062,7 @@ function loadPage(page) {
         const symptomsColumn = document.createElement('div');
         symptomsColumn.className = 'column';
         symptomsColumn.appendChild(symptomsSection);
-        symptomsColumn.appendChild(durationSection);
+        //symptomsColumn.appendChild(durationSection);
         symptomsColumn.appendChild(historySection);
 
         const examsColumn = document.createElement('div');
