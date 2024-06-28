@@ -149,6 +149,7 @@ main {
     margin-bottom: 0px; /* Optional: Add some margin to separate it from the containers below */
 }
 
+
 /* Modal styles */
 .modal {
     display: none;
@@ -350,4 +351,7 @@ main {
 .ox-sat-value, .resp-rate-value {
     min-width: 30px;
     text-align: right;
+}
+.hidden-name {
+    display: none; /* This hides the element with the class 'hidden-name' */
 }

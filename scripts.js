@@ -31,22 +31,31 @@ const SymptomsViral = [
             {
                 display: 'Hósti',
                 subOptions: [
+                    { display: 'Hósti', output: 'Hósti' },
                     { display: 'Blautur', output: 'Blautur hósti' },
                     { display: 'Þurr', output: 'Þurr hósti' }
                 ],
-                cancelText: 'Hósti'
+                cancelText: ''
             },
             {
                 display: '-',
-                output: 'Ekki hósti'
+                output: 'Ekki verið með hósta'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Slappleiki', '-', 'Hæsi', '-', 'Munnangur', '-'],
+        display: ['Takverkur', '-', 'Slappleiki', '-', 'Hæsi', '-', 'Munnangur', '-'],
         options: [
+            {
+                display: 'Takverkur',
+                output: 'Fundið fyrir takverk'
+            },
+            {
+                display: '-',
+                output: 'Ekki fundið fyrir takverk'
+            },
             {
                 display: 'Slappleiki',
                 output: 'Slappleiki'
@@ -78,24 +87,65 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hiti', '-', 'Hiti í byrjun veikinda', 'Ekki mælt'],
+        display: ['Hiti', '-', 'Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
         options: [
+            
+            
             {
                 display: 'Hiti',
-                output: 'Verið með hita'
+                subOptions: [
+                    { display: 'Hiti', output: 'Verið með hita' },
+                    { display: 'Hár hiti og rúmliggjandi', output: 'Verið með háan hita, mestu rúmliggjandi' },
+                    { display: 'Hiti í byrjun veikinda', output: 'Hiti í byrjun veikinda en hann yfirstaðinn nú' },
+                    { display: 'Ekki mælt', output: 'Upplifað sig með hita en ekki mælt sig' }
+                ],
+                cancelText: ''
             },
             {
                 display: '-',
                 output: 'Ekki fengið hita'
             },
             {
-                display: 'Hiti í byrjun veikinda',
-                output: 'Hiti í byrjun veikinda en hann yfirstaðinn nú'
+                display: 'Nokkrir dagar',
+                output: 'Nokkra daga saga'
             },
             {
-                display: 'Ekki mælt',
-                output: 'Upplifað sig með hita en ekki mælt sig'
+                display: 'Dagar',
+                subOptions: [
+                    { display: '1d', output: '1d saga' },
+                    { display: '2d', output: '2d saga' },
+                    { display: '3d', output: '3d saga' },
+                    { display: '4d', output: '4d saga' },
+                    { display: '5d', output: '5d saga' },
+                    { display: '6d', output: '6d saga' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Vikur',
+                subOptions: [
+                    { display: '1v', output: '1 vikna saga' },
+                    { display: '1,5v', output: '1,5 vikna saga' },
+                    { display: '2v', output: '2 vikna saga' },
+                    { display: '3v', output: '3 vikna saga' }
+    
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Mánuðir',
+                subOptions: [
+                    { display: '1m', output: '1 mán saga' },
+                    { display: '2m', output: '2 mán saga' },
+                    { display: '3m', output: '3 mán saga' },
+                    { display: '4m', output: '4 mán saga' },
+                    { display: '5m', output: '5 mán saga' },
+                    { display: '6m', output: '6 mán saga' }
+    
+                ],
+                cancelText: ''
             }
+            
         ]
     },
     {
@@ -156,7 +206,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Veikindi heima', '-'],
+        display: ['Veikindi heima', '-', 'Ferðalag', '-'], 
         options: [
             {
                 display: 'Veikindi heima',
@@ -165,6 +215,14 @@ const SymptomsViral = [
             {
                 display: '-',
                 output: 'Ekki aðrir veikir á heimili'
+            },
+            {
+                display: 'Ferðalag',
+                output: 'Var að koma út ferðalagi erlendis'
+            },
+            {
+                display: '-',
+                output: 'Ekki verið erlendis nýlega'
             }
         ]
     },
@@ -220,7 +278,7 @@ const SymptomsViral = [
                 cancelText: 'Nærist illa'
             },
         ]
-    },
+    }
     
 ];
 
@@ -273,7 +331,7 @@ const ExamsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hrein', 'Slímhljóð basalt', 'Gróf', 'Obstrúktíf'],
+        display: ['Lungnahlustun hrein', 'Slímhljóð basalt', 'Gróf', 'Obstrúktíf'],
         options: [
             { display: 'Hrein', output: 'Lungnahlustun hrein' },
             { display: 'Slímhljóð basalt', output: 'Lungnahlustun sýnir slímhljóð basalt' },
@@ -397,28 +455,34 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Mergur', 'Otitis externa'],
+        display: ['Mergur', 'Otitis externa', 'Langvarandi einkenni'],
         options: [
             { display: 'Mergur', output: 'Eyrnamergur' },
-            { display: 'Otitis externa', output: 'Otitis externa' }
+            { display: 'Otitis externa', output: 'Otitis externa' },
+            { display: 'Langvarandi einkenni', output: 'Einkenni langvarandi' }
         ]
     },
     {},{},{},
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar', 'Stuðningsmeðferð', 'Slímlosandi', 'Kódein'],
+        display: ['Ráðleggingar', 'Stuðningsmeðferð'],
         options: [
             { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
-            { display: 'Stuðningsmeðferð', output: 'Ráðlegg stuðningsmeðferð' },
-            { display: 'Slímlosandi', output: 'Reynum slímlosandi' },
-            { display: 'Kódein', output: 'Fær kódein við hósta' }
+            {
+            display: 'Stuðningsmeðferð',
+                subOptions: [
+                    { display: 'Stuðningsmeðferð', output: 'Ráðlegg stuðningsmeðferð' },
+                    { display: 'Slímlosandi', output: 'Reynum slímlosandi' },
+                    { display: 'Kódein', output: 'Fær kódein við hósta' }
+                ],
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Nefstera', 'Púst', 'Merglosandi', 'Merghreinsun', 'Sérfræðing'],
+        display: ['Nefstera', 'Púst', 'Mergur', 'Sérfræðing'],
         options: [
             { display: 'Nefstera', output: 'Ráðlegg nefstera' },
             {
@@ -429,12 +493,18 @@ const PlanViral = [
                     { display: 'ventolin+flixotide', output: 'Ráðlegg púst. Set ventolin og flixotide í gáttina' },
                     { display: 'seretide', output: 'Ráðlegg púst. Set seretide í gáttina' }
                 ],
-                cancelText: 'Ráðlegg púst'
+                cancelText: ''
             },
-            { display: 'Merglosandi', output: 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun' },
-            { display: 'Merghreinsun', output: 'Hreinsum út eyrnamerg' },
             {
-                display: 'Sérfræðing',
+                display: 'Mergur',
+                subOptions: [
+                    { display: 'Merglosandi', output: 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun' },
+                    { display: 'Merghreinsun', output: 'Hreinsum út eyrnamerg' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Vísa á sérfræðing',
                 subOptions: [
                     { display: 'HNE', output: 'Ráðlegg mat HNE læknis' }
                 ]
@@ -444,7 +514,7 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Sýklalyf', 'Sýkladropar', 'Ef lagast ekki'],
+        display: ['Sýklalyf', 'Sýkladropar', 'Leysir út ef lagast ekki', 'VVV'],
         options: [
             {
                 display: 'Sýklalyf',
@@ -453,7 +523,8 @@ const PlanViral = [
                     { display: 'amoxin', output: 'Ráðlegg sýklalyf. Set amoxin í gáttina' },
                     { display: 'spectracillin', output: 'Ráðlegg sýklalyf. Set spectracillin í gáttina' },
                     { display: 'kaavepenin', output: 'Ráðlegg sýklalyf. Set kaavepenin í gáttina' },
-                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' }
+                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' },
+                    { display: 'VVV', output: 'Fær veikindavottorð' }
                 ]
             },
             {
@@ -463,7 +534,8 @@ const PlanViral = [
                     { display: 'Ciflox', output: 'Ráðlegg sýkladropa. Set ciflox í gáttina' }
                 ]
             },
-            { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' }
+            { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' },
+            { display: 'VVV', output: 'Fær veikindavottorð' }
         ]
     },
     {
@@ -487,21 +559,25 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Endurmat pn', 'Endurmat ef versnar', 'Pantar símatíma', 'Heilsugæsla'],
+        display: ['Endurmat', 'Eftirfylgd'],
         options: [
-            { display: 'Endurmat pn', output: 'Endurmat pn' },
-            { display: 'Endurmat ef versnar', output: 'Endurmat ef versnar eða lagast ekki' },
-            { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
-            { display: 'Heilsugæsla', output: 'Eftirfylgd á sinni heilsugæslu' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Gef tíma', 'Gef símatíma'],
-        options: [
-            { display: 'Gef tíma', output: 'Gef tíma í endurkomu' },
-            { display: 'Gef símatíma', output: 'Fær símatíma til eftirfylgdar' }
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
+                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
+                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                ]
+            }
+
         ]
     }
 ];
@@ -1808,7 +1884,7 @@ function loadPage(page) {
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
-        leftColumn.appendChild(timalengdSection);
+    //  leftColumn.appendChild(timalengdSection);
         leftColumn.appendChild(historyViralSection);
         leftColumn.appendChild(habitsSection);
 
@@ -2132,4 +2208,15 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error('Element with ID enterCodeButton not found.');
     }
+
+    // Add event listener for closing suboptions on clicking outside
+    document.addEventListener('click', function(event) {
+        const subOptionsContainer = document.querySelector('.popup-modal');
+        const openButton = event.target.closest('button'); // Adjust the selector if needed
+        
+        // Check if the suboptions container is visible and the click is outside of it
+        if (subOptionsContainer && !subOptionsContainer.contains(event.target) && !openButton) {
+            subOptionsContainer.remove();
+        }
+    });
 });
