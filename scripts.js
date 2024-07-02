@@ -1,8 +1,9 @@
 const SymptomsViral = [
+    
     {
         name: '',
         type: 'options',
-        display: ['Flensueinkenni', '-', 'Hálsbólga', '-', 'Kvef', '-', 'Hósti', '-'],
+        display: ['Flensueinkenni', '-', 'Hálsbólga', '-'],
         options: [
             {
                 display: 'Flensueinkenni',
@@ -19,7 +20,15 @@ const SymptomsViral = [
             {
                 display: '-',
                 output: 'Ekki hálsbólga'
-            },
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Kvef', '-', 'Hósti', '-'],
+        options: [
+            
             {
                 display: 'Kvef',
                 output: 'Kvef'
@@ -46,7 +55,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Takverkur', '-', 'Slappleiki', '-', 'Hæsi', '-', 'Munnangur', '-'],
+        display: ['Takverkur', '-', 'Slappleiki', '-'],
         options: [
             {
                 display: 'Takverkur',
@@ -63,7 +72,14 @@ const SymptomsViral = [
             {
                 display: '-',
                 output: 'Ekki áberandi slappleiki'
-            },
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hæsi', '-', 'Munnangur', '-'],
+        options: [
             {
                 display: 'Hæsi',
                 output: 'Hæsi'
@@ -87,7 +103,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hiti', '-', 'Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
+        display: ['Hiti', '-'],
         options: [
             
             
@@ -104,54 +120,13 @@ const SymptomsViral = [
             {
                 display: '-',
                 output: 'Ekki fengið hita'
-            },
-            {
-                display: 'Nokkrir dagar',
-                output: 'Nokkra daga saga'
-            },
-            {
-                display: 'Dagar',
-                subOptions: [
-                    { display: '1d', output: '1d saga' },
-                    { display: '2d', output: '2d saga' },
-                    { display: '3d', output: '3d saga' },
-                    { display: '4d', output: '4d saga' },
-                    { display: '5d', output: '5d saga' },
-                    { display: '6d', output: '6d saga' }
-                ],
-                cancelText: ''
-            },
-            {
-                display: 'Vikur',
-                subOptions: [
-                    { display: '1v', output: '1 vikna saga' },
-                    { display: '1,5v', output: '1,5 vikna saga' },
-                    { display: '2v', output: '2 vikna saga' },
-                    { display: '3v', output: '3 vikna saga' }
-    
-                ],
-                cancelText: ''
-            },
-            {
-                display: 'Mánuðir',
-                subOptions: [
-                    { display: '1m', output: '1 mán saga' },
-                    { display: '2m', output: '2 mán saga' },
-                    { display: '3m', output: '3 mán saga' },
-                    { display: '4m', output: '4 mán saga' },
-                    { display: '5m', output: '5 mán saga' },
-                    { display: '6m', output: '6 mán saga' }
-    
-                ],
-                cancelText: ''
-            }
-            
+            }            
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Sinusþrýstingur', '-'],
+        display: ['Sinusþrýstingur', '-', 'Leiðni'],
         options: [
             {
                 display: 'Sinusþrýstingur',
@@ -165,6 +140,14 @@ const SymptomsViral = [
             {
                 display: '-',
                 output: 'Ekki þrýstingur yfir ennisholum'
+            },
+            {
+                display: 'Leiðni',
+                subOptions: [
+                    { display: 'Hægra eyra', output: 'Leiðir út í hægra eyra' },
+                    { display: 'Vinstra eyra', output: 'Leiðir út í vinstra eyra' }
+                ],
+                cancelText: 'Þrýstingur yfir ennisholum'
             }
         ]
     },
@@ -230,6 +213,56 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
+        display: ['Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
+        options: [
+            
+          
+            {
+                display: 'Nokkrir dagar',
+                output: 'Nokkra daga saga'
+            },
+            {
+                display: 'Dagar',
+                subOptions: [
+                    { display: '1d', output: '1d saga' },
+                    { display: '2d', output: '2d saga' },
+                    { display: '3d', output: '3d saga' },
+                    { display: '4d', output: '4d saga' },
+                    { display: '5d', output: '5d saga' },
+                    { display: '6d', output: '6d saga' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Vikur',
+                subOptions: [
+                    { display: '1v', output: '1 vikna saga' },
+                    { display: '1,5v', output: '1,5 vikna saga' },
+                    { display: '2v', output: '2 vikna saga' },
+                    { display: '3v', output: '3 vikna saga' }
+    
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Mánuðir',
+                subOptions: [
+                    { display: '1m', output: '1 mán saga' },
+                    { display: '2m', output: '2 mán saga' },
+                    { display: '3m', output: '3 mán saga' },
+                    { display: '4m', output: '4 mán saga' },
+                    { display: '5m', output: '5 mán saga' },
+                    { display: '6m', output: '6 mán saga' }
+    
+                ],
+                cancelText: ''
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
         display: ['Ó.E. Eyrnaskoðun', 'Óvær', 'Toga', 'Eyrnabarn', 'Rör'],
         options: [
             {
@@ -281,8 +314,6 @@ const SymptomsViral = [
     }
     
 ];
-
-
 const ExamsViral = [
     {
         name: '',
@@ -331,6 +362,36 @@ const ExamsViral = [
     {
         name: '',
         type: 'options',
+        display: ['Lungnahlustun'],
+        options: [
+            {
+                display: 'Lungnahlustun',
+                subOptions: [
+                    { display: 'Hrein', output: 'Lungnahlustun, hrein. Eðlileg vesiculer öndunarhljóð' },
+                    { display: 'Slímhljóð basalt', output: 'Lungnahlustun sýnir slímhljóð basalt' },
+                    { display: 'Obstrúktíf', output: 'Lungnahlustun sýnir lengda útöndun' },
+                    { display: 'Gróf', output: 'Lungnahlustun sýnir gróf öndunarhljóð' },
+                    { display: 'Gróf, ronchi og lengd útöndun', output: 'Lungnahlustun sýnir gróf öndunarhljóð, ronchi og lengda útöndun' },
+                    { display: 'Brak hægra megin basalt', output: 'Heyrist brak hægra megin basalt' },
+                    { display: 'Brak vinstra megin basalt', output: 'Heyrist brak vinstra megin basalt' },
+
+                ]
+            },
+            {
+                display: '-',
+                subOptions: [
+                    { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
+                    { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
+                ]
+            },
+            { display: 'Yfirþyngd', output: 'Er í yfirþyngd' }
+        ]
+    },
+    
+    /*
+    {
+        name: '',
+        type: 'options',
         display: ['Lungnahlustun hrein', 'Slímhljóð basalt', 'Gróf', 'Obstrúktíf'],
         options: [
             { display: 'Hrein', output: 'Lungnahlustun hrein' },
@@ -356,7 +417,7 @@ const ExamsViral = [
             { display: 'Wheezing', output: 'Heyrist wheezing' },
             { display: 'Hrein a.ö.l.', output: 'Hrein a.ö.l.' }
         ]
-    },
+    },*/
     {
         name: '',
         type: 'options',
@@ -427,15 +488,13 @@ const ExamsViral = [
         ]
     }
 ];
-
-
 const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Strep', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'],
+        display: ['Hósti', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'],
         options: [
-            { display: 'Strep', output: 'Strep throat' },
+            { display: 'Hósti', output: 'Hósti' },
             { display: 'Vírósa', output: 'Vírósa' },
             { display: 'Eyrnabólga', output: 'Eyrnabólga' },
             { display: 'Lungnabólga', output: 'Lungnabólga' }
@@ -444,10 +503,10 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'],
+        display: [ 'Bronchitis', 'Bronchiolitis', 'Versnun á COPD', 'Astmi'],
         options: [
-            { display: 'Sinusitis', output: 'Sinusitis' },
             { display: 'Bronchitis', output: 'Bronchitis' },
+            { display: 'Bronchiolitis', output: 'Bronchiolitis' },
             { display: 'Versnun á COPD', output: 'Versnun á COPD' },
             { display: 'Astmi', output: 'Astmi' }
         ]
@@ -455,10 +514,21 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Mergur', 'Otitis externa', 'Langvarandi einkenni'],
+        display: [ 'Strep', 'Mónó'],
+        options: [
+            
+            { display: 'Strep', output: 'Strep throat' },
+            { display: 'Mónó', output: 'Grunur um mónónúkleósu' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Mergur', 'Otitis externa', 'Sinusitis', 'Langvarandi einkenni'],
         options: [
             { display: 'Mergur', output: 'Eyrnamergur' },
             { display: 'Otitis externa', output: 'Otitis externa' },
+            { display: 'Sinusitis', output: 'Sinusitis' },
             { display: 'Langvarandi einkenni', output: 'Einkenni langvarandi' }
         ]
     },
@@ -581,9 +651,6 @@ const PlanViral = [
         ]
     }
 ];
-
-
-
 const historyViralData = [
     {
         name: '',
@@ -643,7 +710,6 @@ const historyViralData = [
         ]
     }
 ];
-
 /* const RedFlagViral = [
     { name: 'Hnakkastífleiki', type: 'PlusMinus', positive: 'Lýsir', negative: 'Ekki roði í koki' },
     { name: 'Ljósfælni', type: 'PlusMinus', positive: 'Lýsir ljósfælni', negative: 'Ekki ljósfælni' }
@@ -689,6 +755,24 @@ const SymptomsUrinary = [
             { display: '-', output: 'Ekki nýtilkominn bakverkur' },
             { display: 'Slappleiki', output: 'Verið með slappleika' },
             { display: '-', output: 'Ekki fundið fyrir slappleika' }
+        ]
+    },
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Reykingar', 'Karlkyn', 'Aldur>35', 'Fjölskyldusaga'], 
+        options: [
+            { display: 'Reykingar', output: 'Saga um reykingar' },
+            { display: 'Karlkyn', output: 'Karlkyn' },
+            { display: 'Aldur>35', output: 'Aldur > 35 ára' },
+
+            {
+                display: 'Fjölskyldusaga',
+                    subOptions: [
+                        { display: 'Þvagblöðrukrabbamein', output: 'Fjölskyldusaga um krabbamein í þvagblöðru' },
+                        { display: 'Blöðruhálskirtilskrabbamein', output: 'Fjölskyldusaga um blöðruhálskirtilskrabbamein' }
+                    ],
+            }
         ]
     },
     {},{},{},
@@ -741,8 +825,6 @@ const SymptomsUrinary = [
         ]
     }
 ];
-
-
 const ExamsUrinary = [
     {
         name: '',
@@ -793,8 +875,6 @@ const ExamsUrinary = [
         ]
     }
 ];
-
-
 const PlanUrinary = [
     { 
         name: '', 
@@ -860,14 +940,77 @@ const PlanUrinary = [
         ]
     }
 ];
-
-
 const HistoryUrinary = [
     { name: '', type: 'Medium', display: ['Hraust', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'], output: ['Heilsuhraust/ur í gruninn', 'Saga um háþrýsting', 'Saga um sykursýki', 'Saga um kransæðasjúkdóm', 'Saga um offitu', 'Saga um áfengismisnotkun']},
     { name: '', type: 'Medium', display: ['Blöðrubólgur', 'Nýrnasjúkdóm', 'Nýrnasteinar', 'Prostatit'], output: ['Saga um endurteknar blöðrubólgur', 'Saga um nýrnasjúkdóm', 'Saga um nýrnasteina', 'Saga um prostatitis áður']},
     { name: '', type: 'Medium', display: ['Pyelonephritis', 'Ólétta', 'Ónæmisbælandi'], output: ['Saga um pyelonephritis', 'Ófrísk, gengin X vikur', 'Er á ónæmisbælandi meðferð']}
 ];
+const RiskfactorsUrinary = [
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Reykingar', 'Karlkyn', 'Prostatitis', 'Fjölskyldusaga um þvagblöðrukrabbamein'], 
+        options: [
+            { display: 'Reykingar', output: 'Saga um reykingar' },
+            { display: 'Karlkyn', output: 'Karlkyn' },
+            { display: 'Aldur>35', output: 'Aldur > 35 ára' },
+            { display: 'Fjölskyldusaga um þvagblöðrukrabbamein', output: 'Fjölskyldusaga um krabbamein í þvagblöðru' }
+        ]
+    },
+    {},{},{},
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Blóðprufa'], 
+        options: [
+            { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
 
+            {
+                display: 'Sýklalyf',
+                subOptions: [
+                    { display: 'Idotrim', output: 'Ráðlegg sýklalyf. Set idotrim í gáttina' },
+                    { display: 'Selexid', output: 'Ráðlegg sýklalyf. Set selexid í gáttina' },
+                    { display: 'Furadantin', output: 'Ráðlegg sýklalyf. Set furadantin í gáttina' },
+                    { display: 'Keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' },
+                    { display: 'Síprox', output: 'Ráðlegg sýklalyf. Set siprox í gáttina' }
+                ]
+            },
+            { display: 'Myndataka', output: 'Ráðlegg myndatöku' },
+            {
+                display: 'Myndataka',
+                subOptions: [
+                    { display: 'TS þvagfærayfirlit', output: 'Ráðlegg TS þvagfærayfirlit' }
+                ]
+            },
+            { display: 'Blóðprufa', output: 'Panta blóðprufu' }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
+                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
+                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                ]
+            }
+
+        ]
+    }
+];
 const SymptomsEye = [
     {
         name: '',
@@ -1021,7 +1164,6 @@ const ExamsEye = [
         ]
     }
 ];
-
 const PlanEye = [
     {
         name: '',
@@ -1112,11 +1254,1102 @@ const PlanEye = [
         ]
     }
 ];
-
-
-const bakverkurData = [
-    // Add Bakverkur data here if needed
+const SymptomsHeart = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
+        options: [
+            {
+                display: 'Nokkrir dagar',
+                output: 'Nokkra daga saga'
+            },
+            {
+                display: 'Dagar',
+                subOptions: [
+                    { display: '1d', output: '1d saga' },
+                    { display: '2d', output: '2d saga' },
+                    { display: '3d', output: '3d saga' },
+                    { display: '4d', output: '4d saga' },
+                    { display: '5d', output: '5d saga' },
+                    { display: '6d', output: '6d saga' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Vikur',
+                subOptions: [
+                    { display: '1v', output: '1 vikna saga' },
+                    { display: '1,5v', output: '1,5 vikna saga' },
+                    { display: '2v', output: '2 vikna saga' },
+                    { display: '3v', output: '3 vikna saga' },
+                    { display: 'Margar', output: 'Margra vikna saga' }
+    
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Mánuðir',
+                subOptions: [
+                    { display: '1m', output: '1 mán saga' },
+                    { display: '2m', output: '2 mán saga' },
+                    { display: '3m', output: '3 mán saga' },
+                    { display: '4m', output: '4 mán saga' },
+                    { display: '5m', output: '5 mán saga' },
+                    { display: '6m', output: '6 mán saga' },
+                    { display: 'Margir', output: 'Margra mánaða saga'}
+    
+                ],
+                cancelText: ''
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Háþrýstingur', 'Heimamælingar', 'Hjartsláttaróþægindi', '-'],
+        options: [
+            {
+                display: 'Háþrýstingur',
+                subOptions: [
+                    { display: 'Eftirfylgd', output: 'Eftirfylgd með háþrýstingi' },
+                    { display: 'Grunur um háþrýsting', output: 'Grunur um háþrýsting. Mælt þrýstinginn hækkaðan heimafyrir' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Heimamælingar',
+                subOptions: [
+                    { display: 'Heimamælingar', output: 'Kemur með heimamælingar' },
+                    { display: 'Hækkaðar', output: 'Kemur með heimamælingar. Er oft að mælast yfir mörkum' },
+                    { display: 'Eðlilegar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Hjartsláttaróþægindi',
+                subOptions: [
+                    { display: 'Hjartsláttaróþægindi', output: 'Fundið fyrir hjartsláttaróþægindum' },
+                    { display: 'Hækkaðar', output: 'Kemur með heimamælingar. Er oft að mælast yfir mörkum' },
+                    { display: 'Eðlilegar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: '-',
+                output: 'Ekki fundið fyrir hjartsláttaróþægindum'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Mæði', '-', 'Slappleiki', '-', 'Fótabjúg', '-'],
+        options: [
+            {
+                display: 'Mæði',
+                subOptions: [
+                    { display: 'Mæði', output: 'Játar mæði' },
+                    { display: 'Meira en áður', output: 'Mæðist meira en áður' },
+                    { display: 'Mæði við áreynslu', output: 'Lýsir mæði við áreynslu' }
+                ],
+                cancelText: ''
+            },
+            {display: '-', output: 'Neitar mæði' },
+            {display: 'Slappleiki', output: 'Fundið fyrir auknum slappleika' },
+            {display: '-', output: 'Ekki fundið fyrir auknum slappleika'},
+            {display: 'Fótabjúg', output: 'Verið með bjúg á fótum' },
+            {display: '-', output: 'Neitar bjúg á fótum'}
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Brjóstverkur', '-', 'Tegund', 'Staðsettning', 'Leiðni', '-'],
+        options: [
+            { display: 'Brjóstverkur', output: 'Fundið fyrir bjóstverk' },
+            { display: '-', output: 'Ekki fundið fyrir bjóstverk'},
+            {
+                display: 'Tegund',
+                subOptions: [
+                    { display: 'Þyngsli', output: 'Lýsir þyngslum' },
+                    { display: 'Stíngandi', output: 'Lýsir sem stíngandi' },
+                    { display: 'Sviði', output: 'Lýsir sem sviða' },
+                    { display: 'Brennandi', output: 'Lýsir sem brennandi' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Staðsettning',
+                subOptions: [
+                    { display: 'Miðri bringu', output: 'Staðsett yfir miðju bringubeini' },
+                    { display: 'Epigastrium', output: 'Staðsett í epigastrium' },
+                    { display: 'Hjartastað', output: 'Staðsett yfir hjartastað' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Leiðni',
+                subOptions: [
+                    { display: 'Vinstri hendi', output: 'Leiðir út í vinstri hendi' },
+                    { display: 'Kjálka', output: 'Leiðir út í kjálka' },
+                    { display: 'Bak', output: 'Leiðir aftur í bak' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: '-',
+                output: 'Neitar leiðni'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Áreynslutengdur', '-', 'Onset', 'Gerst áður', '-', 'Versnar við'],
+        options: [
+            { display: 'Áreynslutengdur', output: 'Kemur við áreynslu' },
+            { display: '-', output: 'Ekki tengdur áreynslu'},
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: '<30 mín>', output: 'Einkenni byrjuðu fyrir <30 mínútúm>' },
+                    { display: '30 mín - 1klst', output: 'Einkenni byrjuðu fyrir innan við klst' },
+                    { display: '2 klst>', output: 'Einkenni byrjuðu fyrir u.þ.b. 2 klst síðan' },
+                    { display: '3 klst', output: 'Einkenni byrjuðu fyrir u.þ.b. 3 klst síðan' }
+                ],
+                cancelText: ''
+            },
+            { display: 'Gerst áður', output: 'Kannast við verkinn'},
+            { display: '-', output: 'Ekki fengið svona einkenni áður'},
+            {
+                display: 'Versnar við',
+                subOptions: [
+                    { display: 'Öndun', output: 'Verkurinn versnar við að anda djúpt' },
+                    { display: 'Hreyfingu', output: 'Verkurinn er stöðubundinn, versnar við ákveðnar hreyfingar' },
+                    { display: 'Ekkert', output: 'Ekkert sem gerir verkinn betri eða verri' }
+                ],
+                cancelText: ''
+            }
+        ]
+    }
+    
+    
 ];
+const ExamsHeart = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Lasleg/ur', '-', 'Yfirþyngd'],
+        options: [
+            {
+                display: 'Lasleg/ur',
+                subOptions: [
+                    { display: 'Laslegur', output: 'Laslegur að sjá' },
+                    { display: 'Lasleg', output: 'Lasleg að sjá' }
+                ]
+            },
+            {
+                display: '-',
+                subOptions: [
+                    { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
+                    { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
+                ]
+            },
+            { display: 'Yfirþyngd', output: 'Er í yfirþyngd' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hjartahlustun eðlileg', 'Óhljóð'],
+        options: [
+            { display: 'Hjartahlustun eðlileg', output: 'Hjartahlustun sýnir S1-S2 án auka- eða óhljóða' },
+            {
+                display: 'Óhljóð',
+                subOptions: [
+                    { display: 'Systólískt', output: 'Við hjartahlustun heyrist systólískt óhljóð' }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['EKG eðl'],
+        options: [
+            { display: 'EKG eðl', output: 'Hjartalínurit sýnir sinus takt án bráðra breytinga' }
+        ]
+    }
+];
+const PlanHeart = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Strep', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'],
+        options: [
+            { display: 'Strep', output: 'Strep throat' },
+            { display: 'Vírósa', output: 'Vírósa' },
+            { display: 'Eyrnabólga', output: 'Eyrnabólga' },
+            { display: 'Lungnabólga', output: 'Lungnabólga' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'],
+        options: [
+            { display: 'Sinusitis', output: 'Sinusitis' },
+            { display: 'Bronchitis', output: 'Bronchitis' },
+            { display: 'Versnun á COPD', output: 'Versnun á COPD' },
+            { display: 'Astmi', output: 'Astmi' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Mergur', 'Otitis externa', 'Langvarandi einkenni'],
+        options: [
+            { display: 'Mergur', output: 'Eyrnamergur' },
+            { display: 'Otitis externa', output: 'Otitis externa' },
+            { display: 'Langvarandi einkenni', output: 'Einkenni langvarandi' }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Stuðningsmeðferð'],
+        options: [
+            { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
+            {
+            display: 'Stuðningsmeðferð',
+                subOptions: [
+                    { display: 'Stuðningsmeðferð', output: 'Ráðlegg stuðningsmeðferð' },
+                    { display: 'Slímlosandi', output: 'Reynum slímlosandi' },
+                    { display: 'Kódein', output: 'Fær kódein við hósta' }
+                ],
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Nefstera', 'Púst', 'Mergur', 'Sérfræðing'],
+        options: [
+            { display: 'Nefstera', output: 'Ráðlegg nefstera' },
+            {
+                display: 'Púst',
+                subOptions: [
+                    { display: 'ventolin', output: 'Ráðlegg púst. Set ventolin í gáttina' },
+                    { display: 'flixotide', output: 'Ráðlegg púst. Set flixotide í gáttina' },
+                    { display: 'ventolin+flixotide', output: 'Ráðlegg púst. Set ventolin og flixotide í gáttina' },
+                    { display: 'seretide', output: 'Ráðlegg púst. Set seretide í gáttina' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Mergur',
+                subOptions: [
+                    { display: 'Merglosandi', output: 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun' },
+                    { display: 'Merghreinsun', output: 'Hreinsum út eyrnamerg' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Vísa á sérfræðing',
+                subOptions: [
+                    { display: 'HNE', output: 'Ráðlegg mat HNE læknis' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sýklalyf', 'Sýkladropar', 'Leysir út ef lagast ekki', 'VVV'],
+        options: [
+            {
+                display: 'Sýklalyf',
+                subOptions: [
+                    { display: 'azithromycin', output: 'Ráðlegg sýklalyf. Set azithromycin í gáttina' },
+                    { display: 'amoxin', output: 'Ráðlegg sýklalyf. Set amoxin í gáttina' },
+                    { display: 'spectracillin', output: 'Ráðlegg sýklalyf. Set spectracillin í gáttina' },
+                    { display: 'kaavepenin', output: 'Ráðlegg sýklalyf. Set kaavepenin í gáttina' },
+                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' },
+                    { display: 'VVV', output: 'Fær veikindavottorð' }
+                ]
+            },
+            {
+                display: 'Sýkladropar',
+                subOptions: [
+                    { display: 'HTP', output: 'Ráðlegg sýkladropa. Set HTP dropa í gáttina' },
+                    { display: 'Ciflox', output: 'Ráðlegg sýkladropa. Set ciflox í gáttina' }
+                ]
+            },
+            { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' },
+            { display: 'VVV', output: 'Fær veikindavottorð' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Myndataka', 'Blóðprufa', 'BMT'],
+        options: [
+            {
+                display: 'Myndataka',
+                subOptions: [
+                    { display: 'RTG lungu', output: 'Ráðlegg rtg lungu' },
+                    { display: 'TS sinusar', output: 'Ráðlegg TS af sinusum' }
+                ]
+            },
+            { display: 'Blóðprufa', output: 'Panta blóðprufu' },
+            { display: 'BMT', output: 'Vísa á bráðamóttöku' }
+        ]
+    },
+    
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
+                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
+                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                ]
+            }
+
+        ]
+    }
+];
+const RiskFactorsHeart = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Reykingar','-', 'Háþrýstingur', '-', 'Obesity','-'],
+        options: [
+            {display: 'Reykingar', output: 'Reykingasaga' },
+            {display: '-', output: 'Ekki reykingasaga' },
+            {display: 'Háþrýstingur', output: 'Saga um háþrýsting' },
+            {display: '-', output: 'Ekki saga um háþrýsting' },
+            {
+                display: 'Obesity',
+                subOptions: [
+                    { display: 'Yfirþyngd', output: 'Er í yfirþyngd' },
+                    { display: 'Obesity BMI > 30', output: 'Er í yfirþyngd, BMI > 30' },
+                    { display: 'Obesity BMI > 35', output: 'Er í yfirþyngd, BMI > 35' }
+                ],
+                cancelText: ''
+            },
+            {display: '-', output: 'Ekki í yfirþyngd' }
+                ]              
+    },   
+    {
+        name: '',
+        type: 'options',
+        display: ['Sykursýki', '-', 'Blóðfituröskun', '-', 'Fjölskyldusaga', '-'],
+        options: [
+            {display: 'Sykursýki', output: 'Er með sykursýki 2' },
+            {display: '-', output: 'Ekki sykursýki' },
+            {display: 'Blóðfituröskun', output: 'Er með blóðfituröskun' },
+            {display: '-', output: 'Ekki þekkt blóðfituröskun' },
+            {display: 'Fjölskyldusaga', output: 'Fjölskyldusaga um hjarta- og æðasjúkdóm' },
+            {display: '-', output: 'Neikvæð ættarsaga' }
+                ]              
+    }
+    
+];
+const CHADSVASCHeart = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Aldur','Kyn', 'Hjartabilun', 'Háþrýstingur'],
+        options: [
+            {
+                display: 'Aldur',
+                subOptions: [
+                    { display: '<65', output: 'Aldur <65 (+0)' },
+                    { display: '65-74', output: 'Aldur milli 65-74 (+1)' },
+                    { display: 'Aldur >74', output: 'Aldur >74 (+2)' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Kyn',
+                subOptions: [
+                    { display: 'KK', output: 'Karlkyn (+0)' },
+                    { display: 'Kvk', output: 'Kvenkyn (+1)' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Hjartabilun',
+                subOptions: [
+                    { display: 'Saga um CHF', output: 'Saga um hjartabilun (+1)' },
+                    { display: 'Ekki saga um CHF', output: 'Ekki saga um hjartabilun (+0)' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Háþrýsting',
+                subOptions: [
+                    { display: 'Saga um háþrýsting', output: 'Saga um háþrýsting (+1)' },
+                    { display: 'Ekki saga um háþrýsting', output: 'Ekki saga háþrýsting (+0)' }
+                ],
+                cancelText: ''
+            }
+        ]              
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['TIA/STROKE', 'Æðasjúkdóm', 'Sykursýki'],
+        options: [
+           
+            {
+                display: 'TIA/STROKE',
+                subOptions: [
+                    { display: 'Fengið TIA', output: 'Saga um TIA (+2)' },
+                    { display: 'Fengið stroke', output: 'Saga um heilablóðfall (+2)' },
+                    { display: 'Ekki fengið TIA/stroke', output: 'Ekki saga um TIA eða heilablóðfall (+0)' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Æðasjúkdóm',
+                subOptions: [
+                    { display: 'Kransæðasjúkdóm', output: 'Saga um kransæða sjúkdóm (+1)' },
+                    { display: 'Útæðasjúkdóm', output: 'Saga um útæðasjúkdóm (+1)' },
+                    { display: 'Hvorugt', output: 'Ekki saga um kransæða eða útæðasjúkdóm (+0)' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Sykursýki',
+                subOptions: [
+                    { display: 'Saga um sykursýki', output: 'Saga um sykursýki (+1)' },
+                    { display: 'Ekki saga um sykursýki', output: 'Ekki saga um sykursýki (+0)' }
+                ],
+                cancelText: ''
+            }
+        ]              
+    }
+    
+];
+const SymptomsMelting = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Ógleði', 'Uppköst'],
+        options: [
+            { display: 'Ógleði', output: 'Ógleði' },
+            { display: 'Uppköst', output: 'Uppköst' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Niðurgangur', 'Hægðatregða'],
+        options: [
+            { display: 'Niðurgangur', output: 'Niðurgangur' },
+            { display: 'Hægðatregða', output: 'Hægðatregða' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Magaverkir', 'Uppþemba'],
+        options: [
+            { display: 'Magaverkir', output: 'Magaverkir' },
+            { display: 'Uppþemba', output: 'Uppþemba' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Brjóstsviði', 'Matarlystarleysi'],
+        options: [
+            { display: 'Brjóstsviði', output: 'Brjóstsviði' },
+            { display: 'Matarlystarleysi', output: 'Matarlystarleysi' }
+        ]
+    }
+];
+const ExamsMelting = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Líkamsskoðun', 'Endaþarmsskoðun'],
+        options: [
+            { display: 'Líkamsskoðun', output: 'Líkamsskoðun á kvið sýnir' },
+            { display: 'Endaþarmsskoðun', output: 'Endaþarmsskoðun sýnir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hægðapróf', 'Blóðprufa'],
+        options: [
+            { display: 'Hægðapróf', output: 'Hægðapróf pantað' },
+            { display: 'Blóðprufa', output: 'Blóðprufa pantað' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Magaspeglun', 'Ómun'],
+        options: [
+            { display: 'Magaspeglun', output: 'Magaspeglun pantað' },
+            { display: 'Ómun', output: 'Ómun á kvið pantað' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Tölvusneiðmynd'],
+        options: [
+            { display: 'Tölvusneiðmynd', output: 'Tölvusneiðmynd af kvið pantað' }
+        ]
+    }
+];
+const PlanMelting = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Vökvagjöf', 'Ráðleggingar um mataræði', 'Lyf', 'Tilvísun'],
+        options: [
+            { display: 'Vökvagjöf', output: 'Ráðlegg aukna vökvagjöf' },
+            { display: 'Ráðleggingar um mataræði', output: 'Veita ráðleggingar um mataræði' },
+            {
+                display: 'Lyf',
+                subOptions: [
+                    { display: 'Ógleðistillandi lyf', output: 'Ávísun á ógleðistillandi lyf' },
+                    { display: 'Niðurgangslyf', output: 'Ávísun á niðurgangslyf' },
+                    { display: 'Hægðalosandi lyf', output: 'Ávísun á hægðalosandi lyf' },
+                    { display: 'Sýrubindandi lyf', output: 'Ávísun á sýrubindandi lyf' },
+                    { display: 'Kviðverkjastillandi lyf', output: 'Ávísun á kviðverkjastillandi lyf' },
+                ]
+            },
+            {
+                display: 'Tilvísun',
+                subOptions: [
+                    { display: 'Meltingarlæknir', output: 'Vísa til meltingarlæknis' },
+                    { display: 'Næringarfræðingur', output: 'Vísa til næringarfræðings' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Eftirfylgd', 'Frekar rannsóknir'],
+        options: [
+            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
+            { display: 'Frekar rannsóknir', output: 'Íhuga frekari rannsóknir ef einkenni versna' }
+        ]
+    }
+];
+const SymptomsStodkerfi = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Bakverkir', 'Öxlaverkir'],
+        options: [
+            { display: 'Bakverkir', output: 'Bakverkir' },
+            { display: 'Öxlaverkir', output: 'Öxlaverkir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hnéverkir', 'Úlnliðsverkir'],
+        options: [
+            { display: 'Hnéverkir', output: 'Hnéverkir' },
+            { display: 'Úlnliðsverkir', output: 'Úlnliðsverkir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hálsverkir', 'Mjaðmaverkir'],
+        options: [
+            { display: 'Hálsverkir', output: 'Hálsverkir' },
+            { display: 'Mjaðmaverkir', output: 'Mjaðmaverkir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Vöðvaverkir', 'Liðverkir'],
+        options: [
+            { display: 'Vöðvaverkir', output: 'Vöðvaverkir' },
+            { display: 'Liðverkir', output: 'Liðverkir' }
+        ]
+    }
+];
+const ExamsStodkerfi = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Skoðun á baki', 'Skoðun á öxl'],
+        options: [
+            { display: 'Skoðun á baki', output: 'Skoðun á baki sýnir' },
+            { display: 'Skoðun á öxl', output: 'Skoðun á öxl sýnir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Skoðun á hné', 'Skoðun á úlnlið'],
+        options: [
+            { display: 'Skoðun á hné', output: 'Skoðun á hné sýnir' },
+            { display: 'Skoðun á úlnlið', output: 'Skoðun á úlnlið sýnir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Skoðun á hálsi', 'Skoðun á mjöðm'],
+        options: [
+            { display: 'Skoðun á hálsi', output: 'Skoðun á hálsi sýnir' },
+            { display: 'Skoðun á mjöðm', output: 'Skoðun á mjöðm sýnir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Skoðun á vöðvum', 'Skoðun á liðum'],
+        options: [
+            { display: 'Skoðun á vöðvum', output: 'Skoðun á vöðvum sýnir' },
+            { display: 'Skoðun á liðum', output: 'Skoðun á liðum sýnir' }
+        ]
+    }
+];
+const PlanStodkerfi = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Verkjalyf', 'Bólgueyðandi lyf', 'Líkamsþjálfun', 'Tilvísun'],
+        options: [
+            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um hvíld og aðstoð' },
+            {
+                display: 'Verkjalyf',
+                subOptions: [
+                    { display: 'Paracetamol', output: 'Ávísun á Paracetamol' },
+                    { display: 'Íbúprófen', output: 'Ávísun á Íbúprófen' },
+                    { display: 'Kódein', output: 'Ávísun á Kódein' }
+                ]
+            },
+            { display: 'Bólgueyðandi lyf', output: 'Ávísun á bólgueyðandi lyf' },
+            {
+                display: 'Líkamsþjálfun',
+                subOptions: [
+                    { display: 'Þjálfunaræfingar', output: 'Ráðlegg þjálfunaræfingar' },
+                    { display: 'Sjúkraþjálfun', output: 'Vísa til sjúkraþjálfara' }
+                ]
+            },
+            {
+                display: 'Tilvísun',
+                subOptions: [
+                    { display: 'Röntgenmynd', output: 'Panta röntgenmynd' },
+                    { display: 'MTR', output: 'Panta MTR' },
+                    { display: 'Ortopedi', output: 'Vísa til ortopeda' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Eftirfylgd', 'Frekar rannsóknir'],
+        options: [
+            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
+            { display: 'Frekar rannsóknir', output: 'Íhuga frekari rannsóknir ef einkenni versna' }
+        ]
+    }
+];
+const SymptomsHud = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Útbrot', 'Kláði'],
+        options: [
+            { display: 'Útbrot', output: 'Útbrot' },
+            { display: 'Kláði', output: 'Kláði' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sársauki', 'Roði'],
+        options: [
+            { display: 'Sársauki', output: 'Sársauki' },
+            { display: 'Roði', output: 'Roði' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Bólga', 'Þurrkur'],
+        options: [
+            { display: 'Bólga', output: 'Bólga' },
+            { display: 'Þurrkur', output: 'Þurrkur' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Breytingar á húðlit', 'Sár'],
+        options: [
+            { display: 'Breytingar á húðlit', output: 'Breytingar á húðlit' },
+            { display: 'Sár', output: 'Sár' }
+        ]
+    }
+];
+const ExamsHud = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Skoðun á húð', 'Þreifing á húð'],
+        options: [
+            { display: 'Skoðun á húð', output: 'Skoðun á húð sýnir' },
+            { display: 'Þreifing á húð', output: 'Þreifing á húð sýnir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Biopsia', 'Skoðun á nöglum'],
+        options: [
+            { display: 'Biopsia', output: 'Biopsia pantað' },
+            { display: 'Skoðun á nöglum', output: 'Skoðun á nöglum sýnir' }
+        ]
+    }
+];
+const PlanHud = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Lyf', 'Tilvísun'],
+        options: [
+            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um húðmeðferð' },
+            {
+                display: 'Lyf',
+                subOptions: [
+                    { display: 'Sterakrem', output: 'Ávísun á sterakrem' },
+                    { display: 'Sýklalyf', output: 'Ávísun á sýklalyf' },
+                    { display: 'Andhistamín', output: 'Ávísun á andhistamín' }
+                ]
+            },
+            {
+                display: 'Tilvísun',
+                subOptions: [
+                    { display: 'Húðsjúkdómalæknir', output: 'Vísa til húðsjúkdómalæknis' },
+                    { display: 'Sérfræðingur', output: 'Vísa til sérfræðings' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Eftirfylgd', 'Frekar rannsóknir'],
+        options: [
+            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
+            { display: 'Frekar rannsóknir', output: 'Íhuga frekari rannsóknir ef einkenni versna' }
+        ]
+    }
+];
+const SymptomsGed = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Þunglyndi', 'Kvíði'],
+        options: [
+            { display: 'Þunglyndi', output: 'Þunglyndi' },
+            { display: 'Kvíði', output: 'Kvíði' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Svefnleysi', 'Pirringur'],
+        options: [
+            { display: 'Svefnleysi', output: 'Svefnleysi' },
+            { display: 'Pirringur', output: 'Pirringur' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Ofsakvíði', 'Sjálfsvígshugsanir'],
+        options: [
+            { display: 'Ofsakvíði', output: 'Ofsakvíði' },
+            { display: 'Sjálfsvígshugsanir', output: 'Sjálfsvígshugsanir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Minnisleysi', 'Ranghugmyndir'],
+        options: [
+            { display: 'Minnisleysi', output: 'Minnisleysi' },
+            { display: 'Ranghugmyndir', output: 'Ranghugmyndir' }
+        ]
+    }
+];
+const ExamsGed = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Mat á geðheilsu', 'Geðskoðun'],
+        options: [
+            { display: 'Mat á geðheilsu', output: 'Mat á geðheilsu sýnir' },
+            { display: 'Geðskoðun', output: 'Geðskoðun sýnir' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sjálfsvígsmat', 'Áhættuþættir'],
+        options: [
+            { display: 'Sjálfsvígsmat', output: 'Sjálfsvígsmat framkvæmt' },
+            { display: 'Áhættuþættir', output: 'Áhættuþættir greindir' }
+        ]
+    }
+];
+const PlanGed = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Lyf', 'Sálfræðimeðferð', 'Tilvísun'],
+        options: [
+            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um geðheilsu' },
+            {
+                display: 'Lyf',
+                subOptions: [
+                    { display: 'Þunglyndislyf', output: 'Ávísun á þunglyndislyf' },
+                    { display: 'Kvíðastillandi lyf', output: 'Ávísun á kvíðastillandi lyf' },
+                    { display: 'Svefnlyf', output: 'Ávísun á svefnlyf' }
+                ]
+            },
+            { display: 'Sálfræðimeðferð', output: 'Vísa í sálfræðimeðferð' },
+            {
+                display: 'Tilvísun',
+                subOptions: [
+                    { display: 'Geðlæknir', output: 'Vísa til geðlæknis' },
+                    { display: 'Sérfræðingur', output: 'Vísa til sérfræðings' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Eftirfylgd', 'Frekar mat'],
+        options: [
+            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
+            { display: 'Frekar mat', output: 'Íhuga frekari mat ef einkenni versna' }
+        ]
+    }
+];
+const SymptomsTauga = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Höfuðverkur', 'Svimi'],
+        options: [
+            { display: 'Höfuðverkur', output: 'Höfuðverkur' },
+            { display: 'Svimi', output: 'Svimi' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Minnisleysi', 'Stjórnleysi í útlimum'],
+        options: [
+            { display: 'Minnisleysi', output: 'Minnisleysi' },
+            { display: 'Stjórnleysi í útlimum', output: 'Stjórnleysi í útlimum' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Dofi', 'Krampar'],
+        options: [
+            { display: 'Dofi', output: 'Dofi' },
+            { display: 'Krampar', output: 'Krampar' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Taltruflanir', 'Sjóntruflanir'],
+        options: [
+            { display: 'Taltruflanir', output: 'Taltruflanir' },
+            { display: 'Sjóntruflanir', output: 'Sjóntruflanir' }
+        ]
+    }
+];
+const ExamsTauga = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Taugaskoðun', 'Heilarit'],
+        options: [
+            { display: 'Taugaskoðun', output: 'Taugaskoðun sýnir' },
+            { display: 'Heilarit', output: 'Heilarit pantað' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Tölvusneiðmynd', 'Magnetic Resonance Imaging (MRI)'],
+        options: [
+            { display: 'Tölvusneiðmynd', output: 'Tölvusneiðmynd af heila pantað' },
+            { display: 'Magnetic Resonance Imaging (MRI)', output: 'MRI af heila pantað' }
+        ]
+    }
+];
+const PlanTauga = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Lyf', 'Tilvísun'],
+        options: [
+            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um taugasjúkdóm' },
+            {
+                display: 'Lyf',
+                subOptions: [
+                    { display: 'Taugaverkjalækkandi lyf', output: 'Ávísun á taugaverkjalækkandi lyf' },
+                    { display: 'Krampastillandi lyf', output: 'Ávísun á krampastillandi lyf' }
+                ]
+            },
+            {
+                display: 'Tilvísun',
+                subOptions: [
+                    { display: 'Taugasérfræðingur', output: 'Vísa til taugasérfræðings' },
+                    { display: 'Sérfræðingur', output: 'Vísa til sérfræðings' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Eftirfylgd', 'Frekar rannsóknir'],
+        options: [
+            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
+            { display: 'Frekar rannsóknir', output: 'Íhuga frekari rannsóknir ef einkenni versna' }
+        ]
+    }
+];
+const SymptomsInnkirtla = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Þreyta', 'Þyngdarbreytingar'],
+        options: [
+            { display: 'Þreyta', output: 'Þreyta' },
+            { display: 'Þyngdarbreytingar', output: 'Þyngdarbreytingar' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sviti', 'Þorsti'],
+        options: [
+            { display: 'Sviti', output: 'Sviti' },
+            { display: 'Þorsti', output: 'Þorsti' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hárlos', 'Húðþurrkur'],
+        options: [
+            { display: 'Hárlos', output: 'Hárlos' },
+            { display: 'Húðþurrkur', output: 'Húðþurrkur' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Skjálfti', 'Þunglyndi'],
+        options: [
+            { display: 'Skjálfti', output: 'Skjálfti' },
+            { display: 'Þunglyndi', output: 'Þunglyndi' }
+        ]
+    }
+];
+const ExamsInnkirtla = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóðprufa', 'Hormonamæling'],
+        options: [
+            { display: 'Blóðprufa', output: 'Blóðprufa pantað' },
+            { display: 'Hormonamæling', output: 'Hormonamæling pantað' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sykurmæling', 'Þvagprufa'],
+        options: [
+            { display: 'Sykurmæling', output: 'Sykurmæling pantað' },
+            { display: 'Þvagprufa', output: 'Þvagprufa pantað' }
+        ]
+    }
+];
+const PlanInnkirtla = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Lyf', 'Tilvísun'],
+        options: [
+            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um innkirtlasjúkdóm' },
+            {
+                display: 'Lyf',
+                subOptions: [
+                    { display: 'Insúlín', output: 'Ávísun á insúlín' },
+                    { display: 'Skjaldkirtilslyf', output: 'Ávísun á skjaldkirtilslyf' }
+                ]
+            },
+            {
+                display: 'Tilvísun',
+                subOptions: [
+                    { display: 'Innkirtlasérfræðingur', output: 'Vísa til innkirtlasérfræðings' },
+                    { display: 'Sérfræðingur', output: 'Vísa til sérfræðings' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Eftirfylgd', 'Frekar rannsóknir'],
+        options: [
+            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
+            { display: 'Frekar rannsóknir', output: 'Íhuga frekari rannsóknir ef einkenni versna' }
+        ]
+    }
+];
+
 
 const Duration = [
     { display: '1d', output: '1d saga' },
@@ -1136,7 +2369,6 @@ const Duration = [
     { display: '5m', output: '5 mán saga' },
     { display: '6m', output: '6 mán saga' }
 ];
-
 const Saturation = [
     { display: '100', output: 'Mettar 100%' },
     { display: '99', output: 'Mettar 99%' },
@@ -1153,13 +2385,13 @@ const Saturation = [
     { display: '88', output: 'Mettar 88%' },
     { display: '87', output: 'Mettar 87%' }
 ];
-
 const Habits = [
     { name: 'Reykingar', type: 'Reykingar', display: ['Já', 'Nei', 'Aldrei'], output: ['Reykir. X pakkaár að baki', 'Reykir ekki. Hætti fyrir X árum. Reykti Y pakkaár fram að því', 'Aldrei reykt'] },
     { name: 'Áfengi', type: 'Medium', display: ['Já', 'Nei'], output: ['Drekkur áfengi', 'Neitar áfengisdrykkju'] },
     { name: 'Eiturlyf', type: 'Medium', display: ['Já', 'Nei'], output: ['Játar eiturlyfjanotkun', 'Neitar eiturlyfjanotkun'] },
     { name: 'Ofnæmi', type: 'Medium', display: ['Penisillin', 'Sulfa'], output: ['Penisillinofnæmi', 'Sulfaofnæmi'] }
 ];
+
 
 function createBloodPressureInterface(containerId) {
     const container = document.getElementById(containerId);
@@ -1295,7 +2527,6 @@ function createBloodPressureInterface(containerId) {
 
     container.appendChild(bpContainer);
 }
-
 function createPulseInterface(containerId) {
     const container = document.getElementById(containerId);
     if (!container) {
@@ -1377,9 +2608,6 @@ function createPulseInterface(containerId) {
 
     container.appendChild(pulseContainer);
 }
-
-
-
 function createTemperatureInterface(containerId) {
     const container = document.getElementById(containerId);
     if (!container) {
@@ -1463,8 +2691,6 @@ function createTemperatureInterface(containerId) {
 
     container.appendChild(tempContainer);
 }
-
-
 function createOxygenSaturationInterface(containerId) {
     const container = document.getElementById(containerId);
 
@@ -1528,9 +2754,6 @@ function createOxygenSaturationInterface(containerId) {
     oxygenSaturationContainer.appendChild(sliderContainer);
     container.appendChild(oxygenSaturationContainer);
 }
-
-
-
 function createRespiratoryRateInterface(containerId) {
     const container = document.getElementById(containerId);
 
@@ -1599,7 +2822,6 @@ function createRespiratoryRateInterface(containerId) {
 
 
 let reykingarFlag = false;
-
 function handleReykingarYes() {
     console.log('handleReykingarYes called'); // Debugging line
     reykingarFlag = false; // Reset flag
@@ -1613,7 +2835,6 @@ function handleReykingarYes() {
         console.log('Reykingar flag remains false'); // Debugging line
     }
 }
-
 function handleReykingarNo() {
     console.log('handleReykingarNo called'); // Debugging line
     const yearsStopped = prompt('Hætti fyrir hversu mörgum árum?');
@@ -1629,10 +2850,10 @@ function handleReykingarNo() {
     }
 }
 
+
 function handleEyrnaverkurPositive() {
     showEyrnaverkurModal();
 }
-
 function showEyrnaverkurModal() {
     const modal = document.createElement('div');
     modal.id = 'eyrnaverkurModal';
@@ -1678,7 +2899,6 @@ function showEyrnaverkurModal() {
 
     document.addEventListener('keydown', handleEscapeKey);
 }
-
 function handleSideSelectionEyru(side, actionType) {
     let textToInsert = '';
     if (actionType === 'Verkur') {
@@ -1738,10 +2958,23 @@ function showHostiOptions() {
 
     document.addEventListener('keydown', handleEscapeKey);
 }
-
 function handleHostiSelection(option) {
     closeModal(document.getElementById('hostiOptionsModal'));
     insertText(`${option} hósti`);
+}
+
+function handlePregnancyWeeks() {
+    console.log('handlePregnancyWeeks called'); // Debugging line
+    const weeks = prompt('Enter the number of weeks of pregnancy (between 6-43):');
+    if (weeks !== null) {
+        const weeksNumber = parseInt(weeks, 10);
+        if (weeksNumber >= 6 && weeksNumber <= 43) {
+            console.log(`Valid input: ${weeksNumber} weeks`); // Debugging line
+            insertText(`Ólétta, gengin ${weeksNumber} vikur`);
+        } else {
+            alert('Please enter a valid number of weeks between 6 and 43.');
+        }
+    }
 }
 
 
@@ -1781,29 +3014,6 @@ function createButtons(container, data) {
         console.log('Row appended:', row); // Debugging line
     });
 }
-
-function handlePregnancyWeeks() {
-    console.log('handlePregnancyWeeks called'); // Debugging line
-    const weeks = prompt('Enter the number of weeks of pregnancy (between 6-43):');
-    if (weeks !== null) {
-        const weeksNumber = parseInt(weeks, 10);
-        if (weeksNumber >= 6 && weeksNumber <= 43) {
-            console.log(`Valid input: ${weeksNumber} weeks`); // Debugging line
-            insertText(`Ólétta, gengin ${weeksNumber} vikur`);
-        } else {
-            alert('Please enter a valid number of weeks between 6 and 43.');
-        }
-    }
-}
-let isFirstLungnahlustunClick = true; // Flag to track first click for Lungnahlustun
-let inLungnahlustunContext = false; // Flag to track context of Lungnahlustun
-
-// Mapping for special cases where grammar needs adjustment
-const specialCases = {
-    'obstrúktíf': 'lengda útöndun',
-    // Add other special cases here if needed
-};
-
 function createButton(row, item, displayText, index, context) {
     const button = document.createElement('button');
     button.textContent = displayText;
@@ -1945,6 +3155,17 @@ function createButton(row, item, displayText, index, context) {
     row.appendChild(button);
 }
 
+
+let isFirstLungnahlustunClick = true; // Flag to track first click for Lungnahlustun
+let inLungnahlustunContext = false; // Flag to track context of Lungnahlustun
+// Mapping for special cases where grammar needs adjustment
+const specialCases = {
+    'obstrúktíf': 'lengda útöndun',
+    // Add other special cases here if needed
+};
+
+
+
 function showSideSelectionModal(item, displayText, index) {
     const modal = document.createElement('div');
     modal.id = 'sideSelectionModal';
@@ -1977,7 +3198,6 @@ function showSideSelectionModal(item, displayText, index) {
 
     document.addEventListener('keydown', handleEscapeKey);
 }
-
 function handleSideSelection(side, item, displayText, index) {
     let textToInsert = '';
     if (displayText === 'Roði') {
@@ -2008,13 +3228,13 @@ function handleSideSelection(side, item, displayText, index) {
     insertText(textToInsert);
 }
 
+
 function createHabitsSection(data) {
     const section = createSection('habits', 'Venjur');
     const container = section.querySelector('#habits');
     createButtons(container, data);
     return section;
 }
-
 function createSection(id, title) {
     const section = document.createElement('div');
     section.id = `${id}-section`;
@@ -2022,7 +3242,6 @@ function createSection(id, title) {
     console.log('Creating section:', id, title); // Debugging line
     return section;
 }
-
 function createEinkenniSection(data) {
     console.log('Creating Einkenni Section with data:', data); // Debugging line
     const section = createSection('einkenni', 'Einkenni');
@@ -2030,7 +3249,6 @@ function createEinkenniSection(data) {
     createButtons(container, data);
     return section;
 }
-
 function createSkodunSection(data) {
     console.log('Creating Skodun Section with data:', data); // Debugging line
     const section = createSection('skodun', 'Skoðun');
@@ -2038,7 +3256,6 @@ function createSkodunSection(data) {
     createButtons(container, data);
     return section;
 }
-
 function createPlanSection(data) {
     console.log('Creating Plan Section with data:', data); // Debugging line
     const section = createSection('plan', 'Plan');
@@ -2046,6 +3263,96 @@ function createPlanSection(data) {
     createButtons(container, data);
     return section;
 }
+ function createRiskSection(data) {
+    console.log('Creating Risk Section with data:', data); // Debugging line
+    const section = createSection('risk', 'Áhættuþættir Kransæðasjúkdóms');
+    const container = section.querySelector('#risk');
+    createButtons(container, data);
+    return section;
+}
+function createCHADSVASCSection(data) {
+    console.log('Creating CHADSVASC Section with data:', data); // Debugging line
+    const section = createSection('CHADSVASC', 'CHADS-VASc');
+    const container = section.querySelector('#CHADSVASC');
+    createButtons(container, data);
+    return section;
+}
+function createTimalengdSection(data) {
+    const section = createSection('timalengd', 'Tímalengd');
+    const container = section.querySelector('#timalengd');
+
+    // Create the "nokkra daga" button separately
+    const nokkraDagaButton = document.createElement('button');
+    nokkraDagaButton.textContent = 'Nokkra daga';
+    nokkraDagaButton.classList.add('nokkra-daga-button');
+    nokkraDagaButton.onclick = () => insertText('Nokkra daga saga'); // Adjust the output text as needed
+    container.appendChild(nokkraDagaButton);
+
+    // Create and append the days container
+    const daysContainer = document.createElement('div');
+    daysContainer.className = 'timalengd-group';
+    container.appendChild(daysContainer);
+
+    // Create and append the weeks container
+    const weeksContainer = document.createElement('div');
+    weeksContainer.className = 'timalengd-group';
+    container.appendChild(weeksContainer);
+
+    // Create and append the months container
+    const monthsContainer = document.createElement('div');
+    monthsContainer.className = 'timalengd-group';
+    container.appendChild(monthsContainer);
+
+    // Create and append the other buttons to their respective containers
+    data.forEach(item => {
+        const button = document.createElement('button');
+        button.textContent = item.display;
+        button.onclick = () => insertText(item.output);
+
+        if (item.display.includes('d')) {
+            daysContainer.appendChild(button);
+        } else if (item.display.includes('v')) {
+            weeksContainer.appendChild(button);
+        } else if (item.display.includes('m')) {
+            monthsContainer.appendChild(button);
+        }
+    });
+
+    return section;
+}
+function createHistoryViralSection(data) {
+    const section = createSection('historyViral', 'Heilsufar');
+    const container = section.querySelector('#historyViral');
+    createButtons(container, data);
+    return section;
+}
+function createMettunSection(data) {
+    const section = createSection('mettun', 'Mettun');
+    const container = section.querySelector('#mettun');
+    container.style.display = 'flex';
+    container.style.flexDirection = 'row';
+    container.style.flexWrap = 'nowrap';
+    container.style.gap = '5px';
+    container.style.alignItems = 'center';
+    container.style.justifyContent = 'flex-start';
+
+    data.forEach(item => {
+        const button = document.createElement('button');
+        button.textContent = item.display;
+        button.onclick = () => insertText(item.output);
+        button.style.flex = 'none';
+        button.style.width = 'auto';
+        container.appendChild(button);
+    });
+    return section;
+}
+function createHabitsSection(data) {
+    const section = createSection('habits', 'Venjur');
+    const container = section.querySelector('#habits');
+    createButtons(container, data);
+    return section;
+}
+
 
 function loadPage(page) {
     const container = document.getElementById('content-section');
@@ -2139,15 +3446,190 @@ function loadPage(page) {
 
         container.appendChild(horizontalContainer);
  
-    } else if (page === 'Bakverkur') {
-        const einkenniSection = createEinkenniSection(bakverkurData);
-        const skodunSection = createSkodunSection(ExamsViral);
-        const planSection = createPlanSection(PlanViral);
+    } else if (page === 'Melting') {
+        const einkenniSection = createEinkenniSection(SymptomsMelting);
+        const skodunSection = createSkodunSection(ExamsMelting);
+        const planSection = createPlanSection(PlanMelting);
 
-        container.appendChild(einkenniSection);
-        container.appendChild(skodunSection);
-        container.appendChild(planSection);
-    } else {
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Hjarta') {
+        const einkenniSection = createEinkenniSection(SymptomsHeart);
+        const skodunSection = createSkodunSection(ExamsHeart);
+        const planSection = createPlanSection(PlanHeart);
+        //const timalengdSection = createTimalengdSection(Duration);
+       // const historyViralSection = createHistoryViralSection(historyViralData);
+        const habitsSection = createHabitsSection(Habits);
+        const RiskSection = createRiskSection(RiskFactorsHeart);
+        const CHADSVASCSection = createCHADSVASCSection(CHADSVASCHeart);
+
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+    //  leftColumn.appendChild(timalengdSection);
+      leftColumn.appendChild(RiskSection)
+      leftColumn.appendChild(CHADSVASCSection)
+    //    leftColumn.appendChild(historyViralSection);
+        leftColumn.appendChild(habitsSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+                
+        addLifsmorkButton(middleColumn); // Append the button at the end
+        
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+ 
+    } else if (page === 'Stodkerfi') {
+        const einkenniSection = createEinkenniSection(SymptomsStodkerfi);
+        const skodunSection = createSkodunSection(ExamsStodkerfi);
+        const planSection = createPlanSection(PlanStodkerfi);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Hud') {
+        const einkenniSection = createEinkenniSection(SymptomsHud);
+        const skodunSection = createSkodunSection(ExamsHud);
+        const planSection = createPlanSection(PlanHud);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Ged') {
+        const einkenniSection = createEinkenniSection(SymptomsGed);
+        const skodunSection = createSkodunSection(ExamsGed);
+        const planSection = createPlanSection(PlanGed);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Tauga') {
+        const einkenniSection = createEinkenniSection(SymptomsTauga);
+        const skodunSection = createSkodunSection(ExamsTauga);
+        const planSection = createPlanSection(PlanTauga);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Innkirtla') {
+        const einkenniSection = createEinkenniSection(SymptomsInnkirtla);
+        const skodunSection = createSkodunSection(ExamsInnkirtla);
+        const planSection = createPlanSection(PlanInnkirtla);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    }  else {
         console.error('Unknown page:', page);
     }
 
@@ -2156,6 +3638,8 @@ function loadPage(page) {
     makeTitleButton('plan', addPlan);
 }
 
+
+
 function addLifsmorkButton(parentElement) {
     const lifsmorkButton = document.createElement('button');
     lifsmorkButton.textContent = 'Lífsmörk';
@@ -2163,7 +3647,6 @@ function addLifsmorkButton(parentElement) {
     lifsmorkButton.className = 'lifsmork-button'; // Add a class for styling
     parentElement.appendChild(lifsmorkButton);
 }
-
 function openLifsmorkModal() {
     let modal = document.getElementById('lifsmorkModal');
     if (!modal) {
@@ -2194,90 +3677,14 @@ function openLifsmorkModal() {
 }
 
 
-function createTimalengdSection(data) {
-    const section = createSection('timalengd', 'Tímalengd');
-    const container = section.querySelector('#timalengd');
 
-    // Create the "nokkra daga" button separately
-    const nokkraDagaButton = document.createElement('button');
-    nokkraDagaButton.textContent = 'Nokkra daga';
-    nokkraDagaButton.classList.add('nokkra-daga-button');
-    nokkraDagaButton.onclick = () => insertText('Nokkra daga saga'); // Adjust the output text as needed
-    container.appendChild(nokkraDagaButton);
 
-    // Create and append the days container
-    const daysContainer = document.createElement('div');
-    daysContainer.className = 'timalengd-group';
-    container.appendChild(daysContainer);
 
-    // Create and append the weeks container
-    const weeksContainer = document.createElement('div');
-    weeksContainer.className = 'timalengd-group';
-    container.appendChild(weeksContainer);
-
-    // Create and append the months container
-    const monthsContainer = document.createElement('div');
-    monthsContainer.className = 'timalengd-group';
-    container.appendChild(monthsContainer);
-
-    // Create and append the other buttons to their respective containers
-    data.forEach(item => {
-        const button = document.createElement('button');
-        button.textContent = item.display;
-        button.onclick = () => insertText(item.output);
-
-        if (item.display.includes('d')) {
-            daysContainer.appendChild(button);
-        } else if (item.display.includes('v')) {
-            weeksContainer.appendChild(button);
-        } else if (item.display.includes('m')) {
-            monthsContainer.appendChild(button);
-        }
-    });
-
-    return section;
-}
-
-function createHistoryViralSection(data) {
-    const section = createSection('historyViral', 'Heilsufar');
-    const container = section.querySelector('#historyViral');
-    createButtons(container, data);
-    return section;
-}
-
-function createMettunSection(data) {
-    const section = createSection('mettun', 'Mettun');
-    const container = section.querySelector('#mettun');
-    container.style.display = 'flex';
-    container.style.flexDirection = 'row';
-    container.style.flexWrap = 'nowrap';
-    container.style.gap = '5px';
-    container.style.alignItems = 'center';
-    container.style.justifyContent = 'flex-start';
-
-    data.forEach(item => {
-        const button = document.createElement('button');
-        button.textContent = item.display;
-        button.onclick = () => insertText(item.output);
-        button.style.flex = 'none';
-        button.style.width = 'auto';
-        container.appendChild(button);
-    });
-    return section;
-}
-
-function createHabitsSection(data) {
-    const section = createSection('habits', 'Venjur');
-    const container = section.querySelector('#habits');
-    createButtons(container, data);
-    return section;
-}
 
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     modal.style.display = 'block';
 }
-
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -2290,7 +3697,6 @@ function closeModal(modalId) {
         }
     }
 }
-
 window.onclick = function(event) {
     const modals = document.getElementsByClassName('modal');
     for (let i = 0; i < modals.length; i++) {
@@ -2299,7 +3705,6 @@ window.onclick = function(event) {
         }
     }
 };
-
 function handleEscapeKey(event) {
     if (event.key === 'Escape') {
         const modals = [
@@ -2322,12 +3727,12 @@ function handleEscapeKey(event) {
 
 let textHistory = [];
 
+
 function insertText(text) {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before modification
     textbox.value += text.replace(/\.$/, '') + '. ';
 }
-
 function eraseText() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before erasing
@@ -2335,45 +3740,31 @@ function eraseText() {
     isFirstLungnahlustunClick = true; // Reset flag on erase
     inLungnahlustunContext = false; // Reset context on erase
 }
-
 function undoLastText() {
     const textbox = document.getElementById('journalTextbox');
     if (textHistory.length > 0) {
         textbox.value = textHistory.pop(); // Restore the last state from history
     }
 }
-
 function addSkoðun() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nSk: ';
 }
-
 function addPlan() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nÁ/P: ';
 }
-
 function copyText() {
     const textbox = document.getElementById('journalTextbox');
     textbox.select();
     document.execCommand('copy');
 }
-
 function analyzeText() {
     console.log('AI Analyze button clicked');
     alert('AI Analyze feature is not implemented in this demo.');
 }
-
-function makeTitleButton(sectionId, callback) {
-    const sectionTitle = document.querySelector(`#${sectionId}-section h2`);
-    if (sectionTitle) {
-        sectionTitle.style.cursor = 'pointer';
-        sectionTitle.addEventListener('click', callback);
-    }
-}
-
 function retrieveData() {
     const patientNumber = document.getElementById('retrievePatientNumber').value;
     if (patientNumber) {
@@ -2410,6 +3801,16 @@ function retrieveData() {
     }
 }
 
+
+function makeTitleButton(sectionId, callback) {
+    const sectionTitle = document.querySelector(`#${sectionId}-section h2`);
+    if (sectionTitle) {
+        sectionTitle.style.cursor = 'pointer';
+        sectionTitle.addEventListener('click', callback);
+    }
+}
+
+
 function parseCode() {
     const code = prompt('Enter the generated code:');
     if (code) {
@@ -2427,7 +3828,6 @@ function parseCode() {
         }
     }
 }
-
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded and parsed');
     
