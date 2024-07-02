@@ -367,7 +367,7 @@ const ExamsViral = [
             {
                 display: 'Lungnahlustun',
                 subOptions: [
-                    { display: 'Hrein', output: 'Lungnahlustun, hrein. Eðlileg vesiculer öndunarhljóð' },
+                    { display: 'Hrein', output: 'Lungnahlustun hrein' },
                     { display: 'Slímhljóð basalt', output: 'Lungnahlustun sýnir slímhljóð basalt' },
                     { display: 'Obstrúktíf', output: 'Lungnahlustun sýnir lengda útöndun' },
                     { display: 'Gróf', output: 'Lungnahlustun sýnir gróf öndunarhljóð' },
