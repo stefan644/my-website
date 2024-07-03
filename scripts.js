@@ -367,7 +367,7 @@ const ExamsViral = [
             {
                 display: 'Lungnahlustun',
                 subOptions: [
-                    { display: 'Hrein', output: 'Lungnahlustun hrein' },
+                    { display: 'Hrein', output: 'Lungnahlustun, hrein. Eðlileg vesiculer öndunarhljóð' },
                     { display: 'Slímhljóð basalt', output: 'Lungnahlustun sýnir slímhljóð basalt' },
                     { display: 'Obstrúktíf', output: 'Lungnahlustun sýnir lengda útöndun' },
                     { display: 'Gróf', output: 'Lungnahlustun sýnir gróf öndunarhljóð' },
@@ -552,8 +552,9 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Nefstera', 'Púst', 'Mergur', 'Sérfræðing'],
+        display: ['Stera', 'Nefstera', 'Púst', 'Mergur', 'Sérfræðing'],
         options: [
+            { display: 'Stera', output: 'Set á stuttan sterakúr' },
             { display: 'Nefstera', output: 'Ráðlegg nefstera' },
             {
                 display: 'Púst',
@@ -1830,25 +1831,51 @@ const PlanMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Vökvagjöf', 'Ráðleggingar um mataræði', 'Lyf', 'Tilvísun'],
+        display: ['Gastroenteritis', 'Niðurgangur', 'Hægðatregða', 'Bakflæði'],
         options: [
-            { display: 'Vökvagjöf', output: 'Ráðlegg aukna vökvagjöf' },
-            { display: 'Ráðleggingar um mataræði', output: 'Veita ráðleggingar um mataræði' },
+            { display: 'Gastroenteritis', output: 'Gastroenteritis' },
+            { display: 'Niðurgangur', output: 'Niðurgangur' },
             {
-                display: 'Lyf',
+                display: 'Hægðatregða',
                 subOptions: [
-                    { display: 'Ógleðistillandi lyf', output: 'Ávísun á ógleðistillandi lyf' },
-                    { display: 'Niðurgangslyf', output: 'Ávísun á niðurgangslyf' },
-                    { display: 'Hægðalosandi lyf', output: 'Ávísun á hægðalosandi lyf' },
-                    { display: 'Sýrubindandi lyf', output: 'Ávísun á sýrubindandi lyf' },
-                    { display: 'Kviðverkjastillandi lyf', output: 'Ávísun á kviðverkjastillandi lyf' },
+                    { display: 'Hægðatregða', output: 'Hægðatregða' },
+                    { display: 'Grunur um hægðatregðu', output: 'Grunur um hægðatregðu' }
+                ]
+            },
+            { display: 'Bakflæði', output: 'Bakflæði' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Gallsteinar', 'Diverticulitis', 'Gyllinæð', 'Botnlangi'],
+        options: [
+            {
+                display: 'Gallsteinar',
+                subOptions: [
+                    { display: 'Gallsteinar', output: 'Gallsteinar' },
+                    { display: 'Grunur um gallsteina', output: 'Grunur um gallsteina' }
                 ]
             },
             {
-                display: 'Tilvísun',
+                display: 'Diverticulitis',
                 subOptions: [
-                    { display: 'Meltingarlæknir', output: 'Vísa til meltingarlæknis' },
-                    { display: 'Næringarfræðingur', output: 'Vísa til næringarfræðings' }
+                    { display: 'Diverticulitis', output: 'Diverticulitis' },
+                    { display: 'Grunur um diverticulitis', output: 'Grunur um diverticulitis' }
+                ]
+            },
+            {
+                display: 'Gyllinæð',
+                subOptions: [
+                    { display: 'Gyllinæð', output: 'Gyllinæð' },
+                    { display: 'Grunur um gyllinæð', output: 'Grunur um gyllinæð' }
+                ]
+            },
+            {
+                display: 'Botnlangi',
+                subOptions: [
+                    { display: 'Botnlangi', output: 'Botnlangabólga' },
+                    { display: 'Grunur um botnlangabólgu', output: 'Grunur um botnlangabólgu' }
                 ]
             }
         ]
@@ -1856,10 +1883,137 @@ const PlanMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Eftirfylgd', 'Frekar rannsóknir'],
+        display: ['Kviðverkur', 'Uppköst', 'Óþægindi frá endaþarmi', 'Blæðing úr endaþarmi'],
         options: [
-            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
-            { display: 'Frekar rannsóknir', output: 'Íhuga frekari rannsóknir ef einkenni versna' }
+            { display: 'Kviðverkur', output: 'Kviðverkur' },
+            { display: 'Uppköst', output: 'Uppköst' },
+            { display: 'Óþægindi frá endaþarmi', output: 'Óþægindi frá endaþarmi' },
+            { display: 'Blæðing úr endaþarmi', output: 'Blæðing úr endaþarmi' }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Stuðningsmeðferð'],
+        options: [
+            {
+                display: 'Ráðleggingar',
+                subOptions: [
+                    { display: 'Almennar', output: 'Almennar ráðleggingar'},
+                    { display: 'Mataræði', output: 'Fær viðeigandi fræðslu um mataræði'},
+                    { display: 'Hægðatregða', output: 'Fær viðeigandi ráðleggingar um trefja- og vökvainntöku. Rætt um helstu hægðalyf'},
+                    { display: 'Diverticulitis - Ráðl, fljótandi + sýklalyf ef þarf', output: 'Fær viðeigandi ráðleggingar um meðferð diverticulitis. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki'}
+                ]
+            },
+            {
+                display: 'Stuðningsmeðferð',
+                subOptions: [
+                    { display: 'Loperamide', output: 'Ráðlegg loperamide við niðurgangi' },
+                    { display: 'Vökvi', output: 'Ráðlegg að drekka vel til að viðhalda vökva- og saltjafnvægi' },
+                    { display: 'Góðgerlar', output: 'Ráðlegg góðgerla til að bæta meltingu' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sýklalyf', 'Verkjalyf', 'Sérfræðingur'],
+        options: [
+            {
+                display: 'Sýklalyf',
+                subOptions: [
+                    { display: 'Amoxicillin', output: 'Ráðlegg sýklalyf. Set amoxicillin í gáttina' },
+                    { display: 'Spectracillin', output: 'Ráðlegg sýklalyf. Set spectracillin í gáttina' },
+                    { display: 'Metronidazole', output: 'Ráðlegg sýklalyf. Set metronidazole í gáttina' },
+                    { display: 'Metronidazole + spectracillin', output: 'Ráðlegg sýklalyf. Set metronidazole og spectracillin í gáttina' },
+                    { display: 'Ciprofloxacin', output: 'Ráðlegg sýklalyf. Set ciprofloxacin í gáttina' }
+                    
+                ]
+            },
+            {
+                display: 'Verkjalyf',
+                subOptions: [
+                    { display: 'Verkjalyf', output: 'Ráðlegg verkjalyf' },
+                    { display: 'Paracetamol + Ibuprofen', output: 'Ráðlegg paracetamol og ibuprofen saman' },
+                    { display: 'Paracetamol', output: 'Ráðlegg paracetamol' },
+                    { display: 'Ibuprofen', output: 'Ráðlegg ibuprofen' },
+                    { display: 'Parkódín', output: 'Set parkódín í gáttina. Upplýsi um aukaverkanir og ávanabindandi hættu. Notar sparlega' }
+                ]
+            },
+            {
+                display: 'Sérfræðingur',
+                subOptions: [
+                    { display: 'Meltingarlækni', output: 'Ráðlegg mat meltingarlæknis' },
+                    { display: 'Tilvísun', output: 'Sendi tilvísun' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hægðalyf', 'Gyllinæðarlyf'],
+        options: [
+            {
+                display: 'Hægðalyf',
+                subOptions: [
+                    { display: 'Movicol 4v', output: 'Set movicol í gáttina. Ráðlegg 4v kúr' },
+                    { display: 'Magnesia', output: 'Set magnesia í gáttina' },
+                    { display: 'Sorbitol', output: 'Reynum sorbitol við hægðatregðu' }
+                    
+                ]
+            },
+            {
+                display: 'Gyllinæðarlyf',
+                subOptions: [
+                    { display: 'Doloproct', output: 'Set doloproct í gáttina' },
+                    { display: 'Xyloproct', output: 'Set xyloproct í gáttina' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Myndataka', 'Blóðprufa', 'BMT'],
+        options: [
+            {
+                display: 'Myndataka',
+                subOptions: [
+                    { display: 'TS kvið', output: 'Ráðlegg TS af kvið' },
+                    { display: 'Ómskoðun LGB', output: 'Ráðlegg ómskoðun LGB. Sendi beiðni' }
+                ]
+            },
+            { display: 'Blóðprufa', output: 'Panta blóðprufu' },
+            { display: 'BMT', output: 'Vísa á bráðamóttöku' }
+        ]
+    },
+    
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
+                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
+                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                ]
+            }
+
         ]
     }
 ];
@@ -1983,6 +2137,141 @@ const PlanStodkerfi = [
     }
 ];
 const SymptomsHud = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Sýking', 'Staðsetning'],
+        options: [
+            {
+                display: 'Grunur um sýkingu',
+                subOptions: [
+                    {
+                        display: 'Andlit',
+                        output: 'Grunur um sýkingu í andlit'
+                    },
+                    {
+                        display: 'Háls',
+                        output: 'Grunur um sýkingu í háls'
+                    },
+                    {
+                        display: 'Búk',
+                        output: 'Grunur um sýkingu í búk'
+                    },
+                    {
+                        display: 'Upphandlegg',
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægra upphandlegg' },
+                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstra upphandlegg' }
+                        ],
+                        cancelText: 'Grunur um sýkingu í upphandlegg'
+                    },
+                    {
+                        display: 'Framhandlegg',
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægra framhandlegg' },
+                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstra framhandlegg' }
+                        ],
+                        cancelText: 'Grunur um sýkingu í framhandlegg'
+                    },
+                    {
+                        display: 'Hendi',
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægri hendi' },
+                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstri hendi' }
+                        ],
+                        cancelText: 'Grunur um sýkingu í hendi'
+                    },
+                    {
+                        display: 'Fingur',
+                        subOptions: [
+                            { display: 'Hægri fingur 1', output: 'Grunur um sýkingu í fingur 1 hægra megin' },
+                            { display: 'Hægri fingur 2', output: 'Grunur um sýkingu í fingur 2 hægra megin' },
+                            { display: 'Hægri fingur 3', output: 'Grunur um sýkingu í fingur 3 hægra megin' },
+                            { display: 'Hægri fingur 4', output: 'Grunur um sýkingu í fingur 4 hægra megin' },
+                            { display: 'Hægri fingur 5', output: 'Grunur um sýkingu í fingur 5 hægra megin' },
+                            { display: 'Vinstri fingur 1', output: 'Grunur um sýkingu í fingur 1 vinstra megin' },
+                            { display: 'Vinstri fingur 2', output: 'Grunur um sýkingu í fingur 2 vinstra megin' },
+                            { display: 'Vinstri fingur 3', output: 'Grunur um sýkingu í fingur 3 vinstra megin' },
+                            { display: 'Vinstri fingur 4', output: 'Grunur um sýkingu í fingur 4 vinstra megin' },
+                            { display: 'Vinstri fingur 5', output: 'Grunur um sýkingu í fingur 5 vinstra megin' }
+                        ],
+                        cancelText: 'Grunur um sýkingu í fingri'
+                    },
+                    {
+                        display: 'Læri',
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægra læri' },
+                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstra læri' }
+                        ],
+                        cancelText: 'Grunur um sýkingu í læri'
+                    },
+                    {
+                        display: 'Fótlegg',
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægra fótlegg' },
+                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstra fótlegg' }
+                        ],
+                        cancelText: 'Grunur um sýkingu í fótlegg'
+                    },
+                    {
+                        display: 'Fót',
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægri fót' },
+                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstri fót' }
+                        ],
+                        cancelText: 'Grunur um sýkingu í fót'
+                    },
+                    {
+                        display: 'Tá',
+                        subOptions: [
+                            { display: 'Hægri tá 1', output: 'Grunur um sýkingu í tá 1 hægra megin' },
+                            { display: 'Hægri tá 2', output: 'Grunur um sýkingu í tá 2 hægra megin' },
+                            { display: 'Hægri tá 3', output: 'Grunur um sýkingu í tá 3 hægra megin' },
+                            { display: 'Hægri tá 4', output: 'Grunur um sýkingu í tá 4 hægra megin' },
+                            { display: 'Hægri tá 5', output: 'Grunur um sýkingu í tá 5 hægra megin' },
+                            { display: 'Vinstri tá 1', output: 'Grunur um sýkingu í tá 1 vinstra megin' },
+                            { display: 'Vinstri tá 2', output: 'Grunur um sýkingu í tá 2 vinstra megin' },
+                            { display: 'Vinstri tá 3', output: 'Grunur um sýkingu í tá 3 vinstra megin' },
+                            { display: 'Vinstri tá 4', output: 'Grunur um sýkingu í tá 4 vinstra megin' },
+                            { display: 'Vinstri tá 5', output: 'Grunur um sýkingu í tá 5 vinstra megin' }
+                        ],
+                        cancelText: 'Grunur um sýkingu í tá'
+                    }
+                ],
+                cancelText: 'Grunur um sýkingu'
+            },
+            {
+                display: 'Staðsetning',
+                subOptions: [
+                    { display: 'Innanvert', output: 'Innanvert' },
+                    { display: 'Utanvert', output: 'Utanvert' },
+                    { display: 'Distalt', output: 'Distalt' },
+                    { display: 'Proximalt', output: 'Proximalt' },
+                    { display: 'Dreift', output: 'Dreift' }
+                ],
+                cancelText: ''
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sýking', 'Útbrot', 'Kláði'],
+        options: [
+            {
+                display: 'Sýking',
+                subOptions: [
+                    { display: 'Fingri', output: 'Grunur um sýkingu í fingri' },
+                    { display: 'Hendi', output: 'Blautur hósti' },
+                    { display: 'Tá', output: 'Þurr hósti' }
+                ],
+                cancelText: ''
+            },
+            { display: 'Útbrot', output: 'Útbrot' },
+            { display: 'Kláði', output: 'Kláði' }
+        ]
+    },
     {
         name: '',
         type: 'options',
@@ -2351,6 +2640,56 @@ const PlanInnkirtla = [
 ];
 
 
+const Timi = [{
+    name: '',
+    type: 'options',
+    display: ['Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
+    options: [
+        {
+            display: 'Nokkrir dagar',
+            output: 'Nokkra daga saga'
+        },
+        {
+            display: 'Dagar',
+            subOptions: [
+                { display: '1d', output: '1d saga' },
+                { display: '2d', output: '2d saga' },
+                { display: '3d', output: '3d saga' },
+                { display: '4d', output: '4d saga' },
+                { display: '5d', output: '5d saga' },
+                { display: '6d', output: '6d saga' }
+            ],
+            cancelText: ''
+        },
+        {
+            display: 'Vikur',
+            subOptions: [
+                { display: '1v', output: '1 vikna saga' },
+                { display: '1,5v', output: '1,5 vikna saga' },
+                { display: '2v', output: '2 vikna saga' },
+                { display: '3v', output: '3 vikna saga' },
+                { display: 'Margar', output: 'Margra vikna saga' }
+
+            ],
+            cancelText: ''
+        },
+        {
+            display: 'Mánuðir',
+            subOptions: [
+                { display: '1m', output: '1 mán saga' },
+                { display: '2m', output: '2 mán saga' },
+                { display: '3m', output: '3 mán saga' },
+                { display: '4m', output: '4 mán saga' },
+                { display: '5m', output: '5 mán saga' },
+                { display: '6m', output: '6 mán saga' },
+                { display: 'Margir', output: 'Margra mánaða saga'}
+
+            ],
+            cancelText: ''
+        }
+        
+    ]
+}];
 const Duration = [
     { display: '1d', output: '1d saga' },
     { display: '2d', output: '2d saga' },
@@ -2368,22 +2707,6 @@ const Duration = [
     { display: '4m', output: '4 mán saga' },
     { display: '5m', output: '5 mán saga' },
     { display: '6m', output: '6 mán saga' }
-];
-const Saturation = [
-    { display: '100', output: 'Mettar 100%' },
-    { display: '99', output: 'Mettar 99%' },
-    { display: '98', output: 'Mettar 98%' },
-    { display: '97', output: 'Mettar 97%' },
-    { display: '96', output: 'Mettar 96%' },
-    { display: '95', output: 'Mettar 95%' },
-    { display: '94', output: 'Mettar 94%' },
-    { display: '93', output: 'Mettar 93%' },
-    { display: '92', output: 'Mettar 92%' },
-    { display: '91', output: 'Mettar 91%' },
-    { display: '90', output: 'Mettar 90%' },
-    { display: '89', output: 'Mettar 89%' },
-    { display: '88', output: 'Mettar 88%' },
-    { display: '87', output: 'Mettar 87%' }
 ];
 const Habits = [
     { name: 'Reykingar', type: 'Reykingar', display: ['Já', 'Nei', 'Aldrei'], output: ['Reykir. X pakkaár að baki', 'Reykir ekki. Hætti fyrir X árum. Reykti Y pakkaár fram að því', 'Aldrei reykt'] },
@@ -3059,10 +3382,48 @@ function createButton(row, item, displayText, index, context) {
                         popup.appendChild(btn);
                     };
 
+                    // Recursive function to create subOption buttons
+                    const createSubOptions = (subOptions, parentPopup) => {
+                        subOptions.forEach(subOption => {
+                            if (subOption.subOptions) {
+                                // Create a button for the subOption with further subOptions
+                                createPopupButton(parentPopup, subOption.display, () => {
+                                    const subPopup = document.createElement('div');
+                                    subPopup.className = 'popup-modal';
+                                    subPopup.style.position = 'absolute';
+                                    subPopup.style.top = `${rect.bottom + window.scrollY}px`;
+                                    subPopup.style.left = `${rect.right + window.scrollX}px`;
+                                    subPopup.style.backgroundColor = 'white';
+                                    subPopup.style.border = '1px solid #ccc';
+                                    subPopup.style.padding = '10px';
+                                    subPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                                    subPopup.style.zIndex = '1000';
+                                    createSubOptions(subOption.subOptions, subPopup);
+                                    document.body.appendChild(subPopup);
+
+                                    // Close subPopup when clicking outside
+                                    document.addEventListener('click', (e) => {
+                                        if (!subPopup.contains(e.target) && e.target !== btn) {
+                                            subPopup.remove();
+                                        }
+                                    }, { once: true });
+
+                                    // Close subPopup on escape key
+                                    document.addEventListener('keydown', (e) => {
+                                        if (e.key === 'Escape') {
+                                            subPopup.remove();
+                                        }
+                                    }, { once: true });
+                                });
+                            } else {
+                                // Create a button for the subOption with no further subOptions
+                                createPopupButton(parentPopup, subOption.display, () => insertText(subOption.output));
+                            }
+                        });
+                    };
+
                     // Add subOptions to the popup
-                    selectedOption.subOptions.forEach(subOption => {
-                        createPopupButton(popup, subOption.display, () => insertText(subOption.output));
-                    });
+                    createSubOptions(selectedOption.subOptions, popup);
 
                     // Append the popup to the document body
                     document.body.appendChild(popup);
@@ -3154,6 +3515,7 @@ function createButton(row, item, displayText, index, context) {
 
     row.appendChild(button);
 }
+
 
 
 let isFirstLungnahlustunClick = true; // Flag to track first click for Lungnahlustun
