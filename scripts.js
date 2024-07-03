@@ -1,3 +1,29 @@
+const Vottord = [
+    
+    {
+        name: '',
+        type: 'options',
+        display: ['Sjúkraþjálfun', 'VVV'],
+        options: [
+            {
+                display: 'Sjúkraþjálfun',
+                subOptions: [
+                    { display: 'Endurnýjun', output: 'Endurnýjun á sjúkraþjálfunarbeiðni' }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'VVV',
+                subOptions: [
+                    { display: 'Framlenging', output: 'Framlengi VVV' }
+                ],
+                cancelText: ''
+            }
+        ]
+    }
+    
+];
+
 const SymptomsViral = [
     
     {
@@ -497,7 +523,13 @@ const PlanViral = [
             { display: 'Hósti', output: 'Hósti' },
             { display: 'Vírósa', output: 'Vírósa' },
             { display: 'Eyrnabólga', output: 'Eyrnabólga' },
-            { display: 'Lungnabólga', output: 'Lungnabólga' }
+            {
+                display: 'Lungnabólga',
+                    subOptions: [
+                        { display: 'Lungnabólga', output: 'Lungnabólga' },
+                        { display: 'Grunur', output: 'Grunur um lungnabólgu' }
+                    ],
+                }
         ]
     },
     {
@@ -577,7 +609,8 @@ const PlanViral = [
             {
                 display: 'Vísa á sérfræðing',
                 subOptions: [
-                    { display: 'HNE', output: 'Ráðlegg mat HNE læknis' }
+                    { display: 'HNE', output: 'Ráðlegg mat HNE læknis' },
+                    { display: 'Tilvísun', output: 'Geri tilvísun' }
                 ]
             }
         ]
@@ -1883,12 +1916,17 @@ const PlanMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Kviðverkur', 'Uppköst', 'Óþægindi frá endaþarmi', 'Blæðing úr endaþarmi'],
+        display: ['Kviðverkur', 'Uppköst', 'Endaþarmur'],
         options: [
             { display: 'Kviðverkur', output: 'Kviðverkur' },
             { display: 'Uppköst', output: 'Uppköst' },
-            { display: 'Óþægindi frá endaþarmi', output: 'Óþægindi frá endaþarmi' },
-            { display: 'Blæðing úr endaþarmi', output: 'Blæðing úr endaþarmi' }
+            {
+                display: 'Endaþarmur',
+                subOptions: [
+                    { display: 'Óþægindi frá endaþarmi', output: 'Óþægindi frá endaþarmi'},
+                    { display: 'Blæðing úr endaþarmi', output: 'Blæðing úr endaþarmi'}
+                ]
+            }
         ]
     },
     {},{},{},
@@ -3714,13 +3752,20 @@ function createHabitsSection(data) {
     createButtons(container, data);
     return section;
 }
+function createVottordSection(data) {
+    console.log('Creating Vottord Section with data:', data); // Debugging line
+    const section = createSection('vottord', 'Vottorð');
+    const container = section.querySelector('#vottord');
+    createButtons(container, data);
+    return section;
+}
 
 
 function loadPage(page) {
     const container = document.getElementById('content-section');
     container.innerHTML = '';
 
-    if (page === 'LUTS') {
+    if (page === 'Þvag') {
         const symptomsSection = createEinkenniSection(SymptomsUrinary);
         const examsSection = createSkodunSection(ExamsUrinary);
         const planSection = createPlanSection(PlanUrinary);
@@ -3808,6 +3853,53 @@ function loadPage(page) {
 
         container.appendChild(horizontalContainer);
  
+    } else if (page === 'Almennt') {
+        const einkenniSection = createEinkenniSection(SymptomsViral);
+        const skodunSection = createSkodunSection(ExamsViral);
+        const planSection = createPlanSection(PlanViral);
+        const timalengdSection = createTimalengdSection(Duration);
+        const historyViralSection = createHistoryViralSection(historyViralData);
+        const habitsSection = createHabitsSection(Habits);
+        const vottordSection = createVottordSection(Vottord);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+       
+        leftColumn.appendChild(vottordSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+       // middleColumn.appendChild(skodunSection);
+                
+        
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+      //  rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+        
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+
+        //container.appendChild(horizontalContainer); 
     } else if (page === 'Melting') {
         const einkenniSection = createEinkenniSection(SymptomsMelting);
         const skodunSection = createSkodunSection(ExamsMelting);
