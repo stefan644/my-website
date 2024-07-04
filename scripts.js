@@ -3266,13 +3266,14 @@ function createPopup(event, selectedOption, button, isRightClick = false) {
     popup.style.zIndex = '1000';
 
     // Function to create a button in the popup
-    const createPopupButton = (popup, subOption, context) => {
+    const createPopupButton = (popup, subOption, parentPopup) => {
         const btn = document.createElement('button');
         btn.textContent = subOption.display;
         btn.style.display = 'block';
         btn.style.margin = '5px 0';
         btn.onclick = (e) => {
             e.stopPropagation(); // Prevent closing popup on button click
+
             if (subOption.subOptions) {
                 // Remove existing sub-popup if any
                 const existingSubPopup = document.querySelector('.sub-popup-modal');
@@ -3297,22 +3298,30 @@ function createPopup(event, selectedOption, button, isRightClick = false) {
 
                 // Add nested subOptions to the sub-popup
                 subOption.subOptions.forEach(nestedSubOption => {
-                    createPopupButton(subPopup, nestedSubOption, subOption);
+                    createPopupButton(subPopup, nestedSubOption, subPopup);
                 });
 
                 // Append the sub-popup to the document body
                 document.body.appendChild(subPopup);
 
-                // Close sub-popup when clicking outside
+                // Close sub-popup and parent popup when clicking outside
                 document.addEventListener('click', (e) => {
                     if (!subPopup.contains(e.target) && e.target !== btn) {
                         subPopup.remove();
+                        popup.remove(); // Close the parent popup when sub-popup is closed
                     }
                 }, { once: true });
 
             } else if (subOption.output) {
                 insertText(subOption.output);
-                popup.remove();
+                const existingSubPopup = document.querySelector('.sub-popup-modal');
+                if (existingSubPopup) {
+                    existingSubPopup.remove();
+                }
+                if (parentPopup) {
+                    parentPopup.remove(); // Close the parent popup
+                }
+                popup.remove(); // Close the main popup
             }
         };
         popup.appendChild(btn);
@@ -3325,7 +3334,7 @@ function createPopup(event, selectedOption, button, isRightClick = false) {
         });
     } else {
         selectedOption.subOptions.forEach(subOption => {
-            createPopupButton(popup, subOption, selectedOption);
+            createPopupButton(popup, subOption, popup);
         });
     }
 
@@ -3440,6 +3449,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+
 
 
 let isFirstLungnahlustunClick = true; // Flag to track first click for Lungnahlustun
