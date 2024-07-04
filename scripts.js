@@ -23,7 +23,6 @@ const Vottord = [
     }
     
 ];
-
 const SymptomsViral = [
     {
         name: '',
@@ -192,42 +191,66 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
+        display: ['Tímalengd einkenna'],
         options: [
             {
-                display: 'Nokkrir dagar',
-                output: 'Nokkra daga saga'
-            },
-            {
-                display: 'Dagar',
+                display: 'Tímalengd einkenna',
                 subOptions: [
-                    { display: '1d', output: '1d saga' },
-                    { display: '2d', output: '2d saga' },
-                    { display: '3d', output: '3d saga' },
-                    { display: '4d', output: '4d saga' },
-                    { display: '5d', output: '5d saga' },
-                    { display: '6d', output: '6d saga' }
-                ]
-            },
-            {
-                display: 'Vikur',
-                subOptions: [
-                    { display: '1v', output: '1 vikna saga' },
-                    { display: '1,5v', output: '1,5 vikna saga' },
-                    { display: '2v', output: '2 vikna saga' },
-                    { display: '3v', output: '3 vikna saga' }
-                ]
-            },
-            {
-                display: 'Mánuðir',
-                subOptions: [
-                    { display: '1m', output: '1 mán saga' },
-                    { display: '2m', output: '2 mán saga' },
-                    { display: '3m', output: '3 mán saga' },
-                    { display: '4m', output: '4 mán saga' },
-                    { display: '5m', output: '5 mán saga' },
-                    { display: '6m', output: '6 mán saga' }
-                ]
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            
+                            { display: 'Nokkrir dagar', output: 'Nokkra daga saga' },
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
+                ],
+                cancelText: ''
             }
         ]
     },
@@ -280,7 +303,6 @@ const SymptomsViral = [
         ]
     }
 ];
-
 const ExamsViral = [
     {
         name: '',
@@ -335,7 +357,7 @@ const ExamsViral = [
                     { display: 'Brak hægra megin basalt', output: 'Heyrist brak hægra megin basalt' },
                     { display: 'Brak vinstra megin basalt', output: 'Heyrist brak vinstra megin basalt' }
                 ],
-                onRightClickOutput: 'Lungnahlustun eðlileg'
+                onRightClickOutput: 'Lungnahlustun hrein'
             }
         ]
     },
@@ -376,12 +398,10 @@ const ExamsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Strep +', 'Strep -', 'CRP hátt', 'CRP lágt'],
+        display: ['Strep', 'CRP'],
         options: [
-            { display: 'Strep +', output: 'Streptest jákvætt' },
-            { display: 'Strep -', output: 'Streptest neikvætt' },
-            { display: 'CRP hátt', output: 'CRP hátt' },
-            { display: 'CRP lágt', output: 'CRP lágt' }
+            { display: 'Strep', output: 'Streptest jákvætt', onRightClickOutput: 'Streptest neikvætt' },
+            { display: 'CRP', output: 'CRP hátt', onRightClickOutput: 'CRP lágt' }
         ]
     }
 ];
@@ -446,6 +466,7 @@ const PlanViral = [
             display: 'Stuðningsmeðferð',
                 subOptions: [
                     { display: 'Stuðningsmeðferð', output: 'Ráðlegg stuðningsmeðferð' },
+                    { display: 'Hitalækkandi', output: 'Hitalækkandi eftir þörfum' },
                     { display: 'Slímlosandi', output: 'Reynum slímlosandi' },
                     { display: 'Kódein', output: 'Fær kódein við hósta' }
                 ],
@@ -653,75 +674,76 @@ const SymptomsUrinary = [
             { display: 'Slappleiki', output: 'Verið með slappleika', onRightClickOutput: 'Ekki fundið fyrir slappleika' }
         ]
     },
-    {
-        name: '',
-        type: 'options',
-        display: ['Reykingar', 'Karlkyn', 'Aldur>35', 'Fjölskyldusaga'],
-        options: [
-            { display: 'Reykingar', output: 'Saga um reykingar', onRightClickOutput: 'Ekki saga um reykingar' },
-            { display: 'Karlkyn', output: 'Karlkyn', onRightClickOutput: 'Ekki karlkyn' },
-            { display: 'Aldur>35', output: 'Aldur > 35 ára', onRightClickOutput: 'Aldur ≤ 35 ára' },
-            {
-                display: 'Fjölskyldusaga',
-                subOptions: [
-                    { display: 'Þvagblöðrukrabbamein', output: 'Fjölskyldusaga um krabbamein í þvagblöðru' },
-                    { display: 'Blöðruhálskirtilskrabbamein', output: 'Fjölskyldusaga um blöðruhálskirtilskrabbamein' }
-                ],
-                onRightClickOutput: 'Ekki fjölskyldusaga um þvagblöðru- eða blöðruhálskirtilskrabbamein'
-            }
-        ]
-    },
     {},
     {},
     {},
     {
         name: '',
         type: 'options',
-        display: ['Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
+        display: ['Tímalengd einkenna'],
         options: [
             {
-                display: 'Nokkrir dagar',
-                output: 'Nokkra daga saga',
-                onRightClickOutput: 'Ekki nokkra daga saga'
-            },
-            {
-                display: 'Dagar',
+                display: 'Tímalengd einkenna',
                 subOptions: [
-                    { display: '1d', output: '1d saga' },
-                    { display: '2d', output: '2d saga' },
-                    { display: '3d', output: '3d saga' },
-                    { display: '4d', output: '4d saga' },
-                    { display: '5d', output: '5d saga' },
-                    { display: '6d', output: '6d saga' }
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            
+                            { display: 'Nokkrir dagar', output: 'Nokkra daga saga' },
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
                 ],
-                onRightClickOutput: 'Ekki daga saga'
-            },
-            {
-                display: 'Vikur',
-                subOptions: [
-                    { display: '1v', output: '1 vikna saga' },
-                    { display: '1,5v', output: '1,5 vikna saga' },
-                    { display: '2v', output: '2 vikna saga' },
-                    { display: '3v', output: '3 vikna saga' }
-                ],
-                onRightClickOutput: 'Ekki vikna saga'
-            },
-            {
-                display: 'Mánuðir',
-                subOptions: [
-                    { display: '1m', output: '1 mán saga' },
-                    { display: '2m', output: '2 mán saga' },
-                    { display: '3m', output: '3 mán saga' },
-                    { display: '4m', output: '4 mán saga' },
-                    { display: '5m', output: '5 mán saga' },
-                    { display: '6m', output: '6 mán saga' }
-                ],
-                onRightClickOutput: 'Ekki mánuða saga'
+                cancelText: ''
             }
         ]
     }
 ];
-
 const ExamsUrinary = [
     {
         name: '',
@@ -760,10 +782,21 @@ const ExamsUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Nítrít', 'Hvít'],
+        display: ['Þvagstix'],
         options: [
-            { display: 'Nítrít', output: 'Jákv nítrít í þvagi', onRightClickOutput: 'Þvagstix hreint' },
-            { display: 'Hvít', output: 'Hvít í þvagi', onRightClickOutput: 'Þvagstix hreint' }
+            {
+                display: 'Þvagstix',
+                subOptions: [
+                    { display: 'Jákvætt stix', output: 'Þvagstix jákvætt' },
+                    { display: 'Nítrít', output: 'Jákvæð nítrít í þvagi' },
+                    { display: 'Hvít', output: 'Hvít í þvagi' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Þvagstix hreint', output: 'Þvagstix hreint' },
+                    { display: 'Nítrít neikv', output: 'Nítrít neikvæð í þvagi' },
+                    { display: 'Hvít neikv', output: 'Hvít neikvæð í þvagi' }
+                ]
+            }
         ]
     }
 ];
@@ -838,68 +871,22 @@ const HistoryUrinary = [
     { name: '', type: 'Medium', display: ['Pyelonephritis', 'Ólétta', 'Ónæmisbælandi'], output: ['Saga um pyelonephritis', 'Ófrísk, gengin X vikur', 'Er á ónæmisbælandi meðferð']}
 ];
 const RiskfactorsUrinary = [
-    { 
-        name: '', 
-        type: 'options', 
-        display: ['Reykingar', 'Karlkyn', 'Prostatitis', 'Fjölskyldusaga um þvagblöðrukrabbamein'], 
-        options: [
-            { display: 'Reykingar', output: 'Saga um reykingar' },
-            { display: 'Karlkyn', output: 'Karlkyn' },
-            { display: 'Aldur>35', output: 'Aldur > 35 ára' },
-            { display: 'Fjölskyldusaga um þvagblöðrukrabbamein', output: 'Fjölskyldusaga um krabbamein í þvagblöðru' }
-        ]
-    },
-    {},{},{},
-    { 
-        name: '', 
-        type: 'options', 
-        display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Blóðprufa'], 
-        options: [
-            { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
-
-            {
-                display: 'Sýklalyf',
-                subOptions: [
-                    { display: 'Idotrim', output: 'Ráðlegg sýklalyf. Set idotrim í gáttina' },
-                    { display: 'Selexid', output: 'Ráðlegg sýklalyf. Set selexid í gáttina' },
-                    { display: 'Furadantin', output: 'Ráðlegg sýklalyf. Set furadantin í gáttina' },
-                    { display: 'Keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' },
-                    { display: 'Síprox', output: 'Ráðlegg sýklalyf. Set siprox í gáttina' }
-                ]
-            },
-            { display: 'Myndataka', output: 'Ráðlegg myndatöku' },
-            {
-                display: 'Myndataka',
-                subOptions: [
-                    { display: 'TS þvagfærayfirlit', output: 'Ráðlegg TS þvagfærayfirlit' }
-                ]
-            },
-            { display: 'Blóðprufa', output: 'Panta blóðprufu' }
-        ]
-    },
-    {},{},{},
     {
         name: '',
         type: 'options',
-        display: ['Endurmat', 'Eftirfylgd'],
+        display: ['Reykingar', 'Karlkyn', 'Aldur>35', 'Fjölskyldusaga'],
         options: [
+            { display: 'Reykingar', output: 'Saga um reykingar', onRightClickOutput: 'Ekki saga um reykingar' },
+            { display: 'Karlkyn', output: 'Karlkyn', onRightClickOutput: 'Ekki karlkyn' },
+            { display: 'Aldur>35', output: 'Aldur > 35 ára', onRightClickOutput: 'Aldur ≤ 35 ára' },
             {
-                display: 'Endurmat',
+                display: 'Fjölskyldusaga',
                 subOptions: [
-                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
-                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
-                ]
-            },
-            {
-                display: 'Eftirfylgd',
-                subOptions: [
-                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
-                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
-                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
-                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
-                ]
+                    { display: 'Þvagblöðrukrabbamein', output: 'Fjölskyldusaga um krabbamein í þvagblöðru' },
+                    { display: 'Blöðruhálskirtilskrabbamein', output: 'Fjölskyldusaga um blöðruhálskirtilskrabbamein' }
+                ],
+                onRightClickOutput: 'Ekki fjölskyldusaga um þvagblöðru- eða blöðruhálskirtilskrabbamein'
             }
-
         ]
     }
 ];
@@ -1001,7 +988,6 @@ const SymptomsEye = [
         ]
     }
 ];
-
 const ExamsEye = [
     {
         name: '',
@@ -1257,7 +1243,7 @@ const SymptomsHeart = [
                     { display: 'Sviði', output: 'Lýsir sem sviða' },
                     { display: 'Brennandi', output: 'Lýsir sem brennandi' }
                 ],
-                onRightClickOutput: 'Ekki lýst tegund'
+                onRightClickOutput: ''
             },
             {
                 display: 'Staðsettning',
@@ -1266,7 +1252,7 @@ const SymptomsHeart = [
                     { display: 'Epigastrium', output: 'Staðsett í epigastrium' },
                     { display: 'Hjartastað', output: 'Staðsett yfir hjartastað' }
                 ],
-                onRightClickOutput: 'Ekki lýst staðsettningu'
+                onRightClickOutput: ''
             },
             {
                 display: 'Leiðni',
@@ -1275,7 +1261,7 @@ const SymptomsHeart = [
                     { display: 'Kjálka', output: 'Leiðir út í kjálka' },
                     { display: 'Bak', output: 'Leiðir aftur í bak' }
                 ],
-                onRightClickOutput: 'Ekki lýst leiðni'
+                onRightClickOutput: 'Verkurinn leiðir ekki'
             }
         ]
     },
@@ -1293,7 +1279,7 @@ const SymptomsHeart = [
                     { display: '2 klst>', output: 'Einkenni byrjuðu fyrir u.þ.b. 2 klst síðan' },
                     { display: '3 klst', output: 'Einkenni byrjuðu fyrir u.þ.b. 3 klst síðan' }
                 ],
-                onRightClickOutput: 'Ekki lýst onset'
+                onRightClickOutput: ''
             },
             { display: 'Gerst áður', output: 'Kannast við verkinn', onRightClickOutput: 'Ekki fengið svona einkenni áður' },
             {
@@ -1303,7 +1289,7 @@ const SymptomsHeart = [
                     { display: 'Hreyfingu', output: 'Verkurinn er stöðubundinn, versnar við ákveðnar hreyfingar' },
                     { display: 'Ekkert', output: 'Ekkert sem gerir verkinn betri eða verri' }
                 ],
-                onRightClickOutput: 'Ekki lýst versnun'
+                onRightClickOutput: 'Ekkert sem gerir verkinn betri eða verri'
             }
         ]
     }
@@ -3570,6 +3556,13 @@ function createPlanSection(data) {
     createButtons(container, data);
     return section;
 }
+function createRiskUrinarySection(data) {
+    console.log('Creating Risk Section with data:', data); // Debugging line
+    const section = createSection('risk', 'Áhættuþættir þvagblöðrukrabbameins');
+    const container = section.querySelector('#risk');
+    createButtons(container, data);
+    return section;
+}
 function createCHADSVASCSection(data) {
     console.log('Creating CHADSVASC Section with data:', data); // Debugging line
     const section = createSection('CHADSVASC', 'CHADS-VASc');
@@ -3671,18 +3664,22 @@ function loadPage(page) {
         const planSection = createPlanSection(PlanUrinary);
         const durationSection = createTimalengdSection(Duration);
         const historySection = createHistoryViralSection(HistoryUrinary);
-        const habitsSection = createHabitsSection(Habits);  // Add this line
+        const habitsSection = createHabitsSection(Habits);
+        const RiskUrinarySection = createRiskUrinarySection (RiskfactorsUrinary);
 
         const symptomsColumn = document.createElement('div');
         symptomsColumn.className = 'column';
         symptomsColumn.appendChild(symptomsSection);
         //symptomsColumn.appendChild(durationSection);
+        symptomsColumn.appendChild(RiskUrinarySection);
         symptomsColumn.appendChild(historySection);
+        symptomsColumn.appendChild(habitsSection);  // Add this line
+
 
         const examsColumn = document.createElement('div');
         examsColumn.className = 'column';
         examsColumn.appendChild(examsSection);
-        examsColumn.appendChild(habitsSection);  // Add this line
+
 
         const planColumn = document.createElement('div');
         planColumn.className = 'column';
