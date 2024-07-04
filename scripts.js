@@ -519,8 +519,7 @@ const PlanViral = [
                     { display: 'amoxin', output: 'Ráðlegg sýklalyf. Set amoxin í gáttina' },
                     { display: 'spectracillin', output: 'Ráðlegg sýklalyf. Set spectracillin í gáttina' },
                     { display: 'kaavepenin', output: 'Ráðlegg sýklalyf. Set kaavepenin í gáttina' },
-                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' },
-                    { display: 'VVV', output: 'Fær veikindavottorð' }
+                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' }
                 ]
             },
             {
