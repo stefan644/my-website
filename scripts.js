@@ -25,43 +25,32 @@ const Vottord = [
 ];
 
 const SymptomsViral = [
-    
     {
         name: '',
         type: 'options',
-        display: ['Flensueinkenni', '-', 'Hálsbólga', '-'],
+        display: ['Flensueinkenni', 'Hálsbólga'],
         options: [
             {
                 display: 'Flensueinkenni',
-                output: 'Flensueinkenni'
-            },
-            {
-                display: '-',
-                output: 'Ekki flensueinkenni'
+                output: 'Flensueinkenni',
+                onRightClickOutput: 'Ekki flensueinkenni'
             },
             {
                 display: 'Hálsbólga',
-                output: 'Hálsbólga'
-            },
-            {
-                display: '-',
-                output: 'Ekki hálsbólga'
+                output: 'Hálsbólga',
+                onRightClickOutput: 'Ekki hálsbólga'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Kvef', '-', 'Hósti', '-'],
+        display: ['Kvef', 'Hósti'],
         options: [
-            
             {
                 display: 'Kvef',
-                output: 'Kvef'
-            },
-            {
-                display: '-',
-                output: 'Ekki kvef'
+                output: 'Kvef',
+                onRightClickOutput: 'Ekki kvef'
             },
             {
                 display: 'Hósti',
@@ -70,69 +59,49 @@ const SymptomsViral = [
                     { display: 'Blautur', output: 'Blautur hósti' },
                     { display: 'Þurr', output: 'Þurr hósti' }
                 ],
-                cancelText: ''
-            },
-            {
-                display: '-',
-                output: 'Ekki verið með hósta'
+                onRightClickOutput: 'Ekki verið með hósta'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Takverkur', '-', 'Slappleiki', '-'],
+        display: ['Takverkur', 'Slappleiki'],
         options: [
             {
                 display: 'Takverkur',
-                output: 'Fundið fyrir takverk'
-            },
-            {
-                display: '-',
-                output: 'Ekki fundið fyrir takverk'
+                output: 'Fundið fyrir takverk',
+                onRightClickOutput: 'Ekki fundið fyrir takverk'
             },
             {
                 display: 'Slappleiki',
-                output: 'Slappleiki'
-            },
-            {
-                display: '-',
-                output: 'Ekki áberandi slappleiki'
+                output: 'Slappleiki',
+                onRightClickOutput: 'Ekki áberandi slappleiki'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Hæsi', '-', 'Munnangur', '-'],
+        display: ['Hæsi', 'Munnangur'],
         options: [
             {
                 display: 'Hæsi',
-                output: 'Hæsi'
-            },
-            {
-                display: '-',
-                output: 'Ekki hæsi'
+                output: 'Hæsi',
+                onRightClickOutput: 'Ekki hæsi'
             },
             {
                 display: 'Munnangur',
-                output: 'Munnangur'
-            },
-            {
-                display: '-',
-                output: 'Ekki munnangur'
+                output: 'Munnangur',
+                onRightClickOutput: 'Ekki munnangur'
             }
         ]
     },
-
-    
     {
         name: '',
         type: 'options',
-        display: ['Hiti', '-'],
+        display: ['Hiti'],
         options: [
-            
-            
             {
                 display: 'Hiti',
                 subOptions: [
@@ -141,18 +110,14 @@ const SymptomsViral = [
                     { display: 'Hiti í byrjun veikinda', output: 'Hiti í byrjun veikinda en hann yfirstaðinn nú' },
                     { display: 'Ekki mælt', output: 'Upplifað sig með hita en ekki mælt sig' }
                 ],
-                cancelText: ''
-            },
-            {
-                display: '-',
-                output: 'Ekki fengið hita'
-            }            
+                onRightClickOutput: 'Ekki fengið hita'
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Sinusþrýstingur', '-', 'Leiðni'],
+        display: ['Sinusþrýstingur', 'Leiðni'],
         options: [
             {
                 display: 'Sinusþrýstingur',
@@ -161,26 +126,21 @@ const SymptomsViral = [
                     { display: 'Vinstra megin', output: 'Þrýstingur yfir ennisholum vinstra megin' },
                     { display: 'Beggja vegna', output: 'Þrýstingur yfir ennisholum beggja vegna' }
                 ],
-                cancelText: 'Þrýstingur yfir ennisholum'
-            },
-            {
-                display: '-',
-                output: 'Ekki þrýstingur yfir ennisholum'
+                onRightClickOutput: 'Ekki þrýstingur yfir ennisholum'
             },
             {
                 display: 'Leiðni',
                 subOptions: [
                     { display: 'Hægra eyra', output: 'Leiðir út í hægra eyra' },
                     { display: 'Vinstra eyra', output: 'Leiðir út í vinstra eyra' }
-                ],
-                cancelText: 'Þrýstingur yfir ennisholum'
+                ]
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Eyrnaverkur', 'Hella', 'Óþægindi', '-'],
+        display: ['Eyrnaverkur', 'Hella', 'Óþægindi'],
         options: [
             {
                 display: 'Verkur',
@@ -188,7 +148,8 @@ const SymptomsViral = [
                     { display: 'Hægri', output: 'Verkur í hægra eyra' },
                     { display: 'Vinstri', output: 'Verkur í vinstra eyra' },
                     { display: 'Beggja vegna', output: 'Verkur í báðum eyrum' }
-                ]
+                ],
+                onRightClickOutput: 'Ekki einkenni frá eyrum'
             },
             {
                 display: 'Hella',
@@ -205,44 +166,34 @@ const SymptomsViral = [
                     { display: 'Vinstri', output: 'Óþægindi í vinstra eyra' },
                     { display: 'Beggja vegna', output: 'Óþægindi í báðum eyrum' }
                 ]
-            },
-            {
-                display: '-',
-                output: 'Ekki einkenni frá eyrum'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Veikindi heima', '-', 'Ferðalag', '-'], 
+        display: ['Veikindi heima', 'Ferðalag'],
         options: [
             {
                 display: 'Veikindi heima',
-                output: 'Margir veikir á heimili'
-            },
-            {
-                display: '-',
-                output: 'Ekki aðrir veikir á heimili'
+                output: 'Margir veikir á heimili',
+                onRightClickOutput: 'Ekki aðrir veikir á heimili'
             },
             {
                 display: 'Ferðalag',
-                output: 'Var að koma út ferðalagi erlendis'
-            },
-            {
-                display: '-',
-                output: 'Ekki verið erlendis nýlega'
+                output: 'Var að koma út ferðalagi erlendis',
+                onRightClickOutput: 'Ekki verið erlendis nýlega'
             }
         ]
     },
-    {},{},{},
+    {},
+    {},
+    {},
     {
         name: '',
         type: 'options',
         display: ['Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
         options: [
-            
-          
             {
                 display: 'Nokkrir dagar',
                 output: 'Nokkra daga saga'
@@ -256,8 +207,7 @@ const SymptomsViral = [
                     { display: '4d', output: '4d saga' },
                     { display: '5d', output: '5d saga' },
                     { display: '6d', output: '6d saga' }
-                ],
-                cancelText: ''
+                ]
             },
             {
                 display: 'Vikur',
@@ -266,9 +216,7 @@ const SymptomsViral = [
                     { display: '1,5v', output: '1,5 vikna saga' },
                     { display: '2v', output: '2 vikna saga' },
                     { display: '3v', output: '3 vikna saga' }
-    
-                ],
-                cancelText: ''
+                ]
             },
             {
                 display: 'Mánuðir',
@@ -279,11 +227,8 @@ const SymptomsViral = [
                     { display: '4m', output: '4 mán saga' },
                     { display: '5m', output: '5 mán saga' },
                     { display: '6m', output: '6 mán saga' }
-    
-                ],
-                cancelText: ''
+                ]
             }
-            
         ]
     },
     {
@@ -316,7 +261,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Næring', '-'],
+        display: ['Næring'],
         options: [
             {
                 display: 'Næring',
@@ -325,64 +270,53 @@ const SymptomsViral = [
                     { display: 'Drekkur vel', output: 'Drekkur vel' },
                     { display: 'Borðar og drekkur vel', output: 'Borðar og drekkur vel' }
                 ],
-                cancelText: 'Nærist vel'
-            },
-            {
-                display: '-',
-                subOptions: [
-                    { display: 'Borðar lítið', output: 'Borðað lítið' },
+                onRightClickSubOptions: [
+                    { display: 'Borðar lítið', output: 'Borðar lítið' },
                     { display: 'Drukkið lítið', output: 'Drukkið lítið' },
                     { display: 'Borðað og drukkið lítið', output: 'Borðað og drukkið lítið' }
                 ],
-                cancelText: 'Nærist illa'
-            },
+                cancelText: ''
+            }
         ]
     }
-    
 ];
+
 const ExamsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Lasleg/ur', '-', 'Yfirþyngd'],
+        display: ['Lasleg/ur', 'Yfirþyngd'],
         options: [
             {
                 display: 'Lasleg/ur',
                 subOptions: [
                     { display: 'Laslegur', output: 'Laslegur að sjá' },
                     { display: 'Lasleg', output: 'Lasleg að sjá' }
-                ]
-            },
-            {
-                display: '-',
-                subOptions: [
+                ],
+                onRightClickSubOptions: [
                     { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
                     { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
                 ]
             },
-            { display: 'Yfirþyngd', output: 'Er í yfirþyngd' }
+            { display: 'Yfirþyngd', output: 'Er í yfirþyngd', onRightClickOutput: 'Ekki yfirþyngd' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Roði í koki', '-', 'Gröftur', '-', 'Stórir', '-'],
+        display: ['Roði í koki', 'Gröftur', 'Stórir'],
         options: [
-            { display: '+', output: 'Roði í koki' },
-            { display: '-', output: 'Ekki roði í koki' },
-            { display: '+', output: 'Gröftur á hálskirtlum' },
-            { display: '-', output: 'Ekki gröftur á hálskirtlum' },
-            { display: '+', output: 'Hálskirtlar stórir' },
-            { display: '-', output: 'Ekki áberandi stórir hálskirtlar' }
+            { display: 'Roði í koki', output: 'Roði í koki', onRightClickOutput: 'Ekki roði í koki' },
+            { display: 'Gröftur á hálskirtlum', output: 'Gröftur á hálskirtlum', onRightClickOutput: 'Ekki gröftur á hálskirtlum' },
+            { display: 'Hálskirtlar stórir', output: 'Hálskirtlar stórir', onRightClickOutput: 'Ekki áberandi stórir hálskirtlar' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Eitlastækkanir', '-'],
+        display: ['Eitlastækkanir'],
         options: [
-            { display: 'Eitlastækkanir', output: 'Eitlastækkanir á hálssvæði' },
-            { display: '-', output: 'Ekki eitlastækkanir á hálssvæði' }
+            { display: 'Eitlastækkanir', output: 'Eitlastækkanir á hálssvæði', onRightClickOutput: 'Ekki eitlastækkanir á hálssvæði' }
         ]
     },
     {
@@ -399,72 +333,25 @@ const ExamsViral = [
                     { display: 'Gróf', output: 'Lungnahlustun sýnir gróf öndunarhljóð' },
                     { display: 'Gróf, ronchi og lengd útöndun', output: 'Lungnahlustun sýnir gróf öndunarhljóð, ronchi og lengda útöndun' },
                     { display: 'Brak hægra megin basalt', output: 'Heyrist brak hægra megin basalt' },
-                    { display: 'Brak vinstra megin basalt', output: 'Heyrist brak vinstra megin basalt' },
-
-                ]
-            },
-            {
-                display: '-',
-                subOptions: [
-                    { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
-                    { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
-                ]
-            },
-            { display: 'Yfirþyngd', output: 'Er í yfirþyngd' }
-        ]
-    },
-    
-    /*
-    {
-        name: '',
-        type: 'options',
-        display: ['Lungnahlustun hrein', 'Slímhljóð basalt', 'Gróf', 'Obstrúktíf'],
-        options: [
-            { display: 'Hrein', output: 'Lungnahlustun hrein' },
-            { display: 'Slímhljóð basalt', output: 'Lungnahlustun sýnir slímhljóð basalt' },
-            { display: 'Gróf', output: 'Lungnahlustun sýnir gróf öndunarhljóð' },
-            { display: 'Obstrúktíf', output: 'Lungnahlustun sýnir lengda útöndun' }
-            
+                    { display: 'Brak vinstra megin basalt', output: 'Heyrist brak vinstra megin basalt' }
+                ],
+                onRightClickOutput: 'Lungnahlustun eðlileg'
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Brak', 'Wheezing', 'Hrein a.ö.l.'],
+        display: ['Roði á hljóðhimnum', 'Roði í hlust', 'Mergur'],
         options: [
-            {
-                display: 'Brak',
-                subOptions: [
-                    { display: 'Brak hægra megin', output: 'Heyrist brak hægra megin basalt' },
-                    { display: 'Brak vinstra megin', output: 'Heyrist brak vinstra megin basalt' },
-                    { display: 'Brak basalt beggja vegna', output: 'Heyrist brak basalt beggja vegna' }
-                ]
-            },
-            { display: 'Wheezing', output: 'Heyrist wheezing' },
-            { display: 'Hrein a.ö.l.', output: 'Hrein a.ö.l.' }
-        ]
-    },*/
-    {
-        name: '',
-        type: 'options',
-        display: ['Roði á hljóðhimnum', '-', 'Roði í hlust', '-', 'Mergur', '-'],
-        options: [
-           
             {
                 display: 'Roði á hljóðhimnum',
                 subOptions: [
                     { display: 'Hægri', output: 'Roði á hægri hljóðhimnu' },
                     { display: 'Vinstri', output: 'Roði á vinstri hljóðhimnu' },
                     { display: 'Beggja vegna', output: 'Roði á hljóðhimnum beggja vegna' }
-                ]
-            },
-            {
-                display: '-',
-                subOptions: [
-                    { display: 'Hægri', output: 'Hljóðhimna hægra megin eðlilega útlítandi' },
-                    { display: 'Vinstri', output: 'Hljóðhimna vinstra megin eðlilega útlítandi' },
-                    { display: 'Beggja vegna', output: 'Hljóðhimnur líta eðliega út beggja vegna' }
-                ]
+                ],
+                onRightClickOutput: 'Ekki roði á hljóðhimnum'
             },
             {
                 display: 'Roði í hlust',
@@ -473,16 +360,7 @@ const ExamsViral = [
                     { display: 'Vinstri', output: 'Roði í hlust vinstra megin' },
                     { display: 'Beggja vegna', output: 'Roði í hlustum beggja vegna' }
                 ],
-                cancelText: 'Roði í hlust'
-            },
-            {
-                display: '-',
-                subOptions: [
-                    { display: 'Hægri', output: 'Ekki roði í hlust hægra megin' },
-                    { display: 'Vinstri', output: 'Ekki roði í hlust vinstra megin' },
-                    { display: 'Beggja vegna', output: 'Ekki að sjá roða í hlust hvorki hægra megin né vinstra megin' }
-                ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki roði í hlust'
             },
             {
                 display: 'Mergur',
@@ -490,15 +368,8 @@ const ExamsViral = [
                     { display: 'Hægri', output: 'Eyrnamergur hægra megin' },
                     { display: 'Vinstri', output: 'Eyrnamergur vinstra megin' },
                     { display: 'Beggja vegna', output: 'Eyrnamergur beggja vegna' }
-                ]
-            },
-            {
-                display: '-',
-                subOptions: [
-                    { display: 'Hægri', output: 'Ekki áberandi eyrnamergur hægra megin' },
-                    { display: 'Vinstri', output: 'Ekki áberandi eyrnamergur vinstra megin' },
-                    { display: 'Beggja vegna', output: 'Ekki eyrnamergur' }
-                ]
+                ],
+                onRightClickOutput: 'Ekki eyrnamergur'
             }
         ]
     },
@@ -751,65 +622,58 @@ const historyViralData = [
 ];
 */
 const SymptomsUrinary = [
-    { 
-        name: '', 
-        type: 'options', 
-        display: ['Grunur um blöðrubólgu', 'Jákv stix heima', 'Fengið áður', '-'], 
+    {
+        name: '',
+        type: 'options',
+        display: ['Grunur um blöðrubólgu', 'Jákv stix heima', 'Fengið áður'],
         options: [
-            { display: 'Grunur', output: 'Grunar sig vera með blöðrubólgu' },
-            { display: 'Jákv stix heima', output: 'Jákv stix heima' },
-            { display: 'Fengið áður', output: 'Þekkir einkennin' },
-            { display: '-', output: 'Aldrei fengið áður' }
+            { display: 'Grunur', output: 'Grunar sig vera með blöðrubólgu', onRightClickOutput: 'Grunar sig ekki vera með blöðrubólgu' },
+            { display: 'Jákv stix heima', output: 'Jákv stix heima', onRightClickOutput: 'Neikv stix heima' },
+            { display: 'Fengið áður', output: 'Þekkir einkennin', onRightClickOutput: 'Aldrei fengið áður' }
         ]
     },
-    { 
-        name: '', 
-        type: 'options', 
-        display: ['Óþægindi', '-', 'Sviði', '-', 'Tíð þvaglát', '-', 'Blóð', '-'], 
+    {
+        name: '',
+        type: 'options',
+        display: ['Óþægindi', 'Sviði', 'Tíð þvaglát', 'Blóð'],
         options: [
-            { display: 'Óþægindi', output: 'Óþægindi við þvaglát' },
-            { display: '-', output: 'Neitar óþægindum við þvaglát' },
-            { display: 'Sviði', output: 'Sviði við þvaglát' },
-            { display: '-', output: 'Ekki sviði við þvaglát' },
-            { display: 'Tíð þvaglát', output: 'Tíð þvaglát' },
-            { display: '-', output: 'Ekki tíð þvaglát' },
-            { display: 'Blóð', output: 'Blóð í þvagi' },
-            { display: '-', output: 'Ekki blóð í þvagi' }
-
+            { display: 'Óþægindi', output: 'Óþægindi við þvaglát', onRightClickOutput: 'Neitar óþægindum við þvaglát' },
+            { display: 'Sviði', output: 'Sviði við þvaglát', onRightClickOutput: 'Ekki sviði við þvaglát' },
+            { display: 'Tíð þvaglát', output: 'Tíð þvaglát', onRightClickOutput: 'Ekki tíð þvaglát' },
+            { display: 'Blóð', output: 'Blóð í þvagi', onRightClickOutput: 'Ekki blóð í þvagi' }
         ]
     },
-    { 
-        name: '', 
-        type: 'options', 
-        display: ['Hiti', '-', 'Bakverkur', '-', 'Slappleiki', '-'], 
+    {
+        name: '',
+        type: 'options',
+        display: ['Hiti', 'Bakverkur', 'Slappleiki'],
         options: [
-            { display: '+', output: 'Verið með hita' },
-            { display: '-', output: 'Ekki fengið hita' },
-            { display: 'Bakverkur', output: 'Bakverkur, nýtilkominn' },
-            { display: '-', output: 'Ekki nýtilkominn bakverkur' },
-            { display: 'Slappleiki', output: 'Verið með slappleika' },
-            { display: '-', output: 'Ekki fundið fyrir slappleika' }
+            { display: 'Hiti', output: 'Verið með hita', onRightClickOutput: 'Ekki fengið hita' },
+            { display: 'Bakverkur', output: 'Bakverkur, nýtilkominn', onRightClickOutput: 'Ekki nýtilkominn bakverkur' },
+            { display: 'Slappleiki', output: 'Verið með slappleika', onRightClickOutput: 'Ekki fundið fyrir slappleika' }
         ]
     },
-    { 
-        name: '', 
-        type: 'options', 
-        display: ['Reykingar', 'Karlkyn', 'Aldur>35', 'Fjölskyldusaga'], 
+    {
+        name: '',
+        type: 'options',
+        display: ['Reykingar', 'Karlkyn', 'Aldur>35', 'Fjölskyldusaga'],
         options: [
-            { display: 'Reykingar', output: 'Saga um reykingar' },
-            { display: 'Karlkyn', output: 'Karlkyn' },
-            { display: 'Aldur>35', output: 'Aldur > 35 ára' },
-
+            { display: 'Reykingar', output: 'Saga um reykingar', onRightClickOutput: 'Ekki saga um reykingar' },
+            { display: 'Karlkyn', output: 'Karlkyn', onRightClickOutput: 'Ekki karlkyn' },
+            { display: 'Aldur>35', output: 'Aldur > 35 ára', onRightClickOutput: 'Aldur ≤ 35 ára' },
             {
                 display: 'Fjölskyldusaga',
-                    subOptions: [
-                        { display: 'Þvagblöðrukrabbamein', output: 'Fjölskyldusaga um krabbamein í þvagblöðru' },
-                        { display: 'Blöðruhálskirtilskrabbamein', output: 'Fjölskyldusaga um blöðruhálskirtilskrabbamein' }
-                    ],
+                subOptions: [
+                    { display: 'Þvagblöðrukrabbamein', output: 'Fjölskyldusaga um krabbamein í þvagblöðru' },
+                    { display: 'Blöðruhálskirtilskrabbamein', output: 'Fjölskyldusaga um blöðruhálskirtilskrabbamein' }
+                ],
+                onRightClickOutput: 'Ekki fjölskyldusaga um þvagblöðru- eða blöðruhálskirtilskrabbamein'
             }
         ]
     },
-    {},{},{},
+    {},
+    {},
+    {},
     {
         name: '',
         type: 'options',
@@ -817,7 +681,8 @@ const SymptomsUrinary = [
         options: [
             {
                 display: 'Nokkrir dagar',
-                output: 'Nokkra daga saga'
+                output: 'Nokkra daga saga',
+                onRightClickOutput: 'Ekki nokkra daga saga'
             },
             {
                 display: 'Dagar',
@@ -829,7 +694,7 @@ const SymptomsUrinary = [
                     { display: '5d', output: '5d saga' },
                     { display: '6d', output: '6d saga' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki daga saga'
             },
             {
                 display: 'Vikur',
@@ -838,9 +703,8 @@ const SymptomsUrinary = [
                     { display: '1,5v', output: '1,5 vikna saga' },
                     { display: '2v', output: '2 vikna saga' },
                     { display: '3v', output: '3 vikna saga' }
-    
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki vikna saga'
             },
             {
                 display: 'Mánuðir',
@@ -851,61 +715,55 @@ const SymptomsUrinary = [
                     { display: '4m', output: '4 mán saga' },
                     { display: '5m', output: '5 mán saga' },
                     { display: '6m', output: '6 mán saga' }
-    
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki mánuða saga'
             }
-            
         ]
     }
 ];
+
 const ExamsUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Lasleg/ur', '-', 'Yfirþyngd'],
+        display: ['Lasleg/ur', 'Yfirþyngd'],
         options: [
             {
                 display: 'Lasleg/ur',
                 subOptions: [
                     { display: 'Laslegur', output: 'Laslegur að sjá' },
                     { display: 'Lasleg', output: 'Lasleg að sjá' }
-                ]
-            },
-            {
-                display: '-',
-                subOptions: [
+                ],
+                onRightClickSubOptions: [
                     { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
                     { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
                 ]
             },
-            { display: 'Yfirþyngd', output: 'Er í yfirþyngd' }
+            { display: 'Yfirþyngd', output: 'Er í yfirþyngd', onRightClickOutput: 'Ekki í yfirþyngd' }
         ]
     },
-    { 
-        name: '', 
-        type: 'options', 
-        display: ['Bankeymsli', '-'], 
+    {
+        name: '',
+        type: 'options',
+        display: ['Bankeymsli'],
         options: [
             {
-                display: 'Lasleg/ur',
+                display: 'Bankeymsli',
                 subOptions: [
                     { display: 'Bankeymsli hægra megin', output: 'Bankeymsli yfir nýrnastað hægra megin' },
                     { display: 'Bankeymsli vinstra megin', output: 'Bankeymsli yfir nýrnastað vinstra megin' }
-                ]
-            },
-            { display: '-', output: 'Ekki bankeymsli yfir nýrnastað' }
+                ],
+                onRightClickOutput: 'Ekki bankeymsli yfir nýrnastað'
+            }
         ]
     },
-    { 
-        name: '', 
-        type: 'options', 
-        display: ['Nítrít', '-', 'Hvít', '-'], 
+    {
+        name: '',
+        type: 'options',
+        display: ['Nítrít', 'Hvít'],
         options: [
-            { display: 'Nítrít', output: 'Jákv nítrít í þvagi' },
-            { display: '-', output: 'Þvagstix hreint' },
-            { display: 'Hvít', output: 'Hvít í þvagi' },
-            { display: '-', output: 'Þvagstix hreint' }
+            { display: 'Nítrít', output: 'Jákv nítrít í þvagi', onRightClickOutput: 'Þvagstix hreint' },
+            { display: 'Hvít', output: 'Hvít í þvagi', onRightClickOutput: 'Þvagstix hreint' }
         ]
     }
 ];
@@ -1058,7 +916,7 @@ const SymptomsEye = [
                     { display: 'Vinstra', output: 'Einkenni frá vinstra auga' },
                     { display: 'Bæði', output: 'Einkenni frá báðum augum' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki einkenni frá auga'
             },
             {
                 display: 'Efra augnlok',
@@ -1066,7 +924,7 @@ const SymptomsEye = [
                     { display: 'Hægra', output: 'Einkenni frá hægra efra augnloki' },
                     { display: 'Vinstra', output: 'Einkenni frá vinstra efra augnloki' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki einkenni frá efra augnloki'
             },
             {
                 display: 'Neðra augnlok',
@@ -1074,7 +932,7 @@ const SymptomsEye = [
                     { display: 'Hægra', output: 'Einkenni frá hægra neðra augnloki' },
                     { display: 'Vinstra', output: 'Einkenni frá vinstra neðra augnloki' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki einkenni frá neðra augnloki'
             }
         ]
     },
@@ -1090,7 +948,7 @@ const SymptomsEye = [
                     { display: 'Tréflís', output: 'Tréflís' },
                     { display: 'Járnflís', output: 'Járnflís' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki fengið aðskotahlut í augað'
             },
             {
                 display: 'Áverki',
@@ -1099,17 +957,16 @@ const SymptomsEye = [
                     { display: 'Grein', output: 'Fékk grein í augað' },
                     { display: 'Fingur', output: 'Fékk fingur í augað' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki fengið áverka á auga'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Aðskotahlutstilfinning', '-'],
+        display: ['Aðskotahlutstilfinning'],
         options: [
-            { display: 'Aðskotahlutstilfinning', output: 'Finnur fyrir aðskotahlutstilfinningu' },
-            { display: '-', output: 'Ekki aðskotahlutstilfinning' }
+            { display: 'Aðskotahlutstilfinning', output: 'Finnur fyrir aðskotahlutstilfinningu', onRightClickOutput: 'Ekki aðskotahlutstilfinning' }
         ]
     },
     {
@@ -1117,39 +974,34 @@ const SymptomsEye = [
         type: 'options',
         display: ['Roði', 'Nabbi', 'Kláði', 'Rennsli'],
         options: [
-            { display: 'Roði', output: 'Roði' },
-            { display: 'Nabbi', output: 'Nabbi' },
-            { display: 'Kláði', output: 'Kláði' },
-            { display: 'Rennsli', output: 'Aukin táramyndun' }
+            { display: 'Roði', output: 'Roði', onRightClickOutput: 'Ekki roði' },
+            { display: 'Nabbi', output: 'Nabbi', onRightClickOutput: 'Ekki nabbi' },
+            { display: 'Kláði', output: 'Kláði', onRightClickOutput: 'Ekki kláði' },
+            { display: 'Rennsli', output: 'Aukin táramyndun', onRightClickOutput: 'Ekki aukin táramyndun' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Gröftur', '-', 'Límd', '-'],
+        display: ['Gröftur', 'Límd'],
         options: [
-            { display: 'Gröftur', output: 'Lekur gröftur' },
-            { display: '-', output: 'Ekki gröftur' },
-            { display: 'Límd', output: 'Augnlok límd saman á morgnanna' },
-             { display: '-', output: 'Augnlok ekki límd saman á morgnanna' }
+            { display: 'Gröftur', output: 'Lekur gröftur', onRightClickOutput: 'Ekki gröftur' },
+            { display: 'Límd', output: 'Augnlok límd saman á morgnanna', onRightClickOutput: 'Augnlok ekki límd saman á morgnanna' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Sjóntap', '-', 'Móðusjón', '-', 'Ljósfælni', '-', 'Verkur', '-'],
+        display: ['Sjóntap', 'Móðusjón', 'Ljósfælni', 'Verkur'],
         options: [
-            { display: 'Sjóntap', output: 'Lýsir versnun á sjón' },
-            { display: '-', output: 'Sjón í lagi' },
-            { display: 'Móðusjón', output: 'Lýsir móðusjón' },
-            { display: '-', output: 'Neitar móðusjón' },
-            { display: 'Ljósfælni', output: 'Lýsir ljósfælni' },
-            { display: '-', output: 'Neitar ljósfælni' },
-            { display: 'Verkur', output: 'Verkjar' },
-            { display: '-', output: 'Neitar verk' }
+            { display: 'Sjóntap', output: 'Lýsir versnun á sjón', onRightClickOutput: 'Sjón í lagi' },
+            { display: 'Móðusjón', output: 'Lýsir móðusjón', onRightClickOutput: 'Neitar móðusjón' },
+            { display: 'Ljósfælni', output: 'Lýsir ljósfælni', onRightClickOutput: 'Neitar ljósfælni' },
+            { display: 'Verkur', output: 'Verkjar', onRightClickOutput: 'Neitar verk' }
         ]
     }
 ];
+
 const ExamsEye = [
     {
         name: '',
@@ -1296,7 +1148,8 @@ const SymptomsHeart = [
         options: [
             {
                 display: 'Nokkrir dagar',
-                output: 'Nokkra daga saga'
+                output: 'Nokkra daga saga',
+                onRightClickOutput: 'Ekki nokkra daga saga'
             },
             {
                 display: 'Dagar',
@@ -1308,7 +1161,7 @@ const SymptomsHeart = [
                     { display: '5d', output: '5d saga' },
                     { display: '6d', output: '6d saga' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki daga saga'
             },
             {
                 display: 'Vikur',
@@ -1318,9 +1171,8 @@ const SymptomsHeart = [
                     { display: '2v', output: '2 vikna saga' },
                     { display: '3v', output: '3 vikna saga' },
                     { display: 'Margar', output: 'Margra vikna saga' }
-    
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki vikna saga'
             },
             {
                 display: 'Mánuðir',
@@ -1331,18 +1183,16 @@ const SymptomsHeart = [
                     { display: '4m', output: '4 mán saga' },
                     { display: '5m', output: '5 mán saga' },
                     { display: '6m', output: '6 mán saga' },
-                    { display: 'Margir', output: 'Margra mánaða saga'}
-    
+                    { display: 'Margir', output: 'Margra mánaða saga' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki mánuða saga'
             }
-            
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Háþrýstingur', 'Heimamælingar', 'Hjartsláttaróþægindi', '-'],
+        display: ['Háþrýstingur', 'Heimamælingar', 'Hjartsláttaróþægindi'],
         options: [
             {
                 display: 'Háþrýstingur',
@@ -1350,7 +1200,7 @@ const SymptomsHeart = [
                     { display: 'Eftirfylgd', output: 'Eftirfylgd með háþrýstingi' },
                     { display: 'Grunur um háþrýsting', output: 'Grunur um háþrýsting. Mælt þrýstinginn hækkaðan heimafyrir' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki saga um háþrýsting'
             },
             {
                 display: 'Heimamælingar',
@@ -1359,7 +1209,7 @@ const SymptomsHeart = [
                     { display: 'Hækkaðar', output: 'Kemur með heimamælingar. Er oft að mælast yfir mörkum' },
                     { display: 'Eðlilegar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Engar heimamælingar'
             },
             {
                 display: 'Hjartsláttaróþægindi',
@@ -1368,18 +1218,14 @@ const SymptomsHeart = [
                     { display: 'Hækkaðar', output: 'Kemur með heimamælingar. Er oft að mælast yfir mörkum' },
                     { display: 'Eðlilegar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' }
                 ],
-                cancelText: ''
-            },
-            {
-                display: '-',
-                output: 'Ekki fundið fyrir hjartsláttaróþægindum'
+                onRightClickOutput: 'Ekki fundið fyrir hjartsláttaróþægindum'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Mæði', '-', 'Slappleiki', '-', 'Fótabjúg', '-'],
+        display: ['Mæði', 'Slappleiki', 'Fótabjúg'],
         options: [
             {
                 display: 'Mæði',
@@ -1388,23 +1234,21 @@ const SymptomsHeart = [
                     { display: 'Meira en áður', output: 'Mæðist meira en áður' },
                     { display: 'Mæði við áreynslu', output: 'Lýsir mæði við áreynslu' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Neitar mæði'
             },
-            {display: '-', output: 'Neitar mæði' },
-            {display: 'Slappleiki', output: 'Fundið fyrir auknum slappleika' },
-            {display: '-', output: 'Ekki fundið fyrir auknum slappleika'},
-            {display: 'Fótabjúg', output: 'Verið með bjúg á fótum' },
-            {display: '-', output: 'Neitar bjúg á fótum'}
+            { display: 'Slappleiki', output: 'Fundið fyrir auknum slappleika', onRightClickOutput: 'Ekki fundið fyrir auknum slappleika' },
+            { display: 'Fótabjúg', output: 'Verið með bjúg á fótum', onRightClickOutput: 'Neitar bjúg á fótum' }
         ]
     },
-    {},{},{},
+    {},
+    {},
+    {},
     {
         name: '',
         type: 'options',
-        display: ['Brjóstverkur', '-', 'Tegund', 'Staðsettning', 'Leiðni', '-'],
+        display: ['Brjóstverkur', 'Tegund', 'Staðsettning', 'Leiðni'],
         options: [
-            { display: 'Brjóstverkur', output: 'Fundið fyrir bjóstverk' },
-            { display: '-', output: 'Ekki fundið fyrir bjóstverk'},
+            { display: 'Brjóstverkur', output: 'Fundið fyrir bjóstverk', onRightClickOutput: 'Ekki fundið fyrir bjóstverk' },
             {
                 display: 'Tegund',
                 subOptions: [
@@ -1413,7 +1257,7 @@ const SymptomsHeart = [
                     { display: 'Sviði', output: 'Lýsir sem sviða' },
                     { display: 'Brennandi', output: 'Lýsir sem brennandi' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki lýst tegund'
             },
             {
                 display: 'Staðsettning',
@@ -1422,7 +1266,7 @@ const SymptomsHeart = [
                     { display: 'Epigastrium', output: 'Staðsett í epigastrium' },
                     { display: 'Hjartastað', output: 'Staðsett yfir hjartastað' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki lýst staðsettningu'
             },
             {
                 display: 'Leiðni',
@@ -1431,21 +1275,16 @@ const SymptomsHeart = [
                     { display: 'Kjálka', output: 'Leiðir út í kjálka' },
                     { display: 'Bak', output: 'Leiðir aftur í bak' }
                 ],
-                cancelText: ''
-            },
-            {
-                display: '-',
-                output: 'Neitar leiðni'
+                onRightClickOutput: 'Ekki lýst leiðni'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Áreynslutengdur', '-', 'Onset', 'Gerst áður', '-', 'Versnar við'],
+        display: ['Áreynslutengdur', 'Onset', 'Gerst áður', 'Versnar við'],
         options: [
-            { display: 'Áreynslutengdur', output: 'Kemur við áreynslu' },
-            { display: '-', output: 'Ekki tengdur áreynslu'},
+            { display: 'Áreynslutengdur', output: 'Kemur við áreynslu', onRightClickOutput: 'Ekki tengdur áreynslu' },
             {
                 display: 'Onset',
                 subOptions: [
@@ -1454,10 +1293,9 @@ const SymptomsHeart = [
                     { display: '2 klst>', output: 'Einkenni byrjuðu fyrir u.þ.b. 2 klst síðan' },
                     { display: '3 klst', output: 'Einkenni byrjuðu fyrir u.þ.b. 3 klst síðan' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki lýst onset'
             },
-            { display: 'Gerst áður', output: 'Kannast við verkinn'},
-            { display: '-', output: 'Ekki fengið svona einkenni áður'},
+            { display: 'Gerst áður', output: 'Kannast við verkinn', onRightClickOutput: 'Ekki fengið svona einkenni áður' },
             {
                 display: 'Versnar við',
                 subOptions: [
@@ -1465,12 +1303,10 @@ const SymptomsHeart = [
                     { display: 'Hreyfingu', output: 'Verkurinn er stöðubundinn, versnar við ákveðnar hreyfingar' },
                     { display: 'Ekkert', output: 'Ekkert sem gerir verkinn betri eða verri' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki lýst versnun'
             }
         ]
     }
-    
-    
 ];
 const ExamsHeart = [
     {
@@ -1675,12 +1511,10 @@ const RiskFactorsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Reykingar','-', 'Háþrýstingur', '-', 'Obesity','-'],
+        display: ['Reykingar', 'Háþrýstingur', 'Obesity'],
         options: [
-            {display: 'Reykingar', output: 'Reykingasaga' },
-            {display: '-', output: 'Ekki reykingasaga' },
-            {display: 'Háþrýstingur', output: 'Saga um háþrýsting' },
-            {display: '-', output: 'Ekki saga um háþrýsting' },
+            { display: 'Reykingar', output: 'Reykingasaga', onRightClickOutput: 'Ekki reykingasaga' },
+            { display: 'Háþrýstingur', output: 'Saga um háþrýsting', onRightClickOutput: 'Ekki saga um háþrýsting' },
             {
                 display: 'Obesity',
                 subOptions: [
@@ -1688,25 +1522,20 @@ const RiskFactorsHeart = [
                     { display: 'Obesity BMI > 30', output: 'Er í yfirþyngd, BMI > 30' },
                     { display: 'Obesity BMI > 35', output: 'Er í yfirþyngd, BMI > 35' }
                 ],
-                cancelText: ''
-            },
-            {display: '-', output: 'Ekki í yfirþyngd' }
-                ]              
-    },   
+                onRightClickOutput: 'Ekki í yfirþyngd'
+            }
+        ]
+    },
     {
         name: '',
         type: 'options',
-        display: ['Sykursýki', '-', 'Blóðfituröskun', '-', 'Fjölskyldusaga', '-'],
+        display: ['Sykursýki', 'Blóðfituröskun', 'Fjölskyldusaga'],
         options: [
-            {display: 'Sykursýki', output: 'Er með sykursýki 2' },
-            {display: '-', output: 'Ekki sykursýki' },
-            {display: 'Blóðfituröskun', output: 'Er með blóðfituröskun' },
-            {display: '-', output: 'Ekki þekkt blóðfituröskun' },
-            {display: 'Fjölskyldusaga', output: 'Fjölskyldusaga um hjarta- og æðasjúkdóm' },
-            {display: '-', output: 'Neikvæð ættarsaga' }
-                ]              
+            { display: 'Sykursýki', output: 'Er með sykursýki 2', onRightClickOutput: 'Ekki sykursýki' },
+            { display: 'Blóðfituröskun', output: 'Er með blóðfituröskun', onRightClickOutput: 'Ekki þekkt blóðfituröskun' },
+            { display: 'Fjölskyldusaga', output: 'Fjölskyldusaga um hjarta- og æðasjúkdóm', onRightClickOutput: 'Neikvæð ættarsaga' }
+        ]
     }
-    
 ];
 const CHADSVASCHeart = [
     {
@@ -3356,17 +3185,11 @@ function createButtons(container, data) {
             label.textContent = item.name;
             row.appendChild(label);
         }
-	
+
         if (item.display && Array.isArray(item.display)) {
             item.display.forEach((displayText, index) => {
                 createButton(row, item, displayText, index);
             });
-        } else if (item.type === 'PlusMinus' && item.positive && item.negative) {
-            createButton(row, item, '+', 0);
-            createButton(row, item, '-', 1);
-        } else if (item.type === 'GenderPrompt') {
-            createButton(row, item, '+', 0);
-            createButton(row, item, '-', 1);
         } else {
             console.error('No display data for item:', item); // Debugging line
         }
@@ -3375,185 +3198,262 @@ function createButtons(container, data) {
         console.log('Row appended:', row); // Debugging line
     });
 }
+
 function createButton(row, item, displayText, index, context) {
     const button = document.createElement('button');
     button.textContent = displayText;
 
-    button.onclick = (event) => {
-        // Remove any existing popup
-        const existingPopup = document.querySelector('.popup-modal');
-        if (existingPopup) {
-            existingPopup.remove();
-        }
+    // Left click event
+    button.onclick = (event) => handleButtonClick(event, item, displayText, index, button);
 
-        if (item.type === 'options') {
-            // Find the selected option
-            const selectedOption = item.options[index];
-
-            if (selectedOption) {
-                if (selectedOption.subOptions) {
-                    // Create a new popup modal
-                    const popup = document.createElement('div');
-                    popup.className = 'popup-modal';
-
-                    // Position the popup next to the button
-                    const rect = event.target.getBoundingClientRect();
-                    popup.style.position = 'absolute';
-                    popup.style.top = `${rect.bottom + window.scrollY}px`;
-                    popup.style.left = `${rect.left + window.scrollX}px`;
-                    popup.style.backgroundColor = 'white';
-                    popup.style.border = '1px solid #ccc';
-                    popup.style.padding = '10px';
-                    popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-                    popup.style.zIndex = '1000';
-
-                    // Function to create a button in the popup
-                    const createPopupButton = (popup, text, onClick) => {
-                        const btn = document.createElement('button');
-                        btn.textContent = text;
-                        btn.style.display = 'block';
-                        btn.style.margin = '5px 0';
-                        btn.onclick = () => {
-                            onClick();
-                            popup.remove();
-                        };
-                        popup.appendChild(btn);
-                    };
-
-                    // Recursive function to create subOption buttons
-                    const createSubOptions = (subOptions, parentPopup) => {
-                        subOptions.forEach(subOption => {
-                            if (subOption.subOptions) {
-                                // Create a button for the subOption with further subOptions
-                                createPopupButton(parentPopup, subOption.display, () => {
-                                    const subPopup = document.createElement('div');
-                                    subPopup.className = 'popup-modal';
-                                    subPopup.style.position = 'absolute';
-                                    subPopup.style.top = `${rect.bottom + window.scrollY}px`;
-                                    subPopup.style.left = `${rect.right + window.scrollX}px`;
-                                    subPopup.style.backgroundColor = 'white';
-                                    subPopup.style.border = '1px solid #ccc';
-                                    subPopup.style.padding = '10px';
-                                    subPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-                                    subPopup.style.zIndex = '1000';
-                                    createSubOptions(subOption.subOptions, subPopup);
-                                    document.body.appendChild(subPopup);
-
-                                    // Close subPopup when clicking outside
-                                    document.addEventListener('click', (e) => {
-                                        if (!subPopup.contains(e.target) && e.target !== btn) {
-                                            subPopup.remove();
-                                        }
-                                    }, { once: true });
-
-                                    // Close subPopup on escape key
-                                    document.addEventListener('keydown', (e) => {
-                                        if (e.key === 'Escape') {
-                                            subPopup.remove();
-                                        }
-                                    }, { once: true });
-                                });
-                            } else {
-                                // Create a button for the subOption with no further subOptions
-                                createPopupButton(parentPopup, subOption.display, () => insertText(subOption.output));
-                            }
-                        });
-                    };
-
-                    // Add subOptions to the popup
-                    createSubOptions(selectedOption.subOptions, popup);
-
-                    // Append the popup to the document body
-                    document.body.appendChild(popup);
-
-                    // Close popup when clicking outside
-                    const cancelAction = () => {
-                        if (selectedOption.cancelText) {
-                            insertText(selectedOption.cancelText);
-                        }
-                        popup.remove();
-                    };
-
-                    document.addEventListener('click', (e) => {
-                        if (!popup.contains(e.target) && e.target !== button) {
-                            cancelAction();
-                        }
-                    }, { once: true });
-
-                    // Close popup on escape key
-                    document.addEventListener('keydown', (e) => {
-                        if (e.key === 'Escape') {
-                            cancelAction();
-                        }
-                    }, { once: true });
-
-                } else if (selectedOption.output) {
-                    // Directly insert output for buttons without subOptions
-                    insertText(selectedOption.output);
-                } else if (selectedOption.negative && displayText === '-') {
-                    // Insert the negative output for '-' buttons
-                    insertText(selectedOption.negative);
-                }
-            }
-        } else {
-            // Default behavior for other buttons
-            if (item.name === 'Eyru' && displayText === '-') {
-                insertText('Ekki einkenni frá eyrum');
-            } else if (item.name === 'Eyru') {
-                handleEyruSelection(displayText);
-            } else if (item.name === 'Eyrnaverkur') {
-                if (displayText === '+') {
-                    handleEyrnaverkurPositive();
-                } else {
-                    insertText('Neitar eyrnaverk');
-                }
-            } else if (item.type === 'GenderPrompt') {
-                if (displayText === '+') {
-                    showGenderPrompt('positive', item.name);
-                } else {
-                    showGenderPrompt('negative', item.name);
-                }
-            } else if (item.name === 'Hósti' && displayText === '+') {
-                showHostiOptions();
-            } else if (item.name === 'Meðferð' && displayText === 'Sýklalyf') {
-                handleSyklalyfSelection(context);
-            } else if (displayText.includes('Ófrísk, gengin')) {
-                handlePregnancyWeeks();
-            } else if (item.name === 'Lungnahlustun' || (inLungnahlustunContext && item.name === '-')) {
-                inLungnahlustunContext = true;
-                let textToInsert = item.output[index];
-                if (isFirstLungnahlustunClick) {
-                    if (specialCases[displayText.toLowerCase()]) {
-                        textToInsert = `Lungnahlustun sýnir ${specialCases[displayText.toLowerCase()]}`;
-                    } else {
-                        textToInsert = `Lungnahlustun sýnir ${textToInsert.charAt(0).toLowerCase() + textToInsert.slice(1)}`;
-                    }
-                    isFirstLungnahlustunClick = false;
-                }
-                insertText(textToInsert);
-            } else if (item.name === 'Hljóðhimnur' && (displayText === 'Roði' || displayText === 'Eðl' || displayText === 'Mergur')) {
-                showSideSelectionModal(item, displayText, index);
-            } else if (item.name === 'Reykingar') {
-                if (displayText === 'Já') {
-                    handleReykingarYes();
-                } else if (displayText === 'Nei') {
-                    handleReykingarNo();
-                } else if (displayText === 'Aldrei') {
-                    insertText('Aldrei reykt');
-                }
-            } else if (item.type === 'PlusMinus') {
-                insertText(index === 0 ? item.positive : item.negative);
-            } else if (item.type === 'Medium') {
-                insertText(item.output[index]);
-            } else if (displayText === '-' && selectedOption.negative) {
-                insertText(selectedOption.negative);
-            }
-        }
+    // Right click event
+    button.oncontextmenu = (event) => {
+        event.preventDefault(); // Prevent the context menu from appearing
+        handleButtonRightClick(event, item, displayText, index, button);
     };
 
     row.appendChild(button);
 }
 
+function handleButtonClick(event, item, displayText, index, button) {
+    // Remove any existing popup
+    const existingPopup = document.querySelector('.popup-modal');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+
+    if (item.type === 'options') {
+        // Find the selected option
+        const selectedOption = item.options[index];
+
+        if (selectedOption) {
+            if (selectedOption.subOptions) {
+                createPopup(event, selectedOption, button);
+            } else if (selectedOption.output) {
+                insertText(selectedOption.output);
+            }
+        }
+    } else {
+        // Default behavior for other buttons
+        handleDefaultButtonClick(item, displayText, index);
+    }
+}
+
+function handleButtonRightClick(event, item, displayText, index, button) {
+    // Remove any existing popup
+    const existingPopup = document.querySelector('.popup-modal');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+
+    if (item.type === 'options') {
+        // Find the selected option
+        const selectedOption = item.options[index];
+
+        if (selectedOption) {
+            if (selectedOption.onRightClickSubOptions) {
+                createPopup(event, selectedOption, button, true);
+            } else if (selectedOption.onRightClickOutput) {
+                insertText(selectedOption.onRightClickOutput);
+            }
+        }
+    } else {
+        // Default behavior for other buttons
+        handleDefaultButtonRightClick(item, displayText);
+    }
+}
+
+function createPopup(event, selectedOption, button, isRightClick = false) {
+    // Create a new popup modal
+    const popup = document.createElement('div');
+    popup.className = 'popup-modal';
+
+    // Position the popup next to the button
+    const rect = button.getBoundingClientRect();
+    popup.style.position = 'absolute';
+    popup.style.top = `${rect.bottom + window.scrollY}px`;
+    popup.style.left = `${rect.left + window.scrollX}px`;
+    popup.style.backgroundColor = 'white';
+    popup.style.border = '1px solid #ccc';
+    popup.style.padding = '10px';
+    popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+    popup.style.zIndex = '1000';
+
+    // Function to create a button in the popup
+    const createPopupButton = (popup, subOption, context) => {
+        const btn = document.createElement('button');
+        btn.textContent = subOption.display;
+        btn.style.display = 'block';
+        btn.style.margin = '5px 0';
+        btn.onclick = (e) => {
+            e.stopPropagation(); // Prevent closing popup on button click
+            if (subOption.subOptions) {
+                // Remove existing sub-popup if any
+                const existingSubPopup = document.querySelector('.sub-popup-modal');
+                if (existingSubPopup) {
+                    existingSubPopup.remove();
+                }
+
+                // Create a new sub-popup modal for nested suboptions
+                const subPopup = document.createElement('div');
+                subPopup.className = 'sub-popup-modal';
+
+                // Position the sub-popup next to the button
+                const rect = btn.getBoundingClientRect();
+                subPopup.style.position = 'absolute';
+                subPopup.style.top = `${rect.bottom + window.scrollY}px`;
+                subPopup.style.left = `${rect.right + window.scrollX}px`;
+                subPopup.style.backgroundColor = 'white';
+                subPopup.style.border = '1px solid #ccc';
+                subPopup.style.padding = '10px';
+                subPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                subPopup.style.zIndex = '1000';
+
+                // Add nested subOptions to the sub-popup
+                subOption.subOptions.forEach(nestedSubOption => {
+                    createPopupButton(subPopup, nestedSubOption, subOption);
+                });
+
+                // Append the sub-popup to the document body
+                document.body.appendChild(subPopup);
+
+                // Close sub-popup when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!subPopup.contains(e.target) && e.target !== btn) {
+                        subPopup.remove();
+                    }
+                }, { once: true });
+
+            } else if (subOption.output) {
+                insertText(subOption.output);
+                popup.remove();
+            }
+        };
+        popup.appendChild(btn);
+    };
+
+    // Add subOptions to the popup
+    if (isRightClick) {
+        selectedOption.onRightClickSubOptions.forEach(subOption => {
+            createPopupButton(popup, subOption);
+        });
+    } else {
+        selectedOption.subOptions.forEach(subOption => {
+            createPopupButton(popup, subOption, selectedOption);
+        });
+    }
+
+    // Append the popup to the document body
+    document.body.appendChild(popup);
+
+    // Close popup when clicking outside
+    const cancelAction = () => {
+        if (selectedOption.cancelText) {
+            insertText(selectedOption.cancelText);
+        }
+        popup.remove();
+    };
+
+    document.addEventListener('click', (e) => {
+        if (!popup.contains(e.target) && e.target !== button) {
+            cancelAction();
+        }
+    }, { once: true });
+
+    // Close popup on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            cancelAction();
+        }
+    }, { once: true });
+}
+
+function handleDefaultButtonClick(item, displayText, index) {
+    if (item.name === 'Eyru' && displayText === '-') {
+        insertText('Ekki einkenni frá eyrum');
+    } else if (item.name === 'Eyru') {
+        handleEyruSelection(displayText);
+    } else if (item.name === 'Eyrnaverkur') {
+        if (displayText === '+') {
+            handleEyrnaverkurPositive();
+        } else {
+            insertText('Neitar eyrnaverk');
+        }
+    } else if (item.type === 'GenderPrompt') {
+        if (displayText === '+') {
+            showGenderPrompt('positive', item.name);
+        } else {
+            showGenderPrompt('negative', item.name);
+        }
+    } else if (item.name === 'Hósti' && displayText === '+') {
+        showHostiOptions();
+    } else if (item.name === 'Meðferð' && displayText === 'Sýklalyf') {
+        handleSyklalyfSelection(context);
+    } else if (displayText.includes('Ófrísk, gengin')) {
+        handlePregnancyWeeks();
+    } else if (item.name === 'Lungnahlustun' || (inLungnahlustunContext && item.name === '-')) {
+        inLungnahlustunContext = true;
+        let textToInsert = item.output[index];
+        if (isFirstLungnahlustunClick) {
+            if (specialCases[displayText.toLowerCase()]) {
+                textToInsert = `Lungnahlustun sýnir ${specialCases[displayText.toLowerCase()]}`;
+            } else {
+                textToInsert = `Lungnahlustun sýnir ${textToInsert.charAt(0).toLowerCase() + textToInsert.slice(1)}`;
+            }
+            isFirstLungnahlustunClick = false;
+        }
+        insertText(textToInsert);
+    } else if (item.name === 'Hljóðhimnur' && (displayText === 'Roði' || displayText === 'Eðl' || displayText === 'Mergur')) {
+        showSideSelectionModal(item, displayText, index);
+    } else if (item.name === 'Reykingar') {
+        if (displayText === 'Já') {
+            handleReykingarYes();
+        } else if (displayText === 'Nei') {
+            handleReykingarNo();
+        } else if (displayText === 'Aldrei') {
+            insertText('Aldrei reykt');
+        }
+    } else if (item.type === 'PlusMinus') {
+        insertText(index === 0 ? item.positive : item.negative);
+    } else if (item.type === 'Medium') {
+        insertText(item.output[index]);
+    } else if (displayText === '-' && selectedOption.negative) {
+        insertText(selectedOption.negative);
+    }
+}
+
+function handleDefaultButtonRightClick(item, displayText) {
+    if (item.name === 'Eyru' && displayText === '-') {
+        insertText('Engin einkenni frá eyrum');
+    } else if (item.name === 'Eyru') {
+        handleEyruRightClick(displayText);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed');
+    
+    // Ensure default page load
+    loadPage('Vírósa');
+
+    const enterCodeButton = document.querySelector('#enterCodeButton');
+    if (enterCodeButton) {
+        enterCodeButton.addEventListener('click', parseCode);
+    } else {
+        console.error('Element with ID enterCodeButton not found.');
+    }
+
+    // Add event listener for closing suboptions on clicking outside
+    document.addEventListener('click', function(event) {
+        const subOptionsContainer = document.querySelector('.popup-modal');
+        const openButton = event.target.closest('button'); // Adjust the selector if needed
+        
+        // Check if the suboptions container is visible and the click is outside of it
+        if (subOptionsContainer && !subOptionsContainer.contains(event.target) && !openButton) {
+            subOptionsContainer.remove();
+        }
+    });
+});
 
 
 let isFirstLungnahlustunClick = true; // Flag to track first click for Lungnahlustun
@@ -4282,27 +4182,3 @@ function parseCode() {
         }
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM fully loaded and parsed');
-    
-    // Ensure default page load
-    loadPage('Vírósa');
-
-    const enterCodeButton = document.querySelector('#enterCodeButton');
-    if (enterCodeButton) {
-        enterCodeButton.addEventListener('click', parseCode);
-    } else {
-        console.error('Element with ID enterCodeButton not found.');
-    }
-
-    // Add event listener for closing suboptions on clicking outside
-    document.addEventListener('click', function(event) {
-        const subOptionsContainer = document.querySelector('.popup-modal');
-        const openButton = event.target.closest('button'); // Adjust the selector if needed
-        
-        // Check if the suboptions container is visible and the click is outside of it
-        if (subOptionsContainer && !subOptionsContainer.contains(event.target) && !openButton) {
-            subOptionsContainer.remove();
-        }
-    });
-});
