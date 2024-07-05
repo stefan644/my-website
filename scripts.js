@@ -309,17 +309,7 @@ const ExamsViral = [
         type: 'options',
         display: ['Lasleg/ur', 'Yfirþyngd'],
         options: [
-            {
-                display: 'Lasleg/ur',
-                subOptions: [
-                    { display: 'Laslegur', output: 'Laslegur að sjá' },
-                    { display: 'Lasleg', output: 'Lasleg að sjá' }
-                ],
-                onRightClickSubOptions: [
-                    { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
-                    { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
-                ]
-            },
+            { display: 'Lasleg/ur', output: 'Laslega útlítandi', onRightClickOutput: 'Ekki bráðveikindalegt útlit' },
             { display: 'Yfirþyngd', output: 'Er í yfirþyngd', onRightClickOutput: 'Ekki yfirþyngd' }
         ]
     },
@@ -450,7 +440,13 @@ const PlanViral = [
         display: ['Mergur', 'Otitis externa', 'Sinusitis', 'Langvarandi einkenni'],
         options: [
             { display: 'Mergur', output: 'Eyrnamergur' },
-            { display: 'Otitis externa', output: 'Otitis externa' },
+            {
+                display: 'Otitis externa',
+                subOptions: [
+                    { display: 'Otitis externa', output: 'Otitis externa' },
+                    { display: 'Grunur um otitis externa', output: 'Grunur um otitis externa' }
+                ]
+            },
             { display: 'Sinusitis', output: 'Sinusitis' },
             { display: 'Langvarandi einkenni', output: 'Einkenni langvarandi' }
         ]
@@ -502,6 +498,7 @@ const PlanViral = [
                 display: 'Vísa á sérfræðing',
                 subOptions: [
                     { display: 'HNE', output: 'Ráðlegg mat HNE læknis' },
+                    { display: 'HNE í framhaldi', output: 'Ráðlegg mat HNE læknis í framhaldi' },
                     { display: 'Tilvísun', output: 'Geri tilvísun' }
                 ]
             }
@@ -645,9 +642,17 @@ const SymptomsUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Grunur um blöðrubólgu', 'Jákv stix heima', 'Fengið áður'],
+        display: ['Einkenni við þvaglát', 'Jákv stix heima', 'Fengið áður'],
         options: [
-            { display: 'Grunur', output: 'Grunar sig vera með blöðrubólgu', onRightClickOutput: 'Grunar sig ekki vera með blöðrubólgu' },
+            {
+                display: 'Einkenni við þvaglát',
+                subOptions: [
+                    { display: 'Einkenni við þvaglát', output: 'Einkenni við þvaglát' },
+                    {display: 'Grunur um blöðrubólgu', output: 'Grunar sig vera með blöðrubólgu'}
+                    
+                ],
+                cancelText: ''
+            },
             { display: 'Jákv stix heima', output: 'Jákv stix heima', onRightClickOutput: 'Neikv stix heima' },
             { display: 'Fengið áður', output: 'Þekkir einkennin', onRightClickOutput: 'Aldrei fengið áður' }
         ]
@@ -747,20 +752,9 @@ const ExamsUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Lasleg/ur', 'Yfirþyngd'],
+        display: ['Lasleg/ur'],
         options: [
-            {
-                display: 'Lasleg/ur',
-                subOptions: [
-                    { display: 'Laslegur', output: 'Laslegur að sjá' },
-                    { display: 'Lasleg', output: 'Lasleg að sjá' }
-                ],
-                onRightClickSubOptions: [
-                    { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
-                    { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
-                ]
-            },
-            { display: 'Yfirþyngd', output: 'Er í yfirþyngd', onRightClickOutput: 'Ekki í yfirþyngd' }
+            { display: 'Lasleg/ur', output: 'Laslega útlítandi', onRightClickOutput: 'Ekki bráðveikindalegt útlit' }
         ]
     },
     {
@@ -1641,39 +1635,85 @@ const ExamsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Líkamsskoðun', 'Endaþarmsskoðun'],
+        display: ['Ástand sjúklings', 'Slímhúð í munni', 'Háræðafylling'],
         options: [
-            { display: 'Líkamsskoðun', output: 'Líkamsskoðun á kvið sýnir' },
-            { display: 'Endaþarmsskoðun', output: 'Endaþarmsskoðun sýnir' }
+            { display: 'Ástand sjúklings', output: 'Sjúklingur virðist í bráðum verkjum', onRightClickOutput: 'Sjúklingur virðist ekki í bráðum verkjum' },
+            { display: 'Slímhúð í munni', output: 'Slímhúð í munni er þurr', onRightClickOutput: 'Slímhúð í munni er eðlileg' },
+            { display: 'Háræðafylling', output: 'Aukin háræðafylling', onRightClickOutput: 'Eðlileg háræðafylling' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Hægðapróf', 'Blóðprufa'],
+        display: ['Þaninn', 'Hlustun á kvið', 'Þreifing á kvið', 'Bank', 'Sleppieymsli'],
         options: [
-            { display: 'Hægðapróf', output: 'Hægðapróf pantað' },
-            { display: 'Blóðprufa', output: 'Blóðprufa pantað' }
+            {
+                display: 'Þaninn',
+                subOptions: [
+                    { display: 'Þaninn', output: 'Kviður þaninn' }
+                ],
+                onRightClickOutput: 'Kviður óþaninn'
+            },
+            {
+                display: 'Garnahljóð',
+                subOptions: [
+                    { display: 'Garnahljóð til staðar', output: 'Garnahljóð til staðar' },
+                    { display: 'Engin garnahljóð', output: 'Ekki heyrast garnahljóð' }
+                ],
+                onRightClickOutput: 'Hlustun á kvið sýnir eðlileg garnahljóð'
+            },
+            {
+                display: 'Þreifing',
+                subOptions: [
+                    { display: 'Mjúkur kviður', output: 'Kviður mjúkur' },
+                    { display: 'Eymslalaus', output: 'Kviður mjúkur' },
+                    { display: 'Spenntur kviður', output: 'Þreifing á kvið sýnir spenntan kvið' },
+                    { display: 'Eymsli við þreifingu', output: 'Þreifing á kvið sýnir eymsli við þreifingu' },
+                    { display: 'Eymsli í hægri neðri fjórðungi', output: 'Þreifing á kvið sýnir eymsli í hægri neðri fjórðungi' },
+                    { display: 'Eymsli í vinstra neðri fjórðungi', output: 'Þreifing á kvið sýnir eymsli í vinstra neðri fjórðungi' },
+                    { display: 'Eymsli í epigastrium', output: 'Þreifing á kvið sýnir eymsli í epigastrium' },
+                    { display: 'Eymsli í suprapubic svæði', output: 'Þreifing á kvið sýnir eymsli í suprapubic svæði' },
+                    { display: 'Peritoneal merki', output: 'Þreifing á kvið sýnir peritoneal merki' }
+                ],
+                onRightClickOutput: 'Mjúkur og eymslalaus við þreifingu'
+            },
+            {
+                display: 'Bank',
+                subOptions: [
+                    { display: 'Eymsli við bank', output: 'Eymsli við bank' },
+                    { display: 'Engin eymsli við bank', output: 'Engin eymsli við bank' }
+                ],
+                onRightClickOutput: 'Bank sýnir engin eymsli'
+            },
+            {
+                display: 'Sleppieymsli',
+                subOptions: [
+                    { display: 'Já', output: 'Sleppieymsli til staðar' },
+                    { display: 'Nei', output: 'Sleppieymsli ekki til staðar' }
+                ],
+                onRightClickOutput: 'Sleppieymsli ekki til staðar'
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Magaspeglun', 'Ómun'],
+        display: ['Endaþarmsskoðun'],
         options: [
-            { display: 'Magaspeglun', output: 'Magaspeglun pantað' },
-            { display: 'Ómun', output: 'Ómun á kvið pantað' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Tölvusneiðmynd'],
-        options: [
-            { display: 'Tölvusneiðmynd', output: 'Tölvusneiðmynd af kvið pantað' }
+            {
+                display: 'Endaþarmsskoðun',
+                subOptions: [
+                    { display: 'Eðlilegt', output: 'Endaþarmsskoðun sýnir eðlilegt ástand' },
+                    { display: 'Blóð á hanska', output: 'Endaþarmsskoðun sýnir blóð á hanska' },
+                    { display: 'Hægðir í ampullu', output: 'Endaþarmsskoðun sýnir hægðir í ampullu' },
+                    { display: 'Engar hægðir í ampullu', output: 'Endaþarmsskoðun sýnir engar hægðir í ampullu' }
+                ],
+                onRightClickOutput: 'Endaþarmsskoðun sýnir eðlilegt ástand'
+            }
         ]
     }
 ];
+
 const PlanMelting = [
     {
         name: '',
@@ -1695,7 +1735,7 @@ const PlanMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Gallsteinar', 'Diverticulitis', 'Gyllinæð', 'Botnlangi'],
+        display: ['Gallsteinar', 'Diverticulitis', 'Endaþarmur', 'Botnlangi'],
         options: [
             {
                 display: 'Gallsteinar',
@@ -1712,10 +1752,27 @@ const PlanMelting = [
                 ]
             },
             {
-                display: 'Gyllinæð',
+                display: 'Endaþarmur',
                 subOptions: [
-                    { display: 'Gyllinæð', output: 'Gyllinæð' },
-                    { display: 'Grunur um gyllinæð', output: 'Grunur um gyllinæð' }
+                    { display: 'Óþægindi frá endaþarmi', output: 'Óþægindi frá endaþarmi'},
+                    { display: 'Blæðing úr endaþarmi', output: 'Blæðing úr endaþarmi'},
+                    {
+                        display: 'Gyllinæð',
+                        subOptions: [
+                            { display: 'Gyllinæð', output: 'Gyllinæð' },
+                            { display: 'Grunur um gyllinæð', output: 'Grunur um gyllinæð' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Anal fissúra',
+                        subOptions: [
+                            { display: 'Anal fissúra', output: 'Anal fissúra' },
+                            { display: 'Grunur um anal fissúru', output: 'Grunur um anal fissúru' }
+                        ],
+                        cancelText: ''
+                    }
+                    
                 ]
             },
             {
@@ -1730,17 +1787,10 @@ const PlanMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Kviðverkur', 'Uppköst', 'Endaþarmur'],
+        display: ['Kviðverkur', 'Uppköst'],
         options: [
             { display: 'Kviðverkur', output: 'Kviðverkur' },
-            { display: 'Uppköst', output: 'Uppköst' },
-            {
-                display: 'Endaþarmur',
-                subOptions: [
-                    { display: 'Óþægindi frá endaþarmi', output: 'Óþægindi frá endaþarmi'},
-                    { display: 'Blæðing úr endaþarmi', output: 'Blæðing úr endaþarmi'}
-                ]
-            }
+            { display: 'Uppköst', output: 'Uppköst' }
         ]
     },
     {},{},{},
@@ -2490,6 +2540,197 @@ const PlanInnkirtla = [
         ]
     }
 ];
+const SymptomsAlcoholism = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Komuástæða', 'Fyrri saga'],
+        options: [
+            { display: 'Komuástæða', output: 'Leitar vegna áfengisvanda' },
+            { display: 'Saga um áfengisvandamál', output: 'Saga um áfengisvandamál', onRightClickOutput: 'Ekki fyrri saga um áfengisvandamál' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Magn', 'Tímalengd', 'Síðasta drykkja'],
+        options: [
+            {
+                display: 'Magn',
+                subOptions: [
+                    { display: '1-2 drykkir/dag', output: 'Drekkur 1-2 áfenga drykki á dag' },
+                    { display: '3-5 drykkir/dag', output: 'Drekkur 3-5 áfenga drykki á dag' },
+                    { display: '6+ drykkir/dag', output: 'Drekkur 6 eða fleiri áfenga drykki á dag' }
+                ]
+            },
+            {
+                display: 'Tímalengd',
+                subOptions: [
+                    { display: '1-2 vikur', output: 'Hefur drukkið daglega í 1-2 vikur' },
+                    { display: '3-4 vikur', output: 'Hefur drukkið daglega í 3-4 vikur' },
+                    { display: '1-2 mánuðir', output: 'Hefur drukkið daglega í 1-2 mánuði' },
+                    { display: '3-6 mánuðir', output: 'Hefur drukkið daglega í 3-6 mánuði' },
+                    { display: '6+ mánuðir', output: 'Hefur drukkið daglega í yfir 6 mánuði' }
+                ]
+            },
+            {
+                display: 'Síðasta drykkja',
+                subOptions: [
+                    { display: 'Innan síðustu klukkustundar', output: 'Seinasti drykkur fyrir innan við klukkustund' },
+                    { display: '1-3 klukkustundir síðan', output: 'Seinasti drykkur fyrir 1-3 klukkustundum' },
+                    { display: '4-12 klukkustundir síðan', output: 'Seinasti drykkur fyrir 4-12 klukkustundum' },
+                    { display: '12-24 klukkustundir síðan', output: 'Seinasti drykkur fyrir 12-24 klukkustundum' },
+                    { display: '1-2 dagar síðan', output: 'Seinasti drykkur fyrir 1-2 dögum' },
+                    { display: '3-4 dagar síðan', output: 'Seinasti drykkur fyrir 3-4 dögum' },
+                    { display: '5-7 dagar síðan', output: 'Seinasti drykkur fyrir 5-7 dögum' },
+                    { display: 'Fyrir meira en viku síðan', output: 'Seinasti drykkur fyrir meira en viku síðan' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Ógleði og uppköst', 'Skjálfti'],
+        options: [
+            { display: 'Ógleði og uppköst', output: 'Lýsir ógleði og uppköstum', onRightClickOutput: 'Neitar ógleði og uppköstum' },
+            { display: 'Skjálfti', output: 'Lýsir auknum skjálfta', onRightClickOutput: 'Neitar skjálfta' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Svitamyndun', 'Kvíði'],
+        options: [
+            { display: 'Aukin svitamyndun', output: 'Lýsir aukinni svitamyndun', onRightClickOutput: 'Neitar aukinni svitamyndun' },
+            { display: 'Aukinn kvíði', output: 'Lýsir auknum kvíða', onRightClickOutput: 'Neitar auknum kvíða' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Heyrnarofskynjanir', 'Sjóntruflanir', 'Skyntruflanir'],
+        options: [
+            { display: 'Heyrnarofskynjanir', output: 'Lýsir heyrnarofskynjunum', onRightClickOutput: 'Neitar heyrnarofskynjunum' },
+            { display: 'Sjóntruflanir', output: 'Lýsir sjóntruflunum', onRightClickOutput: 'Neitar sjóntruflunum' },
+            { display: 'Skyntruflanir', output: 'Lýsir skyntruflunum', onRightClickOutput: 'Neitar skyntruflunum' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Höfuðverkur', 'Ruglástand'],
+        options: [
+            { display: 'Höfuðverkur', output: 'Kvartar yfir höfuðverk', onRightClickOutput: 'Neitar höfuðverk' },
+            { display: 'Ruglástand', output: 'Lýsir ruglástandi', onRightClickOutput: 'Neitar ruglástandi' }
+        ]
+    }
+    
+];
+const ExamsAlcoholism = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Skjálfti', 'Svitamyndun'],
+        options: [
+            { display: 'Skjálfti', output: 'Skjálfti til staðar', onRightClickOutput: 'Enginn skjálfti til staðar' },
+            { display: 'Svitamyndun', output: 'Aukin svitamyndun', onRightClickOutput: 'Ekki áberandi aukin svitamyndun' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Æsingur', 'Ruglástand'],
+        options: [
+            { display: 'Æsingur', output: 'Skjólstæðingur er æstur', onRightClickOutput: 'Rólegur' },
+            { display: 'Ruglástand', output: 'Í ruglástandi', onRightClickOutput: 'Rökréttur og skýr í framkomu' }
+        ]
+    }
+];
+const PlanAlcoholism = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Áfengisfráhvörf', 'Alvarleiki'],
+        options: [
+            { display: 'Áfengisfráhvörf', output: 'Áfengisfráhvörf' },
+            {
+                display: 'Alvarleiki',
+                subOptions: [
+                    { display: 'Mild fráhvarfseinkenni', output: 'Mild fráhvarfseinkenni' },
+                    { display: 'Miðlungs fráhvarfseinkenni', output: 'Miðlungs fráhvarfseinkenni' },
+                    { display: 'Mikil fráhvarfseinkenni', output: 'Nokkuð alvarleg fráhvarfseinkenni' }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Afeitrun', 'Fráhvarfsmeðferð'],
+        options: [
+            {
+                display: 'Afeitrun',
+                subOptions: [
+                    { display: 'Hættir að drekka', output: 'Ætlar að hætta allri áfengisneyslu', onRightClickOutput: '' }
+                ]
+            },
+            {
+                display: 'Fráhvarfsmeðferð',
+                subOptions: [
+                    { display: 'Chlordiazepoxide', output: 'Ráðlegg meðferð með Chlordiazepoxide (leiðbeiningar s.kv. uptodate). Dagur 1: 50mg á 6klst fresti (200 mg heildarskammtur). Dagur 2: 50mg á 8klst fresti (150 mg heildarskammtur). Dagur 3: 50mg á 12klst fresti (100 mg heildarskammtur). Dagur 4: 50mg fyrir svefn (50 mg heildarskammtur)', onRightClickOutput: '' },
+                    { display: 'Diazepam', output: 'Ráðlegg meðferð með Diazepam (leiðbeiningar s.kv. uptodate). Dagur 1: 10 mg á 6klst fresti (40 mg heildarskammtur). Dagur 2: 10 mg á 8klst fresti (30 mg heildarskammtur). Dagur 3: 10 mg á 12klst fresti (20 mg heildarskammtur). Dagur 4: 10 mg fyrir svefn (10 mg heildarskammtur)', onRightClickOutput: '' },
+                    { display: 'Gabapentin', output: 'Ráðlegg meðferð með Gabapentin (leiðbeiningar s.kv. uptodate). Dagur 1: 300 mg á 6klst fresti (1200 mg heildarskammtur). Dagur 2: 300 mg á 8klst fresti (900 mg heildarskammtur). Dagur 3: 300 mg á 12klst fresti (600 mg heildarskammtur). Dagur 4: 300 mg fyrir svefn (300 mg heildarskammtur)', onRightClickOutput: '' }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['BMT'],
+        options: [
+            {
+                display: 'BMT',
+                subOptions: [
+                    { display: 'Vísa á bráðamóttöku', output: 'Vísa á bráðamóttöku' },
+                    { display: 'Vísa á bráðamóttöku geðsviðs', output: 'Vísa á bráðamóttöku geðsviðs' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    { display: 'Sjúklingur mun hafa samband við Vog', output: 'Sjúklingur mun hafa samband við Vog' },
+                    { display: 'Sjúklingur er í sambandi við Vog', output: 'Sjúklingur er í sambandi við Vog' },
+                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
+                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
+                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                ]
+            }
+
+        ]
+    }
+];
+
+
+
 
 
 const Timi = [{
@@ -3692,6 +3933,30 @@ function loadPage(page) {
         examsColumn.className = 'column';
         examsColumn.appendChild(examsSection);
 
+
+        const planColumn = document.createElement('div');
+        planColumn.className = 'column';
+        planColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(symptomsColumn);
+        horizontalContainer.appendChild(examsColumn);
+        horizontalContainer.appendChild(planColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Áfengi') {
+        const symptomsSection = createEinkenniSection(SymptomsAlcoholism);
+        const examsSection = createSkodunSection(ExamsAlcoholism);
+        const planSection = createPlanSection(PlanAlcoholism);
+
+        const symptomsColumn = document.createElement('div');
+        symptomsColumn.className = 'column';
+        symptomsColumn.appendChild(symptomsSection);
+
+        const examsColumn = document.createElement('div');
+        examsColumn.className = 'column';
+        examsColumn.appendChild(examsSection);
 
         const planColumn = document.createElement('div');
         planColumn.className = 'column';
