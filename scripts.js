@@ -23,6 +23,27 @@ const Vottord = [
     }
     
 ];
+const RannsoknData = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Þvagrannsókn', 'Option 2'],
+        options: [
+            {
+                display: 'Þvagrannsókn',
+                subOptions: [
+                    { display: 'Stix jákvætt', output: 'Þvagstix jákvætt' },
+                    { display: 'Hár hiti og rúmliggjandi', output: 'Verið með háan hita, mestu rúmliggjandi' },
+                    { display: 'Hiti í byrjun veikinda', output: 'Hiti í byrjun veikinda en hann yfirstaðinn nú' },
+                    { display: 'Ekki mælt', output: 'Upplifað sig með hita en ekki mælt sig' }
+                ],
+                onRightClickOutput: 'Ekki fengið hita'
+            },
+            { display: 'Option 2', output: 'Output for Option 2' }
+        ]
+    }
+];
+
 const SymptomsViral = [
     {
         name: '',
@@ -678,6 +699,24 @@ const SymptomsUrinary = [
             { display: 'Slappleiki', output: 'Verið með slappleika', onRightClickOutput: 'Ekki fundið fyrir slappleika' }
         ]
     },
+    {
+        name: '',
+        type: 'options',
+        display: ['Niðurstöður rannsókna'],
+        options: [
+
+            {
+                display: 'Niðurstöður rannsókna',
+                subOptions: [
+                    { display: 'Niðurstöður þvagstix', output: 'Niðurstöður þvagstix'},
+                    { display: 'Niðurstöður þvagræktun', output: 'Niðurstöður þvagræktun'}
+                    
+                ],
+                cancelText: ''
+            }
+            
+        ]
+    },
     {},
     {},
     {},
@@ -775,7 +814,7 @@ const ExamsUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Þvagstix'],
+        display: ['Þvagstix', 'Þvagræktun', 'Næmi'],
         options: [
             {
                 display: 'Þvagstix',
@@ -789,6 +828,39 @@ const ExamsUrinary = [
                     { display: 'Nítrít neikv', output: 'Nítrít neikvæð í þvagi' },
                     { display: 'Hvít neikv', output: 'Hvít neikvæð í þvagi' }
                 ]
+            },
+            {
+                display: 'Þvagræktun',
+                subOptions: [
+                    { display: 'E. coli', output: 'Ræktast E. coli' },
+                    { display: 'Klebsiella', output: 'Ræktast Klebsiella' },
+                    { display: 'Proteus', output: 'Ræktast Proteus' },
+                    { display: 'Enterococcus', output: 'Ræktast Enterococcus' },
+                    { display: 'Pseudomonas', output: 'Ræktast Pseudomonas' },
+                    { display: 'Staphylococcus saprophyticus', output: 'Ræktast Staphylococcus saprophyticus' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Þvagræktun neikvæð', output: 'Þvagræktun neikvæð' }
+                ]
+            },
+            {
+                display: 'Næmi',
+                subOptions: [
+                    { display: 'Pivmecillinam', output: 'Næmi fyrir Pivmecillinam' },
+                    { display: 'Amoxicillin', output: 'Næmi fyrir Amoxicillin' },
+                    { display: 'Cefalexin', output: 'Næmi fyrir Cefalexin' },
+                    { display: 'Trimethoprim', output: 'Næmi fyrir Trimethoprim' },
+                    { display: 'Nitrofurantoin', output: 'Næmi fyrir Nitrofurantoin' },
+                    { display: 'Ciprofloxacin', output: 'Næmi fyrir Ciprofloxacin' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Pivmecillinam', output: 'Ónæm fyrir Pivmecillinam' },
+                    { display: 'Amoxicillin', output: 'Ónæm fyrir Amoxicillin' },
+                    { display: 'Cefalexin', output: 'Ónæm fyrir Cefalexin' },
+                    { display: 'Trimethoprim', output: 'Ónæm fyrir Trimethoprim' },
+                    { display: 'Nitrofurantoin', output: 'Ónæm fyrir Nitrofurantoin' },
+                    { display: 'Ciprofloxacin', output: 'Ónæm fyrir Ciprofloxacin' }
+                ]
             }
         ]
     }
@@ -799,7 +871,13 @@ const PlanUrinary = [
         type: 'options', 
         display: ['Blöðrubólga', 'Pyelonephritis', 'Prostatitis'], 
         options: [
-            { display: 'Blöðrubólga', output: 'Grunur um blöðrubólgu' },
+            {
+                display: 'Blöðrubólga',
+                subOptions: [
+                    { display: 'Blöðrubólga', output: 'Blöðrubólga' },
+                    { display: 'Grunur um blöðrubólgu', output: 'Grunur um blöðrubólgu' }
+                ]
+            },
             { display: 'Pyelonephritis', output: 'Grunur um pyelonephritis' },
             { display: 'Prostatitis', output: 'Grunur um prostatitis' }
         ]
@@ -822,7 +900,6 @@ const PlanUrinary = [
                     { display: 'Síprox', output: 'Ráðlegg sýklalyf. Set siprox í gáttina' }
                 ]
             },
-            { display: 'Myndataka', output: 'Ráðlegg myndatöku' },
             {
                 display: 'Myndataka',
                 subOptions: [
@@ -830,6 +907,20 @@ const PlanUrinary = [
                 ]
             },
             { display: 'Blóðprufa', output: 'Panta blóðprufu' }
+        ]
+    },
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Þvagrannsókn'], 
+        options: [
+            {
+                display: 'Þvagrannsókn',
+                subOptions: [
+                    { display: 'Stix og ræktun', output: 'Sendi beiðni í stix og ræktun. Skilar þvagprufu í afgreiðslu' },
+                    { display: 'Þvagstix', output: 'Ráðlegg þvagstix. Skilar þvagprufu í afgreiðslu' }
+                ]
+            }
         ]
     },
     {},{},{},
@@ -2544,9 +2635,15 @@ const SymptomsAlcoholism = [
     {
         name: '',
         type: 'options',
-        display: ['Komuástæða', 'Fyrri saga'],
+        display: ['Áfengisvandi', 'Fyrri saga'],
         options: [
-            { display: 'Komuástæða', output: 'Leitar vegna áfengisvanda' },
+            {
+                display: 'Áfengisvandi',
+                subOptions: [
+                    { display: 'Leitar vegna áfengisvanda', output: 'Leitar vegna áfengisvanda' },
+                    { display: 'Áfengisvandi', output: 'Áfengisvandi' }
+                ]
+            },
             { display: 'Saga um áfengisvandamál', output: 'Saga um áfengisvandamál', onRightClickOutput: 'Ekki fyrri saga um áfengisvandamál' }
         ]
     },
@@ -2560,7 +2657,10 @@ const SymptomsAlcoholism = [
                 subOptions: [
                     { display: '1-2 drykkir/dag', output: 'Drekkur 1-2 áfenga drykki á dag' },
                     { display: '3-5 drykkir/dag', output: 'Drekkur 3-5 áfenga drykki á dag' },
-                    { display: '6+ drykkir/dag', output: 'Drekkur 6 eða fleiri áfenga drykki á dag' }
+                    { display: '6-8 drykkir/dag', output: 'Drekkur 6-8 áfenga drykki á dag' },
+                    { display: '8-10 drykkir/dag', output: 'Drekkur 8-10 áfenga drykki á dag' },
+                    { display: '10-12 drykkir/dag', output: 'Drekkur 10-12 áfenga drykki á dag' },
+                    { display: '>12 drykkir/dag', output: 'Drekkur meira en en 12 áfenga drykki á dag' },
                 ]
             },
             {
@@ -2576,14 +2676,14 @@ const SymptomsAlcoholism = [
             {
                 display: 'Síðasta drykkja',
                 subOptions: [
-                    { display: 'Innan síðustu klukkustundar', output: 'Seinasti drykkur fyrir innan við klukkustund' },
-                    { display: '1-3 klukkustundir síðan', output: 'Seinasti drykkur fyrir 1-3 klukkustundum' },
-                    { display: '4-12 klukkustundir síðan', output: 'Seinasti drykkur fyrir 4-12 klukkustundum' },
-                    { display: '12-24 klukkustundir síðan', output: 'Seinasti drykkur fyrir 12-24 klukkustundum' },
-                    { display: '1-2 dagar síðan', output: 'Seinasti drykkur fyrir 1-2 dögum' },
-                    { display: '3-4 dagar síðan', output: 'Seinasti drykkur fyrir 3-4 dögum' },
-                    { display: '5-7 dagar síðan', output: 'Seinasti drykkur fyrir 5-7 dögum' },
-                    { display: 'Fyrir meira en viku síðan', output: 'Seinasti drykkur fyrir meira en viku síðan' }
+                    { display: 'Innan síðustu klukkustundar', output: 'Drakk síðast fyrir innan við klukkustund' },
+                    { display: '1-3 klukkustundir síðan', output: 'Drakk síðast fyrir 1-3 klukkustundum' },
+                    { display: '4-12 klukkustundir síðan', output: 'Drakk síðast fyrir 4-12 klukkustundum' },
+                    { display: '12-24 klukkustundir síðan', output: 'Drakk síðast fyrir 12-24 klukkustundum' },
+                    { display: '1-2 dagar síðan', output: 'Drakk síðast fyrir 1-2 dögum' },
+                    { display: '3-4 dagar síðan', output: 'Drakk síðast fyrir 3-4 dögum' },
+                    { display: '5-7 dagar síðan', output: 'Drakk síðast fyrir 5-7 dögum' },
+                    { display: 'Fyrir meira en viku síðan', output: 'Drakk síðast fyrir meira en viku síðan' }
                 ]
             }
         ]
@@ -3905,6 +4005,14 @@ function createVottordSection(data) {
     createButtons(container, data);
     return section;
 }
+function createRannsoknSection(data) {
+    console.log('Creating Rannsokn Section with data:', data); // Debugging line
+    const section = createSection('rannsokn', 'Rannsóknarniðurstöður');
+    const container = section.querySelector('#rannsokn');
+    createButtons(container, data);
+    return section;
+}
+
 
 
 function loadPage(page) {
@@ -4035,11 +4143,13 @@ function loadPage(page) {
         const historyViralSection = createHistoryViralSection(historyViralData);
         const habitsSection = createHabitsSection(Habits);
         const vottordSection = createVottordSection(Vottord);
+        const rannsoknSection = createRannsoknSection(RannsoknData); // Assuming you have RannsoknData
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
        
         leftColumn.appendChild(vottordSection);
+        leftColumn.appendChild(rannsoknSection); // Add the rannsokn section here
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
