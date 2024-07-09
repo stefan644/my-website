@@ -282,23 +282,28 @@ const SymptomsViral = [
         options: [
             {
                 display: 'Ó.E. Eyrnaskoðun',
-                output: 'Óska eftir að láta kíkja í eyru'
+                output: 'Óska eftir að láta kíkja í eyru',
+                onRightClickOutput: 'Vilja ekki láta kíkja í eyru'
             },
             {
                 display: 'Óvær',
-                output: 'Verið óvær að nóttu til'
+                output: 'Verið óvær að nóttu til',
+                onRightClickOutput: 'Vær. Sefur vel á nóttunni'
             },
             {
                 display: 'Toga',
-                output: 'Verið að toga mikið í eyru'
+                output: 'Verið að toga mikið í eyru',
+                onRightClickOutput: 'Ekki verið að toga mikið í eyru'
             },
             {
                 display: 'Eyrnabarn',
-                output: 'Eyrnabarn. Fengið tíðar eyrnabólgur'
+                output: 'Eyrnabarn. Fengið tíðar eyrnabólgur',
+                onRightClickOutput: 'Ekki eyrnabarn'
             },
             {
                 display: 'Rör',
-                output: 'Með rör'
+                output: 'Með rör',
+                onRightClickOutput: 'Ekki með rör'
             }
         ]
     },
