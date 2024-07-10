@@ -137,17 +137,19 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Sinusþrýstingur', 'Leiðni'],
+        display: ['Sinuseinkenni', 'Þrýstingur', 'Verkur', 'Leiðni'],
         options: [
             {
-                display: 'Sinusþrýstingur',
+                display: 'Sinuseinkenni',
                 subOptions: [
-                    { display: 'Hægra megin', output: 'Þrýstingur yfir ennisholum hægra megin' },
-                    { display: 'Vinstra megin', output: 'Þrýstingur yfir ennisholum vinstra megin' },
-                    { display: 'Beggja vegna', output: 'Þrýstingur yfir ennisholum beggja vegna' }
+                    { display: 'Hægra megin', output: 'Einkenni frá ennisholum hægra megin' },
+                    { display: 'Vinstra megin', output: 'Einkenni frá ennisholum vinstra megin' },
+                    { display: 'Beggja vegna', output: 'Einkenni frá ennisholum beggja vegna' }
                 ],
                 onRightClickOutput: 'Ekki þrýstingur yfir ennisholum'
             },
+            { display: 'Þrýstingur', output: 'Þrýstingur', onRightClickOutput: 'Ekki þrýstingur'},
+            { display: 'Verkur', output: 'Verkur', onRightClickOutput: 'Ekki verkur'},
             {
                 display: 'Leiðni',
                 subOptions: [
@@ -160,33 +162,18 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Eyrnaverkur', 'Hella', 'Óþægindi'],
+        display: ['Einkenni frá eyra', 'Verkur', 'Hella',],
         options: [
-            {
-                display: 'Verkur',
-                subOptions: [
-                    { display: 'Hægri', output: 'Verkur í hægra eyra' },
-                    { display: 'Vinstri', output: 'Verkur í vinstra eyra' },
-                    { display: 'Beggja vegna', output: 'Verkur í báðum eyrum' }
-                ],
-                onRightClickOutput: 'Ekki einkenni frá eyrum'
-            },
-            {
-                display: 'Hella',
-                subOptions: [
-                    { display: 'Hægri', output: 'Hella í hægra eyra' },
-                    { display: 'Vinstri', output: 'Hella í vinstra eyra' },
-                    { display: 'Beggja vegna', output: 'Hella í báðum eyrum' }
-                ]
-            },
             {
                 display: 'Óþægindi',
                 subOptions: [
-                    { display: 'Hægri', output: 'Óþægindi í hægra eyra' },
-                    { display: 'Vinstri', output: 'Óþægindi í vinstra eyra' },
-                    { display: 'Beggja vegna', output: 'Óþægindi í báðum eyrum' }
+                    { display: 'Hægri', output: 'Óþægindi frá hægra eyra' },
+                    { display: 'Vinstri', output: 'Óþægindi frá vinstra eyra' },
+                    { display: 'Beggja vegna', output: 'Óþægindi frá báðum eyrum' }
                 ]
-            }
+            },
+            { display: 'Verkur', output: 'Verkur', onRightClickOutput: 'Ekki verkur'},
+            { display: 'Hella', output: 'Hella', onRightClickOutput: 'Ekki hella'}
         ]
     },
     {
@@ -1267,7 +1254,7 @@ const SymptomsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Háþrýstingur', 'Heimamælingar', 'Hjartsláttaróþægindi'],
+        display: ['Háþrýstingur', 'Heimamælingar','Algeng gildi'],
         options: [
             {
                 display: 'Háþrýstingur',
@@ -1287,6 +1274,37 @@ const SymptomsHeart = [
                 onRightClickOutput: 'Engar heimamælingar'
             },
             {
+                display: 'Algeng Gildi',
+                subOptions: [
+                    ...Array.from({ length: 15 }, (_, i) => ({
+                        display: `Systolic Low ${110 + i * 5}`,
+                        subOptions: [
+                            ...Array.from({ length: 15 - i }, (_, j) => ({
+                                display: `Systolic High ${115 + i * 5 + j * 5}`,
+                                subOptions: [
+                                    ...Array.from({ length: 9 }, (_, k) => ({
+                                        display: `Diastolic Low ${70 + k * 5}`,
+                                        subOptions: [
+                                            ...Array.from({ length: 9 - k }, (_, l) => ({
+                                                display: `Diastolic High ${75 + k * 5 + l * 5}`,
+                                                output: `Heimamælingar oftast í kringum ${110 + i * 5}-${115 + i * 5 + j * 5}/${70 + k * 5}-${75 + k * 5 + l * 5}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            }))
+                        ]
+                    }))
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hjartsláttaróþægindi', 'Mæði', 'Slappleiki', 'Fótabjúg'],
+        options: [
+            {
                 display: 'Hjartsláttaróþægindi',
                 subOptions: [
                     { display: 'Hjartsláttaróþægindi', output: 'Fundið fyrir hjartsláttaróþægindum' },
@@ -1294,14 +1312,7 @@ const SymptomsHeart = [
                     { display: 'Eðlilegar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' }
                 ],
                 onRightClickOutput: 'Ekki fundið fyrir hjartsláttaróþægindum'
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Mæði', 'Slappleiki', 'Fótabjúg'],
-        options: [
+            },
             {
                 display: 'Mæði',
                 subOptions: [
@@ -2054,43 +2065,274 @@ const SymptomsStodkerfi = [
     }
 ];
 const ExamsStodkerfi = [
+    // Knee Examination
     {
         name: '',
         type: 'options',
-        display: ['Skoðun á baki', 'Skoðun á öxl'],
+        display: ['Hné - Þreifieymsl', 'Hreyfigeta', 'Liðbönd', 'Mcmurray'],
         options: [
-            { display: 'Skoðun á baki', output: 'Skoðun á baki sýnir' },
-            { display: 'Skoðun á öxl', output: 'Skoðun á öxl sýnir' }
+            {
+                display: 'Hné - Þreifieymsl',
+                subOptions: [
+                    {
+                        display: 'Liðbil',
+                        subOptions: [
+                            { display: 'Innanvert', output: 'Eymsl yfir innanverðu liðbili' },
+                            { display: 'Utanvert', output: 'Eymsl yfir utanverðu liðbili' }
+                        ]
+                    },
+                    {
+                        display: 'Patellar',
+                        subOptions: [
+                            { display: 'Infrapatellar', output: 'Eymsl infrapatellart' },
+                            { display: 'Suprapatellar', output: 'Eymsl suprapatellart' }
+                        ]
+                    },
+                    { display: 'Pes anserinus', output: 'Eymsl yfir pes anserinus' },
+                    { display: 'Hnésbót', output: 'Eymsl yfir hnésbót' }
+                ],
+                onRightClickOutput: 'Engin eymsli við þreifingu'
+            },
+            {
+                display: 'Hreyfigeta',
+                subOptions: Array.from({ length: 7 }, (_, i) => ({
+                    display: `Extension ${-10 + i * 5} gráður`,
+                    subOptions: Array.from({ length: 13 }, (_, j) => ({
+                        display: `Flexion ${90 + j * 5} gráður`,
+                        output: `Nær ${-10 + i * 5} gráða extension. Nær ${90 + j * 5} gráða flexion.`
+                    }))
+                })),
+                onRightClickOutput: 'Full hreyfigeta'
+            },
+            {
+                display: 'Liðbandaprófun',
+                subOptions: [
+                    { display: 'MCL', output: 'Verkur og aukið laxitet á MCL' },
+                    { display: 'LCL', output: 'Verkur og aukið laxitet á LCL' },
+                    { display: 'ACL', output: 'Aukið laxitet við prófun fremra krossband' },
+                    { display: 'PCL', output: 'Aukið laxitet við prófun aftara krossband' }
+                ],
+                onRightClickOutput: 'Liðbandaprófun eðlileg'
+            },
+            {
+                display: 'Mcmurray',
+                subOptions: [
+                    { display: 'Jákvætt medialt', output: 'Mcmurray jákvætt medialt' },
+                    { display: 'Jákvætt lateralt', output: 'Mcmurray jákvætt lateralt' },
+                    { display: 'Jákvætt beggja vegna', output: 'Mcmurray jákvætt beggja vegna' }
+                ],
+                onRightClickOutput: 'Mcmurray neikvætt'
+            }
         ]
     },
+
+    // Back Examination
     {
         name: '',
         type: 'options',
-        display: ['Skoðun á hné', 'Skoðun á úlnlið'],
+        display: ['Bak - Þreifieymsl', 'Hreyfigeta'],
         options: [
-            { display: 'Skoðun á hné', output: 'Skoðun á hné sýnir' },
-            { display: 'Skoðun á úlnlið', output: 'Skoðun á úlnlið sýnir' }
+            {
+                display: 'Bak - Þreifieymsl',
+                subOptions: [
+                    {
+                        display: 'Hryggjartindar',
+                        subOptions: Array.from({ length: 7 }, (_, i) => ({
+                            display: `C${i + 1}`,
+                            output: `Þreifieymsl yfir C${i + 1}`
+                        })).concat(Array.from({ length: 12 }, (_, i) => ({
+                            display: `T${i + 1}`,
+                            output: `Þreifieymsl yfir T${i + 1}`
+                        }))).concat(Array.from({ length: 5 }, (_, i) => ({
+                            display: `L${i + 1}`,
+                            output: `Þreifieymsl yfir L${i + 1}`
+                        })))
+                    },
+                    {
+                        display: 'Paraspinalt',
+                        subOptions: [
+                            {
+                                display: 'Lumbar',
+                                subOptions: [
+                                    { display: 'Hægri', output: 'Þreifieymsl paraspinalt á lumbar svæði hægra megin' },
+                                    { display: 'Vinstri', output: 'Þreifieymsl paraspinalt á lumbar svæði vinstra megin' },
+                                    { display: 'Beggja vegna', output: 'Þreifieymsl paraspinalt á lumbar svæði beggja vegna' }
+                                ]
+                            },
+                            {
+                                display: 'Thorax',
+                                subOptions: [
+                                    { display: 'Hægri', output: 'Þreifieymsl paraspinalt á thorax svæði hægra megin' },
+                                    { display: 'Vinstri', output: 'Þreifieymsl paraspinalt á thorax svæði vinstra megin' },
+                                    { display: 'Beggja vegna', output: 'Þreifieymsl paraspinalt á thorax svæði beggja vegna' }
+                                ]
+                            },
+                            {
+                                display: 'Cervical',
+                                subOptions: [
+                                    { display: 'Hægri', output: 'Þreifieymsl paraspinalt á cervical svæði hægra megin' },
+                                    { display: 'Vinstri', output: 'Þreifieymsl paraspinalt á cervical svæði vinstra megin' },
+                                    { display: 'Beggja vegna', output: 'Þreifieymsl paraspinalt á cervical svæði beggja vegna' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Herðablaði',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Þreifieymsl yfir hægri herðablaði' },
+                            { display: 'Vinstri', output: 'Þreifieymsl yfir vinstri herðablaði' }
+                        ]
+                    },
+                    {
+                        display: 'Gluteal vöðvafestur',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Þreifieymsl yfir gluteal vöðvafestum hægra megin' },
+                            { display: 'Vinstri', output: 'Þreifieymsl yfir gluteal vöðvafestum vinstra megin' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Engin eymsli við þreifingu'
+            },
+            {
+                display: 'Hreyfigeta',
+                subOptions: [
+                    { display: 'Stirðleiki við flexion', output: 'Stirðleiki við flexion. Nær ekki að setja fingur í gólf' },
+                    { display: 'Stirðleiki við extension', output: 'Stirðleiki við extension' },
+                    { display: 'Stirðleiki við lateral flexion', output: 'Stirðleiki við lateral flexion' },
+                    { display: 'Stirðleiki við rotation', output: 'Stirðleiki við rotation' }
+                ],
+                onRightClickOutput: 'Full hreyfigeta á baki'
+            }
         ]
     },
+
+    // Hip Examination
     {
         name: '',
         type: 'options',
-        display: ['Skoðun á hálsi', 'Skoðun á mjöðm'],
+        display: ['Skoðun á mjöðm'],
         options: [
-            { display: 'Skoðun á hálsi', output: 'Skoðun á hálsi sýnir' },
             { display: 'Skoðun á mjöðm', output: 'Skoðun á mjöðm sýnir' }
         ]
     },
+    // Ankle Examination
     {
         name: '',
         type: 'options',
-        display: ['Skoðun á vöðvum', 'Skoðun á liðum'],
+        display: ['Ökkli - Útlit', 'Eymsl', 'Hreyfigeta', 'Ottawa'],
         options: [
-            { display: 'Skoðun á vöðvum', output: 'Skoðun á vöðvum sýnir' },
-            { display: 'Skoðun á liðum', output: 'Skoðun á liðum sýnir' }
+            {
+                display: 'Ökkli - Útlit',
+                subOptions: [
+                    { display: 'Bólga', output: 'Bólga á ökkla' },
+                    { display: 'Roði', output: 'Roði á ökkla' },
+                    { display: 'Aflögun', output: 'Aflögun á ökkla' }
+                ],
+                onRightClickOutput: 'Eðlilegt útlit á ökkla'
+            },
+            {
+                display: 'Eymsl',
+                subOptions: [
+                    {
+                        display: 'Lateral',
+                        subOptions: [
+                            { display: 'Anterior talofibular ligament', output: 'Þreifieymsl yfir anterior talofibular ligament' },
+                            { display: 'Calcaneofibular ligament', output: 'Þreifieymsl yfir calcaneofibular ligament' },
+                            { display: 'Posterior talofibular ligament', output: 'Þreifieymsl yfir posterior talofibular ligament' }
+                        ]
+                    },
+                    {
+                        display: 'Medial',
+                        subOptions: [
+                            { display: 'Deltoid ligament', output: 'Þreifieymsl yfir deltoid ligament' },
+                            { display: 'Tibialis posterior tendon', output: 'Þreifieymsl yfir tibialis posterior tendon' }
+                        ]
+                    },
+                    {
+                        display: 'Anterior',
+                        subOptions: [
+                            { display: 'Syndesmosis', output: 'Þreifieymsl yfir syndesmosis' },
+                            { display: 'Tibialis anterior tendon', output: 'Þreifieymsl yfir tibialis anterior tendon' }
+                        ]
+                    },
+                    {
+                        display: 'Posterior',
+                        subOptions: [
+                            { display: 'Achilles tendon', output: 'Þreifieymsl yfir Achilles tendon' },
+                            { display: 'Posterior tibialis tendon', output: 'Þreifieymsl yfir posterior tibialis tendon' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Engin eymsli við þreifingu á ökkla'
+            },
+            {
+                display: 'Hreyfigeta',
+                subOptions: [
+                    {
+                        display: 'Dorsiflexion',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `Dorsiflexion ${i * 5} gráður`,
+                            output: `Nær ${i * 5} gráðu dorsiflexion`
+                        }))
+                    },
+                    {
+                        display: 'Plantarflexion',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `Plantarflexion ${i * 5} gráður`,
+                            output: `Nær ${i * 5} gráðu plantarflexion`
+                        }))
+                    },
+                    {
+                        display: 'Inversion',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `Inversion ${i * 5} gráður`,
+                            output: `Nær ${i * 5} gráðu inversion`
+                        }))
+                    },
+                    {
+                        display: 'Eversion',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `Eversion ${i * 5} gráður`,
+                            output: `Nær ${i * 5} gráðu eversion`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'Full hreyfigeta í ökkla'
+            },
+            {
+                display: 'Ottawa',
+                subOptions: [
+                    { display: 'Lateral malleolus', output: 'Þreifieymsl yfir lateral malleolus' },
+                    { display: 'Medial malleolus', output: 'Þreifieymsl yfir medial malleolus' },
+                    { display: 'Navicular bone', output: 'Þreifieymsl yfir navicular beini' },
+                    { display: 'Base of 5th metatarsal', output: 'Þreifieymsl yfir bais metatarsal 5' },
+                    {
+                        display: 'Ástig',
+                        subOptions: [
+                            { display: 'Getur stigið í fótinn', output: 'Getur stigið í fótinn' },
+                            { display: 'Getur ekki stigið í fótinn', output: 'Getur ekki stigið í fótinn' },
+                            { display: 'Gat ekki stigið í fótinn beint eftir áverkann en getur stigið létt í nú', output: 'Gat ekki stigið í fótinn beint eftir áverkann en getur stigið létt í nú' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ottawa reglur neikvæðar'
+            }
+        ]
+    },
+    // Shoulder Examination
+    {
+        name: '',
+        type: 'options',
+        display: ['Öxl'],
+        options: [
+            { display: 'Skoðun á mjöðm', output: 'Skoðun á mjöðm sýnir' }
         ]
     }
 ];
+
+
+
 const PlanStodkerfi = [
     {
         name: '',
@@ -3594,16 +3836,17 @@ function handleButtonRightClick(event, item, displayText, index, button) {
     }
 }
 
-function createPopup(event, selectedOption, button, isRightClick = false) {
+function createPopup(event, selectedOption, button, isRightClick = false, depth = 0) {
     // Create a new popup modal
     const popup = document.createElement('div');
     popup.className = 'popup-modal';
+    popup.dataset.depth = depth;
 
     // Position the popup next to the button
     const rect = button.getBoundingClientRect();
     popup.style.position = 'absolute';
-    popup.style.top = `${rect.bottom + window.scrollY}px`;
-    popup.style.left = `${rect.left + window.scrollX}px`;
+    popup.style.top = `${rect.top + window.scrollY}px`;
+    popup.style.left = `${rect.right + window.scrollX}px`;
     popup.style.backgroundColor = 'white';
     popup.style.border = '1px solid #ccc';
     popup.style.padding = '10px';
@@ -3611,7 +3854,7 @@ function createPopup(event, selectedOption, button, isRightClick = false) {
     popup.style.zIndex = '1000';
 
     // Function to create a button in the popup
-    const createPopupButton = (popup, subOption, parentPopup) => {
+    const createPopupButton = (popup, subOption, parentButton, depth) => {
         const btn = document.createElement('button');
         btn.textContent = subOption.display;
         btn.style.display = 'block';
@@ -3621,7 +3864,7 @@ function createPopup(event, selectedOption, button, isRightClick = false) {
 
             if (subOption.subOptions) {
                 // Remove existing sub-popup if any
-                const existingSubPopup = document.querySelector('.sub-popup-modal');
+                const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth + 1}"]`);
                 if (existingSubPopup) {
                     existingSubPopup.remove();
                 }
@@ -3629,12 +3872,13 @@ function createPopup(event, selectedOption, button, isRightClick = false) {
                 // Create a new sub-popup modal for nested suboptions
                 const subPopup = document.createElement('div');
                 subPopup.className = 'sub-popup-modal';
+                subPopup.dataset.depth = depth + 1;
 
-                // Position the sub-popup next to the button
-                const rect = btn.getBoundingClientRect();
+                // Position the sub-popup next to the parent button
+                const parentRect = parentButton.getBoundingClientRect();
                 subPopup.style.position = 'absolute';
-                subPopup.style.top = `${rect.bottom + window.scrollY}px`;
-                subPopup.style.left = `${rect.right + window.scrollX}px`;
+                subPopup.style.top = `${parentRect.top + window.scrollY}px`;
+                subPopup.style.left = `${parentRect.right + window.scrollX}px`;
                 subPopup.style.backgroundColor = 'white';
                 subPopup.style.border = '1px solid #ccc';
                 subPopup.style.padding = '10px';
@@ -3643,7 +3887,7 @@ function createPopup(event, selectedOption, button, isRightClick = false) {
 
                 // Add nested subOptions to the sub-popup
                 subOption.subOptions.forEach(nestedSubOption => {
-                    createPopupButton(subPopup, nestedSubOption, subPopup);
+                    createPopupButton(subPopup, nestedSubOption, btn, depth + 1);
                 });
 
                 // Append the sub-popup to the document body
@@ -3659,12 +3903,9 @@ function createPopup(event, selectedOption, button, isRightClick = false) {
 
             } else if (subOption.output) {
                 insertText(subOption.output);
-                const existingSubPopup = document.querySelector('.sub-popup-modal');
+                const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth}"]`);
                 if (existingSubPopup) {
                     existingSubPopup.remove();
-                }
-                if (parentPopup) {
-                    parentPopup.remove(); // Close the parent popup
                 }
                 popup.remove(); // Close the main popup
             }
@@ -3675,11 +3916,11 @@ function createPopup(event, selectedOption, button, isRightClick = false) {
     // Add subOptions to the popup
     if (isRightClick) {
         selectedOption.onRightClickSubOptions.forEach(subOption => {
-            createPopupButton(popup, subOption);
+            createPopupButton(popup, subOption, button, depth);
         });
     } else {
         selectedOption.subOptions.forEach(subOption => {
-            createPopupButton(popup, subOption, popup);
+            createPopupButton(popup, subOption, button, depth);
         });
     }
 
@@ -3794,6 +4035,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+
 
 
 
