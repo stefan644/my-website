@@ -673,12 +673,13 @@ const SymptomsUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Óþægindi', 'Sviði', 'Tíð þvaglát', 'Blóð'],
+        display: ['Óþægindi', 'Sviði', 'Tíð þvaglát', 'Blóð', 'Lykt'],
         options: [
             { display: 'Óþægindi', output: 'Óþægindi við þvaglát', onRightClickOutput: 'Neitar óþægindum við þvaglát' },
             { display: 'Sviði', output: 'Sviði við þvaglát', onRightClickOutput: 'Ekki sviði við þvaglát' },
             { display: 'Tíð þvaglát', output: 'Tíð þvaglát', onRightClickOutput: 'Ekki tíð þvaglát' },
-            { display: 'Blóð', output: 'Blóð í þvagi', onRightClickOutput: 'Ekki blóð í þvagi' }
+            { display: 'Blóð', output: 'Blóð í þvagi', onRightClickOutput: 'Ekki blóð í þvagi' },
+            { display: 'Lykt', output: 'Vond lykt af þvagi', onRightClickOutput: 'Ekki fundið fyrir vondri lykt af þvagi' }
         ]
     },
     {
@@ -970,6 +971,72 @@ const SymptomsEye = [
     {
         name: '',
         type: 'options',
+        display: ['Tímalengd einkenna'],
+        options: [
+            {
+                display: 'Tímalengd einkenna',
+                subOptions: [
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            
+                            { display: 'Nokkrir dagar', output: 'Nokkra daga saga' },
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
+                ],
+                cancelText: ''
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
         display: ['Einkenni frá auga', 'Efra augnlok', 'Neðra augnlok'],
         options: [
             {
@@ -1007,9 +1074,10 @@ const SymptomsEye = [
             {
                 display: 'Aðskotahlutur',
                 subOptions: [
+                    { display: 'Grunur um aðskotahlut', output: 'Grunar að hafi fengið aðskotahlut í augað' },
                     { display: 'Aðskotahlutur', output: 'Fékk aðskotahlut í augað' },
-                    { display: 'Tréflís', output: 'Tréflís' },
-                    { display: 'Járnflís', output: 'Járnflís' }
+                    { display: 'Tréflís', output: 'Fékk tréflís í augað' },
+                    { display: 'Járnflís', output: 'Fékk járnflís í augað' }
                 ],
                 onRightClickOutput: 'Ekki fengið aðskotahlut í augað'
             },
@@ -1046,12 +1114,14 @@ const SymptomsEye = [
     {
         name: '',
         type: 'options',
-        display: ['Gröftur', 'Límd'],
+        display: ['Óþægindi', 'Gröftur', 'Límd'],
         options: [
+            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Ekki mikil óþægindi' },
             { display: 'Gröftur', output: 'Lekur gröftur', onRightClickOutput: 'Ekki gröftur' },
             { display: 'Límd', output: 'Augnlok límd saman á morgnanna', onRightClickOutput: 'Augnlok ekki límd saman á morgnanna' }
         ]
     },
+    {},{},{},
     {
         name: '',
         type: 'options',
@@ -1076,23 +1146,24 @@ const ExamsEye = [
     {
         name: '',
         type: 'options',
-        display: ['Glæra hrein', 'Injection', 'Aðskotahlutur', 'Rispa'],
+        display: ['Conjunctival injection', 'Aðskotahlutur', 'Rispa'],
         options: [
-            { display: 'Hrein', output: 'Ekki roði í glæru' },
-            { display: 'Injection', output: 'Conjunctival injection' },
+            { display: 'Injection', output: 'Conjunctival injection', onRightClickOutput: 'Ekki roði í glæru' },
             {
                 display: 'Aðskotahlutur',
                 subOptions: [
                     { display: 'Í glæru', output: 'Sést aðskotahlutur í glæru' },
                     { display: 'Á hornhimnu', output: 'Sést aðskotahlutur á hornhimnu' }
-                ]
+                ],
+                onRightClickOutput: 'Ekki að sjá aðskotahlut'
             },
             {
                 display: 'Rispa',
                 subOptions: [
                     { display: 'Í glæru', output: 'Sést rispa (litarupptaka) á glæru' },
                     { display: 'Á hornhimnu', output: 'Sést rispa (litarupptaka) á hornhimnu' }
-                ]
+                ],
+                onRightClickOutput: 'Ekki sést rispa eða merki um áverka'
             }
         ]
     },
@@ -1101,13 +1172,14 @@ const ExamsEye = [
         type: 'options',
         display: ['Roði á augnloki', 'Nabbi'],
         options: [
-            { display: 'Roði', output: 'Roði' },
+            { display: 'Roði á augnloki', output: 'Roði á augnloki', onRightClickOutput: 'Ekki áberandi roði á augnloki' },
             {
                 display: 'Nabbi',
                 subOptions: [
                     { display: 'Að innanverðu', output: 'Gratarnabbi sést innanvert á augnloki' },
                     { display: 'Að utanverðu', output: 'Graftarnabbi sést utanvert á augnloki' }
-                ]
+                ],
+                onRightClickOutput: 'Ekki sjáanlegur graftarnabbi'
             }
         ]
     }
@@ -2107,8 +2179,8 @@ const ExamsStodkerfi = [
             {
                 display: 'Liðbandaprófun',
                 subOptions: [
-                    { display: 'MCL', output: 'Verkur og aukið laxitet á MCL' },
-                    { display: 'LCL', output: 'Verkur og aukið laxitet á LCL' },
+                    { display: 'MCL', output: 'Verkur og aukið laxitet við prófun á MCL' },
+                    { display: 'LCL', output: 'Verkur og aukið laxitet við prófun á LCL' },
                     { display: 'ACL', output: 'Aukið laxitet við prófun fremra krossband' },
                     { display: 'PCL', output: 'Aukið laxitet við prófun aftara krossband' }
                 ],
