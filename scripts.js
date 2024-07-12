@@ -1278,48 +1278,68 @@ const SymptomsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Nokkrir dagar', 'Dagar', 'Vikur', 'Mánuðir'],
+        display: ['Tímalengd einkenna'],
         options: [
             {
-                display: 'Nokkrir dagar',
-                output: 'Nokkra daga saga',
-                onRightClickOutput: 'Ekki nokkra daga saga'
-            },
-            {
-                display: 'Dagar',
+                display: 'Tímalengd einkenna',
                 subOptions: [
-                    { display: '1d', output: '1d saga' },
-                    { display: '2d', output: '2d saga' },
-                    { display: '3d', output: '3d saga' },
-                    { display: '4d', output: '4d saga' },
-                    { display: '5d', output: '5d saga' },
-                    { display: '6d', output: '6d saga' }
+                    { display: 'Nokkrir dagar', output: 'Nokkra daga saga' },
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            
+                            
+                        
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
                 ],
-                onRightClickOutput: 'Ekki daga saga'
-            },
-            {
-                display: 'Vikur',
-                subOptions: [
-                    { display: '1v', output: '1 vikna saga' },
-                    { display: '1,5v', output: '1,5 vikna saga' },
-                    { display: '2v', output: '2 vikna saga' },
-                    { display: '3v', output: '3 vikna saga' },
-                    { display: 'Margar', output: 'Margra vikna saga' }
-                ],
-                onRightClickOutput: 'Ekki vikna saga'
-            },
-            {
-                display: 'Mánuðir',
-                subOptions: [
-                    { display: '1m', output: '1 mán saga' },
-                    { display: '2m', output: '2 mán saga' },
-                    { display: '3m', output: '3 mán saga' },
-                    { display: '4m', output: '4 mán saga' },
-                    { display: '5m', output: '5 mán saga' },
-                    { display: '6m', output: '6 mán saga' },
-                    { display: 'Margir', output: 'Margra mánaða saga' }
-                ],
-                onRightClickOutput: 'Ekki mánuða saga'
+                cancelText: ''
             }
         ]
     },
@@ -1498,18 +1518,403 @@ const ExamsHeart = [
             {
                 display: 'Óhljóð',
                 subOptions: [
-                    { display: 'Systólískt', output: 'Við hjartahlustun heyrist systólískt óhljóð' }
+                    {
+                        display: 'Systólísk óhljóð',
+                        subOptions: [
+                            {
+                                display: 'Óhljóð yfir ósæðarlokusvæði',
+                                subOptions: [
+                                    {
+                                        display: 'Snemm systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í byrjun systólu yfir ósæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í byrjun systólu yfir ósæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í byrjun systólu yfir ósæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í byrjun systólu yfir ósæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Mið systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært miðstystólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi miðstystólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt miðstystólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært miðstystólískt óhljóð yfir ósæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lok systólu',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í lok systólu yfir ósæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í lok systólu yfir ósæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í lok systólu yfir ósæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í lok systólu yfir ósæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Pan systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært pansystólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi pansystólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt pansystólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært pansystólískt óhljóð yfir ósæðarlokusvæði' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Óhljóð yfir míturlokusvæði',
+                                subOptions: [
+                                    {
+                                        display: 'Snemm systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í byrjun systólu yfir míturlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í byrjun systólu yfir míturlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í byrjun systólu yfir míturlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í byrjun systólu yfir míturlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Mið systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært miðstystólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi miðstystólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt miðstystólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært miðstystólískt óhljóð yfir míturlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lok systólu',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í lok systólu yfir míturlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í lok systólu yfir míturlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í lok systólu yfir míturlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í lok systólu yfir míturlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Pan systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært pansystólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi pansystólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt pansystólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært pansystólískt óhljóð yfir míturlokusvæði' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Óhljóð yfir þríblöðkulokusvæði',
+                                subOptions: [
+                                    {
+                                        display: 'Snemm systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í byrjun systólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í byrjun systólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í byrjun systólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í byrjun systólu yfir þríblöðkulokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Mið systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært miðstystólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi miðstystólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt miðstystólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært miðstystólískt óhljóð yfir þríblöðkulokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lok systólu',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í lok systólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í lok systólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í lok systólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í lok systólu yfir þríblöðkulokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Pan systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært pansystólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi pansystólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt pansystólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært pansystólískt óhljóð yfir þríblöðkulokusvæði' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Óhljóð yfir lungnaslagæðarlokusvæði',
+                                subOptions: [
+                                    {
+                                        display: 'Snemm systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í byrjun systólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í byrjun systólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í byrjun systólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í byrjun systólu yfir lungnaslagæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Mið systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært miðstystólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi miðstystólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt miðstystólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært miðstystólískt óhljóð yfir lungnaslagæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lok systólu',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í lok systólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í lok systólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í lok systólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í lok systólu yfir lungnaslagæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Pan systólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært pansystólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi pansystólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt pansystólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært pansystólískt óhljóð yfir lungnaslagæðarlokusvæði' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Díastólísk óhljóð',
+                        subOptions: [
+                            {
+                                display: 'Óhljóð yfir ósæðarlokusvæði',
+                                subOptions: [
+                                    {
+                                        display: 'Snemm díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í byrjun díastólu yfir ósæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í byrjun díastólu yfir ósæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í byrjun díastólu yfir ósæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í byrjun díastólu yfir ósæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Mið díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært miðdíastólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi miðdíastólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt miðdíastólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært miðdíastólískt óhljóð yfir ósæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lok díastólu',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í lok díastólu yfir ósæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í lok díastólu yfir ósæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í lok díastólu yfir ósæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í lok díastólu yfir ósæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Pan díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært pandíastólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi pandíastólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt pandíastólískt óhljóð yfir ósæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært pandíastólískt óhljóð yfir ósæðarlokusvæði' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Óhljóð yfir míturlokusvæði',
+                                subOptions: [
+                                    {
+                                        display: 'Snemm díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í byrjun díastólu yfir míturlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í byrjun díastólu yfir míturlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í byrjun díastólu yfir míturlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í byrjun díastólu yfir míturlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Mið díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært miðdíastólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi miðdíastólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt miðdíastólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært miðdíastólískt óhljóð yfir míturlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lok díastólu',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í lok díastólu yfir míturlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í lok díastólu yfir míturlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í lok díastólu yfir míturlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í lok díastólu yfir míturlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Pan díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært pandíastólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi pandíastólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt pandíastólískt óhljóð yfir míturlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært pandíastólískt óhljóð yfir míturlokusvæði' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Óhljóð yfir þríblöðkulokusvæði',
+                                subOptions: [
+                                    {
+                                        display: 'Snemm díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í byrjun díastólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í byrjun díastólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í byrjun díastólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í byrjun díastólu yfir þríblöðkulokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Mið díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært miðdíastólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi miðdíastólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt miðdíastólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært miðdíastólískt óhljóð yfir þríblöðkulokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lok díastólu',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í lok díastólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í lok díastólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í lok díastólu yfir þríblöðkulokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í lok díastólu yfir þríblöðkulokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Pan díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært pandíastólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi pandíastólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt pandíastólískt óhljóð yfir þríblöðkulokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært pandíastólískt óhljóð yfir þríblöðkulokusvæði' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Óhljóð yfir lungnaslagæðarlokusvæði',
+                                subOptions: [
+                                    {
+                                        display: 'Snemm díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í byrjun díastólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í byrjun díastólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í byrjun díastólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í byrjun díastólu yfir lungnaslagæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Mið díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært miðdíastólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi miðdíastólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt miðdíastólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært miðdíastólískt óhljóð yfir lungnaslagæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lok díastólu',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært óhljóð í lok díastólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi óhljóð í lok díastólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt óhljóð í lok díastólu yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært óhljóð í lok díastólu yfir lungnaslagæðarlokusvæði' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Pan díastólískt',
+                                        subOptions: [
+                                            { display: 'Hávært', output: 'Heyrist hávært pandíastólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Áberandi', output: 'Heyrist áberandi pandíastólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Greinilegt', output: 'Heyrist greinilegt pandíastólískt óhljóð yfir lungnaslagæðarlokusvæði' },
+                                            { display: 'Lágvært', output: 'Heyrist lágvært pandíastólískt óhljóð yfir lungnaslagæðarlokusvæði' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
                 ]
             }
+            
         ]
     },
     {},{},{},
     {
         name: '',
         type: 'options',
-        display: ['EKG eðl'],
+        display: ['Hjartalínurit'],
         options: [
-            { display: 'EKG eðl', output: 'Hjartalínurit sýnir sinus takt án bráðra breytinga' }
+            {
+                display: 'Hjartalínurit',
+                subOptions: [
+                    {
+                        display: 'Anterior MI',
+                        output: 'Hjartalínurit sýnir ST-hækkanir í V1-V4'
+                    },
+                    {
+                        display: 'Inferior MI',
+                        output: 'Hjartalínurit sýnir ST-hækkanir í II, III og aVF'
+                    },
+                    {
+                        display: 'Lateral MI',
+                        output: 'Hjartalínurit sýnir ST-hækkanir í I, aVL, V5 og V6'
+                    },
+                    {
+                        display: 'Atrial fibrillation',
+                        output: 'Hjartalínurit sýnir óreglulegan, hraðan takt, engin P-bylgja'
+                    },
+                    {
+                        display: 'Ventricular tachycardia',
+                        output: 'Hjartalínurit sýnir breiðkomplexa tachycardia'
+                    },
+                    {
+                        display: 'Left bundle branch block',
+                        output: 'Hjartalínurit sýnir breiða QRS-komplexa, ST-T breytingar'
+                    },
+                    {
+                        display: 'Right bundle branch block',
+                        output: 'Hjartalínurit sýnir breiða QRS-komplexa, M-mynstur í V1 og breiða S-bylgjur í V6'
+                    },
+                    {
+                        display: 'Supraventricular tachycardia',
+                        output: 'Hjartalínurit sýnir mjósleglahraðtaktur, oft reglulegur'
+                    },
+                    {
+                        display: 'Hyperkalemia',
+                        output: 'Hjartalínurit sýnir háa T-bylgjur, breiða QRS-komplexa'
+                    },
+                    {
+                        display: 'Hypokalemia',
+                        output: 'Hjartalínurit sýnir flatar T-bylgjur, U-bylgjur'
+                    }
+                ],
+                onRightClickOutput: 'Hjartalínurit sýnir reglulegan takt, eðlilegar P, QRS og T bylgjur. Ekki merki um ST breytingar'
+            }
+            
+            
         ]
     }
 ];
@@ -1517,80 +1922,737 @@ const PlanHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Strep', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'],
+        display: ['Háþrýstingur', 'Brjóstverkur', 'Hjartsláttaróregla', 'Mæði'],
         options: [
-            { display: 'Strep', output: 'Strep throat' },
-            { display: 'Vírósa', output: 'Vírósa' },
-            { display: 'Eyrnabólga', output: 'Eyrnabólga' },
-            { display: 'Lungnabólga', output: 'Lungnabólga' }
+            {
+                display: 'Háþrýstingur',
+                subOptions: [
+                    { display: 'Háþrýstingur', output: 'Háþrýstingur' },
+                    { display: 'Háþrýstingur + heimamælingar góðar', output: 'Háþrýstingur. Ásættanlegar heimamælingar' },
+                    { display: 'Háþrýstingur + hækkaður á stofu', output: 'Háþrýstingur. Mælist of hár á stofu' }
+                ],
+                onRightClickOutput: 'Ekki háþrýstingur'
+            },
+            { 
+                display: 'Brjóstverkur', 
+                output: 'Brjóstverkur', 
+                onRightClickOutput: 'Ekki brjóstverkur'
+            },
+            {
+                display: 'Hjartsláttaróregla',
+                subOptions: [
+                    { display: 'Hjartsláttaróregla', output: 'Hjartsláttaróregla' },
+                    { display: 'Gáttatif', output: 'Hjartsláttaróregla. Gáttatif' },
+                    { display: 'Gáttaflökt', output: 'Hjartsláttaróregla. Gáttaflökt' },
+                    { display: 'Ventricular tachycardia', output: 'Hjartsláttaróregla. Ventricular tachycardia' }
+                ],
+                onRightClickOutput: 'Ekki hjartsláttaróregla'
+            },
+            { 
+                display: 'Mæði', 
+                output: 'Mæði', 
+                onRightClickOutput: 'Ekki mæði'
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Sinusitis', 'Bronchitis', 'Versnun á COPD', 'Astmi'],
+        display: ['Syncope', 'Orthopnea', 'Paroxysmal Nocturnal Dyspnea', 'Fótabjúgur'],
         options: [
-            { display: 'Sinusitis', output: 'Sinusitis' },
-            { display: 'Bronchitis', output: 'Bronchitis' },
-            { display: 'Versnun á COPD', output: 'Versnun á COPD' },
-            { display: 'Astmi', output: 'Astmi' }
+            {
+                display: 'Syncope',
+                subOptions: [
+                    { display: 'Cardiac syncope', output: 'Grunur um cardiac syncope' },
+                    { display: 'Vasovagal syncope', output: 'Grunur um vasovagal syncope' }
+                ],
+                onRightClickOutput: 'Ekki syncope'
+            },
+            { 
+                display: 'Orthopnea', 
+                output: 'Orthopnea', 
+                onRightClickOutput: 'Ekki orthopnea'
+            },
+            { 
+                display: 'Paroxysmal Nocturnal Dyspnea', 
+                output: 'Paroxysmal Nocturnal Dyspnea', 
+                onRightClickOutput: 'Ekki paroxysmal nocturnal dyspnea'
+            },
+            {
+                display: 'Fótabjúgur',
+                subOptions: [
+                    { display: 'Vægur fótabjúgur', output: 'Fótabjúgur. Vægur fótabjúgur' },
+                    { display: 'Miðlungs fótabjúgur', output: 'Fótabjúgur. Miðlungs fótabjúgur' },
+                    { display: 'Mikill fótabjúgur', output: 'Fótabjúgur. Mikill fótabjúgur' }
+                ],
+                onRightClickOutput: 'Enginn fótabjúgur'
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Mergur', 'Otitis externa', 'Langvarandi einkenni'],
+        display: ['Hjartabilun', 'Aortic stenosis', 'Mitral regurgitation'],
         options: [
-            { display: 'Mergur', output: 'Eyrnamergur' },
-            { display: 'Otitis externa', output: 'Otitis externa' },
-            { display: 'Langvarandi einkenni', output: 'Einkenni langvarandi' }
+            { 
+                display: 'Hjartabilun', 
+                subOptions: [
+                    {
+                        display: 'Grunur um',
+                        output: 'Grunur um hjartabilun'
+                    },
+                    {
+                        display: 'Hjartabilun',
+                        output: 'Hjartabilun'
+                    },
+                    {
+                        display: 'NYHA',
+                        subOptions: [
+                            { display: 'NYHA I', output: 'Hjartabilun. NYHA I: Engin einkenni við venjulega áreynslu' },
+                            { display: 'NYHA II', output: 'Hjartabilun. NYHA II: Væg einkenni við venjulega áreynslu' },
+                            { display: 'NYHA III', output: 'Hjartabilun. NYHA III: Miðlungs einkenni við litla áreynslu' },
+                            { display: 'NYHA IV', output: 'Hjartabilun. NYHA IV: Alvarleg einkenni í hvíld' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekki hjartabilun'
+            },
+            { 
+                display: 'Aortic stenosis', 
+                output: 'Aortic stenosis', 
+                onRightClickOutput: 'Ekki aortic stenosis'
+            },
+            { 
+                display: 'Mitral regurgitation', 
+                output: 'Mitral regurgitation', 
+                onRightClickOutput: 'Ekki mitral regurgitation'
+            }
         ]
-    },
+    }
+    ,
     {},{},{},
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar', 'Stuðningsmeðferð'],
+        display: ['Heimamælingar', 'Hjartalínurit', 'Þvagprufa', 'Blóðprufa'],
         options: [
-            { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
-            {
-            display: 'Stuðningsmeðferð',
-                subOptions: [
-                    { display: 'Stuðningsmeðferð', output: 'Ráðlegg stuðningsmeðferð' },
-                    { display: 'Slímlosandi', output: 'Reynum slímlosandi' },
-                    { display: 'Kódein', output: 'Fær kódein við hósta' }
-                ],
-            }
+            { display: 'Heimamælingar', output: 'Ráðlegg heimamælingar. Mælir sig 2-3x á dag í nokkra daga' },
+            { display: 'Hjartalínurit', output: 'Fær tíma í hjartalínurit' },
+            { display: 'Þvagprufa', output: 'Fær tíma í þvagprufu' },
+            { display: 'Blóðprufa', output: 'Fær tíma í blóðrannsókn' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Nefstera', 'Púst', 'Mergur', 'Sérfræðing'],
+        display: ['Blóðþrýstingslyf', 'Þvagræsilyf', 'Sérfræðing'],
         options: [
-            { display: 'Nefstera', output: 'Ráðlegg nefstera' },
             {
-                display: 'Púst',
+                display: 'Blóðþrýstingslyf',
                 subOptions: [
-                    { display: 'ventolin', output: 'Ráðlegg púst. Set ventolin í gáttina' },
-                    { display: 'flixotide', output: 'Ráðlegg púst. Set flixotide í gáttina' },
-                    { display: 'ventolin+flixotide', output: 'Ráðlegg púst. Set ventolin og flixotide í gáttina' },
-                    { display: 'seretide', output: 'Ráðlegg púst. Set seretide í gáttina' }
-                ],
-                cancelText: ''
+                    {
+                        display: 'Hefjum meðferð',
+                        subOptions: [
+                            {
+                                display: 'ACE hemlar',
+                                subOptions: [
+                                    {
+                                        display: 'Ramipril',
+                                        subOptions: [
+                                            { display: '2.5 mg', output: 'Hefjum meðferð með Ramipril 2.5 mg' },
+                                            { display: '5 mg', output: 'Hefjum meðferð með Ramipril 5 mg' },
+                                            { display: '10 mg', output: 'Hefjum meðferð með Ramipril 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Enalapril',
+                                        subOptions: [
+                                            { display: '5 mg', output: 'Hefjum meðferð með Enalapril 5 mg' },
+                                            { display: '10 mg', output: 'Hefjum meðferð með Enalapril 10 mg' },
+                                            { display: '20 mg', output: 'Hefjum meðferð með Enalapril 20 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'ARB hemlar',
+                                subOptions: [
+                                    {
+                                        display: 'Losartan',
+                                        subOptions: [
+                                            { display: '50 mg', output: 'Hefjum meðferð með Losartan 50 mg' },
+                                            { display: '100 mg', output: 'Hefjum meðferð með Losartan 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Valsartan',
+                                        subOptions: [
+                                            { display: '80 mg', output: 'Hefjum meðferð með Valsartan 80 mg' },
+                                            { display: '160 mg', output: 'Hefjum meðferð með Valsartan 160 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Þvagræsilyf',
+                                subOptions: [
+                                    {
+                                        display: 'Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '12.5 mg', output: 'Hefjum meðferð með Hydrochlorothiazide 12.5 mg' },
+                                            { display: '25 mg', output: 'Hefjum meðferð með Hydrochlorothiazide 25 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Beta blokkari',
+                                subOptions: [
+                                    {
+                                        display: 'Atenolol',
+                                        subOptions: [
+                                            { display: '25 mg', output: 'Hefjum meðferð með Atenolol 25 mg' },
+                                            { display: '50 mg', output: 'Hefjum meðferð með Atenolol 50 mg' },
+                                            { display: '100 mg', output: 'Hefjum meðferð með Atenolol 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Metoprolol',
+                                        subOptions: [
+                                            { display: '23.75 mg', output: 'Hefjum meðferð með Metoprolol 23.75 mg' },
+                                            { display: '47.5 mg', output: 'Hefjum meðferð með Metoprolol 47.5 mg' },
+                                            { display: '95 mg', output: 'Hefjum meðferð með Metoprolol 95 mg' },
+                                            { display: '50 mg', output: 'Hefjum meðferð með Metoprolol 50 mg' },
+                                            { display: '100 mg', output: 'Hefjum meðferð með Metoprolol 100 mg' },
+                                            { display: '200 mg', output: 'Hefjum meðferð með Metoprolol 200 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Calcium channel blockers',
+                                subOptions: [
+                                    {
+                                        display: 'Amlodipine',
+                                        subOptions: [
+                                            { display: '5 mg', output: 'Hefjum meðferð með Amlodipine 5 mg' },
+                                            { display: '10 mg', output: 'Hefjum meðferð með Amlodipine 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Diltiazem',
+                                        subOptions: [
+                                            { display: '120 mg', output: 'Hefjum meðferð með Diltiazem 120 mg' },
+                                            { display: '180 mg', output: 'Hefjum meðferð með Diltiazem 180 mg' },
+                                            { display: '240 mg', output: 'Hefjum meðferð með Diltiazem 240 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Samsett lyfjaform',
+                                subOptions: [
+                                    {
+                                        display: 'Losartan + Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '50/12.5 mg', output: 'Hefjum meðferð með Losartan 50 mg + Hydrochlorothiazide 12.5 mg' },
+                                            { display: '100/25 mg', output: 'Hefjum meðferð með Losartan 100 mg + Hydrochlorothiazide 25 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Valsartan + Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '80/12.5 mg', output: 'Hefjum meðferð með Valsartan 80 mg + Hydrochlorothiazide 12.5 mg' },
+                                            { display: '160/25 mg', output: 'Hefjum meðferð með Valsartan 160 mg + Hydrochlorothiazide 25 mg' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Viðbót',
+                        subOptions: [
+                            {
+                                display: 'ACE hemlar',
+                                subOptions: [
+                                    {
+                                        display: 'Ramipril',
+                                        subOptions: [
+                                            { display: '2.5 mg', output: 'Bæta við Ramipril 2.5 mg' },
+                                            { display: '5 mg', output: 'Bæta við Ramipril 5 mg' },
+                                            { display: '10 mg', output: 'Bæta við Ramipril 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Enalapril',
+                                        subOptions: [
+                                            { display: '5 mg', output: 'Bæta við Enalapril 5 mg' },
+                                            { display: '10 mg', output: 'Bæta við Enalapril 10 mg' },
+                                            { display: '20 mg', output: 'Bæta við Enalapril 20 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'ARB hemlar',
+                                subOptions: [
+                                    {
+                                        display: 'Losartan',
+                                        subOptions: [
+                                            { display: '50 mg', output: 'Bæta við Losartan 50 mg' },
+                                            { display: '100 mg', output: 'Bæta við Losartan 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Valsartan',
+                                        subOptions: [
+                                            { display: '80 mg', output: 'Bæta við Valsartan 80 mg' },
+                                            { display: '160 mg', output: 'Bæta við Valsartan 160 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Þvagræsilyf',
+                                subOptions: [
+                                    {
+                                        display: 'Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '12.5 mg', output: 'Bæta við Hydrochlorothiazide 12.5 mg' },
+                                            { display: '25 mg', output: 'Bæta við Hydrochlorothiazide 25 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Beta blokkari',
+                                subOptions: [
+                                    {
+                                        display: 'Atenolol',
+                                        subOptions: [
+                                            { display: '25 mg', output: 'Bæta við Atenolol 25 mg' },
+                                            { display: '50 mg', output: 'Bæta við Atenolol 50 mg' },
+                                            { display: '100 mg', output: 'Bæta við Atenolol 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Metoprolol',
+                                        subOptions: [
+                                            { display: '23.75 mg', output: 'Bæta við Metoprolol 23.75 mg' },
+                                            { display: '47.5 mg', output: 'Bæta við Metoprolol 47.5 mg' },
+                                            { display: '95 mg', output: 'Bæta við Metoprolol 95 mg' },
+                                            { display: '50 mg', output: 'Bæta við Metoprolol 50 mg' },
+                                            { display: '100 mg', output: 'Bæta við Metoprolol 100 mg' },
+                                            { display: '200 mg', output: 'Bæta við Metoprolol 200 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Calcium channel blockers',
+                                subOptions: [
+                                    {
+                                        display: 'Amlodipine',
+                                        subOptions: [
+                                            { display: '5 mg', output: 'Bæta við Amlodipine 5 mg' },
+                                            { display: '10 mg', output: 'Bæta við Amlodipine 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Diltiazem',
+                                        subOptions: [
+                                            { display: '120 mg', output: 'Bæta við Diltiazem 120 mg' },
+                                            { display: '180 mg', output: 'Bæta við Diltiazem 180 mg' },
+                                            { display: '240 mg', output: 'Bæta við Diltiazem 240 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Samsett lyfjaform',
+                                subOptions: [
+                                    {
+                                        display: 'Losartan + Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '50/12.5 mg', output: 'Bæta við Losartan 50 mg + Hydrochlorothiazide 12.5 mg' },
+                                            { display: '100/25 mg', output: 'Bæta við Losartan 100 mg + Hydrochlorothiazide 25 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Valsartan + Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '80/12.5 mg', output: 'Bæta við Valsartan 80 mg + Hydrochlorothiazide 12.5 mg' },
+                                            { display: '160/25 mg', output: 'Bæta við Valsartan 160 mg + Hydrochlorothiazide 25 mg' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Aukum skammt',
+                        subOptions: [
+                            {
+                                display: 'ACE hemlar',
+                                subOptions: [
+                                    {
+                                        display: 'Ramipril',
+                                        subOptions: [
+                                            { display: '2.5 mg', output: 'Aukum skammt af Ramipril í 2.5 mg' },
+                                            { display: '5 mg', output: 'Aukum skammt af Ramipril í 5 mg' },
+                                            { display: '10 mg', output: 'Aukum skammt af Ramipril í 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Enalapril',
+                                        subOptions: [
+                                            { display: '5 mg', output: 'Aukum skammt af Enalapril í 5 mg' },
+                                            { display: '10 mg', output: 'Aukum skammt af Enalapril í 10 mg' },
+                                            { display: '20 mg', output: 'Aukum skammt af Enalapril í 20 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'ARB hemlar',
+                                subOptions: [
+                                    {
+                                        display: 'Losartan',
+                                        subOptions: [
+                                            { display: '50 mg', output: 'Aukum skammt af Losartan í 50 mg' },
+                                            { display: '100 mg', output: 'Aukum skammt af Losartan í 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Valsartan',
+                                        subOptions: [
+                                            { display: '80 mg', output: 'Aukum skammt af Valsartan í 80 mg' },
+                                            { display: '160 mg', output: 'Aukum skammt af Valsartan í 160 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Þvagræsilyf',
+                                subOptions: [
+                                    {
+                                        display: 'Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '12.5 mg', output: 'Aukum skammt af Hydrochlorothiazide í 12.5 mg' },
+                                            { display: '25 mg', output: 'Aukum skammt af Hydrochlorothiazide í 25 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Beta blokkari',
+                                subOptions: [
+                                    {
+                                        display: 'Atenolol',
+                                        subOptions: [
+                                            { display: '25 mg', output: 'Aukum skammt af Atenolol í 25 mg' },
+                                            { display: '50 mg', output: 'Aukum skammt af Atenolol í 50 mg' },
+                                            { display: '100 mg', output: 'Aukum skammt af Atenolol í 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Metoprolol',
+                                        subOptions: [
+                                            { display: '23.75 mg', output: 'Aukum skammt af Metoprolol í 23.75 mg' },
+                                            { display: '47.5 mg', output: 'Aukum skammt af Metoprolol í 47.5 mg' },
+                                            { display: '95 mg', output: 'Aukum skammt af Metoprolol í 95 mg' },
+                                            { display: '50 mg', output: 'Aukum skammt af Metoprolol í 50 mg' },
+                                            { display: '100 mg', output: 'Aukum skammt af Metoprolol í 100 mg' },
+                                            { display: '200 mg', output: 'Aukum skammt af Metoprolol í 200 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Calcium channel blockers',
+                                subOptions: [
+                                    {
+                                        display: 'Amlodipine',
+                                        subOptions: [
+                                            { display: '5 mg', output: 'Aukum skammt af Amlodipine í 5 mg' },
+                                            { display: '10 mg', output: 'Aukum skammt af Amlodipine í 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Diltiazem',
+                                        subOptions: [
+                                            { display: '120 mg', output: 'Aukum skammt af Diltiazem í 120 mg' },
+                                            { display: '180 mg', output: 'Aukum skammt af Diltiazem í 180 mg' },
+                                            { display: '240 mg', output: 'Aukum skammt af Diltiazem í 240 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Samsett lyfjaform',
+                                subOptions: [
+                                    {
+                                        display: 'Losartan + Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '50/12.5 mg', output: 'Aukum skammt af Losartan 50 mg + Hydrochlorothiazide í 12.5 mg' },
+                                            { display: '100/25 mg', output: 'Aukum skammt af Losartan 100 mg + Hydrochlorothiazide í 25 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Valsartan + Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '80/12.5 mg', output: 'Aukum skammt af Valsartan 80 mg + Hydrochlorothiazide í 12.5 mg' },
+                                            { display: '160/25 mg', output: 'Aukum skammt af Valsartan 160 mg + Hydrochlorothiazide í 25 mg' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Lækka skammt',
+                        subOptions: [
+                            {
+                                display: 'ACE hemlar',
+                                subOptions: [
+                                    {
+                                        display: 'Ramipril',
+                                        subOptions: [
+                                            { display: '2.5 mg', output: 'Lækka skammt af Ramipril í 2.5 mg' },
+                                            { display: '5 mg', output: 'Lækka skammt af Ramipril í 5 mg' },
+                                            { display: '10 mg', output: 'Lækka skammt af Ramipril í 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Enalapril',
+                                        subOptions: [
+                                            { display: '5 mg', output: 'Lækka skammt af Enalapril í 5 mg' },
+                                            { display: '10 mg', output: 'Lækka skammt af Enalapril í 10 mg' },
+                                            { display: '20 mg', output: 'Lækka skammt af Enalapril í 20 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'ARB hemlar',
+                                subOptions: [
+                                    {
+                                        display: 'Losartan',
+                                        subOptions: [
+                                            { display: '50 mg', output: 'Lækka skammt af Losartan í 50 mg' },
+                                            { display: '100 mg', output: 'Lækka skammt af Losartan í 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Valsartan',
+                                        subOptions: [
+                                            { display: '80 mg', output: 'Lækka skammt af Valsartan í 80 mg' },
+                                            { display: '160 mg', output: 'Lækka skammt af Valsartan í 160 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Þvagræsilyf',
+                                subOptions: [
+                                    {
+                                        display: 'Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '12.5 mg', output: 'Lækka skammt af Hydrochlorothiazide í 12.5 mg' },
+                                            { display: '25 mg', output: 'Lækka skammt af Hydrochlorothiazide í 25 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Beta blokkari',
+                                subOptions: [
+                                    {
+                                        display: 'Atenolol',
+                                        subOptions: [
+                                            { display: '25 mg', output: 'Lækka skammt af Atenolol í 25 mg' },
+                                            { display: '50 mg', output: 'Lækka skammt af Atenolol í 50 mg' },
+                                            { display: '100 mg', output: 'Lækka skammt af Atenolol í 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Metoprolol',
+                                        subOptions: [
+                                            { display: '23.75 mg', output: 'Lækka skammt af Metoprolol í 23.75 mg' },
+                                            { display: '47.5 mg', output: 'Lækka skammt af Metoprolol í 47.5 mg' },
+                                            { display: '95 mg', output: 'Lækka skammt af Metoprolol í 95 mg' },
+                                            { display: '50 mg', output: 'Lækka skammt af Metoprolol í 50 mg' },
+                                            { display: '100 mg', output: 'Lækka skammt af Metoprolol í 100 mg' },
+                                            { display: '200 mg', output: 'Lækka skammt af Metoprolol í 200 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Calcium channel blockers',
+                                subOptions: [
+                                    {
+                                        display: 'Amlodipine',
+                                        subOptions: [
+                                            { display: '5 mg', output: 'Lækka skammt af Amlodipine í 5 mg' },
+                                            { display: '10 mg', output: 'Lækka skammt af Amlodipine í 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Diltiazem',
+                                        subOptions: [
+                                            { display: '120 mg', output: 'Lækka skammt af Diltiazem í 120 mg' },
+                                            { display: '180 mg', output: 'Lækka skammt af Diltiazem í 180 mg' },
+                                            { display: '240 mg', output: 'Lækka skammt af Diltiazem í 240 mg' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Samsett lyfjaform',
+                                subOptions: [
+                                    {
+                                        display: 'Losartan + Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '50/12.5 mg', output: 'Lækka skammt af Losartan 50 mg + Hydrochlorothiazide í 12.5 mg' },
+                                            { display: '100/25 mg', output: 'Lækka skammt af Losartan 100 mg + Hydrochlorothiazide í 25 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Valsartan + Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: '80/12.5 mg', output: 'Lækka skammt af Valsartan 80 mg + Hydrochlorothiazide í 12.5 mg' },
+                                            { display: '160/25 mg', output: 'Lækka skammt af Valsartan 160 mg + Hydrochlorothiazide í 25 mg' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             {
-                display: 'Mergur',
+                display: 'Þvagræsilyf',
                 subOptions: [
-                    { display: 'Merglosandi', output: 'Ráðlegg merglosandi dropa, endurkoma í merghreinsun' },
-                    { display: 'Merghreinsun', output: 'Hreinsum út eyrnamerg' }
-                ],
-                cancelText: ''
-            },
+                    {
+                        display: 'Hefjum meðferð',
+                        subOptions: [
+                            {
+                                display: 'Hydrochlorothiazide',
+                                subOptions: [
+                                    { display: '12.5 mg', output: 'Hefjum meðferð með Hydrochlorothiazide 12.5 mg' },
+                                    { display: '25 mg', output: 'Hefjum meðferð með Hydrochlorothiazide 25 mg' }
+                                ]
+                            },
+                            {
+                                display: 'Furosemide',
+                                subOptions: [
+                                    { display: '20 mg', output: 'Hefjum meðferð með Furosemide 20 mg' },
+                                    { display: '40 mg', output: 'Hefjum meðferð með Furosemide 40 mg' },
+                                    { display: '80 mg', output: 'Hefjum meðferð með Furosemide 80 mg' }
+                                ]
+                            },
+                            {
+                                display: 'Spironolactone',
+                                subOptions: [
+                                    { display: '25 mg', output: 'Hefjum meðferð með Spironolactone 25 mg' },
+                                    { display: '50 mg', output: 'Hefjum meðferð með Spironolactone 50 mg' },
+                                    { display: '100 mg', output: 'Hefjum meðferð með Spironolactone 100 mg' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Viðbót',
+                        subOptions: [
+                            {
+                                display: 'Hydrochlorothiazide',
+                                subOptions: [
+                                    { display: '12.5 mg', output: 'Bæta við Hydrochlorothiazide 12.5 mg' },
+                                    { display: '25 mg', output: 'Bæta við Hydrochlorothiazide 25 mg' }
+                                ]
+                            },
+                            {
+                                display: 'Furosemide',
+                                subOptions: [
+                                    { display: '20 mg', output: 'Bæta við Furosemide 20 mg' },
+                                    { display: '40 mg', output: 'Bæta við Furosemide 40 mg' },
+                                    { display: '80 mg', output: 'Bæta við Furosemide 80 mg' }
+                                ]
+                            },
+                            {
+                                display: 'Spironolactone',
+                                subOptions: [
+                                    { display: '25 mg', output: 'Bæta við Spironolactone 25 mg' },
+                                    { display: '50 mg', output: 'Bæta við Spironolactone 50 mg' },
+                                    { display: '100 mg', output: 'Bæta við Spironolactone 100 mg' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Aukum skammt',
+                        subOptions: [
+                            {
+                                display: 'Hydrochlorothiazide',
+                                subOptions: [
+                                    { display: '12.5 mg', output: 'Aukum skammt af Hydrochlorothiazide í 12.5 mg' },
+                                    { display: '25 mg', output: 'Aukum skammt af Hydrochlorothiazide í 25 mg' }
+                                ]
+                            },
+                            {
+                                display: 'Furosemide',
+                                subOptions: [
+                                    { display: '20 mg', output: 'Aukum skammt af Furosemide í 20 mg' },
+                                    { display: '40 mg', output: 'Aukum skammt af Furosemide í 40 mg' },
+                                    { display: '80 mg', output: 'Aukum skammt af Furosemide í 80 mg' }
+                                ]
+                            },
+                            {
+                                display: 'Spironolactone',
+                                subOptions: [
+                                    { display: '25 mg', output: 'Aukum skammt af Spironolactone í 25 mg' },
+                                    { display: '50 mg', output: 'Aukum skammt af Spironolactone í 50 mg' },
+                                    { display: '100 mg', output: 'Aukum skammt af Spironolactone í 100 mg' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Lækka skammt',
+                        subOptions: [
+                            {
+                                display: 'Hydrochlorothiazide',
+                                subOptions: [
+                                    { display: '12.5 mg', output: 'Lækka skammt af Hydrochlorothiazide í 12.5 mg' },
+                                    { display: '25 mg', output: 'Lækka skammt af Hydrochlorothiazide í 25 mg' }
+                                ]
+                            },
+                            {
+                                display: 'Furosemide',
+                                subOptions: [
+                                    { display: '20 mg', output: 'Lækka skammt af Furosemide í 20 mg' },
+                                    { display: '40 mg', output: 'Lækka skammt af Furosemide í 40 mg' },
+                                    { display: '80 mg', output: 'Lækka skammt af Furosemide í 80 mg' }
+                                ]
+                            },
+                            {
+                                display: 'Spironolactone',
+                                subOptions: [
+                                    { display: '25 mg', output: 'Lækka skammt af Spironolactone í 25 mg' },
+                                    { display: '50 mg', output: 'Lækka skammt af Spironolactone í 50 mg' },
+                                    { display: '100 mg', output: 'Lækka skammt af Spironolactone í 100 mg' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },            
             {
                 display: 'Vísa á sérfræðing',
                 subOptions: [
-                    { display: 'HNE', output: 'Ráðlegg mat HNE læknis' }
+                    { display: 'Hjarta', output: 'Ráðlegg mat hjartalæknis' }
                 ]
             }
         ]
@@ -1598,43 +2660,16 @@ const PlanHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Sýklalyf', 'Sýkladropar', 'Leysir út ef lagast ekki', 'VVV'],
-        options: [
-            {
-                display: 'Sýklalyf',
-                subOptions: [
-                    { display: 'azithromycin', output: 'Ráðlegg sýklalyf. Set azithromycin í gáttina' },
-                    { display: 'amoxin', output: 'Ráðlegg sýklalyf. Set amoxin í gáttina' },
-                    { display: 'spectracillin', output: 'Ráðlegg sýklalyf. Set spectracillin í gáttina' },
-                    { display: 'kaavepenin', output: 'Ráðlegg sýklalyf. Set kaavepenin í gáttina' },
-                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' },
-                    { display: 'VVV', output: 'Fær veikindavottorð' }
-                ]
-            },
-            {
-                display: 'Sýkladropar',
-                subOptions: [
-                    { display: 'HTP', output: 'Ráðlegg sýkladropa. Set HTP dropa í gáttina' },
-                    { display: 'Ciflox', output: 'Ráðlegg sýkladropa. Set ciflox í gáttina' }
-                ]
-            },
-            { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' },
-            { display: 'VVV', output: 'Fær veikindavottorð' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Myndataka', 'Blóðprufa', 'BMT'],
+        display: ['Myndataka', 'BMT'],
         options: [
             {
                 display: 'Myndataka',
                 subOptions: [
                     { display: 'RTG lungu', output: 'Ráðlegg rtg lungu' },
-                    { display: 'TS sinusar', output: 'Ráðlegg TS af sinusum' }
+                    { display: 'TS kransæðar', output: 'Ráðlegg TS af kransæðum' },
+                    { display: 'TS lungu (skimun vegna reykinga)', output: 'Í ljósi reykingarsögu ráðlagt að fá TS af lungum til skimunar' }
                 ]
             },
-            { display: 'Blóðprufa', output: 'Panta blóðprufu' },
             { display: 'BMT', output: 'Vísa á bráðamóttöku' }
         ]
     },
@@ -1672,7 +2707,14 @@ const RiskFactorsHeart = [
         display: ['Reykingar', 'Háþrýstingur', 'Obesity'],
         options: [
             { display: 'Reykingar', output: 'Reykingasaga', onRightClickOutput: 'Ekki reykingasaga' },
-            { display: 'Háþrýstingur', output: 'Saga um háþrýsting', onRightClickOutput: 'Ekki saga um háþrýsting' },
+            {
+                display: 'Háþrýstingur',
+                subOptions: [
+                    { display: 'Saga um háþrýsting', output: 'Saga um háþrýsting' },
+                    { display: 'Er að greinast', output: 'Er að greinast með háþrýsting' }
+                ],
+                onRightClickOutput: 'Ekki saga um háþrýsting'
+            },
             {
                 display: 'Obesity',
                 subOptions: [
@@ -1689,7 +2731,14 @@ const RiskFactorsHeart = [
         type: 'options',
         display: ['Sykursýki', 'Blóðfituröskun', 'Fjölskyldusaga'],
         options: [
-            { display: 'Sykursýki', output: 'Er með sykursýki 2', onRightClickOutput: 'Ekki sykursýki' },
+            {
+                display: 'Sykursýki',
+                subOptions: [
+                    { display: 'Saga um sykursýki', output: 'Saga um sykursýki' },
+                    { display: 'Er að greinast', output: 'Er að greinast með sykursýki' }
+                ],
+                onRightClickOutput: 'Ekki saga um sykursýki'
+            },
             { display: 'Blóðfituröskun', output: 'Er með blóðfituröskun', onRightClickOutput: 'Ekki þekkt blóðfituröskun' },
             { display: 'Fjölskyldusaga', output: 'Fjölskyldusaga um hjarta- og æðasjúkdóm', onRightClickOutput: 'Neikvæð ættarsaga' }
         ]
@@ -2141,10 +3190,73 @@ const ExamsStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Hné - Þreifieymsl', 'Hreyfigeta', 'Liðbönd', 'Mcmurray'],
+        display: ['Hné - Útlit', 'Þreifing', 'Hreyfigeta', 'Liðbönd', 'Mcmurray'],
         options: [
             {
-                display: 'Hné - Þreifieymsl',
+                    
+                        display: 'Hné - útlit',
+                        subOptions: [
+                            {
+                                display: 'Bólga',
+                                subOptions: [
+                                    { display: 'Medialt', output: 'Bólga medialt á hné' },
+                                    { display: 'Lateralt', output: 'Bólga lateralt á hné' },
+                                    { display: 'Suprapatellart', output: 'Bólga suprapatellart' },
+                                    { display: 'Infrapatellart', output: 'Bólga infrapatellart' }
+                                ]
+                            },
+                            {
+                                display: 'Bólga og roði',
+                                subOptions: [
+                                    { display: 'Medialt', output: 'Bólga og roði medialt á hné' },
+                                    { display: 'Lateralt', output: 'Bólga og roði lateralt á hné' },
+                                    { display: 'Suprapatellart', output: 'Bólga og roði suprapatellart' },
+                                    { display: 'Infrapatellart', output: 'Bólga og roði infrapatellart' }
+                                ]
+                            },
+                            {
+                                display: 'Roði',
+                                subOptions: [
+                                    { display: 'Medialt', output: 'Roði medialt á hné' },
+                                    { display: 'Lateralt', output: 'Roði lateralt á hné' },
+                                    { display: 'Suprapatellart', output: 'Roði suprapatellart' },
+                                    { display: 'Infrapatellart', output: 'Roði infrapatellart' }
+                                ]
+                            },
+                            {
+                                display: 'Blámi',
+                                subOptions: [
+                                    { display: 'Medialt', output: 'Blámi medialt á hné' },
+                                    { display: 'Lateralt', output: 'Blámi lateralt á hné' },
+                                    { display: 'Suprapatellart', output: 'Blámi suprapatellart' },
+                                    { display: 'Infrapatellart', output: 'Blámi infrapatellart' }
+                                ]
+                            },
+                            {
+                                display: 'Vöðvarýrnun',
+                                subOptions: [
+                                    { display: 'Medialt', output: 'Vöðvarýrnun medialt á hné' },
+                                    { display: 'Lateralt', output: 'Vöðvarýrnun lateralt á hné' },
+                                    { display: 'Suprapatellart', output: 'Vöðvarýrnun suprapatellart' },
+                                    { display: 'Infrapatellart', output: 'Vöðvarýrnun infrapatellart' }
+                                ]
+                            },
+                            {
+                                display: 'Ör',
+                                subOptions: [
+                                    { display: 'Medialt', output: 'Ör medialt á hné' },
+                                    { display: 'Lateralt', output: 'Ör lateralt á hné' },
+                                    { display: 'Suprapatellart', output: 'Ör suprapatellart' },
+                                    { display: 'Infrapatellart', output: 'Ör infrapatellart' }
+                                ]
+                            }
+                        ],
+                        onRightClickOutput: 'Hné eðlilega útlítandi. Ekki áberandi bólgið'
+                    
+                
+            },            
+            {
+                display: 'Þreifing',
                 subOptions: [
                     {
                         display: 'Liðbil',
@@ -2161,10 +3273,14 @@ const ExamsStodkerfi = [
                         ]
                     },
                     { display: 'Pes anserinus', output: 'Eymsl yfir pes anserinus' },
-                    { display: 'Hnésbót', output: 'Eymsl yfir hnésbót' }
+                    { display: 'Hnésbót', output: 'Eymsl yfir hnésbót' },
+                    { display: 'Medial femoral epicondyle', output: 'Eymsl yfir medial femoral epicondyle' },
+                    { display: 'Lateral femoral epicondyle', output: 'Eymsl yfir lateral femoral epicondyle' },
+                    { display: 'Tibial tuberosity', output: 'Eymsl yfir tibial tuberosity' }
                 ],
                 onRightClickOutput: 'Engin eymsli við þreifingu'
-            },
+            }
+            ,
             {
                 display: 'Hreyfigeta',
                 subOptions: Array.from({ length: 7 }, (_, i) => ({
@@ -3144,6 +4260,76 @@ const PlanAlcoholism = [
                 ]
             }
 
+        ]
+    }
+];
+const SymptomsGigt = [
+    {
+        name: 'Gigt Einkenni',
+        type: 'options',
+        display: ['Verkir', 'Bólga', 'Stífleiki', 'Aukin hiti', 'Þreyta'],
+        options: [
+            { display: 'Verkir', output: 'Sjúklingur lýsir verkjum í liðamótum' },
+            { display: 'Bólga', output: 'Sjúklingur lýsir bólgu í liðamótum' },
+            { display: 'Stífleiki', output: 'Sjúklingur lýsir stífleika í liðamótum' },
+            { display: 'Aukin hiti', output: 'Sjúklingur lýsir auknum hita í liðamótum' },
+            { display: 'Þreyta', output: 'Sjúklingur lýsir almennri þreytu' }
+        ]
+    }
+];
+const ExamsGigt = [
+    {
+        name: 'Liðaskoðun',
+        type: 'options',
+        display: ['Útlit', 'Hreyfigeta', 'Þreifieymsl'],
+        options: [
+            {
+                display: 'Útlit',
+                subOptions: [
+                    { display: 'Bólga', output: 'Sést bólga í liðamótum' },
+                    { display: 'Rautt', output: 'Liðamót eru rauð' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Eðlilegt', output: 'Útlit liðamóta er eðlilegt' }
+                ]
+            },
+            {
+                display: 'Hreyfigeta',
+                subOptions: [
+                    { display: 'Minnkuð', output: 'Minnkuð hreyfigeta í liðamótum' },
+                    { display: 'Eðlileg', output: 'Eðlileg hreyfigeta í liðamótum' }
+                ],
+                onRightClickOutput: 'Full hreyfigeta'
+            },
+            {
+                display: 'Þreifieymsl',
+                subOptions: [
+                    { display: 'Verkir við þreifingu', output: 'Verkir við þreifingu á liðamótum' },
+                    { display: 'Engir verkir við þreifingu', output: 'Engir verkir við þreifingu á liðamótum' }
+                ],
+                onRightClickOutput: 'Engin eymsl við þreifingu'
+            }
+        ]
+    }
+];
+const PlanGigt = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Lyfjameðferð', 'Liðástungur', 'Fylgjast með þróun', 'Vísun til sérfræðings'],
+        options: [
+            {
+                display: 'Lyfjameðferð',
+                subOptions: [
+                    { display: 'Bólgueyðandi lyf', output: 'Ávísun á bólgueyðandi lyf' },
+                    { display: 'Sterar', output: 'Ávísun á stera' },
+                    { display: 'Methotrexate', output: 'Ávísun á methotrexate' }
+                ],
+                onRightClickOutput: 'Engin lyfjameðferð'
+            },
+            { display: 'Liðástungur', output: 'Áform um liðástungu', onRightClickOutput: 'Engin þörf á liðástungu' },
+            { display: 'Fylgjast með þróun', output: 'Áform um að fylgjast með þróun sjúkdóms', onRightClickOutput: 'Engin fylgni áformuð' },
+            { display: 'Vísun til sérfræðings', output: 'Sjúklingur vísað til gigtarlæknis', onRightClickOutput: 'Engin vísun til sérfræðings' }
         ]
     }
 ];
@@ -4665,7 +5851,31 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
-    } else if (page === 'Innkirtla') {
+    } else if (page === 'Gigt') {
+        const einkenniSection = createEinkenniSection(SymptomsGigt);
+        const skodunSection = createSkodunSection(ExamsGigt);
+        const planSection = createPlanSection(PlanGigt);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    }  else if (page === 'Innkirtla') {
         const einkenniSection = createEinkenniSection(SymptomsInnkirtla);
         const skodunSection = createSkodunSection(ExamsInnkirtla);
         const planSection = createPlanSection(PlanInnkirtla);
