@@ -48,6 +48,71 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
+        display: ['Tímalengd einkenna'],
+        options: [
+            {
+                display: 'Tímalengd einkenna',
+                subOptions: [
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
+                ],
+                cancelText: ''
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
         display: ['Flensueinkenni', 'Hálsbólga'],
         options: [
             {
@@ -196,72 +261,6 @@ const SymptomsViral = [
     {},
     {},
     {},
-    {
-        name: '',
-        type: 'options',
-        display: ['Tímalengd einkenna'],
-        options: [
-            {
-                display: 'Tímalengd einkenna',
-                subOptions: [
-                    {
-                        display: 'Dagar',
-                        subOptions: [
-                            
-                            { display: 'Nokkrir dagar', output: 'Nokkra daga saga' },
-                            { display: '1d', output: '1d saga' },
-                            { display: '2d', output: '2d saga' },
-                            { display: '3d', output: '3d saga' },
-                            { display: '4d', output: '4d saga' },
-                            { display: '5d', output: '5d saga' },
-                            { display: '6d', output: '6d saga' }
-                        ],
-                        cancelText: ''
-                    },
-                    {
-                        display: 'Vikur',
-                        subOptions: [
-                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
-                            { display: 'Margar vikur', output: 'Margra vikna saga' },
-                            { display: '1v', output: '1 vikna saga' },
-                            { display: '1,5v', output: '1,5 vikna saga' },
-                            { display: '2v', output: '2 vikna saga' },
-                            { display: '3v', output: '3 vikna saga' }
-                            
-                        ],
-                        cancelText: ''
-                    },
-                    {
-                        display: 'Mánuðir',
-                        subOptions: [
-                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
-                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
-                            { display: '1m', output: '1 mán saga' },
-                            { display: '2m', output: '2 mán saga' },
-                            { display: '3m', output: '3 mán saga' },
-                            { display: '4m', output: '4 mán saga' },
-                            { display: '5m', output: '5 mán saga' },
-                            { display: '6m', output: '6 mán saga' }
-                            
-                        ],
-                        cancelText: ''
-                    },
-                    {
-                        display: 'Ár',
-                        subOptions: [
-                            { display: '1 ár', output: '1 ár saga' },
-                            { display: '2 ár', output: '2 ára saga' },
-                            { display: '3 ár', output: '3 ára saga' },
-                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
-                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
-                        ],
-                        cancelText: ''
-                    }
-                ],
-                cancelText: ''
-            }
-        ]
-    },
     {
         name: '',
         type: 'options',
