@@ -5983,7 +5983,7 @@ function loadPage(page) {
 
         container.appendChild(horizontalContainer);
  
-    } else if (page === 'Almennt') {
+    } /*else if (page === 'Almennt') {
         const einkenniSection = createEinkenniSection(SymptomsViral);
         const skodunSection = createSkodunSection(ExamsViral);
         const planSection = createPlanSection(PlanViral);
@@ -6056,7 +6056,7 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
-    } else if (page === 'Hjarta') {
+    }*/ else if (page === 'Hjarta') {
         const einkenniSection = createEinkenniSection(SymptomsHeart);
         const skodunSection = createSkodunSection(ExamsHeart);
         const planSection = createPlanSection(PlanHeart);
@@ -6095,7 +6095,7 @@ function loadPage(page) {
 
         container.appendChild(horizontalContainer);
  
-    } else if (page === 'Stodkerfi') {
+    }/* else if (page === 'Stodkerfi') {
         const einkenniSection = createEinkenniSection(SymptomsStodkerfi);
         const skodunSection = createSkodunSection(ExamsStodkerfi);
         const planSection = createPlanSection(PlanStodkerfi);
@@ -6239,7 +6239,7 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
-    }  else {
+    } */ else {
         console.error('Unknown page:', page);
     }
 
