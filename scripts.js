@@ -235,7 +235,8 @@ const SymptomsViral = [
                     { display: 'Hægri', output: 'Óþægindi frá hægra eyra' },
                     { display: 'Vinstri', output: 'Óþægindi frá vinstra eyra' },
                     { display: 'Beggja vegna', output: 'Óþægindi frá báðum eyrum' }
-                ]
+                ],
+                onRightClickOutput: 'Ekki einkenni frá eyrum'
             },
             { display: 'Verkur', output: 'Verkur', onRightClickOutput: 'Ekki verkur'},
             { display: 'Hella', output: 'Hella', onRightClickOutput: 'Ekki hella'}
@@ -403,9 +404,85 @@ const ExamsViral = [
         display: ['Strep', 'CRP'],
         options: [
             { display: 'Strep', output: 'Streptest jákvætt', onRightClickOutput: 'Streptest neikvætt' },
-            { display: 'CRP', output: 'CRP hátt', onRightClickOutput: 'CRP lágt' }
+            {
+                display: 'CRP',
+                subOptions: [
+                    {
+                        display: 'CRP 0-50',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${i * 5}`,
+                            output: `CRP: ${i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 51-100',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${50 + i * 5}`,
+                            output: `CRP: ${50 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 101-150',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${100 + i * 5}`,
+                            output: `CRP: ${100 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 151-200',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${150 + i * 5}`,
+                            output: `CRP: ${150 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 201-250',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${200 + i * 5}`,
+                            output: `CRP: ${200 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 251-300',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${250 + i * 5}`,
+                            output: `CRP: ${250 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 301-350',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${300 + i * 5}`,
+                            output: `CRP: ${300 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 351-400',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${350 + i * 5}`,
+                            output: `CRP: ${350 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 401-450',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${400 + i * 5}`,
+                            output: `CRP: ${400 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 451-500',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${450 + i * 5}`,
+                            output: `CRP: ${450 + i * 5}`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'CRP <5'
+            }
         ]
     }
+    
 ];
 const PlanViral = [
     {
@@ -597,27 +674,33 @@ const historyViralData = [
                     { display: 'Hraustur', output: 'Hraustur í gruninn' },
                     { display: 'Hraust', output: 'Hraust í gruninn' }
                 ],
-                cancelText: ''
+                cancelText: '',
+                onRightClickOutput: 'Ekki hraust/ur'
             },
             {
                 display: 'HTN',
-                output: 'Saga um háþrýsting'
+                output: 'Saga um háþrýsting',
+                onRightClickOutput: 'Ekki saga um háþrýsting'
             },
             {
                 display: 'DM',
-                output: 'Saga um sykursýki'
+                output: 'Saga um sykursýki',
+                onRightClickOutput: 'Ekki saga um sykursýki'
             },
             {
                 display: 'IHD',
-                output: 'Saga um kransæðasjúkdóm'
+                output: 'Saga um kransæðasjúkdóm',
+                onRightClickOutput: 'Ekki saga um kransæðasjúkdóm'
             },
             {
                 display: 'Offita',
-                output: 'Saga um offitu'
+                output: 'Saga um offitu',
+                onRightClickOutput: 'Ekki saga um offitu'
             },
             {
                 display: 'Áfengi',
-                output: 'Saga um áfengismisnotkun'
+                output: 'Saga um áfengismisnotkun',
+                onRightClickOutput: 'Ekki saga um áfengismisnotkun'
             }
         ]
     },
@@ -626,10 +709,26 @@ const historyViralData = [
         type: 'options',
         display: ['Kæfisvefn', 'Nýrnasjúkdóm', 'Astmi', 'COPD'],
         options: [
-            { display: 'Kæfisvefn', output: 'Saga um kæfisvefn' },
-            { display: 'Nýrnasjúkdóm', output: 'Saga um nýrnasjúkdóm' },
-            { display: 'Astmi', output: 'Saga um astma' },
-            { display: 'COPD', output: 'Saga um langvinna lungnateppu' }
+            {
+                display: 'Kæfisvefn',
+                output: 'Saga um kæfisvefn',
+                onRightClickOutput: 'Ekki saga um kæfisvefn'
+            },
+            {
+                display: 'Nýrnasjúkdóm',
+                output: 'Saga um nýrnasjúkdóm',
+                onRightClickOutput: 'Ekki saga um nýrnasjúkdóm'
+            },
+            {
+                display: 'Astmi',
+                output: 'Saga um astma',
+                onRightClickOutput: 'Ekki saga um astma'
+            },
+            {
+                display: 'COPD',
+                output: 'Saga um langvinna lungnateppu',
+                onRightClickOutput: 'Ekki saga um langvinna lungnateppu'
+            }
         ]
     },
     {
@@ -637,13 +736,34 @@ const historyViralData = [
         type: 'options',
         display: ['Sinusitar', 'Eyrnabólgur', 'Ólétta', 'Ónæmisbælandi'],
         options: [
-            { display: 'Sinusitar', output: 'Saga um endurteknar kinnholusýkingar' },
-            { display: 'Eyrnabólgur', output: 'Saga um endurteknar eyrnabólgur' },
-            { display: 'Ólétta', output: 'Ófrísk, gengin X vikur' },
-            { display: 'Ónæmisbælandi', output: 'Er á ónæmisbælandi meðferð' }
+            {
+                display: 'Sinusitar',
+                output: 'Saga um endurteknar kinnholusýkingar',
+                onRightClickOutput: 'Ekki saga um endurteknar kinnholusýkingar'
+            },
+            {
+                display: 'Eyrnabólgur',
+                output: 'Saga um endurteknar eyrnabólgur',
+                onRightClickOutput: 'Ekki saga um endurteknar eyrnabólgur'
+            },
+            {
+                display: 'Ólétta',
+                subOptions: [
+                    { display: 'Fyrsta þriðjung', output: 'Ófrísk, á fyrsta þriðjungi meðgöngu' },
+                    { display: 'Öðrum þriðjung', output: 'Ófrísk, á öðrum þriðjungi meðgöngu' },
+                    { display: 'Þriðja þriðjung', output: 'Ófrísk, á þriðja þriðjungi meðgöngu' }
+                ],
+                onRightClickOutput: 'Ekki ófrísk'
+            },
+            {
+                display: 'Ónæmisbælandi',
+                output: 'Er á ónæmisbælandi meðferð',
+                onRightClickOutput: 'Ekki á ónæmisbælandi meðferð'
+            }
         ]
     }
 ];
+
 /* const RedFlagViral = [
     { name: 'Hnakkastífleiki', type: 'PlusMinus', positive: 'Lýsir', negative: 'Ekki roði í koki' },
     { name: 'Ljósfælni', type: 'PlusMinus', positive: 'Lýsir ljósfælni', negative: 'Ekki ljósfælni' }
@@ -651,6 +771,71 @@ const historyViralData = [
 ];
 */
 const SymptomsUrinary = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Tímalengd einkenna'],
+        options: [
+            {
+                display: 'Tímalengd einkenna',
+                subOptions: [
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
+                ],
+                cancelText: ''
+            }
+        ]
+    },
     {
         name: '',
         type: 'options',
@@ -711,73 +896,7 @@ const SymptomsUrinary = [
     },
     {},
     {},
-    {},
-    {
-        name: '',
-        type: 'options',
-        display: ['Tímalengd einkenna'],
-        options: [
-            {
-                display: 'Tímalengd einkenna',
-                subOptions: [
-                    {
-                        display: 'Dagar',
-                        subOptions: [
-                            
-                            { display: 'Nokkrir dagar', output: 'Nokkra daga saga' },
-                            { display: '1d', output: '1d saga' },
-                            { display: '2d', output: '2d saga' },
-                            { display: '3d', output: '3d saga' },
-                            { display: '4d', output: '4d saga' },
-                            { display: '5d', output: '5d saga' },
-                            { display: '6d', output: '6d saga' }
-                        ],
-                        cancelText: ''
-                    },
-                    {
-                        display: 'Vikur',
-                        subOptions: [
-                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
-                            { display: 'Margar vikur', output: 'Margra vikna saga' },
-                            { display: '1v', output: '1 vikna saga' },
-                            { display: '1,5v', output: '1,5 vikna saga' },
-                            { display: '2v', output: '2 vikna saga' },
-                            { display: '3v', output: '3 vikna saga' }
-                            
-                        ],
-                        cancelText: ''
-                    },
-                    {
-                        display: 'Mánuðir',
-                        subOptions: [
-                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
-                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
-                            { display: '1m', output: '1 mán saga' },
-                            { display: '2m', output: '2 mán saga' },
-                            { display: '3m', output: '3 mán saga' },
-                            { display: '4m', output: '4 mán saga' },
-                            { display: '5m', output: '5 mán saga' },
-                            { display: '6m', output: '6 mán saga' }
-                            
-                        ],
-                        cancelText: ''
-                    },
-                    {
-                        display: 'Ár',
-                        subOptions: [
-                            { display: '1 ár', output: '1 ár saga' },
-                            { display: '2 ár', output: '2 ára saga' },
-                            { display: '3 ár', output: '3 ára saga' },
-                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
-                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
-                        ],
-                        cancelText: ''
-                    }
-                ],
-                cancelText: ''
-            }
-        ]
-    }
+    {}
 ];
 const ExamsUrinary = [
     {
@@ -942,10 +1061,101 @@ const PlanUrinary = [
     }
 ];
 const HistoryUrinary = [
-    { name: '', type: 'Medium', display: ['Hraust', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'], output: ['Heilsuhraust/ur í gruninn', 'Saga um háþrýsting', 'Saga um sykursýki', 'Saga um kransæðasjúkdóm', 'Saga um offitu', 'Saga um áfengismisnotkun']},
-    { name: '', type: 'Medium', display: ['Blöðrubólgur', 'Nýrnasjúkdóm', 'Nýrnasteinar', 'Prostatit'], output: ['Saga um endurteknar blöðrubólgur', 'Saga um nýrnasjúkdóm', 'Saga um nýrnasteina', 'Saga um prostatitis áður']},
-    { name: '', type: 'Medium', display: ['Pyelonephritis', 'Ólétta', 'Ónæmisbælandi'], output: ['Saga um pyelonephritis', 'Ófrísk, gengin X vikur', 'Er á ónæmisbælandi meðferð']}
+    {
+        name: '',
+        type: 'options',
+        display: ['Hraust', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        options: [
+            {
+                display: 'Hraust',
+                subOptions: [
+                    { display: 'Heilsuhraustur', output: 'Heilsuhraustur í gruninn' },
+                    { display: 'Heilsuhraust', output: 'Heilsuhraust í gruninn' }
+                ],
+                onRightClickOutput: 'Ekki hraust'
+            },
+            {
+                display: 'HTN',
+                output: 'Saga um háþrýsting',
+                onRightClickOutput: 'Ekki saga um háþrýsting'
+            },
+            {
+                display: 'DM',
+                output: 'Saga um sykursýki',
+                onRightClickOutput: 'Ekki saga um sykursýki'
+            },
+            {
+                display: 'IHD',
+                output: 'Saga um kransæðasjúkdóm',
+                onRightClickOutput: 'Ekki saga um kransæðasjúkdóm'
+            },
+            {
+                display: 'Offita',
+                output: 'Saga um offitu',
+                onRightClickOutput: 'Ekki saga um offitu'
+            },
+            {
+                display: 'Áfengi',
+                output: 'Saga um áfengismisnotkun',
+                onRightClickOutput: 'Ekki saga um áfengismisnotkun'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blöðrubólgur', 'Nýrnasjúkdóm', 'Nýrnasteinar', 'Prostatit'],
+        options: [
+            {
+                display: 'Blöðrubólgur',
+                output: 'Saga um endurteknar blöðrubólgur',
+                onRightClickOutput: 'Ekki saga um endurteknar blöðrubólgur'
+            },
+            {
+                display: 'Nýrnasjúkdóm',
+                output: 'Saga um nýrnasjúkdóm',
+                onRightClickOutput: 'Ekki saga um nýrnasjúkdóm'
+            },
+            {
+                display: 'Nýrnasteinar',
+                output: 'Saga um nýrnasteina',
+                onRightClickOutput: 'Ekki saga um nýrnasteina'
+            },
+            {
+                display: 'Prostatit',
+                output: 'Saga um prostatitis áður',
+                onRightClickOutput: 'Ekki saga um prostatitis'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Pyelonephritis', 'Ólétta', 'Ónæmisbælandi'],
+        options: [
+            {
+                display: 'Pyelonephritis',
+                output: 'Saga um pyelonephritis',
+                onRightClickOutput: 'Ekki saga um pyelonephritis'
+            },
+            {
+                display: 'Ólétta',
+                subOptions: [
+                    { display: 'Fyrsta þriðjung', output: 'Ófrísk, á fyrsta þriðjungi meðgöngu' },
+                    { display: 'Öðrum þriðjung', output: 'Ófrísk, á öðrum þriðjungi meðgöngu' },
+                    { display: 'Þriðja þriðjung', output: 'Ófrísk, á þriðja þriðjungi meðgöngu' }
+                ],
+                onRightClickOutput: 'Ekki ófrísk'
+            },
+            {
+                display: 'Ónæmisbælandi',
+                output: 'Er á ónæmisbælandi meðferð',
+                onRightClickOutput: 'Ekki á ónæmisbælandi meðferð'
+            }
+        ]
+    }
 ];
+
 const RiskfactorsUrinary = [
     {
         name: '',
@@ -975,11 +1185,10 @@ const SymptomsEye = [
             {
                 display: 'Tímalengd einkenna',
                 subOptions: [
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
                     {
                         display: 'Dagar',
                         subOptions: [
-                            
-                            { display: 'Nokkrir dagar', output: 'Nokkra daga saga' },
                             { display: '1d', output: '1d saga' },
                             { display: '2d', output: '2d saga' },
                             { display: '3d', output: '3d saga' },
@@ -1282,13 +1491,10 @@ const SymptomsHeart = [
             {
                 display: 'Tímalengd einkenna',
                 subOptions: [
-                    { display: 'Nokkrir dagar', output: 'Nokkra daga saga' },
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
                     {
                         display: 'Dagar',
                         subOptions: [
-                            
-                            
-                        
                             { display: '1d', output: '1d saga' },
                             { display: '2d', output: '2d saga' },
                             { display: '3d', output: '3d saga' },
@@ -1395,15 +1601,7 @@ const SymptomsHeart = [
         type: 'options',
         display: ['Hjartsláttaróþægindi', 'Mæði', 'Slappleiki', 'Fótabjúg'],
         options: [
-            {
-                display: 'Hjartsláttaróþægindi',
-                subOptions: [
-                    { display: 'Hjartsláttaróþægindi', output: 'Fundið fyrir hjartsláttaróþægindum' },
-                    { display: 'Hækkaðar', output: 'Kemur með heimamælingar. Er oft að mælast yfir mörkum' },
-                    { display: 'Eðlilegar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' }
-                ],
-                onRightClickOutput: 'Ekki fundið fyrir hjartsláttaróþægindum'
-            },
+            { display: 'Hjartsláttaróþægindi', output: 'Fundið fyrir hjartsláttaróþægindum', onRightClickOutput: 'Ekki fundið fyrir hjartsláttaróþægindum'},
             {
                 display: 'Mæði',
                 subOptions: [
@@ -1957,7 +2155,7 @@ const PlanHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Syncope', 'Orthopnea', 'Paroxysmal Nocturnal Dyspnea', 'Fótabjúgur'],
+        display: ['Syncope', 'Orthopnea', 'Fótabjúgur'],
         options: [
             {
                 display: 'Syncope',
@@ -1971,11 +2169,6 @@ const PlanHeart = [
                 display: 'Orthopnea', 
                 output: 'Orthopnea', 
                 onRightClickOutput: 'Ekki orthopnea'
-            },
-            { 
-                display: 'Paroxysmal Nocturnal Dyspnea', 
-                output: 'Paroxysmal Nocturnal Dyspnea', 
-                onRightClickOutput: 'Ekki paroxysmal nocturnal dyspnea'
             },
             {
                 display: 'Fótabjúgur',
@@ -3150,10 +3343,10 @@ const SymptomsStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Bakverkir', 'Öxlaverkir'],
+        display: ['Bakverkir', 'Axlarverkir'],
         options: [
             { display: 'Bakverkir', output: 'Bakverkir' },
-            { display: 'Öxlaverkir', output: 'Öxlaverkir' }
+            { display: 'Axlarverkir', output: 'Axlarverkir' }
         ]
     },
     {
@@ -3317,23 +3510,181 @@ const ExamsStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Bak - Þreifieymsl', 'Hreyfigeta'],
+        display: ['Bak - Útlit', 'Þreifing', 'Hreyfigeta'],
         options: [
             {
-                display: 'Bak - Þreifieymsl',
+                        display: 'Bak - Útlit',
+                        subOptions: [
+                            {
+                                display: 'Hryggskekkja',
+                                subOptions: [
+                                    {
+                                        display: 'Scoliosis',
+                                        subOptions: [
+                                            { display: 'Til hægri', output: 'Scoliosis til hægri' },
+                                            { display: 'Til vinstri', output: 'Scoliosis til vinstri' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Kyphosis',
+                                        subOptions: [
+                                            { display: 'Áberandi kyphosis', output: 'Áberandi kyphosis til staðar' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lordosis',
+                                        subOptions: [
+                                            { display: 'Áberandi lordosis', output: 'Áberandi lordosis til staðar' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Húðbreytingar',
+                                subOptions: [
+                                    { 
+                                        display: 'Ör',
+                                        subOptions: [
+                                            {
+                                                display: 'Efri hluti baks',
+                                                subOptions: [
+                                                    { display: 'Hægra herðablað', output: 'Ör á hægra herðablaði' },
+                                                    { display: 'Vinstra herðablað', output: 'Ör á vinstra herðablaði' }
+                                                ]
+                                            },
+                                            {
+                                                display: 'Mið hluti baka',
+                                                subOptions: [
+                                                    { display: 'Miðjan bak', output: 'Ör á miðju baki' }
+                                                ]
+                                            },
+                                            {
+                                                display: 'Neðri hluti baka',
+                                                subOptions: [
+                                                    { display: 'Hægra mjóbak', output: 'Ör á hægra mjóbaki' },
+                                                    { display: 'Vinstra mjóbak', output: 'Ör á vinstra mjóbaki' }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        display: 'Roði',
+                                        subOptions: [
+                                            {
+                                                display: 'Efri hluti baka',
+                                                subOptions: [
+                                                    { display: 'Hægra herðablað', output: 'Roði á hægra herðablaði' },
+                                                    { display: 'Vinstra herðablað', output: 'Roði á vinstra herðablaði' }
+                                                ]
+                                            },
+                                            {
+                                                display: 'Mið hluti baka',
+                                                subOptions: [
+                                                    { display: 'Miðjan bak', output: 'Roði á miðju baki' }
+                                                ]
+                                            },
+                                            {
+                                                display: 'Neðri hluti baka',
+                                                subOptions: [
+                                                    { display: 'Hægra mjóbak', output: 'Roði á hægra mjóbaki' },
+                                                    { display: 'Vinstra mjóbak', output: 'Roði á vinstra mjóbaki' }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    { 
+                                        display: 'Mar',
+                                        subOptions: [
+                                            {
+                                                display: 'Efri hluti baka',
+                                                subOptions: [
+                                                    { display: 'Hægra herðablað', output: 'Mar á hægra herðablaði' },
+                                                    { display: 'Vinstra herðablað', output: 'Mar á vinstra herðablaði' }
+                                                ]
+                                            },
+                                            {
+                                                display: 'Mið hluti baka',
+                                                subOptions: [
+                                                    { display: 'Miðjan bak', output: 'Mar á miðju baki' }
+                                                ]
+                                            },
+                                            {
+                                                display: 'Neðri hluti baka',
+                                                subOptions: [
+                                                    { display: 'Hægra mjóbak', output: 'Mar á hægra mjóbaki' },
+                                                    { display: 'Vinstra mjóbak', output: 'Mar á vinstra mjóbaki' }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vöðvarýrnun',
+                                subOptions: [
+                                    { display: 'Paraspinalt', output: 'Vöðvarýrnun paraspinalt' },
+                                    { display: 'Mjaðmavöðvar', output: 'Vöðvarýrnun í mjaðmavöðvum' },
+                                    { display: 'Glutealvöðvar', output: 'Vöðvarýrnun í glutealvöðvum' }
+                                ]
+                            }
+                        ],
+                        onRightClickOutput: 'Hryggur eðlilega útlítandi. Engin áberandi frávik.'
+                    },
+            {
+                display: 'Þreifing',
                 subOptions: [
                     {
                         display: 'Hryggjartindar',
-                        subOptions: Array.from({ length: 7 }, (_, i) => ({
-                            display: `C${i + 1}`,
-                            output: `Þreifieymsl yfir C${i + 1}`
-                        })).concat(Array.from({ length: 12 }, (_, i) => ({
-                            display: `T${i + 1}`,
-                            output: `Þreifieymsl yfir T${i + 1}`
-                        }))).concat(Array.from({ length: 5 }, (_, i) => ({
-                            display: `L${i + 1}`,
-                            output: `Þreifieymsl yfir L${i + 1}`
-                        })))
+                        subOptions: [
+                            {
+                                display: 'Stakur',
+                                subOptions: Array.from({ length: 7 }, (_, i) => ({
+                                    display: `C${i + 1}`,
+                                    output: `Þreifieymsl yfir hryggjartind ca C${i + 1}`
+                                })).concat(Array.from({ length: 12 }, (_, i) => ({
+                                    display: `T${i + 1}`,
+                                    output: `Þreifieymsl yfir hryggjartind ca T${i + 1}`
+                                }))).concat(Array.from({ length: 5 }, (_, i) => ({
+                                    display: `L${i + 1}`,
+                                    output: `Þreifieymsl yfir hryggjartind ca L${i + 1}`
+                                })))
+                            },
+                            {
+                                display: 'Bili',
+                                subOptions: [
+                                    {
+                                        display: 'Cervical',
+                                        subOptions: Array.from({ length: 7 }, (_, i) => ({
+                                            display: `C${i + 1}`,
+                                            subOptions: Array.from({ length: 7 - i }, (_, j) => ({
+                                                display: `to C${i + 1 + j}`,
+                                                output: `Þreifieymsl yfir hryggjartindum ca C${i + 1} til C${i + 1 + j}`
+                                            }))
+                                        }))
+                                    },
+                                    {
+                                        display: 'Thoracic',
+                                        subOptions: Array.from({ length: 12 }, (_, i) => ({
+                                            display: `T${i + 1}`,
+                                            subOptions: Array.from({ length: 12 - i }, (_, j) => ({
+                                                display: `to T${i + 1 + j}`,
+                                                output: `Þreifieymsl yfir hryggjartindum ca T${i + 1} til T${i + 1 + j}`
+                                            }))
+                                        }))
+                                    },
+                                    {
+                                        display: 'Lumbar',
+                                        subOptions: Array.from({ length: 5 }, (_, i) => ({
+                                            display: `L${i + 1}`,
+                                            subOptions: Array.from({ length: 5 - i }, (_, j) => ({
+                                                display: `to L${i + 1 + j}`,
+                                                output: `Þreifieymsl yfir hryggjartindum ca L${i + 1} til L${i + 1 + j}`
+                                            }))
+                                        }))
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         display: 'Paraspinalt',
@@ -3407,51 +3758,58 @@ const ExamsStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Ökkli - Útlit', 'Eymsl', 'Hreyfigeta', 'Ottawa'],
+        display: ['Ökkli - Útlit', 'Ottawa', 'Hreyfigeta'],
         options: [
             {
                 display: 'Ökkli - Útlit',
                 subOptions: [
-                    { display: 'Bólga', output: 'Bólga á ökkla' },
-                    { display: 'Roði', output: 'Roði á ökkla' },
-                    { display: 'Aflögun', output: 'Aflögun á ökkla' }
+                    {
+                        display: 'Bólga',
+                        subOptions: [
+                            { display: 'Lateral malleolus', output: 'Bólga yfir lateral malleolus' },
+                            { display: 'Medial malleolus', output: 'Bólga yfir medial malleolus' },
+                            { display: 'Anterior ankle', output: 'Bólga framanvert á ökkla' },
+                            { display: 'Posterior ankle', output: 'Bólga aftanvert á ökkla' }
+                        ]
+                    },
+                    {
+                        display: 'Mar',
+                        subOptions: [
+                            { display: 'Lateral malleolus', output: 'Mar yfir lateral malleolus' },
+                            { display: 'Medial malleolus', output: 'Mar yfir medial malleolus' },
+                            { display: 'Anterior ankle', output: 'Mar framanvert á ökkla' },
+                            { display: 'Posterior ankle', output: 'Mar aftanvert á ökkla' }
+                        ]
+                    },
+                    {
+                        display: 'Bólga og Mar',
+                        subOptions: [
+                            { display: 'Lateral malleolus', output: 'Bólga og mar yfir lateral malleolus' },
+                            { display: 'Medial malleolus', output: 'Bólga og mar yfir medial malleolus' },
+                            { display: 'Anterior ankle', output: 'Bólga og mar framanvert á ökkla' },
+                            { display: 'Posterior ankle', output: 'Bólga og mar aftanvert á ökkla' }
+                        ]
+                    }
                 ],
                 onRightClickOutput: 'Eðlilegt útlit á ökkla'
             },
             {
-                display: 'Eymsl',
+                display: 'Ottawa',
                 subOptions: [
+                    { display: 'Lateral malleolus', output: 'Þreifieymsl yfir lateral malleolus' },
+                    { display: 'Medial malleolus', output: 'Þreifieymsl yfir medial malleolus' },
+                    { display: 'Navicular bone', output: 'Þreifieymsl yfir navicular beini' },
+                    { display: 'Base of 5th metatarsal', output: 'Þreifieymsl yfir bais metatarsal 5' },
                     {
-                        display: 'Lateral',
+                        display: 'Ástig',
                         subOptions: [
-                            { display: 'Anterior talofibular ligament', output: 'Þreifieymsl yfir anterior talofibular ligament' },
-                            { display: 'Calcaneofibular ligament', output: 'Þreifieymsl yfir calcaneofibular ligament' },
-                            { display: 'Posterior talofibular ligament', output: 'Þreifieymsl yfir posterior talofibular ligament' }
-                        ]
-                    },
-                    {
-                        display: 'Medial',
-                        subOptions: [
-                            { display: 'Deltoid ligament', output: 'Þreifieymsl yfir deltoid ligament' },
-                            { display: 'Tibialis posterior tendon', output: 'Þreifieymsl yfir tibialis posterior tendon' }
-                        ]
-                    },
-                    {
-                        display: 'Anterior',
-                        subOptions: [
-                            { display: 'Syndesmosis', output: 'Þreifieymsl yfir syndesmosis' },
-                            { display: 'Tibialis anterior tendon', output: 'Þreifieymsl yfir tibialis anterior tendon' }
-                        ]
-                    },
-                    {
-                        display: 'Posterior',
-                        subOptions: [
-                            { display: 'Achilles tendon', output: 'Þreifieymsl yfir Achilles tendon' },
-                            { display: 'Posterior tibialis tendon', output: 'Þreifieymsl yfir posterior tibialis tendon' }
+                            { display: 'Getur stigið í fótinn', output: 'Getur stigið í fótinn' },
+                            { display: 'Getur ekki stigið í fótinn', output: 'Getur ekki stigið í fótinn' },
+                            { display: 'Gat ekki stigið í fótinn beint eftir áverkann en getur stigið létt í nú', output: 'Gat ekki stigið í fótinn beint eftir áverkann en getur stigið létt í nú' }
                         ]
                     }
                 ],
-                onRightClickOutput: 'Engin eymsli við þreifingu á ökkla'
+                onRightClickOutput: 'Ottawa reglur neikvæðar'
             },
             {
                 display: 'Hreyfigeta',
@@ -3486,25 +3844,8 @@ const ExamsStodkerfi = [
                     }
                 ],
                 onRightClickOutput: 'Full hreyfigeta í ökkla'
-            },
-            {
-                display: 'Ottawa',
-                subOptions: [
-                    { display: 'Lateral malleolus', output: 'Þreifieymsl yfir lateral malleolus' },
-                    { display: 'Medial malleolus', output: 'Þreifieymsl yfir medial malleolus' },
-                    { display: 'Navicular bone', output: 'Þreifieymsl yfir navicular beini' },
-                    { display: 'Base of 5th metatarsal', output: 'Þreifieymsl yfir bais metatarsal 5' },
-                    {
-                        display: 'Ástig',
-                        subOptions: [
-                            { display: 'Getur stigið í fótinn', output: 'Getur stigið í fótinn' },
-                            { display: 'Getur ekki stigið í fótinn', output: 'Getur ekki stigið í fótinn' },
-                            { display: 'Gat ekki stigið í fótinn beint eftir áverkann en getur stigið létt í nú', output: 'Gat ekki stigið í fótinn beint eftir áverkann en getur stigið létt í nú' }
-                        ]
-                    }
-                ],
-                onRightClickOutput: 'Ottawa reglur neikvæðar'
             }
+            
         ]
     },
     // Shoulder Examination
@@ -4264,7 +4605,7 @@ const PlanAlcoholism = [
 ];
 const SymptomsGigt = [
     {
-        name: 'Gigt Einkenni',
+        name: '',
         type: 'options',
         display: ['Verkir', 'Bólga', 'Stífleiki', 'Aukin hiti', 'Þreyta'],
         options: [
@@ -4278,7 +4619,7 @@ const SymptomsGigt = [
 ];
 const ExamsGigt = [
     {
-        name: 'Liðaskoðun',
+        name: '',
         type: 'options',
         display: ['Útlit', 'Hreyfigeta', 'Þreifieymsl'],
         options: [
@@ -4328,7 +4669,7 @@ const PlanGigt = [
             },
             { display: 'Liðástungur', output: 'Áform um liðástungu', onRightClickOutput: 'Engin þörf á liðástungu' },
             { display: 'Fylgjast með þróun', output: 'Áform um að fylgjast með þróun sjúkdóms', onRightClickOutput: 'Engin fylgni áformuð' },
-            { display: 'Vísun til sérfræðings', output: 'Sjúklingur vísað til gigtarlæknis', onRightClickOutput: 'Engin vísun til sérfræðings' }
+            { display: 'Vísun til sérfræðings', output: 'Sjúkling vísað til gigtarlæknis', onRightClickOutput: 'Engin vísun til sérfræðings' }
         ]
     }
 ];
@@ -5409,17 +5750,17 @@ function createPlanSection(data) {
     createButtons(container, data);
     return section;
 }
- function createRiskSection(data) {
+ function createRiskHeartSection(data) {
     console.log('Creating Risk Section with data:', data); // Debugging line
-    const section = createSection('risk', 'Áhættuþættir Kransæðasjúkdóms');
-    const container = section.querySelector('#risk');
+    const section = createSection('riskheart', 'Áhættuþættir Kransæðasjúkdóms');
+    const container = section.querySelector('#riskheart');
     createButtons(container, data);
     return section;
 }
 function createRiskUrinarySection(data) {
     console.log('Creating Risk Section with data:', data); // Debugging line
-    const section = createSection('risk', 'Áhættuþættir þvagblöðrukrabbameins');
-    const container = section.querySelector('#risk');
+    const section = createSection('riskurinary', 'Áhættuþættir þvagblöðrukrabbameins');
+    const container = section.querySelector('#riskurinary');
     createButtons(container, data);
     return section;
 }
@@ -5722,7 +6063,7 @@ function loadPage(page) {
         //const timalengdSection = createTimalengdSection(Duration);
        // const historyViralSection = createHistoryViralSection(historyViralData);
         const habitsSection = createHabitsSection(Habits);
-        const RiskSection = createRiskSection(RiskFactorsHeart);
+        const RiskHeartSection = createRiskHeartSection(RiskFactorsHeart);
         const CHADSVASCSection = createCHADSVASCSection(CHADSVASCHeart);
 
 
@@ -5730,7 +6071,7 @@ function loadPage(page) {
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
     //  leftColumn.appendChild(timalengdSection);
-      leftColumn.appendChild(RiskSection)
+      leftColumn.appendChild(RiskHeartSection)
       leftColumn.appendChild(CHADSVASCSection)
     //    leftColumn.appendChild(historyViralSection);
         leftColumn.appendChild(habitsSection);
@@ -5905,6 +6246,11 @@ function loadPage(page) {
     // Make titles clickable
     makeTitleButton('skodun', addSkoðun);
     makeTitleButton('plan', addPlan);
+    makeTitleButton('riskheart', addRiskFactors);
+    makeTitleButton('CHADSVASC', addCHADSVASC);
+    makeTitleButton('riskurinary', addRiskBladderCancer);
+    makeTitleButton('habits', addHabits);
+    makeTitleButton('historyViral', addHeilsufar);
 }
 
 
@@ -6015,16 +6361,7 @@ function undoLastText() {
         textbox.value = textHistory.pop(); // Restore the last state from history
     }
 }
-function addSkoðun() {
-    const textbox = document.getElementById('journalTextbox');
-    textHistory.push(textbox.value); // Save current state before adding
-    textbox.value += '\n\nSk: ';
-}
-function addPlan() {
-    const textbox = document.getElementById('journalTextbox');
-    textHistory.push(textbox.value); // Save current state before adding
-    textbox.value += '\n\nÁ/P: ';
-}
+
 function copyText() {
     const textbox = document.getElementById('journalTextbox');
     textbox.select();
@@ -6077,6 +6414,43 @@ function makeTitleButton(sectionId, callback) {
         sectionTitle.style.cursor = 'pointer';
         sectionTitle.addEventListener('click', callback);
     }
+}
+
+
+function addSkoðun() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nSk: ';
+}
+function addPlan() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nÁ/P: ';
+}
+function addRiskFactors() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nÁhættuþættir kransæðasjúkdóma: ';
+}
+function addCHADSVASC() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nCHADSVASC: ';
+}
+function addRiskBladderCancer() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nÁhættuþættir þvagblöðrukrabbameina: ';
+}
+function addHabits() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nVenjur: ';
+}
+function addHeilsufar() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nHeilsufar: ';
 }
 
 

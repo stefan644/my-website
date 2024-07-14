@@ -63,11 +63,7 @@ main {
     min-width: 200px;
 }
 
-#skodun-section h2, #plan-section h2 {
-    cursor: pointer;
-    color: blue; /* Change the color to indicate it's clickable */
-    text-decoration: underline; /* Add underline to indicate it's clickable */
-}
+
 
 #mettun-section button {
     flex: none; /* Prevent buttons from stretching */
