@@ -3489,8 +3489,8 @@ const ExamsStodkerfi = [
                 subOptions: [
                     { display: 'MCL', output: 'Verkur og aukið laxitet við prófun á MCL' },
                     { display: 'LCL', output: 'Verkur og aukið laxitet við prófun á LCL' },
-                    { display: 'ACL', output: 'Aukið laxitet við prófun fremra krossband' },
-                    { display: 'PCL', output: 'Aukið laxitet við prófun aftara krossband' }
+                    { display: 'ACL', output: 'Aukið laxitet við prófun á fremra krossbandi' },
+                    { display: 'PCL', output: 'Aukið laxitet við prófun á aftara krossbandi' }
                 ],
                 onRightClickOutput: 'Liðbandaprófun eðlileg'
             },
