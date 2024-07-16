@@ -1,3 +1,5 @@
+// Almennt / Vottorð / Rannsóknarniðurstöður / Macró
+
 const Vottord = [
     
     {
@@ -44,6 +46,7 @@ const RannsoknData = [
     }
 ];
 
+// Víral
 const SymptomsViral = [
     {
         name: '',
@@ -130,7 +133,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Kvef', 'Hósti'],
+        display: ['Kvef', 'Hósti', 'Höfuðverkur'],
         options: [
             {
                 display: 'Kvef',
@@ -145,6 +148,11 @@ const SymptomsViral = [
                     { display: 'Þurr', output: 'Þurr hósti' }
                 ],
                 onRightClickOutput: 'Ekki verið með hósta'
+            },
+            {
+                display: 'Höfuðverkur',
+                output: 'Lýsir höfuðverk',
+                onRightClickOutput: 'Neitar höfuðverk'
             }
         ]
     },
@@ -416,65 +424,37 @@ const ExamsViral = [
                     },
                     {
                         display: 'CRP 51-100',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${50 + i * 5}`,
-                            output: `CRP: ${50 + i * 5}`
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${55 + i * 5}`,
+                            output: `CRP: ${55 + i * 5}`
                         }))
                     },
                     {
                         display: 'CRP 101-150',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${100 + i * 5}`,
-                            output: `CRP: ${100 + i * 5}`
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${105 + i * 5}`,
+                            output: `CRP: ${105 + i * 5}`
                         }))
                     },
                     {
                         display: 'CRP 151-200',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${150 + i * 5}`,
-                            output: `CRP: ${150 + i * 5}`
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${155 + i * 5}`,
+                            output: `CRP: ${155 + i * 5}`
                         }))
                     },
                     {
                         display: 'CRP 201-250',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${200 + i * 5}`,
-                            output: `CRP: ${200 + i * 5}`
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${205 + i * 5}`,
+                            output: `CRP: ${205 + i * 5}`
                         }))
                     },
                     {
                         display: 'CRP 251-300',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${250 + i * 5}`,
-                            output: `CRP: ${250 + i * 5}`
-                        }))
-                    },
-                    {
-                        display: 'CRP 301-350',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${300 + i * 5}`,
-                            output: `CRP: ${300 + i * 5}`
-                        }))
-                    },
-                    {
-                        display: 'CRP 351-400',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${350 + i * 5}`,
-                            output: `CRP: ${350 + i * 5}`
-                        }))
-                    },
-                    {
-                        display: 'CRP 401-450',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${400 + i * 5}`,
-                            output: `CRP: ${400 + i * 5}`
-                        }))
-                    },
-                    {
-                        display: 'CRP 451-500',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${450 + i * 5}`,
-                            output: `CRP: ${450 + i * 5}`
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${255 + i * 5}`,
+                            output: `CRP: ${255 + i * 5}`
                         }))
                     }
                 ],
@@ -699,7 +679,11 @@ const historyViralData = [
             },
             {
                 display: 'Áfengi',
-                output: 'Saga um áfengismisnotkun',
+                subOptions: [
+                    { display: 'Áfengi', output: 'Saga um áfengismisnotkun' },
+                    { display: 'Áfengi, meðferð, edrú', output: 'Saga um áfengismisnotkun. Farið í meðferð, nú edrú' },
+                    { display: 'Áfengi, meðferð, drekkur enn', output: 'Saga um áfengismisnotkun. Farið í meðferð, drekkur enn' }
+                ],
                 onRightClickOutput: 'Ekki saga um áfengismisnotkun'
             }
         ]
@@ -764,12 +748,8 @@ const historyViralData = [
     }
 ];
 
-/* const RedFlagViral = [
-    { name: 'Hnakkastífleiki', type: 'PlusMinus', positive: 'Lýsir', negative: 'Ekki roði í koki' },
-    { name: 'Ljósfælni', type: 'PlusMinus', positive: 'Lýsir ljósfælni', negative: 'Ekki ljósfælni' }
 
-];
-*/
+// Þvagfæraeinkenni
 const SymptomsUrinary = [
     {
         name: '',
@@ -1155,7 +1135,6 @@ const HistoryUrinary = [
         ]
     }
 ];
-
 const RiskfactorsUrinary = [
     {
         name: '',
@@ -1176,6 +1155,8 @@ const RiskfactorsUrinary = [
         ]
     }
 ];
+
+// Augnvandamál
 const SymptomsEye = [
     {
         name: '',
@@ -1482,6 +1463,8 @@ const PlanEye = [
         ]
     }
 ];
+
+// Hjarta
 const SymptomsHeart = [
     {
         name: '',
@@ -1551,7 +1534,7 @@ const SymptomsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Háþrýstingur', 'Heimamælingar','Algeng gildi'],
+        display: ['Háþrýstingur', 'Heimamælingar'],
         options: [
             {
                 display: 'Háþrýstingur',
@@ -1564,38 +1547,39 @@ const SymptomsHeart = [
             {
                 display: 'Heimamælingar',
                 subOptions: [
-                    { display: 'Heimamælingar', output: 'Kemur með heimamælingar' },
+                    { display: 'Kemur með', output: 'Kemur með heimamælingar' },
                     { display: 'Hækkaðar', output: 'Kemur með heimamælingar. Er oft að mælast yfir mörkum' },
-                    { display: 'Eðlilegar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' }
-                ],
-                onRightClickOutput: 'Engar heimamælingar'
-            },
-            {
-                display: 'Algeng Gildi',
-                subOptions: [
-                    ...Array.from({ length: 15 }, (_, i) => ({
-                        display: `Systolic Low ${110 + i * 5}`,
+                    { display: 'Eðlilegar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' },
+                    {
+                        display: 'Algeng gildi',
                         subOptions: [
-                            ...Array.from({ length: 15 - i }, (_, j) => ({
-                                display: `Systolic High ${115 + i * 5 + j * 5}`,
+                            ...Array.from({ length: 15 }, (_, i) => ({
+                                display: `Systolic Low ${110 + i * 5}`,
                                 subOptions: [
-                                    ...Array.from({ length: 9 }, (_, k) => ({
-                                        display: `Diastolic Low ${70 + k * 5}`,
+                                    ...Array.from({ length: 15 - i }, (_, j) => ({
+                                        display: `Systolic High ${115 + i * 5 + j * 5}`,
                                         subOptions: [
-                                            ...Array.from({ length: 9 - k }, (_, l) => ({
-                                                display: `Diastolic High ${75 + k * 5 + l * 5}`,
-                                                output: `Heimamælingar oftast í kringum ${110 + i * 5}-${115 + i * 5 + j * 5}/${70 + k * 5}-${75 + k * 5 + l * 5}`
+                                            ...Array.from({ length: 9 }, (_, k) => ({
+                                                display: `Diastolic Low ${70 + k * 5}`,
+                                                subOptions: [
+                                                    ...Array.from({ length: 9 - k }, (_, l) => ({
+                                                        display: `Diastolic High ${75 + k * 5 + l * 5}`,
+                                                        output: `Verið að mæla sig oft í kringum ${110 + i * 5}-${115 + i * 5 + j * 5}/${70 + k * 5}-${75 + k * 5 + l * 5}`
+                                                    }))
+                                                ]
                                             }))
                                         ]
                                     }))
                                 ]
                             }))
                         ]
-                    }))
-                ]
+                    }
+                ],
+                onRightClickOutput: 'Engar heimamælingar'
             }
         ]
-    },
+    }
+    ,
     {
         name: '',
         type: 'options',
@@ -1687,31 +1671,17 @@ const ExamsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Lasleg/ur', '-', 'Yfirþyngd'],
+        display: ['Lasleg/ur', 'Yfirþyngd'],
         options: [
-            {
-                display: 'Lasleg/ur',
-                subOptions: [
-                    { display: 'Laslegur', output: 'Laslegur að sjá' },
-                    { display: 'Lasleg', output: 'Lasleg að sjá' }
-                ]
-            },
-            {
-                display: '-',
-                subOptions: [
-                    { display: 'Ekki bráðveikindalegur', output: 'Ekki bráðveikindalegur að sjá' },
-                    { display: 'Ekki bráðveikindaleg', output: 'Ekki bráðveikindaleg að sjá' }
-                ]
-            },
-            { display: 'Yfirþyngd', output: 'Er í yfirþyngd' }
+            { display: 'Lasleg/ur', output: 'Laslega útlítandi', onRightClickOutput: 'Ekki bráðveikindalegt útlit' },
+            { display: 'Yfirþyngd', output: 'Er í yfirþyngd', onRightClickOutput: 'Ekki yfirþyngd' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Hjartahlustun eðlileg', 'Óhljóð'],
+        display: ['Hjartahlustun', 'Lungnahlustun'],
         options: [
-            { display: 'Hjartahlustun eðlileg', output: 'Hjartahlustun sýnir S1-S2 án auka- eða óhljóða' },
             {
                 display: 'Óhljóð',
                 subOptions: [
@@ -2053,7 +2023,21 @@ const ExamsHeart = [
                             }
                         ]
                     }
-                ]
+                ],
+                onRightClickOutput: 'Hjartahlustun sýnir S1-S2 án auka- eða óhljóða'
+            },
+            {
+                display: 'Lungnahlustun',
+                subOptions: [
+                    { display: 'Hrein', output: 'Lungnahlustun, hrein. Eðlileg vesiculer öndunarhljóð' },
+                    { display: 'Slímhljóð basalt', output: 'Lungnahlustun sýnir slímhljóð basalt' },
+                    { display: 'Obstrúktíf', output: 'Lungnahlustun sýnir lengda útöndun' },
+                    { display: 'Gróf', output: 'Lungnahlustun sýnir gróf öndunarhljóð' },
+                    { display: 'Gróf, ronchi og lengd útöndun', output: 'Lungnahlustun sýnir gróf öndunarhljóð, ronchi og lengda útöndun' },
+                    { display: 'Brak hægra megin basalt', output: 'Heyrist brak hægra megin basalt' },
+                    { display: 'Brak vinstra megin basalt', output: 'Heyrist brak vinstra megin basalt' }
+                ],
+                onRightClickOutput: 'Lungnahlustun án athugasemda'
             }
             
         ]
@@ -2085,7 +2069,7 @@ const ExamsHeart = [
                     },
                     {
                         display: 'Ventricular tachycardia',
-                        output: 'Hjartalínurit sýnir breiðkomplexa tachycardia'
+                        output: 'Hjartalínurit sýnir breiðkomplex tachycardiu'
                     },
                     {
                         display: 'Left bundle branch block',
@@ -2093,7 +2077,7 @@ const ExamsHeart = [
                     },
                     {
                         display: 'Right bundle branch block',
-                        output: 'Hjartalínurit sýnir breiða QRS-komplexa, M-mynstur í V1 og breiða S-bylgjur í V6'
+                        output: 'Hjartalínurit sýnir breiða QRS-komplexa, M-mynstur í V1 og breiða S-bylgju í V6'
                     },
                     {
                         display: 'Supraventricular tachycardia',
@@ -2101,7 +2085,7 @@ const ExamsHeart = [
                     },
                     {
                         display: 'Hyperkalemia',
-                        output: 'Hjartalínurit sýnir háa T-bylgjur, breiða QRS-komplexa'
+                        output: 'Hjartalínurit sýnir háar T-bylgjur, breiða QRS-komplexa'
                     },
                     {
                         display: 'Hypokalemia',
@@ -3013,41 +2997,329 @@ const CHADSVASCHeart = [
     }
     
 ];
+const historyHeart = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Hraust/ur', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        options: [
+            {
+                display: 'Hraust/ur',
+                subOptions: [
+                    { display: 'Hraust', output: 'Hraust í gruninn' },
+                    { display: 'Hraustur', output: 'Hraustur í gruninn' }
+                ],
+                onRightClickOutput: 'Ekki hraust/ur'
+            },
+            {
+                display: 'HTN',
+                output: 'Saga um háþrýsting',
+                onRightClickOutput: 'Ekki saga um háþrýsting'
+            },
+            {
+                display: 'DM',
+                output: 'Saga um sykursýki',
+                onRightClickOutput: 'Ekki saga um sykursýki'
+            },
+            {
+                display: 'IHD',
+                output: 'Saga um kransæðasjúkdóm',
+                onRightClickOutput: 'Ekki saga um kransæðasjúkdóm'
+            },
+            {
+                display: 'Offita',
+                output: 'Saga um offitu',
+                onRightClickOutput: 'Ekki saga um offitu'
+            },
+            {
+                display: 'Áfengi',
+                output: 'Saga um áfengismisnotkun',
+                onRightClickOutput: 'Ekki saga um áfengismisnotkun'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hjartabilun', 'Afib', 'Hjartsláttartruflanir', 'Stroke'],
+        options: [
+            {
+                display: 'Hjartabilun',
+                output: 'Saga um hjartabilun',
+                onRightClickOutput: 'Ekki saga um hjartabilun'
+            },
+            {
+                display: 'Afib',
+                output: 'Saga um gáttatif',
+                onRightClickOutput: 'Ekki saga um gáttatif'
+            },
+            {
+                display: 'Hjartsláttartruflanir',
+                output: 'Saga um hjartsláttartruflanir',
+                onRightClickOutput: 'Ekki saga um hjartsláttartruflanir'
+            },
+            {
+                display: 'Stroke',
+                output: 'Saga um heilablóðfall',
+                onRightClickOutput: 'Ekki saga um heilablóðfall'
+            },
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['MVP', 'AS', 'Pericarditis', 'Endocarditis'],
+        options: [
+            {
+                display: 'Mitral Valve Prolapse',
+                output: 'Saga um mitral lokuleka',
+                onRightClickOutput: 'Ekki saga um mitral lokuleka'
+            },
+            {
+                display: 'Aortic Stenosis',
+                output: 'Saga um ósæðarþrengsli',
+                onRightClickOutput: 'Ekki saga um ósæðarþrengsli'
+            },
+            {
+                display: 'Pericarditis',
+                output: 'Saga um gollurshúsbólgu',
+                onRightClickOutput: 'Ekki saga um gollurshúsbólgu'
+            },
+            {
+                display: 'Endocarditis',
+                output: 'Saga um endocarditis',
+                onRightClickOutput: 'Ekki saga um endocarditis'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['PAD', 'Ónæmisbælandi'],
+        options: [
+            
+            {
+                display: 'PAD',
+                output: 'Saga um útæðasjúkdóm',
+                onRightClickOutput: 'Ekki saga um útæðasjúkdóm'
+            },
+            {
+                display: 'Ónæmisbælandi',
+                output: 'Er á ónæmisbælandi meðferð',
+                onRightClickOutput: 'Ekki á ónæmisbælandi meðferð'
+            }
+        ]
+    }
+];
+
+
+// Meltingarvandamál
 const SymptomsMelting = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Tímalengd einkenna'],
+        options: [
+            {
+                display: 'Tímalengd einkenna',
+                subOptions: [
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
+                    {
+                        display: 'Klst',
+                        subOptions: [
+                            { display: '<1 klst', output: '<1 klst saga' },
+                            { display: '1 klst', output: 'U.þ.b. 1 klst saga' },
+                            { display: '2 klst', output: 'U.þ.b. 2 klst saga' },
+                            { display: '3 klst', output: 'U.þ.b. 3 klst saga' },
+                            { display: '4 klst', output: 'U.þ.b. 4 klst saga' },
+                            { display: '5 klst', output: 'U.þ.b. 5 klst saga' },
+                            { display: '6 klst', output: 'U.þ.b. 6 klst saga' },
+                            { display: '7 klst', output: 'U.þ.b. 7 klst saga' },
+                            { display: '8 klst', output: 'U.þ.b. 8 klst saga' },
+                            { display: '9 klst', output: 'U.þ.b. 9 klst saga' },
+                            { display: '10 klst', output: 'U.þ.b. 10 klst saga' },
+                            { display: '11 klst', output: 'U.þ.b. 11 klst saga' },
+                            { display: '12 klst', output: 'U.þ.b. 12 klst saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
+                ],
+                cancelText: ''
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Kviðverkur', 'Staðsetning'],
+        options: [
+            { display: 'Kviðverkur', output: 'Kviðverkur', onRightClickOutput: 'Ekki fundið fyrir kviðverk' },
+            { 
+                display: 'Staðsetning',
+                subOptions: [
+                    {
+                        display: 'Efri hluti',
+                        subOptions: [
+                            { display: 'Epigastric', output: 'Staðsett á epigastric svæði' },
+                            { display: 'Hægri efri fjórðungur', output: 'Staðsett í hægri efri fjórðungi' },
+                            { display: 'Vinstri efri fjórðungur', output: 'Staðsett í vinstri efri fjórðungi' }
+                        ]
+                    },
+                    {
+                        display: 'Mið hluti',
+                        subOptions: [
+                            { display: 'Periumbilical', output: 'Staðsett á periumbilical svæði' }
+                        ]
+                    },
+                    {
+                        display: 'Neðri hluti',
+                        subOptions: [
+                            { display: 'Hægri neðri fjórðungur', output: 'Staðsett í hægri neðri fjórðungi' },
+                            { display: 'Vinstri neðri fjórðungur', output: 'Staðsett í vinstri neðri fjórðungi' },
+                            { display: 'Suprapubic', output: 'Staðsett á suprapubic svæði' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Getur illa lýst staðsetningu'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hægðatregða', 'Niðurgangur'],
+        options: [
+            {
+                display: 'Hægðatregða',
+                subOptions: [
+                    { display: 'Hægðatregða', output: 'Hægðatregða' },
+                    { display: 'Grunur um', output: 'Grunur um hægðatregðu' },
+                    { display: 'Rembingur', output: 'Hægðatregða. Rembist mikið en kemur lítið' },
+                    { display: 'Grunur + rembingur + slæmt mataræði', output: 'Grunur um hægðatregða. Rembist mikið en kemur lítið. Drekkur ekki mikið vatn. Trefjaneysla mætti vera betri' }
+                ],
+                onRightClickOutput: 'Ekki hægðatregða'
+            },
+            { display: 'Niðurgangur', output: 'Niðurgangur', onRightClickOutput: 'Ekki niðurgangur' }
+        ]
+    },
     {
         name: '',
         type: 'options',
         display: ['Ógleði', 'Uppköst'],
         options: [
-            { display: 'Ógleði', output: 'Ógleði' },
-            { display: 'Uppköst', output: 'Uppköst' }
+            { display: 'Ógleði', output: 'Ógleði', onRightClickOutput: 'Ekki ógleði' },
+            { display: 'Uppköst', output: 'Uppköst', onRightClickOutput: 'Ekki uppköst' }
         ]
     },
-    {
-        name: '',
-        type: 'options',
-        display: ['Niðurgangur', 'Hægðatregða'],
-        options: [
-            { display: 'Niðurgangur', output: 'Niðurgangur' },
-            { display: 'Hægðatregða', output: 'Hægðatregða' }
-        ]
-    },
+    
     {
         name: '',
         type: 'options',
         display: ['Magaverkir', 'Uppþemba'],
         options: [
-            { display: 'Magaverkir', output: 'Magaverkir' },
-            { display: 'Uppþemba', output: 'Uppþemba' }
+            { display: 'Magaverkir', output: 'Magaverkir', onRightClickOutput: 'Ekki magaverkir' },
+            { display: 'Uppþemba', output: 'Uppþemba', onRightClickOutput: 'Ekki uppþemba' }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Brjóstsviði', 'Matarlystarleysi'],
+        display: ['Brjóstsviði', 'Lystarleysi'],
         options: [
-            { display: 'Brjóstsviði', output: 'Brjóstsviði' },
-            { display: 'Matarlystarleysi', output: 'Matarlystarleysi' }
+            { display: 'Brjóstsviði', output: 'Brjóstsviði', onRightClickOutput: 'Ekki brjóstsviði' },
+            { display: 'Lystarleysi', output: 'Lýsir lystarleysi', onRightClickOutput: 'Ekki lystarleysi' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Dyschezia'],
+        options: [
+            { display: 'Dyschezia', output: 'Verkir við hægðalosun', onRightClickOutput: 'Ekki verkir við hægðalosun' }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Þyngdartap', 'Nætursviti', 'Blóð í hægðum'],
+        options: [
+            { display: 'Þyngdartap', output: 'Lýsir þyngdartapi', onRightClickOutput: 'Ekki þyngdartap' },
+            { display: 'Nætursviti', output: 'Lýsir auknum nætursvita', onRightClickOutput: 'Ekki aukinn nætursviti' },
+            {
+                display: 'Blóð í hægðum',
+                subOptions: [
+                    { display: 'Ferskt blóð á pappír', output: 'Lýsir fersku blóði á pappír' },
+                    { 
+                        display: 'Ferskt blóð í skál',
+                        subOptions: [
+                            { display: 'Lítið', output: 'Lýsir litlu magni af fersku blóði í skál' },
+                            { display: 'Mikið', output: 'Lýsir miklu magni af fersku blóði í skál' }
+                        ]
+                    },
+                    { display: 'Svartar hægðir', output: 'Verið með svartar hægðir' }
+                ],
+                onRightClickOutput: 'Ekki blóð í hægðum eða svartar hægðir'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hraðahindranir'],
+        options: [
+            { display: 'Hraðahindranir', output: 'Vont að fara yfir hraðahindranir', onRightClickOutput: 'Ekki vont að fara yfir hraðahindranir' }
         ]
     }
 ];
@@ -3055,71 +3327,185 @@ const ExamsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Ástand sjúklings', 'Slímhúð í munni', 'Háræðafylling'],
-        options: [
-            { display: 'Ástand sjúklings', output: 'Sjúklingur virðist í bráðum verkjum', onRightClickOutput: 'Sjúklingur virðist ekki í bráðum verkjum' },
-            { display: 'Slímhúð í munni', output: 'Slímhúð í munni er þurr', onRightClickOutput: 'Slímhúð í munni er eðlileg' },
-            { display: 'Háræðafylling', output: 'Aukin háræðafylling', onRightClickOutput: 'Eðlileg háræðafylling' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Þaninn', 'Hlustun á kvið', 'Þreifing á kvið', 'Bank', 'Sleppieymsli'],
+        display: ['Ástand sjúklings', 'Vökvaástand'],
         options: [
             {
-                display: 'Þaninn',
+                display: 'Ástand sjúklings',
                 subOptions: [
-                    { display: 'Þaninn', output: 'Kviður þaninn' }
+                    { display: 'Lasleg/ur', output: 'Laslega útlítandi', onRightClickOutput: 'Ekki bráðveikindalegt útlit' },
+                    {
+                        display: 'Verkjar',
+                        subOptions: [
+                            { display: 'KK', output: 'Virðist meðtekinn af verk', onRightClickOutput: 'Ekki meðtekinn af verk' },
+                            { display: 'KVK', output: 'Virðist meðtekin af verk', onRightClickOutput: 'Ekki meðtekin af verk' }
+                        ]
+                    }
+                    
                 ],
-                onRightClickOutput: 'Kviður óþaninn'
+                onRightClickSubOptions: [
+                    { display: 'Ekki laslegt útlit', output: 'Ekki bráðveikindalegt útlit' },
+                    {
+                        display: 'Ekki meðtekin/n af verk',
+                        subOptions: [
+                            { display: 'KK', output: 'Ekki meðtekinn af verk' },
+                            { display: 'KVK', output: 'Ekki meðtekin af verk' }
+                        ]
+                    }
+                    
+                ]
             },
             {
-                display: 'Garnahljóð',
+                display: 'Vökvaástand',
                 subOptions: [
-                    { display: 'Garnahljóð til staðar', output: 'Garnahljóð til staðar' },
-                    { display: 'Engin garnahljóð', output: 'Ekki heyrast garnahljóð' }
+                    {
+                        display: 'Þurrar slímhúðir',
+                        output: 'Slímhúð í munni er þurr',
+                    },
+                    {
+                        display: 'Háræðafylling lengd',
+                        output: 'Lengd háræðafylling',
+                    }
                 ],
-                onRightClickOutput: 'Hlustun á kvið sýnir eðlileg garnahljóð'
-            },
-            {
-                display: 'Þreifing',
-                subOptions: [
-                    { display: 'Mjúkur kviður', output: 'Kviður mjúkur' },
-                    { display: 'Eymslalaus', output: 'Kviður mjúkur' },
-                    { display: 'Spenntur kviður', output: 'Þreifing á kvið sýnir spenntan kvið' },
-                    { display: 'Eymsli við þreifingu', output: 'Þreifing á kvið sýnir eymsli við þreifingu' },
-                    { display: 'Eymsli í hægri neðri fjórðungi', output: 'Þreifing á kvið sýnir eymsli í hægri neðri fjórðungi' },
-                    { display: 'Eymsli í vinstra neðri fjórðungi', output: 'Þreifing á kvið sýnir eymsli í vinstra neðri fjórðungi' },
-                    { display: 'Eymsli í epigastrium', output: 'Þreifing á kvið sýnir eymsli í epigastrium' },
-                    { display: 'Eymsli í suprapubic svæði', output: 'Þreifing á kvið sýnir eymsli í suprapubic svæði' },
-                    { display: 'Peritoneal merki', output: 'Þreifing á kvið sýnir peritoneal merki' }
-                ],
-                onRightClickOutput: 'Mjúkur og eymslalaus við þreifingu'
-            },
-            {
-                display: 'Bank',
-                subOptions: [
-                    { display: 'Eymsli við bank', output: 'Eymsli við bank' },
-                    { display: 'Engin eymsli við bank', output: 'Engin eymsli við bank' }
-                ],
-                onRightClickOutput: 'Bank sýnir engin eymsli'
-            },
-            {
-                display: 'Sleppieymsli',
-                subOptions: [
-                    { display: 'Já', output: 'Sleppieymsli til staðar' },
-                    { display: 'Nei', output: 'Sleppieymsli ekki til staðar' }
-                ],
-                onRightClickOutput: 'Sleppieymsli ekki til staðar'
+                onRightClickSubOptions: [
+                    {
+                        display: 'Rakar slímhúðir',
+                        output: 'Rakar slímhúðir'
+                    },
+                    {
+                        display: 'Háræðafylling eðlileg',
+                        output: 'Eðlileg háræðafylling'
+                    }
+                ]
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Endaþarmsskoðun'],
+        display: ['Kviður - útlit', 'Garnahljóð', 'Bank', 'Þreifing', 'Sleppieymsli'],
         options: [
+            {
+                display: 'Kviður - útlit',
+                subOptions: [
+                    { display: 'Þaninn', output: 'Kviður þaninn' },
+                    {
+                        display: 'Ör',
+                        subOptions: [
+                            { display: 'Ör eftir botnlangatöku', output: 'Ör eftir botnlangatöku' },
+                            { display: 'Ör eftir gallblöðrutöku', output: 'Ör eftir gallblöðrutöku' },
+                            { display: 'Ör eftir aðgerð á kvið', output: 'Ör eftir aðgerð á kvið' }
+                        ]
+                    },
+                    { display: 'Panniculus', output: 'Panniculus' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Óþaninn', output: 'Kviður óþaninn' },
+                    { display: 'Engin ör', output: 'Engin ör' },
+                    { display: 'Eðlilegt holdafar', output: 'Eðlilegt holdafar' }
+                ]
+            },
+            {
+                display: 'Garnahljóð',
+                subOptions: [
+                    { display: 'Engin garnahljóð', output: 'Engin garnahljóð heyrast' },
+                    { display: 'Lífleg garnahljóð', output: 'Heyrast lífleg garnahljóð' },
+                    { display: 'Minnkuð garnahljóð', output: 'Grunur um minnkuð garnahljóð' }
+                ],
+                onRightClickOutput: 'Garnahljóð til staðar'
+            },
+            {
+                display: 'Bank',
+                subOptions: [
+                    { display: 'Dreift', output: 'Dreifð bankeymsli' },
+                    { display: 'Hægri neðri', output: 'Bankeymsli yfir hægri neðri fjórðungi' },
+                    { display: 'Vinstri neðri', output: 'Bankeymsli yfir vinstra neðri fjórðungi' },
+                    { display: 'Hægri efri', output: 'Bankeymsli yfir hægri efri fjórðungi' },
+                    { display: 'Vinstri efri', output: 'Bankeymsli yfir vinstra efri fjórðungi' },
+                    { display: 'Epigastrium', output: 'Bankeymsli yfir epigastrium' },
+                    { display: 'Suprapubic svæði', output: 'Bankeymsli yfir suprapubic svæði' }
+                ],
+                onRightClickOutput: 'Ekki bankeymsli'
+            },
+            {
+                display: 'Þreifing',
+                subOptions: [
+                    {
+                        display: 'Hægri neðri',
+                        subOptions: [
+                            { display: 'Létt þreifing', output: 'Eymsli í hægri neðri fjórðungi við létta þreifingu' },
+                            { display: 'Miðlungs þreifing', output: 'Eymsli í hægri neðri fjórðungi við miðlungs þreifingu' },
+                            { display: 'Djúpa þreifingu', output: 'Eymsli í hægri neðri fjórðungi við djúpa þreifingu' }
+                        ]
+                    },
+                    {
+                        display: 'Vinstri neðri',
+                        subOptions: [
+                            { display: 'Létt þreifing', output: 'Eymsli í vinstri neðri fjórðungi við létta þreifingu' },
+                            { display: 'Miðlungs þreifing', output: 'Eymsli í vinstri neðri fjórðungi við miðlungs þreifingu' },
+                            { display: 'Djúpa þreifingu', output: 'Eymsli í vinstri neðri fjórðungi við djúpa þreifingu' }
+                        ]
+                    },
+                    {
+                        display: 'Hægri efri',
+                        subOptions: [
+                            { display: 'Létt þreifing', output: 'Eymsli í hægri efri fjórðungi við létta þreifingu' },
+                            { display: 'Miðlungs þreifing', output: 'Eymsli í hægri efri fjórðungi við miðlungs þreifingu' },
+                            { display: 'Djúpa þreifingu', output: 'Eymsli í hægri efri fjórðungi við djúpa þreifingu' }
+                        ]
+                    },
+                    {
+                        display: 'Vinstri efri',
+                        subOptions: [
+                            { display: 'Létt þreifing', output: 'Eymsli í vinstri efri fjórðungi við létta þreifingu' },
+                            { display: 'Miðlungs þreifing', output: 'Eymsli í vinstri efri fjórðungi við miðlungs þreifingu' },
+                            { display: 'Djúpa þreifingu', output: 'Eymsli í vinstri efri fjórðungi við djúpa þreifingu' }
+                        ]
+                    },
+                    {
+                        display: 'Epigastrium',
+                        subOptions: [
+                            { display: 'Létt þreifing', output: 'Eymsli í epigastrium við létta þreifingu' },
+                            { display: 'Miðlungs þreifing', output: 'Eymsli í epigastrium við miðlungs þreifingu' },
+                            { display: 'Djúpa þreifingu', output: 'Eymsli í epigastrium við djúpa þreifingu' }
+                        ]
+                    },
+                    {
+                        display: 'Suprapubic svæði',
+                        subOptions: [
+                            { display: 'Létt þreifing', output: 'Eymsli yfir suprapubic svæði við létta þreifingu' },
+                            { display: 'Miðlungs þreifing', output: 'Eymsli yfir suprapubic svæði við miðlungs þreifingu' },
+                            { display: 'Djúpa þreifingu', output: 'Eymsli yfir suprapubic svæði við djúpa þreifingu' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Kviður mjúkur og eymslalaus við þreifingu'
+            },
+            {
+                display: 'Sleppieymsli',
+                subOptions: [
+                    {
+                        display: 'Direct',
+                        output: 'Direct sleppieymsli'
+                    },
+                    {
+                        display: 'Indirect',
+                        output: 'Indirect sleppieymsli'
+                    },
+                    {
+                        display: 'Direct og indirect',
+                        output: 'Sleppieymsli, bæði direct og indirect'
+                    }
+                ],
+                onRightClickOutput: 'Engin sleppieymsli'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Murphy', 'Endaþarmsskoðun'],
+        options: [
+            { display: 'Murphy', output: 'Murphy teikn jákvætt', onRightClickOutput: 'Murphy teikn neikvætt' },
             {
                 display: 'Endaþarmsskoðun',
                 subOptions: [
@@ -3128,12 +3514,11 @@ const ExamsMelting = [
                     { display: 'Hægðir í ampullu', output: 'Endaþarmsskoðun sýnir hægðir í ampullu' },
                     { display: 'Engar hægðir í ampullu', output: 'Endaþarmsskoðun sýnir engar hægðir í ampullu' }
                 ],
-                onRightClickOutput: 'Endaþarmsskoðun sýnir eðlilegt ástand'
+                onRightClickOutput: 'Endarþarmsskoðun '
             }
         ]
     }
 ];
-
 const PlanMelting = [
     {
         name: '',
@@ -3225,7 +3610,7 @@ const PlanMelting = [
                     { display: 'Almennar', output: 'Almennar ráðleggingar'},
                     { display: 'Mataræði', output: 'Fær viðeigandi fræðslu um mataræði'},
                     { display: 'Hægðatregða', output: 'Fær viðeigandi ráðleggingar um trefja- og vökvainntöku. Rætt um helstu hægðalyf'},
-                    { display: 'Diverticulitis - Ráðl, fljótandi + sýklalyf ef þarf', output: 'Fær viðeigandi ráðleggingar um meðferð diverticulitis. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki'}
+                    { display: 'Diverticulitis - Ráðl, fljótandi + sýklalyf ef þarf', output: 'Fær viðeigandi ráðleggingar um meðferð diverticulitis. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar'}
                 ]
             },
             {
@@ -3339,41 +3724,320 @@ const PlanMelting = [
         ]
     }
 ];
+const historyMelting = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Hraust/ur', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        options: [
+            {
+                display: 'Hraust/ur',
+                subOptions: [
+                    { display: 'Hraust', output: 'Hraust í gruninn' },
+                    { display: 'Hraustur', output: 'Hraustur í gruninn' }
+                ],
+                onRightClickOutput: 'Ekki hraust/ur'
+            },
+            {
+                display: 'HTN',
+                output: 'Saga um háþrýsting',
+                onRightClickOutput: 'Ekki saga um háþrýsting'
+            },
+            {
+                display: 'DM',
+                output: 'Saga um sykursýki',
+                onRightClickOutput: 'Ekki saga um sykursýki'
+            },
+            {
+                display: 'IHD',
+                output: 'Saga um kransæðasjúkdóm',
+                onRightClickOutput: 'Ekki saga um kransæðasjúkdóm'
+            },
+            {
+                display: 'Offita',
+                output: 'Saga um offitu',
+                onRightClickOutput: 'Ekki saga um offitu'
+            },
+            {
+                display: 'Áfengi',
+                output: 'Saga um áfengismisnotkun',
+                onRightClickOutput: 'Ekki saga um áfengismisnotkun'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Gallsteinar', 'Lifrarvandamál', 'Diverticulitis', 'IBD'],
+        options: [
+            {
+                display: 'Gallsteinar',
+                output: 'Saga um gallsteina',
+                onRightClickOutput: 'Ekki saga um gallsteina'
+            },
+            {
+                display: 'Lifrarvandamál',
+                subOptions: [
+                    { display: 'Cirrhosis', output: 'Er með skorpulifur', onRightClickOutput: 'Ekki saga um skorpulifur' },
+                    { display: 'Hepatitis', output: 'Saga um lifrarbólgu', onRightClickOutput: 'Ekki saga um lifrarbólgu' }
+                ]
+            },
+            {
+                display: 'Diverticulitis',
+                output: 'Saga um diverticulitis',
+                onRightClickOutput: 'Ekki saga um diverticulitis'
+            },
+            {
+                display: 'IBD',
+                subOptions: [
+                    { display: 'Crohn\'s Disease', output: 'Saga um Crohn\'s sjúkdóm', onRightClickOutput: 'Ekki saga um Crohn\'s sjúkdóm' },
+                    { display: 'Ulcerative Colitis', output: 'Saga um sáraristilbólgu', onRightClickOutput: 'Ekki saga um sáraristilbólgu' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Krabbamein', 'Celiac Disease', 'Ólétta'],
+        options: [
+            {
+                display: 'Krabbamein',
+                subOptions: [
+                    { display: 'Ristilkrabbamein', output: 'Saga um ristilkrabbamein', onRightClickOutput: 'Ekki saga um ristilkrabbamein' },
+                    { display: 'Magakrabbamein', output: 'Saga um magakrabbamein', onRightClickOutput: 'Ekki saga um magakrabbamein' },
+                    { display: 'Lifrarkrabbamein', output: 'Saga um lifrarkrabbamein', onRightClickOutput: 'Ekki saga um lifrarkrabbamein' }
+                ]
+            },
+            {
+                display: 'Celiac Disease',
+                output: 'Saga um celiac sjúkdóm',
+                onRightClickOutput: 'Ekki saga um celiac sjúkdóm'
+            },
+            {
+                display: 'Ólétta',
+                subOptions: [
+                    { display: 'Fyrsta þriðjung', output: 'Ófrísk, á fyrsta þriðjungi meðgöngu' },
+                    { display: 'Öðrum þriðjung', output: 'Ófrísk, á öðrum þriðjungi meðgöngu' },
+                    { display: 'Þriðja þriðjung', output: 'Ófrísk, á þriðja þriðjungi meðgöngu' }
+                ],
+                onRightClickOutput: 'Ekki ófrísk'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Ónæmisbælandi', 'Fæðuofnæmi', 'Lactose Intolerance'],
+        options: [
+            {
+                display: 'Ónæmisbælandi',
+                output: 'Er á ónæmisbælandi meðferð',
+                onRightClickOutput: 'Ekki á ónæmisbælandi meðferð'
+            },
+            {
+                display: 'Fæðuofnæmi',
+                output: 'Saga um fæðuofnæmi',
+                onRightClickOutput: 'Ekki saga um fæðuofnæmi'
+            },
+            {
+                display: 'Lactose Intolerance',
+                output: 'Saga um laktósaóþol',
+                onRightClickOutput: 'Ekki saga um laktósaóþol'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Magasár'],
+        options: [
+            {
+                display: 'Magasár',
+                subOptions: [
+                    { display: 'Magasár', output: 'Saga um magasár', onRightClickOutput: 'Ekki saga um magasár' },
+                    { display: 'Blæðandi magasár', output: 'Saga um blæðandi magasár', onRightClickOutput: 'Ekki saga um blæðandi magasár' },
+                    { display: 'H. pylori', output: 'Saga um H. pylori sýkingu', onRightClickOutput: 'Ekki saga um H. pylori sýkingu' }
+                ]
+            }
+        ]
+    }
+];
+
+
+
+// Stoðkerfi
 const SymptomsStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Bakverkir', 'Axlarverkir'],
+        display: ['Tímalengd einkenna'],
         options: [
-            { display: 'Bakverkir', output: 'Bakverkir' },
-            { display: 'Axlarverkir', output: 'Axlarverkir' }
+            {
+                display: 'Tímalengd einkenna',
+                subOptions: [
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
+                ],
+                cancelText: ''
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Hnéverkir', 'Úlnliðsverkir'],
+        display: ['Einkenni', 'Verkur', 'Bólga'],
         options: [
-            { display: 'Hnéverkir', output: 'Hnéverkir' },
-            { display: 'Úlnliðsverkir', output: 'Úlnliðsverkir' }
+            {
+                display: 'Einkenni',
+                subOptions: [
+                    {
+                        display: 'Öxl',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Einkenni frá hægri öxl' },
+                            { display: 'Vinstri', output: 'Einkenni frá vinstri öxl' }
+                        ]
+                    },
+                    {
+                        display: 'Olnbogi',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Einkenni frá hægri olnboga' },
+                            { display: 'Vinstri', output: 'Einkenni frá vinstri olnboga' }
+                        ]
+                    },
+                    {
+                        display: 'Úlnliður',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Einkenni frá hægri úlnlið' },
+                            { display: 'Vinstri', output: 'Einkenni frá vinstri úlnlið' }
+                        ]
+                    },
+                    {
+                        display: 'Bak',
+                        subOptions: [
+                            { display: 'Bak', output: 'Einkenni frá baki' },
+                            { display: 'Lendhrygg', output: 'Einkenni frá lendhrygg' },
+                            { display: 'Brjósthrygg', output: 'Einkenni frá brjósthrygg' },
+                            { display: 'Hálshrygg', output: 'Einkenni frá hálshrygg' }
+                        ]
+                    },
+                    {
+                        display: 'Mjöðm',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Einkenni frá hægri mjöðm' },
+                            { display: 'Vinstri', output: 'Einkenni frá vinstri mjöðm' }
+                        ]
+                    },
+                    {
+                        display: 'Hné',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Einkenni frá hægra hné' },
+                            { display: 'Vinstri', output: 'Einkenni frá vinstra hné' }
+                        ]
+                    },
+                    {
+                        display: 'Ökkli',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Einkenni frá hægri ökkla' },
+                            { display: 'Vinstri', output: 'Einkenni frá vinstri ökkla' }
+                        ]
+                    }
+                ]
+            },
+            {display: 'Verkur', output: 'Verkur', onRightClickOutput: 'Ekki verkur'},
+            {display: 'Bólga', output: 'Bólga', onRightClickOutput: 'Ekki bólga'}
+
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Hálsverkir', 'Mjaðmaverkir'],
+        display: ['Áverki', 'Leiðni'],
         options: [
-            { display: 'Hálsverkir', output: 'Hálsverkir' },
-            { display: 'Mjaðmaverkir', output: 'Mjaðmaverkir' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Vöðvaverkir', 'Liðverkir'],
-        options: [
-            { display: 'Vöðvaverkir', output: 'Vöðvaverkir' },
-            { display: 'Liðverkir', output: 'Liðverkir' }
+            {
+                display: 'Áverki',
+                subOptions: [
+                    { display: 'Rak sig í', output: 'Rak sig í' },
+                    { display: 'Missteig sig', output: 'Missteig sig' }
+                ],
+                onRightClickOutput: 'Ekkert sem kom fyrir'
+            },
+            {
+                display: 'Leiðni',
+                subOptions: [
+                    {
+                        display: 'Leiðir niður fót',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Leiðir niður hægri fót' },
+                            { display: 'Vinstri', output: 'Leiðir niður vinstri fót' },
+                            { display: 'Bæði', output: 'Leiðir niður báða fætur' }
+                        ]
+                    },
+                    {
+                        display: 'Leiðir út í hendi',
+                        subOptions: [
+                            { display: 'Hægri', output: 'Leiðir út í hægri hendi' },
+                            { display: 'Vinstri', output: 'Leiðir út í vinstri hendi' },
+                            { display: 'Bæði', output: 'Leiðir út í báðar hendur' }
+                        ]
+                    }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Ekki leiðni niður fætur', output: 'Ekki leiðni niður fætur' },
+                    { display: 'Ekki leiðni út í hendur', output: 'Ekki leiðni út í hendur' }
+                ]
+            }
+
         ]
     }
 ];
@@ -3852,44 +4516,263 @@ const ExamsStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Öxl'],
+        display: ['Öxl - Útlit', 'Þreifing', 'Hreyfigeta'],
         options: [
+            {
+                display: 'Öxl - Útlit',
+                subOptions: [
+                    {
+                        display: 'Öxl - Útlit',
+                        subOptions: [
+                            {
+                                display: 'Samhverfa',
+                                output: 'Ein öxl lítur öðruvísi út en hin að stærð, lögun eða stöðu, sem getur bent til vandamála eins og úr lið, vöðvarýrnun eða bólgu.'
+                            },
+                            {
+                                display: 'Jöfnun',
+                                output: 'Öxlin virðist færð úr stað, sem getur bent til úr lið eða subluxation.'
+                            },
+                            {
+                                display: 'Vöðva magn og lögun',
+                                subOptions: [
+                                    { display: 'Rýrnun', output: 'Minnkað vöðvamagn, sem getur bent til taugaskaða eða notkunarleysis.' },
+                                    { display: 'Hypertrophia', output: 'Aukið vöðvamagn, mögulega vegna ofnotkunar eða bótamechanisma.' }
+                                ]
+                            },
+                            {
+                                display: 'Húðbreytingar',
+                                subOptions: [
+                                    { display: 'Roði', output: 'Roði sem bendir til bólgu eða sýkingar.' },
+                                    { display: 'Mar', output: 'Sem bendir til nýlegra áverka.' },
+                                    { display: 'Ör', output: 'Nærvera skurðör eða gamalla áverkamerkja.' }
+                                ]
+                            },
+                            {
+                                display: 'Afbrigði',
+                                output: 'Nærvera óeðlilegra útstæðna eða innfellinga, sem geta bent til brota, úr lið eða annarra byggingarfrávika.'
+                            }
+                        ],
+                        onRightClickSubOptions: [
+                            { display: 'Samhverft', output: 'Báðar axlir eru samhverfar að stærð, lögun og stöðu.' },
+                            { display: 'Eðlileg jöfnun', output: 'Öxlin er í venjulegri líffærafræðilegri stöðu, með humeral höfuðið rétt stillt innan glenoid fossa.' },
+                            { display: 'Eðlilegt vöðvamagn og lögun', output: 'Vöðvar umhverfis öxlina (deltoid, trapezius, rotator cuff vöðvar) eru vel skilgreindir og samhverfir.' },
+                            { display: 'Eðlileg húð', output: 'Húðin yfir öxlinni er ómerkt, án litarbreytinga eða sára.' },
+                            { display: 'Engin afbrigði', output: 'Engin sýnileg afbrigði.' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Þreifing',
+                subOptions: [
+                    { display: 'Framanvert', output: 'Þreifieymsl framanvert á axlarlið' },
+                    { display: 'Aftanvert', output: 'Þreifieymsl aftanvert á axlarlið' },
+                    { display: 'AC lið', output: 'Þreifieymsl yfir AC lið' },
+                    {
+                        display: 'Biceps sin',
+                        subOptions: [
+                            { display: 'Festu stuttu biceps sinar', output: 'Þreifieymsl yfir festu stuttu biceps sinar' },
+                            { display: 'Löngu biceps sin', output: 'Þreifieymsl yfir löngu biceps sin' }
+                        ]
+                    },
+                    { display: 'Supraspinatus', output: 'Þreifieymsl yfir supraspinatus' },
+                    { display: 'Infraspinatus', output: 'Þreifieymsl yfir infraspinatus' },
+                    { display: 'Subscapularis', output: 'Þreifieymsl yfir subscapularis' },
+                    {
+                        display: 'Deltoid Muscle',
+                        subOptions: [
+                            { display: 'Fremri', output: 'Þreifieymsl yfir anterior deltoid vöðva' },
+                            { display: 'Miðjum', output: 'Þreifieymsl yfir miðjum deltoid vöðva' },
+                            { display: 'Aftari', output: 'Þreifieymsl yfir aftari hluta deltoid vöðva' }
+                        ]
+                    },
+                    {
+                        display: 'Viðbein',
+                        subOptions: [
+                            {
+                                display: 'Hnúður',
+                                subOptions: [
+                                    { display: 'Distal þriðjung', output: 'Þreifast hnúður á distal þriðjungi viðbeins' },
+                                    { display: 'Miðju', output: 'Þreifast hnúður á miðju viðbeins' },
+                                    { display: 'Proximal þriðjung', output: 'Þreifast hnúður á proximal þriðjungi viðbeins' }
+                                ]
+                            },
+                            {
+                                display: 'Eymsli',
+                                subOptions: [
+                                    { display: 'Distal þriðjung', output: 'Eymsli á distal þriðjungi viðbeins' },
+                                    { display: 'Miðju', output: 'Eymsli á miðju viðbeins' },
+                                    { display: 'Proximal þriðjung', output: 'Eymsli á proximal þriðjungi viðbeins' }
+                                ]
+                            },
+                            {
+                                display: 'Hnúður og eymsli',
+                                subOptions: [
+                                    { display: 'Distal þriðjung', output: 'Þreifast aumur hnúður á distal þriðjungi viðbeins' },
+                                    { display: 'Miðju', output: 'Þreifast aumur hnúður á miðju viðbeins' },
+                                    { display: 'Proximal þriðjung', output: 'Þreifast aumur hnúður á proximal þriðjungi viðbeins' }
+                                ]
+                            },
+                            {
+                                display: 'Aflögun',
+                                subOptions: [
+                                    { display: 'Distal þriðjung', output: 'Aflögun á distal þriðjungi viðbeins' },
+                                    { display: 'Miðju', output: 'Aflögun á miðju viðbeini' },
+                                    { display: 'Proximal þriðjung', output: 'Aflögun á proximal þriðjungi viðbeins' }
+                                ]
+                            }
+                        ]
+                    },
+                    { display: 'Herðablað', output: 'Þreifieymsl yfir herðablað' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Engin eymsli', output: 'Engin eymsli við þreyfingu' }
+                ]
+            },            
             { display: 'Skoðun á mjöðm', output: 'Skoðun á mjöðm sýnir' }
         ]
     }
 ];
-
-
-
 const PlanStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar', 'Verkjalyf', 'Bólgueyðandi lyf', 'Líkamsþjálfun', 'Tilvísun'],
+        display: ['Öxl', 'Olnbogi', 'Úlnliður', 'Bak'],
         options: [
-            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um hvíld og aðstoð' },
             {
-                display: 'Verkjalyf',
+                display: 'Öxl',
                 subOptions: [
-                    { display: 'Paracetamol', output: 'Ávísun á Paracetamol' },
-                    { display: 'Íbúprófen', output: 'Ávísun á Íbúprófen' },
-                    { display: 'Kódein', output: 'Ávísun á Kódein' }
+                    {
+                        display: 'Tognun',
+                        subOptions: [
+                            { display: 'Grunur um tognun', output: 'Grunur um tognun á öxl' },
+                            { display: 'Tognun', output: 'Tognun á öxl' }
+                        ]
+                    },
+                    {
+                        display: 'Slit',
+                        subOptions: [
+                            { display: 'Grunur um slit', output: 'Grunur um slit á öxl' },
+                            { display: 'Slit', output: 'Slit á öxl' }
+                        ]
+                    },
+                    {
+                        display: 'Tendinitis',
+                        subOptions: [
+                            { display: 'Grunur um tendinitis', output: 'Grunur um tendinitis á öxl' },
+                            { display: 'Tendinitis', output: 'Tendinitis á öxl' }
+                        ]
+                    },
+                    {
+                        display: 'Bursitis',
+                        subOptions: [
+                            { display: 'Grunur um bursitis', output: 'Grunur um bursitis á öxl' },
+                            { display: 'Bursitis', output: 'Bursitis á öxl' }
+                        ]
+                    },
+                    {
+                        display: 'Impingement',
+                        subOptions: [
+                            { display: 'Grunur um impingement', output: 'Grunur um impingement á öxl' },
+                            { display: 'Impingement', output: 'Impingement á öxl' }
+                        ]
+                    },
+                    {
+                        display: 'Dislocation',
+                        subOptions: [
+                            { display: 'Grunur um dislocation', output: 'Grunur um dislocation á öxl' },
+                            { display: 'Dislocation', output: 'Dislocation á öxl' }
+                        ]
+                    }
                 ]
             },
-            { display: 'Bólgueyðandi lyf', output: 'Ávísun á bólgueyðandi lyf' },
             {
-                display: 'Líkamsþjálfun',
+                display: 'Olnbogi',
                 subOptions: [
-                    { display: 'Þjálfunaræfingar', output: 'Ráðlegg þjálfunaræfingar' },
-                    { display: 'Sjúkraþjálfun', output: 'Vísa til sjúkraþjálfara' }
+                    {
+                        display: 'Tognun',
+                        subOptions: [
+                            { display: 'Grunur um tognun', output: 'Grunur um tognun á olnboga' },
+                            { display: 'Tognun', output: 'Tognun á olnboga' }
+                        ]
+                    },
+                    {
+                        display: 'Slit',
+                        subOptions: [
+                            { display: 'Grunur um slit', output: 'Grunur um slit á olnboga' },
+                            { display: 'Slit', output: 'Slit á olnboga' }
+                        ]
+                    },
+                    {
+                        display: 'Epicondylitis',
+                        subOptions: [
+                            {
+                                display: 'Grunur um',
+                                subOptions: [
+                                    { display: 'Lateral', output: 'Grunur um lateral epicondylitis á olnboga' },
+                                    { display: 'Medial', output: 'Grunur um medial epicondylitis á olnboga' }
+                                ]
+                            },
+                            {
+                                display: 'Epicondylitis',
+                                subOptions: [
+                                    { display: 'Lateral', output: 'Lateral epicondylitis á olnboga' },
+                                    { display: 'Medial', output: 'Medial epicondylitis á olnboga' }
+                                ]
+                            }
+                        ]
+                    }
                 ]
             },
             {
-                display: 'Tilvísun',
+                display: 'Úlnliður',
                 subOptions: [
-                    { display: 'Röntgenmynd', output: 'Panta röntgenmynd' },
-                    { display: 'MTR', output: 'Panta MTR' },
-                    { display: 'Ortopedi', output: 'Vísa til ortopeda' }
+                    {
+                        display: 'Tognun',
+                        subOptions: [
+                            { display: 'Grunur um tognun', output: 'Grunur um tognun á úlnlið' },
+                            { display: 'Tognun', output: 'Tognun á úlnlið' }
+                        ]
+                    },
+                    {
+                        display: 'Slit',
+                        subOptions: [
+                            { display: 'Grunur um slit', output: 'Grunur um slit á úlnlið' },
+                            { display: 'Slit', output: 'Slit á úlnlið' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Bak',
+                subOptions: [
+                    {
+                        display: 'Tognun',
+                        subOptions: [
+                            { display: 'Grunur um tognun', output: 'Grunur um tognun á baki' },
+                            { display: 'Tognun', output: 'Tognun á baki' }
+                        ]
+                    },
+                    {
+                        display: 'Slit',
+                        subOptions: [
+                            { display: 'Grunur um slit', output: 'Grunur um slit á baki' },
+                            { display: 'Slit', output: 'Slit á baki' }
+                        ]
+                    },
+                    {
+                        display: 'Lumbago',
+                        subOptions: [
+                            { display: 'Lumbago', output: 'Lumbago á baki' }
+                        ]
+                    },
+                    {
+                        display: 'Brjósklos',
+                        subOptions: [
+                            { display: 'Grunur um brjósklos', output: 'Grunur um brjósklos á baki' },
+                            { display: 'Brjósklos', output: 'Brjósklos á baki' }
+                        ]
+                    }
                 ]
             }
         ]
@@ -3897,13 +4780,114 @@ const PlanStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Eftirfylgd', 'Frekar rannsóknir'],
+        display: ['Mjöðm', 'Hné', 'Ökkli'],
         options: [
-            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
-            { display: 'Frekar rannsóknir', output: 'Íhuga frekari rannsóknir ef einkenni versna' }
+            {
+                display: 'Mjöðm',
+                subOptions: [
+                    {
+                        display: 'Tognun',
+                        subOptions: [
+                            { display: 'Grunur um tognun', output: 'Grunur um tognun á mjöðm' },
+                            { display: 'Tognun', output: 'Tognun á mjöðm' }
+                        ]
+                    },
+                    {
+                        display: 'Slit',
+                        subOptions: [
+                            { display: 'Grunur um slit', output: 'Grunur um slit á mjöðm' },
+                            { display: 'Slit', output: 'Slit á mjöðm' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Hné',
+                subOptions: [
+                    {
+                        display: 'Tognun',
+                        subOptions: [
+                            { display: 'Grunur um tognun', output: 'Grunur um tognun á hné' },
+                            { display: 'Tognun', output: 'Tognun á hné' }
+                        ]
+                    },
+                    {
+                        display: 'Slit',
+                        subOptions: [
+                            { display: 'Grunur um slit', output: 'Grunur um slit á hné' },
+                            { display: 'Slit', output: 'Slit á hné' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Ökkli',
+                subOptions: [
+                    {
+                        display: 'Tognun',
+                        subOptions: [
+                            { display: 'Grunur um tognun', output: 'Grunur um tognun á ökkla' },
+                            { display: 'Tognun', output: 'Tognun á ökkla' }
+                        ]
+                    },
+                    {
+                        display: 'Slit',
+                        subOptions: [
+                            { display: 'Grunur um slit', output: 'Grunur um slit á ökkla' },
+                            { display: 'Slit', output: 'Slit á ökkla' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Myndgreining'],
+        options: [
+            {
+                display: 'Myndgreining',
+                subOptions: [
+                    { display: 'Röntgen', output: 'Ráðlegg röntgenmynd' },
+                    { display: 'TS', output: 'Ráðlegg tölvusneiðmynd' },
+                    { display: 'Segulómun', output: 'Ráðlegg segulómun' },
+                    { display: 'Ómskoðun', output: 'Ráðlegg ómskoðun' },
+                    { display: 'RTG+Ómskoðun', output: 'Ráðlegg RTG+ómskoðun' }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
+                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
+                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                ]
+            }
+
         ]
     }
+    
 ];
+
+// Húðvandamál
 const SymptomsHud = [
     {
         name: '',
@@ -4131,6 +5115,8 @@ const PlanHud = [
         ]
     }
 ];
+
+// Geð
 const SymptomsGed = [
     {
         name: '',
@@ -4224,6 +5210,8 @@ const PlanGed = [
         ]
     }
 ];
+
+// Tauga
 const SymptomsTauga = [
     {
         name: '',
@@ -4315,6 +5303,8 @@ const PlanTauga = [
         ]
     }
 ];
+
+// Innkirtla
 const SymptomsInnkirtla = [
     {
         name: '',
@@ -4406,6 +5396,8 @@ const PlanInnkirtla = [
         ]
     }
 ];
+
+//Áfengi
 const SymptomsAlcoholism = [
     {
         name: '',
@@ -4603,6 +5595,8 @@ const PlanAlcoholism = [
         ]
     }
 ];
+
+// Gigt
 const SymptomsGigt = [
     {
         name: '',
@@ -4677,7 +5671,6 @@ const PlanGigt = [
 
 
 
-
 const Timi = [{
     name: '',
     type: 'options',
@@ -4747,13 +5740,797 @@ const Duration = [
     { display: '6m', output: '6 mán saga' }
 ];
 const Habits = [
-    { name: 'Reykingar', type: 'Reykingar', display: ['Já', 'Nei', 'Aldrei'], output: ['Reykir. X pakkaár að baki', 'Reykir ekki. Hætti fyrir X árum. Reykti Y pakkaár fram að því', 'Aldrei reykt'] },
-    { name: 'Áfengi', type: 'Medium', display: ['Já', 'Nei'], output: ['Drekkur áfengi', 'Neitar áfengisdrykkju'] },
-    { name: 'Eiturlyf', type: 'Medium', display: ['Já', 'Nei'], output: ['Játar eiturlyfjanotkun', 'Neitar eiturlyfjanotkun'] },
-    { name: 'Ofnæmi', type: 'Medium', display: ['Penisillin', 'Sulfa'], output: ['Penisillinofnæmi', 'Sulfaofnæmi'] }
+    {
+        name: '',
+        type: 'options',
+        display: ['Reykingar', 'Áfengi', 'Eiturlyf', 'Ofnæmi'],
+        options: [
+            {
+                display: 'Reykingar',
+                subOptions: [
+                    {display: 'Reykir', output: 'Reykingasaga'},
+                    {
+                        display: '1-10 pakkaár',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 1} pakkaár`,
+                            output: `Reykir. ${i + 1} pakkaár að baki`
+                        }))
+                    },
+                    {
+                        display: '11-20 pakkaár',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${11 + i} pakkaár`,
+                            output: `Reykir. ${11 + i} pakkaár að baki`
+                        }))
+                    },
+                    {
+                        display: '21-30 pakkaár',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${21 + i} pakkaár`,
+                            output: `Reykir. ${21 + i} pakkaár að baki`
+                        }))
+                    },
+                    {
+                        display: '31-40 pakkaár',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${31 + i} pakkaár`,
+                            output: `Reykir. ${31 + i} pakkaár að baki`
+                        }))
+                    },
+                    {
+                        display: '41-50 pakkaár',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${41 + i} pakkaár`,
+                            output: `Reykir. ${41 + i} pakkaár að baki`
+                        }))
+                    },
+                    {
+                        display: '51-60 pakkaár',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${51 + i} pakkaár`,
+                            output: `Reykir. ${51 + i} pakkaár að baki`
+                        }))
+                    }
+                ],
+                onRightClickSubOptions: [
+                    {
+                        display: 'Reykir ekki',
+                        subOptions: [
+                            {display: 'Reykir ekki', output: 'Reykir ekki'},
+                            {
+                                display: 'Hætti fyrir 1-10 árum',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `Hætti fyrir ${i + 1} árum`,
+                                    subOptions: [
+                                        {
+                                            display: '1-10 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${j + 1} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${i + 1} árum. Reykti ${j + 1} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '11-20 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${11 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${i + 1} árum. Reykti ${11 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '21-30 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${21 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${i + 1} árum. Reykti ${21 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '31-40 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${31 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${i + 1} árum. Reykti ${31 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '41-50 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${41 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${i + 1} árum. Reykti ${41 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '51-60 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${51 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${i + 1} árum. Reykti ${51 + j} pakkaár fram að því`
+                                            }))
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: 'Hætti fyrir 11-20 árum',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `Hætti fyrir ${11 + i} árum`,
+                                    subOptions: [
+                                        {
+                                            display: '1-10 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${j + 1} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${11 + i} árum. Reykti ${j + 1} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '11-20 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${11 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${11 + i} árum. Reykti ${11 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '21-30 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${21 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${11 + i} árum. Reykti ${21 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '31-40 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${31 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${11 + i} árum. Reykti ${31 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '41-50 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${41 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${11 + i} árum. Reykti ${41 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '51-60 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${51 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${11 + i} árum. Reykti ${51 + j} pakkaár fram að því`
+                                            }))
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: 'Hætti fyrir 21-30 árum',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `Hætti fyrir ${21 + i} árum`,
+                                    subOptions: [
+                                        {
+                                            display: '1-10 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${j + 1} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${21 + i} árum. Reykti ${j + 1} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '11-20 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${11 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${21 + i} árum. Reykti ${11 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '21-30 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${21 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${21 + i} árum. Reykti ${21 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '31-40 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${31 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${21 + i} árum. Reykti ${31 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '41-50 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${41 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${21 + i} árum. Reykti ${41 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '51-60 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${51 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${21 + i} árum. Reykti ${51 + j} pakkaár fram að því`
+                                            }))
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: 'Hætti fyrir 31-40 árum',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `Hætti fyrir ${31 + i} árum`,
+                                    subOptions: [
+                                        {
+                                            display: '1-10 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${j + 1} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${31 + i} árum. Reykti ${j + 1} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '11-20 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${11 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${31 + i} árum. Reykti ${11 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '21-30 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${21 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${31 + i} árum. Reykti ${21 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '31-40 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${31 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${31 + i} árum. Reykti ${31 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '41-50 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${41 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${31 + i} árum. Reykti ${41 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '51-60 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${51 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${31 + i} árum. Reykti ${51 + j} pakkaár fram að því`
+                                            }))
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: 'Hætti fyrir 41-50 árum',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `Hætti fyrir ${41 + i} árum`,
+                                    subOptions: [
+                                        {
+                                            display: '1-10 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${j + 1} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${41 + i} árum. Reykti ${j + 1} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '11-20 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${11 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${41 + i} árum. Reykti ${11 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '21-30 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${21 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${41 + i} árum. Reykti ${21 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '31-40 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${31 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${41 + i} árum. Reykti ${31 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '41-50 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${41 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${41 + i} árum. Reykti ${41 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '51-60 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${51 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${41 + i} árum. Reykti ${51 + j} pakkaár fram að því`
+                                            }))
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: 'Hætti fyrir 51-60 árum',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `Hætti fyrir ${51 + i} árum`,
+                                    subOptions: [
+                                        {
+                                            display: '1-10 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${j + 1} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${51 + i} árum. Reykti ${j + 1} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '11-20 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${11 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${51 + i} árum. Reykti ${11 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '21-30 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${21 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${51 + i} árum. Reykti ${21 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '31-40 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${31 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${51 + i} árum. Reykti ${31 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '41-50 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${41 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${51 + i} árum. Reykti ${41 + j} pakkaár fram að því`
+                                            }))
+                                        },
+                                        {
+                                            display: '51-60 pakkaár',
+                                            subOptions: Array.from({ length: 10 }, (_, j) => ({
+                                                display: `${51 + j} pakkaár`,
+                                                output: `Reykir ekki. Hætti fyrir ${51 + i} árum. Reykti ${51 + j} pakkaár fram að því`
+                                            }))
+                                        }
+                                    ]
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Aldrei reykt',
+                        output: 'Aldrei reykt'
+                    }
+                ]
+            },
+            {
+                display: 'Áfengi',
+                subOptions: [
+                    
+                    {
+                        display: 'Drekkur áfengi',
+                        output: 'Drekkur áfengi'
+                    },
+                    {
+                        
+                        display: 'Vikulega',
+                        subOptions: [
+                            
+                            {
+                                display: '0-10 einingar á viku',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i} einingar`,
+                                    subOptions: [
+                                        { 
+                                            display: 'Bjór',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega bjór, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega bjór, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega bjór, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega bjór, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Vín',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega vín, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega vín, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega vín, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega vín, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Sterkt áfengi',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega sterkt áfengi, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega sterkt áfengi, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega sterkt áfengi, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${i} einingar á viku, aðalega sterkt áfengi, í lotum, aðalega um helgar` }
+                                            ]
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: '11-20 einingar á viku',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${11 + i} einingar`,
+                                    subOptions: [
+                                        { 
+                                            display: 'Bjór',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega bjór, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega bjór, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega bjór, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega bjór, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Vín',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega vín, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega vín, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega vín, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega vín, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Sterkt áfengi',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega sterkt áfengi, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega sterkt áfengi, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega sterkt áfengi, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${11 + i} einingar á viku, aðalega sterkt áfengi, í lotum, aðalega um helgar` }
+                                            ]
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: '21-30 einingar á viku',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${21 + i} einingar`,
+                                    subOptions: [
+                                        { 
+                                            display: 'Bjór',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega bjór, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega bjór, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega bjór, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega bjór, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Vín',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega vín, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega vín, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega vín, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega vín, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Sterkt áfengi',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega sterkt áfengi, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega sterkt áfengi, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega sterkt áfengi, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${21 + i} einingar á viku, aðalega sterkt áfengi, í lotum, aðalega um helgar` }
+                                            ]
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: '31-40 einingar á viku',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${31 + i} einingar`,
+                                    subOptions: [
+                                        { 
+                                            display: 'Bjór',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega bjór, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega bjór, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega bjór, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega bjór, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Vín',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega vín, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega vín, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega vín, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega vín, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Sterkt áfengi',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega sterkt áfengi, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega sterkt áfengi, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega sterkt áfengi, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${31 + i} einingar á viku, aðalega sterkt áfengi, í lotum, aðalega um helgar` }
+                                            ]
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: '41-50 einingar á viku',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${41 + i} einingar`,
+                                    subOptions: [
+                                        { 
+                                            display: 'Bjór',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega bjór, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega bjór, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega bjór, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega bjór, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Vín',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega vín, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega vín, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega vín, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega vín, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Sterkt áfengi',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega sterkt áfengi, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega sterkt áfengi, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega sterkt áfengi, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${41 + i} einingar á viku, aðalega sterkt áfengi, í lotum, aðalega um helgar` }
+                                            ]
+                                        }
+                                    ]
+                                }))
+                            },
+                            {
+                                display: '51-60 einingar á viku',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${51 + i} einingar`,
+                                    subOptions: [
+                                        { 
+                                            display: 'Bjór',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega bjór, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega bjór, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega bjór, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega bjór, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Vín',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega vín, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega vín, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega vín, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega vín, í lotum, aðalega um helgar` }
+                                            ]
+                                        },
+                                        { 
+                                            display: 'Sterkt áfengi',
+                                            subOptions: [
+                                                { display: 'Daglega', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega sterkt áfengi, daglega` },
+                                                { display: 'Nær daglega', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega sterkt áfengi, nær daglega` },
+                                                { display: 'Í lotum', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega sterkt áfengi, í lotum` },
+                                                { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${51 + i} einingar á viku, aðalega sterkt áfengi, í lotum, aðalega um helgar` }
+                                            ]
+                                        }
+                                    ]
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Daglegt meðaltal',
+                        subOptions: Array.from({ length: 7 }, (_, i) => ({
+                            display: `${i + 1} einingar á dag`,
+                            subOptions: [
+                                { 
+                                    display: 'Bjór',
+                                    subOptions: [
+                                        { display: 'Daglega', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega bjór, daglega` },
+                                        { display: 'Nær daglega', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega bjór, nær daglega` },
+                                        { display: 'Í lotum', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega bjór, í lotum` },
+                                        { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega bjór, í lotum, aðalega um helgar` }
+                                    ]
+                                },
+                                { 
+                                    display: 'Vín',
+                                    subOptions: [
+                                        { display: 'Daglega', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega vín, daglega` },
+                                        { display: 'Nær daglega', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega vín, nær daglega` },
+                                        { display: 'Í lotum', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega vín, í lotum` },
+                                        { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega vín, í lotum, aðalega um helgar` }
+                                    ]
+                                },
+                                { 
+                                    display: 'Sterkt áfengi',
+                                    subOptions: [
+                                        { display: 'Daglega', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega sterkt áfengi, daglega` },
+                                        { display: 'Nær daglega', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega sterkt áfengi, nær daglega` },
+                                        { display: 'Í lotum', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega sterkt áfengi, í lotum` },
+                                        { display: 'Í lotum, aðalega um helgar', output: `Drekkur u.þ.b. ${i + 1} einingar á dag (${(i + 1) * 7} einingar á viku), aðalega sterkt áfengi, í lotum, aðalega um helgar` }
+                                    ]
+                                }
+                            ]
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'Neitar áfengisdrykkju'
+            },            
+            {
+                display: 'Eiturlyf',
+                subOptions: generateInitialDrugOptions(),
+                onRightClickOutput: 'Neitar eiturlyfjanotkun'
+            }
+            ,
+            {
+                display: 'Ofnæmi',
+                subOptions: [
+                    { display: 'Penisillin', output: 'Penisillinofnæmi' },
+                    { display: 'Sulfa', output: 'Sulfaofnæmi' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Engin þekkt ofnæmi', output: 'Engin þekkt ofnæmi' },
+                    { display: 'Ekki penisillinofnæmi', output: 'Ekki penisillinofnæmi' },
+                    { display: 'Ekki sulfaofnæmi', output: 'Ekki sulfaofnæmi' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['BMI'],
+        options: [
+            {
+                display: 'BMI',
+                subOptions: [
+                    {
+                        display: '150-160 cm',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${150 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${150 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(150 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '161-170 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${161 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${161 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(161 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '171-180 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${171 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${171 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(171 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '181-190 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${181 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${181 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(181 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '191-200 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${191 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${191 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(191 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '201-210 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${201 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${201 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(201 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    }
+                ]
+            }
+        ]
+    }
 ];
 
+// Eiturlyf functionir (notast með Habits hér fyrir ofan)
+function generateInitialDrugOptions() {
+    const drugs = ['Kannabis', 'Amfetamín', 'Kókaín', 'Sveppir', 'LSD', 'Ópíöt', 'Benzolyf'];
+    return [
+        {
+            display: 'Eiturlyfjanotkun',
+            output: 'Játar eiturlyfjanotkun'
+        },
+        ...drugs.map(drug => ({
+            display: drug,
+            subOptions: generateNestedDrugOptions(drug, drugs.filter(d => d !== drug), [drug])
+        }))
+    ];
+}
+function generateNestedDrugOptions(selectedDrug, remainingDrugs, selectedDrugs) {
+    if (selectedDrugs.length >= 6) {
+        return [];
+    }
 
+    return [
+        {
+            display: selectedDrug,
+            output: formatDrugUsageOutput(selectedDrugs)
+        },
+        ...remainingDrugs.map(drug => ({
+            display: drug,
+            subOptions: generateNestedDrugOptions(drug, remainingDrugs.filter(d => d !== drug), [...selectedDrugs, drug])
+        }))
+    ];
+}
+function formatDrugUsageOutput(selectedDrugs) {
+    const initial = selectedDrugs[0];
+    const additional = selectedDrugs.slice(1);
+    const additionalText = additional.length 
+        ? `Einnig ${additional.slice(0, -1).map(formatDrug).join(', ')}${additional.length > 1 ? ' og ' : ''}${formatDrug(additional[additional.length - 1])}.`
+        : '';
+    return `Játar ${formatDrug(initial)}notkun. ${additionalText}`;
+}
+function formatDrug(drug) {
+    return drug === 'LSD' ? 'LSD' : drug.toLowerCase();
+}
+
+// BMI calc (Notast með BMI takka í Habits)
+function calculateBMI(height, weight) {
+    const heightInMeters = height / 100;
+    const bmi = weight / (heightInMeters * heightInMeters);
+    return bmi.toFixed(1).replace('.', ','); // Replace dot with comma for BMI
+}
+
+
+// Lífsmörk modals
 function createBloodPressureInterface(containerId) {
     const container = document.getElementById(containerId);
     if (!container) {
@@ -5179,167 +6956,86 @@ function createRespiratoryRateInterface(containerId) {
     respiratoryRateContainer.appendChild(sliderContainer);
     container.appendChild(respiratoryRateContainer);
 }
-
-
-
-let reykingarFlag = false;
-function handleReykingarYes() {
-    console.log('handleReykingarYes called'); // Debugging line
-    reykingarFlag = false; // Reset flag
-    const packs = prompt('Enter the number of pack-years:');
-    if (packs !== null) {
-        insertText(`Reykir. ${packs} pakkaár að baki`);
-        reykingarFlag = true; // Set flag if additional input is provided
-        console.log('Reykingar flag set to true'); // Debugging line
+function addLifsmorkButton(parentElement) {
+    const lifsmorkButton = document.createElement('button');
+    lifsmorkButton.textContent = 'Lífsmörk';
+    lifsmorkButton.onclick = openLifsmorkModal;
+    lifsmorkButton.className = 'lifsmork-button'; // Add a class for styling
+    parentElement.appendChild(lifsmorkButton);
+}
+function openLifsmorkModal() {
+    let modal = document.getElementById('lifsmorkModal');
+    if (!modal) {
+        const modalElement = document.createElement('div');
+        modalElement.id = 'lifsmorkModal';
+        modalElement.className = 'modal';
+        modalElement.innerHTML = `
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal('lifsmorkModal')">&times;</span>
+                <div id="lifsmorkContainer"></div>
+            </div>
+        `;
+        document.body.appendChild(modalElement);
+        modal = modalElement;
     } else {
-        insertText('Reykir'); // Insert default text if prompt is cancelled
-        console.log('Reykingar flag remains false'); // Debugging line
+        modal.style.display = 'flex';
     }
-}
-function handleReykingarNo() {
-    console.log('handleReykingarNo called'); // Debugging line
-    const yearsStopped = prompt('Hætti fyrir hversu mörgum árum?');
-    if (yearsStopped !== null) {
-        const packYears = prompt('Reykti hversu mörg pakkaár fram að því?');
-        if (packYears !== null) {
-            insertText(`Reykir ekki. Hætti fyrir ${yearsStopped} árum. Reykti ${packYears} pakkaár fram að því`);
-        } else {
-            insertText('Reykir ekki');
-        }
-    } else {
-        insertText('Reykir ekki');
-    }
-}
+    const container = document.getElementById('lifsmorkContainer');
+    container.innerHTML = ''; // Clear previous content
+    createBloodPressureInterface('lifsmorkContainer');
+    createPulseInterface('lifsmorkContainer');
+    createOxygenSaturationInterface('lifsmorkContainer');
+    createTemperatureInterface('lifsmorkContainer');
+    createRespiratoryRateInterface('lifsmorkContainer');
 
-
-function handleEyrnaverkurPositive() {
-    showEyrnaverkurModal();
-}
-function showEyrnaverkurModal() {
-    const modal = document.createElement('div');
-    modal.id = 'eyrnaverkurModal';
-    modal.className = 'modal';
-
-    const modalContent = document.createElement('div');
-    modalContent.className = 'modal-content';
-
-    const message = document.createElement('p');
-    message.textContent = 'Select side:';
-    modalContent.appendChild(message);
-
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.className = 'buttons-container';
-
-    const buttonHae = document.createElement('button');
-    buttonHae.textContent = 'Hægri';
-    buttonHae.onclick = () => {
-        insertText('Eyrnaverkur hægra megin');
-        closeModal(modal);
-    };
-    buttonsContainer.appendChild(buttonHae);
-
-    const buttonVi = document.createElement('button');
-    buttonVi.textContent = 'Vinstri';
-    buttonVi.onclick = () => {
-        insertText('Eyrnaverkur vinstra megin');
-        closeModal(modal);
-    };
-    buttonsContainer.appendChild(buttonVi);
-
-    const buttonBae = document.createElement('button');
-    buttonBae.textContent = 'Beggja vegna';
-    buttonBae.onclick = () => {
-        insertText('Eyrnaverkur beggja vegna');
-        closeModal(modal);
-    };
-    buttonsContainer.appendChild(buttonBae);
-
-    modalContent.appendChild(buttonsContainer);
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
 
     document.addEventListener('keydown', handleEscapeKey);
 }
-function handleSideSelectionEyru(side, actionType) {
-    let textToInsert = '';
-    if (actionType === 'Verkur') {
-        if (side === 'Hægri') {
-            textToInsert = 'Verkur í hægra eyra';
-        } else if (side === 'Vinstri') {
-            textToInsert = 'Verkur í vinstra eyra';
-        } else if (side === 'Beggja vegna') {
-            textToInsert = 'Eyrnaverkur beggja vegna';
-        }
-    } else if (actionType === 'Hella') {
-        if (side === 'Hægri') {
-            textToInsert = 'Hella í hægra eyra';
-        } else if (side === 'Vinstri') {
-            textToInsert = 'Hella í vinstra eyra';
-        } else if (side === 'Beggja vegna') {
-            textToInsert = 'Hella fyrir báðum eyrum';
-        }
-    } else if (actionType === 'Óþægindi') {
-        if (side === 'Hægri') {
-            textToInsert = 'Óþægindi frá hægra eyra';
-        } else if (side === 'Vinstri') {
-            textToInsert = 'Óþægindi frá vinstra eyra';
-        } else if (side === 'Beggja vegna') {
-            textToInsert = 'Óþægindi frá báðum eyrum';
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+}
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+        document.removeEventListener('keydown', handleEscapeKey);
+
+        // Check if the modal being closed is the one from "Reykingar"
+        if (modalId === 'reykingarModal' && !reykingarFlag) {
+            insertText('Reykir');
         }
     }
-    insertText(textToInsert);
 }
-
-function showHostiOptions() {
-    const modal = document.createElement('div');
-    modal.id = 'hostiOptionsModal';
-    modal.className = 'modal';
-
-    const modalContent = document.createElement('div');
-    modalContent.className = 'modal-content';
-
-    const message = document.createElement('p');
-    message.textContent = 'Select the type of cough:';
-    modalContent.appendChild(message);
-
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.className = 'buttons-container';
-
-    const options = ['Blautur', 'Þurr'];
-    options.forEach(option => {
-        const button = document.createElement('button');
-        button.textContent = option;
-        button.onclick = () => handleHostiSelection(option);
-        buttonsContainer.appendChild(button);
-    });
-
-    modalContent.appendChild(buttonsContainer);
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-
-    document.addEventListener('keydown', handleEscapeKey);
-}
-function handleHostiSelection(option) {
-    closeModal(document.getElementById('hostiOptionsModal'));
-    insertText(`${option} hósti`);
-}
-
-function handlePregnancyWeeks() {
-    console.log('handlePregnancyWeeks called'); // Debugging line
-    const weeks = prompt('Enter the number of weeks of pregnancy (between 6-43):');
-    if (weeks !== null) {
-        const weeksNumber = parseInt(weeks, 10);
-        if (weeksNumber >= 6 && weeksNumber <= 43) {
-            console.log(`Valid input: ${weeksNumber} weeks`); // Debugging line
-            insertText(`Ólétta, gengin ${weeksNumber} vikur`);
-        } else {
-            alert('Please enter a valid number of weeks between 6 and 43.');
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName('modal');
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            closeModal(modals[i].id);
         }
+    }
+};
+function handleEscapeKey(event) {
+    if (event.key === 'Escape') {
+        const modals = [
+            'genderPromptModal', 
+            'eyrnaverkurModal', 
+            'reykingarModal', 
+            'syklalyfModal',
+            'hostiOptionsModal',
+            'lifsmorkModal' // Added the new modal id here
+        ];
+        modals.forEach(modalId => {
+            const modal = document.getElementById(modalId);
+            if (modal && modal.style.display === 'flex') {
+                closeModal(modalId);
+            }
+        });
     }
 }
 
 
-
+// Createbuttons
 function createButtons(container, data) {
     if (!data || !Array.isArray(data)) {
         console.error('No valid data provided to create buttons.');
@@ -5369,7 +7065,6 @@ function createButtons(container, data) {
         console.log('Row appended:', row); // Debugging line
     });
 }
-
 function createButton(row, item, displayText, index, context) {
     const button = document.createElement('button');
     button.textContent = displayText;
@@ -5385,7 +7080,6 @@ function createButton(row, item, displayText, index, context) {
 
     row.appendChild(button);
 }
-
 function handleButtonClick(event, item, displayText, index, button) {
     // Remove any existing popup
     const existingPopup = document.querySelector('.popup-modal');
@@ -5409,7 +7103,6 @@ function handleButtonClick(event, item, displayText, index, button) {
         handleDefaultButtonClick(item, displayText, index);
     }
 }
-
 function handleButtonRightClick(event, item, displayText, index, button) {
     // Remove any existing popup
     const existingPopup = document.querySelector('.popup-modal');
@@ -5433,7 +7126,6 @@ function handleButtonRightClick(event, item, displayText, index, button) {
         handleDefaultButtonRightClick(item, displayText);
     }
 }
-
 function createPopup(event, selectedOption, button, isRightClick = false, depth = 0) {
     // Create a new popup modal
     const popup = document.createElement('div');
@@ -5547,67 +7239,7 @@ function createPopup(event, selectedOption, button, isRightClick = false, depth 
     }, { once: true });
 }
 
-function handleDefaultButtonClick(item, displayText, index) {
-    if (item.name === 'Eyru' && displayText === '-') {
-        insertText('Ekki einkenni frá eyrum');
-    } else if (item.name === 'Eyru') {
-        handleEyruSelection(displayText);
-    } else if (item.name === 'Eyrnaverkur') {
-        if (displayText === '+') {
-            handleEyrnaverkurPositive();
-        } else {
-            insertText('Neitar eyrnaverk');
-        }
-    } else if (item.type === 'GenderPrompt') {
-        if (displayText === '+') {
-            showGenderPrompt('positive', item.name);
-        } else {
-            showGenderPrompt('negative', item.name);
-        }
-    } else if (item.name === 'Hósti' && displayText === '+') {
-        showHostiOptions();
-    } else if (item.name === 'Meðferð' && displayText === 'Sýklalyf') {
-        handleSyklalyfSelection(context);
-    } else if (displayText.includes('Ófrísk, gengin')) {
-        handlePregnancyWeeks();
-    } else if (item.name === 'Lungnahlustun' || (inLungnahlustunContext && item.name === '-')) {
-        inLungnahlustunContext = true;
-        let textToInsert = item.output[index];
-        if (isFirstLungnahlustunClick) {
-            if (specialCases[displayText.toLowerCase()]) {
-                textToInsert = `Lungnahlustun sýnir ${specialCases[displayText.toLowerCase()]}`;
-            } else {
-                textToInsert = `Lungnahlustun sýnir ${textToInsert.charAt(0).toLowerCase() + textToInsert.slice(1)}`;
-            }
-            isFirstLungnahlustunClick = false;
-        }
-        insertText(textToInsert);
-    } else if (item.name === 'Hljóðhimnur' && (displayText === 'Roði' || displayText === 'Eðl' || displayText === 'Mergur')) {
-        showSideSelectionModal(item, displayText, index);
-    } else if (item.name === 'Reykingar') {
-        if (displayText === 'Já') {
-            handleReykingarYes();
-        } else if (displayText === 'Nei') {
-            handleReykingarNo();
-        } else if (displayText === 'Aldrei') {
-            insertText('Aldrei reykt');
-        }
-    } else if (item.type === 'PlusMinus') {
-        insertText(index === 0 ? item.positive : item.negative);
-    } else if (item.type === 'Medium') {
-        insertText(item.output[index]);
-    } else if (displayText === '-' && selectedOption.negative) {
-        insertText(selectedOption.negative);
-    }
-}
 
-function handleDefaultButtonRightClick(item, displayText) {
-    if (item.name === 'Eyru' && displayText === '-') {
-        insertText('Engin einkenni frá eyrum');
-    } else if (item.name === 'Eyru') {
-        handleEyruRightClick(displayText);
-    }
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded and parsed');
@@ -5634,86 +7266,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
-
-
-
-
-
-
-
-let isFirstLungnahlustunClick = true; // Flag to track first click for Lungnahlustun
-let inLungnahlustunContext = false; // Flag to track context of Lungnahlustun
-// Mapping for special cases where grammar needs adjustment
-const specialCases = {
-    'obstrúktíf': 'lengda útöndun',
-    // Add other special cases here if needed
-};
-
-
-
-function showSideSelectionModal(item, displayText, index) {
-    const modal = document.createElement('div');
-    modal.id = 'sideSelectionModal';
-    modal.className = 'modal';
-
-    const modalContent = document.createElement('div');
-    modalContent.className = 'modal-content';
-
-    const message = document.createElement('p');
-    message.textContent = 'Select side:';
-    modalContent.appendChild(message);
-
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.className = 'buttons-container';
-
-    const sides = ['Hægri', 'Vinstri', 'Beggja vegna'];
-    sides.forEach(side => {
-        const button = document.createElement('button');
-        button.textContent = side;
-        button.onclick = () => {
-            handleSideSelection(side, item, displayText, index);
-            closeModal(modal);
-        };
-        buttonsContainer.appendChild(button);
-    });
-
-    modalContent.appendChild(buttonsContainer);
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-
-    document.addEventListener('keydown', handleEscapeKey);
-}
-function handleSideSelection(side, item, displayText, index) {
-    let textToInsert = '';
-    if (displayText === 'Roði') {
-        if (side === 'Hægri') {
-            textToInsert = 'Roði á hægri hljóðhimnu';
-        } else if (side === 'Vinstri') {
-            textToInsert = 'Roði á vinstri hljóðhimnu';
-        } else if (side === 'Beggja vegna') {
-            textToInsert = 'Roði á hljóðhimnum beggja vegna';
-        }
-    } else if (displayText === 'Eðl') {
-        if (side === 'Hægri') {
-            textToInsert = 'Hljóðhimna hægra megin eðlileg';
-        } else if (side === 'Vinstri') {
-            textToInsert = 'Hljóðhimna vinstra megin eðlileg';
-        } else if (side === 'Beggja vegna') {
-            textToInsert = 'Hljóðhimnur eðlilegar beggja vegna';
-        }
-    } else if (displayText === 'Mergur') {
-        if (side === 'Hægri') {
-            textToInsert = 'Eyrnamergur hægra megin';
-        } else if (side === 'Vinstri') {
-            textToInsert = 'Eyrnamergur vinstra megin';
-        } else if (side === 'Beggja vegna') {
-            textToInsert = 'Eyrnamergur beggja vegna';
-        }
-    }
-    insertText(textToInsert);
-}
 
 
 function createHabitsSection(data) {
@@ -5983,7 +7535,7 @@ function loadPage(page) {
 
         container.appendChild(horizontalContainer);
  
-    } /*else if (page === 'Almennt') {
+    } else if (page === 'Almennt') {
         const einkenniSection = createEinkenniSection(SymptomsViral);
         const skodunSection = createSkodunSection(ExamsViral);
         const planSection = createPlanSection(PlanViral);
@@ -6036,14 +7588,19 @@ function loadPage(page) {
         const einkenniSection = createEinkenniSection(SymptomsMelting);
         const skodunSection = createSkodunSection(ExamsMelting);
         const planSection = createPlanSection(PlanMelting);
+        const historyMeltingSection = createHistoryViralSection(historyMelting);
+        const habitsSection = createHabitsSection(Habits);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
+        leftColumn.appendChild(historyMeltingSection);
+        leftColumn.appendChild(habitsSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
+        
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -6056,7 +7613,7 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
-    }*/ else if (page === 'Hjarta') {
+    } else if (page === 'Hjarta') {
         const einkenniSection = createEinkenniSection(SymptomsHeart);
         const skodunSection = createSkodunSection(ExamsHeart);
         const planSection = createPlanSection(PlanHeart);
@@ -6065,6 +7622,7 @@ function loadPage(page) {
         const habitsSection = createHabitsSection(Habits);
         const RiskHeartSection = createRiskHeartSection(RiskFactorsHeart);
         const CHADSVASCSection = createCHADSVASCSection(CHADSVASCHeart);
+        const historyHeartSection = createHistoryViralSection(historyHeart);
 
 
         const leftColumn = document.createElement('div');
@@ -6073,6 +7631,7 @@ function loadPage(page) {
     //  leftColumn.appendChild(timalengdSection);
       leftColumn.appendChild(RiskHeartSection)
       leftColumn.appendChild(CHADSVASCSection)
+      leftColumn.appendChild(historyHeartSection)
     //    leftColumn.appendChild(historyViralSection);
         leftColumn.appendChild(habitsSection);
 
@@ -6095,7 +7654,7 @@ function loadPage(page) {
 
         container.appendChild(horizontalContainer);
  
-    }/* else if (page === 'Stodkerfi') {
+    } else if (page === 'Stodkerfi') {
         const einkenniSection = createEinkenniSection(SymptomsStodkerfi);
         const skodunSection = createSkodunSection(ExamsStodkerfi);
         const planSection = createPlanSection(PlanStodkerfi);
@@ -6239,7 +7798,7 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
-    } */ else {
+    }  else {
         console.error('Unknown page:', page);
     }
 
@@ -6255,89 +7814,7 @@ function loadPage(page) {
 
 
 
-function addLifsmorkButton(parentElement) {
-    const lifsmorkButton = document.createElement('button');
-    lifsmorkButton.textContent = 'Lífsmörk';
-    lifsmorkButton.onclick = openLifsmorkModal;
-    lifsmorkButton.className = 'lifsmork-button'; // Add a class for styling
-    parentElement.appendChild(lifsmorkButton);
-}
-function openLifsmorkModal() {
-    let modal = document.getElementById('lifsmorkModal');
-    if (!modal) {
-        const modalElement = document.createElement('div');
-        modalElement.id = 'lifsmorkModal';
-        modalElement.className = 'modal';
-        modalElement.innerHTML = `
-            <div class="modal-content">
-                <span class="close-button" onclick="closeModal('lifsmorkModal')">&times;</span>
-                <div id="lifsmorkContainer"></div>
-            </div>
-        `;
-        document.body.appendChild(modalElement);
-        modal = modalElement;
-    } else {
-        modal.style.display = 'flex';
-    }
-    const container = document.getElementById('lifsmorkContainer');
-    container.innerHTML = ''; // Clear previous content
-    createBloodPressureInterface('lifsmorkContainer');
-    createPulseInterface('lifsmorkContainer');
-    createOxygenSaturationInterface('lifsmorkContainer');
-    createTemperatureInterface('lifsmorkContainer');
-    createRespiratoryRateInterface('lifsmorkContainer');
 
-
-    document.addEventListener('keydown', handleEscapeKey);
-}
-
-
-
-
-
-
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'block';
-}
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'none';
-        document.removeEventListener('keydown', handleEscapeKey);
-
-        // Check if the modal being closed is the one from "Reykingar"
-        if (modalId === 'reykingarModal' && !reykingarFlag) {
-            insertText('Reykir');
-        }
-    }
-}
-window.onclick = function(event) {
-    const modals = document.getElementsByClassName('modal');
-    for (let i = 0; i < modals.length; i++) {
-        if (event.target == modals[i]) {
-            closeModal(modals[i].id);
-        }
-    }
-};
-function handleEscapeKey(event) {
-    if (event.key === 'Escape') {
-        const modals = [
-            'genderPromptModal', 
-            'eyrnaverkurModal', 
-            'reykingarModal', 
-            'syklalyfModal',
-            'hostiOptionsModal',
-            'lifsmorkModal' // Added the new modal id here
-        ];
-        modals.forEach(modalId => {
-            const modal = document.getElementById(modalId);
-            if (modal && modal.style.display === 'flex') {
-                closeModal(modalId);
-            }
-        });
-    }
-}
 // Textbox manipulation functions
 
 let textHistory = [];
@@ -6408,6 +7885,8 @@ function retrieveData() {
 }
 
 
+
+// Title buttons (Sk:, Á/P:, CHADSVASC:, Áhættuþættir kransæðasjúkdóma: etc...)
 function makeTitleButton(sectionId, callback) {
     const sectionTitle = document.querySelector(`#${sectionId}-section h2`);
     if (sectionTitle) {
@@ -6430,7 +7909,7 @@ function addPlan() {
 function addRiskFactors() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
-    textbox.value += '\n\nÁhættuþættir kransæðasjúkdóma: ';
+    textbox.value += '\n\nÁhættuþættir kransæðasjúkdóms: ';
 }
 function addCHADSVASC() {
     const textbox = document.getElementById('journalTextbox');
@@ -6440,7 +7919,7 @@ function addCHADSVASC() {
 function addRiskBladderCancer() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
-    textbox.value += '\n\nÁhættuþættir þvagblöðrukrabbameina: ';
+    textbox.value += '\n\nÁhættuþættir þvagblöðrukrabbamein: ';
 }
 function addHabits() {
     const textbox = document.getElementById('journalTextbox');

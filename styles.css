@@ -110,7 +110,7 @@ main {
     overflow: auto;
 }
 
-#risk, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral {
+#risk, #riskheart, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral, #habits {
     display: flex;
     flex-direction: column;
     gap: 10px;
