@@ -110,7 +110,7 @@ main {
     overflow: auto;
 }
 
-#risk, #riskheart, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral, #habits {
+#risk, #riskheart, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral, #habits, #lyf, #lifsmork, #raudflogg, #rannsoknir, #sigecaps, #gedskodun {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -352,3 +352,11 @@ main {
     display: none; /* This hides the element with the class 'hidden-name' */
 }
 
+.data-row {
+    margin-bottom: px;
+}
+
+.item-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}

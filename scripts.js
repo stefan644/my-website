@@ -1,5 +1,6 @@
 // Almennt / Vottorð / Rannsóknarniðurstöður / Macró
 
+
 const Vottord = [
     
     {
@@ -235,17 +236,18 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Einkenni frá eyra', 'Verkur', 'Hella',],
+        display: ['Einkenni frá eyra', 'Óþægindi', 'Verkur', 'Hella',],
         options: [
             {
-                display: 'Óþægindi',
+                display: 'Einkenni',
                 subOptions: [
-                    { display: 'Hægri', output: 'Óþægindi frá hægra eyra' },
-                    { display: 'Vinstri', output: 'Óþægindi frá vinstra eyra' },
-                    { display: 'Beggja vegna', output: 'Óþægindi frá báðum eyrum' }
+                    { display: 'Hægri', output: 'Einkenni frá hægra eyra' },
+                    { display: 'Vinstri', output: 'Einkenni frá vinstra eyra' },
+                    { display: 'Beggja vegna', output: 'Einkenni frá báðum eyrum' }
                 ],
                 onRightClickOutput: 'Ekki einkenni frá eyrum'
             },
+            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Ekki óþægindi'},
             { display: 'Verkur', output: 'Verkur', onRightClickOutput: 'Ekki verkur'},
             { display: 'Hella', output: 'Hella', onRightClickOutput: 'Ekki hella'}
         ]
@@ -310,14 +312,15 @@ const SymptomsViral = [
             {
                 display: 'Næring',
                 subOptions: [
-                    { display: 'Borðar vel', output: 'Borðar vel' },
-                    { display: 'Drekkur vel', output: 'Drekkur vel' },
-                    { display: 'Borðar og drekkur vel', output: 'Borðar og drekkur vel' }
-                ],
-                onRightClickSubOptions: [
                     { display: 'Borðar lítið', output: 'Borðar lítið' },
                     { display: 'Drukkið lítið', output: 'Drukkið lítið' },
                     { display: 'Borðað og drukkið lítið', output: 'Borðað og drukkið lítið' }
+                    
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Borðar vel', output: 'Borðar vel' },
+                    { display: 'Drekkur vel', output: 'Drekkur vel' },
+                    { display: 'Borðar og drekkur vel', output: 'Borðar og drekkur vel' }
                 ],
                 cancelText: ''
             }
@@ -405,62 +408,6 @@ const ExamsViral = [
                 onRightClickOutput: 'Ekki eyrnamergur'
             }
         ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Strep', 'CRP'],
-        options: [
-            { display: 'Strep', output: 'Streptest jákvætt', onRightClickOutput: 'Streptest neikvætt' },
-            {
-                display: 'CRP',
-                subOptions: [
-                    {
-                        display: 'CRP 0-50',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${i * 5}`,
-                            output: `CRP: ${i * 5}`
-                        }))
-                    },
-                    {
-                        display: 'CRP 51-100',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${55 + i * 5}`,
-                            output: `CRP: ${55 + i * 5}`
-                        }))
-                    },
-                    {
-                        display: 'CRP 101-150',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${105 + i * 5}`,
-                            output: `CRP: ${105 + i * 5}`
-                        }))
-                    },
-                    {
-                        display: 'CRP 151-200',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${155 + i * 5}`,
-                            output: `CRP: ${155 + i * 5}`
-                        }))
-                    },
-                    {
-                        display: 'CRP 201-250',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${205 + i * 5}`,
-                            output: `CRP: ${205 + i * 5}`
-                        }))
-                    },
-                    {
-                        display: 'CRP 251-300',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${255 + i * 5}`,
-                            output: `CRP: ${255 + i * 5}`
-                        }))
-                    }
-                ],
-                onRightClickOutput: 'CRP <5'
-            }
-        ]
     }
     
 ];
@@ -472,7 +419,13 @@ const PlanViral = [
         options: [
             { display: 'Hósti', output: 'Hósti' },
             { display: 'Vírósa', output: 'Vírósa' },
-            { display: 'Eyrnabólga', output: 'Eyrnabólga' },
+            {
+                display: 'Eyrnabólga',
+                subOptions: [
+                    { display: 'Greining', output: 'Eyrnabólga' },
+                    { display: 'Grunur', output: 'Grunur um eyrnabólgu' }
+                ]
+            },
             {
                 display: 'Lungnabólga',
                     subOptions: [
@@ -485,22 +438,57 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: [ 'Bronchitis', 'Bronchiolitis', 'Versnun á COPD', 'Astmi'],
+        display: ['Bronchitis', 'Bronchiolitis', 'Versnun á COPD', 'Astmi'],
         options: [
-            { display: 'Bronchitis', output: 'Bronchitis' },
-            { display: 'Bronchiolitis', output: 'Bronchiolitis' },
-            { display: 'Versnun á COPD', output: 'Versnun á COPD' },
-            { display: 'Astmi', output: 'Astmi' }
+            {
+                display: 'Bronchitis',
+                subOptions: [
+                    { display: 'Greining', output: 'Bronchitis' },
+                    { display: 'Grunur', output: 'Grunur um bronchitis' }
+                ]
+            },
+            {
+                display: 'Bronchiolitis',
+                subOptions: [
+                    { display: 'Greining', output: 'Bronchiolitis' },
+                    { display: 'Grunur', output: 'Grunur um bronchiolitis' }
+                ]
+            },
+            {
+                display: 'Versnun á COPD',
+                subOptions: [
+                    { display: 'Greining', output: 'Versnun á COPD' },
+                    { display: 'Grunur', output: 'Grunur um versnun á COPD' }
+                ]
+            },
+            {
+                display: 'Astmi',
+                subOptions: [
+                    { display: 'Greining', output: 'Astmi' },
+                    { display: 'Grunur', output: 'Grunur um astma' }
+                ]
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: [ 'Strep', 'Mónó'],
+        display: ['Strep', 'Mónó'],
         options: [
-            
-            { display: 'Strep', output: 'Strep throat' },
-            { display: 'Mónó', output: 'Grunur um mónónúkleósu' }
+            {
+                display: 'Strep',
+                subOptions: [
+                    { display: 'Greining', output: 'Strep throat' },
+                    { display: 'Grunur', output: 'Grunur um strep throat' }
+                ]
+            },
+            {
+                display: 'Mónó',
+                subOptions: [
+                    { display: 'Greining', output: 'Mónónúkleósa' },
+                    { display: 'Grunur', output: 'Grunur um mónónúkleósu' }
+                ]
+            }
         ]
     },
     {
@@ -508,16 +496,26 @@ const PlanViral = [
         type: 'options',
         display: ['Mergur', 'Otitis externa', 'Sinusitis', 'Langvarandi einkenni'],
         options: [
-            { display: 'Mergur', output: 'Eyrnamergur' },
+            {
+                display: 'Mergur', output: 'Eyrnamergur', onRightClickOutput: 'Ekki eyrnamergur'
+            },
             {
                 display: 'Otitis externa',
                 subOptions: [
-                    { display: 'Otitis externa', output: 'Otitis externa' },
-                    { display: 'Grunur um otitis externa', output: 'Grunur um otitis externa' }
+                    { display: 'Greining', output: 'Otitis externa' },
+                    { display: 'Grunur', output: 'Grunur um otitis externa' }
                 ]
             },
-            { display: 'Sinusitis', output: 'Sinusitis' },
-            { display: 'Langvarandi einkenni', output: 'Einkenni langvarandi' }
+            {
+                display: 'Sinusitis',
+                subOptions: [
+                    { display: 'Greining', output: 'Sinusitis' },
+                    { display: 'Grunur', output: 'Grunur um sinusitis' }
+                ]
+            },
+            {
+                display: 'Langvarandi einkenni', output: 'Einkenni langvarandi', onRightClickOutput: 'Stutt saga'                  
+            }
         ]
     },
     {},{},{},
@@ -632,10 +630,22 @@ const PlanViral = [
             {
                 display: 'Eftirfylgd',
                 subOptions: [
-                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
-                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
-                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
-                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            
+                        ]
+                    }
                 ]
             }
 
@@ -743,6 +753,64 @@ const historyViralData = [
                 display: 'Ónæmisbælandi',
                 output: 'Er á ónæmisbælandi meðferð',
                 onRightClickOutput: 'Ekki á ónæmisbælandi meðferð'
+            }
+        ]
+    }
+];
+const RannsoknirViral = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Strep', 'CRP'],
+        options: [
+            { display: 'Strep', output: 'Streptest jákvætt', onRightClickOutput: 'Streptest neikvætt' },
+            {
+                display: 'CRP',
+                subOptions: [
+                    {
+                        display: 'CRP 0-50',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${i * 5}`,
+                            output: `CRP: ${i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 51-100',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${55 + i * 5}`,
+                            output: `CRP: ${55 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 101-150',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${105 + i * 5}`,
+                            output: `CRP: ${105 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 151-200',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${155 + i * 5}`,
+                            output: `CRP: ${155 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 201-250',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${205 + i * 5}`,
+                            output: `CRP: ${205 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 251-300',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${255 + i * 5}`,
+                            output: `CRP: ${255 + i * 5}`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'CRP <5'
             }
         ]
     }
@@ -876,7 +944,106 @@ const SymptomsUrinary = [
     },
     {},
     {},
-    {}
+    {},
+    {
+        name: '',
+        type: 'options',
+        display: ['Kynsjúkdómur', 'Útferð', 'Sár'],
+        options: [
+            {
+                display: 'Kynsjúkdómur',
+                subOptions: [
+                    {
+                        display: 'Grunur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Grunur um kynsjúkdóm' },
+                            { display: 'Klamydía', output: 'Grunur um klamydíu' },
+                            { display: 'Lekandi', output: 'Grunur um lekanda' },
+                            { display: 'Herpes', output: 'Grunur um herpes' }
+                        ]
+                    },
+                    { display: 'ÓE kynsjúkdómaprófi', output: 'Óskar eftir kynsjúkdómaprófi' }
+                ]
+            },
+            {
+                display: 'Útferð',
+                subOptions: [
+                    { display: 'NOS', output: 'Aukin útferð' },
+                    { display: 'Getnaðarlim', output: 'Útferð frá getnaðarlim' },
+                    {
+                        display: 'Leggöng',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Útferð frá leggöngum' },
+                                    { display: 'Glær', output: 'Útferð frá leggöngum. Glær' },
+                                    { display: 'Hvítleit', output: 'Útferð frá leggöngum. Hvítleit' },
+                                    { display: 'Gráleit', output: 'Útferð frá leggöngum. Gráleit' },
+                                    { display: 'Grænleit', output: 'Útferð frá leggöngum. Grænleit' }
+                                ]
+                            },
+                            {
+                                display: 'Aukin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Útferð frá leggöngum. Aukin miðað við áður' },
+                                    { display: 'Glær', output: 'Útferð frá leggöngum. Aukin miðað við áður. Glær' },
+                                    { display: 'Hvítleit', output: 'Útferð frá leggöngum. Aukin miðað við áður. Hvítleit' },
+                                    { display: 'Gráleit', output: 'Útferð frá leggöngum. Aukin miðað við áður. Gráleit' },
+                                    { display: 'Grænleit', output: 'Útferð frá leggöngum. Aukin miðað við áður. Grænleit' }
+                                ]
+                            },
+                            {
+                                display: 'Illa lyktandi',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Útferð frá leggöngum. Illa lyktandi' },
+                                    { display: 'Glær', output: 'Útferð frá leggöngum. Illa lyktandi. Glær' },
+                                    { display: 'Hvítleit', output: 'Útferð frá leggöngum. Illa lyktandi. Hvítleit' },
+                                    { display: 'Gráleit', output: 'Útferð frá leggöngum. Illa lyktandi. Gráleit' },
+                                    { display: 'Grænleit', output: 'Útferð frá leggöngum. Illa lyktandi. Grænleit' }
+                                ]
+                            }
+                        ]
+                    },
+                    { display: 'Endaþarmur', output: 'Útferð frá endaþarmi' }
+                ]
+            },
+            {
+                display: 'Sár',
+                subOptions: [
+                    {
+                        display: 'Penis',
+                        subOptions: [
+                            { display: 'NOS', output: 'Tekið eftir sári á penis' },
+                            { display: 'Sársaukafullt', output: 'Tekið eftir sári á penis. Sársaukafullt' },
+                            { display: 'Sársaukalítið', output: 'Tekið eftir sári á penis. Ekki mikill sársauki' },
+                            { display: 'Enginn sársauki', output: 'Tekið eftir sári á penis. Enginn sársauki' }
+                        ]
+                    },
+                    {
+                        display: 'Vulva',
+                        subOptions: [
+                            { display: 'NOS', output: 'Tekið eftir sári á vulva' },
+                            { display: 'Sársaukafullt', output: 'Tekið eftir sári á vulva. Sársaukafullt' },
+                            { display: 'Sársaukalítið', output: 'Tekið eftir sári á vulva. Ekki mikill sársauki' },
+                            { display: 'Enginn sársauki', output: 'Tekið eftir sári á vulva. Enginn sársauki' }
+                        ]
+                    },
+                    {
+                        display: 'Endaþarmur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Tekið eftir sári á endaþarmi' },
+                            { display: 'Sársaukafullt', output: 'Tekið eftir sári á endaþarmi. Sársaukafullt' },
+                            { display: 'Sársaukalítið', output: 'Tekið eftir sári á endaþarmi. Ekki mikill sársauki' },
+                            { display: 'Enginn sársauki', output: 'Tekið eftir sári á endaþarmi. Enginn sársauki' }
+                        ]
+                    }
+                ]
+            }
+            
+        ]
+    }
+
 ];
 const ExamsUrinary = [
     {
@@ -965,12 +1132,24 @@ const PlanUrinary = [
             {
                 display: 'Blöðrubólga',
                 subOptions: [
-                    { display: 'Blöðrubólga', output: 'Blöðrubólga' },
-                    { display: 'Grunur um blöðrubólgu', output: 'Grunur um blöðrubólgu' }
+                    { display: 'Greining', output: 'Blöðrubólga' },
+                    { display: 'Grunur', output: 'Grunur um blöðrubólgu' }
                 ]
             },
-            { display: 'Pyelonephritis', output: 'Grunur um pyelonephritis' },
-            { display: 'Prostatitis', output: 'Grunur um prostatitis' }
+            {
+                display: 'Pyelonephritis',
+                subOptions: [
+                    { display: 'Greining', output: 'Pyelonephritis' },
+                    { display: 'Grunur', output: 'Grunur um pyelonephritis' }
+                ]
+            },
+            {
+                display: 'Prostatitis',
+                subOptions: [
+                    { display: 'Greining', output: 'Prostatitis' },
+                    { display: 'Grunur', output: 'Grunur um prostatitis' }
+                ]
+            }
         ]
     },
     {},{},{},
@@ -1030,10 +1209,22 @@ const PlanUrinary = [
             {
                 display: 'Eftirfylgd',
                 subOptions: [
-                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
-                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
-                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
-                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            
+                        ]
+                    }
                 ]
             }
 
@@ -1226,7 +1417,7 @@ const SymptomsEye = [
     {
         name: '',
         type: 'options',
-        display: ['Einkenni frá auga', 'Efra augnlok', 'Neðra augnlok'],
+        display: ['Einkenni frá auga', 'Augnlok'],
         options: [
             {
                 display: 'Auga',
@@ -1235,24 +1426,60 @@ const SymptomsEye = [
                     { display: 'Vinstra', output: 'Einkenni frá vinstra auga' },
                     { display: 'Bæði', output: 'Einkenni frá báðum augum' }
                 ],
-                onRightClickOutput: 'Ekki einkenni frá auga'
+                onRightClickOutput: 'Ekki einkenni frá augum'
             },
+            
             {
-                display: 'Efra augnlok',
+                display: 'Augnlok',
                 subOptions: [
-                    { display: 'Hægra', output: 'Einkenni frá hægra efra augnloki' },
-                    { display: 'Vinstra', output: 'Einkenni frá vinstra efra augnloki' }
+                    {
+                        display: 'Efra augnlok',
+                        subOptions: [
+                            { display: 'Hægra', output: 'Einkenni frá hægra efra augnloki' },
+                            { display: 'Vinstra', output: 'Einkenni frá vinstra efra augnloki' }
+                        ],
+                        onRightClickOutput: 'Ekki einkenni frá efra augnloki'
+                    },
+                    {
+                        display: 'Neðra augnlok',
+                        subOptions: [
+                            { display: 'Hægra', output: 'Einkenni frá hægra neðra augnloki' },
+                            { display: 'Vinstra', output: 'Einkenni frá vinstra neðra augnloki' }
+                        ],
+                        onRightClickOutput: 'Ekki einkenni frá neðra augnloki'
+                    }
                 ],
-                onRightClickOutput: 'Ekki einkenni frá efra augnloki'
-            },
-            {
-                display: 'Neðra augnlok',
-                subOptions: [
-                    { display: 'Hægra', output: 'Einkenni frá hægra neðra augnloki' },
-                    { display: 'Vinstra', output: 'Einkenni frá vinstra neðra augnloki' }
-                ],
-                onRightClickOutput: 'Ekki einkenni frá neðra augnloki'
+                onRightClickOutput: 'Engin einkenni frá augnlokum'
             }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Óþægindi', 'Roði', 'Nabbi'],
+        options: [
+            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Ekki mikil óþægindi' },
+            { display: 'Roði', output: 'Roði', onRightClickOutput: 'Ekki roði' },
+            { display: 'Nabbi', output: 'Nabbi', onRightClickOutput: 'Ekki nabbi' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Kláði', 'Rennsli'],
+        options: [
+            { display: 'Kláði', output: 'Kláði', onRightClickOutput: 'Ekki kláði' },
+            { display: 'Rennsli', output: 'Aukin táramyndun', onRightClickOutput: 'Ekki aukin táramyndun' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Gröftur', 'Límd'],
+        options: [
+            { display: 'Gröftur', output: 'Lekur gröftur', onRightClickOutput: 'Ekki gröftur' },
+            { display: 'Límd', output: 'Augnlok límd saman á morgnanna', onRightClickOutput: 'Augnlok ekki límd saman á morgnanna' }
         ]
     },
     {
@@ -1277,37 +1504,20 @@ const SymptomsEye = [
                     { display: 'Grein', output: 'Fékk grein í augað' },
                     { display: 'Fingur', output: 'Fékk fingur í augað' }
                 ],
-                onRightClickOutput: 'Ekki fengið áverka á auga'
+                onRightClickOutput: 'Ekki áverkasaga'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Aðskotahlutstilfinning'],
+        display: ['Nýleg veirusýking'],
         options: [
-            { display: 'Aðskotahlutstilfinning', output: 'Finnur fyrir aðskotahlutstilfinningu', onRightClickOutput: 'Ekki aðskotahlutstilfinning' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Roði', 'Nabbi', 'Kláði', 'Rennsli'],
-        options: [
-            { display: 'Roði', output: 'Roði', onRightClickOutput: 'Ekki roði' },
-            { display: 'Nabbi', output: 'Nabbi', onRightClickOutput: 'Ekki nabbi' },
-            { display: 'Kláði', output: 'Kláði', onRightClickOutput: 'Ekki kláði' },
-            { display: 'Rennsli', output: 'Aukin táramyndun', onRightClickOutput: 'Ekki aukin táramyndun' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Óþægindi', 'Gröftur', 'Límd'],
-        options: [
-            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Ekki mikil óþægindi' },
-            { display: 'Gröftur', output: 'Lekur gröftur', onRightClickOutput: 'Ekki gröftur' },
-            { display: 'Límd', output: 'Augnlok límd saman á morgnanna', onRightClickOutput: 'Augnlok ekki límd saman á morgnanna' }
+            {
+                display: 'Nýleg veirusýking',
+                output: 'Er að jafna sig á veirusýkingu',
+                onRightClickOutput: 'Ekki nýleg veikindi'
+            }
         ]
     },
     {},{},{},
@@ -1349,10 +1559,24 @@ const ExamsEye = [
             {
                 display: 'Rispa',
                 subOptions: [
-                    { display: 'Í glæru', output: 'Sést rispa (litarupptaka) á glæru' },
-                    { display: 'Á hornhimnu', output: 'Sést rispa (litarupptaka) á hornhimnu' }
+                    {
+                        display: 'Rispa',
+                        subOptions: [
+                            { display: 'Í glæru', output: 'Sést rispa á glæru' },
+                            { display: 'Á hornhimnu', output: 'Sést rispa á hornhimnu' }
+                        ],
+                        onRightClickOutput: 'Ekki sést rispa eða merki um áverka'
+                    },
+                    {
+                        display: 'Litarupptaka',
+                        subOptions: [
+                            { display: 'Í glæru', output: 'Sést aukin litarupptaka á glæru' },
+                            { display: 'Á hornhimnu', output: 'Sést aukin litarupptaka á hornhimnu' }
+                        ],
+                        onRightClickOutput: 'Ekki sést rispa eða merki um áverka'
+                    }
                 ],
-                onRightClickOutput: 'Ekki sést rispa eða merki um áverka'
+                onRightClickOutput: 'Ekki sést rispa í glæru eða á horhimnu'
             }
         ]
     },
@@ -1379,59 +1603,181 @@ const PlanEye = [
         type: 'options',
         display: ['Blepharitis', 'Vogris', 'Conjunctivitis'],
         options: [
-            { display: 'Blepharitis', output: 'Blepharitis' },
-            { display: 'Vogris', output: 'Vogris' },
+            { display: 'Blepharitis', 
+                subOptions: [
+                    { display: 'Greining', output: 'Blepharitis' },
+                    { display: 'Grunur', output: 'Grunur um blepharitis' }
+                ]
+            },
+            { display: 'Vogris', 
+                subOptions: [
+                    { display: 'Greining', output: 'Vogris' },
+                    { display: 'Grunur', output: 'Grunur um vogris' }
+                ]
+            },
             {
                 display: 'Conjunctivitis',
                 subOptions: [
-                    { display: 'Viral', output: 'Grunur um viral conjunctivitis' },
-                    { display: 'Bacterial', output: 'Grunur um bacterial conjunctivitis' }
-                ],
-                cancelText: 'Conjunctivitis'
+                    { display: 'Viral', subOptions: [
+                        { display: 'Greining', output: 'Viral conjunctivitis' },
+                        { display: 'Grunur', output: 'Grunur um viral conjunctivitis' }
+                    ]},
+                    { display: 'Bacterial', subOptions: [
+                        { display: 'Greining', output: 'Bacterial conjunctivitis' },
+                        { display: 'Grunur', output: 'Grunur um bacterial conjunctivitis' }
+                    ]}
+                ]
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Aðskotahlutur', 'Rispa'],
+        display: ['Aðskotahlutur', 'Corneal abrasion'],
         options: [
-            { display: 'Aðskotahlutur', output: 'Aðskotahlutur í auga' },
-            { display: 'Rispa', output: 'Rispa' }
+            { display: 'Aðskotahlutur', 
+                subOptions: [
+                    { display: 'Greining', output: 'Aðskotahlutur í auga' },
+                    { display: 'Grunur', output: 'Grunur um aðskotahlut í auga' }
+                ]
+            },
+            { display: 'Corneal abrasion', 
+                subOptions: [
+                    { display: 'Greining', output: 'Corneal abrasion' },
+                    { display: 'Grunur', output: 'Grunur um corneal abrasion' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Ofnæmi'],
+        options: [
+            {
+                display: 'Ofnæmi',
+                subOptions: [
+                    {
+                        display: 'Ofnæmi',
+                        subOptions: [
+                            { display: 'Greining', output: 'Ofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um ofnæmi' }
+                        ]
+                    },
+                    {
+                        display: 'Augu',
+                        subOptions: [
+                            { display: 'Greining', output: 'Ofnæmiseinkenni frá augum' },
+                            { display: 'Grunur', output: 'Grunur um ofnæmiseinkenni frá augum' }
+                        ]
+                    },
+                    {
+                        display: 'Frjókornaofnæmi',
+                        subOptions: [
+                            { display: 'Greining', output: 'Frjókornaofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um frjókornaofnæmi' }
+                        ]
+                    },
+                    {
+                        display: 'Dýraofnæmi',
+                        subOptions: [
+                            { display: 'Greining', output: 'Dýraofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um dýraofnæmi' }
+                        ]
+                    }
+                ]
+            }
         ]
     },
     {},{},{},
     {
         name: '',
         type: 'options',
-        display: ['Heitir bakstrar', 'Sýkladropar (ef þarf)', 'Sting á'],
+        display: ['Ráðleggingar', 'Sýkladropar', 'Ofnæmislyf'],
         options: [
-            { display: 'Heitir bakstrar', output: 'Ráðlegg heita bakstra'},
             {
-                display: 'Sýkladropar (ef þarf)',
+                display: 'Ráðleggingar',
                 subOptions: [
-                    { display: 'Fucithalmic', output: 'Set fucithalmic í gáttina, leysir út ef þarf' },
-                    { display: 'Oftan chlora', output: 'Set oftan chlora í gáttina, leysir út ef þarf' }
-                ],
-                cancelText: ''
+                    { display: 'Almennar', output: 'Almennar ráðleggingar' },
+                    { display: 'Heitir bakstrar', output: 'Ráðlegg heita bakstra' }
+                ]
             },
-            { display: 'Sting á', output: 'Sting á graftarbólu'}
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Fjarlægi aðskotahlut', 'Sýkladropar'],
-        options: [
-            { display: 'Fjarlægi aðskotahlut', output: 'Fjarlægi aðskotahlut'},
             {
                 display: 'Sýkladropar',
                 subOptions: [
                     { display: 'Fucithalmic', output: 'Ráðlegg sýkladropa, set á fucithalmic' },
-                    { display: 'Oftan chlora', output: 'Ráðlegg sýkladropa, set á oftan chlora' }
+                    { display: 'Oftan chlora', output: 'Ráðlegg sýkladropa, set á oftan chlora' },
+                    { display: 'Oftaquix', output: 'Ráðlegg sýkladropa, set á oftaquix' },
+                    {
+                        display: 'Ef þarf',
+                        subOptions: [
+                            { display: 'Fucithalmic', output: 'Set fucithalmic í gáttina, leysir út ef þarf' },
+                            { display: 'Oftan chlora', output: 'Set oftan chlora í gáttina, leysir út ef þarf' },
+                            { display: 'Oftaquix', output: 'Set oftaquix í gáttina, leysir út ef þarf' }
+                        ],
+                        cancelText: ''
+                    }
                 ],
                 cancelText: ''
             }
+            ,
+            {
+                display: 'Ofnæmislyf',
+                subOptions: [
+                    {
+                        display: 'Augndropar',
+                        subOptions: [
+                            { display: 'Zaditen', output: 'Ráðlegg Zaditen ofnæmisaugndropa' },
+                            { display: 'Livostin', output: 'Ráðlegg Livostin ofnæmisaugndropa' },
+                            { display: 'Lomudal', output: 'Ráðlegg Lomudal ofnæmisaugndropa' },
+                            { display: 'Opatanol', output: 'Ráðlegg Opatanol ofnæmisaugndropa' }
+                        ]
+                    },
+                    {
+                        display: 'Nefsterar',
+                        subOptions: [
+                            { display: 'Avamys', output: 'Ráðlegg Avamys nefstera' },
+                            { display: 'Otrason', output: 'Ráðlegg Otrason nefstera' },
+                            { display: 'Kalmente', output: 'Ráðlegg Kalmente nefstera' },
+                            { display: 'Mometason apofri', output: 'Ráðlegg Mometason apofri nefstera' },
+                            { display: 'Nasonex', output: 'Ráðlegg Nasonex nefstera' },
+                            { display: 'Nasacort', output: 'Ráðlegg Nasacort nefstera' },
+                            { display: 'Dymista', output: 'Ráðlegg Dymista nefstera' }
+                        ]
+                    },
+                    {
+                        display: 'Andhistamín',
+                        subOptions: [
+                            { display: 'Loritín', output: 'Ráðlegg Loritín ofnæmislyf' },
+                            { display: 'Clarityn', output: 'Ráðlegg Clarityn ofnæmislyf' },
+                            { display: 'Kestine', output: 'Ráðlegg Kestine ofnæmislyf' },
+                            { display: 'Nefoxef', output: 'Ráðlegg Nefoxef ofnæmislyf' },
+                            { display: 'Telfast', output: 'Ráðlegg Telfast ofnæmislyf' },
+                            { display: 'Aerius', output: 'Ráðlegg Aerius ofnæmislyf' },
+                            { display: 'Dasergin', output: 'Ráðlegg Dasergin ofnæmislyf' },
+                            { display: 'Dasselta', output: 'Ráðlegg Dasselta ofnæmislyf' },
+                            { display: 'Desloratadine', output: 'Ráðlegg Desloratadine ofnæmislyf' },
+                            { display: 'Flynise', output: 'Ráðlegg Flynise ofnæmislyf' }
+                        ]
+                    },
+                    {
+                        display: 'Sterar',
+                        subOptions: [
+                            { display: 'Prednisolon - stuttur sterakúr', output: 'Ráðlegg 5 daga prednisolónkúr' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },    
+    {
+        name: '',
+        type: 'options',
+        display: ['Sting á','Fjarlægi aðskotahlut'],
+        options: [
+            { display: 'Sting á', output: 'Sting á graftarbólu'},
+            { display: 'Fjarlægi aðskotahlut', output: 'Fjarlægi aðskotahlut'},
+            
         ]
     },
     {},{},{},
@@ -1445,18 +1791,38 @@ const PlanEye = [
                 subOptions: [
                     { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
                     { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' },
-                    { display: 'Á morgun', output: 'Endurmat á morgun' },
-                    { display: 'Eftir nokkra daga', output: 'Endurmat eftir nokkra daga' },
-                    { display: 'Eftir helgi', output: 'Endurmat eftir helgi' },
+                    {
+                        display: 'Ráðgerð endurkoma',
+                        subOptions: [
+                            { display: 'Eftir nokkra daga', output: 'Endurmat eftir nokkra daga' },
+                            { display: 'Á morgun', output: 'Endurmat á morgun' },
+                            { display: 'Eftir tvo daga', output: 'Endurmat eftir tvo daga'},
+                            { display: 'Eftir þrjá daga', output: 'Endurmat eftir þrjá daga'},
+                            { display: 'Eftir helgi', output: 'Endurmat eftir helgi' }
+                        ]
+                    }
+                    
                 ]
             },
             {
                 display: 'Eftirfylgd',
                 subOptions: [
-                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
-                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
-                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
-                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            
+                        ]
+                    }
                 ]
             }
 
@@ -2041,8 +2407,9 @@ const ExamsHeart = [
             }
             
         ]
-    },
-    {},{},{},
+    }
+];
+const RannsoknirHeart = [
     {
         name: '',
         type: 'options',
@@ -2866,10 +3233,22 @@ const PlanHeart = [
             {
                 display: 'Eftirfylgd',
                 subOptions: [
-                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
-                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
-                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
-                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            
+                        ]
+                    }
                 ]
             }
 
@@ -3202,39 +3581,126 @@ const SymptomsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Kviðverkur', 'Staðsetning'],
+        display: ['Einkenni frá kvið', 'Character', 'Leiðni'],
         options: [
-            { display: 'Kviðverkur', output: 'Kviðverkur', onRightClickOutput: 'Ekki fundið fyrir kviðverk' },
-            { 
-                display: 'Staðsetning',
+            {
+                display: 'Einkenni frá kvið',
                 subOptions: [
                     {
-                        display: 'Efri hluti',
+                        display: 'NOS',
+                        output: 'Einkenni frá kvið'
+                    },
+                    {
+                        display: 'Verkur',
                         subOptions: [
-                            { display: 'Epigastric', output: 'Staðsett á epigastric svæði' },
-                            { display: 'Hægri efri fjórðungur', output: 'Staðsett í hægri efri fjórðungi' },
-                            { display: 'Vinstri efri fjórðungur', output: 'Staðsett í vinstri efri fjórðungi' }
+                            { display: 'NOS', output: 'Einkenni frá kvið. Verkur' },
+                            { display: 'Dreift', output: 'Einkenni frá kvið. Verkur. Staðsett dreift yfir öllu kviðarholi' },
+                            { display: 'Epigastric', output: 'Einkenni frá kvið. Verkur. Staðsett á epigastric svæði' },
+                            { display: 'Hægri efri fjórðungur', output: 'Einkenni frá kvið. Verkur. Staðsett í hægri efri fjórðungi' },
+                            { display: 'Vinstri efri fjórðungur', output: 'Einkenni frá kvið. Verkur. Staðsett í vinstri efri fjórðungi' },
+                            { display: 'Periumbilical', output: 'Einkenni frá kvið. Verkur. Staðsett á periumbilical svæði' },
+                            { display: 'Hægri neðri fjórðungur', output: 'Einkenni frá kvið. Verkur. Staðsett í hægri neðri fjórðungi' },
+                            { display: 'Vinstri neðri fjórðungur', output: 'Einkenni frá kvið. Verkur. Staðsett í vinstri neðri fjórðungi' },
+                            { display: 'Suprapubic', output: 'Einkenni frá kvið. Verkur. Staðsett á suprapubic svæði' }
                         ]
                     },
                     {
-                        display: 'Mið hluti',
+                        display: 'Meltingarónot',
                         subOptions: [
-                            { display: 'Periumbilical', output: 'Staðsett á periumbilical svæði' }
-                        ]
-                    },
-                    {
-                        display: 'Neðri hluti',
-                        subOptions: [
-                            { display: 'Hægri neðri fjórðungur', output: 'Staðsett í hægri neðri fjórðungi' },
-                            { display: 'Vinstri neðri fjórðungur', output: 'Staðsett í vinstri neðri fjórðungi' },
-                            { display: 'Suprapubic', output: 'Staðsett á suprapubic svæði' }
+                            { display: 'NOS', output: 'Einkenni frá kvið. Meltingarónot' },
+                            { display: 'Dreift', output: 'Einkenni frá kvið. Meltingarónot. Staðsett dreift yfir öllu kviðarholi' },
+                            { display: 'Epigastric', output: 'Einkenni frá kvið. Meltingarónot. Staðsett á epigastric svæði' },
+                            { display: 'Hægri efri fjórðungur', output: 'Einkenni frá kvið. Meltingarónot. Staðsett í hægri efri fjórðungi' },
+                            { display: 'Vinstri efri fjórðungur', output: 'Einkenni frá kvið. Meltingarónot. Staðsett í vinstri efri fjórðungi' },
+                            { display: 'Periumbilical', output: 'Einkenni frá kvið. Meltingarónot. Staðsett á periumbilical svæði' },
+                            { display: 'Hægri neðri fjórðungur', output: 'Einkenni frá kvið. Meltingarónot. Staðsett í hægri neðri fjórðungi' },
+                            { display: 'Vinstri neðri fjórðungur', output: 'Einkenni frá kvið. Meltingarónot. Staðsett í vinstri neðri fjórðungi' },
+                            { display: 'Suprapubic', output: 'Einkenni frá kvið. Meltingarónot. Staðsett á suprapubic svæði' }
                         ]
                     }
                 ],
-                onRightClickOutput: 'Getur illa lýst staðsetningu'
+                onRightClickOutput: 'Ekki fundið fyrir kviðverk'
+            },
+            {
+                display: 'Character',
+                subOptions: [
+                    {
+                        display: 'Visceral',
+                        subOptions: [
+                            { display: 'NOS', output: 'Visceral verkur' },
+                            { display: 'Getur illa staðsett', output: 'Visceral verkur, getur illa staðsett' }
+                        ]
+                    },
+                    { display: 'Sómatískur', output: 'Sómatískur verkur' },
+                    { display: 'Stingandi', output: 'Stingandi verkur' },
+                    { display: 'Brennandi', output: 'Brennandi verkur' },
+                    { display: 'Krampakenndur', output: 'Krampakenndur verkur' },
+                    { display: 'Þrýstingsverkur', output: 'Þrýstingsverkur' }
+                ]
+            },
+            {
+                display: 'Leiðni',
+                subOptions: [
+                    { display: 'Bak', output: 'Leiðir aftur í bak' },
+                    { display: 'Herðablöð', output: 'Leiðir á milli herðablaða' },
+                    { display: 'Hægri öxl', output: 'Leiðir í hægri öxl' },
+                    { display: 'Vinstri öxl', output: 'Leiðir í vinstri öxl' },
+                    { display: 'Háls', output: 'Leiðni upp í háls' },
+                    { display: 'Efri hluti kviðar', output: 'Leiðir í efri hluta kviðar' },
+                    { display: 'Neðri hluti kviðar', output: 'Leiðir í neðri hluta kviðar' },
+                    { display: 'Nárasvæði', output: 'Leiðir niður í nára' }
+                ],
+                onRightClickOutput: 'Leiðir ekki'
             }
+            
         ]
     },
+    {
+        name: '',
+        type: 'options',
+        display: ['Versnar við', 'Skánar við', 'Stigun verkja'],
+        options: [
+            {
+                display: 'Versnar við',
+                subOptions: [
+                    { display: 'Áreynslu', output: 'Versnar við áreynslu' },
+                    { display: 'Máltíð', output: 'Versnar við að borða' },
+                    { display: 'Stress', output: 'Versnar við stress' },
+                    { display: 'Liggja flatur', output: 'Versnar við að liggja flatur' },
+                    { display: 'Kynging', output: 'Versnar við kyngingu' },
+                    { display: 'Beygja sig fram', output: 'Versnar við að beygja sig fram' },
+                    { display: 'Hreyfing', output: 'Versnar við hreyfingu' }
+                ],
+                onRightClickOutput: 'Ekkert sem gerir verkinn verri'
+            },
+            {
+                display: 'Skánar við',
+                subOptions: [
+                    { display: 'Hvíld', output: 'Skánar við hvíld' },
+                    { display: 'Máltíð', output: 'Skánar við máltíð' },
+                    { display: 'Hægðalosun', output: 'Skánar við hægðalosun' },
+                    { display: 'Sofa á hlið', output: 'Skánar við að sofa á hlið' },
+                    { display: 'Hreyfingu', output: 'Skánar við hreyfingu' }
+                ],
+                onRightClickOutput: 'Ekkert sem gerir verkinn betri'
+            },
+            {
+                display: 'Stigun verkja',
+                subOptions: [
+                    { display: '1 af 10', output: 'Stigar verkinn 1 af 10' },
+                    { display: '2 af 10', output: 'Stigar verkinn 2 af 10' },
+                    { display: '3 af 10', output: 'Stigar verkinn 3 af 10' },
+                    { display: '4 af 10', output: 'Stigar verkinn 4 af 10' },
+                    { display: '5 af 10', output: 'Stigar verkinn 5 af 10' },
+                    { display: '6 af 10', output: 'Stigar verkinn 6 af 10' },
+                    { display: '7 af 10', output: 'Stigar verkinn 7 af 10' },
+                    { display: '8 af 10', output: 'Stigar verkinn 8 af 10' },
+                    { display: '9 af 10', output: 'Stigar verkinn 9 af 10' },
+                    { display: '10 af 10', output: 'Stigar verkinn 10 af 10' }
+                ]
+            }
+        ]
+    },    
     {
         name: '',
         type: 'options',
@@ -3256,19 +3722,10 @@ const SymptomsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Ógleði', 'Uppköst'],
+        display: ['Ógleði', 'Uppköst', 'Uppþemba'],
         options: [
             { display: 'Ógleði', output: 'Ógleði', onRightClickOutput: 'Ekki ógleði' },
-            { display: 'Uppköst', output: 'Uppköst', onRightClickOutput: 'Ekki uppköst' }
-        ]
-    },
-    
-    {
-        name: '',
-        type: 'options',
-        display: ['Magaverkir', 'Uppþemba'],
-        options: [
-            { display: 'Magaverkir', output: 'Magaverkir', onRightClickOutput: 'Ekki magaverkir' },
+            { display: 'Uppköst', output: 'Uppköst', onRightClickOutput: 'Ekki uppköst' },
             { display: 'Uppþemba', output: 'Uppþemba', onRightClickOutput: 'Ekki uppþemba' }
         ]
     },
@@ -3289,37 +3746,21 @@ const SymptomsMelting = [
             { display: 'Dyschezia', output: 'Verkir við hægðalosun', onRightClickOutput: 'Ekki verkir við hægðalosun' }
         ]
     },
-    {},{},{},
     {
         name: '',
         type: 'options',
-        display: ['Þyngdartap', 'Nætursviti', 'Blóð í hægðum'],
+        display: ['Hiti'],
         options: [
-            { display: 'Þyngdartap', output: 'Lýsir þyngdartapi', onRightClickOutput: 'Ekki þyngdartap' },
-            { display: 'Nætursviti', output: 'Lýsir auknum nætursvita', onRightClickOutput: 'Ekki aukinn nætursviti' },
             {
-                display: 'Blóð í hægðum',
+                display: 'Hiti',
                 subOptions: [
-                    { display: 'Ferskt blóð á pappír', output: 'Lýsir fersku blóði á pappír' },
-                    { 
-                        display: 'Ferskt blóð í skál',
-                        subOptions: [
-                            { display: 'Lítið', output: 'Lýsir litlu magni af fersku blóði í skál' },
-                            { display: 'Mikið', output: 'Lýsir miklu magni af fersku blóði í skál' }
-                        ]
-                    },
-                    { display: 'Svartar hægðir', output: 'Verið með svartar hægðir' }
+                    { display: 'Hiti', output: 'Verið með hita' },
+                    { display: 'Hár hiti og rúmliggjandi', output: 'Verið með háan hita, mestu rúmliggjandi' },
+                    { display: 'Hiti í byrjun veikinda', output: 'Hiti í byrjun veikinda en hann yfirstaðinn nú' },
+                    { display: 'Ekki mælt', output: 'Upplifað sig með hita en ekki mælt sig' }
                 ],
-                onRightClickOutput: 'Ekki blóð í hægðum eða svartar hægðir'
+                onRightClickOutput: 'Ekki fengið hita'
             }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Hraðahindranir'],
-        options: [
-            { display: 'Hraðahindranir', output: 'Vont að fara yfir hraðahindranir', onRightClickOutput: 'Ekki vont að fara yfir hraðahindranir' }
         ]
     }
 ];
@@ -3503,19 +3944,184 @@ const ExamsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Murphy', 'Endaþarmsskoðun'],
+        display: ['Murphy'],
         options: [
-            { display: 'Murphy', output: 'Murphy teikn jákvætt', onRightClickOutput: 'Murphy teikn neikvætt' },
+            { display: 'Murphy', output: 'Murphy teikn jákvætt', onRightClickOutput: 'Murphy teikn neikvætt' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Endaþarmur - Útlit', 'Þreifing', 'Kvekkur', 'Hægðir/blóð'],
+        options: [
             {
-                display: 'Endaþarmsskoðun',
+                display: 'Endaþarmur - Útlit',
                 subOptions: [
-                    { display: 'Eðlilegt', output: 'Endaþarmsskoðun sýnir eðlilegt ástand' },
-                    { display: 'Blóð á hanska', output: 'Endaþarmsskoðun sýnir blóð á hanska' },
-                    { display: 'Hægðir í ampullu', output: 'Endaþarmsskoðun sýnir hægðir í ampullu' },
-                    { display: 'Engar hægðir í ampullu', output: 'Endaþarmsskoðun sýnir engar hægðir í ampullu' }
+                    {
+                        display: 'Fissúra',
+                        subOptions: [
+                            { display: 'kl 1', output: 'Sést fissúra kl 1 á endaþarmi' },
+                            { display: 'kl 2', output: 'Sést fissúra kl 2 á endaþarmi' },
+                            { display: 'kl 3', output: 'Sést fissúra kl 3 á endaþarmi' },
+                            { display: 'kl 4', output: 'Sést fissúra kl 4 á endaþarmi' },
+                            { display: 'kl 5', output: 'Sést fissúra kl 5 á endaþarmi' },
+                            { display: 'kl 6', output: 'Sést fissúra kl 6 á endaþarmi' },
+                            { display: 'kl 7', output: 'Sést fissúra kl 7 á endaþarmi' },
+                            { display: 'kl 8', output: 'Sést fissúra kl 8 á endaþarmi' },
+                            { display: 'kl 9', output: 'Sést fissúra kl 9 á endaþarmi' },
+                            { display: 'kl 10', output: 'Sést fissúra kl 10 á endaþarmi' },
+                            { display: 'kl 11', output: 'Sést fissúra kl 11 á endaþarmi' },
+                            { display: 'kl 12', output: 'Sést fissúra kl 12 á endaþarmi' }
+                        ]
+                    },
+                    {
+                        display: 'Sár',
+                        subOptions: [
+                            { display: 'kl 1', output: 'Sést sár kl 1 á endaþarmi' },
+                            { display: 'kl 2', output: 'Sést sár kl 2 á endaþarmi' },
+                            { display: 'kl 3', output: 'Sést sár kl 3 á endaþarmi' },
+                            { display: 'kl 4', output: 'Sést sár kl 4 á endaþarmi' },
+                            { display: 'kl 5', output: 'Sést sár kl 5 á endaþarmi' },
+                            { display: 'kl 6', output: 'Sést sár kl 6 á endaþarmi' },
+                            { display: 'kl 7', output: 'Sést sár kl 7 á endaþarmi' },
+                            { display: 'kl 8', output: 'Sést sár kl 8 á endaþarmi' },
+                            { display: 'kl 9', output: 'Sést sár kl 9 á endaþarmi' },
+                            { display: 'kl 10', output: 'Sést sár kl 10 á endaþarmi' },
+                            { display: 'kl 11', output: 'Sést sár kl 11 á endaþarmi' },
+                            { display: 'kl 12', output: 'Sést sár kl 12 á endaþarmi' }
+                        ]
+                    },
+                    {
+                        display: 'Ytri gyllinæð',
+                        subOptions: [
+                            { display: 'kl 1', output: 'Sést ytri gyllinæð kl 1 á endaþarmi' },
+                            { display: 'kl 2', output: 'Sést ytri gyllinæð kl 2 á endaþarmi' },
+                            { display: 'kl 3', output: 'Sést ytri gyllinæð kl 3 á endaþarmi' },
+                            { display: 'kl 4', output: 'Sést ytri gyllinæð kl 4 á endaþarmi' },
+                            { display: 'kl 5', output: 'Sést ytri gyllinæð kl 5 á endaþarmi' },
+                            { display: 'kl 6', output: 'Sést ytri gyllinæð kl 6 á endaþarmi' },
+                            { display: 'kl 7', output: 'Sést ytri gyllinæð kl 7 á endaþarmi' },
+                            { display: 'kl 8', output: 'Sést ytri gyllinæð kl 8 á endaþarmi' },
+                            { display: 'kl 9', output: 'Sést ytri gyllinæð kl 9 á endaþarmi' },
+                            { display: 'kl 10', output: 'Sést ytri gyllinæð kl 10 á endaþarmi' },
+                            { display: 'kl 11', output: 'Sést ytri gyllinæð kl 11 á endaþarmi' },
+                            { display: 'kl 12', output: 'Sést ytri gyllinæð kl 12 á endaþarmi' }
+                        ]
+                    },
+                    {
+                        display: 'Skin tag',
+                        subOptions: [
+                            { display: 'kl 1', output: 'Sést skin tag kl 1 á endaþarmi' },
+                            { display: 'kl 2', output: 'Sést skin tag kl 2 á endaþarmi' },
+                            { display: 'kl 3', output: 'Sést skin tag kl 3 á endaþarmi' },
+                            { display: 'kl 4', output: 'Sést skin tag kl 4 á endaþarmi' },
+                            { display: 'kl 5', output: 'Sést skin tag kl 5 á endaþarmi' },
+                            { display: 'kl 6', output: 'Sést skin tag kl 6 á endaþarmi' },
+                            { display: 'kl 7', output: 'Sést skin tag kl 7 á endaþarmi' },
+                            { display: 'kl 8', output: 'Sést skin tag kl 8 á endaþarmi' },
+                            { display: 'kl 9', output: 'Sést skin tag kl 9 á endaþarmi' },
+                            { display: 'kl 10', output: 'Sést skin tag kl 10 á endaþarmi' },
+                            { display: 'kl 11', output: 'Sést skin tag kl 11 á endaþarmi' },
+                            { display: 'kl 12', output: 'Sést skin tag kl 12 á endaþarmi' }
+                        ]
+                    },
+                    {
+                        display: 'Varta',
+                        subOptions: [
+                            { display: 'kl 1', output: 'Sést varta kl 1 á endaþarmi' },
+                            { display: 'kl 2', output: 'Sést varta kl 2 á endaþarmi' },
+                            { display: 'kl 3', output: 'Sést varta kl 3 á endaþarmi' },
+                            { display: 'kl 4', output: 'Sést varta kl 4 á endaþarmi' },
+                            { display: 'kl 5', output: 'Sést varta kl 5 á endaþarmi' },
+                            { display: 'kl 6', output: 'Sést varta kl 6 á endaþarmi' },
+                            { display: 'kl 7', output: 'Sést varta kl 7 á endaþarmi' },
+                            { display: 'kl 8', output: 'Sést varta kl 8 á endaþarmi' },
+                            { display: 'kl 9', output: 'Sést varta kl 9 á endaþarmi' },
+                            { display: 'kl 10', output: 'Sést varta kl 10 á endaþarmi' },
+                            { display: 'kl 11', output: 'Sést varta kl 11 á endaþarmi' },
+                            { display: 'kl 12', output: 'Sést varta kl 12 á endaþarmi' }
+                        ]
+                    }
                 ],
-                onRightClickOutput: 'Endarþarmsskoðun '
+                onRightClickOutput: 'Eðlilegt ytra útlit á endaþarmi. Engin sár, roði eða merki um lesionir.'
+            },
+            {
+                display: 'Þreifing',
+                subOptions: [
+                    {
+                        display: 'Tónus',
+                        subOptions: [
+                            { display: 'Aukinn', output: 'Aukinn tónus' },
+                            { display: 'Minnkaður', output: 'Minnkaður tónus' }
+                        ],
+                        onRightClickOutput: 'Eðlilegur tónus'
+                    },
+                    { display: 'Eymsli', output: 'Eymsli við þreifingu' },
+                    {
+                        display: 'Fyrirferð',
+                        subOptions: [
+                            { display: 'Greinileg', output: 'Greinileg fyrirferð þreifast' },
+                            { display: 'Grunur', output: 'Grunur um fyrirferð þreifast' },
+                            { display: 'Get ekki útilokað', output: 'Get ekki útilokað fyrirferð við þreifingu' }
+                        ]
+                    },
+                    { display: 'Hægðir', output: 'Hægðir þreifast í ampullu' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Án athugasemda', output: 'Innri þreifing án athugasemda. Engar fyrirferðir þreifast. Eðlilegur tónus' },
+                    { display: 'Eðlilegur tónus', output: 'Eðlilegur tónus'},
+                    { display: 'Eymslalaus', output: 'Engin eymsl við innri þreifingu' },
+                    { display: 'Engar fyrirferðir', output: 'Engar fyrirferðir þreifast' }
+                ]
+            },
+            {
+                display: 'Kvekkur',
+                subOptions: [
+                    { display: 'Eymsli', output: 'Þreifieymsl við þreifingu á blöðruhálskirtli'},
+                    { display: 'Óreglulegur', output: 'Blöðruhálskirtill þreifast óreglulegur í lögun'},
+                    {
+                        display: 'Stækkaður',
+                        subOptions: [
+                            { display: 'Greinilega', output: 'Blöðruhálskirtill greinilega stækkaður við þreifingu' },
+                            { display: 'Grunur', output: 'Grunur um stækkaðan blöðruhálskirtil' },
+                            { display: 'Get ekki útilokað', output: 'Get ekki útilokað stækkun blöðruhálskirtli' }
+                        ]
+                    },
+                    {
+                        display: 'Fyrirferð',
+                        subOptions: [
+                            { display: 'Greinileg', output: 'Þreifast greinileg fyrirferð á blöðruhálskirtli' },
+                            { display: 'Grunur', output: 'Grunur um fyrirferð á blöðruhálskirtli' },
+                            { display: 'Get ekki útilokað', output: 'Get ekki útilokað fyrirferð á blöðruhálskirtli' }
+                        ]
+                    },
+                    
+                    
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Eðlilegur', output: 'Blöðruhálskirtill þreifast eðlilegur í stærð og lögun. Takmörkuð eymsli. Engir hnútar.' },
+                    { display: 'Eymslalaus', output: 'Eymslalaus blöðruhálskirtill' },
+                    { display: 'Reglulegur', output: 'Reglulegur í lögun' },
+                    { display: 'Engar fyrirferðir', output: 'Engar fyrirferðir þreifast á blöðruhálskirtli' }
+                ]
+            },
+            {
+                display: 'Hægðir/blóð',
+                subOptions: [
+                    {
+                        display: 'Blóð',
+                        subOptions: [
+                            { display: 'Blóð á handska', output: 'Blóð á handska' },
+                            { display: 'Ferskt blóð', output: 'Ferskt blóð' }
+                        ]
+                    },
+                    { display: 'Svartar hægðir', output: 'Svartar hægðir' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Eðilegt', output: 'Eðlilegar hægðir, ekki blóð á handska' }
+                ]
             }
+
         ]
     }
 ];
@@ -3525,18 +4131,30 @@ const PlanMelting = [
         type: 'options',
         display: ['Gastroenteritis', 'Niðurgangur', 'Hægðatregða', 'Bakflæði'],
         options: [
-            { display: 'Gastroenteritis', output: 'Gastroenteritis' },
+            {
+                display: 'Gastroenteritis',
+                subOptions: [
+                    { display: 'Greining', output: 'Gastroenteritis' },
+                    { display: 'Grunur', output: 'Grunur um gastroenteritis' }
+                ]
+            },
             { display: 'Niðurgangur', output: 'Niðurgangur' },
             {
                 display: 'Hægðatregða',
                 subOptions: [
-                    { display: 'Hægðatregða', output: 'Hægðatregða' },
-                    { display: 'Grunur um hægðatregðu', output: 'Grunur um hægðatregðu' }
+                    { display: 'Greining', output: 'Hægðatregða' },
+                    { display: 'Grunur', output: 'Grunur um hægðatregðu' }
                 ]
             },
-            { display: 'Bakflæði', output: 'Bakflæði' }
+            {
+                display: 'Bakflæði',
+                subOptions: [
+                    { display: 'Greining', output: 'Bakflæði' },
+                    { display: 'Grunur', output: 'Grunur um bakflæði' }
+                ]
+            }
         ]
-    },
+    },    
     {
         name: '',
         type: 'options',
@@ -3545,15 +4163,15 @@ const PlanMelting = [
             {
                 display: 'Gallsteinar',
                 subOptions: [
-                    { display: 'Gallsteinar', output: 'Gallsteinar' },
-                    { display: 'Grunur um gallsteina', output: 'Grunur um gallsteina' }
+                    { display: 'Greining', output: 'Gallsteinar' },
+                    { display: 'Grunur', output: 'Grunur um gallsteina' }
                 ]
             },
             {
                 display: 'Diverticulitis',
                 subOptions: [
-                    { display: 'Diverticulitis', output: 'Diverticulitis' },
-                    { display: 'Grunur um diverticulitis', output: 'Grunur um diverticulitis' }
+                    { display: 'Greining', output: 'Diverticulitis' },
+                    { display: 'Grunur', output: 'Grunur um diverticulitis' }
                 ]
             },
             {
@@ -3564,16 +4182,16 @@ const PlanMelting = [
                     {
                         display: 'Gyllinæð',
                         subOptions: [
-                            { display: 'Gyllinæð', output: 'Gyllinæð' },
-                            { display: 'Grunur um gyllinæð', output: 'Grunur um gyllinæð' }
+                            { display: 'Greining', output: 'Gyllinæð' },
+                            { display: 'Grunur', output: 'Grunur um gyllinæð' }
                         ],
                         cancelText: ''
                     },
                     {
                         display: 'Anal fissúra',
                         subOptions: [
-                            { display: 'Anal fissúra', output: 'Anal fissúra' },
-                            { display: 'Grunur um anal fissúru', output: 'Grunur um anal fissúru' }
+                            { display: 'Greining', output: 'Anal fissúra' },
+                            { display: 'Grunur', output: 'Grunur um anal fissúru' }
                         ],
                         cancelText: ''
                     }
@@ -3583,8 +4201,8 @@ const PlanMelting = [
             {
                 display: 'Botnlangi',
                 subOptions: [
-                    { display: 'Botnlangi', output: 'Botnlangabólga' },
-                    { display: 'Grunur um botnlangabólgu', output: 'Grunur um botnlangabólgu' }
+                    { display: 'Greining', output: 'Botnlangabólga' },
+                    { display: 'Grunur', output: 'Grunur um botnlangabólgu' }
                 ]
             }
         ]
@@ -3610,6 +4228,7 @@ const PlanMelting = [
                     { display: 'Almennar', output: 'Almennar ráðleggingar'},
                     { display: 'Mataræði', output: 'Fær viðeigandi fræðslu um mataræði'},
                     { display: 'Hægðatregða', output: 'Fær viðeigandi ráðleggingar um trefja- og vökvainntöku. Rætt um helstu hægðalyf'},
+                    { display: 'Bakflæði', output: 'Fær viðeigandi ráðleggingar um bakflæði, hvað ber að forðast (áfengi, sterkan mat o.fl.) ásamant því hvenær ber að hafa samband'},
                     { display: 'Diverticulitis - Ráðl, fljótandi + sýklalyf ef þarf', output: 'Fær viðeigandi ráðleggingar um meðferð diverticulitis. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar'}
                 ]
             },
@@ -3626,7 +4245,7 @@ const PlanMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Sýklalyf', 'Verkjalyf', 'Sérfræðingur'],
+        display: ['Sýklalyf', 'Verkjalyf', 'Bakflæðislyf'],
         options: [
             {
                 display: 'Sýklalyf',
@@ -3650,10 +4269,71 @@ const PlanMelting = [
                 ]
             },
             {
-                display: 'Sérfræðingur',
+                display: 'Bakflæðislyf',
                 subOptions: [
-                    { display: 'Meltingarlækni', output: 'Ráðlegg mat meltingarlæknis' },
-                    { display: 'Tilvísun', output: 'Sendi tilvísun' }
+                    {
+                        display: 'Reynum kúr',
+                        subOptions: [
+                            {
+                                display: 'PPI',
+                                subOptions: [
+                                    { display: 'Omeprazol', output: 'Reynum kúr af PPI. Set omeprazol í gáttina' },
+                                    { display: 'Esomeprazol', output: 'Reynum kúr af PPI. Set esomeprazol í gáttina' },
+                                    { display: 'Lansoprazol', output: 'Reynum kúr af PPI. Set lansoprazol í gáttina' },
+                                    { display: 'Pantoprazol', output: 'Reynum kúr af PPI. Set pantoprazol í gáttina' }
+                                ]
+                            },
+                            {
+                                display: 'H2-blokkari',
+                                subOptions: [
+                                    { display: 'Ranitidin', output: 'Reynum kúr af H2-blokkara. Set ranitidin í gáttina' },
+                                    { display: 'Famotidin', output: 'Reynum kúr af H2-blokkara. Set famotidin í gáttina' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Set á',
+                        subOptions: [
+                            {
+                                display: 'PPI',
+                                subOptions: [
+                                    { display: 'Omeprazol', output: 'Set á PPI. Set omeprazol í gáttina' },
+                                    { display: 'Esomeprazol', output: 'Set á PPI. Set esomeprazol í gáttina' },
+                                    { display: 'Lansoprazol', output: 'Set á PPI. Set lansoprazol í gáttina' },
+                                    { display: 'Pantoprazol', output: 'Set á PPI. Set pantoprazol í gáttina' }
+                                ]
+                            },
+                            {
+                                display: 'H2-blokkari',
+                                subOptions: [
+                                    { display: 'Ranitidin', output: 'Set á H2-blokkara. Set ranitidin í gáttina' },
+                                    { display: 'Famotidin', output: 'Set á H2-blokkara. Set famotidin í gáttina' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Bæti við',
+                        subOptions: [
+                            {
+                                display: 'PPI',
+                                subOptions: [
+                                    { display: 'Omeprazol', output: 'Bæti við PPI. Set omeprazol í gáttina' },
+                                    { display: 'Esomeprazol', output: 'Bæti við PPI. Set esomeprazol í gáttina' },
+                                    { display: 'Lansoprazol', output: 'Bæti við PPI. Set lansoprazol í gáttina' },
+                                    { display: 'Pantoprazol', output: 'Bæti við PPI. Set pantoprazol í gáttina' }
+                                ]
+                            },
+                            {
+                                display: 'H2-blokkari',
+                                subOptions: [
+                                    { display: 'Ranitidin', output: 'Bæti við H2-blokkara. Set ranitidin í gáttina' },
+                                    { display: 'Famotidin', output: 'Bæti við H2-blokkara. Set famotidin í gáttina' }
+                                ]
+                            }
+                        ]
+                    }
                 ]
             }
         ]
@@ -3684,20 +4364,42 @@ const PlanMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Myndataka', 'Blóðprufa', 'BMT'],
+        display: ['Myndataka', 'Blóðprufa', 'BMT', 'Sérfræðingur'],
         options: [
             {
                 display: 'Myndataka',
                 subOptions: [
+                    { display: 'RTG kvið', output: 'Ráðlegg RTG kviðarhol' },
                     { display: 'TS kvið', output: 'Ráðlegg TS af kvið' },
                     { display: 'Ómskoðun LGB', output: 'Ráðlegg ómskoðun LGB. Sendi beiðni' }
                 ]
             },
             { display: 'Blóðprufa', output: 'Panta blóðprufu' },
-            { display: 'BMT', output: 'Vísa á bráðamóttöku' }
+            { display: 'BMT', output: 'Vísa á bráðamóttöku' },
+            {
+                display: 'Sérfræðingur',
+                subOptions: [
+                    { display: 'Meltingarlækni', output: 'Ráðlegg mat meltingarlæknis' },
+                    { display: 'Tilvísun', output: 'Sendi tilvísun' }
+                ]
+            }
         ]
     },
-    
+    {
+        name: '',
+        type: 'options',
+        display: ['Hægðasýni'],
+        options: [
+            {
+                display: 'Hægðasýni',
+                subOptions: [
+                    { display: 'Ræktun', output: 'Ráðlegg að fá hægðasýni í ræktun' },
+                    { display: 'Snýkjudýr', output: 'Ráðlegg að fá hægðasýni í snýkjudýraleit' },
+                    { display: 'Ræktun og snýkjudýraleit', output: 'Ráðlegg að fá hægðasýni í ræktun og snýkjudýraleit' }
+                ]
+            }
+        ]
+    },    
     {},{},{},
     {
         name: '',
@@ -3714,10 +4416,22 @@ const PlanMelting = [
             {
                 display: 'Eftirfylgd',
                 subOptions: [
-                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
-                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
-                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
-                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            
+                        ]
+                    }
                 ]
             }
 
@@ -3859,6 +4573,329 @@ const historyMelting = [
                     { display: 'Blæðandi magasár', output: 'Saga um blæðandi magasár', onRightClickOutput: 'Ekki saga um blæðandi magasár' },
                     { display: 'H. pylori', output: 'Saga um H. pylori sýkingu', onRightClickOutput: 'Ekki saga um H. pylori sýkingu' }
                 ]
+            }
+        ]
+    }
+];
+const RaudFloggMelting = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Þyngdartap', 'Nætursviti', 'Blóð í hægðum'],
+        options: [
+            { display: 'Þyngdartap', output: 'Lýsir þyngdartapi', onRightClickOutput: 'Ekki þyngdartap' },
+            { display: 'Nætursviti', output: 'Lýsir auknum nætursvita', onRightClickOutput: 'Ekki aukinn nætursviti' },
+            {
+                display: 'Blóð í hægðum',
+                subOptions: [
+                    { display: 'Ferskt blóð á pappír', output: 'Lýsir fersku blóði á pappír' },
+                    { 
+                        display: 'Ferskt blóð í skál',
+                        subOptions: [
+                            { display: 'Lítið', output: 'Lýsir litlu magni af fersku blóði í skál' },
+                            { display: 'Mikið', output: 'Lýsir miklu magni af fersku blóði í skál' }
+                        ]
+                    },
+                    { display: 'Svartar hægðir', output: 'Verið með svartar hægðir' }
+                ],
+                onRightClickOutput: 'Ekki blóð í hægðum eða svartar hægðir'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hraðahindranir'],
+        options: [
+            { display: 'Hraðahindranir', output: 'Vont að fara yfir hraðahindranir', onRightClickOutput: 'Ekki vont að fara yfir hraðahindranir' }
+        ]
+    }
+];
+const LyfMelting = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Omeprazol', 'Esomeprazol', 'Lansoprazol', 'Pantoprazol'],
+        options: [
+            {
+                display: 'Omeprazol',
+                subOptions: [
+                    {
+                        display: '10mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Omeprazol 10mg 1x1' },
+                            { display: '1x2', output: 'Omeprazol 10mg 1x2' },
+                            { display: '1x3', output: 'Omeprazol 10mg 1x3' },
+                            { display: '2x1', output: 'Omeprazol 10mg 2x1' },
+                            { display: '2x2', output: 'Omeprazol 10mg 2x2' },
+                            { display: '2x3', output: 'Omeprazol 10mg 2x3' }
+                        ]
+                    },
+                    {
+                        display: '20mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Omeprazol 20mg 1x1' },
+                            { display: '1x2', output: 'Omeprazol 20mg 1x2' },
+                            { display: '1x3', output: 'Omeprazol 20mg 1x3' },
+                            { display: '2x1', output: 'Omeprazol 20mg 2x1' },
+                            { display: '2x2', output: 'Omeprazol 20mg 2x2' },
+                            { display: '2x3', output: 'Omeprazol 20mg 2x3' }
+                        ]
+                    },
+                    {
+                        display: '40mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Omeprazol 40mg 1x1' },
+                            { display: '1x2', output: 'Omeprazol 40mg 1x2' },
+                            { display: '1x3', output: 'Omeprazol 40mg 1x3' },
+                            { display: '2x1', output: 'Omeprazol 40mg 2x1' },
+                            { display: '2x2', output: 'Omeprazol 40mg 2x2' },
+                            { display: '2x3', output: 'Omeprazol 40mg 2x3' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Esomeprazol',
+                subOptions: [
+                    {
+                        display: '20mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Esomeprazol 20mg 1x1' },
+                            { display: '1x2', output: 'Esomeprazol 20mg 1x2' },
+                            { display: '1x3', output: 'Esomeprazol 20mg 1x3' },
+                            { display: '2x1', output: 'Esomeprazol 20mg 2x1' },
+                            { display: '2x2', output: 'Esomeprazol 20mg 2x2' },
+                            { display: '2x3', output: 'Esomeprazol 20mg 2x3' }
+                        ]
+                    },
+                    {
+                        display: '40mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Esomeprazol 40mg 1x1' },
+                            { display: '1x2', output: 'Esomeprazol 40mg 1x2' },
+                            { display: '1x3', output: 'Esomeprazol 40mg 1x3' },
+                            { display: '2x1', output: 'Esomeprazol 40mg 2x1' },
+                            { display: '2x2', output: 'Esomeprazol 40mg 2x2' },
+                            { display: '2x3', output: 'Esomeprazol 40mg 2x3' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Lansoprazol',
+                subOptions: [
+                    {
+                        display: '15mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Lansoprazol 15mg 1x1' },
+                            { display: '1x2', output: 'Lansoprazol 15mg 1x2' },
+                            { display: '1x3', output: 'Lansoprazol 15mg 1x3' },
+                            { display: '2x1', output: 'Lansoprazol 15mg 2x1' },
+                            { display: '2x2', output: 'Lansoprazol 15mg 2x2' },
+                            { display: '2x3', output: 'Lansoprazol 15mg 2x3' }
+                        ]
+                    },
+                    {
+                        display: '30mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Lansoprazol 30mg 1x1' },
+                            { display: '1x2', output: 'Lansoprazol 30mg 1x2' },
+                            { display: '1x3', output: 'Lansoprazol 30mg 1x3' },
+                            { display: '2x1', output: 'Lansoprazol 30mg 2x1' },
+                            { display: '2x2', output: 'Lansoprazol 30mg 2x2' },
+                            { display: '2x3', output: 'Lansoprazol 30mg 2x3' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Pantoprazol',
+                subOptions: [
+                    {
+                        display: '20mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Pantoprazol 20mg 1x1' },
+                            { display: '1x2', output: 'Pantoprazol 20mg 1x2' },
+                            { display: '1x3', output: 'Pantoprazol 20mg 1x3' },
+                            { display: '2x1', output: 'Pantoprazol 20mg 2x1' },
+                            { display: '2x2', output: 'Pantoprazol 20mg 2x2' },
+                            { display: '2x3', output: 'Pantoprazol 20mg 2x3' }
+                        ]
+                    },
+                    {
+                        display: '40mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Pantoprazol 40mg 1x1' },
+                            { display: '1x2', output: 'Pantoprazol 40mg 1x2' },
+                            { display: '1x3', output: 'Pantoprazol 40mg 1x3' },
+                            { display: '2x1', output: 'Pantoprazol 40mg 2x1' },
+                            { display: '2x2', output: 'Pantoprazol 40mg 2x2' },
+                            { display: '2x3', output: 'Pantoprazol 40mg 2x3' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Ranitidin', 'Famotidin', 'Loperamide', 'Dicyclomine'],
+        options: [
+            {
+                display: 'Ranitidin',
+                subOptions: [
+                    {
+                        display: '150mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Ranitidin 150mg 1x1' },
+                            { display: '1x2', output: 'Ranitidin 150mg 1x2' },
+                            { display: '1x3', output: 'Ranitidin 150mg 1x3' },
+                            { display: '2x1', output: 'Ranitidin 150mg 2x1' },
+                            { display: '2x2', output: 'Ranitidin 150mg 2x2' },
+                            { display: '2x3', output: 'Ranitidin 150mg 2x3' }
+                        ]
+                    },
+                    {
+                        display: '300mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Ranitidin 300mg 1x1' },
+                            { display: '1x2', output: 'Ranitidin 300mg 1x2' },
+                            { display: '1x3', output: 'Ranitidin 300mg 1x3' },
+                            { display: '2x1', output: 'Ranitidin 300mg 2x1' },
+                            { display: '2x2', output: 'Ranitidin 300mg 2x2' },
+                            { display: '2x3', output: 'Ranitidin 300mg 2x3' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Famotidin',
+                subOptions: [
+                    {
+                        display: '20mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Famotidin 20mg 1x1' },
+                            { display: '1x2', output: 'Famotidin 20mg 1x2' },
+                            { display: '1x3', output: 'Famotidin 20mg 1x3' },
+                            { display: '2x1', output: 'Famotidin 20mg 2x1' },
+                            { display: '2x2', output: 'Famotidin 20mg 2x2' },
+                            { display: '2x3', output: 'Famotidin 20mg 2x3' }
+                        ]
+                    },
+                    {
+                        display: '40mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Famotidin 40mg 1x1' },
+                            { display: '1x2', output: 'Famotidin 40mg 1x2' },
+                            { display: '1x3', output: 'Famotidin 40mg 1x3' },
+                            { display: '2x1', output: 'Famotidin 40mg 2x1' },
+                            { display: '2x2', output: 'Famotidin 40mg 2x2' },
+                            { display: '2x3', output: 'Famotidin 40mg 2x3' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Loperamide',
+                subOptions: [
+                    {
+                        display: '2mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Loperamide 2mg 1x1' },
+                            { display: '1x2', output: 'Loperamide 2mg 1x2' },
+                            { display: '1x3', output: 'Loperamide 2mg 1x3' },
+                            { display: '2x1', output: 'Loperamide 2mg 2x1' },
+                            { display: '2x2', output: 'Loperamide 2mg 2x2' },
+                            { display: '2x3', output: 'Loperamide 2mg 2x3' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Dicyclomine',
+                subOptions: [
+                    {
+                        display: '10mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Dicyclomine 10mg 1x1' },
+                            { display: '1x2', output: 'Dicyclomine 10mg 1x2' },
+                            { display: '1x3', output: 'Dicyclomine 10mg 1x3' },
+                            { display: '2x1', output: 'Dicyclomine 10mg 2x1' },
+                            { display: '2x2', output: 'Dicyclomine 10mg 2x2' },
+                            { display: '2x3', output: 'Dicyclomine 10mg 2x3' }
+                        ]
+                    },
+                    {
+                        display: '20mg',
+                        subOptions: [
+                            { display: '1x1', output: 'Dicyclomine 20mg 1x1' },
+                            { display: '1x2', output: 'Dicyclomine 20mg 1x2' },
+                            { display: '1x3', output: 'Dicyclomine 20mg 1x3' },
+                            { display: '2x1', output: 'Dicyclomine 20mg 2x1' },
+                            { display: '2x2', output: 'Dicyclomine 20mg 2x2' },
+                            { display: '2x3', output: 'Dicyclomine 20mg 2x3' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+];
+const RannsoknirMelting = [
+    {
+        name: '',
+        type: 'options',
+        display: ['CRP'],
+        options: [
+            {
+                display: 'CRP',
+                subOptions: [
+                    {
+                        display: 'CRP 0-50',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${i * 5}`,
+                            output: `CRP: ${i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 51-100',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${55 + i * 5}`,
+                            output: `CRP: ${55 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 101-150',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${105 + i * 5}`,
+                            output: `CRP: ${105 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 151-200',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${155 + i * 5}`,
+                            output: `CRP: ${155 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 201-250',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${205 + i * 5}`,
+                            output: `CRP: ${205 + i * 5}`
+                        }))
+                    },
+                    {
+                        display: 'CRP 251-300',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${255 + i * 5}`,
+                            output: `CRP: ${255 + i * 5}`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'CRP <5'
             }
         ]
     }
@@ -4455,7 +5492,7 @@ const ExamsStodkerfi = [
                         ]
                     }
                 ],
-                onRightClickOutput: 'Eðlilegt útlit á ökkla'
+                onRightClickOutput: 'Eðlilegt útlit. Ekki að sjá áberandi mar eða bólgu'
             },
             {
                 display: 'Ottawa',
@@ -4473,7 +5510,7 @@ const ExamsStodkerfi = [
                         ]
                     }
                 ],
-                onRightClickOutput: 'Ottawa reglur neikvæðar'
+                onRightClickOutput: 'Ekki þreifieymsl yfir malleoli, navicular beini eða basis 5.a metatarsal. Getur stigið í fótinn'
             },
             {
                 display: 'Hreyfigeta',
@@ -4507,7 +5544,7 @@ const ExamsStodkerfi = [
                         }))
                     }
                 ],
-                onRightClickOutput: 'Full hreyfigeta í ökkla'
+                onRightClickOutput: 'Full hreyfigeta'
             }
             
         ]
@@ -4875,10 +5912,22 @@ const PlanStodkerfi = [
             {
                 display: 'Eftirfylgd',
                 subOptions: [
-                    { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
-                    { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
-                    { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
-                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            
+                        ]
+                    }
                 ]
             }
 
@@ -5121,40 +6170,218 @@ const SymptomsGed = [
     {
         name: '',
         type: 'options',
-        display: ['Þunglyndi', 'Kvíði'],
+        display: ['Tímalengd einkenna'],
         options: [
-            { display: 'Þunglyndi', output: 'Þunglyndi' },
-            { display: 'Kvíði', output: 'Kvíði' }
+            {
+                display: 'Tímalengd einkenna',
+                subOptions: [
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
+                ],
+                cancelText: ''
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Svefnleysi', 'Pirringur'],
+        display: ['Einkenni'],
         options: [
-            { display: 'Svefnleysi', output: 'Svefnleysi' },
-            { display: 'Pirringur', output: 'Pirringur' }
+            {
+                display: 'Einkenni',
+                subOptions: [
+                    { display: 'Þunglyndi', output: 'Þunglyndiseinkenni' },
+                    { display: 'Kvíði', output: 'Kvíði' }
+                ]
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Ofsakvíði', 'Sjálfsvígshugsanir'],
+        display: ['Einangrun', 'Stuðningur', 'Félagsstaða'],
         options: [
-            { display: 'Ofsakvíði', output: 'Ofsakvíði' },
-            { display: 'Sjálfsvígshugsanir', output: 'Sjálfsvígshugsanir' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Minnisleysi', 'Ranghugmyndir'],
-        options: [
-            { display: 'Minnisleysi', output: 'Minnisleysi' },
-            { display: 'Ranghugmyndir', output: 'Ranghugmyndir' }
+            {
+                display: 'Einangrun',
+                output: 'Aukin félagsleg einangrun',
+                onRightClickOutput: 'Ekki félagsleg einangrun. Hittir vini og fjölskyldu reglulega'
+            },
+            {
+                display: 'Stuðningur',
+                output: 'Ekki nægilega góður stuðningur heimafyrir',
+                onRightClickSubOptions: [
+                    { display: 'NOS', output: 'Er með góðan stuðning heimafyrir' },
+                    { display: 'Maka', output: 'Er með góðan stuðning frá maka' },
+                    { display: 'Foreldrum', output: 'Er með góðan stuðning frá foreldrum' },
+                    { display: 'Vinum', output: 'Er með góðan stuðning frá vinum' }
+                ]
+            },
+            {
+                display: 'Félagsstaða',
+                subOptions: [
+                    { display: 'Í hjónabandi', output: 'Í hjónabandi' },
+                    { display: 'Í sambúð', output: 'Í sambúð' },
+                    { display: 'Einstæðingur', output: 'Einstæðingur' },
+                    { display: 'Einstætt foreldri', output: 'Einstætt foreldri' },
+                    { display: 'Býr hjá foreldrum', output: 'Býr hjá foreldrum' }
+                ]
+            }
         ]
     }
 ];
+const GedSkodunData = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Útlit', 'Augnsamband', 'Talþrýstingur', 'Geðslag'],
+        options: [
+            {
+                display: 'Útlit',
+                subOptions: [
+                    {
+                        display: 'Klæðaburður',
+                        output: 'Lýsir klæðaburði'
+                    },
+                    {
+                        display: 'Hárgreiðsla',
+                        output: 'Lýsir hárgreiðslu'
+                    },
+                    {
+                        display: 'Lykt',
+                        output: 'Lýsir lykt'
+                    }
+                ],
+                onRightClickOutput: 'Kemur vel fyrir. Vel til fara.'
+            },
+            {
+                display: 'Augnsamband',
+                subOptions: [
+                    {
+                        display: 'Minnkað',
+                        subOptions: [
+                            { display: 'Aðeins', output: 'Minnkað augnsamband. Aðeins' },
+                            { display: 'Mikið', output: 'Minnkað augnsamband. Mikið' }
+                        ]
+                    },
+                    {
+                        display: 'Aukið',
+                        subOptions: [
+                            { display: 'Aðeins', output: 'Aukið augnsamband. Aðeins' },
+                            { display: 'Mikið', output: 'Aukið augnsamband. Mikið' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Augnsamband í lagi'
+            },
+            {
+                display: 'Talþrýstingur',
+                subOptions: [
+                    {
+                        display: 'Minnkaður',
+                        subOptions: [
+                            { display: 'Aðeins', output: 'Minnkaður talþrýstingur. Aðeins' },
+                            { display: 'Mikið', output: 'Minnkaður talþrýstingur. Mikið' }
+                        ]
+                    },
+                    {
+                        display: 'Aukinn',
+                        subOptions: [
+                            { display: 'Aðeins', output: 'Aukinn talþrýstingur. Aðeins' },
+                            { display: 'Mikið', output: 'Aukinn talþrýstingur. Mikið' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Talþrýstingur í lagi'
+            },
+            {
+                display: 'Geðslag',
+                subOptions: [
+                    { display: 'Hækkað', output: 'Hækkað geðslag' }
+                ],
+                onRightClickOutput: 'Geðslag í lagi'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Affekt', 'Geðrofseinkenni', 'Innsæi', 'Sjálfsvígsmat'],
+        options: [
+            {
+                display: 'Affekt',
+                output: 'Affekt eðlilegt',
+                onRightClickOutput: 'Affekt í lagi'
+            },
+            {
+                display: 'Geðrofseinkenni',
+                output: 'Geðrofseinkenni ekki til staðar',
+                onRightClickOutput: 'Geðrofseinkenni í lagi'
+            },
+            {
+                display: 'Innsæi',
+                output: 'Innsæi til staðar',
+                onRightClickOutput: 'Innsæi í lagi'
+            },
+            {
+                display: 'Sjálfsvígsmat',
+                output: 'Sjálfsvígshugsanir ekki til staðar',
+                onRightClickOutput: 'Sjálfsvígsmat í lagi'
+            }
+        ]
+    }
+];
+
+
 const ExamsGed = [
     {
         name: '',
@@ -5210,6 +6437,107 @@ const PlanGed = [
         ]
     }
 ];
+const SIGECAPS = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Svefn', 'Áhugi', 'Sektarkennd', 'Orka'],
+        options: [
+            {
+                display: 'Svefn',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Svefn í ólagi'
+                    },
+                    {
+                        display: 'Aukinn',
+                        output: 'Lýsir svefntruflunum. Sefur meira en áður'
+                    },
+                    {
+                        display: 'Minnkaður',
+                        output: 'Lýsir svefntruflunum. Sefur minna en áður'
+                    }
+                ],
+                onRightClickOutput: 'Svefn í lagi'
+            },
+            {
+                display: 'Áhugi',
+                output: 'Lýsir áhugaleysi. Sinnir verr áhugamálum en áður',
+                onRightClickOutput: 'Neitar áhugaleysi. Sinnir sínum áhugamálum'
+            },
+            {
+                display: 'Sektarkennd',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Finnur til aukinnar sektarkenndar'
+                    },
+                    {
+                        display: 'Gagnvart fjölskyldu',
+                        output: 'Finnur til sektarkenndar gagnvart fjölskyldu'
+                    },
+                    {
+                        display: 'Gagnvart maka',
+                        output: 'Finnur til sektarkenndar gagnvart maka'
+                    },
+                    {
+                        display: 'Gagnvart börnum',
+                        output: 'Finnur til sektarkenndar gagnvart börnum'
+                    }
+                ],
+                onRightClickOutput: 'Ekki aukin sektarkennd'
+            },
+            {
+                display: 'Orka',
+                output: 'Orkuleysi',
+                onRightClickOutput: 'Neitar orkuleysi'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Einbeiting', 'Matarlyst', 'Psykomotor', 'Sjálfsvígshugsanir'],
+        options: [
+            {
+                display: 'Einbeiting',
+                output: 'Lýsir einbeitingarerfiðleikum',
+                onRightClickOutput: 'Einbeiting í lagi'
+            },
+            {
+                display: 'Matarlyst',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Breytingar á matarlyst'
+                    },
+                    {
+                        display: 'Aukin',
+                        output: 'Lýsir aukinni matarlyst'
+                    },
+                    {
+                        display: 'Minnkuð',
+                        output: 'Lýsir minnkaðri matarlyst'
+                    }
+                ],
+                onRightClickOutput: 'Matarlyst í lagi'
+            },
+            {
+                display: 'Psykomotor',
+                output: 'Hægð psykomotor eða eirðarleysi',
+                onRightClickOutput: 'Neitar psykomotor retardation eða eirðarleysi'
+            },
+            {
+                display: 'Sjálfsvígshugsanir',
+                output: 'Lýsir sjálfsvígshugsunum',
+                onRightClickOutput: 'Neitar sjálfsvígshugsunum'
+            }
+        ]
+    }
+    
+];
+
 
 // Tauga
 const SymptomsTauga = [
@@ -5309,6 +6637,231 @@ const SymptomsInnkirtla = [
     {
         name: '',
         type: 'options',
+        display: ['Tímalengd einkenna'],
+        options: [
+            {
+                display: 'Tímalengd einkenna',
+                subOptions: [
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
+                ],
+                cancelText: ''
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Eftirlit', 'Sykurstjórnun'],
+        options: [
+            {
+                display: 'Eftirlit',
+                subOptions: [
+                    { display: 'Sykursýkiseftirlit', output: 'Kemur í sykursýkiseftirlit' },
+                    { display: 'Skjaldkirtilseftirlit', output: 'Eftirfylgd með skjaldkirtli' }
+                ]
+            },
+            {
+                "display": "Sykurstjórnun",
+                "subOptions": [
+                    {
+                        "display": "Góð",
+                        "subOptions": [
+                            {
+                                "display": "31-40 mmol/mol",
+                                "subOptions": Array.from({ length: 10 }, (_, i) => {
+                                    const mmol = 31 + i;
+                                    const percent = (mmol === 31 ? 5.0 : mmol === 32 ? 5.1 : mmol === 33 ? 5.2 : mmol === 34 ? 5.3 : mmol === 36 ? 5.4 : mmol === 37 ? 5.5 : mmol === 38 ? 5.6 : mmol === 39 ? 5.7 : mmol === 40 ? 5.8 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Góð sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%).`
+                                    };
+                                })
+                            },
+                            {
+                                "display": "41-50 mmol/mol",
+                                "subOptions": Array.from({ length: 10 }, (_, i) => {
+                                    const mmol = 41 + i;
+                                    const percent = (mmol === 41 ? 5.9 : mmol === 42 ? 6.0 : mmol === 43 ? 6.1 : mmol === 44 ? 6.2 : mmol === 45 ? 6.3 : mmol === 46 ? 6.4 : mmol === 47 ? 6.5 : mmol === 48 ? 6.6 : mmol === 49 ? 6.7 : mmol === 50 ? 6.8 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Góð sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%).`
+                                    };
+                                })
+                            },
+                            {
+                                "display": "51-53 mmol/mol",
+                                "subOptions": Array.from({ length: 3 }, (_, i) => {
+                                    const mmol = 51 + i;
+                                    const percent = (mmol === 51 ? 6.9 : mmol === 52 ? 7.0 : mmol === 53 ? 7.0 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Góð sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%).`
+                                    };
+                                })
+                            }
+                        ]
+                    },
+                    {
+                        "display": "Í lagi",
+                        "subOptions": [
+                            {
+                                "display": "54-58 mmol/mol",
+                                "subOptions": Array.from({ length: 5 }, (_, i) => {
+                                    const mmol = 54 + i;
+                                    const percent = (mmol === 54 ? 7.1 : mmol === 55 ? 7.2 : mmol === 56 ? 7.3 : mmol === 57 ? 7.4 : mmol === 58 ? 7.5 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Í lagi sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%)`
+                                    };
+                                })
+                            }
+                        ]
+                    },
+                    {
+                        "display": "Ekki nægilega góð",
+                        "subOptions": [
+                            {
+                                "display": "60-69 mmol/mol",
+                                "subOptions": Array.from({ length: 10 }, (_, i) => {
+                                    const mmol = 60 + i;
+                                    const percent = (mmol === 60 ? 7.6 : mmol === 61 ? 7.7 : mmol === 62 ? 7.8 : mmol === 63 ? 7.9 : mmol === 64 ? 8.0 : mmol === 65 ? 8.1 : mmol === 66 ? 8.2 : mmol === 67 ? 8.3 : mmol === 68 ? 8.4 : mmol === 69 ? 8.5 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Ekki nægilega góð sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%)`
+                                    };
+                                })
+                            }
+                        ]
+                    },
+                    {
+                        "display": "Léleg",
+                        "subOptions": [
+                            {
+                                "display": "70-80 mmol/mol",
+                                "subOptions": Array.from({ length: 11 }, (_, i) => {
+                                    const mmol = 70 + i;
+                                    const percent = (mmol === 70 ? 8.6 : mmol === 71 ? 8.7 : mmol === 72 ? 8.8 : mmol === 74 ? 8.9 : mmol === 75 ? 9.0 : mmol === 76 ? 9.1 : mmol === 77 ? 9.2 : mmol === 78 ? 9.3 : mmol === 79 ? 9.4 : mmol === 80 ? 9.5 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Léleg sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%)`
+                                    };
+                                })
+                            },
+                            {
+                                "display": "81-90 mmol/mol",
+                                "subOptions": Array.from({ length: 10 }, (_, i) => {
+                                    const mmol = 81 + i;
+                                    const percent = (mmol === 81 ? 9.6 : mmol === 83 ? 9.7 : mmol === 84 ? 9.8 : mmol === 85 ? 9.9 : mmol === 86 ? 10.0 : mmol === 87 ? 10.1 : mmol === 88 ? 10.2 : mmol === 89 ? 10.3 : mmol === 90 ? 10.4 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Léleg sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%)`
+                                    };
+                                })
+                            },
+                            {
+                                "display": "91-100 mmol/mol",
+                                "subOptions": Array.from({ length: 10 }, (_, i) => {
+                                    const mmol = 91 + i;
+                                    const percent = (mmol === 91 ? 10.5 : mmol === 92 ? 10.6 : mmol === 93 ? 10.7 : mmol === 94 ? 10.8 : mmol === 95 ? 10.9 : mmol === 96 ? 11.0 : mmol === 97 ? 11.1 : mmol === 98 ? 11.2 : mmol === 99 ? 11.3 : mmol === 100 ? 11.4 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Léleg sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%)`
+                                    };
+                                })
+                            },
+                            {
+                                "display": "101-110 mmol/mol",
+                                "subOptions": Array.from({ length: 10 }, (_, i) => {
+                                    const mmol = 101 + i;
+                                    const percent = (mmol === 101 ? 11.5 : mmol === 103 ? 11.6 : mmol === 104 ? 11.7 : mmol === 106 ? 11.8 : mmol === 107 ? 11.9 : mmol === 108 ? 12.0 : mmol === 109 ? 12.1 : mmol === 110 ? 12.2 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Léleg sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%)`
+                                    };
+                                })
+                            },
+                            {
+                                "display": "111-120 mmol/mol",
+                                "subOptions": Array.from({ length: 10 }, (_, i) => {
+                                    const mmol = 111 + i;
+                                    const percent = (mmol === 111 ? 12.3 : mmol === 112 ? 12.4 : mmol === 113 ? 12.5 : mmol === 114 ? 12.6 : mmol === 115 ? 12.7 : mmol === 116 ? 12.8 : mmol === 117 ? 12.9 : mmol === 119 ? 13.0 : mmol === 120 ? 13.1 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Léleg sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%)`
+                                    };
+                                })
+                            },
+                            {
+                                "display": "121-131 mmol/mol",
+                                "subOptions": Array.from({ length: 11 }, (_, i) => {
+                                    const mmol = 121 + i;
+                                    const percent = (mmol === 121 ? 13.2 : mmol === 122 ? 13.3 : mmol === 123 ? 13.4 : mmol === 125 ? 13.5 : mmol === 126 ? 13.6 : mmol === 127 ? 13.7 : mmol === 128 ? 13.8 : mmol === 130 ? 13.9 : mmol === 131 ? 14.0 : 0).toFixed(1).replace('.', ',');
+                                    return {
+                                        display: `${mmol} mmol/mol (${percent}%)`,
+                                        output: `Léleg sykurstjórnun. Seinasta HbA1c ${mmol} mmol/mol (${percent}%)`
+                                    };
+                                })
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },    
+    {
+        name: '',
+        type: 'options',
         display: ['Þreyta', 'Þyngdarbreytingar'],
         options: [
             { display: 'Þreyta', output: 'Þreyta' },
@@ -5361,7 +6914,236 @@ const ExamsInnkirtla = [
             { display: 'Sykurmæling', output: 'Sykurmæling pantað' },
             { display: 'Þvagprufa', output: 'Þvagprufa pantað' }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóðprufa'],
+        options: [
+            {
+                display: 'Blóðprufa',
+                subOptions: [
+                    {
+                        display: 'HbA1c',
+                        subOptions: [
+                            {
+                                display: '20-30 mmol/L (4-6%)',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${20 + i} mmol/L (4.${i}%)`,
+                                    output: `HbA1c ${20 + i} mmol/L (4.${i}%)`
+                                }))
+                            },
+                            {
+                                display: '31-40 mmol/L (6-8%)',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${31 + i} mmol/L (6.${i}%)`,
+                                    output: `HbA1c ${31 + i} mmol/L (6.${i}%)`
+                                }))
+                            },
+                            {
+                                display: '41-50 mmol/L (8-10%)',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${41 + i} mmol/L (8.${i}%)`,
+                                    output: `HbA1c ${41 + i} mmol/L (8.${i}%)`
+                                }))
+                            },
+                            {
+                                display: '51-60 mmol/L (10-12%)',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${51 + i} mmol/L (10.${i}%)`,
+                                    output: `HbA1c ${51 + i} mmol/L (10.${i}%)`
+                                }))
+                            },
+                            {
+                                display: '61-70 mmol/L (12-14%)',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${61 + i} mmol/L (12.${i}%)`,
+                                    output: `HbA1c ${61 + i} mmol/L (12.${i}%)`
+                                }))
+                            },
+                            {
+                                display: '71-80 mmol/L (14-16%)',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${71 + i} mmol/L (14.${i}%)`,
+                                    output: `HbA1c ${71 + i} mmol/L (14.${i}%)`
+                                }))
+                            },
+                            {
+                                display: '81-90 mmol/L (16-18%)',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${81 + i} mmol/L (16.${i}%)`,
+                                    output: `HbA1c ${81 + i} mmol/L (16.${i}%)`
+                                }))
+                            },
+                            {
+                                display: '91-100 mmol/L (18-20%)',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${91 + i} mmol/L (18.${i}%)`,
+                                    output: `HbA1c ${91 + i} mmol/L (18.${i}%)`
+                                }))
+                            },
+                            {
+                                display: '101-110 mmol/L (20-22%)',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${101 + i} mmol/L (20.${i}%)`,
+                                    output: `HbA1c ${101 + i} mmol/L (20.${i}%)`
+                                }))
+                            },
+                            {
+                                display: '111-120 mmol/L (22-24%)',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${111 + i} mmol/L (22.${i}%)`,
+                                    output: `HbA1c ${111 + i} mmol/L (22.${i}%)`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'T3',
+                        subOptions: [
+                            {
+                                display: '0-10 pmol/L',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${0 + i} pmol/L`,
+                                    output: `T3 ${0 + i} pmol/L`
+                                }))
+                            },
+                            {
+                                display: '11-20 pmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${11 + i} pmol/L`,
+                                    output: `T3 ${11 + i} pmol/L`
+                                }))
+                            },
+                            {
+                                display: '21-30 pmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${21 + i} pmol/L`,
+                                    output: `T3 ${21 + i} pmol/L`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'T4',
+                        subOptions: [
+                            {
+                                display: '0-10 pmol/L',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${0 + i} pmol/L`,
+                                    output: `T4 ${0 + i} pmol/L`
+                                }))
+                            },
+                            {
+                                display: '11-20 pmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${11 + i} pmol/L`,
+                                    output: `T4 ${11 + i} pmol/L`
+                                }))
+                            },
+                            {
+                                display: '21-30 pmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${21 + i} pmol/L`,
+                                    output: `T4 ${21 + i} pmol/L`
+                                }))
+                            },
+                            {
+                                display: '31-40 pmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${31 + i} pmol/L`,
+                                    output: `T4 ${31 + i} pmol/L`
+                                }))
+                            },
+                            {
+                                display: '41-50 pmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${41 + i} pmol/L`,
+                                    output: `T4 ${41 + i} pmol/L`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'TSH',
+                        subOptions: [
+                            {
+                                display: '0-10 mU/L',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${0 + i} mU/L`,
+                                    output: `TSH ${0 + i} mU/L`
+                                }))
+                            },
+                            {
+                                display: '11-20 mU/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${11 + i} mU/L`,
+                                    output: `TSH ${11 + i} mU/L`
+                                }))
+                            },
+                            {
+                                display: '21-30 mU/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${21 + i} mU/L`,
+                                    output: `TSH ${21 + i} mU/L`
+                                }))
+                            },
+                            {
+                                display: '31-40 mU/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${31 + i} mU/L`,
+                                    output: `TSH ${31 + i} mU/L`
+                                }))
+                            },
+                            {
+                                display: '41-50 mU/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${41 + i} mU/L`,
+                                    output: `TSH ${41 + i} mU/L`
+                                }))
+                            },
+                            {
+                                display: '51-60 mU/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${51 + i} mU/L`,
+                                    output: `TSH ${51 + i} mU/L`
+                                }))
+                            },
+                            {
+                                display: '61-70 mU/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${61 + i} mU/L`,
+                                    output: `TSH ${61 + i} mU/L`
+                                }))
+                            },
+                            {
+                                display: '71-80 mU/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${71 + i} mU/L`,
+                                    output: `TSH ${71 + i} mU/L`
+                                }))
+                            },
+                            {
+                                display: '81-90 mU/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${81 + i} mU/L`,
+                                    output: `TSH ${81 + i} mU/L`
+                                }))
+                            },
+                            {
+                                display: '91-100 mU/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${91 + i} mU/L`,
+                                    output: `TSH ${91 + i} mU/L`
+                                }))
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
+    
 ];
 const PlanInnkirtla = [
     {
@@ -5396,6 +7178,610 @@ const PlanInnkirtla = [
         ]
     }
 ];
+const RannsoknirInnkirtla = [
+    {
+        name: '',
+        type: 'options',
+        display: ['HbA1c', 'T3', 'T4', 'TSH'],
+        options: [
+            {
+                display: 'HbA1c',
+                subOptions: [
+                    {
+                        display: '31-40 mmol/mol',
+                        subOptions: [
+                            { display: '31 mmol/mol (5.0%)', output: 'HbA1c 31 mmol/mol (5.0%)' },
+                            { display: '32 mmol/mol (5.1%)', output: 'HbA1c 32 mmol/mol (5.1%)' },
+                            { display: '33 mmol/mol (5.2%)', output: 'HbA1c 33 mmol/mol (5.2%)' },
+                            { display: '34 mmol/mol (5.3%)', output: 'HbA1c 34 mmol/mol (5.3%)' },
+                            { display: '36 mmol/mol (5.4%)', output: 'HbA1c 36 mmol/mol (5.4%)' },
+                            { display: '37 mmol/mol (5.5%)', output: 'HbA1c 37 mmol/mol (5.5%)' },
+                            { display: '38 mmol/mol (5.6%)', output: 'HbA1c 38 mmol/mol (5.6%)' },
+                            { display: '39 mmol/mol (5.7%)', output: 'HbA1c 39 mmol/mol (5.7%)' },
+                            { display: '40 mmol/mol (5.8%)', output: 'HbA1c 40 mmol/mol (5.8%)' }
+                        ]
+                    },
+                    {
+                        display: '41-50 mmol/mol',
+                        subOptions: [
+                            { display: '41 mmol/mol (5.9%)', output: 'HbA1c 41 mmol/mol (5.9%)' },
+                            { display: '42 mmol/mol (6.0%)', output: 'HbA1c 42 mmol/mol (6.0%)' },
+                            { display: '43 mmol/mol (6.1%)', output: 'HbA1c 43 mmol/mol (6.1%)' },
+                            { display: '44 mmol/mol (6.2%)', output: 'HbA1c 44 mmol/mol (6.2%)' },
+                            { display: '45 mmol/mol (6.3%)', output: 'HbA1c 45 mmol/mol (6.3%)' },
+                            { display: '46 mmol/mol (6.4%)', output: 'HbA1c 46 mmol/mol (6.4%)' },
+                            { display: '47 mmol/mol (6.5%)', output: 'HbA1c 47 mmol/mol (6.5%)' },
+                            { display: '48 mmol/mol (6.6%)', output: 'HbA1c 48 mmol/mol (6.6%)' },
+                            { display: '49 mmol/mol (6.7%)', output: 'HbA1c 49 mmol/mol (6.7%)' },
+                            { display: '50 mmol/mol (6.8%)', output: 'HbA1c 50 mmol/mol (6.8%)' }
+                        ]
+                    },
+                    {
+                        display: '51-60 mmol/mol',
+                        subOptions: [
+                            { display: '51 mmol/mol (6.9%)', output: 'HbA1c 51 mmol/mol (6.9%)' },
+                            { display: '53 mmol/mol (7.0%)', output: 'HbA1c 53 mmol/mol (7.0%)' },
+                            { display: '54 mmol/mol (7.1%)', output: 'HbA1c 54 mmol/mol (7.1%)' },
+                            { display: '55 mmol/mol (7.2%)', output: 'HbA1c 55 mmol/mol (7.2%)' },
+                            { display: '56 mmol/mol (7.3%)', output: 'HbA1c 56 mmol/mol (7.3%)' },
+                            { display: '57 mmol/mol (7.4%)', output: 'HbA1c 57 mmol/mol (7.4%)' },
+                            { display: '58 mmol/mol (7.5%)', output: 'HbA1c 58 mmol/mol (7.5%)' },
+                            { display: '60 mmol/mol (7.6%)', output: 'HbA1c 60 mmol/mol (7.6%)' }
+                        ]
+                    },
+                    {
+                        display: '61-70 mmol/mol',
+                        subOptions: [
+                            { display: '61 mmol/mol (7.7%)', output: 'HbA1c 61 mmol/mol (7.7%)' },
+                            { display: '62 mmol/mol (7.8%)', output: 'HbA1c 62 mmol/mol (7.8%)' },
+                            { display: '63 mmol/mol (7.9%)', output: 'HbA1c 63 mmol/mol (7.9%)' },
+                            { display: '64 mmol/mol (8.0%)', output: 'HbA1c 64 mmol/mol (8.0%)' },
+                            { display: '65 mmol/mol (8.1%)', output: 'HbA1c 65 mmol/mol (8.1%)' },
+                            { display: '66 mmol/mol (8.2%)', output: 'HbA1c 66 mmol/mol (8.2%)' },
+                            { display: '67 mmol/mol (8.3%)', output: 'HbA1c 67 mmol/mol (8.3%)' },
+                            { display: '68 mmol/mol (8.4%)', output: 'HbA1c 68 mmol/mol (8.4%)' },
+                            { display: '69 mmol/mol (8.5%)', output: 'HbA1c 69 mmol/mol (8.5%)' },
+                            { display: '70 mmol/mol (8.6%)', output: 'HbA1c 70 mmol/mol (8.6%)' }
+                        ]
+                    },
+                    {
+                        display: '71-80 mmol/mol',
+                        subOptions: [
+                            { display: '71 mmol/mol (8.7%)', output: 'HbA1c 71 mmol/mol (8.7%)' },
+                            { display: '72 mmol/mol (8.8%)', output: 'HbA1c 72 mmol/mol (8.8%)' },
+                            { display: '74 mmol/mol (8.9%)', output: 'HbA1c 74 mmol/mol (8.9%)' },
+                            { display: '75 mmol/mol (9.0%)', output: 'HbA1c 75 mmol/mol (9.0%)' },
+                            { display: '76 mmol/mol (9.1%)', output: 'HbA1c 76 mmol/mol (9.1%)' },
+                            { display: '77 mmol/mol (9.2%)', output: 'HbA1c 77 mmol/mol (9.2%)' },
+                            { display: '78 mmol/mol (9.3%)', output: 'HbA1c 78 mmol/mol (9.3%)' },
+                            { display: '79 mmol/mol (9.4%)', output: 'HbA1c 79 mmol/mol (9.4%)' },
+                            { display: '80 mmol/mol (9.5%)', output: 'HbA1c 80 mmol/mol (9.5%)' }
+                        ]
+                    },
+                    {
+                        display: '81-90 mmol/mol',
+                        subOptions: [
+                            { display: '81 mmol/mol (9.6%)', output: 'HbA1c 81 mmol/mol (9.6%)' },
+                            { display: '83 mmol/mol (9.7%)', output: 'HbA1c 83 mmol/mol (9.7%)' },
+                            { display: '84 mmol/mol (9.8%)', output: 'HbA1c 84 mmol/mol (9.8%)' },
+                            { display: '85 mmol/mol (9.9%)', output: 'HbA1c 85 mmol/mol (9.9%)' },
+                            { display: '86 mmol/mol (10.0%)', output: 'HbA1c 86 mmol/mol (10.0%)' },
+                            { display: '87 mmol/mol (10.1%)', output: 'HbA1c 87 mmol/mol (10.1%)' },
+                            { display: '88 mmol/mol (10.2%)', output: 'HbA1c 88 mmol/mol (10.2%)' },
+                            { display: '89 mmol/mol (10.3%)', output: 'HbA1c 89 mmol/mol (10.3%)' },
+                            { display: '90 mmol/mol (10.4%)', output: 'HbA1c 90 mmol/mol (10.4%)' }
+                        ]
+                    },
+                    {
+                        display: '91-100 mmol/mol',
+                        subOptions: [
+                            { display: '91 mmol/mol (10.5%)', output: 'HbA1c 91 mmol/mol (10.5%)' },
+                            { display: '92 mmol/mol (10.6%)', output: 'HbA1c 92 mmol/mol (10.6%)' },
+                            { display: '93 mmol/mol (10.7%)', output: 'HbA1c 93 mmol/mol (10.7%)' },
+                            { display: '94 mmol/mol (10.8%)', output: 'HbA1c 94 mmol/mol (10.8%)' },
+                            { display: '95 mmol/mol (10.9%)', output: 'HbA1c 95 mmol/mol (10.9%)' },
+                            { display: '96 mmol/mol (11.0%)', output: 'HbA1c 96 mmol/mol (11.0%)' },
+                            { display: '97 mmol/mol (11.1%)', output: 'HbA1c 97 mmol/mol (11.1%)' },
+                            { display: '98 mmol/mol (11.2%)', output: 'HbA1c 98 mmol/mol (11.2%)' },
+                            { display: '99 mmol/mol (11.3%)', output: 'HbA1c 99 mmol/mol (11.3%)' },
+                            { display: '100 mmol/mol (11.4%)', output: 'HbA1c 100 mmol/mol (11.4%)' }
+                        ]
+                    },
+                    {
+                        display: '101-110 mmol/mol',
+                        subOptions: [
+                            { display: '101 mmol/mol (11.5%)', output: 'HbA1c 101 mmol/mol (11.5%)' },
+                            { display: '103 mmol/mol (11.6%)', output: 'HbA1c 103 mmol/mol (11.6%)' },
+                            { display: '104 mmol/mol (11.7%)', output: 'HbA1c 104 mmol/mol (11.7%)' },
+                            { display: '106 mmol/mol (11.8%)', output: 'HbA1c 106 mmol/mol (11.8%)' },
+                            { display: '107 mmol/mol (11.9%)', output: 'HbA1c 107 mmol/mol (11.9%)' },
+                            { display: '108 mmol/mol (12.0%)', output: 'HbA1c 108 mmol/mol (12.0%)' },
+                            { display: '109 mmol/mol (12.1%)', output: 'HbA1c 109 mmol/mol (12.1%)' },
+                            { display: '110 mmol/mol (12.2%)', output: 'HbA1c 110 mmol/mol (12.2%)' }
+                        ]
+                    },
+                    {
+                        display: '111-120 mmol/mol',
+                        subOptions: [
+                            { display: '111 mmol/mol (12.3%)', output: 'HbA1c 111 mmol/mol (12.3%)' },
+                            { display: '112 mmol/mol (12.4%)', output: 'HbA1c 112 mmol/mol (12.4%)' },
+                            { display: '113 mmol/mol (12.5%)', output: 'HbA1c 113 mmol/mol (12.5%)' },
+                            { display: '114 mmol/mol (12.6%)', output: 'HbA1c 114 mmol/mol (12.6%)' },
+                            { display: '115 mmol/mol (12.7%)', output: 'HbA1c 115 mmol/mol (12.7%)' },
+                            { display: '116 mmol/mol (12.8%)', output: 'HbA1c 116 mmol/mol (12.8%)' },
+                            { display: '117 mmol/mol (12.9%)', output: 'HbA1c 117 mmol/mol (12.9%)' },
+                            { display: '119 mmol/mol (13.0%)', output: 'HbA1c 119 mmol/mol (13.0%)' },
+                            { display: '120 mmol/mol (13.1%)', output: 'HbA1c 120 mmol/mol (13.1%)' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'T3',
+                subOptions: [
+                    {
+                        display: '0-10 pmol/L',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${0 + i} pmol/L`,
+                            output: `T3 ${0 + i} pmol/L`
+                        }))
+                    },
+                    {
+                        display: '11-20 pmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${11 + i} pmol/L`,
+                            output: `T3 ${11 + i} pmol/L`
+                        }))
+                    },
+                    {
+                        display: '21-30 pmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${21 + i} pmol/L`,
+                            output: `T3 ${21 + i} pmol/L`
+                        }))
+                    }
+                ]
+            },
+            {
+                display: 'T4',
+                subOptions: [
+                    {
+                        display: '0-10 pmol/L',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${0 + i} pmol/L`,
+                            output: `T4 ${0 + i} pmol/L`
+                        }))
+                    },
+                    {
+                        display: '11-20 pmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${11 + i} pmol/L`,
+                            output: `T4 ${11 + i} pmol/L`
+                        }))
+                    },
+                    {
+                        display: '21-30 pmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${21 + i} pmol/L`,
+                            output: `T4 ${21 + i} pmol/L`
+                        }))
+                    },
+                    {
+                        display: '31-40 pmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${31 + i} pmol/L`,
+                            output: `T4 ${31 + i} pmol/L`
+                        }))
+                    },
+                    {
+                        display: '41-50 pmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${41 + i} pmol/L`,
+                            output: `T4 ${41 + i} pmol/L`
+                        }))
+                    }
+                ]
+            },
+            {
+                display: 'TSH',
+                subOptions: [
+                    {
+                        display: '0-10 mU/L',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${0 + i} mU/L`,
+                            output: `TSH ${0 + i} mU/L`
+                        }))
+                    },
+                    {
+                        display: '11-20 mU/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${11 + i} mU/L`,
+                            output: `TSH ${11 + i} mU/L`
+                        }))
+                    },
+                    {
+                        display: '21-30 mU/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${21 + i} mU/L`,
+                            output: `TSH ${21 + i} mU/L`
+                        }))
+                    },
+                    {
+                        display: '31-40 mU/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${31 + i} mU/L`,
+                            output: `TSH ${31 + i} mU/L`
+                        }))
+                    },
+                    {
+                        display: '41-50 mU/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${41 + i} mU/L`,
+                            output: `TSH ${41 + i} mU/L`
+                        }))
+                    },
+                    {
+                        display: '51-60 mU/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${51 + i} mU/L`,
+                            output: `TSH ${51 + i} mU/L`
+                        }))
+                    },
+                    {
+                        display: '61-70 mU/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${61 + i} mU/L`,
+                            output: `TSH ${61 + i} mU/L`
+                        }))
+                    },
+                    {
+                        display: '71-80 mU/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${71 + i} mU/L`,
+                            output: `TSH ${71 + i} mU/L`
+                        }))
+                    },
+                    {
+                        display: '81-90 mU/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${81 + i} mU/L`,
+                            output: `TSH ${81 + i} mU/L`
+                        }))
+                    },
+                    {
+                        display: '91-100 mU/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${91 + i} mU/L`,
+                            output: `TSH ${91 + i} mU/L`
+                        }))
+                    }
+                ]
+            }
+        ]
+    }
+];
+const LyfInnkirtla = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Metformín', 'Insúlín', 'Sulfonylurea'],
+        options: [
+            {
+                display: 'Metformín',
+                subOptions: [
+                    { 
+                        display: '500 mg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Metformín 500 mg einu sinni á dag' },
+                            { display: 'Tvisvar á dag', output: 'Metformín 500 mg tvisvar á dag' },
+                            { display: 'Þrisvar á dag', output: 'Metformín 500 mg þrisvar á dag' }
+                        ]
+                    },
+                    { 
+                        display: '850 mg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Metformín 850 mg einu sinni á dag' },
+                            { display: 'Tvisvar á dag', output: 'Metformín 850 mg tvisvar á dag' },
+                            { display: 'Þrisvar á dag', output: 'Metformín 850 mg þrisvar á dag' }
+                        ]
+                    },
+                    { 
+                        display: '1000 mg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Metformín 1000 mg einu sinni á dag' },
+                            { display: 'Tvisvar á dag', output: 'Metformín 1000 mg tvisvar á dag' },
+                            { display: 'Þrisvar á dag', output: 'Metformín 1000 mg þrisvar á dag' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Insúlín',
+                subOptions: [
+                    { 
+                        display: 'Hratt virkt', 
+                        subOptions: [
+                            { 
+                                display: 'Humalog', 
+                                subOptions: [
+                                    { display: '10 einingar', output: 'Humalog 10 einingar' },
+                                    { display: '20 einingar', output: 'Humalog 20 einingar' },
+                                    { display: '30 einingar', output: 'Humalog 30 einingar' }
+                                ]
+                            },
+                            { 
+                                display: 'Novolog', 
+                                subOptions: [
+                                    { display: '10 einingar', output: 'Novolog 10 einingar' },
+                                    { display: '20 einingar', output: 'Novolog 20 einingar' },
+                                    { display: '30 einingar', output: 'Novolog 30 einingar' }
+                                ]
+                            },
+                            { 
+                                display: 'Apidra', 
+                                subOptions: [
+                                    { display: '10 einingar', output: 'Apidra 10 einingar' },
+                                    { display: '20 einingar', output: 'Apidra 20 einingar' },
+                                    { display: '30 einingar', output: 'Apidra 30 einingar' }
+                                ]
+                            }
+                        ]
+                    },
+                    { 
+                        display: 'Stutt virkt', 
+                        subOptions: [
+                            { 
+                                display: 'Venjulegt insúlín', 
+                                subOptions: [
+                                    { display: '10 einingar', output: 'Venjulegt insúlín 10 einingar' },
+                                    { display: '20 einingar', output: 'Venjulegt insúlín 20 einingar' },
+                                    { display: '30 einingar', output: 'Venjulegt insúlín 30 einingar' }
+                                ]
+                            }
+                        ]
+                    },
+                    { 
+                        display: 'Meðallangt virkt', 
+                        subOptions: [
+                            { 
+                                display: 'NPH', 
+                                subOptions: [
+                                    { display: '10 einingar', output: 'NPH 10 einingar' },
+                                    { display: '20 einingar', output: 'NPH 20 einingar' },
+                                    { display: '30 einingar', output: 'NPH 30 einingar' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Langt virkt',
+                subOptions: [
+                    { 
+                        display: 'Lantus', 
+                        subOptions: [
+                            { display: '10 einingar', output: 'Lantus 10 einingar' },
+                            { display: '20 einingar', output: 'Lantus 20 einingar' },
+                            { display: '30 einingar', output: 'Lantus 30 einingar' }
+                        ]
+                    },
+                    { 
+                        display: 'Levemir', 
+                        subOptions: [
+                            { display: '10 einingar', output: 'Levemir 10 einingar' },
+                            { display: '20 einingar', output: 'Levemir 20 einingar' },
+                            { display: '30 einingar', output: 'Levemir 30 einingar' }
+                        ]
+                    },
+                    { 
+                        display: 'Tresiba', 
+                        subOptions: [
+                            { display: '10 einingar', output: 'Tresiba 10 einingar' },
+                            { display: '20 einingar', output: 'Tresiba 20 einingar' },
+                            { display: '30 einingar', output: 'Tresiba 30 einingar' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Sulfonylurea',
+                subOptions: [
+                    { 
+                        display: 'Glipizid', 
+                        subOptions: [
+                            { display: '5 mg', output: 'Glipizid 5 mg einu sinni á dag' },
+                            { display: '10 mg', output: 'Glipizid 10 mg tvisvar á dag' }
+                        ]
+                    },
+                    { 
+                        display: 'Glyburide', 
+                        subOptions: [
+                            { display: '5 mg', output: 'Glyburide 5 mg einu sinni á dag' },
+                            { display: '10 mg', output: 'Glyburide 10 mg tvisvar á dag' }
+                        ]
+                    },
+                    { 
+                        display: 'Glimepiride', 
+                        subOptions: [
+                            { display: '1 mg', output: 'Glimepiride 1 mg einu sinni á dag' },
+                            { display: '2 mg', output: 'Glimepiride 2 mg tvisvar á dag' },
+                            { display: '4 mg', output: 'Glimepiride 4 mg tvisvar á dag' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['DPP-4 hindrar', 'GLP-1 örvar', 'SGLT2 hindrar'],
+        options: [
+            {
+                display: 'DPP-4 hindrar',
+                subOptions: [
+                    { 
+                        display: 'Sitagliptin', 
+                        subOptions: [
+                            { display: '100 mg', output: 'Sitagliptin 100 mg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: 'Saxagliptin', 
+                        subOptions: [
+                            { display: '5 mg', output: 'Saxagliptin 5 mg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: 'Linagliptin', 
+                        subOptions: [
+                            { display: '5 mg', output: 'Linagliptin 5 mg einu sinni á dag' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'GLP-1 örvar',
+                subOptions: [
+                    { 
+                        display: 'Exenatide', 
+                        subOptions: [
+                            { display: '5 mcg', output: 'Exenatide 5 mcg tvisvar á dag' },
+                            { display: '10 mcg', output: 'Exenatide 10 mcg tvisvar á dag' }
+                        ]
+                    },
+                    { 
+                        display: 'Liraglutide', 
+                        subOptions: [
+                            { display: '0,6 mg', output: 'Liraglutide 0,6 mg einu sinni á dag' },
+                            { display: '1,2 mg', output: 'Liraglutide 1,2 mg einu sinni á dag' },
+                            { display: '1,8 mg', output: 'Liraglutide 1,8 mg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: 'Dulaglutide', 
+                        subOptions: [
+                            { display: '0,75 mg', output: 'Dulaglutide 0,75 mg einu sinni í viku' },
+                            { display: '1,5 mg', output: 'Dulaglutide 1,5 mg einu sinni í viku' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'SGLT2 hindrar',
+                subOptions: [
+                    { 
+                        display: 'Canagliflozin', 
+                        subOptions: [
+                            { display: '100 mg', output: 'Canagliflozin 100 mg einu sinni á dag' },
+                            { display: '300 mg', output: 'Canagliflozin 300 mg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: 'Dapagliflozin', 
+                        subOptions: [
+                            { display: '5 mg', output: 'Dapagliflozin 5 mg einu sinni á dag' },
+                            { display: '10 mg', output: 'Dapagliflozin 10 mg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: 'Empagliflozin', 
+                        subOptions: [
+                            { display: '10 mg', output: 'Empagliflozin 10 mg einu sinni á dag' },
+                            { display: '25 mg', output: 'Empagliflozin 25 mg einu sinni á dag' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Levothyroxine', 'Methimazole'],
+        options: [
+            {
+                display: 'Levothyroxine',
+                subOptions: [
+                    { 
+                        display: '25 mcg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Levothyroxine 25 mcg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: '50 mcg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Levothyroxine 50 mcg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: '75 mcg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Levothyroxine 75 mcg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: '100 mcg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Levothyroxine 100 mcg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: '125 mcg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Levothyroxine 125 mcg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: '150 mcg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Levothyroxine 150 mcg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: '175 mcg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Levothyroxine 175 mcg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: '200 mcg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Levothyroxine 200 mcg einu sinni á dag' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Methimazole',
+                subOptions: [
+                    { 
+                        display: '5 mg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Methimazole 5 mg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: '10 mg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Methimazole 10 mg einu sinni á dag' }
+                        ]
+                    },
+                    { 
+                        display: '20 mg', 
+                        subOptions: [
+                            { display: 'Einu sinni á dag', output: 'Methimazole 20 mg einu sinni á dag' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+];
+
+
 
 //Áfengi
 const SymptomsAlcoholism = [
@@ -5670,7 +8056,304 @@ const PlanGigt = [
 
 
 
-
+const LyfData = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóðþrýstingslyf'],
+        options: [
+            {
+                display: 'Blóðþrýstingslyf',
+                subOptions: [
+                    { display: 'NOS', output: 'Er á blóðþrýstingslyfjum' },
+                    {
+                        display: 'ACE-hemill',
+                        subOptions: [
+                            {
+                                display: 'Ramipril',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ramipril' },
+                                            { display: 'Set á', output: 'Set á Ramipril' },
+                                            { display: 'Bæti við', output: 'Bæti við Ramipril' },
+                                            { display: 'Er á', output: 'Er á Ramipril' }
+                                        ]
+                                    },
+                                    {
+                                        display: '2.5mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Ramipril 2.5mg' },
+                                                    { display: 'Set á', output: 'Set á Ramipril 2.5mg' },
+                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 2.5mg' },
+                                                    { display: 'Er á', output: 'Er á Ramipril 2.5mg' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x1',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Ramipril 2.5mg 1x1' },
+                                                    { display: 'Set á', output: 'Set á Ramipril 2.5mg 1x1' },
+                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 2.5mg 1x1' },
+                                                    { display: 'Er á', output: 'Er á Ramipril 2.5mg 1x1' }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '5mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Ramipril 5mg' },
+                                                    { display: 'Set á', output: 'Set á Ramipril 5mg' },
+                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 5mg' },
+                                                    { display: 'Er á', output: 'Er á Ramipril 5mg' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x1',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Ramipril 5mg 1x1' },
+                                                    { display: 'Set á', output: 'Set á Ramipril 5mg 1x1' },
+                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 5mg 1x1' },
+                                                    { display: 'Er á', output: 'Er á Ramipril 5mg 1x1' }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '10mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Ramipril 10mg' },
+                                                    { display: 'Set á', output: 'Set á Ramipril 10mg' },
+                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 10mg' },
+                                                    { display: 'Er á', output: 'Er á Ramipril 10mg' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x1',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Ramipril 10mg 1x1' },
+                                                    { display: 'Set á', output: 'Set á Ramipril 10mg 1x1' },
+                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 10mg 1x1' },
+                                                    { display: 'Er á', output: 'Er á Ramipril 10mg 1x1' }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Angiotensin II receptor blocker (ARB)',
+                        subOptions: [
+                            {
+                                display: 'Losartan',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Losartan' },
+                                            { display: 'Set á', output: 'Set á Losartan' },
+                                            { display: 'Bæti við', output: 'Bæti við Losartan' },
+                                            { display: 'Er á', output: 'Er á Losartan' }
+                                        ]
+                                    },
+                                    {
+                                        display: '25mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Losartan 25mg' },
+                                                    { display: 'Set á', output: 'Set á Losartan 25mg' },
+                                                    { display: 'Bæti við', output: 'Bæti við Losartan 25mg' },
+                                                    { display: 'Er á', output: 'Er á Losartan 25mg' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x1',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Losartan 25mg 1x1' },
+                                                    { display: 'Set á', output: 'Set á Losartan 25mg 1x1' },
+                                                    { display: 'Bæti við', output: 'Bæti við Losartan 25mg 1x1' },
+                                                    { display: 'Er á', output: 'Er á Losartan 25mg 1x1' }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '50mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Losartan 50mg' },
+                                                    { display: 'Set á', output: 'Set á Losartan 50mg' },
+                                                    { display: 'Bæti við', output: 'Bæti við Losartan 50mg' },
+                                                    { display: 'Er á', output: 'Er á Losartan 50mg' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x1',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Losartan 50mg 1x1' },
+                                                    { display: 'Set á', output: 'Set á Losartan 50mg 1x1' },
+                                                    { display: 'Bæti við', output: 'Bæti við Losartan 50mg 1x1' },
+                                                    { display: 'Er á', output: 'Er á Losartan 50mg 1x1' }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '100mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Losartan 100mg' },
+                                                    { display: 'Set á', output: 'Set á Losartan 100mg' },
+                                                    { display: 'Bæti við', output: 'Bæti við Losartan 100mg' },
+                                                    { display: 'Er á', output: 'Er á Losartan 100mg' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x1',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Losartan 100mg 1x1' },
+                                                    { display: 'Set á', output: 'Set á Losartan 100mg 1x1' },
+                                                    { display: 'Bæti við', output: 'Bæti við Losartan 100mg 1x1' },
+                                                    { display: 'Er á', output: 'Er á Losartan 100mg 1x1' }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Beta-blokki',
+                        subOptions: [
+                            {
+                                display: 'Metoprolol',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Metoprolol' },
+                                            { display: 'Set á', output: 'Set á Metoprolol' },
+                                            { display: 'Bæti við', output: 'Bæti við Metoprolol' },
+                                            { display: 'Er á', output: 'Er á Metoprolol' }
+                                        ]
+                                    },
+                                    {
+                                        display: '25mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Metoprolol 25mg' },
+                                                    { display: 'Set á', output: 'Set á Metoprolol 25mg' },
+                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 25mg' },
+                                                    { display: 'Er á', output: 'Er á Metoprolol 25mg' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x1',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Metoprolol 25mg 1x1' },
+                                                    { display: 'Set á', output: 'Set á Metoprolol 25mg 1x1' },
+                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 25mg 1x1' },
+                                                    { display: 'Er á', output: 'Er á Metoprolol 25mg 1x1' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x2',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Metoprolol 25mg 1x2' },
+                                                    { display: 'Set á', output: 'Set á Metoprolol 25mg 1x2' },
+                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 25mg 1x2' },
+                                                    { display: 'Er á', output: 'Er á Metoprolol 25mg 1x2' }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '50mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Metoprolol 50mg' },
+                                                    { display: 'Set á', output: 'Set á Metoprolol 50mg' },
+                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 50mg' },
+                                                    { display: 'Er á', output: 'Er á Metoprolol 50mg' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x1',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Metoprolol 50mg 1x1' },
+                                                    { display: 'Set á', output: 'Set á Metoprolol 50mg 1x1' },
+                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 50mg 1x1' },
+                                                    { display: 'Er á', output: 'Er á Metoprolol 50mg 1x1' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x2',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Metoprolol 50mg 1x2' },
+                                                    { display: 'Set á', output: 'Set á Metoprolol 50mg 1x2' },
+                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 50mg 1x2' },
+                                                    { display: 'Er á', output: 'Er á Metoprolol 50mg 1x2' }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '100mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Metoprolol 100mg' },
+                                                    { display: 'Set á', output: 'Set á Metoprolol 100mg' },
+                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 100mg' },
+                                                    { display: 'Er á', output: 'Er á Metoprolol 100mg' }
+                                                ]
+                                            },
+                                            {
+                                                display: '1x1',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Metoprolol 100mg 1x1' },
+                                                    { display: 'Set á', output: 'Set á Metoprolol 100mg 1x1' },
+                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 100mg 1x1' },
+                                                    { display: 'Er á', output: 'Er á Metoprolol 100mg 1x1' }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+    
+];
 const Timi = [{
     name: '',
     type: 'options',
@@ -6479,6 +9162,20 @@ const Habits = [
         ]
     }
 ];
+const LifsmorkData = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Lífsmörk'],
+        options: [
+            {
+                display: 'Lífsmörk',
+                output: 'OPEN_LIFSMORK_MODAL' // Special command to recognize in the handleButtonClick function
+            }
+        ]
+    }
+];
+
 
 // Eiturlyf functionir (notast með Habits hér fyrir ofan)
 function generateInitialDrugOptions() {
@@ -7044,12 +9741,14 @@ function createButtons(container, data) {
 
     data.forEach(item => {
         console.log('Processing item:', item); // Debugging line
+
         const row = document.createElement('div');
         row.className = 'data-row';
 
         if (item.name) {
-            const label = document.createElement('span');
+            const label = document.createElement('div'); // Changed from 'span' to 'div'
             label.textContent = item.name;
+            label.className = 'item-label'; // Added a class for styling
             row.appendChild(label);
         }
 
@@ -7092,7 +9791,9 @@ function handleButtonClick(event, item, displayText, index, button) {
         const selectedOption = item.options[index];
 
         if (selectedOption) {
-            if (selectedOption.subOptions) {
+            if (selectedOption.output === 'OPEN_LIFSMORK_MODAL') {
+                openLifsmorkModal(); // Open the Lífsmörk modal
+            } else if (selectedOption.subOptions) {
                 createPopup(event, selectedOption, button);
             } else if (selectedOption.output) {
                 insertText(selectedOption.output);
@@ -7302,6 +10003,34 @@ function createPlanSection(data) {
     createButtons(container, data);
     return section;
 }
+function createRannsoknirSection(data) {
+    console.log('Creating Rannsoknir Section with data:', data); // Debugging line
+    const section = createSection('rannsoknir', 'Rannsóknir');
+    const container = section.querySelector('#rannsoknir');
+    createButtons(container, data);
+    return section;
+}
+function createLifsmorkSection(data) {
+    console.log('Creating Lífsmörk Section with data:', data); // Debugging line
+    const section = createSection('lifsmork', 'Lífsmörk');
+    const container = section.querySelector('#lifsmork');
+    createButtons(container, data);
+    return section;
+}
+function createRaudFloggSection(data) {
+    console.log('Creating Raud Flögg Section with data:', data); // Debugging line
+    const section = createSection('raudflogg', 'Rauð Flögg');
+    const container = section.querySelector('#raudflogg');
+    createButtons(container, data);
+    return section;
+}
+function createLyfSection(data) {
+    console.log('Creating Lyf Section with data:', data); // Debugging line
+    const section = createSection('lyf', 'Lyf');
+    const container = section.querySelector('#lyf');
+    createButtons(container, data);
+    return section;
+}
  function createRiskHeartSection(data) {
     console.log('Creating Risk Section with data:', data); // Debugging line
     const section = createSection('riskheart', 'Áhættuþættir Kransæðasjúkdóms');
@@ -7412,6 +10141,20 @@ function createRannsoknSection(data) {
     createButtons(container, data);
     return section;
 }
+function createSIGECAPSSection(data) {
+    console.log('Creating SIGECAPS Section with data:', data); // Debugging line
+    const section = createSection('sigecaps', 'SIGECAPS');
+    const container = section.querySelector('#sigecaps');
+    createButtons(container, data);
+    return section;
+}
+function createGedSkodunSection(data) {
+    console.log('Creating Geð Skoðun Section with data:', data); // Debugging line
+    const section = createSection('gedskodun', 'Skoðun');
+    const container = section.querySelector('#gedskodun');
+    createButtons(container, data);
+    return section;
+}
 
 
 
@@ -7508,6 +10251,8 @@ function loadPage(page) {
         const timalengdSection = createTimalengdSection(Duration);
         const historyViralSection = createHistoryViralSection(historyViralData);
         const habitsSection = createHabitsSection(Habits);
+        const lifsmorkSection = createLifsmorkSection(LifsmorkData);
+        const rannsoknirSection = createRannsoknirSection(RannsoknirViral);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
@@ -7519,8 +10264,9 @@ function loadPage(page) {
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
+        middleColumn.appendChild(lifsmorkSection);
+        middleColumn.appendChild(rannsoknirSection);
                 
-        addLifsmorkButton(middleColumn); // Append the button at the end
         
 
         const rightColumn = document.createElement('div');
@@ -7590,16 +10336,26 @@ function loadPage(page) {
         const planSection = createPlanSection(PlanMelting);
         const historyMeltingSection = createHistoryViralSection(historyMelting);
         const habitsSection = createHabitsSection(Habits);
+        const rannsoknirSection = createRannsoknirSection(RannsoknirMelting);
+        const lifsmorkSection = createLifsmorkSection(LifsmorkData);
+        const raudFloggSection = createRaudFloggSection(RaudFloggMelting);
+        const lyfSection = createLyfSection(LyfMelting);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
+        leftColumn.appendChild(raudFloggSection);
         leftColumn.appendChild(historyMeltingSection);
+        leftColumn.appendChild(lyfSection);
         leftColumn.appendChild(habitsSection);
+        
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
+        middleColumn.appendChild(lifsmorkSection); // Add this line
+        middleColumn.appendChild(rannsoknirSection);
+        
         
 
         const rightColumn = document.createElement('div');
@@ -7623,6 +10379,9 @@ function loadPage(page) {
         const RiskHeartSection = createRiskHeartSection(RiskFactorsHeart);
         const CHADSVASCSection = createCHADSVASCSection(CHADSVASCHeart);
         const historyHeartSection = createHistoryViralSection(historyHeart);
+        const lifsmorkSection = createLifsmorkSection(LifsmorkData);
+        const rannsoknirSection = createRannsoknirSection(RannsoknirHeart);
+        const lyfSection = createLyfSection(LyfData);
 
 
         const leftColumn = document.createElement('div');
@@ -7632,14 +10391,16 @@ function loadPage(page) {
       leftColumn.appendChild(RiskHeartSection)
       leftColumn.appendChild(CHADSVASCSection)
       leftColumn.appendChild(historyHeartSection)
+      leftColumn.appendChild(lyfSection);
     //    leftColumn.appendChild(historyViralSection);
         leftColumn.appendChild(habitsSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
-                
-        addLifsmorkButton(middleColumn); // Append the button at the end
+        middleColumn.appendChild(lifsmorkSection);
+        middleColumn.appendChild(rannsoknirSection);
+        
         
 
         const rightColumn = document.createElement('div');
@@ -7706,14 +10467,18 @@ function loadPage(page) {
         const einkenniSection = createEinkenniSection(SymptomsGed);
         const skodunSection = createSkodunSection(ExamsGed);
         const planSection = createPlanSection(PlanGed);
+        const sigecapsSection = createSIGECAPSSection(SIGECAPS); // Add SIGECAPS section
+        const gedSkodunSection = createGedSkodunSection(GedSkodunData); // Add this line
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
+        leftColumn.appendChild(sigecapsSection); // Append SIGECAPS section to left column
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
-        middleColumn.appendChild(skodunSection);
+        middleColumn.appendChild(gedSkodunSection); // Add this line
+        //middleColumn.appendChild(skodunSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -7778,14 +10543,18 @@ function loadPage(page) {
         const einkenniSection = createEinkenniSection(SymptomsInnkirtla);
         const skodunSection = createSkodunSection(ExamsInnkirtla);
         const planSection = createPlanSection(PlanInnkirtla);
+        const rannsoknirSection = createRannsoknirSection(RannsoknirInnkirtla);
+        const lyfSection = createLyfSection(LyfInnkirtla); // Add this line
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
+        leftColumn.appendChild(lyfSection); // Add this line
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
+        middleColumn.appendChild(rannsoknirSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -7798,7 +10567,7 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
-    }  else {
+    }   else {
         console.error('Unknown page:', page);
     }
 
@@ -7810,6 +10579,12 @@ function loadPage(page) {
     makeTitleButton('riskurinary', addRiskBladderCancer);
     makeTitleButton('habits', addHabits);
     makeTitleButton('historyViral', addHeilsufar);
+    makeTitleButton('rannsoknir', addRannsoknir);
+    makeTitleButton('lyf', addLyf);
+    makeTitleButton('lifsmork', addLifsmork);
+    makeTitleButton('raudflogg', addRaudFlogg);
+    makeTitleButton('sigecaps', addSIGECAPS);
+    makeTitleButton('gedskodun', addGedSkodun);
 }
 
 
@@ -7824,6 +10599,7 @@ function insertText(text) {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before modification
     textbox.value += text.replace(/\.$/, '') + '. ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function eraseText() {
     const textbox = document.getElementById('journalTextbox');
@@ -7931,6 +10707,38 @@ function addHeilsufar() {
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nHeilsufar: ';
 }
+function addRannsoknir() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nRannsóknir: ';
+}
+function addLyf() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nLyf: ';
+}
+function addLifsmork() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nLífsmörk: ';
+}
+function addRaudFlogg() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nRauð Flögg: ';
+}
+function addSIGECAPS(output) {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nSIGECAPS: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+}
+function addGedSkodun() {
+    const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); // Save current state before adding
+    textbox.value += '\n\nGeðskoðun: ';
+}
+
 
 
 function parseCode() {
