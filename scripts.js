@@ -7644,6 +7644,16 @@ const LyfInnkirtla = [
             {
                 display: 'GLP-1 örvar',
                 subOptions: [
+                    {
+                        display: 'Semaglutide',
+                        subOptions: [
+                            { display: '0,25 mg', output: 'Semaglutide 0,25 mg einu sinni í viku' },
+                            { display: '0,5 mg', output: 'Semaglutide 0,5 mg einu sinni í viku' },
+                            { display: '1 mg', output: 'Semaglutide 1 mg einu sinni í viku' },
+                            { display: '1,7 mg', output: 'Semaglutide 1,7 mg einu sinni í viku' },
+                            { display: '2,4 mg', output: 'Semaglutide 2,4 mg einu sinni í viku' }
+                        ]
+                    },
                     { 
                         display: 'Exenatide', 
                         subOptions: [
@@ -10676,56 +10686,67 @@ function addSkoðun() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nSk: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addPlan() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nÁ/P: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addRiskFactors() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nÁhættuþættir kransæðasjúkdóms: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addCHADSVASC() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nCHADSVASC: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addRiskBladderCancer() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nÁhættuþættir þvagblöðrukrabbamein: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addHabits() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nVenjur: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addHeilsufar() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nHeilsufar: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addRannsoknir() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nRannsóknir: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addLyf() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nLyf: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addLifsmork() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nLífsmörk: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addRaudFlogg() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nRauð Flögg: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 function addSIGECAPS(output) {
     const textbox = document.getElementById('journalTextbox');
@@ -10737,6 +10758,7 @@ function addGedSkodun() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nGeðskoðun: ';
+    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
 }
 
 
