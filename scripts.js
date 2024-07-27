@@ -643,7 +643,12 @@ const PlanViral = [
                         display: 'Gef tíma í endurkomu',
                         subOptions: [
                             { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
-                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'}
+                                ]
+                            }
                             
                         ]
                     }
@@ -813,6 +818,40 @@ const RannsoknirViral = [
                 ],
                 onRightClickOutput: 'CRP <5'
             }
+        ]
+    }
+];
+const RaudFloggViral = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóðhósti', 'Ljósfælni', 'Blóð í hægðum'],
+        options: [
+            { display: 'Þyngdartap', output: 'Lýsir þyngdartapi', onRightClickOutput: 'Ekki þyngdartap' },
+            { display: 'Nætursviti', output: 'Lýsir auknum nætursvita', onRightClickOutput: 'Ekki aukinn nætursviti' },
+            {
+                display: 'Blóð í hægðum',
+                subOptions: [
+                    { display: 'Ferskt blóð á pappír', output: 'Lýsir fersku blóði á pappír' },
+                    { 
+                        display: 'Ferskt blóð í skál',
+                        subOptions: [
+                            { display: 'Lítið', output: 'Lýsir litlu magni af fersku blóði í skál' },
+                            { display: 'Mikið', output: 'Lýsir miklu magni af fersku blóði í skál' }
+                        ]
+                    },
+                    { display: 'Svartar hægðir', output: 'Verið með svartar hægðir' }
+                ],
+                onRightClickOutput: 'Ekki blóð í hægðum eða svartar hægðir'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hraðahindranir'],
+        options: [
+            { display: 'Hraðahindranir', output: 'Vont að fara yfir hraðahindranir', onRightClickOutput: 'Ekki vont að fara yfir hraðahindranir' }
         ]
     }
 ];
@@ -1222,7 +1261,12 @@ const PlanUrinary = [
                         display: 'Gef tíma í endurkomu',
                         subOptions: [
                             { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
-                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'}
+                                ]
+                            }
                             
                         ]
                     }
@@ -1820,7 +1864,12 @@ const PlanEye = [
                         display: 'Gef tíma í endurkomu',
                         subOptions: [
                             { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
-                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'}
+                                ]
+                            }
                             
                         ]
                     }
@@ -3246,7 +3295,12 @@ const PlanHeart = [
                         display: 'Gef tíma í endurkomu',
                         subOptions: [
                             { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
-                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'}
+                                ]
+                            }
                             
                         ]
                     }
@@ -4429,7 +4483,12 @@ const PlanMelting = [
                         display: 'Gef tíma í endurkomu',
                         subOptions: [
                             { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
-                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'}
+                                ]
+                            }
                             
                         ]
                     }
@@ -5925,7 +5984,12 @@ const PlanStodkerfi = [
                         display: 'Gef tíma í endurkomu',
                         subOptions: [
                             { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
-                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'}
+                                ]
+                            }
                             
                         ]
                     }
@@ -7696,7 +7760,12 @@ const PlanInnkirtla = [
                         display: 'Gef tíma í endurkomu',
                         subOptions: [
                             { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
-                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'}
+                                ]
+                            }
                             
                         ]
                     }
