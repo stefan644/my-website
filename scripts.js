@@ -11339,78 +11339,143 @@ function addSkoðun() {
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nSk: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addPlan() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nÁ/P: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addRiskFactors() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nÁhættuþættir kransæðasjúkdóms: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addCHADSVASC() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nCHADSVASC: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addRiskBladderCancer() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nÁhættuþættir þvagblöðrukrabbamein: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addHabits() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nVenjur: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addHeilsufar() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nHeilsufar: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addRannsoknir() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nRannsóknir: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addLyf() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nLyf: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addLifsmork() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nLífsmörk: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addRaudFlogg() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nRauð Flögg: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addSIGECAPS(output) {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nSIGECAPS: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 function addGedSkodun() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before adding
     textbox.value += '\n\nGeðskoðun: ';
     textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
 
 
