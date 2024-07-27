@@ -110,6 +110,10 @@ main {
     overflow: auto;
 }
 
+#journalTextbox:focus {
+    outline: none;
+}
+
 #risk, #riskheart, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral, #habits, #lyf, #lifsmork, #raudflogg, #rannsoknir, #sigecaps, #gedskodun {
     display: flex;
     flex-direction: column;

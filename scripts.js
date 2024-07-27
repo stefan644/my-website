@@ -144,7 +144,7 @@ const SymptomsViral = [
             {
                 display: 'Hósti',
                 subOptions: [
-                    { display: 'Hósti', output: 'Hósti' },
+                    { display: 'NOS', output: 'Hósti' },
                     { display: 'Blautur', output: 'Blautur hósti' },
                     { display: 'Þurr', output: 'Þurr hósti' }
                 ],
@@ -228,7 +228,8 @@ const SymptomsViral = [
                 display: 'Leiðni',
                 subOptions: [
                     { display: 'Hægra eyra', output: 'Leiðir út í hægra eyra' },
-                    { display: 'Vinstra eyra', output: 'Leiðir út í vinstra eyra' }
+                    { display: 'Vinstra eyra', output: 'Leiðir út í vinstra eyra' },
+                    { display: 'Bæði', output: 'Leiðir út í bæði eyru' }
                 ]
             }
         ]
@@ -528,7 +529,7 @@ const PlanViral = [
             {
             display: 'Stuðningsmeðferð',
                 subOptions: [
-                    { display: 'Stuðningsmeðferð', output: 'Ráðlegg stuðningsmeðferð' },
+                    { display: 'Stuðningsmeðferð', output: 'Stuðningsmeðferð' },
                     { display: 'Hitalækkandi', output: 'Hitalækkandi eftir þörfum' },
                     { display: 'Slímlosandi', output: 'Reynum slímlosandi' },
                     { display: 'Kódein', output: 'Fær kódein við hósta' }
@@ -4117,9 +4118,8 @@ const ExamsMelting = [
                     },
                     { display: 'Svartar hægðir', output: 'Svartar hægðir' }
                 ],
-                onRightClickSubOptions: [
-                    { display: 'Eðilegt', output: 'Eðlilegar hægðir, ekki blóð á handska' }
-                ]
+                onRightClickOutput: 'Eðlilegar hægðir, ekki blóð á handska'
+                
             }
 
         ]
@@ -4171,7 +4171,8 @@ const PlanMelting = [
                 display: 'Diverticulitis',
                 subOptions: [
                     { display: 'Greining', output: 'Diverticulitis' },
-                    { display: 'Grunur', output: 'Grunur um diverticulitis' }
+                    { display: 'Grunur', output: 'Grunur um diverticulitis' },
+                    { display: 'Fullmótuð úrlausn', output: 'Grunur um diverticulitis. Fær viðeigandi ráðleggingar um meðferð. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar' }
                 ]
             },
             {
@@ -7149,21 +7150,494 @@ const PlanInnkirtla = [
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar', 'Lyf', 'Tilvísun'],
+        display: ['Sykursýki', 'Skjaldkirtill'],
         options: [
-            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um innkirtlasjúkdóm' },
             {
-                display: 'Lyf',
+                display: 'Sykursýki',
                 subOptions: [
-                    { display: 'Insúlín', output: 'Ávísun á insúlín' },
-                    { display: 'Skjaldkirtilslyf', output: 'Ávísun á skjaldkirtilslyf' }
+                    {
+                        display: 'NOS',
+                        output: 'Sykursýki'
+                    },
+                    {
+                        display: 'Týpa 1',
+                        subOptions: [
+                            {
+                                display: 'Greining',
+                                output: 'Sykursýki týpa 1'
+                            },
+                            {
+                                display: 'Grunur',
+                                output: 'Grunur um sykursýki týpu 1'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Týpa 2',
+                        subOptions: [
+                            {
+                                display: 'Greining',
+                                output: 'Sykursýki týpa 2'
+                            },
+                            {
+                                display: 'Grunur',
+                                output: 'Grunur um sykursýki týpu 2'
+                            }
+                        ]
+                    }
                 ]
             },
             {
-                display: 'Tilvísun',
+                display: 'Skjaldkirtill',
                 subOptions: [
-                    { display: 'Innkirtlasérfræðingur', output: 'Vísa til innkirtlasérfræðings' },
-                    { display: 'Sérfræðingur', output: 'Vísa til sérfræðings' }
+                    {
+                        display: 'NOS',
+                        output: 'Skjaldkirtilssjúkdómur'
+                    },
+                    {
+                        display: 'Hyperthyroidism',
+                        subOptions: [
+                            {
+                                display: 'Greining',
+                                output: 'Hyperthyroidism'
+                            },
+                            {
+                                display: 'Grunur',
+                                output: 'Grunur um hyperthyroidism'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Hypothyroidism',
+                        subOptions: [
+                            {
+                                display: 'Greining',
+                                output: 'Hypothyroidism'
+                            },
+                            {
+                                display: 'Grunur',
+                                output: 'Grunur um hypothyroidism'
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Sykursýkislyf', 'Skjaldkirtilslyf'],
+        options: [
+            {
+                display: 'Sykursýkislyf',
+                subOptions: [
+                    {
+                        display: 'Metformin',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Metformin'
+                            },
+                            {
+                                display: 'Hefjum meðferð',
+                                subOptions: [
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Hefjum meðferð með Metformin 500 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Hefjum meðferð með Metformin 500 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Hefjum meðferð með Metformin 500 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Hefjum meðferð með Metformin 500 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    },
+                                    {
+                                        display: '850 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Hefjum meðferð með Metformin 850 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Hefjum meðferð með Metformin 850 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Hefjum meðferð með Metformin 850 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Hefjum meðferð með Metformin 850 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    },
+                                    {
+                                        display: '1000 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Hefjum meðferð með Metformin 1000 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Hefjum meðferð með Metformin 1000 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Hefjum meðferð með Metformin 1000 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Hefjum meðferð með Metformin 1000 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Viðbót',
+                                subOptions: [
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Bætum við Metformin 500 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Bætum við Metformin 500 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Bætum við Metformin 500 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Bætum við Metformin 500 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    },
+                                    {
+                                        display: '850 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Bætum við Metformin 850 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Bætum við Metformin 850 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Bætum við Metformin 850 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Bætum við Metformin 850 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    },
+                                    {
+                                        display: '1000 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Bætum við Metformin 1000 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Bætum við Metformin 1000 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Bætum við Metformin 1000 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Bætum við Metformin 1000 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Aukum skammt',
+                                subOptions: [
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Aukum skammt af Metformin í 500 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Aukum skammt af Metformin í 500 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Aukum skammt af Metformin í 500 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Aukum skammt af Metformin í 500 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    },
+                                    {
+                                        display: '850 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Aukum skammt af Metformin í 850 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Aukum skammt af Metformin í 850 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Aukum skammt af Metformin í 850 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Aukum skammt af Metformin í 850 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    },
+                                    {
+                                        display: '1000 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Aukum skammt af Metformin í 1000 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Aukum skammt af Metformin í 1000 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Aukum skammt af Metformin í 1000 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Aukum skammt af Metformin í 1000 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Lækka skammt',
+                                subOptions: [
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Lækkum skammt af Metformin í 500 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Lækkum skammt af Metformin í 500 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Lækkum skammt af Metformin í 500 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Lækkum skammt af Metformin í 500 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    },
+                                    {
+                                        display: '850 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Lækkum skammt af Metformin í 850 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Lækkum skammt af Metformin í 850 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Lækkum skammt af Metformin í 850 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Lækkum skammt af Metformin í 850 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    },
+                                    {
+                                        display: '1000 mg',
+                                        subOptions: [
+                                            { display: '1 tafla einu sinni á dag', output: 'Lækkum skammt af Metformin í 1000 mg, 1 tafla einu sinni á dag' },
+                                            { display: '1 tafla tvisvar á dag', output: 'Lækkum skammt af Metformin í 1000 mg, 1 tafla tvisvar á dag' },
+                                            { display: '2 töflur tvisvar á dag', output: 'Lækkum skammt af Metformin í 1000 mg, 2 töflur tvisvar á dag' },
+                                            { display: '1 tafla þrisvar á dag', output: 'Lækkum skammt af Metformin í 1000 mg, 1 tafla þrisvar á dag' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'GLP-1 agonistar',
+                        subOptions: [
+                            {
+                                display: 'Semaglutide',
+                                subOptions: [
+                                    {
+                                        display: 'Hefjum meðferð',
+                                        subOptions: [
+                                            { display: '0.25 mg', output: 'Hefjum meðferð með Semaglutide 0.25 mg á viku' },
+                                            { display: '0.5 mg', output: 'Hefjum meðferð með Semaglutide 0.5 mg á viku' },
+                                            { display: '1 mg', output: 'Hefjum meðferð með Semaglutide 1 mg á viku' },
+                                            { display: '1.7 mg', output: 'Hefjum meðferð með Semaglutide 1.7 mg á viku' },
+                                            { display: '2.4 mg', output: 'Hefjum meðferð með Semaglutide 2.4 mg á viku' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Viðbót',
+                                        subOptions: [
+                                            { display: '0.25 mg', output: 'Bætum við Semaglutide 0.25 mg á viku' },
+                                            { display: '0.5 mg', output: 'Bætum við Semaglutide 0.5 mg á viku' },
+                                            { display: '1 mg', output: 'Bætum við Semaglutide 1 mg á viku' },
+                                            { display: '1.7 mg', output: 'Bætum við Semaglutide 1.7 mg á viku' },
+                                            { display: '2.4 mg', output: 'Bætum við Semaglutide 2.4 mg á viku' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Aukum skammt',
+                                        subOptions: [
+                                            { display: '0.25 mg', output: 'Aukum skammt af Semaglutide í 0.25 mg á viku' },
+                                            { display: '0.5 mg', output: 'Aukum skammt af Semaglutide í 0.5 mg á viku' },
+                                            { display: '1 mg', output: 'Aukum skammt af Semaglutide í 1 mg á viku' },
+                                            { display: '1.7 mg', output: 'Aukum skammt af Semaglutide í 1.7 mg á viku' },
+                                            { display: '2.4 mg', output: 'Aukum skammt af Semaglutide í 2.4 mg á viku' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lækka skammt',
+                                        subOptions: [
+                                            { display: '0.25 mg', output: 'Lækkum skammt af Semaglutide í 0.25 mg á viku' },
+                                            { display: '0.5 mg', output: 'Lækkum skammt af Semaglutide í 0.5 mg á viku' },
+                                            { display: '1 mg', output: 'Lækkum skammt af Semaglutide í 1 mg á viku' },
+                                            { display: '1.7 mg', output: 'Lækkum skammt af Semaglutide í 1.7 mg á viku' },
+                                            { display: '2.4 mg', output: 'Lækkum skammt af Semaglutide í 2.4 mg á viku' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Thiazolidinediones',
+                        subOptions: [
+                            {
+                                display: 'Pioglitazone',
+                                subOptions: [
+                                    {
+                                        display: 'Hefjum meðferð',
+                                        subOptions: [
+                                            { display: '15 mg', output: 'Hefjum meðferð með Pioglitazone 15 mg' },
+                                            { display: '30 mg', output: 'Hefjum meðferð með Pioglitazone 30 mg' },
+                                            { display: '45 mg', output: 'Hefjum meðferð með Pioglitazone 45 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Viðbót',
+                                        subOptions: [
+                                            { display: '15 mg', output: 'Bætum við Pioglitazone 15 mg' },
+                                            { display: '30 mg', output: 'Bætum við Pioglitazone 30 mg' },
+                                            { display: '45 mg', output: 'Bætum við Pioglitazone 45 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Aukum skammt',
+                                        subOptions: [
+                                            { display: '15 mg', output: 'Aukum skammt af Pioglitazone í 15 mg' },
+                                            { display: '30 mg', output: 'Aukum skammt af Pioglitazone í 30 mg' },
+                                            { display: '45 mg', output: 'Aukum skammt af Pioglitazone í 45 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lækka skammt',
+                                        subOptions: [
+                                            { display: '15 mg', output: 'Lækkum skammt af Pioglitazone í 15 mg' },
+                                            { display: '30 mg', output: 'Lækkum skammt af Pioglitazone í 30 mg' },
+                                            { display: '45 mg', output: 'Lækkum skammt af Pioglitazone í 45 mg' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Sulfonylureas',
+                        subOptions: [
+                            {
+                                display: 'Glipizide',
+                                subOptions: [
+                                    {
+                                        display: 'Hefjum meðferð',
+                                        subOptions: [
+                                            { display: '2.5 mg', output: 'Hefjum meðferð með Glipizide 2.5 mg' },
+                                            { display: '5 mg', output: 'Hefjum meðferð með Glipizide 5 mg' },
+                                            { display: '10 mg', output: 'Hefjum meðferð með Glipizide 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Viðbót',
+                                        subOptions: [
+                                            { display: '2.5 mg', output: 'Bætum við Glipizide 2.5 mg' },
+                                            { display: '5 mg', output: 'Bætum við Glipizide 5 mg' },
+                                            { display: '10 mg', output: 'Bætum við Glipizide 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Aukum skammt',
+                                        subOptions: [
+                                            { display: '2.5 mg', output: 'Aukum skammt af Glipizide í 2.5 mg' },
+                                            { display: '5 mg', output: 'Aukum skammt af Glipizide í 5 mg' },
+                                            { display: '10 mg', output: 'Aukum skammt af Glipizide í 10 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lækka skammt',
+                                        subOptions: [
+                                            { display: '2.5 mg', output: 'Lækkum skammt af Glipizide í 2.5 mg' },
+                                            { display: '5 mg', output: 'Lækkum skammt af Glipizide í 5 mg' },
+                                            { display: '10 mg', output: 'Lækkum skammt af Glipizide í 10 mg' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'DPP-4 hemlar',
+                        subOptions: [
+                            {
+                                display: 'Sitagliptin',
+                                subOptions: [
+                                    {
+                                        display: 'Hefjum meðferð',
+                                        subOptions: [
+                                            { display: '25 mg', output: 'Hefjum meðferð með Sitagliptin 25 mg' },
+                                            { display: '50 mg', output: 'Hefjum meðferð með Sitagliptin 50 mg' },
+                                            { display: '100 mg', output: 'Hefjum meðferð með Sitagliptin 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Viðbót',
+                                        subOptions: [
+                                            { display: '25 mg', output: 'Bætum við Sitagliptin 25 mg' },
+                                            { display: '50 mg', output: 'Bætum við Sitagliptin 50 mg' },
+                                            { display: '100 mg', output: 'Bætum við Sitagliptin 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Aukum skammt',
+                                        subOptions: [
+                                            { display: '25 mg', output: 'Aukum skammt af Sitagliptin í 25 mg' },
+                                            { display: '50 mg', output: 'Aukum skammt af Sitagliptin í 50 mg' },
+                                            { display: '100 mg', output: 'Aukum skammt af Sitagliptin í 100 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lækka skammt',
+                                        subOptions: [
+                                            { display: '25 mg', output: 'Lækkum skammt af Sitagliptin í 25 mg' },
+                                            { display: '50 mg', output: 'Lækkum skammt af Sitagliptin í 50 mg' },
+                                            { display: '100 mg', output: 'Lækkum skammt af Sitagliptin í 100 mg' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'SGLT2 hemlar',
+                        subOptions: [
+                            {
+                                display: 'Empagliflozin',
+                                subOptions: [
+                                    {
+                                        display: 'Hefjum meðferð',
+                                        subOptions: [
+                                            { display: '10 mg', output: 'Hefjum meðferð með Empagliflozin 10 mg' },
+                                            { display: '25 mg', output: 'Hefjum meðferð með Empagliflozin 25 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Viðbót',
+                                        subOptions: [
+                                            { display: '10 mg', output: 'Bætum við Empagliflozin 10 mg' },
+                                            { display: '25 mg', output: 'Bætum við Empagliflozin 25 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Aukum skammt',
+                                        subOptions: [
+                                            { display: '10 mg', output: 'Aukum skammt af Empagliflozin í 10 mg' },
+                                            { display: '25 mg', output: 'Aukum skammt af Empagliflozin í 25 mg' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lækka skammt',
+                                        subOptions: [
+                                            { display: '10 mg', output: 'Lækkum skammt af Empagliflozin í 10 mg' },
+                                            { display: '25 mg', output: 'Lækkum skammt af Empagliflozin í 25 mg' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Skjaldkirtilslyf',
+                subOptions: [
+                    {
+                        display: 'Levothyroxine',
+                        subOptions: [
+                            {
+                                display: 'Hefjum meðferð',
+                                subOptions: [
+                                    { display: '25 mcg', output: 'Hefjum meðferð með Levothyroxine 25 mcg' },
+                                    { display: '50 mcg', output: 'Hefjum meðferð með Levothyroxine 50 mcg' },
+                                    { display: '75 mcg', output: 'Hefjum meðferð með Levothyroxine 75 mcg' },
+                                    { display: '100 mcg', output: 'Hefjum meðferð með Levothyroxine 100 mcg' },
+                                    { display: '125 mcg', output: 'Hefjum meðferð með Levothyroxine 125 mcg' },
+                                    { display: '150 mcg', output: 'Hefjum meðferð með Levothyroxine 150 mcg' }
+                                ]
+                            },
+                            {
+                                display: 'Viðbót',
+                                subOptions: [
+                                    { display: '25 mcg', output: 'Bætum við Levothyroxine 25 mcg' },
+                                    { display: '50 mcg', output: 'Bætum við Levothyroxine 50 mcg' },
+                                    { display: '75 mcg', output: 'Bætum við Levothyroxine 75 mcg' },
+                                    { display: '100 mcg', output: 'Bætum við Levothyroxine 100 mcg' },
+                                    { display: '125 mcg', output: 'Bætum við Levothyroxine 125 mcg' },
+                                    { display: '150 mcg', output: 'Bætum við Levothyroxine 150 mcg' }
+                                ]
+                            },
+                            {
+                                display: 'Aukum skammt',
+                                subOptions: [
+                                    { display: '25 mcg', output: 'Aukum skammt af Levothyroxine í 25 mcg' },
+                                    { display: '50 mcg', output: 'Aukum skammt af Levothyroxine í 50 mcg' },
+                                    { display: '75 mcg', output: 'Aukum skammt af Levothyroxine í 75 mcg' },
+                                    { display: '100 mcg', output: 'Aukum skammt af Levothyroxine í 100 mcg' },
+                                    { display: '125 mcg', output: 'Aukum skammt af Levothyroxine í 125 mcg' },
+                                    { display: '150 mcg', output: 'Aukum skammt af Levothyroxine í 150 mcg' }
+                                ]
+                            },
+                            {
+                                display: 'Lækka skammt',
+                                subOptions: [
+                                    { display: '25 mcg', output: 'Lækkum skammt af Levothyroxine í 25 mcg' },
+                                    { display: '50 mcg', output: 'Lækkum skammt af Levothyroxine í 50 mcg' },
+                                    { display: '75 mcg', output: 'Lækkum skammt af Levothyroxine í 75 mcg' },
+                                    { display: '100 mcg', output: 'Lækkum skammt af Levothyroxine í 100 mcg' },
+                                    { display: '125 mcg', output: 'Lækkum skammt af Levothyroxine í 125 mcg' },
+                                    { display: '150 mcg', output: 'Lækkum skammt af Levothyroxine í 150 mcg' }
+                                ]
+                            }
+                        ]
+                    }
                 ]
             }
         ]
@@ -7171,13 +7645,68 @@ const PlanInnkirtla = [
     {
         name: '',
         type: 'options',
-        display: ['Eftirfylgd', 'Frekar rannsóknir'],
+        display: ['Fylgikvillar sykursýki', 'Rannsóknir'],
         options: [
-            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
-            { display: 'Frekar rannsóknir', output: 'Íhuga frekari rannsóknir ef einkenni versna' }
+            {
+                display: 'Fylgikvillar sykursýki',
+                subOptions: [
+                    { display: 'Fótamein', output: 'Fótamein tengt sykursýki' },
+                    { display: 'Nýrnavandamál', output: 'Nýrnavandamál tengd sykursýki' },
+                    { display: 'Sjónvandamál', output: 'Sjónvandamál tengd sykursýki' },
+                    { display: 'Taugaskemmdir', output: 'Taugaskemmdir tengdar sykursýki' }
+                ]
+            },
+            {
+                display: 'Rannsóknir',
+                subOptions: [
+                    { display: 'Blóðsykurmæling', output: 'Framkvæmum blóðsykurmælingu' },
+                    { display: 'HbA1c', output: 'Framkvæmum HbA1c mælingu' },
+                    { display: 'Skjaldkirtilspróf', output: 'Framkvæmum skjaldkirtilspróf' },
+                    { display: 'Nýrnapróf', output: 'Framkvæmum nýrnapróf' },
+                    { display: 'Blóðpróf', output: 'Framkvæmum blóðpróf' }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                            { display: 'Viðtalstíma', output: 'Gef viðtalstíma í endurkomu' }
+                            
+                        ]
+                    }
+                ]
+            }
+
         ]
     }
 ];
+
 const RannsoknirInnkirtla = [
     {
         name: '',
@@ -9065,20 +9594,37 @@ const Habits = [
                 display: 'Eiturlyf',
                 subOptions: generateInitialDrugOptions(),
                 onRightClickOutput: 'Neitar eiturlyfjanotkun'
-            }
-            ,
+            },
             {
                 display: 'Ofnæmi',
                 subOptions: [
-                    { display: 'Penisillin', output: 'Penisillinofnæmi' },
+                    {
+                        display: 'Penisillin',
+                        subOptions: [
+                            { display: 'NOS', output: 'Penisillinofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Staðfest bráðaofnæmi fyrir penisillin' },
+                            {
+                                display: 'Grunur',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Grunur um penisillinofnæmi' },
+                                    { display: 'Öndunarfæraeinkenni', output: 'Grunur um penisillinofnæmi. Fengið öndunarfæraeinkenni' },
+                                    { display: 'Útbrot', output: 'Grunur um penisillinofnæmi. Fékk útbrot. Ekki kláði eða öndunarfæraeinkenni' },
+                                    { display: 'Útbrot og kláði', output: 'Grunur um penisillinofnæmi. Fékk útbrot og kláða' },
+                                    { display: 'Öndunrafæraeinkenni, útbrot og kláði', output: 'Grunur um penisillinofnæmi. Fékk öndunarfæraeinkenni, útbrot og kláða' }
+                                ]
+                            }
+                        ]
+                    },
                     { display: 'Sulfa', output: 'Sulfaofnæmi' }
                 ],
                 onRightClickSubOptions: [
                     { display: 'Engin þekkt ofnæmi', output: 'Engin þekkt ofnæmi' },
+                    { display: 'Engin þekkt lyfjaofnæmi', output: 'Engin þekkt lyfjaofnæmi' },
                     { display: 'Ekki penisillinofnæmi', output: 'Ekki penisillinofnæmi' },
                     { display: 'Ekki sulfaofnæmi', output: 'Ekki sulfaofnæmi' }
                 ]
             }
+            
         ]
     },
     {
@@ -10608,9 +11154,45 @@ let textHistory = [];
 function insertText(text) {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before modification
-    textbox.value += text.replace(/\.$/, '') + '. ';
-    textbox.scrollTop = textbox.scrollHeight; // Scroll to the bottom
+
+    // Check if the textbox is empty
+    if (textbox.value.trim() === '') {
+        textbox.value = text.replace(/\.$/, '');
+    } else {
+        // Check the last character(s) of the current text in the textbox
+        let currentText = textbox.value.trimEnd();
+
+        if (currentText.endsWith('.')) {
+            if (!currentText.endsWith('. ')) {
+                currentText += ' ';
+            }
+        } else if (currentText.endsWith(': ')) {
+            // Do nothing, keep ": " as it is
+        } else if (currentText.endsWith(':')) {
+            currentText += ' ';
+        } else {
+            currentText = currentText.replace(/\s+$/, ''); // Remove trailing spaces
+            currentText += '. ';
+        }
+
+        // Add the new text
+        textbox.value = currentText + text.replace(/\.$/, '') + '. ';
+    }
+
+    // Scroll to the bottom
+    textbox.scrollTop = textbox.scrollHeight;
+
+    // Set focus to the textbox and move the cursor to the end only if not already focused
+    if (document.activeElement !== textbox) {
+        textbox.focus();
+        textbox.setSelectionRange(textbox.value.length, textbox.value.length);
+    }
 }
+
+
+
+
+
 function eraseText() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before erasing
@@ -10623,6 +11205,7 @@ function undoLastText() {
     if (textHistory.length > 0) {
         textbox.value = textHistory.pop(); // Restore the last state from history
     }
+    textbox.focus();
 }
 
 function copyText() {
