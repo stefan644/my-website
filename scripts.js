@@ -1,6 +1,6 @@
-// Almennt / Vottorð / Rannsóknarniðurstöður / Macró
 
 
+// Almennt (General) / Vottorð (Certificates) / Rannsóknarniðurstöður (Study result) / Macró
 const Vottord = [
     
     {
@@ -47,7 +47,7 @@ const RannsoknData = [
     }
 ];
 
-// Víral
+// Viral symptoms
 const SymptomsViral = [
     {
         name: '',
@@ -763,6 +763,7 @@ const historyViralData = [
         ]
     }
 ];
+// Rannsóknir = Studies (Bloodtests, imaging etc)
 const RannsoknirViral = [
     {
         name: '',
@@ -821,6 +822,7 @@ const RannsoknirViral = [
         ]
     }
 ];
+// Rauð Flögg = Red flags (Night sweats, weight loss etc)
 const RaudFloggViral = [
     {
         name: '',
@@ -857,7 +859,7 @@ const RaudFloggViral = [
 ];
 
 
-// Þvagfæraeinkenni
+// Urinary symptoms
 const SymptomsUrinary = [
     {
         name: '',
@@ -1392,7 +1394,7 @@ const RiskfactorsUrinary = [
     }
 ];
 
-// Augnvandamál
+// Augnvandamál (Eyeproblems)
 const SymptomsEye = [
     {
         name: '',
@@ -1880,7 +1882,7 @@ const PlanEye = [
     }
 ];
 
-// Hjarta
+// Hjarta (Heart)
 const SymptomsHeart = [
     {
         name: '',
@@ -2459,6 +2461,7 @@ const ExamsHeart = [
         ]
     }
 ];
+// Rannsóknir = Studies (Bloodtests, imaging etc)
 const RannsoknirHeart = [
     {
         name: '',
@@ -3547,7 +3550,7 @@ const historyHeart = [
 ];
 
 
-// Meltingarvandamál
+// Meltingarvandamál (GI system)
 const SymptomsMelting = [
     {
         name: '',
@@ -4671,6 +4674,7 @@ const RaudFloggMelting = [
         ]
     }
 ];
+// Lyf = Drugs
 const LyfMelting = [
     {
         name: '',
@@ -4963,7 +4967,7 @@ const RannsoknirMelting = [
 
 
 
-// Stoðkerfi
+// Stoðkerfi (Musculoskeletal system)
 const SymptomsStodkerfi = [
     {
         name: '',
@@ -5271,7 +5275,7 @@ const ExamsStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Bak - Útlit', 'Þreifing', 'Hreyfigeta'],
+        display: ['Bak - Útlit', 'Þreifing', 'Hreyfigeta', 'SLR'],
         options: [
             {
                         display: 'Bak - Útlit',
@@ -5496,12 +5500,22 @@ const ExamsStodkerfi = [
             {
                 display: 'Hreyfigeta',
                 subOptions: [
+                    { display: 'Takmörkuð vegna verkja', output: 'Hreyfigeta takmörkuð vegna verkja' },
                     { display: 'Stirðleiki við flexion', output: 'Stirðleiki við flexion. Nær ekki að setja fingur í gólf' },
                     { display: 'Stirðleiki við extension', output: 'Stirðleiki við extension' },
                     { display: 'Stirðleiki við lateral flexion', output: 'Stirðleiki við lateral flexion' },
                     { display: 'Stirðleiki við rotation', output: 'Stirðleiki við rotation' }
                 ],
                 onRightClickOutput: 'Full hreyfigeta á baki'
+            },
+            {
+                display: 'SLR',
+                subOptions: [
+                    { display: 'Jákvætt hægra megin', output: 'SLR jákvætt hægra megin' },
+                    { display: 'Jákvætt vinstra megin', output: 'SLR jákvætt vinstra megin' },
+                    { display: 'Jákvætt beggja vegna', output: 'SLR jákvætt beggja vegna' }
+                ],
+                onRightClickOutput: 'SLR neikvætt'
             }
         ]
     },
@@ -5649,14 +5663,15 @@ const ExamsStodkerfi = [
                                 output: 'Nærvera óeðlilegra útstæðna eða innfellinga, sem geta bent til brota, úr lið eða annarra byggingarfrávika.'
                             }
                         ],
-                        onRightClickSubOptions: [
-                            { display: 'Samhverft', output: 'Báðar axlir eru samhverfar að stærð, lögun og stöðu.' },
-                            { display: 'Eðlileg jöfnun', output: 'Öxlin er í venjulegri líffærafræðilegri stöðu, með humeral höfuðið rétt stillt innan glenoid fossa.' },
-                            { display: 'Eðlilegt vöðvamagn og lögun', output: 'Vöðvar umhverfis öxlina (deltoid, trapezius, rotator cuff vöðvar) eru vel skilgreindir og samhverfir.' },
-                            { display: 'Eðlileg húð', output: 'Húðin yfir öxlinni er ómerkt, án litarbreytinga eða sára.' },
-                            { display: 'Engin afbrigði', output: 'Engin sýnileg afbrigði.' }
-                        ]
+                        
                     }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Samhverft', output: 'Báðar axlir eru samhverfar að stærð, lögun og stöðu.' },
+                    { display: 'Eðlileg jöfnun', output: 'Öxlin er í venjulegri líffærafræðilegri stöðu, með humeral höfuðið rétt stillt innan glenoid fossa.' },
+                    { display: 'Eðlilegt vöðvamagn og lögun', output: 'Vöðvar umhverfis öxlina (deltoid, trapezius, rotator cuff vöðvar) eru vel skilgreindir og samhverfir.' },
+                    { display: 'Eðlileg húð', output: 'Húðin yfir öxlinni er ómerkt, án litarbreytinga eða sára.' },
+                    { display: 'Engin afbrigði', output: 'Engin sýnileg afbrigði.' }
                 ]
             },
             {
@@ -5726,7 +5741,7 @@ const ExamsStodkerfi = [
                     { display: 'Engin eymsli', output: 'Engin eymsli við þreyfingu' }
                 ]
             },            
-            { display: 'Skoðun á mjöðm', output: 'Skoðun á mjöðm sýnir' }
+            { display: 'Hreyfigeta', output: '', onRightClickOutput: 'Góð hreyfigeta' }
         ]
     }
 ];
@@ -5942,8 +5957,32 @@ const PlanStodkerfi = [
     {
         name: '',
         type: 'options',
-        display: ['Myndgreining'],
+        display: ['Ráðleggingar', 'Verkjalyf', 'Teygjubindi', 'Myndgreining'],
         options: [
+            {
+                display: 'Ráðleggingar',
+                subOptions: [
+                    { display: 'Almennar', output: 'Almennar ráðleggingar' },
+                    { display: 'Tognun', output: 'Almennar ráðleggingar vegna tognunar. RICE' },
+                    { display: 'Grunur um brjósklos', output: 'Almennar ráðleggingar vegna gruns um brjósklos í baki. Gengur yfirleitt yfir af sjálfu sér á 4-6 vikum. Ef lagast ekki á þeim tíma er ráðlögð segulómskoðun' }
+                ]
+            },
+            {
+                display: 'Verkjalyf',
+                subOptions: [
+                    { display: 'PN', output: 'Verkjalyf PN' },
+                    { display: 'Íbúfen og panódíl', output: 'Ráðlegg verkjalyf. Íbúfen og panódíl.' },
+                    { display: 'Cox2', output: 'Ráðlegg verkjalyf. Set cox2 hindra í gáttina' },
+                    { display: 'Parkódín', output: 'Fær parkódín. Notar við slæmum verk og/eða fyrir nóttina.' }
+                ]
+            },
+            {
+                display: 'Teygjubindi',
+                subOptions: [
+                    { display: 'Kaupir sjálf/ur', output: 'Getur verið ráðlagt að nota teygjubindi. Getur keypt í apóteki eða stoðkerfaverslun' },
+                    { display: 'Set', output: 'Set teygjubindi' }
+                ]
+            },
             {
                 display: 'Myndgreining',
                 subOptions: [
@@ -5956,6 +5995,7 @@ const PlanStodkerfi = [
             }
         ]
     },
+    
     {},{},{},
     {
         name: '',
@@ -6001,7 +6041,7 @@ const PlanStodkerfi = [
     
 ];
 
-// Húðvandamál
+// Húðvandamál (Skin problems)
 const SymptomsHud = [
     {
         name: '',
@@ -6230,7 +6270,7 @@ const PlanHud = [
     }
 ];
 
-// Geð
+// Geð (Psychiatric problems)
 const SymptomsGed = [
     {
         name: '',
@@ -6300,14 +6340,21 @@ const SymptomsGed = [
     {
         name: '',
         type: 'options',
-        display: ['Einkenni'],
+        display: ['Þunglyndi', 'Kvíði'],
         options: [
-            {
-                display: 'Einkenni',
+            { display: 'Þunglyndi',
                 subOptions: [
-                    { display: 'Þunglyndi', output: 'Þunglyndiseinkenni' },
-                    { display: 'Kvíði', output: 'Kvíði' }
-                ]
+                    {display: 'NOS', output: 'Þunglyndiseinkenni'},
+                    {display: 'Grunur', output: 'Grunar um þunglyndi'}
+                    ],
+                    onRightClickOutput: 'Neitar þunglyndiseinkennum'
+            },
+            { display: 'Kvíði',
+                subOptions: [
+                    {display: 'NOS', output: 'Kvíði'},
+                    {display: 'Grunur', output: 'Grunar sig vera með kvíðaröskun'}
+                    ],
+                    onRightClickOutput: 'Neitar kvíða'
             }
         ]
     },
@@ -6342,31 +6389,93 @@ const SymptomsGed = [
                 ]
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['ADHD', 'Einbeiting', 'Gleymska', 'Ofvirkni'],
+        options: [
+            { 
+                display: 'ADHD',
+                subOptions: [
+                    {display: 'Grunur', output: 'Grunar sig vera með ADHD'}
+                    ],
+                    onRightClickOutput: 'Neitar ADHD einkennum'
+                
+            },
+            {
+                display: 'Einbeiting',
+                output: 'Lýsir einbeitingaörðugleikum',
+                onRightClickOutput: 'Ekki áberandi einbeitingaörðugleikar'
+            },
+            {
+                display: 'Gleymska',
+                output: 'Á erfitt með að muna hluti',
+                onRightClickOutput: 'Ekki áberandi minnisvandi'
+            },
+            {
+                display: 'Ofvirkni',
+                subOptions: [
+                    { display: 'NOS', output: 'Lýsir þónokkri ofvirkni' },
+                    { display: 'Í barnæsku', output: 'Var líklega með ofvirkni í barnæsku s.kv. foreldrum' },
+                    { display: 'Í dag og í barnæsku', output: 'Lýsir þónokkri ofvirkni í dag. Einnig í barnæsku' }
+                ],
+                onRightClickOutput: 'Neitar ofvirknieinkennum'
+            }
+        ]
     }
 ];
 const GedSkodunData = [
     {
         name: '',
         type: 'options',
-        display: ['Útlit', 'Augnsamband', 'Talþrýstingur', 'Geðslag'],
+        display: ['Framkoma', 'Útlit', 'Augnsamband', 'Talþrýstingur', 'Geðslag'],
         options: [
+            {
+                display: 'Framkoma',
+                    subOptions: [
+                        { display: 'Dónaleg', output: 'Dónaleg framkoma' },
+                        { display: 'Aggressíf', output: 'Aggressíf framkoma' }
+                    ],
+                onRightClickOutput: 'Kemur vel fyrir'
+            },
             {
                 display: 'Útlit',
                 subOptions: [
                     {
+                        display: 'Illa hirt/ur',
+                        subOptions: [
+                            { display: 'KK', output: 'Illa hirtur' },
+                            { display: 'KVK', output: 'Illa hirt' }
+                        ]
+                    },
+                    {
+                        display: 'Illa til fara',
+                        output: 'Illa til fara'
+                    },
+                    {
                         display: 'Klæðaburður',
-                        output: 'Lýsir klæðaburði'
+                        subOptions: [
+                            { display: 'Slitnum fötum', output: 'Í slitnum fötum' }
+                        ]
                     },
                     {
                         display: 'Hárgreiðsla',
-                        output: 'Lýsir hárgreiðslu'
+                        subOptions: [
+                            { display: 'Ógreitt hár', output: 'Ógreitt hár' },
+                            { display: 'Skeggvöxtur', output: 'Mikill skeggvöxtur' }
+                        ]
                     },
                     {
                         display: 'Lykt',
-                        output: 'Lýsir lykt'
+                        subOptions: [
+                            { display: 'Reykingarlykt', output: 'Reykingarlykt' },
+                            { display: 'Líkamslykt', output: 'Mikil líkamslykt' },
+                            { display: 'Ilmefnalykt', output: 'Sterk ilmefnalykt' }
+                        ]
                     }
                 ],
-                onRightClickOutput: 'Kemur vel fyrir. Vel til fara.'
+                onRightClickOutput: 'Vel til fara.'
             },
             {
                 display: 'Augnsamband',
@@ -6374,19 +6483,19 @@ const GedSkodunData = [
                     {
                         display: 'Minnkað',
                         subOptions: [
-                            { display: 'Aðeins', output: 'Minnkað augnsamband. Aðeins' },
-                            { display: 'Mikið', output: 'Minnkað augnsamband. Mikið' }
+                            { display: 'Aðeins', output: 'Aðeins minnkað augnsamband' },
+                            { display: 'Mikið', output: 'Minnkað augnsamband. Myndar nánast aldrei augnsamband í viðtali' }
                         ]
                     },
                     {
                         display: 'Aukið',
                         subOptions: [
-                            { display: 'Aðeins', output: 'Aukið augnsamband. Aðeins' },
-                            { display: 'Mikið', output: 'Aukið augnsamband. Mikið' }
+                            { display: 'Aðeins', output: 'Aðeins aukið augnsamband' },
+                            { display: 'Mikið', output: 'Mikið aukið augnsamband. Starir' }
                         ]
                     }
                 ],
-                onRightClickOutput: 'Augnsamband í lagi'
+                onRightClickOutput: 'Eðlilegt augnsamband'
             },
             {
                 display: 'Talþrýstingur',
@@ -6394,15 +6503,15 @@ const GedSkodunData = [
                     {
                         display: 'Minnkaður',
                         subOptions: [
-                            { display: 'Aðeins', output: 'Minnkaður talþrýstingur. Aðeins' },
-                            { display: 'Mikið', output: 'Minnkaður talþrýstingur. Mikið' }
+                            { display: 'Aðeins', output: 'Aðeins minnkaður talþrýstingur' },
+                            { display: 'Mikið', output: 'Mikið minnkaður talþrýstingur' }
                         ]
                     },
                     {
                         display: 'Aukinn',
                         subOptions: [
-                            { display: 'Aðeins', output: 'Aukinn talþrýstingur. Aðeins' },
-                            { display: 'Mikið', output: 'Aukinn talþrýstingur. Mikið' }
+                            { display: 'Aðeins', output: 'Aðeins aukinn talþrýstingur' },
+                            { display: 'Mikið', output: 'Mikið aukinn talþrýstingur' }
                         ]
                     }
                 ],
@@ -6411,7 +6520,8 @@ const GedSkodunData = [
             {
                 display: 'Geðslag',
                 subOptions: [
-                    { display: 'Hækkað', output: 'Hækkað geðslag' }
+                    { display: 'Hækkað', output: 'Hækkað geðslag' },
+                    { display: 'Lækkað', output: 'Lækkað geðslag' }
                 ],
                 onRightClickOutput: 'Geðslag í lagi'
             }
@@ -6420,27 +6530,46 @@ const GedSkodunData = [
     {
         name: '',
         type: 'options',
-        display: ['Affekt', 'Geðrofseinkenni', 'Innsæi', 'Sjálfsvígsmat'],
+        display: ['Affekt', 'Geðrofseinkenni', 'Innsæi', 'Sjálfsvígshugsanir'],
         options: [
             {
                 display: 'Affekt',
-                output: 'Affekt eðlilegt',
-                onRightClickOutput: 'Affekt í lagi'
+                subOptions: [
+                    { display: 'Kvíðinn', output: 'Kvíðinn affekt' },
+                    { display: 'Dapur', output: 'Dapur affekt' },
+                    { display: 'Reiður', output: 'Reiður affekt' }
+                ],
+                onRightClickOutput: 'Affekt nokkuð eðlilegur'
             },
             {
                 display: 'Geðrofseinkenni',
-                output: 'Geðrofseinkenni ekki til staðar',
-                onRightClickOutput: 'Geðrofseinkenni í lagi'
+                output: 'Vaknar grunur um geðrofseinkenni',
+                onRightClickOutput: 'Engin merki um geðrofseinkenni í viðtali'
             },
             {
                 display: 'Innsæi',
-                output: 'Innsæi til staðar',
-                onRightClickOutput: 'Innsæi í lagi'
+                output: 'Virðist ekki með gott innsæi',
+                onRightClickOutput: 'Virðist vera með gott innsæi'
             },
             {
-                display: 'Sjálfsvígsmat',
-                output: 'Sjálfsvígshugsanir ekki til staðar',
-                onRightClickOutput: 'Sjálfsvígsmat í lagi'
+                display: 'Sjálfsvígshugsanir',
+                output: 'Lýsir sjálfsvígshugsunum',
+                onRightClickOutput: 'Neitar sjálfsvígshugsunum'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Fyrri sjálfsvígstilraunir'],
+        options: [
+            {
+                display: 'Fyrri sjálfsvígshugsanir',
+                subOptions: [
+                    { display: '1x', output: 'Saga um fyrri sjálfsvígstilraun' },
+                    { display: 'Oftar', output: 'Saga um fyrri sjálfsvígstilraunir. Oftar en 1x' }
+                ],
+                onRightClickOutput: 'Ekki saga um fyrri sjálfsvígstilraunir'
             }
         ]
     }
@@ -6471,23 +6600,31 @@ const PlanGed = [
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar', 'Lyf', 'Sálfræðimeðferð', 'Tilvísun'],
+        display: ['Andleg vanlíðan', 'Þunglyndi', 'Kvíði', 'OCD'],
         options: [
-            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um geðheilsu' },
             {
-                display: 'Lyf',
+                display: 'Andleg vanlíðan',
+                output: 'Andleg vanlíðan'
+            },
+            {
+                display: 'Þunglyndi',
                 subOptions: [
-                    { display: 'Þunglyndislyf', output: 'Ávísun á þunglyndislyf' },
-                    { display: 'Kvíðastillandi lyf', output: 'Ávísun á kvíðastillandi lyf' },
-                    { display: 'Svefnlyf', output: 'Ávísun á svefnlyf' }
+                    { display: 'Grunur', output: 'Grunur um þunglyndi' },
+                    { display: 'Greining', output: 'Þunglyndi' }
                 ]
             },
-            { display: 'Sálfræðimeðferð', output: 'Vísa í sálfræðimeðferð' },
             {
-                display: 'Tilvísun',
+                display: 'Kvíði',
                 subOptions: [
-                    { display: 'Geðlæknir', output: 'Vísa til geðlæknis' },
-                    { display: 'Sérfræðingur', output: 'Vísa til sérfræðings' }
+                    { display: 'Grunur', output: 'Grunur um kvíða' },
+                    { display: 'Greining', output: 'Kvíði' }
+                ]
+            },
+            {
+                display: 'OCD',
+                subOptions: [
+                    { display: 'Grunur', output: 'Grunur um áráttu- og þráhyggjuröskun' },
+                    { display: 'Greining', output: 'Áráttu og þráhyggjuröskun' }
                 ]
             }
         ]
@@ -6495,10 +6632,1268 @@ const PlanGed = [
     {
         name: '',
         type: 'options',
-        display: ['Eftirfylgd', 'Frekar mat'],
+        display: ['ADHD', 'ADD', 'Svefnvandi'],
         options: [
-            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
-            { display: 'Frekar mat', output: 'Íhuga frekari mat ef einkenni versna' }
+            {
+                display: 'ADHD',
+                subOptions: [
+                    { display: 'Grunur', output: 'Grunur um ADHD' },
+                    { display: 'Greining', output: 'ADHD' }
+                ]
+            },
+            {
+                display: 'ADD',
+                subOptions: [
+                    { display: 'Grunur', output: 'Grunur um ADD' },
+                    { display: 'Greining', output: 'ADD' }
+                ]
+            },
+            {
+                display: 'Svefnvandi', output: 'Svefnvandi'
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Sálfræðimeðferð', 'ADHD'],
+        options: [
+            {
+                display: 'Ráðleggingar',
+                subOptions: [
+                    {
+                        display: 'Val á meðferð við þunglyndi/kvíða',
+                        output: 'Almennar ráðleggingar varðandi val á meðferð. Helstu valmöguleikar sálfræðiþjónusta og/eða lyfjameðferð'
+                    },
+                    {
+                        display: 'SSRI',
+                        output: 'Fær ráðleggingar varðandi verkunarmáta og mögulegar aukaverkanir SSRI lyfja. Lágmark 4 vikur til að meta árangur. Kvíði getur aukist tímabundið fyrstu 1-2 vikurnar áður en hann minnkar. Sumir upplifa flatneskju en ekki algilt. Getur haft neikvæð áhrif á kynhvöt.'
+                    },
+                    {
+                        display: 'Svefnvandamál',
+                        subOptions: [
+                            { display: 'Svefnvenjur', output: 'Fær ráðleggingar varðandi svefnvanda. Ráðlagt að byrja með að skoða svefnvenjur. Lágmarka skjánotkun 2klst fyrir svefn, ekki hafa tæki inní svefnherbergi, gefa sér 15 mín í að sofna, ef sofnar ekki á þeim tíma ráðlagt að fara á fætur og gera rólegt aktívitet svo sem að lesa þar til þreyta skellur á' },
+                            { display: 'Sálfræðimeðferð', output: 'Fær ráðleggingar varðandi svefnvanda. Ræðum um svefnvenjur. Getur verið ráðlagt að leita sálfræðiþjónustu á stofu, t.d. hjá betri svefn' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Sálfræðimeðferð',
+                subOptions: [
+                    {
+                        display: 'Ráðlegg',
+                        subOptions: [
+                            { 
+                                display: 'Stofu', 
+                                output: 'Ráðlegg að leita sálfræðimeðferðar á stofu' 
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Tilvísun',
+                        subOptions: [
+                            { 
+                                display: 'Stofu', 
+                                output: 'Geri tilvísun á sálfræðing á stofu' 
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'ADHD',
+                subOptions: [
+                    { 
+                        display: 'Ráðleggingar um greiningu', 
+                        output: 'Veiti ráðleggingar um meðferð- og greiningu ADHD. Fær viðeigandi blöð til skimunar ásamt tvöföldum endurkomutíma til að fara yfir niðurstöður og e.t.v. senda tilvísun' 
+                    },
+                    { 
+                        display: 'Tilvísun heilsugæslan ADHD', 
+                        output: 'Tilvísun á ADHD teymi heilsugæslunnar. Fyllum út matskvarða og sendi viðeigandi fylgiskjöl' 
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Þunglyndislyf', 'Svefnlyf'],
+        options: [
+          {
+            display: 'Þunglyndislyf',
+            subOptions: [
+              {
+                display: 'Hefja meðferð',
+                subOptions: [
+                  {
+                    display: 'SSRI',
+                    subOptions: [
+                      {
+                        display: 'Sertraline',
+                        subOptions: [
+                          {
+                            display: '50mg',
+                            output: 'Hefjum meðferð með Sertraline 50mg'
+                          },
+                          {
+                            display: '100mg',
+                            output: 'Hefjum meðferð með Sertraline 100mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Escitalopram',
+                        subOptions: [
+                          {
+                            display: '5mg',
+                            output: 'Hefjum meðferð með Escitalopram 5mg'
+                          },
+                          {
+                            display: '10mg',
+                            output: 'Hefjum meðferð með Escitalopram 10mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Citalopram',
+                        subOptions: [
+                          {
+                            display: '10mg',
+                            output: 'Hefjum meðferð með Citalopram 10mg'
+                          },
+                          {
+                            display: '20mg',
+                            output: 'Hefjum meðferð með Citalopram 20mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Fluoxetine',
+                        subOptions: [
+                          {
+                            display: '20mg',
+                            output: 'Hefjum meðferð með Fluoxetine 20mg'
+                          },
+                          {
+                            display: '40mg',
+                            output: 'Hefjum meðferð með Fluoxetine 40mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Paroxetine',
+                        subOptions: [
+                          {
+                            display: '20mg',
+                            output: 'Hefjum meðferð með Paroxetine 20mg'
+                          },
+                          {
+                            display: '40mg',
+                            output: 'Hefjum meðferð með Paroxetine 40mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Fluvoxamine',
+                        subOptions: [
+                          {
+                            display: '50mg',
+                            output: 'Hefjum meðferð með Fluvoxamine 50mg'
+                          },
+                          {
+                            display: '100mg',
+                            output: 'Hefjum meðferð með Fluvoxamine 100mg'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    display: 'SNRI',
+                    subOptions: [
+                      {
+                        display: 'Venlafaxine',
+                        subOptions: [
+                          {
+                            display: '37.5mg',
+                            output: 'Hefjum meðferð með Venlafaxine 37.5mg'
+                          },
+                          {
+                            display: '75mg',
+                            output: 'Hefjum meðferð með Venlafaxine 75mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Duloxetine',
+                        subOptions: [
+                          {
+                            display: '30mg',
+                            output: 'Hefjum meðferð með Duloxetine 30mg'
+                          },
+                          {
+                            display: '60mg',
+                            output: 'Hefjum meðferð með Duloxetine 60mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Desvenlafaxine',
+                        subOptions: [
+                          {
+                            display: '50mg',
+                            output: 'Hefjum meðferð með Desvenlafaxine 50mg'
+                          },
+                          {
+                            display: '100mg',
+                            output: 'Hefjum meðferð með Desvenlafaxine 100mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Levomilnacipran',
+                        subOptions: [
+                          {
+                            display: '20mg',
+                            output: 'Hefjum meðferð með Levomilnacipran 20mg'
+                          },
+                          {
+                            display: '40mg',
+                            output: 'Hefjum meðferð með Levomilnacipran 40mg'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Bupropion',
+                    subOptions: [
+                      {
+                        display: '150mg',
+                        output: 'Hefjum meðferð með Bupropion 150mg'
+                      },
+                      {
+                        display: '300mg',
+                        output: 'Hefjum meðferð með Bupropion 300mg'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Mirtazapine',
+                    subOptions: [
+                      {
+                        display: '15mg',
+                        output: 'Hefjum meðferð með Mirtazapine 15mg'
+                      },
+                      {
+                        display: '30mg',
+                        output: 'Hefjum meðferð með Mirtazapine 30mg'
+                      },
+                      {
+                        display: '45mg',
+                        output: 'Hefjum meðferð með Mirtazapine 45mg'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'TCA',
+                    subOptions: [
+                      {
+                        display: 'Amitriptyline',
+                        subOptions: [
+                          {
+                            display: '25mg',
+                            output: 'Hefjum meðferð með Amitriptyline 25mg'
+                          },
+                          {
+                            display: '50mg',
+                            output: 'Hefjum meðferð með Amitriptyline 50mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Nortriptyline',
+                        subOptions: [
+                          {
+                            display: '25mg',
+                            output: 'Hefjum meðferð með Nortriptyline 25mg'
+                          },
+                          {
+                            display: '50mg',
+                            output: 'Hefjum meðferð með Nortriptyline 50mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Imipramine',
+                        subOptions: [
+                          {
+                            display: '25mg',
+                            output: 'Hefjum meðferð með Imipramine 25mg'
+                          },
+                          {
+                            display: '50mg',
+                            output: 'Hefjum meðferð með Imipramine 50mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Clomipramine',
+                        subOptions: [
+                          {
+                            display: '25mg',
+                            output: 'Hefjum meðferð með Clomipramine 25mg'
+                          },
+                          {
+                            display: '50mg',
+                            output: 'Hefjum meðferð með Clomipramine 50mg'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    display: 'MAOIs',
+                    subOptions: [
+                      {
+                        display: 'Phenelzine',
+                        output: 'Hefjum meðferð með Phenelzine'
+                      },
+                      {
+                        display: 'Tranylcypromine',
+                        output: 'Hefjum meðferð með Tranylcypromine'
+                      },
+                      {
+                        display: 'Isocarboxazid',
+                        output: 'Hefjum meðferð með Isocarboxazid'
+                      },
+                      {
+                        display: 'Selegiline',
+                        output: 'Hefjum meðferð með Selegiline'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Auka meðferð',
+                subOptions: [
+                  {
+                    display: 'SSRI',
+                    subOptions: [
+                      {
+                        display: 'Sertraline',
+                        subOptions: [
+                          {
+                            display: '100mg',
+                            output: 'Aukum Sertraline í 100mg'
+                          },
+                          {
+                            display: '150mg',
+                            output: 'Aukum Sertraline í 150mg'
+                          },
+                          {
+                            display: '200mg',
+                            output: 'Aukum Sertraline í 200mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Escitalopram',
+                        subOptions: [
+                          {
+                            display: '15mg',
+                            output: 'Aukum Escitalopram í 15mg'
+                          },
+                          {
+                            display: '20mg',
+                            output: 'Aukum Escitalopram í 20mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Citalopram',
+                        subOptions: [
+                          {
+                            display: '30mg',
+                            output: 'Aukum Citalopram í 30mg'
+                          },
+                          {
+                            display: '40mg',
+                            output: 'Aukum Citalopram í 40mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Fluoxetine',
+                        subOptions: [
+                          {
+                            display: '40mg',
+                            output: 'Aukum Fluoxetine í 40mg'
+                          },
+                          {
+                            display: '60mg',
+                            output: 'Aukum Fluoxetine í 60mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Paroxetine',
+                        subOptions: [
+                          {
+                            display: '30mg',
+                            output: 'Aukum Paroxetine í 30mg'
+                          },
+                          {
+                            display: '40mg',
+                            output: 'Aukum Paroxetine í 40mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Fluvoxamine',
+                        subOptions: [
+                          {
+                            display: '150mg',
+                            output: 'Aukum Fluvoxamine í 150mg'
+                          },
+                          {
+                            display: '200mg',
+                            output: 'Aukum Fluvoxamine í 200mg'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    display: 'SNRI',
+                    subOptions: [
+                      {
+                        display: 'Venlafaxine',
+                        subOptions: [
+                          {
+                            display: '150mg',
+                            output: 'Aukum Venlafaxine í 150mg'
+                          },
+                          {
+                            display: '225mg',
+                            output: 'Aukum Venlafaxine í 225mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Duloxetine',
+                        subOptions: [
+                          {
+                            display: '60mg',
+                            output: 'Aukum Duloxetine í 60mg'
+                          },
+                          {
+                            display: '90mg',
+                            output: 'Aukum Duloxetine í 90mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Desvenlafaxine',
+                        subOptions: [
+                          {
+                            display: '75mg',
+                            output: 'Aukum Desvenlafaxine í 75mg'
+                          },
+                          {
+                            display: '100mg',
+                            output: 'Aukum Desvenlafaxine í 100mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Levomilnacipran',
+                        subOptions: [
+                          {
+                            display: '40mg',
+                            output: 'Aukum Levomilnacipran í 40mg'
+                          },
+                          {
+                            display: '80mg',
+                            output: 'Aukum Levomilnacipran í 80mg'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Bupropion',
+                    subOptions: [
+                      {
+                        display: '300mg',
+                        output: 'Aukum Bupropion í 300mg'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Mirtazapine',
+                    subOptions: [
+                      {
+                        display: '30mg',
+                        output: 'Aukum Mirtazapine í 30mg'
+                      },
+                      {
+                        display: '45mg',
+                        output: 'Aukum Mirtazapine í 45mg'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'TCA',
+                    subOptions: [
+                      {
+                        display: 'Amitriptyline',
+                        subOptions: [
+                          {
+                            display: '50mg',
+                            output: 'Aukum Amitriptyline í 50mg'
+                          },
+                          {
+                            display: '75mg',
+                            output: 'Aukum Amitriptyline í 75mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Nortriptyline',
+                        subOptions: [
+                          {
+                            display: '50mg',
+                            output: 'Aukum Nortriptyline í 50mg'
+                          },
+                          {
+                            display: '75mg',
+                            output: 'Aukum Nortriptyline í 75mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Imipramine',
+                        subOptions: [
+                          {
+                            display: '50mg',
+                            output: 'Aukum Imipramine í 50mg'
+                          },
+                          {
+                            display: '75mg',
+                            output: 'Aukum Imipramine í 75mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Clomipramine',
+                        subOptions: [
+                          {
+                            display: '50mg',
+                            output: 'Aukum Clomipramine í 50mg'
+                          },
+                          {
+                            display: '75mg',
+                            output: 'Aukum Clomipramine í 75mg'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    display: 'MAOIs',
+                    subOptions: [
+                      {
+                        display: 'Phenelzine',
+                        output: 'Aukum Phenelzine'
+                      },
+                      {
+                        display: 'Tranylcypromine',
+                        output: 'Aukum Tranylcypromine'
+                      },
+                      {
+                        display: 'Isocarboxazid',
+                        output: 'Aukum Isocarboxazid'
+                      },
+                      {
+                        display: 'Selegiline',
+                        output: 'Aukum Selegiline'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Lækka meðferð',
+                subOptions: [
+                  {
+                    display: 'SSRI',
+                    subOptions: [
+                      {
+                        display: 'Sertraline',
+                        subOptions: [
+                          {
+                            display: '25mg',
+                            output: 'Lækkum Sertraline í 25mg'
+                          },
+                          {
+                            display: '50mg',
+                            output: 'Lækkum Sertraline í 50mg'
+                          },
+                          {
+                            display: '100mg',
+                            output: 'Lækkum Sertraline í 100mg'
+                          },
+                          {
+                            display: '150mg',
+                            output: 'Lækkum Sertraline í 150mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Escitalopram',
+                        subOptions: [
+                          {
+                            display: '5mg',
+                            output: 'Lækkum Escitalopram í 5mg'
+                          },
+                          {
+                            display: '10mg',
+                            output: 'Lækkum Escitalopram í 10mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Citalopram',
+                        subOptions: [
+                          {
+                            display: '10mg',
+                            output: 'Lækkum Citalopram í 10mg'
+                          },
+                          {
+                            display: '20mg',
+                            output: 'Lækkum Citalopram í 20mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Fluoxetine',
+                        subOptions: [
+                          {
+                            display: '10mg',
+                            output: 'Lækkum Fluoxetine í 10mg'
+                          },
+                          {
+                            display: '20mg',
+                            output: 'Lækkum Fluoxetine í 20mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Paroxetine',
+                        subOptions: [
+                          {
+                            display: '10mg',
+                            output: 'Lækkum Paroxetine í 10mg'
+                          },
+                          {
+                            display: '20mg',
+                            output: 'Lækkum Paroxetine í 20mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Fluvoxamine',
+                        subOptions: [
+                          {
+                            display: '50mg',
+                            output: 'Lækkum Fluvoxamine í 50mg'
+                          },
+                          {
+                            display: '100mg',
+                            output: 'Lækkum Fluvoxamine í 100mg'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    display: 'SNRI',
+                    subOptions: [
+                      {
+                        display: 'Venlafaxine',
+                        subOptions: [
+                          {
+                            display: '37.5mg',
+                            output: 'Lækkum Venlafaxine í 37.5mg'
+                          },
+                          {
+                            display: '75mg',
+                            output: 'Lækkum Venlafaxine í 75mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Duloxetine',
+                        subOptions: [
+                          {
+                            display: '30mg',
+                            output: 'Lækkum Duloxetine í 30mg'
+                          },
+                          {
+                            display: '60mg',
+                            output: 'Lækkum Duloxetine í 60mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Desvenlafaxine',
+                        subOptions: [
+                          {
+                            display: '50mg',
+                            output: 'Lækkum Desvenlafaxine í 50mg'
+                          },
+                          {
+                            display: '100mg',
+                            output: 'Lækkum Desvenlafaxine í 100mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Levomilnacipran',
+                        subOptions: [
+                          {
+                            display: '20mg',
+                            output: 'Lækkum Levomilnacipran í 20mg'
+                          },
+                          {
+                            display: '40mg',
+                            output: 'Lækkum Levomilnacipran í 40mg'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Bupropion',
+                    subOptions: [
+                      {
+                        display: '150mg',
+                        output: 'Lækkum Bupropion í 150mg'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Mirtazapine',
+                    subOptions: [
+                      {
+                        display: '15mg',
+                        output: 'Lækkum Mirtazapine í 15mg'
+                      },
+                      {
+                        display: '30mg',
+                        output: 'Lækkum Mirtazapine í 30mg'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'TCA',
+                    subOptions: [
+                      {
+                        display: 'Amitriptyline',
+                        subOptions: [
+                          {
+                            display: '25mg',
+                            output: 'Lækkum Amitriptyline í 25mg'
+                          },
+                          {
+                            display: '50mg',
+                            output: 'Lækkum Amitriptyline í 50mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Nortriptyline',
+                        subOptions: [
+                          {
+                            display: '25mg',
+                            output: 'Lækkum Nortriptyline í 25mg'
+                          },
+                          {
+                            display: '50mg',
+                            output: 'Lækkum Nortriptyline í 50mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Imipramine',
+                        subOptions: [
+                          {
+                            display: '25mg',
+                            output: 'Lækkum Imipramine í 25mg'
+                          },
+                          {
+                            display: '50mg',
+                            output: 'Lækkum Imipramine í 50mg'
+                          }
+                        ]
+                      },
+                      {
+                        display: 'Clomipramine',
+                        subOptions: [
+                          {
+                            display: '25mg',
+                            output: 'Lækkum Clomipramine í 25mg'
+                          },
+                          {
+                            display: '50mg',
+                            output: 'Lækkum Clomipramine í 50mg'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    display: 'MAOIs',
+                    subOptions: [
+                      {
+                        display: 'Phenelzine',
+                        output: 'Lækkum Phenelzine'
+                      },
+                      {
+                        display: 'Tranylcypromine',
+                        output: 'Lækkum Tranylcypromine'
+                      },
+                      {
+                        display: 'Isocarboxazid',
+                        output: 'Lækkum Isocarboxazid'
+                      },
+                      {
+                        display: 'Selegiline',
+                        output: 'Lækkum Selegiline'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Niðurtröppun',
+                subOptions: [
+                  {
+                    display: 'SSRI',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Fær ráðleggingar við niðurtröppun SSRI lyfja'
+                      },
+                      {
+                        display: 'Sertraline',
+                        output: 'Fær ráðleggingar við að trappa út Sertraline'
+                      },
+                      {
+                        display: 'Escitalopram',
+                        output: 'Fær ráðleggingar við að trappa út Escitalopram'
+                      },
+                      {
+                        display: 'Citalopram',
+                        output: 'Fær ráðleggingar við að trappa út Citalopram'
+                      },
+                      {
+                        display: 'Fluoxetine',
+                        output: 'Fær ráðleggingar við að trappa út Fluoxetine'
+                      },
+                      {
+                        display: 'Paroxetine',
+                        output: 'Fær ráðleggingar við að trappa út Paroxetine'
+                      },
+                      {
+                        display: 'Fluvoxamine',
+                        output: 'Fær ráðleggingar við að trappa út Fluvoxamine'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'SNRI',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Fær ráðleggingar við niðurtröppun SNRI lyfja'
+                      },
+                      {
+                        display: 'Venlafaxine',
+                        output: 'Fær ráðleggingar við að trappa út Venlafaxine'
+                      },
+                      {
+                        display: 'Duloxetine',
+                        output: 'Fær ráðleggingar við að trappa út Duloxetine'
+                      },
+                      {
+                        display: 'Desvenlafaxine',
+                        output: 'Fær ráðleggingar við að trappa út Desvenlafaxine'
+                      },
+                      {
+                        display: 'Levomilnacipran',
+                        output: 'Fær ráðleggingar við að trappa út Levomilnacipran'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Bupropion',
+                    output: 'Fær ráðleggingar við að trappa út Bupropion'
+                  },
+                  {
+                    display: 'Mirtazapine',
+                    output: 'Fær ráðleggingar við að trappa út Mirtazapine'
+                  },
+                  {
+                    display: 'TCA',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Fær ráðleggingar við niðurtröppun TCA lyfja'
+                      },
+                      {
+                        display: 'Amitriptyline',
+                        output: 'Fær ráðleggingar við að trappa út Amitriptyline'
+                      },
+                      {
+                        display: 'Nortriptyline',
+                        output: 'Fær ráðleggingar við að trappa út Nortriptyline'
+                      },
+                      {
+                        display: 'Imipramine',
+                        output: 'Fær ráðleggingar við að trappa út Imipramine'
+                      },
+                      {
+                        display: 'Clomipramine',
+                        output: 'Fær ráðleggingar við að trappa út Clomipramine'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'MAOIs',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Fær ráðleggingar við niðurtröppun MAOIs lyfja'
+                      },
+                      {
+                        display: 'Phenelzine',
+                        output: 'Fær ráðleggingar við að trappa út Phenelzine'
+                      },
+                      {
+                        display: 'Tranylcypromine',
+                        output: 'Fær ráðleggingar við að trappa út Tranylcypromine'
+                      },
+                      {
+                        display: 'Isocarboxazid',
+                        output: 'Fær ráðleggingar við að trappa út Isocarboxazid'
+                      },
+                      {
+                        display: 'Selegiline',
+                        output: 'Fær ráðleggingar við að trappa út Selegiline'
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            display: 'Svefnlyf',
+            subOptions: [
+              {
+                display: 'Hefja meðferð',
+                subOptions: [
+                  {
+                    display: 'Phenergan',
+                    subOptions: [
+                      {
+                        display: '10mg',
+                        output: 'Reynum Phenergan 10mg að kvöldi'
+                      },
+                      {
+                        display: '25mg',
+                        output: 'Reynum Phenergan 25mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Atarax',
+                    subOptions: [
+                      {
+                        display: '10mg',
+                        output: 'Reynum Atarax 10mg að kvöldi'
+                      },
+                      {
+                        display: '25mg',
+                        output: 'Reynum Atarax 25mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Quetiapine',
+                    subOptions: [
+                      {
+                        display: '25mg',
+                        output: 'Reynum Quetiapine 25mg að kvöldi'
+                      },
+                      {
+                        display: '50mg',
+                        output: 'Reynum Quetiapine 50mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Melatonin',
+                    subOptions: [
+                      {
+                        display: '3mg',
+                        output: 'Reynum Melatonin 3mg að kvöldi'
+                      },
+                      {
+                        display: '5mg',
+                        output: 'Reynum Melatonin 5mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Gabapentin',
+                    subOptions: [
+                      {
+                        display: '100mg',
+                        output: 'Reynum Gabapentin 100mg að kvöldi'
+                      },
+                      {
+                        display: '300mg',
+                        output: 'Reynum Gabapentin 300mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Orfenadrin+paracetamol (Norgesic)',
+                    subOptions: [
+                      {
+                        display: '35mg+450mg',
+                        output: 'Reynum Orfenadrin+paracetamol (Norgesic) 35mg+450mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Amitryptiline',
+                    subOptions: [
+                      {
+                        display: '10mg',
+                        output: 'Reynum Amitryptiline 10mg að kvöldi'
+                      },
+                      {
+                        display: '25mg',
+                        output: 'Reynum Amitryptiline 25mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Zopiclone (Imovane)',
+                    subOptions: [
+                      {
+                        display: '3.75mg',
+                        output: 'Reynum Zopiclone (Imovane) 3.75mg að kvöldi'
+                      },
+                      {
+                        display: '7.5mg',
+                        output: 'Reynum Zopiclone (Imovane) 7.5mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Zolpidem (Stilnoct)',
+                    subOptions: [
+                      {
+                        display: '5mg',
+                        output: 'Reynum Zolpidem (Stilnoct) 5mg að kvöldi'
+                      },
+                      {
+                        display: '10mg',
+                        output: 'Reynum Zolpidem (Stilnoct) 10mg að kvöldi'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Bæta við',
+                subOptions: [
+                  {
+                    display: 'Phenergan',
+                    subOptions: [
+                      {
+                        display: '10mg',
+                        output: 'Prófum að bæta við Phenergan 10mg að kvöldi'
+                      },
+                      {
+                        display: '25mg',
+                        output: 'Prófum að bæta við Phenergan 25mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Atarax',
+                    subOptions: [
+                      {
+                        display: '10mg',
+                        output: 'Prófum að bæta við Atarax 10mg að kvöldi'
+                      },
+                      {
+                        display: '25mg',
+                        output: 'Prófum að bæta við Atarax 25mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Quetiapine',
+                    subOptions: [
+                      {
+                        display: '25mg',
+                        output: 'Prófum að bæta við Quetiapine 25mg að kvöldi'
+                      },
+                      {
+                        display: '50mg',
+                        output: 'Prófum að bæta við Quetiapine 50mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Melatonin',
+                    subOptions: [
+                      {
+                        display: '3mg',
+                        output: 'Prófum að bæta við Melatonin 3mg að kvöldi'
+                      },
+                      {
+                        display: '5mg',
+                        output: 'Prófum að bæta við Melatonin 5mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Gabapentin',
+                    subOptions: [
+                      {
+                        display: '100mg',
+                        output: 'Prófum að bæta við Gabapentin 100mg að kvöldi'
+                      },
+                      {
+                        display: '300mg',
+                        output: 'Prófum að bæta við Gabapentin 300mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Orfenadrin+paracetamol (Norgesic)',
+                    subOptions: [
+                      {
+                        display: '35mg+450mg',
+                        output: 'Prófum að bæta við Orfenadrin+paracetamol (Norgesic) 35mg+450mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Amitryptiline',
+                    subOptions: [
+                      {
+                        display: '10mg',
+                        output: 'Prófum að bæta við Amitryptiline 10mg að kvöldi'
+                      },
+                      {
+                        display: '25mg',
+                        output: 'Prófum að bæta við Amitryptiline 25mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Zopiclone (Imovane)',
+                    subOptions: [
+                      {
+                        display: '3.75mg',
+                        output: 'Prófum að bæta við Zopiclone (Imovane) 3.75mg að kvöldi'
+                      },
+                      {
+                        display: '7.5mg',
+                        output: 'Prófum að bæta við Zopiclone (Imovane) 7.5mg að kvöldi'
+                      }
+                    ]
+                  },
+                  {
+                    display: 'Zolpidem (Stilnoct)',
+                    subOptions: [
+                      {
+                        display: '5mg',
+                        output: 'Prófum að bæta við Zolpidem (Stilnoct) 5mg að kvöldi'
+                      },
+                      {
+                        display: '10mg',
+                        output: 'Prófum að bæta við Zolpidem (Stilnoct) 10mg að kvöldi'
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+      
+,    
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær símatíma til eftirfylgdar'},
+                                    {display: 'Eftir 4 vikur', output: 'Fær símatíma eftir 4 vikur til eftirfylgdar'}
+                                ]
+                            },
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'},
+                                    {display: 'Eftir 4 vikur', output: 'Fær nýjan tíma eftir 4 vikur til eftirfylgdar'}
+                                ]
+                            }
+                            
+                        ]
+                    }
+                ]
+            }
+
         ]
     }
 ];
@@ -6590,8 +7985,8 @@ const SIGECAPS = [
             },
             {
                 display: 'Psykomotor',
-                output: 'Hægð psykomotor eða eirðarleysi',
-                onRightClickOutput: 'Neitar psykomotor retardation eða eirðarleysi'
+                output: 'Grunur um psykomotor retardation. Segir fólk hafa tjáð sér að hreyfi sig mjög hægt',
+                onRightClickOutput: 'Ekki grunur um psykomotor retardation'
             },
             {
                 display: 'Sjálfsvígshugsanir',
@@ -6604,7 +7999,7 @@ const SIGECAPS = [
 ];
 
 
-// Tauga
+// Tauga (Neurological)
 const SymptomsTauga = [
     {
         name: '',
@@ -6697,7 +8092,7 @@ const PlanTauga = [
     }
 ];
 
-// Innkirtla
+// Innkirtla (Endocrine)
 const SymptomsInnkirtla = [
     {
         name: '',
@@ -8391,7 +9786,7 @@ const LyfInnkirtla = [
 
 
 
-//Áfengi
+//Áfengi (Alcohol)
 const SymptomsAlcoholism = [
     {
         name: '',
@@ -8427,11 +9822,16 @@ const SymptomsAlcoholism = [
             {
                 display: 'Tímalengd',
                 subOptions: [
-                    { display: '1-2 vikur', output: 'Hefur drukkið daglega í 1-2 vikur' },
-                    { display: '3-4 vikur', output: 'Hefur drukkið daglega í 3-4 vikur' },
-                    { display: '1-2 mánuðir', output: 'Hefur drukkið daglega í 1-2 mánuði' },
-                    { display: '3-6 mánuðir', output: 'Hefur drukkið daglega í 3-6 mánuði' },
-                    { display: '6+ mánuðir', output: 'Hefur drukkið daglega í yfir 6 mánuði' }
+                    { display: '1 viku', output: 'Hefur drukkið daglega í u.þ.b. 1 viku' },
+                    { display: '2 vikur', output: 'Hefur drukkið daglega í u.þ.b. 2 vikur' },
+                    { display: '3 vikur', output: 'Hefur drukkið daglega í u.þ.b. 3 vikur' },
+                    { display: '4 vikur', output: 'Hefur drukkið daglega í u.þ.b. 4 vikur' },
+                    { display: '>1 mánuð', output: 'Hefur drukkið daglega í yfir 1 mánuð' },
+                    { display: '>2 mánuði', output: 'Hefur drukkið daglega í yfir 2 mánuði' },
+                    { display: '>3 mánuði', output: 'Hefur drukkið daglega í yfir 3 mánuði' },
+                    { display: '>4 mánuði', output: 'Hefur drukkið daglega í yfir 4 mánuði' },
+                    { display: '>5 mánuði', output: 'Hefur drukkið daglega í yfir 5 mánuði' },
+                    { display: '>6 mánuði', output: 'Hefur drukkið daglega í yfir 6 mánuði' }
                 ]
             },
             {
@@ -8590,7 +9990,7 @@ const PlanAlcoholism = [
     }
 ];
 
-// Gigt
+// Gigt (Rheumatology)
 const SymptomsGigt = [
     {
         name: '',
@@ -8603,7 +10003,705 @@ const SymptomsGigt = [
             { display: 'Aukin hiti', output: 'Sjúklingur lýsir auknum hita í liðamótum' },
             { display: 'Þreyta', output: 'Sjúklingur lýsir almennri þreytu' }
         ]
-    }
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Staðsetning'],
+        options: [
+          {
+            display: 'Staðsetning',
+            subOptions: [
+              {
+                display: 'DIP',
+                subOptions: [
+                  {
+                    display: 'NOS',
+                    output: 'Helstu liðir DIP-liðir'
+                  },
+                  {
+                    display: 'PIP',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Helstu liðir DIP-liðir og PIP-liðir'
+                      },
+                      {
+                        display: 'MCP',
+                        subOptions: [
+                          {
+                            display: 'NOS',
+                            output: 'Helstu liðir DIP-liðir, PIP-liðir og MCP-liðir'
+                          },
+                          {
+                            display: 'Úlnlið',
+                            subOptions: [
+                              {
+                                display: 'NOS',
+                                output: 'Helstu liðir DIP-liðir, PIP-liðir, MCP-liðir og úlnliðir'
+                              },
+                              {
+                                display: 'Olnboga',
+                                subOptions: [
+                                  {
+                                    display: 'NOS',
+                                    output: 'Helstu liðir DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir og olnbogaliðir'
+                                  },
+                                  {
+                                    display: 'Axlir',
+                                    subOptions: [
+                                      {
+                                        display: 'NOS',
+                                        output: 'Helstu liðir DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir og axlarliðir'
+                                      },
+                                      {
+                                        display: 'Mjaðmir',
+                                        subOptions: [
+                                          {
+                                            display: 'NOS',
+                                            output: 'Helstu liðir DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir og mjaðmarliðir'
+                                          },
+                                          {
+                                            display: 'Hné',
+                                            subOptions: [
+                                              {
+                                                display: 'NOS',
+                                                output: 'Helstu liðir DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir, mjaðmarliðir og hnéliðir'
+                                              },
+                                              {
+                                                display: 'Ökkli',
+                                                output: 'Helstu liðir DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir, mjaðmarliðir, hnéliðir og ökklaliðir'
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'PIP',
+                subOptions: [
+                  {
+                    display: 'NOS',
+                    output: 'Helstu liðir PIP-liðir'
+                  },
+                  {
+                    display: 'DIP',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Helstu liðir PIP-liðir og DIP-liðir'
+                      },
+                      {
+                        display: 'MCP',
+                        subOptions: [
+                          {
+                            display: 'NOS',
+                            output: 'Helstu liðir PIP-liðir, DIP-liðir og MCP-liðir'
+                          },
+                          {
+                            display: 'Úlnlið',
+                            subOptions: [
+                              {
+                                display: 'NOS',
+                                output: 'Helstu liðir PIP-liðir, DIP-liðir, MCP-liðir og úlnliðir'
+                              },
+                              {
+                                display: 'Olnboga',
+                                subOptions: [
+                                  {
+                                    display: 'NOS',
+                                    output: 'Helstu liðir PIP-liðir, DIP-liðir, MCP-liðir, úlnliðir og olnbogaliðir'
+                                  },
+                                  {
+                                    display: 'Axlir',
+                                    subOptions: [
+                                      {
+                                        display: 'NOS',
+                                        output: 'Helstu liðir PIP-liðir, DIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir og axlarliðir'
+                                      },
+                                      {
+                                        display: 'Mjaðmir',
+                                        subOptions: [
+                                          {
+                                            display: 'NOS',
+                                            output: 'Helstu liðir PIP-liðir, DIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir og mjaðmarliðir'
+                                          },
+                                          {
+                                            display: 'Hné',
+                                            subOptions: [
+                                              {
+                                                display: 'NOS',
+                                                output: 'Helstu liðir PIP-liðir, DIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir, mjaðmarliðir og hnéliðir'
+                                              },
+                                              {
+                                                display: 'Ökkli',
+                                                output: 'Helstu liðir PIP-liðir, DIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir, mjaðmarliðir, hnéliðir og ökklaliðir'
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'MCP',
+                subOptions: [
+                  {
+                    display: 'NOS',
+                    output: 'Helstu liðir MCP-liðir'
+                  },
+                  {
+                    display: 'DIP',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Helstu liðir MCP-liðir og DIP-liðir'
+                      },
+                      {
+                        display: 'PIP',
+                        subOptions: [
+                          {
+                            display: 'NOS',
+                            output: 'Helstu liðir MCP-liðir, DIP-liðir og PIP-liðir'
+                          },
+                          {
+                            display: 'Úlnlið',
+                            subOptions: [
+                              {
+                                display: 'NOS',
+                                output: 'Helstu liðir MCP-liðir, DIP-liðir, PIP-liðir og úlnliðir'
+                              },
+                              {
+                                display: 'Olnboga',
+                                subOptions: [
+                                  {
+                                    display: 'NOS',
+                                    output: 'Helstu liðir MCP-liðir, DIP-liðir, PIP-liðir, úlnliðir og olnbogaliðir'
+                                  },
+                                  {
+                                    display: 'Axlir',
+                                    subOptions: [
+                                      {
+                                        display: 'NOS',
+                                        output: 'Helstu liðir MCP-liðir, DIP-liðir, PIP-liðir, úlnliðir, olnbogaliðir og axlarliðir'
+                                      },
+                                      {
+                                        display: 'Mjaðmir',
+                                        subOptions: [
+                                          {
+                                            display: 'NOS',
+                                            output: 'Helstu liðir MCP-liðir, DIP-liðir, PIP-liðir, úlnliðir, olnbogaliðir, axlarliðir og mjaðmarliðir'
+                                          },
+                                          {
+                                            display: 'Hné',
+                                            subOptions: [
+                                              {
+                                                display: 'NOS',
+                                                output: 'Helstu liðir MCP-liðir, DIP-liðir, PIP-liðir, úlnliðir, olnbogaliðir, axlarliðir, mjaðmarliðir og hnéliðir'
+                                              },
+                                              {
+                                                display: 'Ökkli',
+                                                output: 'Helstu liðir MCP-liðir, DIP-liðir, PIP-liðir, úlnliðir, olnbogaliðir, axlarliðir, mjaðmarliðir, hnéliðir og ökklaliðir'
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Úlnlið',
+                subOptions: [
+                  {
+                    display: 'NOS',
+                    output: 'Helstu liðir úlnliðir'
+                  },
+                  {
+                    display: 'DIP',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Helstu liðir úlnliðir og DIP-liðir'
+                      },
+                      {
+                        display: 'PIP',
+                        subOptions: [
+                          {
+                            display: 'NOS',
+                            output: 'Helstu liðir úlnliðir, DIP-liðir og PIP-liðir'
+                          },
+                          {
+                            display: 'MCP',
+                            subOptions: [
+                              {
+                                display: 'NOS',
+                                output: 'Helstu liðir úlnliðir, DIP-liðir, PIP-liðir og MCP-liðir'
+                              },
+                              {
+                                display: 'Olnboga',
+                                subOptions: [
+                                  {
+                                    display: 'NOS',
+                                    output: 'Helstu liðir úlnliðir, DIP-liðir, PIP-liðir, MCP-liðir og olnbogaliðir'
+                                  },
+                                  {
+                                    display: 'Axlir',
+                                    subOptions: [
+                                      {
+                                        display: 'NOS',
+                                        output: 'Helstu liðir úlnliðir, DIP-liðir, PIP-liðir, MCP-liðir, olnbogaliðir og axlarliðir'
+                                      },
+                                      {
+                                        display: 'Mjaðmir',
+                                        subOptions: [
+                                          {
+                                            display: 'NOS',
+                                            output: 'Helstu liðir úlnliðir, DIP-liðir, PIP-liðir, MCP-liðir, olnbogaliðir, axlarliðir og mjaðmarliðir'
+                                          },
+                                          {
+                                            display: 'Hné',
+                                            subOptions: [
+                                              {
+                                                display: 'NOS',
+                                                output: 'Helstu liðir úlnliðir, DIP-liðir, PIP-liðir, MCP-liðir, olnbogaliðir, axlarliðir, mjaðmarliðir og hnéliðir'
+                                              },
+                                              {
+                                                display: 'Ökkli',
+                                                output: 'Helstu liðir úlnliðir, DIP-liðir, PIP-liðir, MCP-liðir, olnbogaliðir, axlarliðir, mjaðmarliðir, hnéliðir og ökklaliðir'
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Olnboga',
+                subOptions: [
+                  {
+                    display: 'NOS',
+                    output: 'Helstu liðir olnbogaliðir'
+                  },
+                  {
+                    display: 'DIP',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Helstu liðir olnbogaliðir og DIP-liðir'
+                      },
+                      {
+                        display: 'PIP',
+                        subOptions: [
+                          {
+                            display: 'NOS',
+                            output: 'Helstu liðir olnbogaliðir, DIP-liðir og PIP-liðir'
+                          },
+                          {
+                            display: 'MCP',
+                            subOptions: [
+                              {
+                                display: 'NOS',
+                                output: 'Helstu liðir olnbogaliðir, DIP-liðir, PIP-liðir og MCP-liðir'
+                              },
+                              {
+                                display: 'Úlnlið',
+                                subOptions: [
+                                  {
+                                    display: 'NOS',
+                                    output: 'Helstu liðir olnbogaliðir, DIP-liðir, PIP-liðir, MCP-liðir og úlnliðir'
+                                  },
+                                  {
+                                    display: 'Axlir',
+                                    subOptions: [
+                                      {
+                                        display: 'NOS',
+                                        output: 'Helstu liðir olnbogaliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir og axlarliðir'
+                                      },
+                                      {
+                                        display: 'Mjaðmir',
+                                        subOptions: [
+                                          {
+                                            display: 'NOS',
+                                            output: 'Helstu liðir olnbogaliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, axlarliðir og mjaðmarliðir'
+                                          },
+                                          {
+                                            display: 'Hné',
+                                            subOptions: [
+                                              {
+                                                display: 'NOS',
+                                                output: 'Helstu liðir olnbogaliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, axlarliðir, mjaðmarliðir og hnéliðir'
+                                              },
+                                              {
+                                                display: 'Ökkli',
+                                                output: 'Helstu liðir olnbogaliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, axlarliðir, mjaðmarliðir, hnéliðir og ökklaliðir'
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Axlir',
+                subOptions: [
+                  {
+                    display: 'NOS',
+                    output: 'Helstu liðir axlarliðir'
+                  },
+                  {
+                    display: 'DIP',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Helstu liðir axlarliðir og DIP-liðir'
+                      },
+                      {
+                        display: 'PIP',
+                        subOptions: [
+                          {
+                            display: 'NOS',
+                            output: 'Helstu liðir axlarliðir, DIP-liðir og PIP-liðir'
+                          },
+                          {
+                            display: 'MCP',
+                            subOptions: [
+                              {
+                                display: 'NOS',
+                                output: 'Helstu liðir axlarliðir, DIP-liðir, PIP-liðir og MCP-liðir'
+                              },
+                              {
+                                display: 'Úlnlið',
+                                subOptions: [
+                                  {
+                                    display: 'NOS',
+                                    output: 'Helstu liðir axlarliðir, DIP-liðir, PIP-liðir, MCP-liðir og úlnliðir'
+                                  },
+                                  {
+                                    display: 'Olnboga',
+                                    subOptions: [
+                                      {
+                                        display: 'NOS',
+                                        output: 'Helstu liðir axlarliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir og olnbogaliðir'
+                                      },
+                                      {
+                                        display: 'Mjaðmir',
+                                        subOptions: [
+                                          {
+                                            display: 'NOS',
+                                            output: 'Helstu liðir axlarliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir og mjaðmarliðir'
+                                          },
+                                          {
+                                            display: 'Hné',
+                                            subOptions: [
+                                              {
+                                                display: 'NOS',
+                                                output: 'Helstu liðir axlarliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, mjaðmarliðir og hnéliðir'
+                                              },
+                                              {
+                                                display: 'Ökkli',
+                                                output: 'Helstu liðir axlarliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, mjaðmarliðir, hnéliðir og ökklaliðir'
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Mjaðmir',
+                subOptions: [
+                  {
+                    display: 'NOS',
+                    output: 'Helstu liðir mjaðmarliðir'
+                  },
+                  {
+                    display: 'DIP',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Helstu liðir mjaðmarliðir og DIP-liðir'
+                      },
+                      {
+                        display: 'PIP',
+                        subOptions: [
+                          {
+                            display: 'NOS',
+                            output: 'Helstu liðir mjaðmarliðir, DIP-liðir og PIP-liðir'
+                          },
+                          {
+                            display: 'MCP',
+                            subOptions: [
+                              {
+                                display: 'NOS',
+                                output: 'Helstu liðir mjaðmarliðir, DIP-liðir, PIP-liðir og MCP-liðir'
+                              },
+                              {
+                                display: 'Úlnlið',
+                                subOptions: [
+                                  {
+                                    display: 'NOS',
+                                    output: 'Helstu liðir mjaðmarliðir, DIP-liðir, PIP-liðir, MCP-liðir og úlnliðir'
+                                  },
+                                  {
+                                    display: 'Olnboga',
+                                    subOptions: [
+                                      {
+                                        display: 'NOS',
+                                        output: 'Helstu liðir mjaðmarliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir og olnbogaliðir'
+                                      },
+                                      {
+                                        display: 'Axlir',
+                                        subOptions: [
+                                          {
+                                            display: 'NOS',
+                                            output: 'Helstu liðir mjaðmarliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir og axlarliðir'
+                                          },
+                                          {
+                                            display: 'Hné',
+                                            subOptions: [
+                                              {
+                                                display: 'NOS',
+                                                output: 'Helstu liðir mjaðmarliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir og hnéliðir'
+                                              },
+                                              {
+                                                display: 'Ökkli',
+                                                output: 'Helstu liðir mjaðmarliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir, hnéliðir og ökklaliðir'
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Hné',
+                subOptions: [
+                  {
+                    display: 'NOS',
+                    output: 'Helstu liðir hnéliðir'
+                  },
+                  {
+                    display: 'DIP',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Helstu liðir hnéliðir og DIP-liðir'
+                      },
+                      {
+                        display: 'PIP',
+                        subOptions: [
+                          {
+                            display: 'NOS',
+                            output: 'Helstu liðir hnéliðir, DIP-liðir og PIP-liðir'
+                          },
+                          {
+                            display: 'MCP',
+                            subOptions: [
+                              {
+                                display: 'NOS',
+                                output: 'Helstu liðir hnéliðir, DIP-liðir, PIP-liðir og MCP-liðir'
+                              },
+                              {
+                                display: 'Úlnlið',
+                                subOptions: [
+                                  {
+                                    display: 'NOS',
+                                    output: 'Helstu liðir hnéliðir, DIP-liðir, PIP-liðir, MCP-liðir og úlnliðir'
+                                  },
+                                  {
+                                    display: 'Olnboga',
+                                    subOptions: [
+                                      {
+                                        display: 'NOS',
+                                        output: 'Helstu liðir hnéliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir og olnbogaliðir'
+                                      },
+                                      {
+                                        display: 'Axlir',
+                                        subOptions: [
+                                          {
+                                            display: 'NOS',
+                                            output: 'Helstu liðir hnéliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir og axlarliðir'
+                                          },
+                                          {
+                                            display: 'Mjaðmir',
+                                            subOptions: [
+                                              {
+                                                display: 'NOS',
+                                                output: 'Helstu liðir hnéliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir og mjaðmarliðir'
+                                              },
+                                              {
+                                                display: 'Ökkli',
+                                                output: 'Helstu liðir hnéliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir, mjaðmarliðir og ökklaliðir'
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                display: 'Ökkli',
+                subOptions: [
+                  {
+                    display: 'NOS',
+                    output: 'Helstu liðir ökklaliðir'
+                  },
+                  {
+                    display: 'DIP',
+                    subOptions: [
+                      {
+                        display: 'NOS',
+                        output: 'Helstu liðir ökklaliðir og DIP-liðir'
+                      },
+                      {
+                        display: 'PIP',
+                        subOptions: [
+                          {
+                            display: 'NOS',
+                            output: 'Helstu liðir ökklaliðir, DIP-liðir og PIP-liðir'
+                          },
+                          {
+                            display: 'MCP',
+                            subOptions: [
+                              {
+                                display: 'NOS',
+                                output: 'Helstu liðir ökklaliðir, DIP-liðir, PIP-liðir og MCP-liðir'
+                              },
+                              {
+                                display: 'Úlnlið',
+                                subOptions: [
+                                  {
+                                    display: 'NOS',
+                                    output: 'Helstu liðir ökklaliðir, DIP-liðir, PIP-liðir, MCP-liðir og úlnliðir'
+                                  },
+                                  {
+                                    display: 'Olnboga',
+                                    subOptions: [
+                                      {
+                                        display: 'NOS',
+                                        output: 'Helstu liðir ökklaliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir og olnbogaliðir'
+                                      },
+                                      {
+                                        display: 'Axlir',
+                                        subOptions: [
+                                          {
+                                            display: 'NOS',
+                                            output: 'Helstu liðir ökklaliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir og axlarliðir'
+                                          },
+                                          {
+                                            display: 'Mjaðmir',
+                                            subOptions: [
+                                              {
+                                                display: 'NOS',
+                                                output: 'Helstu liðir ökklaliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir og mjaðmarliðir'
+                                              },
+                                              {
+                                                display: 'Hné',
+                                                output: 'Helstu liðir ökklaliðir, DIP-liðir, PIP-liðir, MCP-liðir, úlnliðir, olnbogaliðir, axlarliðir, mjaðmarliðir og hnéliðir'
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+      
+    
 ];
 const ExamsGigt = [
     {
@@ -9802,7 +11900,8 @@ const LifsmorkData = [
 ];
 
 
-// Eiturlyf functionir (notast með Habits hér fyrir ofan)
+// Here I am trying to generate a text that says something like "Patient uses amphetamines. Also cocain and marijuana".
+// User 
 function generateInitialDrugOptions() {
     const drugs = ['Kannabis', 'Amfetamín', 'Kókaín', 'Sveppir', 'LSD', 'Ópíöt', 'Benzolyf'];
     return [
@@ -9844,7 +11943,7 @@ function formatDrug(drug) {
     return drug === 'LSD' ? 'LSD' : drug.toLowerCase();
 }
 
-// BMI calc (Notast með BMI takka í Habits)
+// BMI calc (BMI button in Habits calls this function)
 function calculateBMI(height, weight) {
     const heightInMeters = height / 100;
     const bmi = weight / (heightInMeters * heightInMeters);
@@ -9852,7 +11951,7 @@ function calculateBMI(height, weight) {
 }
 
 
-// Lífsmörk modals
+// Lífsmörk modals (Vital signs)
 function createBloodPressureInterface(containerId) {
     const container = document.getElementById(containerId);
     if (!container) {
@@ -10593,7 +12692,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+// Generate the different sections
 function createHabitsSection(data) {
     const section = createSection('habits', 'Venjur');
     const container = section.querySelector('#habits');
@@ -10782,7 +12881,7 @@ function createGedSkodunSection(data) {
 }
 
 
-
+// Load sections depending on page
 function loadPage(page) {
     const container = document.getElementById('content-section');
     container.innerHTML = '';
@@ -11216,10 +13315,7 @@ function loadPage(page) {
 
 
 // Textbox manipulation functions
-
 let textHistory = [];
-
-
 function insertText(text) {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before modification
@@ -11257,11 +13353,6 @@ function insertText(text) {
         textbox.setSelectionRange(textbox.value.length, textbox.value.length);
     }
 }
-
-
-
-
-
 function eraseText() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before erasing
@@ -11276,7 +13367,6 @@ function undoLastText() {
     }
     textbox.focus();
 }
-
 function copyText() {
     const textbox = document.getElementById('journalTextbox');
     textbox.select();
