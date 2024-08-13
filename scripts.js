@@ -256,7 +256,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Veikindi heima', 'Ferðalag'],
+        display: ['Veikindi heima', 'Ferðalag', 'Nýleg veikindi'],
         options: [
             {
                 display: 'Veikindi heima',
@@ -267,9 +267,191 @@ const SymptomsViral = [
                 display: 'Ferðalag',
                 output: 'Var að koma út ferðalagi erlendis',
                 onRightClickOutput: 'Ekki verið erlendis nýlega'
+            },
+            {
+                display: 'Nýleg veikindi',
+                subOptions: [
+                    {
+                        display: 'Veirusýking',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Er að jafna sig á veirusýkingu'
+                            },
+                            {
+                                display: 'Endurteknar veirusýkingar',
+                                output: 'Verið að glíma við endurteknar veirusýkingar nýlega'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Bakteríusýking',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Er að jafna sig á bakteríusýkingu'
+                            },
+                            {
+                                display: 'Lungnabólga',
+                                output: 'Er að jafna sig á lungnabólgu'
+                            },
+                            {
+                                display: 'Sinusitis',
+                                output: 'Er að jafna sig á sinusitis'
+                            },
+                            {
+                                display: 'Pyelonephritis',
+                                output: 'Er að jafna sig á pyelonephritis'
+                            },
+                            {
+                                display: 'Diverticulitis',
+                                output: 'Er að jafna sig á diverticulitis'
+                            },
+                            {
+                                display: 'Húðsýking',
+                                output: 'Er að jafna sig á húðsýkingu'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Undirliggjandi sjúkdómi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Skjólstæðingur verið slæmur af sínum undirliggjandi sjúkdómi uppá síðkastið' },
+                            { display: 'Gigt', output: 'Skjólstæðingur verið slæmur af sinni undirliggjandi gigt uppá síðkastið' },
+                            { display: 'Astma', output: 'Skjólstæðingur verið slæmur af sínum undirliggjandi astma uppá síðkastið' },
+                            { display: 'COPD', output: 'Skjólstæðingur verið slæmur af sínni undirliggjandi lungnateppu sjúkdómi uppá síðkastið' },
+                            { display: 'Sykursýki', output: 'Skjólstæðingur verið slæmur af sinni undirliggjandi sykursýki uppá síðkastið' },
+                            { display: 'Hjartabilun', output: 'Skjólstæðingur verið slæmur af sinni undirliggjandi hjartabilun uppá síðkastið' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekki verið að glíma við veikindi nýlega'
             }
+            
+
+            
         ]
     },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sýklalyf', 'Læknisráði', 'Tímalengd', 'Fyrri kúrar'],
+        options: [
+            {
+                display: 'Sýklalyf',
+                subOptions: [
+                    { display: 'NOS', output: 'Er að taka sýklalyf' },
+                    { display: 'Amoxicillin', output: 'Er að taka amoxicillin' },
+                    { display: 'Spectracillin', output: 'Er að taka spectracillin' },
+                    { display: 'Azithromycin', output: 'Er að taka azithromycin' },
+                    { display: 'Doxycillin', output: 'Er að taka doxycillin' },
+                    { display: 'Ciprofloxacin', output: 'Er að taka ciprofloxacin' },
+                    { display: 'Metronidazole', output: 'Er að taka metronidazole' },
+                    { display: 'Clindamycin', output: 'Er að taka clindamycin' },
+                    { display: 'Penicillin V', output: 'Er að taka penicillin V' },
+                    { display: 'Cefalexin', output: 'Er að taka cefalexin' },
+                    { display: 'Trimethoprim', output: 'Er að taka trimethoprim' }
+                    // Add more antibiotics as needed
+                ],
+                onRightClickOutput: 'Ekki tekið sýklalyf nýlega'
+            },
+            {
+                display: 'Læknisráði',
+                output: 'Tekur í samráði við sinn lækni',
+                onRightClickOutput: 'Ekki í samráði við lækni'
+            },
+            {
+                display: 'Tímalengd',
+                subOptions: [
+                    {
+                        display: 'Tekið í',
+                        subOptions: [
+                            { display: 'NOS', output: 'Tekið sýklalyf' },
+                            { display: '1 dag', output: 'Tekið í 1 dag' },
+                            { display: '2 daga', output: 'Tekið í 2 daga' },
+                            { display: '3 daga', output: 'Tekið í 3 daga' },
+                            { display: '4 daga', output: 'Tekið í 4 daga' },
+                            { display: '5 daga', output: 'Tekið í 5 daga' },
+                            { display: '6 daga', output: 'Tekið í 6 daga' },
+                            { display: '7 daga', output: 'Tekið í 7 daga' },
+                            { display: '8 daga', output: 'Tekið í 8 daga' },
+                            { display: '9 daga', output: 'Tekið í 9 daga' },
+                            { display: '10 daga', output: 'Tekið í 10 daga' }
+                        ]
+                    },
+                    {
+                        display: 'Á eftir',
+                        subOptions: [
+                            { display: 'NOS', output: 'Tekið sýklalyf' },
+                            { display: '1 dag eftir', output: 'Á 1 dag eftir af kúr' },
+                            { display: '2 daga eftir', output: 'Á 2 daga eftir af kúr' },
+                            { display: '3 daga eftir', output: 'Á 3 daga eftir af kúr' },
+                            { display: '4 daga eftir', output: 'Á 4 daga eftir af kúr' },
+                            { display: '5 daga eftir', output: 'Á 5 daga eftir af kúr' },
+                            { display: '6 daga eftir', output: 'Á 6 daga eftir af kúr' },
+                            { display: '7 daga eftir', output: 'Á 7 daga eftir af kúr' },
+                            { display: '8 daga eftir', output: 'Á 8 daga eftir af kúr' },
+                            { display: '9 daga eftir', output: 'Á 9 daga eftir af kúr' },
+                            { display: '10 daga eftir', output: 'Á 10 daga eftir af kúr' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekki tekið sýklalyf nýlega'
+            },
+            {
+                display: 'Fyrri kúrar',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Tekið sýklalyf áður en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Amoxicillin',
+                        output: 'Tekið kúr af amoxicillin í sömu veikindum en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Spectracillin',
+                        output: 'Tekið kúr af spectracillin í sömu veikindum en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Azithromycin',
+                        output: 'Tekið kúr af azithromycin í sömu veikindum en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Doxycillin',
+                        output: 'Tekið kúr af doxycillin í sömu veikindum en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Ciprofloxacin',
+                        output: 'Tekið kúr af ciprofloxacin í sömu veikindum en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Metronidazole',
+                        output: 'Tekið kúr af metronidazole í sömu veikindum en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Clindamycin',
+                        output: 'Tekið kúr af clindamycin í sömu veikindum en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Penicillin V',
+                        output: 'Tekið kúr af penicillin V í sömu veikindum en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Cefalexin',
+                        output: 'Tekið kúr af cefalexin í sömu veikindum en ekki skilað nægilegum árangri'
+                    },
+                    {
+                        display: 'Trimethoprim',
+                        output: 'Tekið kúr af trimethoprim í sömu veikindum en ekki skilað nægilegum árangri'
+                    }
+                    // Add more antibiotics as needed
+                ],
+                onRightClickOutput: 'Neitar fyrri sýklalyfjakúrum vegna núverandi veikinda'
+            }
+        ]
+    }
+    ,    
     {},
     {},
     {},
@@ -671,7 +853,7 @@ const historyViralData = [
                     { display: 'Hraust', output: 'Hraust í gruninn' }
                 ],
                 cancelText: '',
-                onRightClickOutput: 'Ekki hraust/ur'
+                onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunninn'
             },
             {
                 display: 'HTN',
@@ -827,7 +1009,7 @@ const RaudFloggViral = [
     {
         name: '',
         type: 'options',
-        display: ['Blóðhósti', 'Ljósfælni', 'Blóð í hægðum'],
+        display: ['Blóðhósti', 'Ljósfælni', 'Hnakkastífleiki'],
         options: [
             { display: 'Þyngdartap', output: 'Lýsir þyngdartapi', onRightClickOutput: 'Ekki þyngdartap' },
             { display: 'Nætursviti', output: 'Lýsir auknum nætursvita', onRightClickOutput: 'Ekki aukinn nætursviti' },
@@ -1092,8 +1274,7 @@ const SymptomsUrinary = [
             }
             
         ]
-    }
-    ,
+    },
     {},
     {},
     {},
@@ -1395,8 +1576,13 @@ const PlanUrinary = [
         type: 'options', 
         display: ['Ráðleggingar', 'Sýklalyf', 'Myndataka', 'Blóðprufa'], 
         options: [
-            { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
-
+            {
+                display: 'Ráðleggingar',
+                subOptions: [
+                    { display: 'Almennar', output: 'Almennar ráðleggingar' },
+                    { display: 'Getnaðarvarnir', output: 'Veiti ráðleggingar vegna getnaðarvarna' }
+                ]
+            },
             {
                 display: 'Sýklalyf',
                 subOptions: [
@@ -1444,6 +1630,105 @@ const PlanUrinary = [
             }
         ]
     },
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Getnaðarvörn'], 
+        options: [
+            {
+                display: 'Getnaðarvörn',
+                subOptions: [
+                    {
+                        display: 'Hefja meðferð',
+                        subOptions: [
+                            {
+                                display: 'Pillan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Hefjum meðferð með pillunni' },
+                                    { display: 'Microgyn', output: 'Hefjum meðferð með Microgyn' },
+                                    { display: 'Yasmin', output: 'Hefjum meðferð með Yasmin' },
+                                    { display: 'Mercilon', output: 'Hefjum meðferð með Mercilon' }
+                                ]
+                            },
+                            {
+                                display: 'Lykkjan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Hefjum meðferð með lykkjunni' },
+                                    { display: 'Koparlykkjan', output: 'Hefjum meðferð með Koparlykkjunni' },
+                                    { display: 'Mirena', output: 'Hefjum meðferð með Mirena lykkju' }
+                                ]
+                            },
+                            {
+                                display: 'Stafurinn',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Hefjum meðferð með stafnum' },
+                                    { display: 'Implanon', output: 'Hefjum meðferð með Implanon' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Skipta',
+                        subOptions: [
+                            {
+                                display: 'Pillan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skiptum yfir í pilluna' },
+                                    { display: 'Microgyn', output: 'Skiptum yfir í Microgyn' },
+                                    { display: 'Yasmin', output: 'Skiptum yfir í Yasmin' },
+                                    { display: 'Mercilon', output: 'Skiptum yfir í Mercilon' }
+                                ]
+                            },
+                            {
+                                display: 'Lykkjan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skiptum yfir í lykkjuna' },
+                                    { display: 'Koparlykkjan', output: 'Skiptum yfir í Koparlykkjuna' },
+                                    { display: 'Mirena', output: 'Skiptum yfir í Mirena lykkju' }
+                                ]
+                            },
+                            {
+                                display: 'Stafurinn',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skiptum yfir í stafinn' },
+                                    { display: 'Implanon', output: 'Skiptum yfir í Implanon' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Endurnýja',
+                        subOptions: [
+                            {
+                                display: 'Pillan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Endurnýja pilluna' },
+                                    { display: 'Microgyn', output: 'Endurnýja Microgyn' },
+                                    { display: 'Yasmin', output: 'Endurnýja Yasmin' },
+                                    { display: 'Mercilon', output: 'Endurnýja Mercilon' }
+                                ]
+                            },
+                            {
+                                display: 'Lykkjan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Endurnýja lykkjuna' },
+                                    { display: 'Koparlykkjan', output: 'Endurnýja Koparlykkjuna' },
+                                    { display: 'Mirena', output: 'Endurnýja Mirena lykkju' }
+                                ]
+                            },
+                            {
+                                display: 'Stafurinn',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Endurnýja stafinn' },
+                                    { display: 'Implanon', output: 'Endurnýja Implanon' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },    
     {},{},{},
     {
         name: '',
@@ -3746,7 +4031,7 @@ const historyHeart = [
                     { display: 'Hraust', output: 'Hraust í gruninn' },
                     { display: 'Hraustur', output: 'Hraustur í gruninn' }
                 ],
-                onRightClickOutput: 'Ekki hraust/ur'
+                onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunninn'
             },
             {
                 display: 'HTN',
@@ -4813,7 +5098,7 @@ const historyMelting = [
                     { display: 'Hraust', output: 'Hraust í gruninn' },
                     { display: 'Hraustur', output: 'Hraustur í gruninn' }
                 ],
-                onRightClickOutput: 'Ekki hraust/ur'
+                onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunninn'
             },
             {
                 display: 'HTN',
@@ -6645,7 +6930,7 @@ const SymptomsGed = [
     {
         name: '',
         type: 'options',
-        display: ['Þunglyndi', 'Kvíði'],
+        display: ['Þunglyndi'],
         options: [
             { display: 'Þunglyndi',
                 subOptions: [
@@ -6653,13 +6938,6 @@ const SymptomsGed = [
                     {display: 'Grunur', output: 'Grunar um þunglyndi'}
                     ],
                     onRightClickOutput: 'Neitar þunglyndiseinkennum'
-            },
-            { display: 'Kvíði',
-                subOptions: [
-                    {display: 'NOS', output: 'Kvíði'},
-                    {display: 'Grunur', output: 'Grunar sig vera með kvíðaröskun'}
-                    ],
-                    onRightClickOutput: 'Neitar kvíða'
             }
         ]
     },
@@ -6766,7 +7044,161 @@ const SymptomsGed = [
                 onRightClickOutput: 'Ekkert að vakna að næturlagi'
             }
         ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: [
+            'Kvíði', 'Köst', 'Áhyggjur', 'Ótti', 'Óróleiki', 'Pirringur'
+        ],
+        options: [
+            { display: 'Kvíði',
+                subOptions: [
+                    {display: 'NOS', output: 'Kvíði'},
+                    {display: 'Grunur', output: 'Grunar sig vera með kvíðaröskun'}
+                    ],
+                    onRightClickOutput: 'Neitar kvíða'
+            },
+            { 
+                display: 'Köst', 
+                output: 'Kemur í köstum',
+                onRightClickOutput: 'Kemur ekki í köstum'
+            },
+            { 
+                display: 'Áhyggjur', 
+                subOptions: [
+                    { display: 'NOS', output: 'Lýsir dagsdaglegum áhyggjum' },
+                    { display: 'Heilsa', output: 'Lýsir dagsdaglegum áhyggjum aðalega tengt eigin heilsu' },
+                    { display: 'Starfi', output: 'Lýsir dagsdaglegum áhyggjum aðalega tengt starfi' },
+                    { display: 'Félagsleg samskipti', output: 'Lýsir dagsdaglegum áhyggjum aðalega tengd félagslegum samskiptum' }
+                ],
+                onRightClickOutput: 'Neitar miklum áhyggjum dagsdaglega'
+            },
+            { 
+                display: 'Ótti',
+                subOptions: [
+                    { display: 'Eitthvað hræðilegt gæti gerst', output: 'Líður oft eins og eitthvað hræðilegt gæti gerst' },
+                    { display: 'Hamfarahugsanir', output: 'Segist oft vera með hamfarahugsanir' }
+                ],
+                onRightClickOutput: 'Neitar ótta dagsdaglega' 
+                
+                
+            },
+            { 
+                display: 'Óróleiki', 
+                output: 'Finnur fyrir auknum óróleika',
+                onRightClickOutput: 'Neitar óróleika'
+            },
+            { 
+                display: 'Pirringur', 
+                subOptions: [
+                    { display: 'NOS', output: 'Lýsir auknum pirringi' },
+                    { display: 'Nánum samskiptum', output: 'Lýsir auknum pirringi í nánum samskiptum' }
+                ],
+                onRightClickOutput: 'Neitar pirringi'
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: [
+            'Hjartsláttur', 'Mæði', 'Svitnar', 'Skjálfti'
+        ],
+        options: [
+            { 
+                display: 'Aukin hjartsláttur', 
+                output: 'Finnur fyrir auknum hjartslætti',
+                onRightClickOutput: 'Ekki aukinn hjartsláttur'
+            },
+            { 
+                display: 'Mæði', 
+                output: 'Mæði',
+                onRightClickOutput: 'Neitar mæði'
+            },
+            { 
+                display: 'Svitnun', 
+                output: 'Aukin svitamyndun',
+                onRightClickOutput: 'Neitar svitnun'
+            },
+            { 
+                display: 'Skjálfti', 
+                output: 'Skjálfti',
+                onRightClickOutput: 'Neitar skjálfta'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: [
+            'Oföndun', 'Þreyta', 'Vöðvaspenna', 'Svimi'
+        ],
+        options: [
+            { 
+                display: 'Oföndun', 
+                output: 'Lýsir oföndun',
+                onRightClickOutput: 'Neitar oföndun'
+            },
+            { 
+                display: 'Þreyta', 
+                output: 'Lýsir almennri þreytu',
+                onRightClickOutput: 'Neitar þreytu'
+            },
+            { 
+                display: 'Vöðvaspenna', 
+                output: 'Aukin vöðvaspenna',
+                onRightClickOutput: 'Ekki aukin vöðvaspenna'
+            },
+            { 
+                display: 'Svimi', 
+                output: 'Finnur fyrir svima',
+                onRightClickOutput: 'Neitar svima eða yfirliðstilfinningu'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: [
+            'Melting', 'Ákvörðunartregða', 'Hraðar hugsanir'
+        ],
+        options: [
+            { 
+                display: 'Melting', 
+                output: 'Finnur fyrir meltingaróþægindum',
+                onRightClickOutput: 'Neitar ógleði eða meltingarvandamálum'
+            },
+            { 
+                display: 'Ákvörðunartregða', 
+                output: 'Lýsir ákvörðunartregðu',
+                onRightClickOutput: 'Neitar ákvörðunartregðu'
+            },
+            { 
+                display: 'Hraðar hugsanir', 
+                output: 'Lýsir hröðum hugsunum',
+                onRightClickOutput: 'Neitar hröðum hugsunum'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: [
+           'Þráhyggjuhegðun'
+        ],
+        options: [
+
+            { 
+                display: 'Þráhyggjuhegðun', 
+                output: 'Lýsir þráhyggjuhegðun',
+                onRightClickOutput: 'Neitar þráhyggjuhegðun'
+            }
+        ]
     }
+    
 ];
 const GedSkodunData = [
     {
@@ -6816,6 +7248,10 @@ const GedSkodunData = [
                             { display: 'Líkamslykt', output: 'Mikil líkamslykt' },
                             { display: 'Ilmefnalykt', output: 'Sterk ilmefnalykt' }
                         ]
+                    },
+                    {
+                        display: 'Þreyta',
+                        output: 'Þreytulegt útlit'
                     }
                 ],
                 onRightClickOutput: 'Vel til fara.'
@@ -8193,7 +8629,52 @@ const PlanGed = [
                     ]
                   }
                 ]
-              }
+              },
+              {
+                display: 'Endurnýjun',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Endurnýja svefnlyf'
+                    },
+                    {
+                        display: 'Phenergan',
+                        output: 'Endurnýja Phenergan vegna svefnvanda'
+                    },
+                    {
+                        display: 'Atarax',
+                        output: 'Endurnýja Atarax vegna svefnvanda'
+                    },
+                    {
+                        display: 'Quetiapine',
+                        output: 'Endurnýja Quetiapine vegna svefnvanda'
+                    },
+                    {
+                        display: 'Melatonin',
+                        output: 'Endurnýja Melatonin vegna svefnvanda'
+                    },
+                    {
+                        display: 'Gabapentin',
+                        output: 'Endurnýja Gabapentin vegna svefnvanda'
+                    },
+                    {
+                        display: 'Orfenadrin+paracetamol (Norgesic)',
+                        output: 'Endurnýja Orfenadrin+paracetamol (Norgesic) vegna svefnvanda'
+                    },
+                    {
+                        display: 'Amitryptiline',
+                        output: 'Endurnýja Amitryptiline vegna svefnvanda'
+                    },
+                    {
+                        display: 'Zopiclone (Imovane)',
+                        output: 'Endurnýja Zopiclone (Imovane) vegna svefnvanda'
+                    },
+                    {
+                        display: 'Zolpidem (Stilnoct)',
+                        output: 'Endurnýja Zolpidem (Stilnoct) vegna svefnvanda'
+                    }
+                ]
+            }
             ]
           }
         ]
@@ -8394,41 +8875,279 @@ const ExamsTauga = [
     {
         name: '',
         type: 'options',
-        display: ['Taugaskoðun', 'Heilarit'],
+        display: ['Vitund', 'Skap og Geðslag', 'Meðvitundarstig'],
         options: [
-            { display: 'Taugaskoðun', output: 'Taugaskoðun sýnir' },
-            { display: 'Heilarit', output: 'Heilarit pantað' }
+            {
+                display: 'Vitund',
+                subOptions: [
+                    { 
+                        display: 'Tímaáttun', 
+                        subOptions: [
+                            { display: 'Rangur tími', output: 'Sjúklingur rangtímaáttaður' },
+                            { display: 'Óákveðin', output: 'Tímaáttun óákveðin' }
+                        ] 
+                    },
+                    { 
+                        display: 'Staðaráttun', 
+                        subOptions: [
+                            { display: 'Rangur staður', output: 'Sjúklingur rangtstaðaráttaður' },
+                            { display: 'Óákveðin', output: 'Staðaráttun óákveðin' }
+                        ] 
+                    },
+                    { 
+                        display: 'Persónuáttun', 
+                        subOptions: [
+                            { display: 'Röng persóna', output: 'Sjúklingur rangt persónuáttaður' },
+                            { display: 'Óákveðin', output: 'Persónuáttun óákveðin' }
+                        ] 
+                    },
+                    { 
+                        display: 'Minni', 
+                        subOptions: [
+                            { display: 'Skammtímaminni', output: 'Skert skammtímaminni' },
+                            { display: 'Langtímaminni', output: 'Skert langtímaminni' }
+                        ] 
+                    },
+                    { 
+                        display: 'Athyglisbrestur', 
+                        output: 'Sjúklingur með athyglisbrest' 
+                    },
+                    { 
+                        display: 'Tungumálavandamál', 
+                        subOptions: [
+                            { display: 'Orðfinning', output: 'Orðfinningaskerðing' },
+                            { display: 'Röskun', output: 'Tungumálaröskun' }
+                        ] 
+                    },
+                    { 
+                        display: 'Vandamálalausnir', 
+                        output: 'Vandamálalausnir skertar' 
+                    }
+                ],
+                onRightClickOutput: 'Góð áttun á tíma, stað og persónu. Minni, athygli, tungumál og vandamálalausnir eðlileg.'
+            },
+            {
+                display: 'Skap og Geðslag',
+                subOptions: [
+                    { 
+                        display: 'Óviðeigandi tilfinningasvörun', 
+                        output: 'Sjúklingur sýnir óviðeigandi tilfinningasvörun' 
+                    },
+                    { 
+                        display: 'Skaplyndi', 
+                        subOptions: [
+                            { display: 'Þunglyndi', output: 'Sjúklingur virðist þunglyndur' },
+                            { display: 'Kvíði', output: 'Sjúklingur virðist kvíðinn' },
+                            { display: 'Manía', output: 'Sjúklingur sýnir merki um maníu' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Skap og geðslag eðlilegt. Viðeigandi tilfinningasvörun.'
+            },
+            {
+                display: 'Meðvitundarstig',
+                subOptions: [
+                    { 
+                        display: 'Sljóleiki', 
+                        output: 'Sjúklingur er sljór' 
+                    },
+                    { 
+                        display: 'Mikil svefnþörf', 
+                        output: 'Sjúklingur með mikla svefnþörf' 
+                    },
+                    { 
+                        display: 'Óræð ástand', 
+                        output: 'Sjúklingur í óræðu ástandi' 
+                    }
+                ],
+                onRightClickOutput: 'Sjúklingur vakandi og með fulla meðvitund.'
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Tölvusneiðmynd', 'Magnetic Resonance Imaging (MRI)'],
+        display: ['I', 'II', 'III, IV, VI', 'V', 'VII', 'VIII', 'IX, X', 'XI', 'XII'],
         options: [
-            { display: 'Tölvusneiðmynd', output: 'Tölvusneiðmynd af heila pantað' },
-            { display: 'Magnetic Resonance Imaging (MRI)', output: 'MRI af heila pantað' }
+            {
+                display: 'I',
+                subOptions: [
+                    { display: 'Tap á lyktarskyni', output: 'Tap á lyktarskyni' },
+                    { display: 'Breyting á lyktarskyni', output: 'Breyting á lyktarskyni' }
+                ],
+                onRightClickOutput: 'Eðlileg lyktarskynjun.'
+            },
+            {
+                display: 'II',
+                subOptions: [
+                    { display: 'Skerðing á sjón', output: 'Skerðing á sjón' },
+                    { display: 'Sjónsviðstap', output: 'Sjónsviðstap' },
+                    { display: 'Blinda', output: 'Blinda í öðru eða báðum augum' }
+                ],
+                onRightClickOutput: 'Eðlileg sjón.'
+            },
+            {
+                display: 'III, IV, VI',
+                subOptions: [
+                    { display: 'Ptosu', output: 'Ptosu (hangandi augnlok)' },
+                    { display: 'Skert augnhreyfing', output: 'Skert augnhreyfing' },
+                    { display: 'Ljósopavandamál', output: 'Óeðlileg viðbrögð ljósopa' }
+                ],
+                onRightClickOutput: 'Eðlileg augnhreyfing, ljósopaviðbrögð eðlileg.'
+            },
+            {
+                display: 'V',
+                subOptions: [
+                    { display: 'Minnkað andlitsskyn', output: 'Minnkað andlitsskyn' },
+                    { display: 'Skert tyggingarvöðvastyrkur', output: 'Skert tyggingarvöðvastyrkur' }
+                ],
+                onRightClickOutput: 'Eðlileg andlitsskynjun, eðlilegur tyggingarvöðvastyrkur.'
+            },
+            {
+                display: 'VII',
+                subOptions: [
+                    { display: 'Andlitslömun', output: 'Andlitslömun' },
+                    { display: 'Minnkað bragðskyn', output: 'Minnkað bragðskyn' }
+                ],
+                onRightClickOutput: 'Eðlilegur vöðvastyrkur í andliti, bragðskyn eðlilegt.'
+            },
+            {
+                display: 'VIII',
+                subOptions: [
+                    { display: 'Heyrnartap', output: 'Heyrnartap' },
+                    { display: 'Jafnvægistruflanir', output: 'Jafnvægistruflanir' }
+                ],
+                onRightClickOutput: 'Heyrn og jafnvægi eðlilegt.'
+            },
+            {
+                display: 'IX, X',
+                subOptions: [
+                    { display: 'Skert kynging', output: 'Skert kynging' },
+                    { display: 'Minnkaður kokviðbragð', output: 'Minnkaður kokviðbragð' },
+                    { display: 'Tunguröskun', output: 'Röskun á tal eða tunguhreyfingu' }
+                ],
+                onRightClickOutput: 'Eðlileg kynging, kokviðbragð eðlilegt, tal og tunguhreyfingar eðlilegar.'
+            },
+            {
+                display: 'XI',
+                subOptions: [
+                    { display: 'Skert vöðvastyrkur í öxlum/hálsi', output: 'Skert vöðvastyrkur í öxlum eða hálsi' }
+                ],
+                onRightClickOutput: 'Eðlilegur vöðvastyrkur í öxlum og hálsi.'
+            },
+            {
+                display: 'XII',
+                subOptions: [
+                    { display: 'Skert tunguhreyfing', output: 'Skert tunguhreyfing' }
+                ],
+                onRightClickOutput: 'Tunguhreyfingar eðlilegar.'
+            }
         ]
-    }
-];
-const PlanTauga = [
+    },
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar', 'Lyf', 'Tilvísun'],
+        display: ['Útlit vöðva', 'Spenna', 'Styrkur'],
         options: [
-            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um taugasjúkdóm' },
             {
-                display: 'Lyf',
+                display: 'Útlit vöðva',
                 subOptions: [
-                    { display: 'Taugaverkjalækkandi lyf', output: 'Ávísun á taugaverkjalækkandi lyf' },
-                    { display: 'Krampastillandi lyf', output: 'Ávísun á krampastillandi lyf' }
-                ]
+                    { display: 'Atrophy', output: 'Vöðvarýrnun' },
+                    { display: 'Hypertrophy', output: 'Óeðlileg vöðvaukning' }
+                ],
+                onRightClickOutput: 'Ekki áberandi merki um vöðvarýrnun.'
             },
             {
-                display: 'Tilvísun',
+                display: 'Spenna',
                 subOptions: [
-                    { display: 'Taugasérfræðingur', output: 'Vísa til taugasérfræðings' },
-                    { display: 'Sérfræðingur', output: 'Vísa til sérfræðings' }
+                    { display: 'Hypotonia', output: 'Minnkaður vöðvaspenna (hypotonia)' },
+                    { display: 'Hypertonia', output: 'Aukin vöðvaspenna (hypertonia)' },
+                    { display: 'Rigiditet', output: 'Merki um aukið rígiditet' },
+                    { display: 'Spasticitet', output: 'Merki um aukið spasticitet' }
+                ],
+                onRightClickOutput: 'Vöðvaspenna eðlileg. Ekki merki um aukið rígiditet.'
+            },
+            {
+                display: 'Styrkur',
+                subOptions: [
+                    { display: 'Minnkaður styrkur', output: 'Minnkaður vöðvastyrkur' },
+                    { display: 'Mikilvæg styrkskerðing', output: 'Mikilvæg styrkskerðing' }
+                ],
+                onRightClickOutput: 'Vöðvastyrkur eðlilegur.'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Djúp sinaviðbrögð', 'Yfirborðsviðbrögð', 'Babinski'],
+        options: [
+            {
+                display: 'Djúp sinaviðbrögð',
+                subOptions: [
+                    { display: 'Minnkað viðbragð', output: 'Minnkað djúpt sinaviðbragð' },
+                    { display: 'Aukið viðbragð', output: 'Aukið djúpt sinaviðbragð' },
+                    { display: 'Engin viðbrögð', output: 'Engin djúpt sinaviðbragð' }
+                ],
+                onRightClickOutput: 'Djúp sinaviðbrögð eðlileg.'
+            },
+            {
+                display: 'Yfirborðsviðbrögð',
+                subOptions: [
+                    { display: 'Minnkað yfirborðsviðbragð', output: 'Minnkað yfirborðsviðbragð' },
+                    { display: 'Aukið yfirborðsviðbragð', output: 'Aukið yfirborðsviðbragð' }
+                ],
+                onRightClickOutput: 'Yfirborðsviðbrögð eðlileg.'
+            },
+            {
+                display: 'Babinski',
+                subOptions: [
+                    { display: 'Babinski merki', output: 'Jákvætt Babinski merki' },
+                    { display: 'Hoffmann merki', output: 'Jákvætt Hoffmann merki' }
+                ],
+                onRightClickOutput: 'Engin merki um Babinski.'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Göngulag', 'Romberg', 'Samhæfing'],
+        options: [
+            {
+                display: 'Göngulag',
+                subOptions: [
+                    { display: 'Óstöðugt göngulag', output: 'Óstöðugt göngulag' },
+                    { display: 'Ataxia', output: 'Ataxia' }
+                ],
+                onRightClickOutput: 'Göngulag eðlilegt.'
+            },
+            {
+                display: 'Romberg',
+                subOptions: [
+                    { display: 'Óeðlilegt Romberg próf', output: 'Óeðlilegt Romberg próf' }
+                ],
+                onRightClickOutput: 'Romberg próf eðlilegt.'
+            },
+            {
+                display: 'Samhæfing',
+                subOptions: [
+                    {
+                        display: 'Fingur-nef',
+                        subOptions: [
+                            { display: 'Ósamræmi í fingur-til-nef prófi', output: 'Ósamræmi í fingur-til-nef prófi' }
+                        ]
+                    },
+                    {
+                        display: 'Hæl-sköflung',
+                        subOptions: [
+                            { display: 'Ósamræmi í hæl-til-sköflungs prófi', output: 'Ósamræmi í hæl-til-sköflungs prófi' }
+                        ]
+                    }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Fingur-nef eðlilegt', output: 'Fingur-nef próf eðlilegt' },
+                    { display: 'Hæl-sköflung eðlilegt', output: 'Hæl-sköflung próf eðlilegt' }
                 ]
             }
         ]
@@ -8436,13 +9155,273 @@ const PlanTauga = [
     {
         name: '',
         type: 'options',
-        display: ['Eftirfylgd', 'Frekar rannsóknir'],
+        display: ['Snertiskyn', 'Sársaukaskyn', 'Titringsskyn', 'Proprioception'],
         options: [
-            { display: 'Eftirfylgd', output: 'Panta eftirfylgdartíma' },
-            { display: 'Frekar rannsóknir', output: 'Íhuga frekari rannsóknir ef einkenni versna' }
+            {
+                display: 'Snertiskyn',
+                subOptions: [
+                    { display: 'Minnkað snertiskyn', output: 'Minnkað snertiskyn' }
+                ],
+                onRightClickOutput: 'Snertiskyn eðlilegt.'
+            },
+            {
+                display: 'Sársaukaskyn',
+                subOptions: [
+                    { display: 'Skert sársaukaskyn', output: 'Skert sársaukaskyn' }
+                ],
+                onRightClickOutput: 'Sársaukaskyn eðlilegt.'
+            },
+            {
+                display: 'Titringsskyn',
+                subOptions: [
+                    { display: 'Minnkað titringsskyn', output: 'Minnkað titringsskyn' }
+                ],
+                onRightClickOutput: 'Titringsskyn eðlilegt.'
+            },
+            {
+                display: 'Proprioception',
+                subOptions: [
+                    { display: 'Skert staðarvitund', output: 'Skert staðarvitund (proprioception)' }
+                ],
+                onRightClickOutput: 'Staðarvitund eðlileg.'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Autonomic Function', 'Pupil Responses', 'Sviti og húðbreytingar'],
+        options: [
+            {
+                display: 'Autonomic Function',
+                subOptions: [
+                    { display: 'Óeðlileg blóðþrýstingsbreyting', output: 'Óeðlileg blóðþrýstingsbreyting' },
+                    { display: 'Óeðlileg hjartsláttartíðni', output: 'Óeðlileg hjartsláttartíðni' }
+                ],
+                onRightClickOutput: 'Autonomic virkni eðlileg.'
+            },
+            {
+                display: 'Pupil Responses',
+                subOptions: [
+                    { display: 'Skert ljósopaviðbragð', output: 'Skert ljósopaviðbragð' }
+                ],
+                onRightClickOutput: 'Pupil responses eðlileg.'
+            },
+            {
+                display: 'Sviti og húðbreytingar',
+                subOptions: [
+                    { display: 'Óeðlilegur sviti', output: 'Óeðlilegur sviti' },
+                    { display: 'Húðbreytingar', output: 'Húðbreytingar' }
+                ],
+                onRightClickOutput: 'Sviti og húðbreytingar eðlilegar.'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Tal og Tungumál', 'Praxis', 'Gnosis og Agnosia'],
+        options: [
+            {
+                display: 'Tal og Tungumál',
+                subOptions: [
+                    { display: 'Málstol', output: 'Sjúklingur með málstol' },
+                    { display: 'Skert endurtekning', output: 'Skert endurtekning' },
+                    { display: 'Skert skilningur', output: 'Skert skilningur' }
+                ],
+                onRightClickOutput: 'Tal og tungumál eðlileg.'
+            },
+            {
+                display: 'Praxis',
+                subOptions: [
+                    { display: 'Erfiðleikar með lærð verkefni', output: 'Sjúklingur á erfitt með lærð verkefni' }
+                ],
+                onRightClickOutput: 'Praxis eðlilegt.'
+            },
+            {
+                display: 'Gnosis og Agnosia',
+                subOptions: [
+                    { display: 'Skert skilningur á hlutum', output: 'Sjúklingur á erfitt með að þekkja hluti' },
+                    { display: 'Andlitagnosia', output: 'Sjúklingur á erfitt með andlitsþekkingu' },
+                    { display: 'Skert skynjun', output: 'Skert skynjun á snertingu og öðrum áreitum' }
+                ],
+                onRightClickOutput: 'Gnosis og agnosia eðlileg.'
+            }
         ]
     }
 ];
+
+
+
+
+
+
+
+
+const PlanTauga = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Höfuðverkur', 'Bell\'s Palsy', 'Restless Leg Syndrome'],
+        options: [
+            {
+                display: 'Höfuðverkur',
+                subOptions: [
+                    {
+                        display: 'Mígreni',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                subOptions: [
+                                    { display: 'Greining', output: 'Mígreni' },
+                                    { display: 'Grunur', output: 'Grunur um mígreni' }
+                                ]
+                            },
+                            {
+                                display: 'Með auru',
+                                subOptions: [
+                                    { display: 'Greining', output: 'Mígreni með auru' },
+                                    { display: 'Grunur', output: 'Grunur um mígreni með auru' }
+                                ]
+                            },
+                            {
+                                display: 'Án auru',
+                                subOptions: [
+                                    { display: 'Greining', output: 'Mígreni án auru' },
+                                    { display: 'Grunur', output: 'Grunur um mígreni án auru' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Tension',
+                        subOptions: [
+                            { display: 'Greining', output: 'Tension höfuðverkur' },
+                            { display: 'Grunur', output: 'Grunur um tension höfuðverk' }
+                        ]
+                    },
+                    {
+                        display: 'Cluster',
+                        subOptions: [
+                            { display: 'Greining', output: 'Cluster höfuðverkur' },
+                            { display: 'Grunur', output: 'Grunur um cluster höfuðverk' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Bell\'s Palsy',
+                subOptions: [
+                    { display: 'Greining', output: 'Bell\'s Palsy' },
+                    { display: 'Grunur', output: 'Grunur um Bell\'s Palsy' }
+                ]
+            },
+            {
+                display: 'RLS',
+                subOptions: [
+                    { display: 'Greining', output: 'Restless Leg Syndrome' },
+                    { display: 'Grunur', output: 'Grunur um restless leg syndrome' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Flog', 'MS', 'ET', 'Parkinsons', 'Heilabilun'],
+        options: [
+            {
+                display: 'Flog',
+                subOptions: [
+                    {
+                        display: 'Stakt flogakast',
+                        subOptions: [
+                            { display: 'Greining', output: 'Stakt flogakast' },
+                            { display: 'Grunur', output: 'Grunur um stakt flogakast' }
+                        ]
+                    },
+                    {
+                        display: 'Flogaveiki',
+                        subOptions: [
+                            { display: 'Greining', output: 'Flogaveiki' },
+                            { display: 'Grunur', output: 'Grunur um flogaveiki' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Multiple Sclerosis',
+                subOptions: [
+                    { display: 'Greining', output: 'Multiple Sclerosis' },
+                    { display: 'Grunur', output: 'Grunur um multiple sclerosis' }
+                ]
+            },
+            {
+                display: 'Essential Tremor',
+                subOptions: [
+                    { display: 'Greining', output: 'Essential Tremor' },
+                    { display: 'Grunur', output: 'Grunur um essential tremor' }
+                ]
+            },
+            {
+                display: 'Parkinsonsjúkdómur',
+                subOptions: [
+                    { display: 'Greining', output: 'Parkinsonsjúkdómur' },
+                    { display: 'Grunur', output: 'Grunur um Parkinsonsjúkdóm' }
+                ]
+            },
+            {
+                display: 'Heilabilun',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: [
+                            { display: 'Greining', output: 'Heilabilun' },
+                            { display: 'Grunur', output: 'Grunur um heilabilun' }
+                        ]
+                    },
+                    {
+                        display: 'Alzheimers',
+                        subOptions: [
+                            { display: 'Greining', output: 'Alzheimers' },
+                            { display: 'Grunur', output: 'Grunur um Alzheimers' }
+                        ]
+                    },
+                    {
+                        display: 'Vascular',
+                        subOptions: [
+                            { display: 'Greining', output: 'Vascular heilabilun' },
+                            { display: 'Grunur', output: 'Grunur um vascular heilabilun' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Taugakvilli', 'Peripheral Neuropathy'],
+        options: [
+            {
+                display: 'Taugakvilli',
+                subOptions: [
+                    { display: 'Greining', output: 'Taugakvilli' },
+                    { display: 'Grunur', output: 'Grunur um taugakvilli' }
+                ]
+            },
+            {
+                display: 'Peripheral Neuropathy',
+                subOptions: [
+                    { display: 'Greining', output: 'Peripheral Neuropathy' },
+                    { display: 'Grunur', output: 'Grunur um peripheral neuropathy' }
+                ]
+            }
+        ]
+    }
+];
+
+
 
 // Innkirtla (Endocrine)
 const SymptomsInnkirtla = [
