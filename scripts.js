@@ -194,7 +194,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hiti'],
+        display: ['Hiti', 'Algeng gildi'],
         options: [
             {
                 display: 'Hiti',
@@ -205,6 +205,22 @@ const SymptomsViral = [
                     { display: 'Ekki mælt', output: 'Upplifað sig með hita en ekki mælt sig' }
                 ],
                 onRightClickOutput: 'Ekki fengið hita'
+            },
+            {
+                display: 'Algeng gildi',
+                subOptions: Array.from({length: 46}, (_, i) => {
+                    const lowerTemp = (37.0 + i * 0.1).toFixed(1) + '°C';
+                    return {
+                        display: lowerTemp,
+                        subOptions: Array.from({length: 46}, (_, j) => {
+                            const upperTemp = (37.0 + j * 0.1).toFixed(1) + '°C';
+                            return {
+                                display: upperTemp,
+                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}`
+                            };
+                        })
+                    };
+                })
             }
         ]
     },
@@ -514,20 +530,42 @@ const ExamsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Lasleg/ur', 'Yfirþyngd'],
+        display: ['Lasleg/ur', 'Holdafar'],
         options: [
             { display: 'Lasleg/ur', output: 'Laslega útlítandi', onRightClickOutput: 'Ekki bráðveikindalegt útlit' },
-            { display: 'Yfirþyngd', output: 'Er í yfirþyngd', onRightClickOutput: 'Ekki yfirþyngd' }
+            { display: 'Holdarfar', 
+                subOptions: [
+                    { display: 'Yfirþyngd', output: 'Er í yfirþyngd' },
+                    { display: 'Grannvaxinn', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Skjólstæðingur grannvaxinn' },
+                            { display: 'Aðeins', output: 'Skjólstæðingur aðeins grannvaxinn' },
+                            { display: 'Verulega', output: 'Skjólstæðingur verulega grannvaxinn' }
+                        ]
+                        
+                    },
+                    
+                ],
+                 onRightClickOutput: 'Eðlilegt holdafar' 
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Roði í koki', 'Gröftur', 'Stórir'],
+        display: ['Roði í koki', 'Gröftur', 'Stórir', 'Blöðrukennd útbrot'],
         options: [
             { display: 'Roði í koki', output: 'Roði í koki', onRightClickOutput: 'Ekki roði í koki' },
             { display: 'Gröftur á hálskirtlum', output: 'Gröftur á hálskirtlum', onRightClickOutput: 'Ekki gröftur á hálskirtlum' },
-            { display: 'Hálskirtlar stórir', output: 'Hálskirtlar stórir', onRightClickOutput: 'Ekki áberandi stórir hálskirtlar' }
+            { display: 'Hálskirtlar stórir', output: 'Hálskirtlar stórir', onRightClickOutput: 'Ekki áberandi stórir hálskirtlar' },
+            { display: 'Blöðrukennd útbrot', 
+                subOptions: [
+                    { display: 'Vör', output: 'Sjást merki um blöðrukennd útbrot á vörum' },
+                    { display: 'Hálsi og mjúkagóm', output: 'Sjást merki um blöðrukennd útbrot í hálsi og mjúkagóm' },
+                    { display: 'Munnslímhúð', output: 'Sjást merki um blöðrukennd útbrot í munnslímhúð' }
+                ],
+                onRightClickOutput: 'Ekki merki um vesiculer útbrot'  
+            }
         ]
     },
     {
@@ -541,20 +579,417 @@ const ExamsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Lungnahlustun'],
+        display: ['Öndunarhljóð', 'Styrkur', 'Symmetría', 'Aukahljóð'],
         options: [
             {
-                display: 'Lungnahlustun',
+                display: 'Öndunarhljóð',
                 subOptions: [
-                    { display: 'Hrein', output: 'Lungnahlustun, hrein. Eðlileg vesiculer öndunarhljóð' },
-                    { display: 'Slímhljóð basalt', output: 'Lungnahlustun sýnir slímhljóð basalt' },
-                    { display: 'Obstrúktíf', output: 'Lungnahlustun sýnir lengda útöndun' },
-                    { display: 'Gróf', output: 'Lungnahlustun sýnir gróf öndunarhljóð' },
-                    { display: 'Gróf, ronchi og lengd útöndun', output: 'Lungnahlustun sýnir gróf öndunarhljóð, ronchi og lengda útöndun' },
-                    { display: 'Brak hægra megin basalt', output: 'Heyrist brak hægra megin basalt' },
-                    { display: 'Brak vinstra megin basalt', output: 'Heyrist brak vinstra megin basalt' }
+                    { 
+                        display: 'Gróf', 
+                        output: 'Lungnahlustun sýnir gróf öndunarhljóð' 
+                    },
+                    { 
+                        display: 'Gróf og lengd útöndun', 
+                        output: 'Lungnahlustun sýnir gróf öndunarhljóð og lengda útöndun' 
+                    },
+                    {
+                        display: 'Lengd útöndun',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Lungnahlustun sýnir lengda útöndun'
+                            },
+                            {
+                                display: 'Vægt',
+                                output: 'Lungnahlustun sýnir vægt lengda útöndun'
+                            },
+                            {
+                                display: 'Mikið',
+                                output: 'Lungnahlustun sýnir verulega lengda útöndun'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Lengd innöndun',
+                        output: 'Lungnahlustun sýnir lengda innöndun'
+                    }
                 ],
-                onRightClickOutput: 'Lungnahlustun hrein'
+                onRightClickOutput: 'Lungnahlustun sýnir vesiculer öndunarhljóð'
+            },
+            {
+                display: 'Styrkur',
+                subOptions: [
+                    {
+                        display: 'Fjarlæg',
+                        output: 'Öndunarhljóð fjarlæg'
+                    },
+                    {
+                        display: 'Aðeins fjarlæg',
+                        output: 'Aðeins fjarlæg öndunarhljóð'
+                    },
+                    {
+                        display: 'Verulega fjarlæg',
+                        output: 'Verulega fjarlæg öndunarhljóð'
+                    }
+                ],
+                onRightClickOutput: 'Heyrast vel'
+            },
+            {
+                display: 'Symmetría',
+                subOptions: [
+                    {
+                        display: 'Minnkuð öndunarhljóð',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Minnkuð öndunarhljóð dreift'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Minnkuð öndunarhljóð yfir hægra lungnafelti'
+                                    },
+                                    {
+                                        display: 'Efri hluti',
+                                        output: 'Minnkuð öndunarhljóð yfir efri hluta hægra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Mið hluti',
+                                        output: 'Minnkuð öndunarhljóð yfir mið hluta hægra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Neðri hluta',
+                                        output: 'Minnkuð öndunarhljóð yfir neðri hluta hægra lungnafeltis'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Minnkuð öndunarhljóð yfir vinstra lungnafelti'
+                                    },
+                                    {
+                                        display: 'Efri hluti',
+                                        output: 'Minnkuð öndunarhljóð yfir efri hluta vinstra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Mið hluti',
+                                        output: 'Minnkuð öndunarhljóð yfir mið hluta vinstra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Neðri hluta',
+                                        output: 'Minnkuð öndunarhljóð yfir neðri hluta vinstra lungnafeltis'
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Aukin öndunarhljóð',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Aukin öndunarhljóð dreift'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Aukin öndunarhljóð yfir hægra lungnafelti'
+                                    },
+                                    {
+                                        display: 'Efri hluti',
+                                        output: 'Aukin öndunarhljóð yfir efri hluta hægra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Mið hluti',
+                                        output: 'Aukin öndunarhljóð yfir mið hluta hægra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Neðri hluta',
+                                        output: 'Aukin öndunarhljóð yfir neðri hluta hægra lungnafeltis'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Aukin öndunarhljóð yfir vinstra lungnafelti'
+                                    },
+                                    {
+                                        display: 'Efri hluti',
+                                        output: 'Aukin öndunarhljóð yfir efri hluta vinstra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Mið hluti',
+                                        output: 'Aukin öndunarhljóð yfir mið hluta vinstra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Neðri hluta',
+                                        output: 'Aukin öndunarhljóð yfir neðri hluta vinstra lungnafeltis'
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Symmetrísk'
+            },
+            {
+                display: 'Aukahljóð',
+                subOptions: [
+                    {
+                        display: 'Slímhljóð',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrast slímhljóð beggja vegna'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrast slímhljóð basalt beggja vegna'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrast slímhljóð yfir miðju lunga beggja vegna'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrast slímhljóð yfir superior lungnafelti beggja vegna'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrast slímhljóð hægra megin'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrast slímhljóð basalt hægra megin'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrast slímhljóð í miðju lunga hægra megin'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrast slímhljóð superior í hægra lunga'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrast slímhljóð vinstra megin'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrast slímhljóð basalt vinstra megin'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrast slímhljóð í miðju lunga vinstra megin'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrast slímhljóð superior í vinstra lunga'
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Brak',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist brak beggja vegna'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrist brak basalt beggja vegna'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrist brak yfir miðju lunga beggja vegna'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrist brak yfir superior lungnafelti beggja vegna'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist brak hægra megin'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrist brak basalt hægra megin'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrist brak í miðju lunga hægra megin'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrist brak superior í hægra lunga'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist brak vinstra megin'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrist brak basalt vinstra megin'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrist brak í miðju lunga vinstra megin'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrist brak superior í vinstra lunga'
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Wheezing',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist wheezing beggja vegna'
+                                    },
+                                    {
+                                        display: 'Mikið',
+                                        output: 'Heyrist áberandi wheezing dreift yfir báðum lungnafeltum'
+                                    },
+                                    {
+                                        display: 'Vægt',
+                                        output: 'Heyrist vægt wheezing dreift yfir báðum lungnafeltum'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist wheezing hægra megin'
+                                    },
+                                    {
+                                        display: 'Mikið',
+                                        output: 'Heyrist áberandi wheezing hægra megin'
+                                    },
+                                    {
+                                        display: 'Vægt',
+                                        output: 'Heyrist vægt wheezing hægra megin'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist wheezing vinstra megin'
+                                    },
+                                    {
+                                        display: 'Mikið',
+                                        output: 'Heyrist áberandi wheezing vinstra megin'
+                                    },
+                                    {
+                                        display: 'Vægt',
+                                        output: 'Heyrist vægt wheezing vinstra megin'
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Ronchi',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                output: 'Heyrist ronchi beggja vegna'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                output: 'Heyrist ronchi hægra megin'
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                output: 'Heyrist ronchi vinstra megin'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Stridor',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                output: 'Heyrist stridor beggja vegna'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                output: 'Heyrist stridor hægra megin'
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                output: 'Heyrist stridor vinstra megin'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Pleural rub',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                output: 'Heyrist pleural rub beggja vegna'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                output: 'Heyrist pleural rub hægra megin'
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                output: 'Heyrist pleural rub vinstra megin'
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekki wheezing, brak eða önnur aukahljóð'
             }
         ]
     },
@@ -598,15 +1033,22 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hósti', 'Vírósa', 'Eyrnabólga', 'Lungnabólga'],
+        display: ['Hósti', 'Vírósa', 'Sinusitis', 'Lungnabólga'],
         options: [
             { display: 'Hósti', output: 'Hósti' },
-            { display: 'Vírósa', output: 'Vírósa' },
-            {
-                display: 'Eyrnabólga',
+            { display: 'Vírósa', 
                 subOptions: [
-                    { display: 'Greining', output: 'Eyrnabólga' },
-                    { display: 'Grunur', output: 'Grunur um eyrnabólgu' }
+                    { display: 'Greining', output: 'Vírósa' },
+                    { display: 'Grunur', output: 'Grunur um byrjandi veirusýkingu' },
+                    { display: 'Fullmótað plan', output: 'Vírósa. Veiti viðeigandi ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar' }
+                ]
+            },
+            {
+                display: 'Sinusitis',
+                subOptions: [
+                    { display: 'Greining', output: 'Sinusitis' },
+                    { display: 'Grunur', output: 'Grunur um sinusitis' },
+                    { display: 'Fullmótað plan', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki' }
                 ]
             },
             {
@@ -641,14 +1083,25 @@ const PlanViral = [
                 display: 'Versnun á COPD',
                 subOptions: [
                     { display: 'Greining', output: 'Versnun á COPD' },
-                    { display: 'Grunur', output: 'Grunur um versnun á COPD' }
+                    { display: 'Grunur', output: 'Grunur um versnun á COPD' },
+                    { display: 'Fullmótað plan', 
+                        subOptions: [
+                            { display: 'Sýklalyf', output: 'Grunur um versnun á COPD. Set sýklalyf í gáttina. Endurmat ef lagast ekki' },
+                            { display: 'Sýkalyf og sterar', output: 'Grunur um versnun á COPD. Ráðlegg sýklalyf og stuttan sterakúr. Set hvoru tveggja í gáttina. Endurmat ef lagast ekki' }
+                        ]
+                    }
                 ]
             },
             {
                 display: 'Astmi',
                 subOptions: [
                     { display: 'Greining', output: 'Astmi' },
-                    { display: 'Grunur', output: 'Grunur um astma' }
+                    { display: 'Grunur', output: 'Grunur um astma' },
+                    { display: 'Fullmótað plan', 
+                        subOptions: [
+                            { display: 'Fyrsta greining', output: 'Grunur um astma. Ráðlegg spírómetríu til nánari greininga. Fær ventolin til notkunar PN' }
+                        ]
+                    }
                 ]
             }
         ]
@@ -656,7 +1109,7 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Strep', 'Mónó'],
+        display: ['Strep', 'Mónó', 'Herpes', 'Enterovirus'],
         options: [
             {
                 display: 'Strep',
@@ -671,14 +1124,71 @@ const PlanViral = [
                     { display: 'Greining', output: 'Mónónúkleósa' },
                     { display: 'Grunur', output: 'Grunur um mónónúkleósu' }
                 ]
+            },
+            {
+                display: 'Herpes',
+                subOptions: [
+                    { display: 'Greining', output: 'Herpes' },
+                    { display: 'Grunur', output: 'Grunur um herpes' },
+                    { display: 'Fullmótað plan', output: 'Grunur um herpes. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Endurmat PN' }
+                ]
+            },
+            {
+                display: 'Enterovirus',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: [
+                            { display: 'Greining', output: 'Enterovirus' },
+                            { display: 'Grunur', output: 'Grunur um enteroveirusýkingu' },
+                            { display: 'Fullmótað plan', output: 'Grunur um enteroveirusýkingu. Veiti almennar ráðleggingar. Stuðningsmeðferð. Endurmat pn' }
+                        ]
+                    },
+                    {
+                        display: 'Hand- foot and mouth',
+                        subOptions: [
+                            { display: 'Greining', output: 'Hand- foot and mouth' },
+                            { display: 'Grunur', output: 'Grunur um hand- foot and mouth' },
+                            { display: 'Fullmótað plan', output: 'Grunur um hand- foot and mouth. Veiti almennar ráðleggingar. Stuðningsmeðferð. Endurmat pn' }
+                        ]
+                    },
+                    {
+                        display: 'Herpangina',
+                        subOptions: [
+                            { display: 'Greining', output: 'Herpangina' },
+                            { display: 'Grunur', output: 'Grunur um herpangina' },
+                            { display: 'Fullmótað plan', output: 'Grunur um herpangina. Veiti almennar ráðleggingar. Stuðningsmeðferð. Endurmat pn' }
+                        ]
+                    }
+                ]
             }
+            
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Mergur', 'Otitis externa', 'Sinusitis', 'Langvarandi einkenni'],
+        display: ['Eyrnabólga', 'Eyrnaverkur', 'Mergur', 'Otitis externa'],
         options: [
+            {
+                display: 'Eyrnabólga',
+                subOptions: [
+                    { display: 'Greining', output: 'Eyrnabólga' },
+                    { display: 'Grunur', output: 'Grunur um eyrnabólgu' }
+                ]
+            },
+            {
+                display: 'Eyrnaverkur',
+                subOptions: [
+                    { display: 'Greining', output: 'Eyrnaverkur' },
+                    { display: 'Fullmótuð plön',    
+                        subOptions: [
+                            { display: 'Stutt saga - Obs - E.t.v HNE læknir', output: 'Eyrnaverkur. Ekki finnst skýring einkenna við skoðun. Mögulega byrjandi vírósa. Ráðlegg obs. Ef lagast ekki á næstu dögum/vikum e.t.v mat HNE læknis' },
+                            { display: 'Löng saga - Hne læknir', output: 'Eyrnaverkur. Ekki finnst skýring einkenna við skoðun. Þar sem einkenni staðið lengi ráðlegg mat HNE læknis' }
+                ]
+                     }
+                ]
+            },
             {
                 display: 'Mergur', output: 'Eyrnamergur', onRightClickOutput: 'Ekki eyrnamergur'
             },
@@ -686,16 +1196,17 @@ const PlanViral = [
                 display: 'Otitis externa',
                 subOptions: [
                     { display: 'Greining', output: 'Otitis externa' },
-                    { display: 'Grunur', output: 'Grunur um otitis externa' }
+                    { display: 'Grunur', output: 'Grunur um otitis externa' },
+                    { display: 'Fullmótað plan', output: 'Grunur um otitis externa. Veiti ráðleggingar og fræðslu. Set HTP dropa í gáttina. Endurmat ef versnar eða lagast ekki' }
                 ]
-            },
-            {
-                display: 'Sinusitis',
-                subOptions: [
-                    { display: 'Greining', output: 'Sinusitis' },
-                    { display: 'Grunur', output: 'Grunur um sinusitis' }
-                ]
-            },
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Langvarandi einkenni'],
+        options: [
             {
                 display: 'Langvarandi einkenni', output: 'Einkenni langvarandi', onRightClickOutput: 'Stutt saga'                  
             }
@@ -707,7 +1218,14 @@ const PlanViral = [
         type: 'options',
         display: ['Ráðleggingar', 'Stuðningsmeðferð'],
         options: [
-            { display: 'Ráðleggingar', output: 'Almennar ráðleggingar' },
+            { display: 'Ráðleggingar',
+                subOptions: [
+                    { display: 'Almennar', output: 'Almennar ráðleggingar' },
+                    { display: 'Berkjubólga', output: 'Veiti ráðleggingar við berkjubólgu. Tekur yfirleitt 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt' },
+                    { display: 'Herpes (fyrsta sýking)', output: 'Veiti ráðleggingar og fræðslu vegna herpessýkingar. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina' },
+                    { display: 'Vírósa', output: 'Veiti ráðleggingar vegna veirusýkingar. Ráðlagt að drekka vel og taka hitalækkandi PN. Tekur oft 1-2 vikur fyrir einkenni að ganga yfir' },
+                ]
+            },
             {
             display: 'Stuðningsmeðferð',
                 subOptions: [
@@ -767,7 +1285,8 @@ const PlanViral = [
                     { display: 'spectracillin', output: 'Ráðlegg sýklalyf. Set spectracillin í gáttina' },
                     { display: 'kaavepenin', output: 'Ráðlegg sýklalyf. Set kaavepenin í gáttina' },
                     { display: 'keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' }
-                ]
+                ],
+                onRightClickOutput: 'Tel ekki þörf á sýklalyfjum eins og er'
             },
             {
                 display: 'Sýkladropar',
@@ -2160,6 +2679,10 @@ const PlanEye = [
             {
                 display: 'Conjunctivitis',
                 subOptions: [
+                    { display: 'NOS', subOptions: [
+                        { display: 'Greining', output: 'Conjunctivitis' },
+                        { display: 'Grunur', output: 'Grunur um conjunctivitis' }
+                    ]},
                     { display: 'Viral', subOptions: [
                         { display: 'Greining', output: 'Viral conjunctivitis' },
                         { display: 'Grunur', output: 'Grunur um viral conjunctivitis' }
@@ -6809,21 +7332,361 @@ const ExamsHud = [
     {
         name: '',
         type: 'options',
-        display: ['Skoðun á húð', 'Þreifing á húð'],
+        display: ['Stærð', 'Symmetría', 'Litarháttur'],
         options: [
-            { display: 'Skoðun á húð', output: 'Skoðun á húð sýnir' },
-            { display: 'Þreifing á húð', output: 'Þreifing á húð sýnir' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Biopsia', 'Skoðun á nöglum'],
-        options: [
-            { display: 'Biopsia', output: 'Biopsia pantað' },
-            { display: 'Skoðun á nöglum', output: 'Skoðun á nöglum sýnir' }
+            {
+                display: 'Stærð',
+                subOptions: [
+                    {
+                        display: 'Þvermál',
+                        subOptions: [
+                            {
+                                display: '0 - 3 cm',
+                                subOptions: (function() {
+                                    let diameters = [];
+                                    for (let i = 0.1; i <= 3.0; i += 0.1) {
+                                        diameters.push({
+                                            display: `${i.toFixed(1)}cm`,
+                                            output: `Um ${i.toFixed(1)}cm í þvermál`
+                                        });
+                                    }
+                                    return diameters;
+                                })()
+                            },
+                            {
+                                display: '3,1 - 6 cm',
+                                subOptions: (function() {
+                                    let diameters = [];
+                                    for (let i = 3.1; i <= 6.0; i += 0.1) {
+                                        diameters.push({
+                                            display: `${i.toFixed(1)}cm`,
+                                            output: `Um ${i.toFixed(1)}cm í þvermál`
+                                        });
+                                    }
+                                    return diameters;
+                                })()
+                            },
+                            {
+                                display: '6,1 - 9 cm',
+                                subOptions: (function() {
+                                    let diameters = [];
+                                    for (let i = 6.1; i <= 9.0; i += 0.1) {
+                                        diameters.push({
+                                            display: `${i.toFixed(1)}cm`,
+                                            output: `Um ${i.toFixed(1)}cm í þvermál`
+                                        });
+                                    }
+                                    return diameters;
+                                })()
+                            },
+                            {
+                                display: '9,1 - 12 cm',
+                                subOptions: (function() {
+                                    let diameters = [];
+                                    for (let i = 9.1; i <= 12.0; i += 0.1) {
+                                        diameters.push({
+                                            display: `${i.toFixed(1)}cm`,
+                                            output: `Um ${i.toFixed(1)}cm í þvermál`
+                                        });
+                                    }
+                                    return diameters;
+                                })()
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Nákvæm mál',
+                        subOptions: [
+                            {
+                                display: '0 - 3 cm (Breidd)',
+                                subOptions: (function() {
+                                    let widths = [];
+                                    for (let i = 0.1; i <= 3.0; i += 0.1) {
+                                        widths.push({
+                                            display: `${i.toFixed(1)}cm`,
+                                            subOptions: [
+                                                {
+                                                    display: '0 - 3 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 0.1; j <= 3.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '3,1 - 6 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 3.1; j <= 6.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '6,1 - 9 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 6.1; j <= 9.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '9,1 - 12 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 9.1; j <= 12.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                }
+                                            ]
+                                        });
+                                    }
+                                    return widths;
+                                })()
+                            },
+                            {
+                                display: '3,1 - 6 cm (Breidd)',
+                                subOptions: (function() {
+                                    let widths = [];
+                                    for (let i = 3.1; i <= 6.0; i += 0.1) {
+                                        widths.push({
+                                            display: `${i.toFixed(1)}cm`,
+                                            subOptions: [
+                                                {
+                                                    display: '0 - 3 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 0.1; j <= 3.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '3,1 - 6 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 3.1; j <= 6.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '6,1 - 9 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 6.1; j <= 9.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '9,1 - 12 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 9.1; j <= 12.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                }
+                                            ]
+                                        });
+                                    }
+                                    return widths;
+                                })()
+                            },
+                            {
+                                display: '6,1 - 9 cm (Breidd)',
+                                subOptions: (function() {
+                                    let widths = [];
+                                    for (let i = 6.1; i <= 9.0; i += 0.1) {
+                                        widths.push({
+                                            display: `${i.toFixed(1)}cm`,
+                                            subOptions: [
+                                                {
+                                                    display: '0 - 3 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 0.1; j <= 3.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '3,1 - 6 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 3.1; j <= 6.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '6,1 - 9 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 6.1; j <= 9.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '9,1 - 12 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 9.1; j <= 12.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                }
+                                            ]
+                                        });
+                                    }
+                                    return widths;
+                                })()
+                            },
+                            {
+                                display: '9,1 - 12 cm (Breidd)',
+                                subOptions: (function() {
+                                    let widths = [];
+                                    for (let i = 9.1; i <= 12.0; i += 0.1) {
+                                        widths.push({
+                                            display: `${i.toFixed(1)}cm`,
+                                            subOptions: [
+                                                {
+                                                    display: '0 - 3 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 0.1; j <= 3.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '3,1 - 6 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 3.1; j <= 6.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '6,1 - 9 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 6.1; j <= 9.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                },
+                                                {
+                                                    display: '9,1 - 12 cm (Hæð)',
+                                                    subOptions: (function() {
+                                                        let heights = [];
+                                                        for (let j = 9.1; j <= 12.0; j += 0.1) {
+                                                            heights.push({
+                                                                display: `${j.toFixed(1)}cm`,
+                                                                output: `Um ${i.toFixed(1)} x ${j.toFixed(1)}cm`
+                                                            });
+                                                        }
+                                                        return heights;
+                                                    })()
+                                                }
+                                            ]
+                                        });
+                                    }
+                                    return widths;
+                                })()
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Symmetría',
+                output: 'Ósymmetrísk í útliti',
+                onRightClickOutput: 'Symmetrísk í útliti'
+            },
+            {
+                display: 'Litarháttur',
+                subOptions: [
+                    { display: 'Einnlit', output: 'Einnlit' },
+                    { display: 'Fjölbreytilegur litur', output: 'Fjölbreytilegur litur' },
+                    { display: 'Ljós', output: 'Ljós á lit' },
+                    { display: 'Dökkur', output: 'Dökkur á lit' },
+                    { display: 'Rauðleitur', output: 'Rauðleitur á lit' },
+                    { display: 'Brúnleitur', output: 'Brúnleitur á lit' },
+                    { display: 'Bláleitur', output: 'Bláleitur á lit' }
+                ]
+            }
         ]
     }
+    
+    
+    
 ];
 const PlanHud = [
     {
@@ -9250,13 +10113,6 @@ const ExamsTauga = [
         ]
     }
 ];
-
-
-
-
-
-
-
 
 const PlanTauga = [
     {
