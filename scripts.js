@@ -373,8 +373,8 @@ const SymptomsViral = [
             },
             {
                 display: 'Læknisráði',
-                output: 'Tekur í samráði við sinn lækni',
-                onRightClickOutput: 'Ekki í samráði við lækni'
+                output: 'Ekki í samráði við lækni',
+                onRightClickOutput: 'Tekur í samráði við sinn lækni'
             },
             {
                 display: 'Tímalengd',
@@ -1035,7 +1035,18 @@ const PlanViral = [
         type: 'options',
         display: ['Hósti', 'Vírósa', 'Sinusitis', 'Lungnabólga'],
         options: [
-            { display: 'Hósti', output: 'Hósti' },
+            { display: 'Hósti', 
+                subOptions: [
+                    { display: 'NOS', output: 'Hósti' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Langvarandi hósti - RTG - Símatími', output: 'Langvarandi hósti. Ráðlegg RTG. Pantar sér símatíma fyrir niðurstöður' },
+                            { display: 'Langvarandi hósti - RTG - Sýklalyfjakúr - Símatími', output: 'Langvarandi hósti. Ráðlegg RTG. Reynum empírískan sýklalyfjakúr. Pantar sér símatíma fyrir niðurstöður' },
+
+                        ]
+                    }
+                ]
+            },
             { display: 'Vírósa', 
                 subOptions: [
                     { display: 'Greining', output: 'Vírósa' },
@@ -1190,7 +1201,17 @@ const PlanViral = [
                 ]
             },
             {
-                display: 'Mergur', output: 'Eyrnamergur', onRightClickOutput: 'Ekki eyrnamergur'
+                display: 'Mergur', 
+                subOptions: [
+                    { display: 'NOS', output: 'Eyrnamergur' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Merglosandi - Endurkoma í skolun', output: 'Eyrnamergur. Ráðlegg merglosandi dropa. Endurkoma í merghreinsun' },
+                            { display: 'Merghreinsun hjá mér', output: 'Eyrnamergur. Spúla hlustir. Gengur vel. Endurmat pn' },
+                            { display: 'Merghreinsun hjá hjúkrunarfræðingi', output: 'Eyrnamergur. Fær tíma hjá hjúkrunarfræðingi í merghreinsun' }
+                        ]
+                    }
+                ]
             },
             {
                 display: 'Otitis externa',
@@ -1352,7 +1373,8 @@ const PlanViral = [
                             }
                             
                         ]
-                    }
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
                 ]
             }
 
@@ -2284,7 +2306,8 @@ const PlanUrinary = [
                             }
                             
                         ]
-                    }
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
                 ]
             }
 
@@ -2892,7 +2915,8 @@ const PlanEye = [
                             }
                             
                         ]
-                    }
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
                 ]
             }
 
@@ -4414,7 +4438,8 @@ const PlanHeart = [
                             }
                             
                         ]
-                    }
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
                 ]
             }
 
@@ -5602,7 +5627,8 @@ const PlanMelting = [
                             }
                             
                         ]
-                    }
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
                 ]
             }
 
@@ -7145,7 +7171,8 @@ const PlanStodkerfi = [
                             }
                             
                         ]
-                    }
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
                 ]
             }
 
@@ -7913,7 +7940,7 @@ const SymptomsGed = [
         name: '',
         type: 'options',
         display: [
-            'Kvíði', 'Köst', 'Áhyggjur', 'Ótti', 'Óróleiki', 'Pirringur'
+            'Kvíði', 'Tímasetning', 'Áhyggjur', 'Ótti', 'Óróleiki', 'Pirringur'
         ],
         options: [
             { display: 'Kvíði',
@@ -9586,7 +9613,8 @@ const PlanGed = [
                             }
                             
                         ]
-                    }
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
                 ]
             }
 
@@ -11350,7 +11378,8 @@ const PlanInnkirtla = [
                             }
                             
                         ]
-                    }
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
                 ]
             }
 
@@ -12003,7 +12032,7 @@ const SymptomsAlcoholism = [
                     { display: '6-8 drykkir/dag', output: 'Drekkur 6-8 áfenga drykki á dag' },
                     { display: '8-10 drykkir/dag', output: 'Drekkur 8-10 áfenga drykki á dag' },
                     { display: '10-12 drykkir/dag', output: 'Drekkur 10-12 áfenga drykki á dag' },
-                    { display: '>12 drykkir/dag', output: 'Drekkur meira en en 12 áfenga drykki á dag' },
+                    { display: '>12 drykkir/dag', output: 'Drekkur meira en en 12 áfenga drykki á dag' }
                 ]
             },
             {
@@ -12025,13 +12054,15 @@ const SymptomsAlcoholism = [
                 display: 'Síðasta drykkja',
                 subOptions: [
                     { display: 'Innan síðustu klukkustundar', output: 'Drakk síðast fyrir innan við klukkustund' },
-                    { display: '1-3 klukkustundir síðan', output: 'Drakk síðast fyrir 1-3 klukkustundum' },
-                    { display: '4-12 klukkustundir síðan', output: 'Drakk síðast fyrir 4-12 klukkustundum' },
-                    { display: '12-24 klukkustundir síðan', output: 'Drakk síðast fyrir 12-24 klukkustundum' },
+                    { display: '<3 klst síðan', output: 'Drakk síðast fyrir <3 klst síðan' },
+                    { display: '<6 klst síðan', output: 'Drakk síðast fyrir <6 klst síðan' },
+                    { display: '<12 klst síðan', output: 'Drakk síðast fyrir <12 klst síðan' },
+                    { display: '<24 klst síðan', output: 'Drakk síðast fyrir <24 klst síðan' },
                     { display: '1-2 dagar síðan', output: 'Drakk síðast fyrir 1-2 dögum' },
                     { display: '3-4 dagar síðan', output: 'Drakk síðast fyrir 3-4 dögum' },
                     { display: '5-7 dagar síðan', output: 'Drakk síðast fyrir 5-7 dögum' },
-                    { display: 'Fyrir meira en viku síðan', output: 'Drakk síðast fyrir meira en viku síðan' }
+                    { display: 'Fyrir meira en viku síðan', output: 'Drakk síðast fyrir meira en viku síðan' },
+                    { display: 'Veit ekki', output: 'Skjólstæðingur getur ekki tjáð mér hvenær hann drakk síðast' }
                 ]
             }
         ]
@@ -12099,15 +12130,21 @@ const PlanAlcoholism = [
     {
         name: '',
         type: 'options',
-        display: ['Áfengisfráhvörf', 'Alvarleiki'],
+        display: ['Áfengisfráhvörf'],
         options: [
-            { display: 'Áfengisfráhvörf', output: 'Áfengisfráhvörf' },
-            {
-                display: 'Alvarleiki',
+            { display: 'Áfengisfráhvörf', 
                 subOptions: [
-                    { display: 'Mild fráhvarfseinkenni', output: 'Mild fráhvarfseinkenni' },
-                    { display: 'Miðlungs fráhvarfseinkenni', output: 'Miðlungs fráhvarfseinkenni' },
-                    { display: 'Mikil fráhvarfseinkenni', output: 'Nokkuð alvarleg fráhvarfseinkenni' }
+                    { display: 'NOS', output: 'Áfengisfráhvörf' },
+                    { display: 'Mild fráhvarfseinkenni', output: 'Áfengisfráhvörf. Mild fráhvarfseinkenni' },
+                    { display: 'Miðlungs fráhvarfseinkenni', output: 'Áfengisfráhvörf. Miðlungs fráhvarfseinkenni' },
+                    { display: 'Mikil fráhvarfseinkenni', output: 'Áfengisfráhvörf. Nokkuð alvarleg fráhvarfseinkenni' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Mild - Gabapentin - Vogur - Engin eftirfylgd',output: 'Áfengisfráhvörf. Mild fráhvarfseinkenni. Ætlar að hætta allri áfengisneyslu. Ráðlegg meðferð með Gabapentin (leiðbeiningar s.kv. uptodate). Dagur 1: 300 mg á 6klst fresti (1200 mg heildarskammtur). Dagur 2: 300 mg á 8klst fresti (900 mg heildarskammtur). Dagur 3: 300 mg á 12klst fresti (600 mg heildarskammtur). Dagur 4: 300 mg fyrir svefn (300 mg heildarskammtur). Skjólstæðingur verður í sambandi við vog. Ekki fyrirhuguð frekari eftirfylgd að minni hálfu' },
+                            { display: 'Mild - Chlordiazepoxíð - Vogur - Engin eftirfylgd',output: 'Áfengisfráhvörf. Mild fráhvarfseinkenni. Ætlar að hætta allri áfengisneyslu. Ráðlegg meðferð með Chlordiazepoxide (leiðbeiningar s.kv. uptodate). Dagur 1: 50mg á 6klst fresti (200 mg heildarskammtur). Dagur 2: 50mg á 8klst fresti (150 mg heildarskammtur). Dagur 3: 50mg á 12klst fresti (100 mg heildarskammtur). Dagur 4: 50mg fyrir svefn (50 mg heildarskammtur). Skjólstæðingur verður í sambandi við vog. Ekki fyrirhuguð frekari eftirfylgd að minni hálfu' },
+                            { display: 'Mild - Diazepam - Vogur - Engin eftirfylgd',output: 'Áfengisfráhvörf. Mild fráhvarfseinkenni. Ætlar að hætta allri áfengisneyslu. Ráðlegg meðferð með Diazepam (leiðbeiningar s.kv. uptodate). Dagur 1: 10 mg á 6klst fresti (40 mg heildarskammtur). Dagur 2: 10 mg á 8klst fresti (30 mg heildarskammtur). Dagur 3: 10 mg á 12klst fresti (20 mg heildarskammtur). Dagur 4: 10 mg fyrir svefn (10 mg heildarskammtur). Skjólstæðingur verður í sambandi við vog. Ekki fyrirhuguð frekari eftirfylgd að minni hálfu' }
+                        ]
+                    }
                 ]
             }
         ]
@@ -12169,7 +12206,8 @@ const PlanAlcoholism = [
                     { display: 'Pantar símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
                     { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' },
                     { display: 'Bóka tíma', output: 'Gef tíma í endurkomu' },
-                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' }
+                    { display: 'Bóka símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                    { display: 'Engin eftirfylgd að hálfu undirritaðs', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
                 ]
             }
 
