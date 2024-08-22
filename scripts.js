@@ -530,7 +530,7 @@ const ExamsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Lasleg/ur', 'Holdafar'],
+        display: ['Lasleg/ur', 'Holdafar', 'BMI'],
         options: [
             { display: 'Lasleg/ur', output: 'Laslega útlítandi', onRightClickOutput: 'Ekki bráðveikindalegt útlit' },
             { display: 'Holdarfar', 
@@ -547,6 +547,90 @@ const ExamsViral = [
                     
                 ],
                  onRightClickOutput: 'Eðlilegt holdafar' 
+            },
+            {
+                display: 'BMI',
+                subOptions: [
+                    {
+                        display: '150-160 cm',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${150 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${150 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(150 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '161-170 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${161 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${161 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(161 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '171-180 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${171 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${171 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(171 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '181-190 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${181 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${181 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(181 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '191-200 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${191 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${191 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(191 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '201-210 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${201 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${201 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(201 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'BMI innan eðlilegra marka'
             }
         ]
     },
@@ -560,9 +644,9 @@ const ExamsViral = [
             { display: 'Hálskirtlar stórir', output: 'Hálskirtlar stórir', onRightClickOutput: 'Ekki áberandi stórir hálskirtlar' },
             { display: 'Blöðrukennd útbrot', 
                 subOptions: [
-                    { display: 'Vör', output: 'Sjást merki um blöðrukennd útbrot á vörum' },
-                    { display: 'Hálsi og mjúkagóm', output: 'Sjást merki um blöðrukennd útbrot í hálsi og mjúkagóm' },
-                    { display: 'Munnslímhúð', output: 'Sjást merki um blöðrukennd útbrot í munnslímhúð' }
+                    { display: 'Vör', output: 'Blöðrukennd útbrot á vörum' },
+                    { display: 'Hálsi og mjúkagóm', output: 'Blöðrukennd útbrot í hálsi og mjúkagóm' },
+                    { display: 'Munnslímhúð', output: 'Blöðrukennd útbrot í munnslímhúð' }
                 ],
                 onRightClickOutput: 'Ekki merki um vesiculer útbrot'  
             }
@@ -7186,174 +7270,179 @@ const SymptomsHud = [
     {
         name: '',
         type: 'options',
-        display: ['Sýking', 'Staðsetning'],
+        display: ['Tímalengd einkenna'],
         options: [
             {
-                display: 'Grunur um sýkingu',
+                display: 'Tímalengd einkenna',
                 subOptions: [
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
                     {
-                        display: 'Andlit',
-                        output: 'Grunur um sýkingu í andlit'
-                    },
-                    {
-                        display: 'Háls',
-                        output: 'Grunur um sýkingu í háls'
-                    },
-                    {
-                        display: 'Búk',
-                        output: 'Grunur um sýkingu í búk'
-                    },
-                    {
-                        display: 'Upphandlegg',
+                        display: 'Dagar',
                         subOptions: [
-                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægra upphandlegg' },
-                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstra upphandlegg' }
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
                         ],
-                        cancelText: 'Grunur um sýkingu í upphandlegg'
+                        cancelText: ''
                     },
                     {
-                        display: 'Framhandlegg',
+                        display: 'Vikur',
                         subOptions: [
-                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægra framhandlegg' },
-                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstra framhandlegg' }
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
                         ],
-                        cancelText: 'Grunur um sýkingu í framhandlegg'
+                        cancelText: ''
                     },
                     {
-                        display: 'Hendi',
+                        display: 'Mánuðir',
                         subOptions: [
-                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægri hendi' },
-                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstri hendi' }
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
                         ],
-                        cancelText: 'Grunur um sýkingu í hendi'
+                        cancelText: ''
                     },
                     {
-                        display: 'Fingur',
+                        display: 'Ár',
                         subOptions: [
-                            { display: 'Hægri fingur 1', output: 'Grunur um sýkingu í fingur 1 hægra megin' },
-                            { display: 'Hægri fingur 2', output: 'Grunur um sýkingu í fingur 2 hægra megin' },
-                            { display: 'Hægri fingur 3', output: 'Grunur um sýkingu í fingur 3 hægra megin' },
-                            { display: 'Hægri fingur 4', output: 'Grunur um sýkingu í fingur 4 hægra megin' },
-                            { display: 'Hægri fingur 5', output: 'Grunur um sýkingu í fingur 5 hægra megin' },
-                            { display: 'Vinstri fingur 1', output: 'Grunur um sýkingu í fingur 1 vinstra megin' },
-                            { display: 'Vinstri fingur 2', output: 'Grunur um sýkingu í fingur 2 vinstra megin' },
-                            { display: 'Vinstri fingur 3', output: 'Grunur um sýkingu í fingur 3 vinstra megin' },
-                            { display: 'Vinstri fingur 4', output: 'Grunur um sýkingu í fingur 4 vinstra megin' },
-                            { display: 'Vinstri fingur 5', output: 'Grunur um sýkingu í fingur 5 vinstra megin' }
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
                         ],
-                        cancelText: 'Grunur um sýkingu í fingri'
-                    },
-                    {
-                        display: 'Læri',
-                        subOptions: [
-                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægra læri' },
-                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstra læri' }
-                        ],
-                        cancelText: 'Grunur um sýkingu í læri'
-                    },
-                    {
-                        display: 'Fótlegg',
-                        subOptions: [
-                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægra fótlegg' },
-                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstra fótlegg' }
-                        ],
-                        cancelText: 'Grunur um sýkingu í fótlegg'
-                    },
-                    {
-                        display: 'Fót',
-                        subOptions: [
-                            { display: 'Hægra megin', output: 'Grunur um sýkingu í hægri fót' },
-                            { display: 'Vinstra megin', output: 'Grunur um sýkingu í vinstri fót' }
-                        ],
-                        cancelText: 'Grunur um sýkingu í fót'
-                    },
-                    {
-                        display: 'Tá',
-                        subOptions: [
-                            { display: 'Hægri tá 1', output: 'Grunur um sýkingu í tá 1 hægra megin' },
-                            { display: 'Hægri tá 2', output: 'Grunur um sýkingu í tá 2 hægra megin' },
-                            { display: 'Hægri tá 3', output: 'Grunur um sýkingu í tá 3 hægra megin' },
-                            { display: 'Hægri tá 4', output: 'Grunur um sýkingu í tá 4 hægra megin' },
-                            { display: 'Hægri tá 5', output: 'Grunur um sýkingu í tá 5 hægra megin' },
-                            { display: 'Vinstri tá 1', output: 'Grunur um sýkingu í tá 1 vinstra megin' },
-                            { display: 'Vinstri tá 2', output: 'Grunur um sýkingu í tá 2 vinstra megin' },
-                            { display: 'Vinstri tá 3', output: 'Grunur um sýkingu í tá 3 vinstra megin' },
-                            { display: 'Vinstri tá 4', output: 'Grunur um sýkingu í tá 4 vinstra megin' },
-                            { display: 'Vinstri tá 5', output: 'Grunur um sýkingu í tá 5 vinstra megin' }
-                        ],
-                        cancelText: 'Grunur um sýkingu í tá'
+                        cancelText: ''
                     }
                 ],
-                cancelText: 'Grunur um sýkingu'
+                cancelText: ''
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Húðbreyting', 'Staðsetning'],
+        options: [
+            {
+                display: 'Húðbreyting',
+                subOptions: [
+                    { display: 'NOS', output: 'Húðbreyting' },
+                    { display: 'Roði', output: 'Roði' },
+                    { display: 'Útbrot', output: 'Útbrot' },
+                    { display: 'Blettur', output: 'Blettur' }
+                ]
             },
             {
                 display: 'Staðsetning',
                 subOptions: [
-                    { display: 'Innanvert', output: 'Innanvert' },
-                    { display: 'Utanvert', output: 'Utanvert' },
-                    { display: 'Distalt', output: 'Distalt' },
-                    { display: 'Proximalt', output: 'Proximalt' },
-                    { display: 'Dreift', output: 'Dreift' }
-                ],
-                cancelText: ''
+                    { display: 'NOS', output: 'Staðsett á' },
+                    {
+                        display: 'Andlit',
+                        output: 'Staðsett á andliti'
+                    },
+                    {
+                        display: 'Háls',
+                        output: 'Staðsett á hálsi'
+                    },
+                    {
+                        display: 'Búk',
+                        output: 'Staðsett á búk'
+                    },
+                    {
+                        display: 'Upphandlegg',
+                        subOptions: [
+                            { display: 'NOS', output: 'Staðsett á upphandlegg' },
+                            { display: 'Hægra megin', output: 'Staðsett á hægri upphandlegg' },
+                            { display: 'Vinstra megin', output: 'Staðsett á vinstri upphandlegg' }
+                        ]
+                    },
+                    {
+                        display: 'Framhandlegg',
+                        subOptions: [
+                            { display: 'NOS', output: 'Staðsett á framhandlegg' },
+                            { display: 'Hægra megin', output: 'Staðsett á hægra framhandlegg' },
+                            { display: 'Vinstra megin', output: 'Staðsett á vinstra framhandlegg' }
+                        ]
+                    },
+                    {
+                        display: 'Hendi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Staðsett á hendi' },
+                            { display: 'Hægra megin', output: 'Staðsett á hægri hendi' },
+                            { display: 'Vinstra megin', output: 'Staðsett á vinstri hendi' }
+                        ]
+                    },
+                    {
+                        display: 'Fingur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Staðsett á fingri' },
+                            { display: 'Hægri fingur 1', output: 'Staðsett á fingur 1 hægra megin' },
+                            { display: 'Hægri fingur 2', output: 'Staðsett á fingur 2 hægra megin' },
+                            { display: 'Hægri fingur 3', output: 'Staðsett á fingur 3 hægra megin' },
+                            { display: 'Hægri fingur 4', output: 'Staðsett á fingur 4 hægra megin' },
+                            { display: 'Hægri fingur 5', output: 'Staðsett á fingur 5 hægra megin' },
+                            { display: 'Vinstri fingur 1', output: 'Staðsett á fingur 1 vinstra megin' },
+                            { display: 'Vinstri fingur 2', output: 'Staðsett á fingur 2 vinstra megin' },
+                            { display: 'Vinstri fingur 3', output: 'Staðsett á fingur 3 vinstra megin' },
+                            { display: 'Vinstri fingur 4', output: 'Staðsett á fingur 4 vinstra megin' },
+                            { display: 'Vinstri fingur 5', output: 'Staðsett á fingur 5 vinstra megin' }
+                        ]
+                    },
+                    {
+                        display: 'Læri',
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Staðsett á hægra læri' },
+                            { display: 'Vinstra megin', output: 'Staðsett á vinstra læri' }
+                        ]
+                    },
+                    {
+                        display: 'Fótleggur',
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Staðsett á hægra fótlegg' },
+                            { display: 'Vinstra megin', output: 'Staðsett á vinstra fótlegg' }
+                        ]
+                    },
+                    {
+                        display: 'Fótur',
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Staðsett á hægri fót' },
+                            { display: 'Vinstra megin', output: 'Staðsett á vinstri fót' }
+                        ]
+                    },
+                    {
+                        display: 'Tá',
+                        subOptions: [
+                            { display: 'Hægri tá 1', output: 'Staðsett á tá 1 hægra megin' },
+                            { display: 'Hægri tá 2', output: 'Staðsett á tá 2 hægra megin' },
+                            { display: 'Hægri tá 3', output: 'Staðsett á tá 3 hægra megin' },
+                            { display: 'Hægri tá 4', output: 'Staðsett á tá 4 hægra megin' },
+                            { display: 'Hægri tá 5', output: 'Staðsett á tá 5 hægra megin' },
+                            { display: 'Vinstri tá 1', output: 'Staðsett á tá 1 vinstra megin' },
+                            { display: 'Vinstri tá 2', output: 'Staðsett á tá 2 vinstra megin' },
+                            { display: 'Vinstri tá 3', output: 'Staðsett á tá 3 vinstra megin' },
+                            { display: 'Vinstri tá 4', output: 'Staðsett á tá 4 vinstra megin' },
+                            { display: 'Vinstri tá 5', output: 'Staðsett á tá 5 vinstra megin' }
+                        ]
+                    }
+                ]
             }
-            
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Sýking', 'Útbrot', 'Kláði'],
-        options: [
-            {
-                display: 'Sýking',
-                subOptions: [
-                    { display: 'Fingri', output: 'Grunur um sýkingu í fingri' },
-                    { display: 'Hendi', output: 'Blautur hósti' },
-                    { display: 'Tá', output: 'Þurr hósti' }
-                ],
-                cancelText: ''
-            },
-            { display: 'Útbrot', output: 'Útbrot' },
-            { display: 'Kláði', output: 'Kláði' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Útbrot', 'Kláði'],
-        options: [
-            { display: 'Útbrot', output: 'Útbrot' },
-            { display: 'Kláði', output: 'Kláði' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Sársauki', 'Roði'],
-        options: [
-            { display: 'Sársauki', output: 'Sársauki' },
-            { display: 'Roði', output: 'Roði' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Bólga', 'Þurrkur'],
-        options: [
-            { display: 'Bólga', output: 'Bólga' },
-            { display: 'Þurrkur', output: 'Þurrkur' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Breytingar á húðlit', 'Sár'],
-        options: [
-            { display: 'Breytingar á húðlit', output: 'Breytingar á húðlit' },
-            { display: 'Sár', output: 'Sár' }
         ]
     }
+    
 ];
 const ExamsHud = [
     {
@@ -14024,97 +14113,701 @@ const LifsmorkData = [
     {
         name: '',
         type: 'options',
-        display: ['Lífsmörk', 'BMI'],
+        display: ['Blóðþrýstingur', 'Púls', 'Mettun', 'Öndunartíðni', 'Hiti'],
         options: [
+            {
+                display: 'Blóðþrýstingur',
+                subOptions: [
+                    {
+                        display: 'Systóla 80-100 mmHg',
+                        subOptions: (function() {
+                            let systolic = [];
+                            for (let i = 80; i <= 100; i += 1) {
+                                systolic.push({
+                                    display: `${i} mmHg`,
+                                    subOptions: [
+                                        {
+                                            display: 'Díastóla 50-70 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 50; j <= 70; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 71-90 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 71; j <= 90; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 91-110 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 91; j <= 110; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 111-130 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 111; j <= 130; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        }
+                                    ]
+                                });
+                            }
+                            return systolic;
+                        })()
+                    },
+                    {
+                        display: 'Systóla 101-120 mmHg',
+                        subOptions: (function() {
+                            let systolic = [];
+                            for (let i = 101; i <= 120; i += 1) {
+                                systolic.push({
+                                    display: `${i} mmHg`,
+                                    subOptions: [
+                                        {
+                                            display: 'Díastóla 50-70 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 50; j <= 70; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 71-90 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 71; j <= 90; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 91-110 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 91; j <= 110; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 111-130 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 111; j <= 130; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        }
+                                    ]
+                                });
+                            }
+                            return systolic;
+                        })()
+                    },
+                    {
+                        display: 'Systóla 121-140 mmHg',
+                        subOptions: (function() {
+                            let systolic = [];
+                            for (let i = 121; i <= 140; i += 1) {
+                                systolic.push({
+                                    display: `${i} mmHg`,
+                                    subOptions: [
+                                        {
+                                            display: 'Díastóla 50-70 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 50; j <= 70; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 71-90 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 71; j <= 90; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 91-110 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 91; j <= 110; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 111-130 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 111; j <= 130; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        }
+                                    ]
+                                });
+                            }
+                            return systolic;
+                        })()
+                    },
+                    {
+                        display: 'Systóla 141-160 mmHg',
+                        subOptions: (function() {
+                            let systolic = [];
+                            for (let i = 141; i <= 160; i += 1) {
+                                systolic.push({
+                                    display: `${i} mmHg`,
+                                    subOptions: [
+                                        {
+                                            display: 'Díastóla 50-70 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 50; j <= 70; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 71-90 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 71; j <= 90; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 91-110 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 91; j <= 110; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 111-130 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 111; j <= 130; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        }
+                                    ]
+                                });
+                            }
+                            return systolic;
+                        })()
+                    },
+                    {
+                        display: 'Systóla 161-180 mmHg',
+                        subOptions: (function() {
+                            let systolic = [];
+                            for (let i = 161; i <= 180; i += 1) {
+                                systolic.push({
+                                    display: `${i} mmHg`,
+                                    subOptions: [
+                                        {
+                                            display: 'Díastóla 50-70 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 50; j <= 70; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 71-90 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 71; j <= 90; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 91-110 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 91; j <= 110; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 111-130 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 111; j <= 130; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        }
+                                    ]
+                                });
+                            }
+                            return systolic;
+                        })()
+                    },
+                    {
+                        display: 'Systóla 181-200 mmHg',
+                        subOptions: (function() {
+                            let systolic = [];
+                            for (let i = 181; i <= 200; i += 1) {
+                                systolic.push({
+                                    display: `${i} mmHg`,
+                                    subOptions: [
+                                        {
+                                            display: 'Díastóla 50-70 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 50; j <= 70; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 71-90 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 71; j <= 90; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 91-110 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 91; j <= 110; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 111-130 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 111; j <= 130; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        }
+                                    ]
+                                });
+                            }
+                            return systolic;
+                        })()
+                    },
+                    {
+                        display: 'Systóla 201-220 mmHg',
+                        subOptions: (function() {
+                            let systolic = [];
+                            for (let i = 201; i <= 220; i += 1) {
+                                systolic.push({
+                                    display: `${i} mmHg`,
+                                    subOptions: [
+                                        {
+                                            display: 'Díastóla 50-70 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 50; j <= 70; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 71-90 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 71; j <= 90; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 91-110 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 91; j <= 110; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        },
+                                        {
+                                            display: 'Díastóla 111-130 mmHg',
+                                            subOptions: (function() {
+                                                let diastolic = [];
+                                                for (let j = 111; j <= 130; j += 1) {
+                                                    diastolic.push({
+                                                        display: `${j} mmHg`,
+                                                        output: `Bþr ${i}/${j} mmHg`
+                                                    });
+                                                }
+                                                return diastolic;
+                                            })()
+                                        }
+                                    ]
+                                });
+                            }
+                            return systolic;
+                        })()
+                    }
+                ],
+                onRightClickOutput: 'Bþr eðl'
+            },
+            {
+                display: 'Púls',
+                subOptions: [
+                    {
+                        display: 'Púls 40-60 sl/mín',
+                        subOptions: (function() {
+                            let pulse = [];
+                            for (let i = 40; i <= 60; i += 1) {
+                                pulse.push({
+                                    display: `${i} sl/mín`,
+                                    output: `Púls ${i} sl/mín`
+                                });
+                            }
+                            return pulse;
+                        })()
+                    },
+                    {
+                        display: 'Púls 61-80 sl/mín',
+                        subOptions: (function() {
+                            let pulse = [];
+                            for (let i = 61; i <= 80; i += 1) {
+                                pulse.push({
+                                    display: `${i} sl/mín`,
+                                    output: `Púls ${i} sl/mín`
+                                });
+                            }
+                            return pulse;
+                        })()
+                    },
+                    {
+                        display: 'Púls 81-100 sl/mín',
+                        subOptions: (function() {
+                            let pulse = [];
+                            for (let i = 81; i <= 100; i += 1) {
+                                pulse.push({
+                                    display: `${i} sl/mín`,
+                                    output: `Púls ${i} sl/mín`
+                                });
+                            }
+                            return pulse;
+                        })()
+                    },
+                    {
+                        display: 'Púls 101-120 sl/mín',
+                        subOptions: (function() {
+                            let pulse = [];
+                            for (let i = 101; i <= 120; i += 1) {
+                                pulse.push({
+                                    display: `${i} sl/mín`,
+                                    output: `Púls ${i} sl/mín`
+                                });
+                            }
+                            return pulse;
+                        })()
+                    }
+                ],
+                onRightClickOutput: 'Púls eðl'
+            },
+            {
+                display: 'Mettun',
+                subOptions: [
+                    {
+                        display: 'Mettun 95-100%',
+                        subOptions: (function() {
+                            let saturation = [];
+                            for (let i = 100; i >= 95; i -= 1) {
+                                saturation.push({
+                                    display: `${i}%`,
+                                    output: `Mettun ${i}%`
+                                });
+                            }
+                            return saturation;
+                        })()
+                    },
+                    {
+                        display: 'Mettun 90-94%',
+                        subOptions: (function() {
+                            let saturation = [];
+                            for (let i = 94; i >= 90; i -= 1) {
+                                saturation.push({
+                                    display: `${i}%`,
+                                    output: `Mettun ${i}%`
+                                });
+                            }
+                            return saturation;
+                        })()
+                    }
+                ],
+                onRightClickOutput: 'Mettar vel'
+            },
+            {
+                display: 'Öndunartíðni',
+                subOptions: [
+                    {
+                        display: '8-20 sinnum/mín',
+                        subOptions: (function() {
+                            let respRate = [];
+                            for (let i = 8; i <= 20; i += 1) {
+                                respRate.push({
+                                    display: `${i} sinnum/mín`,
+                                    output: `ÖT ${i} sinnum/mín`
+                                });
+                            }
+                            return respRate;
+                        })()
+                    },
+                    {
+                        display: '21-40 sinnum/mín',
+                        subOptions: (function() {
+                            let respRate = [];
+                            for (let i = 21; i <= 40; i += 1) {
+                                respRate.push({
+                                    display: `${i} sinnum/mín`,
+                                    output: `ÖT ${i} sinnum/mín`
+                                });
+                            }
+                            return respRate;
+                        })()
+                    },
+                    {
+                        display: '41-60 sinnum/mín',
+                        subOptions: (function() {
+                            let respRate = [];
+                            for (let i = 41; i <= 60; i += 1) {
+                                respRate.push({
+                                    display: `${i} sinnum/mín`,
+                                    output: `ÖT ${i} sinnum/mín`
+                                });
+                            }
+                            return respRate;
+                        })()
+                    }
+                ],
+                onRightClickOutput: 'ÖT eðl'
+            },
+            {
+                display: 'Hiti',
+                subOptions: [
+                    {
+                        display: '36.0 - 37.0 °C',
+                        subOptions: (function() {
+                            let temp = [];
+                            for (let i = 36.0; i <= 37.0; i += 0.1) {
+                                temp.push({
+                                    display: `${i.toFixed(1)} °C`,
+                                    output: `Hiti ${i.toFixed(1)} °C`
+                                });
+                            }
+                            return temp;
+                        })()
+                    },
+                    {
+                        display: '37.1 - 38.0 °C',
+                        subOptions: (function() {
+                            let temp = [];
+                            for (let i = 37.1; i <= 38.0; i += 0.1) {
+                                temp.push({
+                                    display: `${i.toFixed(1)} °C`,
+                                    output: `Hiti ${i.toFixed(1)} °C`
+                                });
+                            }
+                            return temp;
+                        })()
+                    },
+                    {
+                        display: '38.1 - 39.0 °C',
+                        subOptions: (function() {
+                            let temp = [];
+                            for (let i = 38.1; i <= 39.0; i += 0.1) {
+                                temp.push({
+                                    display: `${i.toFixed(1)} °C`,
+                                    output: `Hiti ${i.toFixed(1)} °C`
+                                });
+                            }
+                            return temp;
+                        })()
+                    },
+                    {
+                        display: '39.1 - 40.0 °C',
+                        subOptions: (function() {
+                            let temp = [];
+                            for (let i = 39.1; i <= 40.0; i += 0.1) {
+                                temp.push({
+                                    display: `${i.toFixed(1)} °C`,
+                                    output: `Hiti ${i.toFixed(1)} °C`
+                                });
+                            }
+                            return temp;
+                        })()
+                    },
+                    {
+                        display: '40.1 - 42.0 °C',
+                        subOptions: (function() {
+                            let temp = [];
+                            for (let i = 40.1; i <= 42.0; i += 0.1) {
+                                temp.push({
+                                    display: `${i.toFixed(1)} °C`,
+                                    output: `Hiti ${i.toFixed(1)} °C`
+                                });
+                            }
+                            return temp;
+                        })()
+                    }
+                ],
+                onRightClickOutput: 'Hitalaus'
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Orthostatism', 'Lífsmörk'],
+        options: [
+            {
+                display: 'Orthostatism',
+                output: 'OPEN_ORTHOSTATISM_MODAL' // Special command to recognize in the handleButtonClick function
+            },
             {
                 display: 'Lífsmörk',
                 output: 'OPEN_LIFSMORK_MODAL' // Special command to recognize in the handleButtonClick function
-            },
-            {
-                display: 'BMI',
-                subOptions: [
-                    {
-                        display: '150-160 cm',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${150 + i} cm`,
-                            subOptions: Array.from({ length: 14 }, (_, j) => ({
-                                display: `${40 + j * 10}-${49 + j * 10} kg`,
-                                subOptions: Array.from({ length: 10 }, (_, k) => ({
-                                    display: `${40 + j * 10 + k} kg`,
-                                    output: `Hæð ${150 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(150 + i, 40 + j * 10 + k)}`
-                                }))
-                            }))
-                        }))
-                    },
-                    {
-                        display: '161-170 cm',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${161 + i} cm`,
-                            subOptions: Array.from({ length: 14 }, (_, j) => ({
-                                display: `${40 + j * 10}-${49 + j * 10} kg`,
-                                subOptions: Array.from({ length: 10 }, (_, k) => ({
-                                    display: `${40 + j * 10 + k} kg`,
-                                    output: `Hæð ${161 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(161 + i, 40 + j * 10 + k)}`
-                                }))
-                            }))
-                        }))
-                    },
-                    {
-                        display: '171-180 cm',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${171 + i} cm`,
-                            subOptions: Array.from({ length: 14 }, (_, j) => ({
-                                display: `${40 + j * 10}-${49 + j * 10} kg`,
-                                subOptions: Array.from({ length: 10 }, (_, k) => ({
-                                    display: `${40 + j * 10 + k} kg`,
-                                    output: `Hæð ${171 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(171 + i, 40 + j * 10 + k)}`
-                                }))
-                            }))
-                        }))
-                    },
-                    {
-                        display: '181-190 cm',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${181 + i} cm`,
-                            subOptions: Array.from({ length: 14 }, (_, j) => ({
-                                display: `${40 + j * 10}-${49 + j * 10} kg`,
-                                subOptions: Array.from({ length: 10 }, (_, k) => ({
-                                    display: `${40 + j * 10 + k} kg`,
-                                    output: `Hæð ${181 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(181 + i, 40 + j * 10 + k)}`
-                                }))
-                            }))
-                        }))
-                    },
-                    {
-                        display: '191-200 cm',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${191 + i} cm`,
-                            subOptions: Array.from({ length: 14 }, (_, j) => ({
-                                display: `${40 + j * 10}-${49 + j * 10} kg`,
-                                subOptions: Array.from({ length: 10 }, (_, k) => ({
-                                    display: `${40 + j * 10 + k} kg`,
-                                    output: `Hæð ${191 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(191 + i, 40 + j * 10 + k)}`
-                                }))
-                            }))
-                        }))
-                    },
-                    {
-                        display: '201-210 cm',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${201 + i} cm`,
-                            subOptions: Array.from({ length: 14 }, (_, j) => ({
-                                display: `${40 + j * 10}-${49 + j * 10} kg`,
-                                subOptions: Array.from({ length: 10 }, (_, k) => ({
-                                    display: `${40 + j * 10 + k} kg`,
-                                    output: `Hæð ${201 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(201 + i, 40 + j * 10 + k)}`
-                                }))
-                            }))
-                        }))
-                    }
-                ]
             }
         ]
     }
+    
 ];
 
 
@@ -14662,7 +15355,8 @@ function handleEscapeKey(event) {
             'reykingarModal', 
             'syklalyfModal',
             'hostiOptionsModal',
-            'lifsmorkModal' // Added the new modal id here
+            'lifsmorkModal', // Added the new modal id here
+            'orthostatismModal'
         ];
         modals.forEach(modalId => {
             const modal = document.getElementById(modalId);
@@ -14672,6 +15366,310 @@ function handleEscapeKey(event) {
         });
     }
 }
+
+// Orthostatism modals
+function createOrthostatismInterface(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Container with ID ${containerId} not found.`);
+        return;
+    }
+
+    const orthostatismContainer = document.createElement('div');
+    orthostatismContainer.className = 'orthostatism-container';
+
+    // Add title
+    const title = document.createElement('h3');
+    title.textContent = 'Orthostatismi';
+    title.style.textAlign = 'center';
+    orthostatismContainer.appendChild(title);
+
+    // Side selection
+    const sideLabel = document.createElement('label');
+    sideLabel.textContent = 'Hlið:';
+    orthostatismContainer.appendChild(sideLabel);
+
+    const sideSelect = document.createElement('select');
+    const sides = ['Hægri', 'Vinstri'];
+    sides.forEach(side => {
+        const option = document.createElement('option');
+        option.value = side.toLowerCase();
+        option.textContent = side;
+        sideSelect.appendChild(option);
+    });
+    orthostatismContainer.appendChild(sideSelect);
+
+    // Position selection
+    const positionLabel = document.createElement('label');
+    positionLabel.textContent = 'Staða:';
+    orthostatismContainer.appendChild(positionLabel);
+
+    const positionSelect = document.createElement('select');
+    const positions = ['Sitjandi', 'Standandi 1 mín', 'Standandi 3 mín', 'Standandi 5 mín'];
+    positions.forEach(position => {
+        const option = document.createElement('option');
+        option.value = position.toLowerCase();
+        option.textContent = position;
+        positionSelect.appendChild(option);
+    });
+    orthostatismContainer.appendChild(positionSelect);
+
+    // Spacer for clarity
+    const spacer1 = document.createElement('div');
+    spacer1.style.height = '20px';
+    orthostatismContainer.appendChild(spacer1);
+
+    // Systolic Blood Pressure Section
+    const systolicSection = document.createElement('div');
+    systolicSection.className = 'bp-section';
+    systolicSection.style.textAlign = 'center'; // Centralize buttons
+    orthostatismContainer.appendChild(systolicSection);
+
+    const systolicHeader = document.createElement('h4');
+    systolicHeader.textContent = 'Systóla';
+    systolicSection.appendChild(systolicHeader);
+
+    const systolicInput = document.createElement('input');
+    systolicInput.type = 'text';
+    systolicInput.placeholder = 'Systólískur Bþr';
+    systolicInput.className = 'bp-input';
+    systolicInput.id = 'systolic-input';
+    systolicInput.dataset.rawValue = ''; // Store raw value separately
+    systolicInput.readOnly = true; // Make input read-only
+    systolicSection.appendChild(systolicInput);
+
+    const systolicContainer = document.createElement('div');
+    systolicContainer.className = 'bp-buttons-container';
+    systolicContainer.style.display = 'flex';
+    systolicContainer.style.justifyContent = 'center'; // Centralize the container
+    systolicContainer.style.flexWrap = 'wrap'; // Wrap buttons to next line if needed
+    systolicSection.appendChild(systolicContainer);
+
+    const systolicRanges = [
+        { min: 80, max: 100 }, { min: 101, max: 120 }, { min: 121, max: 140 },
+        { min: 141, max: 160 }, { min: 161, max: 180 }, { min: 181, max: 200 },
+        { min: 201, max: 220 }
+    ];
+
+    systolicRanges.forEach(range => {
+        const button = document.createElement('button');
+        button.className = 'bp-button';
+        button.textContent = `${range.min}-${range.max}`;
+        button.onclick = () => {
+            systolicInput.value = ''; // Clear input for exact value
+            createExactValueButtons(systolicSection, 'systolic', range.min, range.max, systolicInput);
+        };
+        systolicContainer.appendChild(button);
+    });
+
+    // Spacer for clarity
+    const spacer2 = document.createElement('div');
+    spacer2.style.height = '20px';
+    orthostatismContainer.appendChild(spacer2);
+
+    // Diastolic Blood Pressure Section
+    const diastolicSection = document.createElement('div');
+    diastolicSection.className = 'bp-section';
+    diastolicSection.style.textAlign = 'center'; // Centralize buttons
+    orthostatismContainer.appendChild(diastolicSection);
+
+    const diastolicHeader = document.createElement('h4');
+    diastolicHeader.textContent = 'Díastóla';
+    diastolicSection.appendChild(diastolicHeader);
+
+    const diastolicInput = document.createElement('input');
+    diastolicInput.type = 'text';
+    diastolicInput.placeholder = 'Díastólískur Bþr';
+    diastolicInput.className = 'bp-input';
+    diastolicInput.id = 'diastolic-input';
+    diastolicInput.dataset.rawValue = ''; // Store raw value separately
+    diastolicInput.readOnly = true; // Make input read-only
+    diastolicSection.appendChild(diastolicInput);
+
+    const diastolicContainer = document.createElement('div');
+    diastolicContainer.className = 'bp-buttons-container';
+    diastolicContainer.style.display = 'flex';
+    diastolicContainer.style.justifyContent = 'center'; // Centralize the container
+    diastolicContainer.style.flexWrap = 'wrap'; // Wrap buttons to next line if needed
+    diastolicSection.appendChild(diastolicContainer);
+
+    const diastolicRanges = [
+        { min: 60, max: 80 }, { min: 81, max: 100 }, { min: 101, max: 120 },
+        { min: 121, max: 130 }
+    ];
+
+    diastolicRanges.forEach(range => {
+        const button = document.createElement('button');
+        button.className = 'bp-button';
+        button.textContent = `${range.min}-${range.max}`;
+        button.onclick = () => {
+            diastolicInput.value = ''; // Clear input for exact value
+            createExactValueButtons(diastolicSection, 'diastolic', range.min, range.max, diastolicInput);
+        };
+        diastolicContainer.appendChild(button);
+    });
+
+    // Spacer for clarity
+    const spacer3 = document.createElement('div');
+    spacer3.style.height = '20px';
+    orthostatismContainer.appendChild(spacer3);
+
+    // Pulse selection
+    const pulseSection = document.createElement('div');
+    pulseSection.className = 'pulse-section';
+    pulseSection.style.textAlign = 'center'; // Centralize buttons
+    orthostatismContainer.appendChild(pulseSection);
+
+    const pulseHeader = document.createElement('h4');
+    pulseHeader.textContent = 'Púls';
+    pulseSection.appendChild(pulseHeader);
+
+    const pulseInput = document.createElement('input');
+    pulseInput.type = 'text';
+    pulseInput.placeholder = 'Púls';
+    pulseInput.className = 'pulse-input';
+    pulseInput.id = 'pulse-input';
+    pulseInput.dataset.rawValue = ''; // Store raw value separately
+    pulseInput.readOnly = true; // Make input read-only
+    pulseSection.appendChild(pulseInput);
+
+    const pulseContainer = document.createElement('div');
+    pulseContainer.className = 'pulse-buttons-container';
+    pulseContainer.style.display = 'flex';
+    pulseContainer.style.justifyContent = 'center'; // Centralize the container
+    pulseContainer.style.flexWrap = 'wrap'; // Wrap buttons to next line if needed
+    pulseSection.appendChild(pulseContainer);
+
+    const pulseRanges = [
+        { min: 40, max: 60 }, { min: 61, max: 80 }, { min: 81, max: 100 },
+        { min: 101, max: 120 }, { min: 121, max: 140 }, { min: 141, max: 160 },
+        { min: 161, max: 180 }, { min: 181, max: 200 }
+    ];
+
+    pulseRanges.forEach(range => {
+        const button = document.createElement('button');
+        button.className = 'pulse-button';
+        button.textContent = `${range.min}-${range.max} bpm`;
+        button.onclick = () => {
+            pulseInput.value = ''; // Clear input for exact value
+            createExactValueButtons(pulseSection, 'pulse', range.min, range.max, pulseInput);
+        };
+        pulseContainer.appendChild(button);
+    });
+
+    // Spacer before the Generate Output button
+    const spacer4 = document.createElement('div');
+    spacer4.style.height = '40px';
+    orthostatismContainer.appendChild(spacer4);
+
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Generate Output';
+    submitButton.style.display = 'block';
+    submitButton.style.margin = '0 auto';
+    submitButton.onclick = () => {
+        const side = sideSelect.value;
+        const position = positionSelect.value;
+        const systolic = systolicInput.dataset.rawValue; // Use raw value
+        const diastolic = diastolicInput.dataset.rawValue; // Use raw value
+        const pulse = pulseInput.dataset.rawValue; // Use raw value
+    
+        if (side && position && systolic && diastolic && pulse) {
+            const output = `Bþr ${side} ${position} ${systolic}/${diastolic} mmHg púls ${pulse} bpm`;
+            insertText(output);
+            // Modal will remain open after generating output
+        } else {
+            alert('Please fill in all fields.');
+        }
+    };
+
+    orthostatismContainer.appendChild(submitButton);
+    container.appendChild(orthostatismContainer);
+}
+
+function createExactValueButtons(section, type, min, max, inputElement) {
+    // Remove any existing exact value buttons
+    const existingDropdown = section.querySelector('.exact-value-dropdown');
+    if (existingDropdown) {
+        existingDropdown.remove();
+    }
+
+    // Create a new container for the exact value buttons
+    const dropdownContainer = document.createElement('div');
+    dropdownContainer.className = 'exact-value-dropdown';
+    dropdownContainer.style.marginTop = '10px';
+    dropdownContainer.style.display = 'flex';
+    dropdownContainer.style.flexDirection = 'column';
+    dropdownContainer.style.alignItems = 'center'; // Center the buttons with respect to the header
+
+    // Create a wrapper for each row
+    const upperRow = document.createElement('div');
+    const lowerRow = document.createElement('div');
+
+    upperRow.style.display = 'flex';
+    upperRow.style.justifyContent = 'center';
+    lowerRow.style.display = 'flex';
+    lowerRow.style.justifyContent = 'center';
+
+    const buttonsPerRow = 10;
+
+    for (let value = min; value <= max; value++) {
+        const button = document.createElement('button');
+        button.className = 'exact-value-button';
+        button.textContent = value;
+        button.style.margin = '2px';
+        button.style.width = '45px';  // Set a fixed width for consistency
+        button.onclick = () => {
+            inputElement.value = `${value}`; // Display the raw value without units
+            inputElement.dataset.rawValue = value; // Store raw value separately
+        };
+
+        if (value - min < buttonsPerRow) {
+            upperRow.appendChild(button);
+        } else {
+            lowerRow.appendChild(button);
+        }
+    }
+
+    // Append rows to the dropdown container
+    dropdownContainer.appendChild(upperRow);
+    dropdownContainer.appendChild(lowerRow);
+
+    // Append the new dropdown container to the section
+    section.appendChild(dropdownContainer);
+}
+function openOrthostatismModal() {
+    let modal = document.getElementById('orthostatismModal');
+    if (!modal) {
+        const modalElement = document.createElement('div');
+        modalElement.id = 'orthostatismModal';
+        modalElement.className = 'modal';
+        modalElement.innerHTML = `
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal('orthostatismModal')">&times;</span>
+                <div id="orthostatismContainer"></div>
+            </div>
+        `;
+        document.body.appendChild(modalElement);
+        modal = modalElement;
+    }
+
+    modal.style.display = 'flex';
+    const container = document.getElementById('orthostatismContainer');
+    container.innerHTML = ''; // Clear previous content
+    createOrthostatismInterface('orthostatismContainer');
+    document.addEventListener('keydown', handleEscapeKey);
+
+    // Ensure the modal opens immediately without any additional clicks needed
+    modal.focus();
+}
+function addOrthostatismButton(parentElement) {
+    const orthostatismButton = document.createElement('button');
+    orthostatismButton.textContent = 'Orthostatism';
+    orthostatismButton.onclick = openOrthostatismModal;
+    orthostatismButton.className = 'orthostatism-button';
+    parentElement.appendChild(orthostatismButton);
+}
+
 
 
 // Createbuttons
@@ -14735,6 +15733,8 @@ function handleButtonClick(event, item, displayText, index, button) {
         if (selectedOption) {
             if (selectedOption.output === 'OPEN_LIFSMORK_MODAL') {
                 openLifsmorkModal(); // Open the Lífsmörk modal
+            } else if (selectedOption.output === 'OPEN_ORTHOSTATISM_MODAL') {
+                openOrthostatismModal(); // Open the Orthostatism modal
             } else if (selectedOption.subOptions) {
                 createPopup(event, selectedOption, button);
             } else if (selectedOption.output) {
@@ -14746,6 +15746,7 @@ function handleButtonClick(event, item, displayText, index, button) {
         handleDefaultButtonClick(item, displayText, index);
     }
 }
+
 function handleButtonRightClick(event, item, displayText, index, button) {
     // Remove any existing popup
     const existingPopup = document.querySelector('.popup-modal');
@@ -15360,6 +16361,30 @@ function loadPage(page) {
         container.appendChild(horizontalContainer);
  
     } else if (page === 'Stodkerfi') {
+        const einkenniSection = createEinkenniSection(SymptomsStodkerfi);
+        const skodunSection = createSkodunSection(ExamsStodkerfi);
+        const planSection = createPlanSection(PlanStodkerfi);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Öxl') {
         const einkenniSection = createEinkenniSection(SymptomsStodkerfi);
         const skodunSection = createSkodunSection(ExamsStodkerfi);
         const planSection = createPlanSection(PlanStodkerfi);
