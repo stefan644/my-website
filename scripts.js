@@ -663,10 +663,10 @@ const ExamsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Öndunarhljóð', 'Styrkur', 'Symmetría', 'Aukahljóð'],
+        display: ['Lungnahlustun', 'Styrkur', 'Symmetría', 'Aukahljóð'],
         options: [
             {
-                display: 'Öndunarhljóð',
+                display: 'Lungnahlustun',
                 subOptions: [
                     { 
                         display: 'Gróf', 
@@ -8065,7 +8065,77 @@ const SymptomsKnee = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna'],
+        display: ['Staðsetning', 'Verkur', 'Þrýstingur', 'Doði'],
+        options: [
+            {
+                display: 'Staðsetning',
+                subOptions: [
+                    { display: 'Hægri', output: 'Einkenni frá hægra hné' },
+                    { display: 'Vinstri', output: 'Einkenni frá vinstra hné' }
+                ]
+            },
+            {
+                display: 'Verkur',
+                onRightClickOutput: 'Neitar verk',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: [
+                            { display: 'NOS', output: 'Verkur' },
+                            { display: 'Innanvert', output: 'Verkur. Mestur yfir innanverðu liðbili' },
+                            { display: 'Utanvert', output: 'Verkur. Mestur yfir utanverðu liðbili' },
+                            { display: 'Framanvert', output: 'Verkur. Mestur framanvert' },
+                            { display: 'Aftanvert', output: 'Verkur. Mestur aftanvert' }
+                        ]
+                    },
+                    {
+                        display: 'Djúpur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Djúpur verkur' },
+                            { display: 'Innanvert', output: 'Djúpur verkur. Mestur yfir innanverðu liðbili' },
+                            { display: 'Utanvert', output: 'Djúpur verkur. Mestur yfir utanverðu liðbili' },
+                            { display: 'Framanvert', output: 'Djúpur verkur. Mestur framanvert' },
+                            { display: 'Aftanvert', output: 'Djúpur verkur. Mestur aftanvert' }
+                        ]
+                    },
+                    {
+                        display: 'Brennandi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Brennandi verkur' },
+                            { display: 'Innanvert', output: 'Brennandi verkur. Mestur yfir innanverðu liðbili' },
+                            { display: 'Utanvert', output: 'Brennandi verkur. Mestur yfir utanverðu liðbili' },
+                            { display: 'Framanvert', output: 'Brennandi verkur. Mestur framanvert' },
+                            { display: 'Aftanvert', output: 'Brennandi verkur. Mestur aftanvert' }
+                        ]
+                    },
+                    {
+                        display: 'Stingandi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Stingandi verkur' },
+                            { display: 'Innanvert', output: 'Stingandi verkur. Mestur yfir innanverðu liðbili' },
+                            { display: 'Utanvert', output: 'Stingandi verkur. Mestur yfir utanverðu liðbili' },
+                            { display: 'Framanvert', output: 'Stingandi verkur. Mestur framanvert' },
+                            { display: 'Aftanvert', output: 'Stingandi verkur. Mestur aftanvert' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Þrýstingur', output: 'Þrýstingstilfinning',
+                onRightClickOutput: 'Ekki þrýstingstilfinning',
+                
+            },
+            {
+                display: 'Doði',  output: 'Doði',
+                onRightClickOutput: 'Ekki doði',
+                
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Tímalengd', 'Onset', 'Áverki'],
         options: [
             {
                 display: 'Tímalengd einkenna',
@@ -8124,6 +8194,97 @@ const SymptomsKnee = [
                     }
                 ],
                 cancelText: ''
+            },
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: 'Hægt og rólega', output: 'Byrjaði hægt og rólega' },
+                    { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
+                    { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
+                ]
+            },
+            {
+                display: 'Áverki',
+                onRightClickOutput: 'Ekki áverkasaga',
+                subOptions: [
+                    {
+                        display: 'Missteig sig',
+                        subOptions: [
+                            { display: 'NOS', output: 'Missteig sig' },
+                            { display: 'Í vinnu', output: 'Missteig sig í vinnunni' },
+                            { display: 'Á leið til vinnu', output: 'Missteig sig á leið til vinnu' },
+                            { display: 'Heimafyrir', output: 'Missteig sig heimafyrir' }
+                        ]
+                    },
+                    {
+                        display: 'Rak sig í',
+                        subOptions: [
+                            { display: 'NOS', output: 'Rak sig í' },
+                            { display: 'Í vinnu', output: 'Rak sig í vinnunni' },
+                            { display: 'Á leið til vinnu', output: 'Rak sig í á leið til vinnu' },
+                            { display: 'Heimafyrir', output: 'Rak sig í heimafyrir' }
+                        ]
+                    },
+                    {
+                        display: 'Snéri sig',
+                        subOptions: [
+                            { display: 'NOS', output: 'Snéri sig' },
+                            { display: 'Í vinnu', output: 'Snéri sig í vinnunni' },
+                            { display: 'Á leið til vinnu', output: 'Snéri sig á leið til vinnu' },
+                            { display: 'Heimafyrir', output: 'Snéri sig heimafyrir' }
+                        ]
+                    },
+                    {
+                        display: 'Íþróttaáverki',
+                        subOptions: [
+                            { display: 'NOS', output: 'Íþróttaáverki' },
+                            { display: 'Í vinnu', output: 'Íþróttaáverki í vinnunni' },
+                            { display: 'Á leið til vinnu', output: 'Íþróttaáverki á leið til vinnu' },
+                            { display: 'Heimafyrir', output: 'Íþróttaáverki heimafyrir' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Leiðni', 'Versnar', 'Severity'],
+        options: [
+            {
+                display: 'Leiðni',
+                onRightClickOutput: 'Neitar leiðni',
+                subOptions: [
+                    { display: 'Niðrí kálfa', output: 'Leiðir niður í kálfa' },
+                    { display: 'Mjöðm', output: 'Leiðir upp í mjöðm' },
+                    { display: 'Nára', output: 'Leiðir út í nára' }
+                ]
+            },
+            {
+                display: 'Versnar',
+                onRightClickOutput: 'Ekkert sem gerir verkinn verri',
+                subOptions: [
+                    { display: 'Hreyfingu', output: 'Versnar við hreyfingu' },
+                    { display: 'Æfingar', output: 'Versnar við æfingar' },
+                    { display: 'Hvíld', output: 'Versnar við hvíld' },
+                    { display: 'Næturlagi', output: 'Versnar á næturlagi' }
+                ]
+            },
+            {
+                display: 'Severity',
+                subOptions: [
+                    { display: '1', output: 'Skalar verkinn 1/10' },
+                    { display: '2', output: 'Skalar verkinn 2/10' },
+                    { display: '3', output: 'Skalar verkinn 3/10' },
+                    { display: '4', output: 'Skalar verkinn 4/10' },
+                    { display: '5', output: 'Skalar verkinn 5/10' },
+                    { display: '6', output: 'Skalar verkinn 6/10' },
+                    { display: '7', output: 'Skalar verkinn 7/10' },
+                    { display: '8', output: 'Skalar verkinn 8/10' },
+                    { display: '9', output: 'Skalar verkinn 9/10' },
+                    { display: '10', output: 'Skalar verkinn 10/10' }
+                ]
             }
         ]
     }
@@ -8256,7 +8417,354 @@ const ExamsKnee = [
         ]
     }
 ];
-const PlanKnee = [];
+const PlanKnee = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Áverki', 'Tognun', 'Meniscus', 'Liðbandaáverki'],
+        options: [
+            {
+                display: 'Áverki',
+                subOptions: [
+                    { display: 'Greining', output: 'Áverki á hné' },
+                    { display: 'Grunur', output: 'Grunur um áverka á hné' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Milt, bólgueyðandi, endurmat pn', output: 'Áverki á hné. Mild einkenni. Ráðlegg bólgueyðandi næstu daga. RICE. Endurmat ef versnar eða lagast ekki.' },
+                            { display: 'Áverki, BMT', output: 'Áverki á hné. Mikil einkenni. Ráðlegg nánara mat á BMT.' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Tognun',
+                subOptions: [
+                    { display: 'Greining', output: 'Tognun á hné' },
+                    { display: 'Grunur', output: 'Grunur um tognun á hné' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Mild, sakleysisleg skoðun, RICE', output: 'Tognun á hné. Sakleysisleg skoðun. Veiti almennar ráðleggingar. RICE og verkjalyf pn. Ef lagast ekki eða versnar á næstu dögum þá endurmat.' },
+                            { display: 'Meðalsvæsin tognun, ráðl, sjúkraþjálfun', output: 'Tognun á hné. Almennar ráðleggingar. RICE og verkjalyf. Einnig sjúkraþjálfun. Endurmat ef lagast ekki eða versnar.' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Meniscus',
+                subOptions: [
+                    { display: 'Greining', output: 'Meniscal vandi' },
+                    { display: 'Grunur', output: 'Grunur um meniscal vanda' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Grunur, ráðleggingar 4-6v', output: 'Grunur um liðþófavanda. Veiti almennar ráðleggingar. Hvíld, kæling, hækjur pn. Forðast það sem gerir einkenni verri. Getur keypt sér teygjusokk til stuðnings. Grær í meiri hluta tilfella en ef einkenni eru til staðar í >4 vikur er segulómun ráðlögð sem og sjúkraþjálfun.' },
+                            { display: 'Langvarandi einkenni, segulómun, sjúkraþjálfun', output: 'Grunur um liðþófavanda. Veiti almennar ráðleggingar. Þar sem einkenni staðið í >4 vikur er segulómun ráðlögð sem og sjúkraþjálfun.' },
+                            { display: 'Staðfest meniscal rifa, sjkþj ekki dugað, bæklun', output: 'Staðfest meniscal rifa. Sjúkraþjálfun ekki skilað tiltækum árangri. Ráðlegg mat bæklunarlæknis.' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Liðbandaáverki',
+                subOptions: [
+                    { display: 'Greining', output: 'Liðbandaáverki' },
+                    { display: 'Grunur', output: 'Grunur um liðbandaáverka' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Grunur, ómun', output: 'Grunur um liðbandaáverka. Ráðlegg ómskoðun.' },
+                            { display: 'Liðbandaáverki, staðfest, bæklun', output: 'Liðbandaáverki. Staðfest á myndgreiningu. Ráðlegg nánara mat hjá bæklunarlækni.' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Langvarandi hnévandi', 'Slitgigt', 'Aðrar greiningar'],
+        options: [
+            {
+                display: 'Langvarandi hnévandi',
+                subOptions: [
+                    { display: 'Greining', output: 'Langvarandi einkenni frá hné' },
+                    { display: 'Grunur', output: 'Grunur um langvarandi hnévanda' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Segulómun', output: 'Langvarandi einkenni frá hné. Ráðlegg nú segulómun til nánari skoðunar.' },
+                            { display: 'Sjúkraþjálfun, endurmat', output: 'Ráðlegg sjúkraþjálfun til að auka hreyfanleika og styrk. Endurmat eftir 4-6 vikur.' },
+                            { display: 'Verkjameðferð, bólgueyðandi', output: 'Langvarandi einkenni frá hné. Ráðlegg verkjalyf og bólgueyðandi meðferð.' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Slitgigt',
+                subOptions: [
+                    { display: 'Greining', output: 'Slitgigt í hné' },
+                    { display: 'Grunur', output: 'Grunur um slitgigt' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Grunur, RTG, pantar sér símatíma', output: 'Grunur um slitgigt sem skýringu einkenna. Ráðlegg RTG. Pantar sér símatíma fyrir niðurstöður eftir rannsókn.' },
+                            { display: 'Greining, Ráðleggingar, sjúkrþjálfun', output: 'Staðfest slitgigt. Almennar ráðleggingar. Ráðlegg sjúkraþjálfun. Verkjalyf PN. Gott að nota NSAID áburð, minni líkur á aukaverknunum. Ef konservatíf meðferð dugar illa er næsta skref liðskipti' },
+                            { display: 'Greining, konservatív meðferð ekki dugað, liðskipti', output: 'Slitgigt í hné. Einkenni slæm þrátt fyrir sjúkraþjálfun og verkjameðferð. Tilvísun í liðskipti.' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Aðrar greiningar',
+                subOptions: [
+                    {
+                        display: 'Baker‘s cysta',
+                        subOptions: [
+                            { display: 'Greining', output: 'Baker‘s cysta' },
+                            { display: 'Grunur', output: 'Grunur um baker‘s cystu' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Staðfest, einkennalítil, ráðl, obs', output: 'Baker‘s cysta. Asymptomatísk. Ráðlegg konservatífa meðferð. Sjaldgæft að þær rofni. Ef versnandi einkenni þá endurmat.' },
+                                    { display: 'Staðfest, einkennagefandi, tilvísun', output: 'Baker\'s cysta. Veldur þónokkrum einkennum. Ráðlegg frekara mat hjá bæklunarlækni' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'PFPS',
+                        subOptions: [
+                            { display: 'Greining', output: 'Patellofemoral pain syndrome' },
+                            { display: 'Grunur', output: 'Grunur um patellofemoral pain syndrome' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Sjúkraþjálfun, hreyfistjórnun', output: 'Patellofemoral pain syndrome. Ráðlegg sjúkraþjálfun til að bæta hreyfistjórnun og styrk í hné.' },
+                                    { display: 'Verkjameðferð, fótstykki', output: 'Ráðlegg verkjalyf og mögulega sérsniðna innlegg til stuðnings.' },
+                                    { display: 'Bólgueyðandi, endurmat', output: 'Grunur um PFPS. Ráðlegg bólgueyðandi lyf og endurmat eftir 4 vikur.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'ITBS',
+                        subOptions: [
+                            { display: 'Greining', output: 'Iliotibial band syndrome' },
+                            { display: 'Grunur', output: 'Grunur um iliotibial band syndrome' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Hvíld, kæling, sjúkraþjálfun', output: 'Iliotibial band syndrome. Ráðlegg hvíld, kæling og sjúkraþjálfun til að bæta einkenni.' },
+                                    { display: 'Verkjalosandi inngrip', output: 'Verkjalosandi inngrip ef einkenni eru áfram til staðar þrátt fyrir meðferð.' },
+                                    { display: 'Teygjur, líkamsmeðferð', output: 'Ráðlegg teygjuæfingar og líkamsmeðferð til að draga úr spennu í iliotibial bandi.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Patellar Tendinitis',
+                        subOptions: [
+                            { display: 'Greining', output: 'Patellar Tendinitis' },
+                            { display: 'Grunur', output: 'Grunur um Patellar Tendinitis' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Hvíld, kæling, sjúkraþjálfun', output: 'Patellar tendinitis. Ráðlegg hvíld, kæling og sjúkraþjálfun.' },
+                                    { display: 'Bólgueyðandi lyf, endurmat', output: 'Notkun bólgueyðandi lyfja og endurmat eftir 4 vikur.' },
+                                    { display: 'PRP inngrip, endurhæfing', output: 'Staðfest patellar tendinitis. Ráðlegg PRP (Platelet-Rich Plasma) inngrip og endurhæfingu.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Chondromalacia',
+                        subOptions: [
+                            { display: 'Greining', output: 'Chondromalacia' },
+                            { display: 'Grunur', output: 'Grunur um chondromalacia' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Verkjameðferð, sjúkraþjálfun', output: 'Ráðlegg verkjameðferð og sjúkraþjálfun til að draga úr einkennum.' },
+                                    { display: 'Myndgreining, endurmat', output: 'Ráðlegg myndgreiningu (segulómun) til frekari greiningar.' },
+                                    { display: 'Skurðaðgerð ef engin framför', output: 'Langvarandi chondromalacia. Ráðlegg skurðaðgerð ef ekki hefur orðið bati.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Osgood-Schlatter',
+                        subOptions: [
+                            { display: 'Greining', output: 'Osgood-Schlatter' },
+                            { display: 'Grunur', output: 'Grunur um Osgood-Schlatter' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Hvíld, sjúkraþjálfun, verkjameðferð', output: 'Osgood-Schlatter. Ráðlegg hvíld, sjúkraþjálfun og verkjameðferð.' },
+                                    { display: 'Verndun, forðast álag', output: 'Grunur um Osgood-Schlatter. Ráðlegg forðast álag og veita stuðning.' },
+                                    { display: 'Langvarandi einkenni, segulómun', output: 'Staðfest Osgood-Schlatter. Ef langvarandi einkenni, segulómun og endurmat.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Bursitis',
+                        subOptions: [
+                            { display: 'Greining', output: 'Bursitis' },
+                            { display: 'Grunur', output: 'Grunur um bursitis' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'RICE, bólgueyðandi lyf, sjúkraþjálfun', output: 'Bursitis í hné. Ráðlegg RICE, bólgueyðandi lyf og sjúkraþjálfun.' },
+                                    { display: 'Sterasprauta, endurmat', output: 'Staðfest bursitis. Ráðlegg sterasprautu ef engin framför.' },
+                                    { display: 'Vökvatæming, bakteríurannsókn', output: 'Ef vökvi til staðar, ráðlegg vökvatæmingu og bakteríurannsókn.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Pes anserine bursitis',
+                        subOptions: [
+                            { display: 'Greining', output: 'Pes anserine bursitis' },
+                            { display: 'Grunur', output: 'Grunur um pes anserine bursitis' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Hvíld, kæling, bólgueyðandi lyf', output: 'Pes anserine bursitis. Ráðlegg hvíld, kæling og bólgueyðandi lyf.' },
+                                    { display: 'Sterasprauta, sjúkraþjálfun', output: 'Ráðlegg sterasprautu og sjúkraþjálfun ef einkenni eru áfram til staðar.' },
+                                    { display: 'Verkjalosandi meðferð, endurmat', output: 'Grunur um pes anserine bursitis. Ráðlegg verkjalosandi meðferð og endurmat eftir 2 vikur.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Vökvasöfnun',
+                        subOptions: [
+                            { display: 'Greining', output: 'Vökvasöfnun í hné' },
+                            { display: 'Grunur', output: 'Grunur um vökvasöfnun' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Tæming, rannsóknir', output: 'Vökvasöfnun. Ráðlegg vökvatæmingu og frekari rannsóknir.' },
+                                    { display: 'Segulómun, liðvökvarannsókn', output: 'Ef viðvarandi vökvasöfnun, ráðlegg segulómun og liðvökvarannsókn.' },
+                                    { display: 'Orsök vökvasöfnunar, endurmat', output: 'Finna orsök vökvasöfnunar og endurmeta ástand.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Liðsýking',
+                        subOptions: [
+                            { display: 'Greining', output: 'Liðsýking' },
+                            { display: 'Grunur', output: 'Grunur um liðbólgu vegna sýkingar' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Sýklalyf, innlögn', output: 'Liðsýking. Ráðlegg sýklalyf og mögulega innlögn til frekari meðferðar.' },
+                                    { display: 'Skurðaðgerð ef þörf', output: 'Ef sýking svarar ekki meðferð, ráðlegg skurðaðgerð.' },
+                                    { display: 'Liðvökvasýnataka, endurmat', output: 'Ráðlegg liðvökvasýnatöku til að staðfesta sýkingu, endurmat eftir sýnatöku.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Þvagsýrugigt',
+                        subOptions: [
+                            { display: 'Greining', output: 'Þvagsýrugigt' },
+                            { display: 'Grunur', output: 'Grunur um þvagsýrugigt' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Sýklalyf, endurmat', output: 'Þvagsýrugigt. Ráðlegg sýklalyf og endurmat eftir meðferð.' },
+                                    { display: 'Lyfjameðferð til að draga úr þvagsýru', output: 'Ráðlegg lyfjameðferð til að stjórna þvagsýru magni í blóði.' },
+                                    { display: 'Forðast álag og útfellingar', output: 'Ráðlegg forðast álag á þjáð liðamót og notkun á útfellingum.' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+    ,
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Myndataka', 'Bæklun'],
+        options: [
+            {
+                display: 'Ráðleggingar',
+                subOptions: [
+                    { display: 'Liðþófavandi', output: 'Veiti almennar ráðleggingar. Hvíld, kæling, hækjur pn. Forðast það sem gerir einkenni verri. Getur keypt sér teygjusokk til stuðnings. Grær í meiri hluta tilfella en ef einkenni eru til staðar í >4 vikur er segulómun ráðlögð sem og sjúkraþjálfun.' },
+                    { display: 'Almennar ráðleggingar', output: 'Veiti almennar ráðleggingar fyrir hnémeiðsl. Ráðlegg verndandi meðferð, einkennameðferð og endurmat eftir 2-4 vikur ef engin framför.' }
+                ]
+            },
+            {
+                display: 'Myndataka',
+                subOptions: [
+                    { display: 'Segulómun', output: 'Ráðlegg segulómun' },
+                    { display: 'TS', output: 'Ráðlegg tölvusneiðmynd' },
+                    { display: 'RTG', output: 'Ráðlegg röntgenmynd' },
+                    { display: 'Ómskoðun', output: 'Ráðlegg ómskoðun' }
+                ]
+            },
+            {
+                display: 'Bæklun',
+                subOptions: [
+                    { display: 'Tilvísun á bæklunarlækni', output: 'Ráðlegg tilvísun á bæklunarlækni fyrir frekari skoðun og meðferð.' },
+                    { display: 'Endurmat hjá bæklunarlækni', output: 'Ráðlegg endurmat hjá bæklunarlækni eftir fyrstu meðferð og greiningu.' }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'}
+                                ]
+                            }
+                            
+                        ]
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
+                ]
+            }
+
+        ]
+    }
+];
+
 
 // Ankle
 const SymptomsAnkle = [
@@ -9350,7 +9858,7 @@ const SymptomsGed = [
             { display: 'Þunglyndi',
                 subOptions: [
                     {display: 'NOS', output: 'Þunglyndiseinkenni'},
-                    {display: 'Grunur', output: 'Grunar um þunglyndi'}
+                    {display: 'Grunur', output: 'Grunur um þunglyndi'}
                     ],
                     onRightClickOutput: 'Neitar þunglyndiseinkennum'
             }
@@ -9460,7 +9968,10 @@ const SymptomsGed = [
             }
         ]
     },
-    {},{},{},
+    {},{},{}
+    
+    // Kvíði. Ekki tilbúið
+    /*
     {
         name: '',
         type: 'options',
@@ -9613,6 +10124,7 @@ const SymptomsGed = [
             }
         ]
     }
+*/
     
 ];
 const GedSkodunData = [
@@ -9625,7 +10137,8 @@ const GedSkodunData = [
                 display: 'Framkoma',
                     subOptions: [
                         { display: 'Dónaleg', output: 'Dónaleg framkoma' },
-                        { display: 'Aggressíf', output: 'Aggressíf framkoma' }
+                        { display: 'Aggressíf', output: 'Aggressíf framkoma' },
+                        { display: 'Dónaleg og aggressíf', output: 'Dónaleg og aggressíf framkoma' }
                     ],
                 onRightClickOutput: 'Kemur vel fyrir'
             },
@@ -9871,7 +10384,7 @@ const PlanGed = [
                     },
                     {
                         display: 'SSRI',
-                        output: 'Fær ráðleggingar varðandi verkunarmáta og mögulegar aukaverkanir SSRI lyfja. Lágmark 4 vikur til að meta árangur. Kvíði getur aukist tímabundið fyrstu 1-2 vikurnar áður en hann minnkar. Sumir upplifa flatneskju en ekki algilt. Getur haft neikvæð áhrif á kynhvöt.'
+                        output: 'Óskar eftir að hefja meðferð með SSRI. Fær ráðleggingar varðandi verkunarmáta og mögulegar aukaverkanir. Lágmark 4 vikur til að meta árangur. Kvíði getur aukist tímabundið fyrstu 1-2 vikurnar áður en hann minnkar. Sumir upplifa flatneskju en ekki algilt. Getur haft neikvæð áhrif á kynhvöt.'
                     },
                     {
                         display: 'Svefnvandamál',
@@ -18276,7 +18789,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'historyViral', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'skodun', 'gedskodun', 'lifsmork', 'rannsoknir', 'plan'];
+    const sectionOrder = ['einkenni', 'sigecaps', 'historyViral', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'skodun', 'gedskodun', 'lifsmork', 'rannsoknir', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
