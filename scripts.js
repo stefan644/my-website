@@ -8082,8 +8082,8 @@ const SymptomsKnee = [
                         display: 'NOS',
                         subOptions: [
                             { display: 'NOS', output: 'Verkur' },
-                            { display: 'Innanvert', output: 'Verkur. Mestur yfir innanverðu liðbili' },
-                            { display: 'Utanvert', output: 'Verkur. Mestur yfir utanverðu liðbili' },
+                            { display: 'Innanvert', output: 'Verkur. Mestur medialt' },
+                            { display: 'Utanvert', output: 'Verkur. Mestur lateralt' },
                             { display: 'Framanvert', output: 'Verkur. Mestur framanvert' },
                             { display: 'Aftanvert', output: 'Verkur. Mestur aftanvert' }
                         ]
@@ -8092,8 +8092,8 @@ const SymptomsKnee = [
                         display: 'Djúpur',
                         subOptions: [
                             { display: 'NOS', output: 'Djúpur verkur' },
-                            { display: 'Innanvert', output: 'Djúpur verkur. Mestur yfir innanverðu liðbili' },
-                            { display: 'Utanvert', output: 'Djúpur verkur. Mestur yfir utanverðu liðbili' },
+                            { display: 'Innanvert', output: 'Djúpur verkur. Mestur medialt' },
+                            { display: 'Utanvert', output: 'Djúpur verkur. Mestur lateralt' },
                             { display: 'Framanvert', output: 'Djúpur verkur. Mestur framanvert' },
                             { display: 'Aftanvert', output: 'Djúpur verkur. Mestur aftanvert' }
                         ]
@@ -8102,8 +8102,8 @@ const SymptomsKnee = [
                         display: 'Brennandi',
                         subOptions: [
                             { display: 'NOS', output: 'Brennandi verkur' },
-                            { display: 'Innanvert', output: 'Brennandi verkur. Mestur yfir innanverðu liðbili' },
-                            { display: 'Utanvert', output: 'Brennandi verkur. Mestur yfir utanverðu liðbili' },
+                            { display: 'Innanvert', output: 'Brennandi verkur. Mestur medialt' },
+                            { display: 'Utanvert', output: 'Brennandi verkur. Mestur lateralt' },
                             { display: 'Framanvert', output: 'Brennandi verkur. Mestur framanvert' },
                             { display: 'Aftanvert', output: 'Brennandi verkur. Mestur aftanvert' }
                         ]
@@ -8112,8 +8112,8 @@ const SymptomsKnee = [
                         display: 'Stingandi',
                         subOptions: [
                             { display: 'NOS', output: 'Stingandi verkur' },
-                            { display: 'Innanvert', output: 'Stingandi verkur. Mestur yfir innanverðu liðbili' },
-                            { display: 'Utanvert', output: 'Stingandi verkur. Mestur yfir utanverðu liðbili' },
+                            { display: 'Innanvert', output: 'Stingandi verkur. Mestur medialt' },
+                            { display: 'Utanvert', output: 'Stingandi verkur. Mestur lateralt' },
                             { display: 'Framanvert', output: 'Stingandi verkur. Mestur framanvert' },
                             { display: 'Aftanvert', output: 'Stingandi verkur. Mestur aftanvert' }
                         ]
