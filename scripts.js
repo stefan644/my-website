@@ -351,30 +351,101 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Sýklalyf', 'Læknisráði', 'Tímalengd', 'Fyrri kúrar'],
+        display: ['Sýklalyf', 'Tímalengd', 'Fyrri kúrar'],
         options: [
             {
                 display: 'Sýklalyf',
                 subOptions: [
-                    { display: 'NOS', output: 'Er að taka sýklalyf' },
-                    { display: 'Amoxicillin', output: 'Er að taka amoxicillin' },
-                    { display: 'Spectracillin', output: 'Er að taka spectracillin' },
-                    { display: 'Azithromycin', output: 'Er að taka azithromycin' },
-                    { display: 'Doxycillin', output: 'Er að taka doxycillin' },
-                    { display: 'Ciprofloxacin', output: 'Er að taka ciprofloxacin' },
-                    { display: 'Metronidazole', output: 'Er að taka metronidazole' },
-                    { display: 'Clindamycin', output: 'Er að taka clindamycin' },
-                    { display: 'Penicillin V', output: 'Er að taka penicillin V' },
-                    { display: 'Cefalexin', output: 'Er að taka cefalexin' },
-                    { display: 'Trimethoprim', output: 'Er að taka trimethoprim' }
-                    // Add more antibiotics as needed
+                    {
+                        display: 'NOS', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka sýklalyf' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka sýklalyf. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka sýklalyf. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Amoxicillin', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka amoxicillin' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka amoxicillin. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka amoxicillin. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Spectracillin', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka spectracillin' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka spectracillin. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka spectracillin. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Azithromycin', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka azithromycin' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka azithromycin. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka azithromycin. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Doxycillin', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka doxycillin' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka doxycillin. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka doxycillin. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Ciprofloxacin', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka ciprofloxacin' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka ciprofloxacin. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka ciprofloxacin. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Metronidazole', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka metronidazole' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka metronidazole. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka metronidazole. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Clindamycin', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka clindamycin' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka clindamycin. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka clindamycin. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Penicillin V', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka penicillin V' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka penicillin V. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka penicillin V. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Cefalexin', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka cefalexin' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka cefalexin. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka cefalexin. Ekki í samráði við lækni' }
+                        ]
+                    },
+                    {
+                        display: 'Trimethoprim', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Er að taka trimethoprim' },
+                            { display: 'Samkvæmt læknisráði', output: 'Er að taka trimethoprim. Tekur í samráði við sinn lækni' },
+                            { display: 'Ekki samkvæmt læknisráði', output: 'Er að taka trimethoprim. Ekki í samráði við lækni' }
+                        ]
+                    }
                 ],
                 onRightClickOutput: 'Ekki tekið sýklalyf nýlega'
-            },
-            {
-                display: 'Læknisráði',
-                output: 'Ekki í samráði við lækni',
-                onRightClickOutput: 'Tekur í samráði við sinn lækni'
             },
             {
                 display: 'Tímalengd',
@@ -1179,7 +1250,7 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Versnun á COPD' },
                     { display: 'Grunur', output: 'Grunur um versnun á COPD' },
-                    { display: 'Fullmótað plan', 
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Sýklalyf', output: 'Grunur um versnun á COPD. Set sýklalyf í gáttina. Endurmat ef lagast ekki' },
                             { display: 'Sýkalyf og sterar', output: 'Grunur um versnun á COPD. Ráðlegg sýklalyf og stuttan sterakúr. Set hvoru tveggja í gáttina. Endurmat ef lagast ekki' }
@@ -1192,7 +1263,7 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Astmi' },
                     { display: 'Grunur', output: 'Grunur um astma' },
-                    { display: 'Fullmótað plan', 
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Fyrsta greining', output: 'Grunur um astma. Ráðlegg spírómetríu til nánari greininga. Fær ventolin til notkunar PN' }
                         ]
@@ -1899,169 +1970,7 @@ const SymptomsUrinary = [
             }
             
         ]
-    },
-    {},
-    {},
-    {},
-    {
-        name: '',
-        type: 'options',
-        display: ['Getnaðarvörn', 'Fyrri notkun'],
-        options: [
-            {
-                display: 'Getnaðarvörn',
-                subOptions: [
-                    { display: 'Ráðgjöf', output: 'Ráðgjöf vegna getnaðarvarna' }
-                ],
-                onRightClickOutput: ''
-            },
-            {
-                display: 'Fyrri notkun',
-                subOptions: [
-                    { display: 'Pillan', output: 'Verið á pilluni' },
-                    { display: 'Stafurinn', output: 'Verið með stafinn' },
-                    {
-                        display: 'Lykkja',
-                        subOptions: [
-                            {
-                                display: 'Er á',
-                                subOptions: [
-                                    { display: 'Koparlykkja', output: 'Er með koparlykkju' },
-                                    { display: 'Hormónalykkja', output: 'Er með hormónalykkjuna' }
-                                ]
-                            },
-                            {
-                                display: 'Verið á',
-                                subOptions: [
-                                    { display: 'Koparlykkja', output: 'Verið á koparlykkjunni' },
-                                    { display: 'Hormónalykkja', output: 'Verið á hormónalykkjunni' }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                onRightClickOutput: 'Ekki notað getnaðarvörn áður'
-            }
-            
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Aldur', 'Reykingar', 'Bláæðasegi', 'Mígreni'],
-        options: [
-            {
-                display: 'Aldur',
-                subOptions: [
-                    {
-                        display: '≥35 ára',
-                        output: 'Aldur ≥35 ára'
-                    }
-                ],
-                onRightClickOutput: '<35 ára'
-            },
-            {
-                display: 'Reykingar',
-                subOptions: [
-                    {
-                        display: '≥15 sígarettur á dag',
-                        output: 'Reykir ≥15 sígarettur á dag'
-                    }
-                ],
-                onRightClickSubOptions: [
-                    { display: '<15 sígarettur á dag', output: 'Reykir <15 sígarettur á dag' },
-                    { display: 'Reykir ekki', output: 'Reykir ekki' },
-                    { display: 'Aldrei reykt', output: 'Aldrei reykt' }
-                ]
-            },
-            {
-                display: 'Bláæðasegi',
-                output: 'Saga um bláæðasega. Ekki á blóðþynningu',
-                onRightClickOutput: 'Aldrei fengið bláæðasega'
-            },
-            {
-                display: 'Mígreni',
-                subOptions: [
-                    { display: 'NOS', output: 'Saga um mígreni' },
-                    { display: 'Aura', output: 'Saga um mígreni með auru'},
-                    { display: 'Án auru', output: 'Saga um mígreni án auru'}
-                ],
-                
-                onRightClickOutput: 'Ekki saga um mígreni'
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: [
-            'Sykursýki', 
-            'Háþrýstingur',
-            'Hjartasjúkdómur',
-            'Heilablóðfall'
-        ],
-        options: [
-            {
-                display: 'Sykursýki',
-                output: 'Greind með sykursýki',
-                onRightClickOutput: 'Ekki sykursýki'
-            },
-            {
-                display: 'Háþrýstingur',
-                output: 'Greind með háþrýstingur',
-                onRightClickOutput: 'Ekki háþrýstingur'
-            },
-            {
-                display: 'Hjartasjúkdómur',
-                subOptions: [
-                    { display: 'NOS', output: 'Saga um hjartavandamál' },
-                    { display: 'IHD', output: 'Saga um IHD' },
-                    { display: 'Gáttatif', output: 'Saga um gáttatif' },
-                    { display: 'Endocarditis', output: 'Saga um endocarditis' }
-                ],
-                onRightClickOutput: 'Enginn þekktur hjartasjúkdómur'
-            },
-            {
-                display: 'Heilablóðfall',
-                output: 'Saga um heilablóðfall',
-                onRightClickOutput: 'Ekki saga um heilablóðfall'
-            }
-            
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: [
-            'Lungnaháþrýstingur',
-            'Brjóstakrabbamein',
-            'Lifrarkvilli'
-            
-        ],
-        options: [
-            {
-                display: 'Lungnaháþrýstingur',
-                output: 'Saga um lungnaháþrýsting',
-                onRightClickOutput: 'Ekki saga um lungnaháþrýsting'
-            },
-            {
-                display: 'Brjóstakrabbamein',
-                output: 'Saga um brjóstakrabbamein',
-                onRightClickOutput: 'Engin saga um brjóstakrabbamein'
-            },
-            {
-                display: 'Lifrarkvilli',
-                subOptions: [
-                    { display: 'Skorpulifur', output: 'Saga um skorpulifur' },
-                    { display: 'Lifrarkrabbamein', output: 'Saga um lifrarkrabbamein' }
-                ],
-                onRightClickOutput: 'Ekki saga um skorpulifur eða lifrarkrabbamein'
-            }
-        ]
-    }
-    
-    
-
+    } 
 ];
 const ExamsUrinary = [
     {
@@ -2204,8 +2113,7 @@ const PlanUrinary = [
             {
                 display: 'Ráðleggingar',
                 subOptions: [
-                    { display: 'Almennar', output: 'Almennar ráðleggingar' },
-                    { display: 'Getnaðarvarnir', output: 'Veiti ráðleggingar vegna getnaðarvarna' }
+                    { display: 'Almennar', output: 'Almennar ráðleggingar' }
                 ]
             },
             {
@@ -2251,105 +2159,6 @@ const PlanUrinary = [
                         ]
                     },
                     { display: 'Þvag í pcr', output: 'Sendi þvag í PCR fyrir klamydíu- og lekanda' }
-                ]
-            }
-        ]
-    },
-    { 
-        name: '', 
-        type: 'options', 
-        display: ['Getnaðarvörn'], 
-        options: [
-            {
-                display: 'Getnaðarvörn',
-                subOptions: [
-                    {
-                        display: 'Hefja meðferð',
-                        subOptions: [
-                            {
-                                display: 'Pillan',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Hefjum meðferð með pillunni' },
-                                    { display: 'Microgyn', output: 'Hefjum meðferð með Microgyn' },
-                                    { display: 'Yasmin', output: 'Hefjum meðferð með Yasmin' },
-                                    { display: 'Mercilon', output: 'Hefjum meðferð með Mercilon' }
-                                ]
-                            },
-                            {
-                                display: 'Lykkjan',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Hefjum meðferð með lykkjunni' },
-                                    { display: 'Koparlykkjan', output: 'Hefjum meðferð með Koparlykkjunni' },
-                                    { display: 'Mirena', output: 'Hefjum meðferð með Mirena lykkju' }
-                                ]
-                            },
-                            {
-                                display: 'Stafurinn',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Hefjum meðferð með stafnum' },
-                                    { display: 'Implanon', output: 'Hefjum meðferð með Implanon' }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Skipta',
-                        subOptions: [
-                            {
-                                display: 'Pillan',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Skiptum yfir í pilluna' },
-                                    { display: 'Microgyn', output: 'Skiptum yfir í Microgyn' },
-                                    { display: 'Yasmin', output: 'Skiptum yfir í Yasmin' },
-                                    { display: 'Mercilon', output: 'Skiptum yfir í Mercilon' }
-                                ]
-                            },
-                            {
-                                display: 'Lykkjan',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Skiptum yfir í lykkjuna' },
-                                    { display: 'Koparlykkjan', output: 'Skiptum yfir í Koparlykkjuna' },
-                                    { display: 'Mirena', output: 'Skiptum yfir í Mirena lykkju' }
-                                ]
-                            },
-                            {
-                                display: 'Stafurinn',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Skiptum yfir í stafinn' },
-                                    { display: 'Implanon', output: 'Skiptum yfir í Implanon' }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Endurnýja',
-                        subOptions: [
-                            {
-                                display: 'Pillan',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Endurnýja pilluna' },
-                                    { display: 'Microgyn', output: 'Endurnýja Microgyn' },
-                                    { display: 'Yasmin', output: 'Endurnýja Yasmin' },
-                                    { display: 'Mercilon', output: 'Endurnýja Mercilon' }
-                                ]
-                            },
-                            {
-                                display: 'Lykkjan',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Endurnýja lykkjuna' },
-                                    { display: 'Koparlykkjan', output: 'Endurnýja Koparlykkjuna' },
-                                    { display: 'Mirena', output: 'Endurnýja Mirena lykkju' }
-                                ]
-                            },
-                            {
-                                display: 'Stafurinn',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Endurnýja stafinn' },
-                                    { display: 'Implanon', output: 'Endurnýja Implanon' }
-                                ]
-                            }
-                        ]
-                    }
                 ]
             }
         ]
@@ -2509,6 +2318,272 @@ const RiskfactorsUrinary = [
                     { display: 'Blöðruhálskirtilskrabbamein', output: 'Fjölskyldusaga um blöðruhálskirtilskrabbamein' }
                 ],
                 onRightClickOutput: 'Ekki fjölskyldusaga um þvagblöðru- eða blöðruhálskirtilskrabbamein'
+            }
+        ]
+    }
+];
+
+// Getnaðarvarnaráðgjöf
+const SymptomsContraception = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Getnaðarvörn', 'Fyrri notkun'],
+        options: [
+            {
+                display: 'Getnaðarvörn',
+                subOptions: [
+                    { display: 'Ráðgjöf', output: 'Ráðgjöf vegna getnaðarvarna' }
+                ],
+                onRightClickOutput: ''
+            },
+            {
+                display: 'Fyrri notkun',
+                subOptions: [
+                    { display: 'Pillan', output: 'Verið á pilluni' },
+                    { display: 'Stafurinn', output: 'Verið með stafinn' },
+                    {
+                        display: 'Lykkja',
+                        subOptions: [
+                            {
+                                display: 'Er á',
+                                subOptions: [
+                                    { display: 'Koparlykkja', output: 'Er með koparlykkju' },
+                                    { display: 'Hormónalykkja', output: 'Er með hormónalykkjuna' }
+                                ]
+                            },
+                            {
+                                display: 'Verið á',
+                                subOptions: [
+                                    { display: 'Koparlykkja', output: 'Verið á koparlykkjunni' },
+                                    { display: 'Hormónalykkja', output: 'Verið á hormónalykkjunni' }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekki notað getnaðarvörn áður'
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Aldur', 'Reykingar', 'Bláæðasegi', 'Mígreni'],
+        options: [
+            {
+                display: 'Aldur',
+                subOptions: [
+                    {
+                        display: '≥35 ára',
+                        output: 'Aldur ≥35 ára'
+                    }
+                ],
+                onRightClickOutput: '<35 ára'
+            },
+            {
+                display: 'Reykingar',
+                subOptions: [
+                    {
+                        display: '≥15 sígarettur á dag',
+                        output: 'Reykir ≥15 sígarettur á dag'
+                    }
+                ],
+                onRightClickSubOptions: [
+                    { display: '<15 sígarettur á dag', output: 'Reykir <15 sígarettur á dag' },
+                    { display: 'Reykir ekki', output: 'Reykir ekki' },
+                    { display: 'Aldrei reykt', output: 'Aldrei reykt' }
+                ]
+            },
+            {
+                display: 'Bláæðasegi',
+                output: 'Saga um bláæðasega. Ekki á blóðþynningu',
+                onRightClickOutput: 'Aldrei fengið bláæðasega'
+            },
+            {
+                display: 'Mígreni',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um mígreni' },
+                    { display: 'Aura', output: 'Saga um mígreni með auru'},
+                    { display: 'Án auru', output: 'Saga um mígreni án auru'}
+                ],
+                
+                onRightClickOutput: 'Ekki saga um mígreni'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: [
+            'Sykursýki', 
+            'Háþrýstingur',
+            'Hjartasjúkdómur',
+            'Heilablóðfall'
+        ],
+        options: [
+            {
+                display: 'Sykursýki',
+                output: 'Greind með sykursýki',
+                onRightClickOutput: 'Ekki sykursýki'
+            },
+            {
+                display: 'Háþrýstingur',
+                output: 'Greind með háþrýstingur',
+                onRightClickOutput: 'Ekki háþrýstingur'
+            },
+            {
+                display: 'Hjartasjúkdómur',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um hjartavandamál' },
+                    { display: 'IHD', output: 'Saga um IHD' },
+                    { display: 'Gáttatif', output: 'Saga um gáttatif' },
+                    { display: 'Endocarditis', output: 'Saga um endocarditis' }
+                ],
+                onRightClickOutput: 'Enginn þekktur hjartasjúkdómur'
+            },
+            {
+                display: 'Heilablóðfall',
+                output: 'Saga um heilablóðfall',
+                onRightClickOutput: 'Ekki saga um heilablóðfall'
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: [
+            'Lungnaháþrýstingur',
+            'Brjóstakrabbamein',
+            'Lifrarkvilli'
+            
+        ],
+        options: [
+            {
+                display: 'Lungnaháþrýstingur',
+                output: 'Saga um lungnaháþrýsting',
+                onRightClickOutput: 'Ekki saga um lungnaháþrýsting'
+            },
+            {
+                display: 'Brjóstakrabbamein',
+                output: 'Saga um brjóstakrabbamein',
+                onRightClickOutput: 'Engin saga um brjóstakrabbamein'
+            },
+            {
+                display: 'Lifrarkvilli',
+                subOptions: [
+                    { display: 'Skorpulifur', output: 'Saga um skorpulifur' },
+                    { display: 'Lifrarkrabbamein', output: 'Saga um lifrarkrabbamein' }
+                ],
+                onRightClickOutput: 'Ekki saga um skorpulifur eða lifrarkrabbamein'
+            }
+        ]
+    }
+];
+const ExamsContraception = [];
+const PlanContraception = [
+    { 
+        name: '', 
+        type: 'options', 
+        display: ['Ráðleggingar', 'Getnaðarvörn'], 
+        options: [
+            {
+                display: 'Ráðleggingar',
+                output: 'Veiti ráðleggingar vegna getnaðarvarna'
+            },
+            {
+                display: 'Getnaðarvörn',
+                subOptions: [
+                    {
+                        display: 'Hefja meðferð',
+                        subOptions: [
+                            {
+                                display: 'Pillan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Hefjum meðferð með pillunni' },
+                                    { display: 'Microgyn', output: 'Hefjum meðferð með Microgyn' },
+                                    { display: 'Yasmin', output: 'Hefjum meðferð með Yasmin' },
+                                    { display: 'Mercilon', output: 'Hefjum meðferð með Mercilon' }
+                                ]
+                            },
+                            {
+                                display: 'Lykkjan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Hefjum meðferð með lykkjunni' },
+                                    { display: 'Koparlykkjan', output: 'Hefjum meðferð með Koparlykkjunni' },
+                                    { display: 'Mirena', output: 'Hefjum meðferð með Mirena lykkju' }
+                                ]
+                            },
+                            {
+                                display: 'Stafurinn',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Hefjum meðferð með stafnum' },
+                                    { display: 'Implanon', output: 'Hefjum meðferð með Implanon' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Skipta',
+                        subOptions: [
+                            {
+                                display: 'Pillan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skiptum yfir í pilluna' },
+                                    { display: 'Microgyn', output: 'Skiptum yfir í Microgyn' },
+                                    { display: 'Yasmin', output: 'Skiptum yfir í Yasmin' },
+                                    { display: 'Mercilon', output: 'Skiptum yfir í Mercilon' }
+                                ]
+                            },
+                            {
+                                display: 'Lykkjan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skiptum yfir í lykkjuna' },
+                                    { display: 'Koparlykkjan', output: 'Skiptum yfir í Koparlykkjuna' },
+                                    { display: 'Mirena', output: 'Skiptum yfir í Mirena lykkju' }
+                                ]
+                            },
+                            {
+                                display: 'Stafurinn',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skiptum yfir í stafinn' },
+                                    { display: 'Implanon', output: 'Skiptum yfir í Implanon' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Endurnýja',
+                        subOptions: [
+                            {
+                                display: 'Pillan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Endurnýja pilluna' },
+                                    { display: 'Microgyn', output: 'Endurnýja Microgyn' },
+                                    { display: 'Yasmin', output: 'Endurnýja Yasmin' },
+                                    { display: 'Mercilon', output: 'Endurnýja Mercilon' }
+                                ]
+                            },
+                            {
+                                display: 'Lykkjan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Endurnýja lykkjuna' },
+                                    { display: 'Koparlykkjan', output: 'Endurnýja Koparlykkjuna' },
+                                    { display: 'Mirena', output: 'Endurnýja Mirena lykkju' }
+                                ]
+                            },
+                            {
+                                display: 'Stafurinn',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Endurnýja stafinn' },
+                                    { display: 'Implanon', output: 'Endurnýja Implanon' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
@@ -4534,7 +4609,7 @@ const RiskFactorsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Reykingar', 'Háþrýstingur', 'Obesity'],
+        display: ['Reykingar', 'Háþrýstingur', 'Obesity', 'BMI'],
         options: [
             { display: 'Reykingar', output: 'Reykingasaga', onRightClickOutput: 'Ekki reykingasaga' },
             {
@@ -4553,6 +4628,90 @@ const RiskFactorsHeart = [
                     { display: 'Obesity BMI > 35', output: 'Er í yfirþyngd, BMI > 35' }
                 ],
                 onRightClickOutput: 'Ekki í yfirþyngd'
+            },
+            {
+                display: 'BMI',
+                subOptions: [
+                    {
+                        display: '150-160 cm',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${150 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${150 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(150 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '161-170 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${161 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${161 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(161 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '171-180 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${171 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${171 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(171 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '181-190 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${181 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${181 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(181 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '191-200 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${191 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${191 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(191 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '201-210 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${201 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${201 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(201 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'BMI innan eðlilegra marka'
             }
         ]
     },
@@ -4772,10 +4931,20 @@ const SymptomsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna'],
+        display: ['Einkenni', 'Verkur', 'Meltingarónot'],
+        options: [
+            { display: 'Einkenni', output: 'Einkenni frá kvið' },
+            { display: 'Verkur', output: 'Verkur', onRightClickOutput: 'Ekki verkur' },
+            { display: 'Meltingarónot', output: 'Meltingarónot', onRightClickOutput: 'Ekki meltingarónot' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Tímalengd', 'Fengið áður', 'Character', 'Staðsetning', 'Onset'],
         options: [
             {
-                display: 'Tímalengd einkenna',
+                display: 'Tímalengd',
                 subOptions: [
                     { display: 'Nokkra daga', output: 'Nokkra daga saga' },
                     {
@@ -4850,51 +5019,11 @@ const SymptomsMelting = [
                     }
                 ],
                 cancelText: ''
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Einkenni frá kvið', 'Character', 'Leiðni'],
-        options: [
+            },
             {
-                display: 'Einkenni frá kvið',
-                subOptions: [
-                    {
-                        display: 'NOS',
-                        output: 'Einkenni frá kvið'
-                    },
-                    {
-                        display: 'Verkur',
-                        subOptions: [
-                            { display: 'NOS', output: 'Einkenni frá kvið. Verkur' },
-                            { display: 'Dreift', output: 'Einkenni frá kvið. Verkur. Staðsett dreift yfir öllu kviðarholi' },
-                            { display: 'Epigastric', output: 'Einkenni frá kvið. Verkur. Staðsett á epigastric svæði' },
-                            { display: 'Hægri efri fjórðungur', output: 'Einkenni frá kvið. Verkur. Staðsett í hægri efri fjórðungi' },
-                            { display: 'Vinstri efri fjórðungur', output: 'Einkenni frá kvið. Verkur. Staðsett í vinstri efri fjórðungi' },
-                            { display: 'Periumbilical', output: 'Einkenni frá kvið. Verkur. Staðsett á periumbilical svæði' },
-                            { display: 'Hægri neðri fjórðungur', output: 'Einkenni frá kvið. Verkur. Staðsett í hægri neðri fjórðungi' },
-                            { display: 'Vinstri neðri fjórðungur', output: 'Einkenni frá kvið. Verkur. Staðsett í vinstri neðri fjórðungi' },
-                            { display: 'Suprapubic', output: 'Einkenni frá kvið. Verkur. Staðsett á suprapubic svæði' }
-                        ]
-                    },
-                    {
-                        display: 'Meltingarónot',
-                        subOptions: [
-                            { display: 'NOS', output: 'Einkenni frá kvið. Meltingarónot' },
-                            { display: 'Dreift', output: 'Einkenni frá kvið. Meltingarónot. Staðsett dreift yfir öllu kviðarholi' },
-                            { display: 'Epigastric', output: 'Einkenni frá kvið. Meltingarónot. Staðsett á epigastric svæði' },
-                            { display: 'Hægri efri fjórðungur', output: 'Einkenni frá kvið. Meltingarónot. Staðsett í hægri efri fjórðungi' },
-                            { display: 'Vinstri efri fjórðungur', output: 'Einkenni frá kvið. Meltingarónot. Staðsett í vinstri efri fjórðungi' },
-                            { display: 'Periumbilical', output: 'Einkenni frá kvið. Meltingarónot. Staðsett á periumbilical svæði' },
-                            { display: 'Hægri neðri fjórðungur', output: 'Einkenni frá kvið. Meltingarónot. Staðsett í hægri neðri fjórðungi' },
-                            { display: 'Vinstri neðri fjórðungur', output: 'Einkenni frá kvið. Meltingarónot. Staðsett í vinstri neðri fjórðungi' },
-                            { display: 'Suprapubic', output: 'Einkenni frá kvið. Meltingarónot. Staðsett á suprapubic svæði' }
-                        ]
-                    }
-                ],
-                onRightClickOutput: 'Ekki fundið fyrir kviðverk'
+                display: 'Fengið áður',
+                output: 'Hefur fengið sambærileg einkenni áður',
+                onRightClickOutput: 'Aldrei fundið fyrir sambærilegum einkennum áður'
             },
             {
                 display: 'Character',
@@ -4903,7 +5032,7 @@ const SymptomsMelting = [
                         display: 'Visceral',
                         subOptions: [
                             { display: 'NOS', output: 'Visceral verkur' },
-                            { display: 'Getur illa staðsett', output: 'Visceral verkur, getur illa staðsett' }
+                            { display: 'Getur illa staðsett', output: 'Visceral verkur. Getur illa staðsett' }
                         ]
                     },
                     { display: 'Sómatískur', output: 'Sómatískur verkur' },
@@ -4913,6 +5042,52 @@ const SymptomsMelting = [
                     { display: 'Þrýstingsverkur', output: 'Þrýstingsverkur' }
                 ]
             },
+            {
+                display: 'Staðsetning',
+                subOptions: [
+                    {
+                        display: 'NOS', output: 'Staðsett í kvið'
+                    },
+                    {
+                        display: 'Dreift', output: 'Staðsett dreift yfir öllu kviðarholi'
+                    },
+                    {
+                        display: 'Epigastric', output: 'Staðsett á epigastric svæði'
+                    },
+                    {
+                        display: 'Hægri efri fjórðungur', output: 'Staðsett í hægri efri fjórðungi'
+                    },
+                    {
+                        display: 'Vinstri efri fjórðungur', output: 'Staðsett í vinstri efri fjórðungi'
+                    },
+                    {
+                        display: 'Periumbilical', output: 'Staðsett á periumbilical svæði'
+                    },
+                    {
+                        display: 'Hægri neðri fjórðungur', output: 'Staðsett í hægri neðri fjórðungi'
+                    },
+                    {
+                        display: 'Vinstri neðri fjórðungur', output: 'Staðsett í vinstri neðri fjórðungi'
+                    },
+                    {
+                        display: 'Suprapubic', output: 'Staðsett á suprapubic svæði'
+                    }
+                ]
+            },
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: 'Skyndilega', output: 'Byrjaði nokkuð skyndilega' },
+                    { display: 'Hægt og bítandi', output: 'Byrjaði hægt og bítandi' }
+                ]
+            }            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Leiðni', 'Mígration', 'Timing', 'Versnar', 'Skánar', 'Stigun'],
+        options: [
             {
                 display: 'Leiðni',
                 subOptions: [
@@ -4926,25 +5101,38 @@ const SymptomsMelting = [
                     { display: 'Nárasvæði', output: 'Leiðir niður í nára' }
                 ],
                 onRightClickOutput: 'Leiðir ekki'
-            }
-            
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Versnar við', 'Skánar við', 'Stigun verkja'],
-        options: [
+            },
+            {
+                display: 'Mígration',
+                onRightClickOutput: 'Verkurinn á sama stað og þegar byrjaði. Engin tilfærsla',
+                subOptions: [
+                    {
+                        display: 'Byrjaði periumbilicalt',
+                        subOptions: [
+                            { display: 'Endaði hægri neðri fjórðung', output: 'Verkurinn byrjaði periumbilicalt en færðist niður í hægri neðri fjórðung' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Timing',
+                subOptions: [
+                    { display: 'Intermittent', output: 'Einkenni koma og fara' },
+                    { display: 'Stanslaus', output: 'Einkenni verið stanslaus' }
+                ]
+            },
             {
                 display: 'Versnar við',
                 subOptions: [
                     { display: 'Áreynslu', output: 'Versnar við áreynslu' },
                     { display: 'Máltíð', output: 'Versnar við að borða' },
                     { display: 'Stress', output: 'Versnar við stress' },
-                    { display: 'Liggja flatur', output: 'Versnar við að liggja flatur' },
-                    { display: 'Kynging', output: 'Versnar við kyngingu' },
+                    { display: 'Á kvöldin', output: 'Versnar á kvöldin' },
+                    { display: 'Liggja', output: 'Versnar við að liggja útaf' },
+                    { display: 'Kyngja', output: 'Versnar við kyngingu' },
                     { display: 'Beygja sig fram', output: 'Versnar við að beygja sig fram' },
-                    { display: 'Hreyfing', output: 'Versnar við hreyfingu' }
+                    { display: 'Hreyfing', output: 'Versnar við hreyfingu' },
+                    { display: 'Hraðahindarnir', output: 'Versnar við að keyra yfir hraðahindranir' }
                 ],
                 onRightClickOutput: 'Ekkert sem gerir verkinn verri'
             },
@@ -4954,8 +5142,8 @@ const SymptomsMelting = [
                     { display: 'Hvíld', output: 'Skánar við hvíld' },
                     { display: 'Máltíð', output: 'Skánar við máltíð' },
                     { display: 'Hægðalosun', output: 'Skánar við hægðalosun' },
-                    { display: 'Sofa á hlið', output: 'Skánar við að sofa á hlið' },
-                    { display: 'Hreyfingu', output: 'Skánar við hreyfingu' }
+                    { display: 'Hreyfingu', output: 'Skánar við hreyfingu' },
+                    { display: 'Grafkyrr', output: 'Skánar við að liggja grafkyrr' }
                 ],
                 onRightClickOutput: 'Ekkert sem gerir verkinn betri'
             },
@@ -4975,56 +5163,11 @@ const SymptomsMelting = [
                 ]
             }
         ]
-    },    
+    },           
     {
         name: '',
         type: 'options',
-        display: ['Hægðatregða', 'Niðurgangur'],
-        options: [
-            {
-                display: 'Hægðatregða',
-                subOptions: [
-                    { display: 'Hægðatregða', output: 'Hægðatregða' },
-                    { display: 'Grunur um', output: 'Grunur um hægðatregðu' },
-                    { display: 'Rembingur', output: 'Hægðatregða. Rembist mikið en kemur lítið' },
-                    { display: 'Grunur + rembingur + slæmt mataræði', output: 'Grunur um hægðatregða. Rembist mikið en kemur lítið. Drekkur ekki mikið vatn. Trefjaneysla mætti vera betri' }
-                ],
-                onRightClickOutput: 'Ekki hægðatregða'
-            },
-            { display: 'Niðurgangur', output: 'Niðurgangur', onRightClickOutput: 'Ekki niðurgangur' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Ógleði', 'Uppköst', 'Uppþemba'],
-        options: [
-            { display: 'Ógleði', output: 'Ógleði', onRightClickOutput: 'Ekki ógleði' },
-            { display: 'Uppköst', output: 'Uppköst', onRightClickOutput: 'Ekki uppköst' },
-            { display: 'Uppþemba', output: 'Uppþemba', onRightClickOutput: 'Ekki uppþemba' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Brjóstsviði', 'Lystarleysi'],
-        options: [
-            { display: 'Brjóstsviði', output: 'Brjóstsviði', onRightClickOutput: 'Ekki brjóstsviði' },
-            { display: 'Lystarleysi', output: 'Lýsir lystarleysi', onRightClickOutput: 'Ekki lystarleysi' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Dyschezia'],
-        options: [
-            { display: 'Dyschezia', output: 'Verkir við hægðalosun', onRightClickOutput: 'Ekki verkir við hægðalosun' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Hiti'],
+        display: ['Hiti', 'Algeng gildi'],
         options: [
             {
                 display: 'Hiti',
@@ -5035,91 +5178,99 @@ const SymptomsMelting = [
                     { display: 'Ekki mælt', output: 'Upplifað sig með hita en ekki mælt sig' }
                 ],
                 onRightClickOutput: 'Ekki fengið hita'
+            },
+            {
+                display: 'Algeng gildi',
+                subOptions: Array.from({length: 46}, (_, i) => {
+                    const lowerTemp = (37.0 + i * 0.1).toFixed(1) + '°C';
+                    return {
+                        display: lowerTemp,
+                        subOptions: Array.from({length: 46}, (_, j) => {
+                            const upperTemp = (37.0 + j * 0.1).toFixed(1) + '°C';
+                            return {
+                                display: upperTemp,
+                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}`
+                            };
+                        })
+                    };
+                })
             }
         ]
     }
+    
 ];
 const ExamsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Ástand sjúklings', 'Vökvaástand'],
+        display: ['Lasleg/ur', 'Meðtekin/n', 'Slímhúðir', 'Háræðafylling'],
         options: [
             {
-                display: 'Ástand sjúklings',
+                display: 'Lasleg/ur',
                 subOptions: [
-                    { display: 'Lasleg/ur', output: 'Laslega útlítandi', onRightClickOutput: 'Ekki bráðveikindalegt útlit' },
-                    {
-                        display: 'Verkjar',
-                        subOptions: [
-                            { display: 'KK', output: 'Virðist meðtekinn af verk', onRightClickOutput: 'Ekki meðtekinn af verk' },
-                            { display: 'KVK', output: 'Virðist meðtekin af verk', onRightClickOutput: 'Ekki meðtekin af verk' }
-                        ]
-                    }
-                    
+                    { display: 'Lasleg/ur', output: 'Laslega útlítandi' }
                 ],
-                onRightClickSubOptions: [
-                    { display: 'Ekki laslegt útlit', output: 'Ekki bráðveikindalegt útlit' },
-                    {
-                        display: 'Ekki meðtekin/n af verk',
-                        subOptions: [
-                            { display: 'KK', output: 'Ekki meðtekinn af verk' },
-                            { display: 'KVK', output: 'Ekki meðtekin af verk' }
-                        ]
-                    }
-                    
-                ]
+                onRightClickOutput: 'Ekki bráðveikindalegt útlit'
             },
             {
-                display: 'Vökvaástand',
-                subOptions: [
-                    {
-                        display: 'Þurrar slímhúðir',
-                        output: 'Slímhúð í munni er þurr',
-                    },
-                    {
-                        display: 'Háræðafylling lengd',
-                        output: 'Lengd háræðafylling',
-                    }
-                ],
-                onRightClickSubOptions: [
-                    {
-                        display: 'Rakar slímhúðir',
-                        output: 'Rakar slímhúðir'
-                    },
-                    {
-                        display: 'Háræðafylling eðlileg',
-                        output: 'Eðlileg háræðafylling'
-                    }
-                ]
+                display: 'Meðtekin/n',
+                output: 'Sjúklingur virðist meðtekinn af verk',
+                onRightClickOutput: 'Sjúklingur ekki meðtekinn af verk'
+            },
+            {
+                display: 'Slímhúðir',
+                output: 'Þurrar slímhúðir',
+                onRightClickOutput: 'Rakar slímhúðir'
+            },
+            {
+                display: 'Háræðafylling',
+                output: 'Lengd háræðafylling perifert',
+                onRightClickOutput: 'Eðlileg háræðafylling'
             }
+            
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Kviður - útlit', 'Garnahljóð', 'Bank', 'Þreifing', 'Sleppieymsli'],
+        display: ['Kviður þaninn', 'Ör', 'Holdafar'],
         options: [
             {
-                display: 'Kviður - útlit',
-                subOptions: [
-                    { display: 'Þaninn', output: 'Kviður þaninn' },
-                    {
-                        display: 'Ör',
-                        subOptions: [
-                            { display: 'Ör eftir botnlangatöku', output: 'Ör eftir botnlangatöku' },
-                            { display: 'Ör eftir gallblöðrutöku', output: 'Ör eftir gallblöðrutöku' },
-                            { display: 'Ör eftir aðgerð á kvið', output: 'Ör eftir aðgerð á kvið' }
-                        ]
-                    },
-                    { display: 'Panniculus', output: 'Panniculus' }
-                ],
-                onRightClickSubOptions: [
-                    { display: 'Óþaninn', output: 'Kviður óþaninn' },
-                    { display: 'Engin ör', output: 'Engin ör' },
-                    { display: 'Eðlilegt holdafar', output: 'Eðlilegt holdafar' }
-                ]
+                display: 'Kviður þaninn',
+                output: 'Kviður þaninn',
+                onRightClickOutput: 'Kviður óþaninn'
             },
+            {
+                display: 'Ör',
+                subOptions: [
+                    { display: 'Ör eftir botnlangatöku', output: 'Ör eftir botnlangatöku' },
+                    { display: 'Ör eftir gallblöðrutöku', output: 'Ör eftir gallblöðrutöku' },
+                    { display: 'Ör eftir aðgerð á kvið', output: 'Ör eftir aðgerð á kvið' }
+                ],
+                onRightClickOutput: 'Engin ör'
+            },
+            { display: 'Holdarfar', 
+                subOptions: [
+                    { display: 'Yfirþyngd', output: 'Er í yfirþyngd' },
+                    { display: 'Grannvaxinn', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Skjólstæðingur grannvaxinn' },
+                            { display: 'Aðeins', output: 'Skjólstæðingur aðeins grannvaxinn' },
+                            { display: 'Verulega', output: 'Skjólstæðingur verulega grannvaxinn' }
+                        ]
+                        
+                    },
+                    
+                ],
+                 onRightClickOutput: 'Eðlilegt holdafar' 
+            }
+        ]
+    },    
+    {
+        name: '',
+        type: 'options',
+        display: ['Garnahljóð', 'Bank', 'Þreifing', 'Sleppieymsli', 'Murphy'],
+        options: [
             {
                 display: 'Garnahljóð',
                 subOptions: [
@@ -5186,6 +5337,14 @@ const ExamsMelting = [
                         ]
                     },
                     {
+                        display: 'Periumbilical',
+                        subOptions: [
+                            { display: 'Létt þreifing', output: 'Eymsli á periumbilical svæði við létta þreifingu' },
+                            { display: 'Miðlungs þreifing', output: 'Eymsli á periumbilical svæði við miðlungs þreifingu' },
+                            { display: 'Djúpa þreifing', output: 'Eymsli á periumbilical svæði við djúpa þreifingu' }
+                        ]
+                    },
+                    {
                         display: 'Suprapubic svæði',
                         subOptions: [
                             { display: 'Létt þreifing', output: 'Eymsli yfir suprapubic svæði við létta þreifingu' },
@@ -5213,14 +5372,7 @@ const ExamsMelting = [
                     }
                 ],
                 onRightClickOutput: 'Engin sleppieymsli'
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Murphy'],
-        options: [
+            },
             { display: 'Murphy', output: 'Murphy teikn jákvætt', onRightClickOutput: 'Murphy teikn neikvætt' }
         ]
     },
@@ -5409,10 +5561,25 @@ const PlanMelting = [
                 display: 'Gastroenteritis',
                 subOptions: [
                     { display: 'Greining', output: 'Gastroenteritis' },
-                    { display: 'Grunur', output: 'Grunur um gastroenteritis' }
+                    { display: 'Grunur', output: 'Grunur um gastroenteritis' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Viral, obs, endurmat pn', output: 'Grunur um viral gastroenteritis. Veiti almennar ráðleggingar. Passa vökvainntöku og næringu. Gengur yfirleitt yfir á 1-2 vikum. Endurmat ef lagast ekki eða fyrr ef versnar' },
+                        ]
+                    }
                 ]
             },
-            { display: 'Niðurgangur', output: 'Niðurgangur' },
+            { display: 'Niðurgangur',
+                subOptions: [
+                    { display: 'Greining', output: 'Niðurgangur' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Stutt saga, stemmandi pn, endurmat ef lagast ekki', output: 'Niðurgangur. Stutt saga. Almennar ráðleggingar. Getur notað stemmandi lyf svo sem lóperamíð PN. Endurmat ef lagast ekki á næstu vikum' },
+                            { display: 'Löng saga, hægðasýni', output: 'Niðurgangur. Löng saga. Ráðlegg hægðasýni til frekari greiningar' },
+                        ]
+                    }
+                ]
+            },
             {
                 display: 'Hægðatregða',
                 subOptions: [
@@ -5669,6 +5836,7 @@ const PlanMelting = [
                 display: 'Hægðasýni',
                 subOptions: [
                     { display: 'Ræktun', output: 'Ráðlegg að fá hægðasýni í ræktun' },
+                    { display: 'Ræktun+kalprotektin', output: 'Ráðlegg að fá hægðasýni í ræktun. Mælum einnig kalprotektin' },
                     { display: 'Snýkjudýr', output: 'Ráðlegg að fá hægðasýni í snýkjudýraleit' },
                     { display: 'Ræktun og snýkjudýraleit', output: 'Ráðlegg að fá hægðasýni í ræktun og snýkjudýraleit' }
                 ]
@@ -5719,11 +5887,157 @@ const PlanMelting = [
         ]
     }
 ];
+
+const KerfakonnunMelting = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Hægðir', 'Hægðatregða', 'Niðurgangur', 'Dyschezia', 'Klósettferðir'],
+        options: [
+            {
+                display: 'Hægðir',
+                subOptions: [
+                    { display: 'Svartar', output: 'Svartar hægðir' },
+                    {
+                        display: 'Blóð',
+                        subOptions: [
+                            { display: 'NOS', output: 'Blóð í hægðum' },
+                            { display: 'Á pappír', output: 'Stundum blóð í hægðum. Kemur þá á pappír' },
+                            { display: 'Lítið magn í skál', output: 'Lýsir blóði í hægðum. Blóðlitað vatn eftir hægðalosun' },
+                            { display: 'Mikið magn í skál', output: 'Lýsir blóði í hægðum. Mikið magn af fersku blóði í skál' }
+                        ]
+                    },
+                    { display: 'Ljósar og fljótandi', output: 'Ljósar og fljótandi hægðir' },
+                    { display: 'Þunnar ræmur', output: 'Lýsir hægðum sem þunnum ræmum' },
+                    { display: 'Pebbles', output: 'Lýsir hægðum sem litlum hnúðum' }
+                ],
+                onRightClickOutput: 'Hægðir í lagi'
+            },
+            {
+                display: 'Hægðatregða',
+                subOptions: [
+                    { display: 'Hægðatregða', output: 'Hægðatregða' },
+                    { display: 'Grunur um', output: 'Grunur um hægðatregðu' },
+                    { display: 'Rembingur', output: 'Hægðatregða. Rembist mikið en kemur lítið' },
+                    { display: 'Grunur + rembingur + slæmt mataræði', output: 'Grunur um hægðatregða. Rembist mikið en kemur lítið. Drekkur ekki mikið vatn. Trefjaneysla mætti vera betri' }
+                ],
+                onRightClickOutput: 'Ekki hægðatregða'
+            },
+            { display: 'Niðurgangur', output: 'Niðurgangur', onRightClickOutput: 'Ekki niðurgangur' },
+            { display: 'Dyschezia', output: 'Verkir við hægðalosun', onRightClickOutput: 'Ekki verkir við hægðalosun' },
+            {
+                display: 'Klósettferðir',
+                subOptions: [
+                    {
+                        display: 'Margar á dag',
+                        subOptions: [
+                            { display: '2 sinnum á dag', output: 'Losar hægðir 2 sinnum á dag' },
+                            { display: '3 sinnum á dag', output: 'Losar hægðir 3 sinnum á dag' },
+                            { display: '4 sinnum á dag', output: 'Losar hægðir 4 sinnum á dag' },
+                            { display: '5 sinnum á dag', output: 'Losar hægðir 5 sinnum á dag' },
+                            { display: '6 sinnum á dag', output: 'Losar hægðir 6 sinnum á dag' },
+                            { display: 'Meira en 6 sinnum á dag', output: 'Losar hægðir meira en 6 sinnum á dag' }
+                        ]
+                    },
+                    { display: 'Ein á dag', output: 'Losar hægðir einu sinni á dag' },
+                    { display: 'Annan hvern dag', output: 'Losar hægðir annan hvern dag' },
+                    { display: '2-3 sinnum í viku', output: 'Losar hægðir 2-3 sinnum í viku' },
+                    { display: 'Ein sinni í viku', output: 'Losar hægðir einu sinni í viku' },
+                    { display: 'Sjaldnar en einu sinni í viku', output: 'Losar hægðir sjaldnar en einu sinni í viku' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Ógleði', 'Uppköst', 'Uppþemba'],
+        options: [
+            { display: 'Ógleði', output: 'Ógleði', onRightClickOutput: 'Ekki ógleði' },
+            { display: 'Uppköst', output: 'Uppköst', onRightClickOutput: 'Ekki uppköst' },
+            { display: 'Uppþemba', output: 'Uppþemba', onRightClickOutput: 'Ekki uppþemba' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Þvaglát', 'Vont', 'Óþægindi', 'Blóð', 'Tregða'],
+        options: [
+            { display: 'Þvaglát', output: 'Einkenni við þvaglát', onRightClickOutput: 'Engin einkenni við þvaglát' },
+            { display: 'Vont', output: 'Verkjar', onRightClickOutput: 'Ekki vont að pissa' },
+            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Engin óþægindi' },
+            { display: 'Blóð', output: 'Blóð í þvagi', onRightClickOutput: 'Ekki blóð í þvagi' },
+            { display: 'Tregða', output: 'Þvagtregða', onRightClickOutput: 'Neitar þvagtregðu' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Tíðablæðingar', 'Á getnaðarvörn', 'Ólettupróf'],
+        options: [
+            {
+                display: 'Tíðablæðingar',
+                onRightClickOutput: 'Reglulegar tíðablæðingar',
+                subOptions: [
+                    { display: 'Reglulegar', output: 'Fer á reglulegar blæðingar' },
+                    { display: 'Óreglulegar', output: 'Er með óreglulegar blæðingar' },
+                    { display: 'Ekki', output: 'Fer ekki á blæðingar' }
+                ]
+            },
+            {
+                display: 'Á getnaðarvörn',
+                onRightClickOutput: 'Ekki á getnaðarvörn',
+                subOptions: [
+                    { display: 'Pillan', output: 'Er á pillunni' },
+                    {
+                        display: 'Lykkjan',
+                        subOptions: [
+                            { display: 'NOS', output: 'Er með lykkjuna' },
+                            { display: 'Hormóna', output: 'Er með hormónalykkjuna' },
+                            { display: 'Kopar', output: 'Er með koparlykkjuna' }
+                        ]
+                    },
+                    { display: 'Hormónastafur', output: 'Er með hormónastafinn' },
+                    { display: 'Hormónaplástur', output: 'Er með hormónaplásturinn' },
+                    { display: 'Sprautan', output: 'Er á sprautunni' },
+                    { display: 'Vaginal Hringur', output: 'Er með vaginal hringinn' },
+                    { display: 'Smokkar', output: 'Notar smokka' },
+                    { display: 'Withdrawal', output: 'Notar withdrawal aðferðina' },
+                    { display: 'Engin getnaðarvörn', output: 'Ekki á getnaðarvörn' }
+                ]
+            },
+            {
+                display: 'Ólettupróf',
+                output: 'Óléttupróf jákvætt heimafyrir',
+                onRightClickSubOptions: [
+                    { display: 'Neikvætt', output: 'Óléttupróf neikvætt heimafyrir' },
+                    { display: 'Ekki tekið', output: 'Ekki tekið óléttupróf' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Áverki'],
+        options: [
+            {
+                display: 'Áverki',
+                onRightClickOutput: 'Ekki áverkasaga',
+                subOptions: [
+                    { display: 'Högg', output: 'Högg' },
+                    { display: 'Bylta', output: 'Bylta' }
+                ]
+            }
+        ]
+    }
+];
+
 const historyMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Hraust/ur', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        display: ['Hraust/ur', 'Nýleg veikindi', 'Aðgerðir', 'Utanlegsfóstur'],
         options: [
             {
                 display: 'Hraust/ur',
@@ -5733,6 +6047,36 @@ const historyMelting = [
                 ],
                 onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunninn'
             },
+            {
+                display: 'Nýleg veikindi',
+                onRightClickOutput: 'Ekki nýleg veikindi',
+                subOptions: [
+                    { display: 'Flensueinkenni', output: 'Nýlega með flensueinkenni' },
+                    { display: 'Magapest', output: 'Nýlega með magapest' },
+                    { display: 'Matareitrun', output: 'Nýlega með matareitrun' }
+                ]
+            },
+            {
+                display: 'Aðgerðir',
+                onRightClickOutput: 'Ekki saga um aðgerð á kviðarholssvæði',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um aðgerð á kviðarholssvæði' },
+                    { display: 'Botnlangataka', output: 'Saga um botlangatöku' },
+                    { display: 'Gallblöðrutaka', output: 'Saga um gallblöðrutöku' }
+                ]
+            },
+            {
+                display: 'Utanlegsfóstur',
+                output: 'Saga um utanlegsfóstur',
+                onRightClickOutput: 'Ekki saga um utanlegsfóstur'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        options: [
             {
                 display: 'HTN',
                 output: 'Saga um háþrýsting',
@@ -5867,9 +6211,205 @@ const RaudFloggMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Þyngdartap', 'Nætursviti', 'Blóð í hægðum'],
+        display: ['Þyngdartap', 'Nætursviti', 'Blóð í hægðum', 'Blóðug uppköst'],
         options: [
-            { display: 'Þyngdartap', output: 'Lýsir þyngdartapi', onRightClickOutput: 'Ekki þyngdartap' },
+            {
+                display: 'Þyngdartap',
+                onRightClickOutput: 'Neitar þyngdartapi',
+                subOptions: [
+                    { display: 'NOS', output: 'Lýsir þyngdartapi' },
+                    {
+                        display: '1-10 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 1} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 1}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 1}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 1}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 1}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 1}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    },
+                    {
+                        display: '11-20 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 11} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 11}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 11}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 11}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 11}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 11}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    },
+                    {
+                        display: '21-30 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 21} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 21}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 21}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 21}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 21}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 21}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    },
+                    {
+                        display: '31-40 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 31} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 31}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 31}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 31}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 31}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 31}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    },
+                    {
+                        display: '41-50 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 41} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 41}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 41}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 41}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 41}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 41}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    },
+                    {
+                        display: '51-60 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 51} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 51}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 51}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 51}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 51}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 51}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    },
+                    {
+                        display: '61-70 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 61} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 61}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 61}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 61}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 61}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 61}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    },
+                    {
+                        display: '71-80 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 71} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 71}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 71}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 71}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 71}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 71}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    },
+                    {
+                        display: '81-90 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 81} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 81}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 81}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 81}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 81}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 81}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    },
+                    {
+                        display: '91-100 kg',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${i + 91} kg`,
+                            subOptions: [
+                                { display: '2 vikur', output: `Þyngdartap. Misst ${i + 91}kg á 2 vikum` },
+                                { display: '1 mánuður', output: `Þyngdartap. Misst ${i + 91}kg á 1 mánuði` },
+                                ...Array.from({ length: 11 }, (_, j) => ({
+                                    display: `${j + 2} mánuðir`,
+                                    output: `Þyngdartap. Misst ${i + 91}kg á ${j + 2} mánuðum`
+                                })),
+                                { display: '1 ár', output: `Þyngdartap. Misst ${i + 91}kg á 1 ári` },
+                                ...Array.from({ length: 10 }, (_, j) => ({
+                                    display: `${j + 2} ár`,
+                                    output: `Þyngdartap. Misst ${i + 91}kg á ${j + 2} árum`
+                                }))
+                            ]
+                        }))
+                    }
+                ]
+            },
             { display: 'Nætursviti', output: 'Lýsir auknum nætursvita', onRightClickOutput: 'Ekki aukinn nætursviti' },
             {
                 display: 'Blóð í hægðum',
@@ -5885,7 +6425,8 @@ const RaudFloggMelting = [
                     { display: 'Svartar hægðir', output: 'Verið með svartar hægðir' }
                 ],
                 onRightClickOutput: 'Ekki blóð í hægðum eða svartar hægðir'
-            }
+            },
+            { display: 'Blóðug uppköst', output: 'Lýsir blóðugum uppköstum', onRightClickOutput: 'Ekki blóðug uppköst' }
         ]
     },
     {
@@ -7270,7 +7811,67 @@ const SymptomsShoulder = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna'],
+        display: ['Staðsetning', 'Verkur'],
+        options: [
+            {
+                display: 'Staðsetning',
+                subOptions: [
+                    { display: 'Hægri', output: 'Einkenni frá hægri öxl' },
+                    { display: 'Vinstri', output: 'Einkenni frá vinstri öxl' }
+                ]
+            },
+            {
+                display: 'Verkur',
+                onRightClickOutput: 'Neitar verk',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: [
+                            { display: 'NOS', output: 'Verkur' },
+                            { display: 'Innanvert', output: 'Verkur. Mestur medialt á öxl' },
+                            { display: 'Utanvert', output: 'Verkur. Mestur lateralt á öxl' },
+                            { display: 'Framanvert', output: 'Verkur. Mestur framanvert á öxl' },
+                            { display: 'Aftanvert', output: 'Verkur. Mestur aftanvert á öxl' }
+                        ]
+                    },
+                    {
+                        display: 'Djúpur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Djúpur verkur' },
+                            { display: 'Innanvert', output: 'Djúpur verkur. Mestur medialt á öxl' },
+                            { display: 'Utanvert', output: 'Djúpur verkur. Mestur lateralt á öxl' },
+                            { display: 'Framanvert', output: 'Djúpur verkur. Mestur framanvert á öxl' },
+                            { display: 'Aftanvert', output: 'Djúpur verkur. Mestur aftanvert á öxl' }
+                        ]
+                    },
+                    {
+                        display: 'Brennandi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Brennandi verkur' },
+                            { display: 'Innanvert', output: 'Brennandi verkur. Mestur medialt á öxl' },
+                            { display: 'Utanvert', output: 'Brennandi verkur. Mestur lateralt á öxl' },
+                            { display: 'Framanvert', output: 'Brennandi verkur. Mestur framanvert á öxl' },
+                            { display: 'Aftanvert', output: 'Brennandi verkur. Mestur aftanvert á öxl' }
+                        ]
+                    },
+                    {
+                        display: 'Stingandi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Stingandi verkur' },
+                            { display: 'Innanvert', output: 'Stingandi verkur. Mestur medialt á öxl' },
+                            { display: 'Utanvert', output: 'Stingandi verkur. Mestur lateralt á öxl' },
+                            { display: 'Framanvert', output: 'Stingandi verkur. Mestur framanvert á öxl' },
+                            { display: 'Aftanvert', output: 'Stingandi verkur. Mestur aftanvert á öxl' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Tímalengd', 'Onset', 'Áverki'],
         options: [
             {
                 display: 'Tímalengd einkenna',
@@ -7329,9 +7930,118 @@ const SymptomsShoulder = [
                     }
                 ],
                 cancelText: ''
+            },
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: 'Hægt og rólega', output: 'Byrjaði hægt og rólega' },
+                    { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
+                    { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
+                ]
+            },
+            {
+                display: 'Áverki',
+                onRightClickOutput: 'Ekki áverkasaga',
+                subOptions: [
+                    {
+                        display: 'Rak sig í',
+                        subOptions: [
+                            { display: 'NOS', output: 'Rak sig í' },
+                            { display: 'Í vinnu', output: 'Rak sig í vinnunni' },
+                            { display: 'Á leið til vinnu', output: 'Rak sig í á leið til vinnu' },
+                            { display: 'Heimafyrir', output: 'Rak sig í heimafyrir' }
+                        ]
+                    },
+                    {
+                        display: 'Snúningsáverki',
+                        subOptions: [
+                            { display: 'NOS', output: 'Snéri uppá öxlina' },
+                            { display: 'Í vinnu', output: 'Snéri uppá öxl í vinnunni' },
+                            { display: 'Á leið til vinnu', output: 'Snéri uppá öxl á leið til vinnu' },
+                            { display: 'Heimafyrir', output: 'Snéri uppá öxlina heimafyrir' }
+                        ]
+                    },
+                    {
+                        display: 'Íþróttaáverki', output: 'Íþróttaáverki'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Leiðni', 'Versnar', 'Severity'],
+        options: [
+            {
+                display: 'Leiðni',
+                onRightClickOutput: 'Neitar leiðni',
+                subOptions: [
+                    { display: 'Niður í handlegg', output: 'Leiðir niður í handlegg' },
+                    { display: 'Upp í háls', output: 'Leiðir upp í háls' },
+                    { display: 'Í herðablað', output: 'Leiðir aftur í herðablað' }
+                ]
+            },
+            {
+                display: 'Versnar',
+                onRightClickOutput: 'Ekkert sem gerir verkinn verri',
+                subOptions: [
+                    { display: 'Hreyfingu', output: 'Versnar við hreyfingu' },
+                    { display: 'Æfingar', output: 'Versnar við æfingar' },
+                    { display: 'Hvíld', output: 'Versnar við hvíld' },
+                    {
+                        display: 'Næturlagi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Verri á nóttunni' },
+                            { display: 'Vaknar vegna verkja', output: 'Einkenni verst á nóttunni. Vaknar vegna verkja' },
+                            { display: 'Sofnar ekki og vaknar', output: 'Einkenni verst á nóttunni. Á í erfiðleikum með að sofna og vaknar vegna verkja' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Severity',
+                subOptions: [
+                    { display: '1', output: 'Skalar verkinn 1/10' },
+                    { display: '2', output: 'Skalar verkinn 2/10' },
+                    { display: '3', output: 'Skalar verkinn 3/10' },
+                    { display: '4', output: 'Skalar verkinn 4/10' },
+                    { display: '5', output: 'Skalar verkinn 5/10' },
+                    { display: '6', output: 'Skalar verkinn 6/10' },
+                    { display: '7', output: 'Skalar verkinn 7/10' },
+                    { display: '8', output: 'Skalar verkinn 8/10' },
+                    { display: '9', output: 'Skalar verkinn 9/10' },
+                    { display: '10', output: 'Skalar verkinn 10/10' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Axlarsaga', 'Aðgerð'],
+        options: [
+            {
+                display: 'Axlarsaga',
+                onRightClickOutput: 'Ekki fyrri saga um axlarvandamál',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um axlarvandamál áður' },
+                    { display: 'Íþróttameiðsl', output: 'Saga um axlarvandamál. Gömul íþróttameiðsl' }
+                ]
+            },
+            {
+                display: 'Aðgerð',
+                onRightClickOutput: 'Aldrei farið í aðgerð á öxl',
+                subOptions: [
+                    { display: 'NOS', output: 'Þurft að fara í aðgerð á öxl' },
+                    { display: 'Rotator cuff', output: 'Þurft að fara í aðgerð á rotator cuff' },
+                    { display: 'Frozen shoulder release', output: 'Þurft að fara í aðgerð vegna frozen shoulder' },
+                    { display: 'Shoulder arthroscopy', output: 'Þurft að fara í liðspeglun á öxl' }
+                ]
             }
         ]
     }
+    
 ];
 const ExamsShoulder = [
     {
@@ -7455,7 +8165,384 @@ const ExamsShoulder = [
         ]
     }
 ];
-const PlanShoulder = [];
+const PlanShoulder = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Axlarmeinsemd', 'Áverki', 'Impingement', 'Aðrar greiningar'],
+        options: [
+            {
+                display: 'Axlarmeinsemd',
+                subOptions: [
+                    {
+                        display: 'Stutt saga',
+                        subOptions: [
+                            { display: 'NOS', output: 'Axlarmeinsemd. Stutt saga' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Hvíld, RICE, bólgueyðandi, endurmatpn', output: 'Axlarmeinsemd. Stutt saga. RICE ráðleggingar. Verkjalyf eftir þörfum. Endurmat ef einkenni lagast ekki á næstu dögum' },
+                                    { display: 'Hvíld, RICE, bólgueyðandi, sjúkraþjálfun', output: 'Axlarmeinsemd. Stutt saga. RICE ráðleggingar. Verkjalyf eftir þörfum. Einnig tilvísun í sjúkraþjálfun' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Löng saga',
+                        subOptions: [
+                            { display: 'NOS', output: 'Axlarmeinsemd. Löng saga' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'RTG + ómskoðun, pantar símatíma', output: 'Axlarmeinsemd. Nokkuð löng saga. Ráðlegg RTG + ómskoðun. Pantar sér símatíma að rannsóknum loknum' },
+                                    { display: 'Segulómun, pantar símatíma', output: 'Axlarmeinsemd. Nokkuð löng saga. Ráðlegg segulómun. Pantar sér símatíma að rannsókn lokinni' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Áverki',
+                subOptions: [
+                    { display: 'Greining', output: 'Áverki á öxl' },
+                    { display: 'Grunur', output: 'Grunur um áverka á öxl' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Mildur, hvíld, bólgueyðandi', output: 'Áverki á öxl með mildum einkennum. Ráðlegg hvíld, kælingu og bólgueyðandi lyf næstu daga. Endurmat ef einkenni versna eða lagast ekki.' },
+                            { display: 'Áverki, röntgenmynd', output: 'Áverki á öxl. Ráðlegg röntgenmynd til að útiloka beinbrot eða liðhlaup.' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Impingement',
+                subOptions: [
+                    { display: 'Greining', output: 'Impingement heilkenni' },
+                    { display: 'Grunur', output: 'Grunur um impingement heilkenni' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Verkjameðferð, sjúkraþjálfun', output: 'Impingement heilkenni. Ráðlegg verkjalyf og sjúkraþjálfun til að bæta hreyfistjórnun og styrk.' },
+                            { display: 'Viðvarandi, sterasprautu, ráðl, lyf í gáttina, endurmat', output: 'Impingement heilkenni. Viðvarandi einkenni. Ræðum meðferðamöguleika. Í samráði við skjólstæðing ákveðið að reyna sterainjection. Set lyf í gáttina og bóka nýjan tíma.' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Aðrar greiningar',
+                subOptions: [
+                    {
+                        display: 'Liðhlaup',
+                        subOptions: [
+                            { display: 'Greining', output: 'Liðhlaup í öxl' },
+                            { display: 'Grunur', output: 'Grunur um liðhlaup í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Bráðaaðstoð, liðsetning', output: 'Staðfest liðhlaup. Ráðlegg bráðaaðstoð við liðsetningu. Röntgenmynd til staðfestingar eftir liðsetningu.' },
+                                    { display: 'Ómun, segulómun, sjúkraþjálfun', output: 'Ef viðvarandi óstöðugleiki eða einkenni eftir liðsetningu. Ráðlegg ómun eða segulómun og sjúkraþjálfun.' },
+                                    { display: 'Endurtekið liðhlaup, skurðaðgerð', output: 'Endurtekið liðhlaup. Ráðlegg skurðaðgerð og endurhæfingu.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Liðbandaáverki',
+                        subOptions: [
+                            { display: 'Greining', output: 'Liðbandaáverki í öxl' },
+                            { display: 'Grunur', output: 'Grunur um liðbandaáverka í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Ómskoðun, segulómun', output: 'Grunur um liðbandaáverka í öxl. Ráðlegg ómskoðun eða segulómun til greiningar.' },
+                                    { display: 'Staðfest liðbandaáverki, sjúkraþjálfun', output: 'Staðfest liðbandaáverki. Ráðlegg sjúkraþjálfun og styrktaræfingar.' },
+                                    { display: 'Skurðaðgerð, endurhæfing', output: 'Ef ekki bati eftir verndandi meðferð, ráðlegg skurðaðgerð og endurhæfingu.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Sinabólga',
+                        subOptions: [
+                            { display: 'Greining', output: 'Sinabólga í öxl' },
+                            { display: 'Grunur', output: 'Grunur um sinabólgu í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Hvíld, ís, bólgueyðandi lyf', output: 'Sinabólga í öxl. Ráðlegg hvíld, kælingu og bólgueyðandi lyf. Endurmat ef einkenni lagast ekki eftir 2 vikur.' },
+                                    { display: 'Sjúkraþjálfun, endurmat', output: 'Viðvarandi sinabólga. Ráðlegg sjúkraþjálfun og endurmat eftir 4 vikur.' },
+                                    { display: 'Sterasprauta, ómun', output: 'Ef einkenni eru áfram til staðar, ráðlegg sterasprautu og ómskoðun til að staðfesta greiningu.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Frosin öxl (Adhesive Capsulitis)',
+                        subOptions: [
+                            { display: 'Greining', output: 'Frosin öxl' },
+                            { display: 'Grunur', output: 'Grunur um frosna öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Sjúkraþjálfun, verkjameðferð', output: 'Frosin öxl. Ráðlegg sjúkraþjálfun og verkjameðferð. Endurmat eftir 4-6 vikur.' },
+                                    { display: 'Sterasprauta, endurmat', output: 'Viðvarandi einkenni. Ráðlegg sterasprautu og endurmat eftir 4 vikur.' },
+                                    { display: 'Skurðaðgerð, endurhæfing', output: 'Alvarleg tilfelli eða ekki bati með verndandi meðferð. Ráðlegg skurðaðgerð og endurhæfingu.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Slitgigt',
+                        subOptions: [
+                            { display: 'Greining', output: 'Slitgigt í öxl' },
+                            { display: 'Grunur', output: 'Grunur um slitgigt í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'RTG, staðfest slitgigt', output: 'Grunur um slitgigt í öxl. Ráðlegg RTG til greiningar.' },
+                                    { display: 'Verkjameðferð, sjúkraþjálfun', output: 'Staðfest slitgigt. Ráðlegg verkjalyf og sjúkraþjálfun.' },
+                                    { display: 'Liðskipti, skurðaðgerð', output: 'Alvarleg slitgigt. Ráðlegg liðskipti eða skurðaðgerð ef við á. Endurhæfing eftir aðgerð.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Rotator cuff rifa',
+                        subOptions: [
+                            { display: 'Greining', output: 'Rotator cuff rifa' },
+                            { display: 'Grunur', output: 'Grunur um rotator cuff rifur' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Ómskoðun, segulómun', output: 'Grunur um rotator cuff rifu. Ráðlegg ómskoðun eða segulómun til greiningar.' },
+                                    { display: 'Sjúkraþjálfun, verkjameðferð', output: 'Staðfest minni rifa. Ráðlegg sjúkraþjálfun og verkjameðferð.' },
+                                    { display: 'Skurðaðgerð, endurhæfing', output: 'Staðfest stór rifa eða viðvarandi einkenni. Ráðlegg skurðaðgerð og endurhæfingu.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Bursitis',
+                        subOptions: [
+                            { display: 'Greining', output: 'Bursitis í öxl' },
+                            { display: 'Grunur', output: 'Grunur um bursitis í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Hvíld, ís, bólgueyðandi lyf', output: 'Bursitis í öxl. Ráðlegg hvíld, kælingu og bólgueyðandi lyf. Endurmat ef einkenni versna.' },
+                                    { display: 'Sterasprauta, sjúkraþjálfun', output: 'Viðvarandi einkenni. Ráðlegg sterasprautu og sjúkraþjálfun.' },
+                                    { display: 'Skurðaðgerð ef ekki bati', output: 'Ef ekki bati eftir sprautur og sjúkraþjálfun, ráðlegg skurðaðgerð.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Sinaskaði',
+                        subOptions: [
+                            { display: 'Greining', output: 'Sinaskaði í öxl' },
+                            { display: 'Grunur', output: 'Grunur um sinaskaða í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Ómskoðun, segulómun', output: 'Grunur um sinaskaða. Ráðlegg ómskoðun eða segulómun til greiningar.' },
+                                    { display: 'Sjúkraþjálfun, verkjameðferð', output: 'Staðfest minni sinaskaði. Ráðlegg sjúkraþjálfun og verkjameðferð.' },
+                                    { display: 'Skurðaðgerð, endurhæfing', output: 'Staðfest stór sinaskaði eða ekki bati með verndandi meðferð. Ráðlegg skurðaðgerð og endurhæfingu.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Kalkeikur í öxl (Calcific Tendinitis)',
+                        subOptions: [
+                            { display: 'Greining', output: 'Kalkeikur í öxl' },
+                            { display: 'Grunur', output: 'Grunur um kalkeik í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Bólgueyðandi lyf, sjúkraþjálfun', output: 'Kalkeikur í öxl. Ráðlegg bólgueyðandi lyf og sjúkraþjálfun. Endurmat eftir 4 vikur.' },
+                                    { display: 'Sterasprauta, ómun', output: 'Ef einkenni versna eða viðvarandi. Ráðlegg sterasprautu og ómskoðun.' },
+                                    { display: 'Skurðaðgerð ef ekki bati', output: 'Ef ekki bati eftir meðferð, ráðlegg skurðaðgerð.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Liðbólga',
+                        subOptions: [
+                            { display: 'Greining', output: 'Liðbólga í öxl' },
+                            { display: 'Grunur', output: 'Grunur um liðbólgu í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Verkjalyf, bólgueyðandi', output: 'Liðbólga í öxl. Ráðlegg verkjalyf og bólgueyðandi lyf.' },
+                                    { display: 'Sjúkraþjálfun, endurmat', output: 'Viðvarandi einkenni. Ráðlegg sjúkraþjálfun og endurmat eftir 4 vikur.' },
+                                    { display: 'Skurðaðgerð ef ekki bati', output: 'Ef einkenni eru áfram til staðar, ráðlegg skurðaðgerð.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Liðvökvasöfnun',
+                        subOptions: [
+                            { display: 'Greining', output: 'Liðvökvasöfnun í öxl' },
+                            { display: 'Grunur', output: 'Grunur um liðvökvasöfnun í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Tæming, rannsóknir', output: 'Grunur um liðvökvasöfnun. Ráðlegg vökvatæmingu og frekari rannsóknir.' },
+                                    { display: 'Segulómun, liðvökvarannsókn', output: 'Viðvarandi vökvasöfnun. Ráðlegg segulómun og liðvökvarannsókn.' },
+                                    { display: 'Verkjameðferð, endurmat', output: 'Ráðlegg verkjameðferð og endurmat eftir 2 vikur.' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Liðsýking',
+                        subOptions: [
+                            { display: 'Greining', output: 'Liðsýking í öxl' },
+                            { display: 'Grunur', output: 'Grunur um liðbólgu vegna sýkingar í öxl' },
+                            {
+                                display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Sýklalyf, innlögn', output: 'Liðsýking. Ráðlegg sýklalyf og mögulega innlögn til frekari meðferðar.' },
+                                    { display: 'Skurðaðgerð ef þörf', output: 'Ef sýking svarar ekki meðferð, ráðlegg skurðaðgerð.' },
+                                    { display: 'Liðvökvasýnataka, endurmat', output: 'Ráðlegg liðvökvasýnatöku til að staðfesta sýkingu, endurmat eftir sýnatöku.' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Myndataka', 'Sjúkraþjálfun', 'Bæklun'],
+        options: [
+            {
+                display: 'Ráðleggingar',
+                subOptions: [
+                    { display: 'Almennar ráðleggingar', output: 'Veiti almennar ráðleggingar fyrir öxl meiðsli. Ráðlegg verndandi meðferð, einkennameðferð og endurmat eftir 2-4 vikur ef engin framför.' },
+                    { display: 'Meðferðaráætlun', output: 'Sérstakar meðferðaráætlanir fyrir öxl vandamál eins og slitgigt, tognun eða liðbandaáverka.' }
+                ]
+            },
+            {
+                display: 'Myndataka',
+                subOptions: [
+                    { display: 'Segulómun', output: 'Ráðlegg segulómun' },
+                    { display: 'TS', output: 'Ráðlegg tölvusneiðmynd' },
+                    { display: 'RTG', output: 'Ráðlegg röntgenmynd' },
+                    { display: 'Ómskoðun', output: 'Ráðlegg ómskoðun' }
+                ]
+            },
+            {
+                display: 'Sjúkraþjálfun',
+                output: 'Ráðlegg sjúkraþjálfun'
+            },
+            {
+                display: 'Bæklun',
+                subOptions: [
+                    { display: 'Tilvísun á bæklunarlækni', output: 'Ráðlegg tilvísun á bæklunarlækni fyrir frekari skoðun og meðferð.' },
+                    { display: 'Endurmat hjá bæklunarlækni', output: 'Ráðlegg endurmat hjá bæklunarlækni eftir fyrstu meðferð og greiningu.' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sterainjection'],
+        options: [
+            {
+                display: 'Sterainjection',
+                subOptions: [
+                    { display: 'Fengið áður', output: 'Saga um fyrri sterainj vegna axlarmeinsemdar' },
+                    { display: 'Set í gátt og endurkoma', output: 'Ráðlegg að reyna sterainj. Set lyfið í gáttina. Bóka nýjan tíma í sprautu' },
+                    {
+                        display: 'Gef stera',
+                        subOptions: [
+                            {
+                                display: 'Axlarlið',
+                                subOptions: [
+                                    { display: 'NOS', output: '' },
+                                    { display: 'Posterior approach', output: '' },
+                                    { display: 'Anterior approach', output: '' },
+                                    { display: 'Lateral approach', output: '' }
+                                ]
+                            },
+                            {
+                                display: 'Subacromialt',
+                                subOptions: [
+                                    { display: 'NOS', output: '' },
+                                    { display: 'Posterior approach', output: '' },
+                                    { display: 'Anterior approach', output: '' },
+                                    { display: 'Lateral approach', output: '' }
+                                ]
+                            },
+                            {
+                                display: 'AC lið',
+                                subOptions: [
+                                    { display: 'NOS', output: '' },
+                                    { display: 'Posterior approach', output: '' },
+                                    { display: 'Anterior approach', output: '' },
+                                    { display: 'Lateral approach', output: '' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            {
+                display: 'Endurmat',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
+                    { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' }
+                ]
+            },
+            {
+                display: 'Eftirfylgd',
+                subOptions: [
+                    {
+                        display: 'Bókar sjálfur',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
+                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
+                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                        ]
+                    },
+                    {
+                        display: 'Gef tíma í endurkomu',
+                        subOptions: [
+                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
+                            { display: 'Viðtalstíma',
+                                subOptions: [
+                                    {display: 'NOS', output: 'Fær nýjan tíma til eftirfylgdar'},
+                                    {display: 'Tvöfaldan', output: 'Fær tvöfaldan endurkomutíma'}
+                                ]
+                            }
+                            
+                        ]
+                    },
+                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
+                ]
+            }
+
+        ]
+    }
+];
+
 
 // Elbow
 const SymptomsElbow = [
@@ -8284,6 +9371,29 @@ const SymptomsKnee = [
                     { display: '8', output: 'Skalar verkinn 8/10' },
                     { display: '9', output: 'Skalar verkinn 9/10' },
                     { display: '10', output: 'Skalar verkinn 10/10' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hnjásaga', 'Aðgerð'],
+        options: [
+            {
+                display: 'Hnjásaga',
+                onRightClickOutput: 'Ekki fyrri saga um hnévandamál',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um hnjávandamál áður' },
+                    { display: 'Íþróttameiðsl', output: 'Saga um hnévandamál. Gömul íþróttameiðsl' }
+                ]
+            },
+            {
+                display: 'Aðgerð',
+                onRightClickOutput: 'Aldrei farið í aðgerð á hné',
+                subOptions: [
+                    { display: 'NOS', output: 'Þurft að fara í aðgerð á hné' },
+                    { display: 'Menisc', output: 'Þurft að fara í aðgerð á liðþófa' }
                 ]
             }
         ]
@@ -16947,7 +18057,7 @@ function createBloodPressureInterface(containerId) {
         const systolic = systolicInput.value;
         const diastolic = diastolicInput.value;
         if (systolic && diastolic) {
-            insertText(`Bþr: ${systolic}/${diastolic} mmHg`);
+            insertText(`Bþr: ${systolic}/${diastolic} mmHg`, 'lifsmork');
         } else {
             alert('Please select values for systolic and diastolic.');
         }
@@ -17030,7 +18140,7 @@ function createPulseInterface(containerId) {
     submitButton.onclick = () => {
         const pulse = pulseInput.value;
         if (pulse) {
-            insertText(`Púls: ${pulse} bpm`);
+            insertText(`Púls: ${pulse} bpm`, 'lifsmork');
         } else {
             alert('Please select a value for pulse.');
         }
@@ -17113,7 +18223,7 @@ function createTemperatureInterface(containerId) {
     submitButton.onclick = () => {
         const temperature = tempInput.value;
         if (temperature) {
-            insertText(`Hiti: ${temperature}°C`);
+            insertText(`Hiti: ${temperature}°C`, 'lifsmork');
         } else {
             alert('Please select a temperature value.');
         }
@@ -17176,7 +18286,7 @@ function createOxygenSaturationInterface(containerId) {
     enterButton.className = 'enter-button';
     enterButton.textContent = 'Enter';
     enterButton.onclick = function() {
-        insertText('Mettar ' + slider.value + '%');
+        insertText('Mettar ' + slider.value + '%', 'lifsmork');
     };
 
     sliderContainer.appendChild(sliderLabel);
@@ -17240,7 +18350,7 @@ function createRespiratoryRateInterface(containerId) {
     enterButton.className = 'enter-button';
     enterButton.textContent = 'Enter';
     enterButton.onclick = function() {
-        insertText('ÖT: ' + slider.value);
+        insertText('ÖT: ' + slider.value, 'lifsmork');
     };
 
     sliderContainer.appendChild(sliderLabel);
@@ -17369,7 +18479,7 @@ function createOrthostatismInterface(containerId) {
     orthostatismContainer.appendChild(positionLabel);
 
     const positionSelect = document.createElement('select');
-    const positions = ['Sitjandi', 'Standandi 1 mín', 'Standandi 3 mín', 'Standandi 5 mín'];
+    const positions = ['Sitjandi', 'Liggjandi', 'Standandi 1 mín', 'Standandi 3 mín', 'Standandi 5 mín', 'Standandi 10 mín'];
     positions.forEach(position => {
         const option = document.createElement('option');
         option.value = position.toLowerCase();
@@ -17527,7 +18637,7 @@ function createOrthostatismInterface(containerId) {
     orthostatismContainer.appendChild(spacer4);
 
     const submitButton = document.createElement('button');
-    submitButton.textContent = 'Generate Output';
+    submitButton.textContent = 'Enter';
     submitButton.style.display = 'block';
     submitButton.style.margin = '0 auto';
     submitButton.onclick = () => {
@@ -17539,7 +18649,7 @@ function createOrthostatismInterface(containerId) {
     
         if (side && position && systolic && diastolic && pulse) {
             const output = `Bþr ${side} ${position} ${systolic}/${diastolic} mmHg púls ${pulse} bpm`;
-            insertText(output);
+            insertText(output, 'lifsmork');
             // Modal will remain open after generating output
         } else {
             alert('Please fill in all fields.');
@@ -18010,6 +19120,14 @@ function createGedSkodunSection(data) {
     return section;
 }
 
+function createKerfakonnunSection(data) {
+    console.log('Creating Kerfakonnun Section with data:', data); // Debugging line
+    const section = createSection('kerfakonnun', 'Kerfakönnun');
+    const container = section.querySelector('#kerfakonnun');
+    createButtons(container, data, 'kerfakonnun');
+    return section;
+}
+
 // Load sections depending on page
 function loadPage(page) {
     const container = document.getElementById('content-section');
@@ -18035,6 +19153,30 @@ function loadPage(page) {
         middleColumn.className = 'column';
         middleColumn.appendChild(examsSection);
         middleColumn.appendChild(lifsmorkSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Contraception') {
+        const symptomsSection = createEinkenniSection(SymptomsContraception);
+        const examsSection = createSkodunSection(ExamsContraception);
+        const planSection = createPlanSection(PlanContraception);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(symptomsSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(examsSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -18164,10 +19306,12 @@ function loadPage(page) {
         const lifsmorkSection = createLifsmorkSection(LifsmorkData);
         const raudFloggSection = createRaudFloggSection(RaudFloggMelting);
         const lyfSection = createLyfSection(LyfMelting);
+        const kerfakonnunSection = createKerfakonnunSection(KerfakonnunMelting);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
+        leftColumn.appendChild(kerfakonnunSection);
         leftColumn.appendChild(raudFloggSection);
         leftColumn.appendChild(historyMeltingSection);
         leftColumn.appendChild(lyfSection);
@@ -18773,7 +19917,7 @@ function findNextHeaderIndex(currentText, startIndex) {
     const sectionHeaders = [
         'Venjur:', 'Skoðun:', 'Plan:', 'Rannsóknir:', 'Lífsmörk:', 'Rauð Flögg:', 'Lyf:',
         'Áhættuþættir Kransæðasjúkdóms:', 'Áhættuþættir þvagblöðrukrabbameins:', 'CHADS-VASc:',
-        'Heilsufar:', 'Vottorð:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:'
+        'Heilsufar:', 'Vottorð:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:'
     ];
     let nextHeaderIndex = -1;
 
@@ -18789,7 +19933,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'sigecaps', 'historyViral', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'skodun', 'gedskodun', 'lifsmork', 'rannsoknir', 'plan'];
+    const sectionOrder = ['einkenni', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'skodun', 'gedskodun', 'lifsmork', 'rannsoknir', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
@@ -18840,6 +19984,8 @@ function getSectionHeader(sectionId) {
             return 'SIGECAPS:';
         case 'gedskodun':
             return 'Geðskoðun:';
+        case 'kerfakonnun':
+            return 'Kerfakönnun:';
         default:
             return '';
     }
