@@ -44,6 +44,343 @@ const RannsoknData = [
             },
             { display: 'Option 2', output: 'Output for Option 2' }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóðprufuniðurstöður', 'Option 2'],
+        options: [
+            {
+                display: 'Blóðprufuniðurstöður', output: 'Niðurstöður úr blóðprufum',
+                onRightClickSubOptions: [
+                    { display: 'Eðlilegar', output: 'Blóðprufuniðurstöður eðlilegar' },
+                    { display: 'Koma vel út', output: 'Blóðprufuniðurstöður koma vel út' }
+                ]
+
+            },
+            { display: 'Option 2', output: 'Output for Option 2' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóðhagur', 'Hvít', 'Neutrófílar', 'Lymphócýtar', 'Hemóglóbín'],
+        options: [
+            {
+                display: 'Blóðhagur',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Blóðhagur: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Eðlilegt',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Blóðhagur eðlilegur: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Hækkað',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Blóðhagur hækkaður: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Lækkað',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Blóðhagur lækkaður: ${i} x10^9/L`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'Blóðhagur eðlilegur'
+            },
+            {
+                display: 'Hvít',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Hvít blóðkorn: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Eðlilegt',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Hvít blóðkorn eðlileg: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Hækkað',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Hvít blóðkorn hækkuð: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Lækkað',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Hvít blóðkorn lækkuð: ${i} x10^9/L`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'Hvít blóðkorn innan eðlilegra marka'
+            },
+            {
+                display: 'Neutrófílar',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Neutrofílar: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Eðlilegt',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Neutrofílar eðlilegir: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Hækkað',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Neutrofílar hækkaðir: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Lækkað',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Neutrofílar lækkaðir: ${i} x10^9/L`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'Neutrofílar innan eðlilegra marka'
+            },
+            {
+                display: 'Lymphócýtar',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Lymphócýtar: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Eðlilegt',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Lymphócýtar eðlilegir: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Hækkað',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Lymphócýtar hækkaðir: ${i} x10^9/L`
+                        }))
+                    },
+                    {
+                        display: 'Lækkað',
+                        subOptions: Array.from({ length: 101 }, (_, i) => ({
+                            display: `${i}`, 
+                            output: `Lymphócýtar lækkaðir: ${i} x10^9/L`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'Lymphócýtar innan eðlilegra marka'
+            },
+            {
+                display: 'Hemóglóbín',
+                onRightClickOutput: 'Hemóglóbín innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóðleysi', 'Járnstatus' , 'Frítt járn', 'Járnbindigeta', 'Ferritín'],
+        options: [
+            {
+                display: 'Blóðleysi',
+                onRightClickOutput: 'Ekki merki um blóðleysi',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Járnstatus',
+                onRightClickOutput: 'Járnstatus innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Frítt járn',
+                onRightClickOutput: 'Frítt járn innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Járnbindigeta',
+                onRightClickOutput: 'Járnbindigeta innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Ferritín',
+                onRightClickOutput: 'Ferritín innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sýkingarmerki', 'Bólgumerki', 'CRP', 'Sökk'],
+        options: [
+            {
+                display: 'Sýkingarmerki',
+                onRightClickOutput: 'Engin sýkingarmerki í blóði',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Bólgumerki',
+                onRightClickOutput: 'Ekki bólgumerki í blóði',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'CRP',
+                onRightClickOutput: 'CRP innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Sökk',
+                onRightClickOutput: 'Sökk innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blöðsölt', 'Natríum', 'Kalíum', 'Kalsíum'],
+        options: [
+            {
+                display: 'Blöðsölt',
+                output: 'Blóðsölt eru ekki alveg eðlileg',
+                onRightClickOutput: 'Blóðsölt innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Natríum',
+                onRightClickOutput: 'Natríum innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Kalíum',
+                onRightClickOutput: 'Kalíum innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Kalsíum',
+                onRightClickOutput: 'Kalsíum innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Nýrnagildi', 'Kreatinin', 'Urea'],
+        options: [
+            {
+                display: 'Nýrnagildi',
+                onRightClickOutput: 'Nýrnagildi innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Kreatinin',
+                onRightClickOutput: 'Kreatinin innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Urea',
+                onRightClickOutput: 'Urea innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Lifrarprufur', 'ALAT', 'ASAT', 'Lifrarstasaprufur', 'ALP', 'GGT', 'Bilirubin'],
+        options: [
+            {
+                display: 'Lifrarprufur',
+                onRightClickOutput: 'Lifrarprufur innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'ALAT',
+                onRightClickOutput: 'ALAT innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'ASAT',
+                onRightClickOutput: 'ASAT innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Lifrarstasaprufur',
+                onRightClickOutput: 'Lifrarstasaprufur eðlilegar',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'ALP',
+                onRightClickOutput: 'ALP innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'GGT',
+                onRightClickOutput: 'GGT innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Bilirubin',
+                onRightClickOutput: 'Bilirubin innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Vítamín', 'D-vítamín', 'B12-vítamín'],
+        options: [
+            {
+                display: 'Vítamín',
+                onRightClickOutput: 'Vítamín mælast innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'D-vítamín',
+                onRightClickOutput: 'D-vítamín innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'B12-vítamín',
+                onRightClickOutput: 'B12-vítamín innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            }
+        ]
     }
 ];
 
@@ -1654,45 +1991,243 @@ const RannsoknirViral = [
                 subOptions: [
                     {
                         display: 'CRP 0-50',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${i * 5}`,
-                            output: `CRP: ${i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '0-10',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i}`,
+                                    output: `CRP ${i}`
+                                }))
+                            },
+                            {
+                                display: '11-20',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${11 + i}`,
+                                    output: `CRP ${11 + i}`
+                                }))
+                            },
+                            {
+                                display: '21-30',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${21 + i}`,
+                                    output: `CRP ${21 + i}`
+                                }))
+                            },
+                            {
+                                display: '31-40',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${31 + i}`,
+                                    output: `CRP ${31 + i}`
+                                }))
+                            },
+                            {
+                                display: '41-50',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${41 + i}`,
+                                    output: `CRP ${41 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 51-100',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${55 + i * 5}`,
-                            output: `CRP: ${55 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '51-60',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${51 + i}`,
+                                    output: `CRP ${51 + i}`
+                                }))
+                            },
+                            {
+                                display: '61-70',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${61 + i}`,
+                                    output: `CRP ${61 + i}`
+                                }))
+                            },
+                            {
+                                display: '71-80',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${71 + i}`,
+                                    output: `CRP ${71 + i}`
+                                }))
+                            },
+                            {
+                                display: '81-90',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${81 + i}`,
+                                    output: `CRP ${81 + i}`
+                                }))
+                            },
+                            {
+                                display: '91-100',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${91 + i}`,
+                                    output: `CRP ${91 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 101-150',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${105 + i * 5}`,
-                            output: `CRP: ${105 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '101-110',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${101 + i}`,
+                                    output: `CRP ${101 + i}`
+                                }))
+                            },
+                            {
+                                display: '111-120',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${111 + i}`,
+                                    output: `CRP ${111 + i}`
+                                }))
+                            },
+                            {
+                                display: '121-130',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${121 + i}`,
+                                    output: `CRP ${121 + i}`
+                                }))
+                            },
+                            {
+                                display: '131-140',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${131 + i}`,
+                                    output: `CRP ${131 + i}`
+                                }))
+                            },
+                            {
+                                display: '141-150',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${141 + i}`,
+                                    output: `CRP ${141 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 151-200',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${155 + i * 5}`,
-                            output: `CRP: ${155 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '151-160',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${151 + i}`,
+                                    output: `CRP ${151 + i}`
+                                }))
+                            },
+                            {
+                                display: '161-170',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${161 + i}`,
+                                    output: `CRP ${161 + i}`
+                                }))
+                            },
+                            {
+                                display: '171-180',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${171 + i}`,
+                                    output: `CRP ${171 + i}`
+                                }))
+                            },
+                            {
+                                display: '181-190',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${181 + i}`,
+                                    output: `CRP ${181 + i}`
+                                }))
+                            },
+                            {
+                                display: '191-200',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${191 + i}`,
+                                    output: `CRP ${191 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 201-250',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${205 + i * 5}`,
-                            output: `CRP: ${205 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '201-210',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${201 + i}`,
+                                    output: `CRP ${201 + i}`
+                                }))
+                            },
+                            {
+                                display: '211-220',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${211 + i}`,
+                                    output: `CRP ${211 + i}`
+                                }))
+                            },
+                            {
+                                display: '221-230',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${221 + i}`,
+                                    output: `CRP ${221 + i}`
+                                }))
+                            },
+                            {
+                                display: '231-240',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${231 + i}`,
+                                    output: `CRP ${231 + i}`
+                                }))
+                            },
+                            {
+                                display: '241-250',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${241 + i}`,
+                                    output: `CRP ${241 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 251-300',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${255 + i * 5}`,
-                            output: `CRP: ${255 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '251-260',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${251 + i}`,
+                                    output: `CRP ${251 + i}`
+                                }))
+                            },
+                            {
+                                display: '261-270',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${261 + i}`,
+                                    output: `CRP ${261 + i}`
+                                }))
+                            },
+                            {
+                                display: '271-280',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${271 + i}`,
+                                    output: `CRP ${271 + i}`
+                                }))
+                            },
+                            {
+                                display: '281-290',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${281 + i}`,
+                                    output: `CRP ${281 + i}`
+                                }))
+                            },
+                            {
+                                display: '291-300',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${291 + i}`,
+                                    output: `CRP ${291 + i}`
+                                }))
+                            }
+                        ]
                     }
                 ],
                 onRightClickOutput: 'CRP <5'
@@ -1700,6 +2235,7 @@ const RannsoknirViral = [
         ]
     }
 ];
+
 // Rauð Flögg = Red flags (Night sweats, weight loss etc)
 const RaudFloggViral = [
     {
@@ -2594,12 +3130,67 @@ const SymptomsEye = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna'],
+        display: ['Einkenni', 'Tímalengd', 'Aðskotahlutur', 'Áverki'],
         options: [
             {
-                display: 'Tímalengd einkenna',
+                display: 'Einkenni',
+                subOptions: [
+                    {
+                        display: 'Auga',
+                                subOptions: [
+                                    { display: 'Hægra', output: 'Einkenni frá hægra auga' },
+                                    { display: 'Vinstra', output: 'Einkenni frá vinstra auga' },
+                                    { display: 'Bæði', output: 'Einkenni frá báðum augum' }
+                                ],
+                                onRightClickOutput: 'Ekki einkenni frá augum'
+                    },
+                    {
+                        display: 'Augnlok',
+                        subOptions: [
+                            {
+                                display: 'Efra augnlok',
+                                subOptions: [
+                                    { display: 'Hægra', output: 'Einkenni frá hægra efra augnloki' },
+                                    { display: 'Vinstra', output: 'Einkenni frá vinstra efra augnloki' }
+                                ],
+                                onRightClickOutput: 'Ekki einkenni frá efra augnloki'
+                            },
+                            {
+                                display: 'Neðra augnlok',
+                                subOptions: [
+                                    { display: 'Hægra', output: 'Einkenni frá hægra neðra augnloki' },
+                                    { display: 'Vinstra', output: 'Einkenni frá vinstra neðra augnloki' }
+                                ],
+                                onRightClickOutput: 'Ekki einkenni frá neðra augnloki'
+                            }
+                        ],
+                        onRightClickOutput: 'Engin einkenni frá augnlokum'
+                    }
+                ]
+            },
+            {
+                display: 'Tímalengd',
                 subOptions: [
                     { display: 'Nokkra daga', output: 'Nokkra daga saga' },
+                    {
+                        display: 'Klst',
+                        subOptions: [
+                            { display: '<1 klst', output: '<1 klst saga' },
+                            { display: '1 klst', output: 'U.þ.b. 1 klst saga' },
+                            { display: '2 klst', output: 'U.þ.b. 2 klst saga' },
+                            { display: '3 klst', output: 'U.þ.b. 3 klst saga' },
+                            { display: '4 klst', output: 'U.þ.b. 4 klst saga' },
+                            { display: '5 klst', output: 'U.þ.b. 5 klst saga' },
+                            { display: '6 klst', output: 'U.þ.b. 6 klst saga' },
+                            { display: '7 klst', output: 'U.þ.b. 7 klst saga' },
+                            { display: '8 klst', output: 'U.þ.b. 8 klst saga' },
+                            { display: '9 klst', output: 'U.þ.b. 9 klst saga' },
+                            { display: '10 klst', output: 'U.þ.b. 10 klst saga' },
+                            { display: '11 klst', output: 'U.þ.b. 11 klst saga' },
+                            { display: '12 klst', output: 'U.þ.b. 12 klst saga' }
+                        ],
+                        cancelText: ''
+                    },
                     {
                         display: 'Dagar',
                         subOptions: [
@@ -2653,82 +3244,7 @@ const SymptomsEye = [
                     }
                 ],
                 cancelText: ''
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Einkenni frá auga', 'Augnlok'],
-        options: [
-            {
-                display: 'Auga',
-                subOptions: [
-                    { display: 'Hægra', output: 'Einkenni frá hægra auga' },
-                    { display: 'Vinstra', output: 'Einkenni frá vinstra auga' },
-                    { display: 'Bæði', output: 'Einkenni frá báðum augum' }
-                ],
-                onRightClickOutput: 'Ekki einkenni frá augum'
             },
-            
-            {
-                display: 'Augnlok',
-                subOptions: [
-                    {
-                        display: 'Efra augnlok',
-                        subOptions: [
-                            { display: 'Hægra', output: 'Einkenni frá hægra efra augnloki' },
-                            { display: 'Vinstra', output: 'Einkenni frá vinstra efra augnloki' }
-                        ],
-                        onRightClickOutput: 'Ekki einkenni frá efra augnloki'
-                    },
-                    {
-                        display: 'Neðra augnlok',
-                        subOptions: [
-                            { display: 'Hægra', output: 'Einkenni frá hægra neðra augnloki' },
-                            { display: 'Vinstra', output: 'Einkenni frá vinstra neðra augnloki' }
-                        ],
-                        onRightClickOutput: 'Ekki einkenni frá neðra augnloki'
-                    }
-                ],
-                onRightClickOutput: 'Engin einkenni frá augnlokum'
-            }
-            
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Óþægindi', 'Roði', 'Nabbi'],
-        options: [
-            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Ekki mikil óþægindi' },
-            { display: 'Roði', output: 'Roði', onRightClickOutput: 'Ekki roði' },
-            { display: 'Nabbi', output: 'Nabbi', onRightClickOutput: 'Ekki nabbi' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Kláði', 'Rennsli'],
-        options: [
-            { display: 'Kláði', output: 'Kláði', onRightClickOutput: 'Ekki kláði' },
-            { display: 'Rennsli', output: 'Aukin táramyndun', onRightClickOutput: 'Ekki aukin táramyndun' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Gröftur', 'Límd'],
-        options: [
-            { display: 'Gröftur', output: 'Lekur gröftur', onRightClickOutput: 'Ekki gröftur' },
-            { display: 'Límd', output: 'Augnlok límd saman á morgnanna', onRightClickOutput: 'Augnlok ekki límd saman á morgnanna' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Aðskotahlutur', 'Áverki'],
-        options: [
             {
                 display: 'Aðskotahlutur',
                 subOptions: [
@@ -2742,7 +3258,8 @@ const SymptomsEye = [
             {
                 display: 'Áverki',
                 subOptions: [
-                    { display: 'Áverki', output: 'Áverki á auga' },
+                    { display: 'NOS', output: 'Áverki á auga' },
+                    { display: 'Högg', output: 'Fékk högg á augað' },
                     { display: 'Grein', output: 'Fékk grein í augað' },
                     { display: 'Fingur', output: 'Fékk fingur í augað' }
                 ],
@@ -2753,25 +3270,164 @@ const SymptomsEye = [
     {
         name: '',
         type: 'options',
-        display: ['Nýleg veirusýking'],
+        display: ['Verkur', 'Óþægindi', 'Þurrkur', 'Kláði', 'Roði', 'Nabbi'],
+        options: [
+            {
+                display: 'Verkur',
+                subOptions: [
+                    { display: 'Lýsir verk', output: 'Lýsir verk' }
+                ],
+                onRightClickOutput: 'Neitar verk'
+            },
+            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Ekki mikil óþægindi' },
+            { display: 'Þurrkur', output: 'Lýsir augnþurrk', onRightClickOutput: 'Ekki augnþurrkur'},
+            { display: 'Kláði', output: 'Kláði', onRightClickOutput: 'Ekki kláði' },
+            { display: 'Roði', output: 'Roði', onRightClickOutput: 'Ekki roði' },
+            { display: 'Nabbi', output: 'Nabbamyndun', onRightClickOutput: 'Ekki nabbi' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Character', 'Onset', 'Timing'],
+        options: [
+            {
+                display: 'Character',
+                subOptions: [
+                    {
+                        display: 'Yfirborðslægur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Finnst einkenni koma frá yfirborði augans.' },
+                            { display: 'Stingandi', output: 'Finnst einkenni koma frá yfirborði augans. Stingandi tilfinning' },
+                            { display: 'Aðskotahlutstilfinning', output: 'Finnst einkenni koma frá yfirborði augans. Aðskotahlutstilfinning' },
+                            { display: 'Brennandi', output: 'Finnst einkenni koma frá yfirborði augans. Brennandi tilfinning' },
+                            { display: 'Sandkennd', output: 'Finnst einkenni koma frá yfirborði augans. Sandkennd tilfinning' },
+                            { display: 'Púlserandi', output: 'Finnst einkenni koma frá yfirborði augans. Púlserandi verkur' }
+                        ]
+                    },
+                    {
+                        display: 'Djúpur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Finnst einkenni koma djúpt frá auganu.' },
+                            { display: 'Stingandi', output: 'Finnst einkenni koma djúpt frá auganu. Stingandi tilfinning' },
+                            { display: 'Aðskotahlutstilfinning', output: 'Finnst einkenni koma djúpt frá auganu. Aðskotahlutstilfinning' },
+                            { display: 'Brennandi', output: 'Finnst einkenni koma djúpt frá auganu. Brennandi tilfinning' },
+                            { display: 'Sandkennd', output: 'Finnst einkenni koma djúpt frá auganu. Sandkennd tilfinning' },
+                            { display: 'Púlserandi', output: 'Finnst einkenni koma djúpt frá auganu. Púlserandi verkur' }
+                        ]
+                    },
+                    {
+                        display: 'Bæði',
+                        subOptions: [
+                            { display: 'NOS', output: 'Finnst einkenni bæði koma frá yfirborði augans og djúpt frá auganu.' },
+                            { display: 'Stingandi', output: 'Finnst einkenni bæði koma frá yfirborði augans og djúpt frá auganu. Stingandi tilfinning' },
+                            { display: 'Aðskotahlutstilfinning', output: 'Finnst einkenni bæði koma frá yfirborði augans og djúpt frá auganu. Aðskotahlutstilfinning' },
+                            { display: 'Brennandi', output: 'Finnst einkenni bæði koma frá yfirborði augans og djúpt frá auganu. Brennandi tilfinning' },
+                            { display: 'Sandkennd', output: 'Finnst einkenni bæði koma frá yfirborði augans og djúpt frá auganu. Sandkennd tilfinning' },
+                            { display: 'Púlserandi', output: 'Finnst einkenni bæði koma frá yfirborði augans og djúpt frá auganu. Púlserandi verkur' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: 'Skyndilegt', output: 'Byrjaði skyndilega' },
+                    {
+                        display: 'Hægt og bítandi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Byrjaði hægt og bítandi' },
+                            { display: 'Yfir nokkrar klst', output: 'Byrjaði hægt og bítandi yfir nokkrar klst' },
+                            { display: 'Yfir nokkra daga', output: 'Byrjaði hægt og bítandi yfir nokkra daga' },
+                            { display: 'Yfir nokkrar vikur', output: 'Byrjaði hægt og bítandi yfir nokkrar vikur' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Timing',
+                subOptions: [
+                    { display: 'Intermittent', output: 'Kemur og fer' },
+                    { display: 'Stanslaust', output: 'Einkenni stanslaus. Ekki fengið pásu síðan byrjaði' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Versnar', 'Skánar', 'Stigun verks'],
+        options: [
+            {
+                display: 'Versnar',
+                onRightClickOutput: 'Ekkert sem gerir verra',
+                subOptions: [
+                    { display: 'Augnhreyfingar', output: 'Versnar við að hreyfa augun' },
+                    { display: 'Blikka', output: 'Versnar við að blikka' },
+                    { display: 'Viðkomu', output: 'Versnar við viðkomu' },
+                    { display: 'Birtu', output: 'Versnar við birtu' },
+                    { display: 'Linsur', output: 'Versnar við að setja linsur í' }
+                ]
+            },
+            {
+                display: 'Skánar',
+                onRightClickOutput: 'Ekkert sem gerir betra',
+                subOptions: [
+                    { display: 'Hvíld', output: 'Skánar við hvíld' },
+                    { display: 'Gervitár', output: 'Skánar við notkun gervitára' },
+                    { display: 'Taka út linsur', output: 'Skánar við að fjarlægja linsur' }
+                ]
+            },
+            {
+                display: 'Stigun verks',
+                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                    display: `${i + 1}/10`,
+                    output: `Skalar verk ${i + 1}/10`
+                }))
+            }
+        ]
+    },        
+    {
+        name: '',
+        type: 'options',
+        display: ['Gröftur', 'Rennsli'],
+        options: [
+            {
+                display: 'Gröftur',
+                subOptions: [
+                    {
+                        display: 'Lekur',
+                        output: 'Lekur gröftur'
+                    },
+                    {
+                        display: 'Límd á morgnanna',
+                        output: 'Augnlok límd saman á morgnanna'
+                    }
+                ],
+                onRightClickOutput: 'Ekki tekið eftir greftri'
+            },
+            { display: 'Rennsli', output: 'Aukin táramyndun', onRightClickOutput: 'Ekki aukin táramyndun' }
+        ]
+    }
+    ,
+    {
+        name: '',
+        type: 'options',
+        display: ['Nýleg veirusýking', 'Dagleg áhrif'],
         options: [
             {
                 display: 'Nýleg veirusýking',
                 output: 'Er að jafna sig á veirusýkingu',
                 onRightClickOutput: 'Ekki nýleg veikindi'
+            },
+            {
+                display: 'Dagleg áhrif',
+                onRightClickOutput: 'Einkenni hafa ekki áhrif á daglegt líf svo sem að lesa, keyra o.fl',
+                subOptions: [
+                    { display: 'Akstur', output: 'Truflar við akstur' },
+                    { display: 'Lestur', output: 'Truflar við lestur' }
+                ]
             }
-        ]
-    },
-    {},{},{},
-    {
-        name: '',
-        type: 'options',
-        display: ['Sjóntap', 'Móðusjón', 'Ljósfælni', 'Verkur'],
-        options: [
-            { display: 'Sjóntap', output: 'Lýsir versnun á sjón', onRightClickOutput: 'Sjón í lagi' },
-            { display: 'Móðusjón', output: 'Lýsir móðusjón', onRightClickOutput: 'Neitar móðusjón' },
-            { display: 'Ljósfælni', output: 'Lýsir ljósfælni', onRightClickOutput: 'Neitar ljósfælni' },
-            { display: 'Verkur', output: 'Verkjar', onRightClickOutput: 'Neitar verk' }
         ]
     }
 ];
@@ -3079,6 +3735,18 @@ const PlanEye = [
                 ]
             }
 
+        ]
+    }
+];
+const RaudFloggEye =[
+    {
+        name: '',
+        type: 'options',
+        display: ['Sjóntap', 'Móðusjón', 'Ljósfælni'],
+        options: [
+            { display: 'Sjóntap', output: 'Lýsir versnun á sjón', onRightClickOutput: 'Sjón í lagi' },
+            { display: 'Móðusjón', output: 'Lýsir móðusjón', onRightClickOutput: 'Neitar móðusjón' },
+            { display: 'Ljósfælni', output: 'Lýsir ljósfælni', onRightClickOutput: 'Neitar ljósfælni' }
         ]
     }
 ];
@@ -5470,7 +6138,11 @@ const ExamsMelting = [
                         ]
                     }
                 ],
-                onRightClickOutput: 'Eðlilegt ytra útlit á endaþarmi. Engin sár, roði eða merki um lesionir.'
+                
+                onRightClickSubOptions: [
+                    {display: 'Eðlilegt útlit', output: 'Eðlilegt ytra útlit á endaþarmi. Engin sár, roði eða merki um lesionir.'},
+                    {display: 'Ekki framkvæmd', output: 'Endaþarmsskoðun ekki framkvæmd'}
+                ]
             },
             {
                 display: 'Þreifing',
@@ -16154,70 +16826,1420 @@ const LyfData = [
     {
         name: '',
         type: 'options',
-        display: ['Blóðþrýstingslyf'],
+        display: ['Hjartalyf', 'Meltingarlyf', 'Innkirtlalyf', 'Innöndunarlyf'],
         options: [
             {
-                display: 'Blóðþrýstingslyf',
+                display: 'Hjartalyf',
                 subOptions: [
-                    { display: 'NOS', output: 'Er á blóðþrýstingslyfjum' },
                     {
-                        display: 'ACE-hemill',
+                        display: 'Blóðþrýstingslyf',
                         subOptions: [
                             {
-                                display: 'Ramipril',
+                                display: 'ACE Inhibitors',
                                 subOptions: [
                                     {
-                                        display: 'NOS',
+                                        display: 'Lisinopril',
                                         subOptions: [
-                                            { display: 'NOS', output: 'Ramipril' },
-                                            { display: 'Set á', output: 'Set á Ramipril' },
-                                            { display: 'Bæti við', output: 'Bæti við Ramipril' },
-                                            { display: 'Er á', output: 'Er á Ramipril' }
+                                            { display: 'NOS', output: 'Lisinopril' },
+                                            ...[2.5, 5, 10, 20, 40].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Lisinopril ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Lisinopril ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
                                         ]
                                     },
                                     {
-                                        display: '2.5mg',
+                                        display: 'Enalapril',
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
+                                            { display: 'NOS', output: 'Enalapril' },
+                                            ...[2.5, 5, 10, 20].map(dose => ({
+                                                display: `${dose} mg`,
                                                 subOptions: [
-                                                    { display: 'NOS', output: 'Ramipril 2.5mg' },
-                                                    { display: 'Set á', output: 'Set á Ramipril 2.5mg' },
-                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 2.5mg' },
-                                                    { display: 'Er á', output: 'Er á Ramipril 2.5mg' }
+                                                    { display: 'NOS', output: `Enalapril ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Enalapril ${dose} mg ${freq}` }))
                                                 ]
-                                            },
-                                            {
-                                                display: '1x1',
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Ramipril',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ramipril' },
+                                            ...[2.5, 5, 10].map(dose => ({
+                                                display: `${dose} mg`,
                                                 subOptions: [
-                                                    { display: 'NOS', output: 'Ramipril 2.5mg 1x1' },
-                                                    { display: 'Set á', output: 'Set á Ramipril 2.5mg 1x1' },
-                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 2.5mg 1x1' },
-                                                    { display: 'Er á', output: 'Er á Ramipril 2.5mg 1x1' }
+                                                    { display: 'NOS', output: `Ramipril ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Ramipril ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Benazepril',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Benazepril' },
+                                            ...[5, 10, 20, 40].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Benazepril ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Benazepril ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Quinapril',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Quinapril' },
+                                            ...[5, 10, 20, 40].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Quinapril ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Quinapril ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Fosinopril',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Fosinopril' },
+                                            ...[10, 20, 40].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Fosinopril ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Fosinopril ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Angiotensin II Receptor Blockers (ARBs)',
+                                subOptions: [
+                                    {
+                                        display: 'Losartan',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Losartan' },
+                                            ...[25, 50, 100].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Losartan ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Losartan ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Valsartan',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Valsartan' },
+                                            ...[40, 80, 160, 320].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Valsartan ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Valsartan ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Olmesartan',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Olmesartan' },
+                                            ...[20, 40].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Olmesartan ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Olmesartan ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Irbesartan',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Irbesartan' },
+                                            ...[75, 150, 300].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Irbesartan ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Irbesartan ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Candesartan',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Candesartan' },
+                                            ...[4, 8, 16, 32].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Candesartan ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Candesartan ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Telmisartan',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Telmisartan' },
+                                            ...[20, 40, 80].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Telmisartan ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Telmisartan ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Calcium Channel Blockers (CCBs)',
+                                subOptions: [
+                                    {
+                                        display: 'Amlodipine',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Amlodipine' },
+                                            ...[2.5, 5, 10].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Amlodipine ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Amlodipine ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Nifedipine',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Nifedipine' },
+                                            ...[30, 60, 90].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Nifedipine ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Nifedipine ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Diltiazem',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Diltiazem' },
+                                            ...[120, 180, 240, 300, 360].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Diltiazem ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Diltiazem ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Verapamil',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Verapamil' },
+                                            ...[40, 80, 120, 180, 240].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Verapamil ${dose} mg` },
+                                                    ...['1x1', '2x1', '3x1', 'PN'].map(freq => ({ display: freq, output: `Verapamil ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Felodipine',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Felodipine' },
+                                            ...[2.5, 5, 10].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Felodipine ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Felodipine ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Nicardipine',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Nicardipine' },
+                                            ...[20, 30].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Nicardipine ${dose} mg` },
+                                                    ...['1x1', '2x1', '3x1', 'PN'].map(freq => ({ display: freq, output: `Nicardipine ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Beta Blockers',
+                                subOptions: [
+                                    {
+                                        display: 'Metoprolol',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Metoprolol' },
+                                            ...[25, 50, 100, 200].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Metoprolol ${dose} mg` },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Metoprolol ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Atenolol',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Atenolol' },
+                                            ...[25, 50, 100].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Atenolol ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Atenolol ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Carvedilol',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Carvedilol' },
+                                            ...[3.125, 6.25, 12.5, 25].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Carvedilol ${dose} mg` },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Carvedilol ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Bisoprolol',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Bisoprolol' },
+                                            ...[2.5, 5, 10].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Bisoprolol ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Bisoprolol ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Nebivolol',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Nebivolol' },
+                                            ...[2.5, 5, 10].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Nebivolol ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Nebivolol ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Propranolol',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Propranolol' },
+                                            ...[10, 20, 40, 60, 80, 120, 160].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Propranolol ${dose} mg` },
+                                                    ...['1x1', '2x1', '3x1', 'PN'].map(freq => ({ display: freq, output: `Propranolol ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Diuretics',
+                                subOptions: [
+                                    {
+                                        display: 'Hydrochlorothiazide',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Hydrochlorothiazide' },
+                                            ...[12.5, 25, 50].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Hydrochlorothiazide ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Hydrochlorothiazide ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Furosemide',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Furosemide' },
+                                            ...[20, 40, 80].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Furosemide ${dose} mg` },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Furosemide ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Spironolactone',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Spironolactone' },
+                                            ...[25, 50, 100].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Spironolactone ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Spironolactone ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Chlorthalidone',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Chlorthalidone' },
+                                            ...[12.5, 25, 50].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Chlorthalidone ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Chlorthalidone ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Indapamide',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Indapamide' },
+                                            ...[1.25, 2.5].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Indapamide ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Indapamide ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Bumetanide',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Bumetanide' },
+                                            ...[0.5, 1, 2].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Bumetanide ${dose} mg` },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Bumetanide ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Alpha Blockers',
+                                subOptions: [
+                                    {
+                                        display: 'Doxazosin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Doxazosin' },
+                                            ...[1, 2, 4, 8].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Doxazosin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Doxazosin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Terazosin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Terazosin' },
+                                            ...[1, 2, 5, 10].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Terazosin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Terazosin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Prazosin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Prazosin' },
+                                            ...[1, 2, 5].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Prazosin ${dose} mg` },
+                                                    ...['1x1', '2x1', '3x1', 'PN'].map(freq => ({ display: freq, output: `Prazosin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Central Acting Agents',
+                                subOptions: [
+                                    {
+                                        display: 'Clonidine',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Clonidine' },
+                                            ...[0.1, 0.2, 0.3].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Clonidine ${dose} mg` },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Clonidine ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Methyldopa',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Methyldopa' },
+                                            ...[250, 500].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Methyldopa ${dose} mg` },
+                                                    ...['1x1', '2x1', '3x1', '4x1', 'PN'].map(freq => ({ display: freq, output: `Methyldopa ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Guanfacine',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Guanfacine' },
+                                            ...[1, 2].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Guanfacine ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Guanfacine ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Samsett blóðþrýstingslyf',
+                        subOptions: [
+                            {
+                                display: 'Losartan/Hydrochlorothiazide',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Losartan/Hydrochlorothiazide' },
+                                    ...['50/12.5 mg', '100/12.5 mg', '100/25 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Losartan/Hydrochlorothiazide ${dose}` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Losartan/Hydrochlorothiazide ${dose} ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Valsartan/Hydrochlorothiazide',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Valsartan/Hydrochlorothiazide' },
+                                    ...['80/12.5 mg', '160/12.5 mg', '160/25 mg', '320/12.5 mg', '320/25 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Valsartan/Hydrochlorothiazide ${dose}` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Valsartan/Hydrochlorothiazide ${dose} ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Amlodipine/Benazepril',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Amlodipine/Benazepril' },
+                                    ...['2.5/10 mg', '5/10 mg', '5/20 mg', '10/20 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Amlodipine/Benazepril ${dose}` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Amlodipine/Benazepril ${dose} ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Amlodipine/Valsartan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Amlodipine/Valsartan' },
+                                    ...['5/160 mg', '10/160 mg', '5/320 mg', '10/320 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Amlodipine/Valsartan ${dose}` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Amlodipine/Valsartan ${dose} ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Olmesartan/Hydrochlorothiazide',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Olmesartan/Hydrochlorothiazide' },
+                                    ...['20/12.5 mg', '40/12.5 mg', '40/25 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Olmesartan/Hydrochlorothiazide ${dose}` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Olmesartan/Hydrochlorothiazide ${dose} ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Irbesartan/Hydrochlorothiazide',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Irbesartan/Hydrochlorothiazide' },
+                                    ...['150/12.5 mg', '300/12.5 mg', '300/25 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Irbesartan/Hydrochlorothiazide ${dose}` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Irbesartan/Hydrochlorothiazide ${dose} ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Lisinopril/Hydrochlorothiazide',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Lisinopril/Hydrochlorothiazide' },
+                                    ...['10/12.5 mg', '20/12.5 mg', '20/25 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Lisinopril/Hydrochlorothiazide ${dose}` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Lisinopril/Hydrochlorothiazide ${dose} ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Telmisartan/Amlodipine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Telmisartan/Amlodipine' },
+                                    ...['40/5 mg', '80/5 mg', '80/10 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Telmisartan/Amlodipine ${dose}` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Telmisartan/Amlodipine ${dose} ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Blóðfitulækkandi',
+                        subOptions: [
+                            {
+                                display: 'Statins',
+                                subOptions: [
+                                    {
+                                        display: 'Atorvastatin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Atorvastatin' },
+                                            ...[10, 20, 40, 80].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Atorvastatin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Atorvastatin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Simvastatin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Simvastatin' },
+                                            ...[5, 10, 20, 40, 80].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Simvastatin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Simvastatin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Rosuvastatin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Rosuvastatin' },
+                                            ...[5, 10, 20, 40].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Rosuvastatin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Rosuvastatin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Pravastatin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Pravastatin' },
+                                            ...[10, 20, 40, 80].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Pravastatin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Pravastatin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lovastatin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Lovastatin' },
+                                            ...[10, 20, 40].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Lovastatin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Lovastatin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Fluvastatin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Fluvastatin' },
+                                            ...[20, 40, 80].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Fluvastatin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Fluvastatin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Fibrates',
+                                subOptions: [
+                                    {
+                                        display: 'Fenofibrate',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Fenofibrate' },
+                                            ...[48, 145].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Fenofibrate ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Fenofibrate ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Gemfibrozil',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Gemfibrozil' },
+                                            {
+                                                display: '600 mg',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Gemfibrozil 600 mg' },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Gemfibrozil 600 mg ${freq}` }))
                                                 ]
                                             }
                                         ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Bile Acid Sequestrants',
+                                subOptions: [
+                                    {
+                                        display: 'Colesevelam',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Colesevelam' },
+                                            {
+                                                display: '625 mg',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Colesevelam 625 mg' },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Colesevelam 625 mg ${freq}` }))
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Cholestyramine',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Cholestyramine' },
+                                            {
+                                                display: '4 g',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Cholestyramine 4 g' },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Cholestyramine 4 g ${freq}` }))
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Cholesterol Absorption Inhibitors',
+                                subOptions: [
+                                    {
+                                        display: 'Ezetimibe',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ezetimibe' },
+                                            {
+                                                display: '10 mg',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Ezetimibe 10 mg' },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Ezetimibe 10 mg ${freq}` }))
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Niacin',
+                                subOptions: [
+                                    {
+                                        display: 'Niacin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Niacin' },
+                                            ...[500, 750, 1000].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Niacin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Niacin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Blóðflöguhemmlar og blóðþynnandi',
+                        subOptions: [
+                            {
+                                display: 'Antiplatelets',
+                                subOptions: [
+                                    {
+                                        display: 'Clopidogrel',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Clopidogrel' },
+                                            ...[75, 300].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Clopidogrel ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Clopidogrel ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Aspirin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Aspirin' },
+                                            ...[81, 325].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Aspirin ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Aspirin ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Ticagrelor',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ticagrelor' },
+                                            ...[60, 90].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Ticagrelor ${dose} mg` },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Ticagrelor ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Prasugrel',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Prasugrel' },
+                                            ...[5, 10].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Prasugrel ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Prasugrel ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Anticoagulants',
+                                subOptions: [
+                                    {
+                                        display: 'Warfarin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Warfarin' },
+                                            ...[1, 2, 2.5, 3, 4, 5, 6, 7.5, 10].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Warfarin ${dose} mg` },
+                                                    { display: '1x1', output: `Warfarin ${dose} mg 1x1` }
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Apixaban',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Apixaban' },
+                                            ...[2.5, 5].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Apixaban ${dose} mg` },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Apixaban ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Rivaroxaban',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Rivaroxaban' },
+                                            ...[10, 15, 20].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Rivaroxaban ${dose} mg` },
+                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Rivaroxaban ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Dabigatran',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Dabigatran' },
+                                            ...[75, 110, 150].map(dose => ({
+                                                display: `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Dabigatran ${dose} mg` },
+                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Dabigatran ${dose} mg ${freq}` }))
+                                                ]
+                                            }))
+                                        ]
+                                    },
+                                    {
+                                        display: 'Enoxaparin',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Enoxaparin' },
+                                            ...[30, 40, 1].map(dose => ({
+                                                display: dose === 1 ? '1 mg/kg every 12 hours' : `${dose} mg`,
+                                                subOptions: [
+                                                    { display: 'NOS', output: `Enoxaparin ${dose === 1 ? '1 mg/kg every 12 hours' : `${dose} mg`}` },
+                                                    { display: '1x1', output: `Enoxaparin ${dose === 1 ? '1 mg/kg every 12 hours' : `${dose} mg`} 1x1` }
+                                                ]
+                                            }))
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Lyf við hjartaöng, arrythmíu o.fl',
+                        subOptions: [
+                            {
+                                display: 'Nitroglycerin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Nitroglycerin' },
+                                    ...[0.3, 0.4, 0.6].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Nitroglycerin ${dose} mg` },
+                                            { display: 'Sublingual as needed', output: `Nitroglycerin ${dose} mg sublingual as needed` }
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Isosorbide Mononitrate',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Isosorbide Mononitrate' },
+                                    ...[10, 20, 30, 60, 120].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Isosorbide Mononitrate ${dose} mg` },
+                                            ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Isosorbide Mononitrate ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Digoxin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Digoxin' },
+                                    ...[0.125, 0.25].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Digoxin ${dose} mg` },
+                                            { display: '1x1', output: `Digoxin ${dose} mg 1x1` }
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Amiodarone',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Amiodarone' },
+                                    ...[200, 400].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Amiodarone ${dose} mg` },
+                                            { display: '1x1', output: `Amiodarone ${dose} mg 1x1` }
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Ivabradine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Ivabradine' },
+                                    ...[5, 7.5].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Ivabradine ${dose} mg` },
+                                            ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Ivabradine ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Sacubitril/Valsartan',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Sacubitril/Valsartan' },
+                                    ...['24/26 mg', '49/51 mg', '97/103 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Sacubitril/Valsartan ${dose}` },
+                                            ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Sacubitril/Valsartan ${dose} ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Ranolazine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Ranolazine' },
+                                    ...[500, 1000].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Ranolazine ${dose} mg` },
+                                            ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Ranolazine ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    }
+                    
+                ],
+                onRightClickOutput: 'Engin lyf'
+            },
+            {
+                display: 'Meltingarlyf',
+                subOptions: [
+                    {
+                        display: 'Sýrubindandi lyf', // Antacids
+                        subOptions: [
+                            {
+                                display: 'Kalsíumkarbónat', // Calcium Carbonate
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Kalsíumkarbónat'
+                                    },
+                                    {
+                                        display: '500mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Kalsíumkarbónat 500mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Kalsíumkarbónat 500mg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Kalsíumkarbónat 500mg 2x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '1000mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Kalsíumkarbónat 1000mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Kalsíumkarbónat 1000mg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Kalsíumkarbónat 1000mg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more antacids as needed
+                        ]
+                    },
+                    {
+                        display: 'Prótónpumpuhemlar', // Proton Pump Inhibitors
+                        subOptions: [
+                            {
+                                display: 'Omeprazole',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Omeprazole'
+                                    },
+                                    {
+                                        display: '10mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Omeprazole 10mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Omeprazole 10mg 1x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '20mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Omeprazole 20mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Omeprazole 20mg 1x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '40mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Omeprazole 40mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Omeprazole 40mg 1x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more proton pump inhibitors as needed
+                        ]
+                    },
+                    {
+                        display: 'Lyf gegn ógleði', // Antiemetics
+                        subOptions: [
+                            {
+                                display: 'Ondansetron',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Ondansetron'
+                                    },
+                                    {
+                                        display: '4mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Ondansetron 4mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Ondansetron 4mg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Ondansetron 4mg 2x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '8mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Ondansetron 8mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Ondansetron 8mg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Ondansetron 8mg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more antiemetics as needed
+                        ]
+                    },
+                    {
+                        display: 'Hægðalyf', // Laxatives
+                        subOptions: [
+                            {
+                                display: 'Polyethylene Glycol',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Polyethylene Glycol'
+                                    },
+                                    {
+                                        display: '17g',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Polyethylene Glycol 17g'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Polyethylene Glycol 17g 1x1'
+                                            }
+                                        ]
+                                    }
+                                    // Add more strengths and dosages as needed
+                                ]
+                            }
+                            // Add more laxatives as needed
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Innkirtlalyf',
+                subOptions: [
+                    {
+                        display: 'Sykursýkislyf', // Antidiabetics
+                        subOptions: [
+                            {
+                                display: 'Insúlín', // Insulin
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Insúlín'
+                                    },
+                                    {
+                                        display: 'Humalog', // Example of a rapid-acting insulin
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Humalog'
+                                            },
+                                            {
+                                                display: '100 units/mL',
+                                                subOptions: [
+                                                    {
+                                                        display: 'NOS',
+                                                        output: 'Humalog 100 units/mL'
+                                                    },
+                                                    {
+                                                        display: '1x daglega',
+                                                        output: 'Humalog 100 units/mL 1x daglega'
+                                                    },
+                                                    {
+                                                        display: '2x daglega',
+                                                        output: 'Humalog 100 units/mL 2x daglega'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Lantus', // Example of a long-acting insulin
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Lantus'
+                                            },
+                                            {
+                                                display: '100 units/mL',
+                                                subOptions: [
+                                                    {
+                                                        display: 'NOS',
+                                                        output: 'Lantus 100 units/mL'
+                                                    },
+                                                    {
+                                                        display: '1x daglega',
+                                                        output: 'Lantus 100 units/mL 1x daglega'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                    // Add more insulin types as needed
+                                ]
+                            },
+                            {
+                                display: 'Metformin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Metformin'
+                                    },
+                                    {
+                                        display: '500mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Metformin 500mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Metformin 500mg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Metformin 500mg 2x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '1000mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Metformin 1000mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Metformin 1000mg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Metformin 1000mg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more antidiabetics as needed
+                        ]
+                    },
+                    {
+                        display: 'Skjaldkirtilslyf', // Thyroid medications
+                        subOptions: [
+                            {
+                                display: 'Levóþýroxín', // Levothyroxine
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Levóþýroxín'
+                                    },
+                                    {
+                                        display: '50mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Levóþýroxín 50mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Levóþýroxín 50mcg 1x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '100mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Levóþýroxín 100mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Levóþýroxín 100mcg 1x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '150mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Levóþýroxín 150mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Levóþýroxín 150mcg 1x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more thyroid medications as needed
+                        ]
+                    },
+                    {
+                        display: 'Barksterar', // Corticosteroids
+                        subOptions: [
+                            {
+                                display: 'Prednisólón', // Prednisone
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Prednisólón'
                                     },
                                     {
                                         display: '5mg',
                                         subOptions: [
                                             {
                                                 display: 'NOS',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Ramipril 5mg' },
-                                                    { display: 'Set á', output: 'Set á Ramipril 5mg' },
-                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 5mg' },
-                                                    { display: 'Er á', output: 'Er á Ramipril 5mg' }
-                                                ]
+                                                output: 'Prednisólón 5mg'
                                             },
                                             {
                                                 display: '1x1',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Ramipril 5mg 1x1' },
-                                                    { display: 'Set á', output: 'Set á Ramipril 5mg 1x1' },
-                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 5mg 1x1' },
-                                                    { display: 'Er á', output: 'Er á Ramipril 5mg 1x1' }
-                                                ]
+                                                output: 'Prednisólón 5mg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Prednisólón 5mg 2x1'
                                             }
                                         ]
                                     },
@@ -16226,20 +18248,888 @@ const LyfData = [
                                         subOptions: [
                                             {
                                                 display: 'NOS',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Ramipril 10mg' },
-                                                    { display: 'Set á', output: 'Set á Ramipril 10mg' },
-                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 10mg' },
-                                                    { display: 'Er á', output: 'Er á Ramipril 10mg' }
-                                                ]
+                                                output: 'Prednisólón 10mg'
                                             },
                                             {
                                                 display: '1x1',
+                                                output: 'Prednisólón 10mg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Prednisólón 10mg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more corticosteroids as needed
+                        ]
+                    },
+                    {
+                        display: 'Hormónauppbótarmeðferð', // Hormone replacement therapies
+                        subOptions: [
+                            {
+                                display: 'Estrógen', // Estrogen
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Estrógen'
+                                    },
+                                    {
+                                        display: '1mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Estrógen 1mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Estrógen 1mg 1x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '2mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Estrógen 2mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Estrógen 2mg 1x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Testósterón', // Testosterone
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Testósterón'
+                                    },
+                                    {
+                                        display: '50mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Testósterón 50mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Testósterón 50mg 1x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '100mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Testósterón 100mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Testósterón 100mg 1x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more hormone replacement therapies as needed
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Innöndunarlyf',
+                subOptions: [
+                    {
+                        display: 'Berkjuvíkkandi lyf', // Bronchodilators
+                        subOptions: [
+                            {
+                                display: 'Salbutamol', // Example: Albuterol
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Salbutamol'
+                                    },
+                                    {
+                                        display: '100 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Salbutamol 100 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Salbutamol 100 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Salbutamol 100 mcg 2x1'
+                                            },
+                                            {
+                                                display: '3x1',
+                                                output: 'Salbutamol 100 mcg 3x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '200 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Salbutamol 200 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Salbutamol 200 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Salbutamol 200 mcg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Formoteról', // Example: Formoterol
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Formoteról'
+                                    },
+                                    {
+                                        display: '12 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Formoteról 12 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Formoteról 12 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Formoteról 12 mcg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more bronchodilators as needed
+                        ]
+                    },
+                    {
+                        display: 'Innöndunar barksterar', // Corticosteroids for inhalation
+                        subOptions: [
+                            {
+                                display: 'Fluticasone', // Example: Fluticasone
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Fluticasone'
+                                    },
+                                    {
+                                        display: '100 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Fluticasone 100 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Fluticasone 100 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Fluticasone 100 mcg 2x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '250 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Fluticasone 250 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Fluticasone 250 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Fluticasone 250 mcg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Budesonide', // Example: Budesonide
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Budesonide'
+                                    },
+                                    {
+                                        display: '200 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Budesonide 200 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Budesonide 200 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Budesonide 200 mcg 2x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '400 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Budesonide 400 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Budesonide 400 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Budesonide 400 mcg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more inhaled corticosteroids as needed
+                        ]
+                    },
+                    {
+                        display: 'Leukotrien hamlarar', // Leukotriene inhibitors
+                        subOptions: [
+                            {
+                                display: 'Montelukast', // Example: Montelukast
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Montelukast'
+                                    },
+                                    {
+                                        display: '10 mg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Montelukast 10 mg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Montelukast 10 mg 1x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more leukotriene inhibitors as needed
+                        ]
+                    },
+                    {
+                        display: 'Samsett lyf', // Combination medications
+                        subOptions: [
+                            {
+                                display: 'Symbicort', // Example: Combination of Budesonide and Formoterol
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Symbicort'
+                                    },
+                                    {
+                                        display: '80/4.5 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Symbicort 80/4.5 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Symbicort 80/4.5 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Symbicort 80/4.5 mcg 2x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '160/4.5 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Symbicort 160/4.5 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Symbicort 160/4.5 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Symbicort 160/4.5 mcg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Seretide', // Example: Combination of Fluticasone and Salmeterol
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Seretide'
+                                    },
+                                    {
+                                        display: '50/250 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Seretide 50/250 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Seretide 50/250 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Seretide 50/250 mcg 2x1'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '50/500 mcg',
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Seretide 50/500 mcg'
+                                            },
+                                            {
+                                                display: '1x1',
+                                                output: 'Seretide 50/500 mcg 1x1'
+                                            },
+                                            {
+                                                display: '2x1',
+                                                output: 'Seretide 50/500 mcg 2x1'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more combination medications as needed
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Húðlyf', 'Ofnæmislyf', 'Geðlyf', 'Verkjalyf'],
+        options: [
+            {
+                display: 'Húðlyf',
+                subOptions: [
+                    {
+                        display: 'Sterar', // Topical steroids
+                        subOptions: [
+                            {
+                                display: 'Hydrocortisone',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Hydrocortisone krem'
+                                    },
+                                    {
+                                        display: '1%', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Hydrocortisone 1% krem'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Hydrocortisone 1% krem 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Hydrocortisone 1% krem 2x á dag'
+                                            },
+                                            {
+                                                display: '1x á viku',
+                                                output: 'Hydrocortisone 1% krem 1x á viku'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Hydrocortisone 1% krem PN'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '2.5%', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Hydrocortisone 2.5% krem'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Hydrocortisone 2.5% krem 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Hydrocortisone 2.5% krem 2x á dag'
+                                            },
+                                            {
+                                                display: '1x á viku',
+                                                output: 'Hydrocortisone 2.5% krem 1x á viku'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Hydrocortisone 2.5% krem PN'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more topical steroids as needed
+                        ]
+                    },
+                    {
+                        display: 'Sveppalyf', // Antifungal creams
+                        subOptions: [
+                            {
+                                display: 'Terbinafine',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Terbinafine krem'
+                                    },
+                                    {
+                                        display: '1%', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Terbinafine 1% krem'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Terbinafine 1% krem 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Terbinafine 1% krem 2x á dag'
+                                            },
+                                            {
+                                                display: '1x á viku',
+                                                output: 'Terbinafine 1% krem 1x á viku'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Terbinafine 1% krem PN'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Clotrimazole',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Clotrimazole krem'
+                                    },
+                                    {
+                                        display: '1%', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Clotrimazole 1% krem'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Clotrimazole 1% krem 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Clotrimazole 1% krem 2x á dag'
+                                            },
+                                            {
+                                                display: '1x á viku',
+                                                output: 'Clotrimazole 1% krem 1x á viku'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Clotrimazole 1% krem PN'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more antifungal creams as needed
+                        ]
+                    },
+                    {
+                        display: 'Lyf við unglingabólum', // Acne medications
+                        subOptions: [
+                            {
+                                display: 'Benzoyl Peroxide',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Benzoyl Peroxide krem'
+                                    },
+                                    {
+                                        display: '5%', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Benzoyl Peroxide 5% krem'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Benzoyl Peroxide 5% krem 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Benzoyl Peroxide 5% krem 2x á dag'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Benzoyl Peroxide 5% krem PN'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '10%', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Benzoyl Peroxide 10% krem'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Benzoyl Peroxide 10% krem 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Benzoyl Peroxide 10% krem 2x á dag'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Benzoyl Peroxide 10% krem PN'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Tretinoin', // Example: Tretinoin
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Tretinoin krem'
+                                    },
+                                    {
+                                        display: '0.025%', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Tretinoin 0.025% krem'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Tretinoin 0.025% krem 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Tretinoin 0.025% krem 2x á dag'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Tretinoin 0.025% krem PN'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '0.05%', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Tretinoin 0.05% krem'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Tretinoin 0.05% krem 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Tretinoin 0.05% krem 2x á dag'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Tretinoin 0.05% krem PN'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more acne medications as needed
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Ofnæmislyf',
+                subOptions: [
+                    {
+                        display: 'Andhistamín', // Antihistamines
+                        subOptions: [
+                            {
+                                display: 'Loratadine',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Loratadine'
+                                    },
+                                    {
+                                        display: '10 mg', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Loratadine 10 mg'
+                                            },
+                                            {
+                                                display: '1x á dag', // Dosage
+                                                output: 'Loratadine 10 mg 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Loratadine 10 mg 2x á dag'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Loratadine 10 mg PN'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Diphenhydramine',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Diphenhydramine'
+                                    },
+                                    {
+                                        display: '25 mg', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Diphenhydramine 25 mg'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Diphenhydramine 25 mg 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Diphenhydramine 25 mg 2x á dag'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Diphenhydramine 25 mg PN'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '50 mg', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Diphenhydramine 50 mg'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Diphenhydramine 50 mg 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Diphenhydramine 50 mg 2x á dag'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Diphenhydramine 50 mg PN'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more antihistamines as needed
+                        ]
+                    },
+                    {
+                        display: 'Afþrúgandi lyf', // Decongestants
+                        subOptions: [
+                            {
+                                display: 'Pseudoephedrine',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Pseudoephedrine'
+                                    },
+                                    {
+                                        display: '30 mg', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Pseudoephedrine 30 mg'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Pseudoephedrine 30 mg 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Pseudoephedrine 30 mg 2x á dag'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Pseudoephedrine 30 mg PN'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: '60 mg', // Strength
+                                        subOptions: [
+                                            {
+                                                display: 'NOS',
+                                                output: 'Pseudoephedrine 60 mg'
+                                            },
+                                            {
+                                                display: '1x á dag',
+                                                output: 'Pseudoephedrine 60 mg 1x á dag'
+                                            },
+                                            {
+                                                display: '2x á dag',
+                                                output: 'Pseudoephedrine 60 mg 2x á dag'
+                                            },
+                                            {
+                                                display: 'PN',
+                                                output: 'Pseudoephedrine 60 mg PN'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            // Add more decongestants as needed
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Geðlyf',
+                subOptions: [
+                    {
+                        display: 'Þunglyndislyf', // Antidepressants
+                        subOptions: [
+                            {
+                                display: 'SSRI (Selective Serotonin Reuptake Inhibitors)',
+                                subOptions: [
+                                    {
+                                        display: 'Sertraline',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Sertraline' },
+                                            {
+                                                display: '50 mg', // Strength
                                                 subOptions: [
-                                                    { display: 'NOS', output: 'Ramipril 10mg 1x1' },
-                                                    { display: 'Set á', output: 'Set á Ramipril 10mg 1x1' },
-                                                    { display: 'Bæti við', output: 'Bæti við Ramipril 10mg 1x1' },
-                                                    { display: 'Er á', output: 'Er á Ramipril 10mg 1x1' }
+                                                    { display: 'NOS', output: 'Sertraline 50 mg' },
+                                                    { display: '1x1', output: 'Sertraline 50 mg 1x1' },
+                                                    { display: '2x1', output: 'Sertraline 50 mg 2x1' },
+                                                    { display: '3x1', output: 'Sertraline 50 mg 3x1' },
+                                                    { display: 'PN', output: 'Sertraline 50 mg PN' }
+                                                ]
+                                            },
+                                            {
+                                                display: '100 mg',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Sertraline 100 mg' },
+                                                    { display: '1x1', output: 'Sertraline 100 mg 1x1' },
+                                                    { display: '2x1', output: 'Sertraline 100 mg 2x1' },
+                                                    { display: 'PN', output: 'Sertraline 100 mg PN' }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Fluoxetine',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Fluoxetine' },
+                                            {
+                                                display: '20 mg',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Fluoxetine 20 mg' },
+                                                    { display: '1x1', output: 'Fluoxetine 20 mg 1x1' },
+                                                    { display: '2x1', output: 'Fluoxetine 20 mg 2x1' },
+                                                    { display: 'PN', output: 'Fluoxetine 20 mg PN' }
+                                                ]
+                                            },
+                                            {
+                                                display: '40 mg',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Fluoxetine 40 mg' },
+                                                    { display: '1x1', output: 'Fluoxetine 40 mg 1x1' },
+                                                    { display: '2x1', output: 'Fluoxetine 40 mg 2x1' },
+                                                    { display: 'PN', output: 'Fluoxetine 40 mg PN' }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'SNRI (Serotonin-Norepinephrine Reuptake Inhibitors)',
+                                subOptions: [
+                                    {
+                                        display: 'Venlafaxine',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Venlafaxine' },
+                                            {
+                                                display: '37.5 mg',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Venlafaxine 37.5 mg' },
+                                                    { display: '1x1', output: 'Venlafaxine 37.5 mg 1x1' },
+                                                    { display: '2x1', output: 'Venlafaxine 37.5 mg 2x1' },
+                                                    { display: 'PN', output: 'Venlafaxine 37.5 mg PN' }
+                                                ]
+                                            },
+                                            {
+                                                display: '75 mg',
+                                                subOptions: [
+                                                    { display: 'NOS', output: 'Venlafaxine 75 mg' },
+                                                    { display: '1x1', output: 'Venlafaxine 75 mg 1x1' },
+                                                    { display: '2x1', output: 'Venlafaxine 75 mg 2x1' },
+                                                    { display: 'PN', output: 'Venlafaxine 75 mg PN' }
                                                 ]
                                             }
                                         ]
@@ -16249,87 +19139,54 @@ const LyfData = [
                         ]
                     },
                     {
-                        display: 'Angiotensin II receptor blocker (ARB)',
+                        display: 'Geðrofslyf', // Antipsychotics
                         subOptions: [
                             {
-                                display: 'Losartan',
+                                display: 'Haloperidol',
                                 subOptions: [
+                                    { display: 'NOS', output: 'Haloperidol' },
                                     {
-                                        display: 'NOS',
+                                        display: '5 mg',
                                         subOptions: [
-                                            { display: 'NOS', output: 'Losartan' },
-                                            { display: 'Set á', output: 'Set á Losartan' },
-                                            { display: 'Bæti við', output: 'Bæti við Losartan' },
-                                            { display: 'Er á', output: 'Er á Losartan' }
+                                            { display: 'NOS', output: 'Haloperidol 5 mg' },
+                                            { display: '1x1', output: 'Haloperidol 5 mg 1x1' },
+                                            { display: '2x1', output: 'Haloperidol 5 mg 2x1' },
+                                            { display: '3x1', output: 'Haloperidol 5 mg 3x1' },
+                                            { display: 'PN', output: 'Haloperidol 5 mg PN' }
                                         ]
                                     },
                                     {
-                                        display: '25mg',
+                                        display: '10 mg',
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Losartan 25mg' },
-                                                    { display: 'Set á', output: 'Set á Losartan 25mg' },
-                                                    { display: 'Bæti við', output: 'Bæti við Losartan 25mg' },
-                                                    { display: 'Er á', output: 'Er á Losartan 25mg' }
-                                                ]
-                                            },
-                                            {
-                                                display: '1x1',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Losartan 25mg 1x1' },
-                                                    { display: 'Set á', output: 'Set á Losartan 25mg 1x1' },
-                                                    { display: 'Bæti við', output: 'Bæti við Losartan 25mg 1x1' },
-                                                    { display: 'Er á', output: 'Er á Losartan 25mg 1x1' }
-                                                ]
-                                            }
+                                            { display: 'NOS', output: 'Haloperidol 10 mg' },
+                                            { display: '1x1', output: 'Haloperidol 10 mg 1x1' },
+                                            { display: '2x1', output: 'Haloperidol 10 mg 2x1' },
+                                            { display: 'PN', output: 'Haloperidol 10 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Clozapine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Clozapine' },
+                                    {
+                                        display: '25 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Clozapine 25 mg' },
+                                            { display: '1x1', output: 'Clozapine 25 mg 1x1' },
+                                            { display: '2x1', output: 'Clozapine 25 mg 2x1' },
+                                            { display: '3x1', output: 'Clozapine 25 mg 3x1' },
+                                            { display: 'PN', output: 'Clozapine 25 mg PN' }
                                         ]
                                     },
                                     {
-                                        display: '50mg',
+                                        display: '100 mg',
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Losartan 50mg' },
-                                                    { display: 'Set á', output: 'Set á Losartan 50mg' },
-                                                    { display: 'Bæti við', output: 'Bæti við Losartan 50mg' },
-                                                    { display: 'Er á', output: 'Er á Losartan 50mg' }
-                                                ]
-                                            },
-                                            {
-                                                display: '1x1',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Losartan 50mg 1x1' },
-                                                    { display: 'Set á', output: 'Set á Losartan 50mg 1x1' },
-                                                    { display: 'Bæti við', output: 'Bæti við Losartan 50mg 1x1' },
-                                                    { display: 'Er á', output: 'Er á Losartan 50mg 1x1' }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        display: '100mg',
-                                        subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Losartan 100mg' },
-                                                    { display: 'Set á', output: 'Set á Losartan 100mg' },
-                                                    { display: 'Bæti við', output: 'Bæti við Losartan 100mg' },
-                                                    { display: 'Er á', output: 'Er á Losartan 100mg' }
-                                                ]
-                                            },
-                                            {
-                                                display: '1x1',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Losartan 100mg 1x1' },
-                                                    { display: 'Set á', output: 'Set á Losartan 100mg 1x1' },
-                                                    { display: 'Bæti við', output: 'Bæti við Losartan 100mg 1x1' },
-                                                    { display: 'Er á', output: 'Er á Losartan 100mg 1x1' }
-                                                ]
-                                            }
+                                            { display: 'NOS', output: 'Clozapine 100 mg' },
+                                            { display: '1x1', output: 'Clozapine 100 mg 1x1' },
+                                            { display: '2x1', output: 'Clozapine 100 mg 2x1' },
+                                            { display: 'PN', output: 'Clozapine 100 mg PN' }
                                         ]
                                     }
                                 ]
@@ -16337,105 +19194,1085 @@ const LyfData = [
                         ]
                     },
                     {
-                        display: 'Beta-blokki',
+                        display: 'Kvíðastillandi lyf', // Anxiolytics
                         subOptions: [
                             {
-                                display: 'Metoprolol',
+                                display: 'Diazepam',
                                 subOptions: [
+                                    { display: 'NOS', output: 'Diazepam' },
                                     {
-                                        display: 'NOS',
+                                        display: '5 mg',
                                         subOptions: [
-                                            { display: 'NOS', output: 'Metoprolol' },
-                                            { display: 'Set á', output: 'Set á Metoprolol' },
-                                            { display: 'Bæti við', output: 'Bæti við Metoprolol' },
-                                            { display: 'Er á', output: 'Er á Metoprolol' }
+                                            { display: 'NOS', output: 'Diazepam 5 mg' },
+                                            { display: '1x1', output: 'Diazepam 5 mg 1x1' },
+                                            { display: '2x1', output: 'Diazepam 5 mg 2x1' },
+                                            { display: '3x1', output: 'Diazepam 5 mg 3x1' },
+                                            { display: 'PN', output: 'Diazepam 5 mg PN' }
                                         ]
                                     },
                                     {
-                                        display: '25mg',
+                                        display: '10 mg',
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Metoprolol 25mg' },
-                                                    { display: 'Set á', output: 'Set á Metoprolol 25mg' },
-                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 25mg' },
-                                                    { display: 'Er á', output: 'Er á Metoprolol 25mg' }
-                                                ]
-                                            },
-                                            {
-                                                display: '1x1',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Metoprolol 25mg 1x1' },
-                                                    { display: 'Set á', output: 'Set á Metoprolol 25mg 1x1' },
-                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 25mg 1x1' },
-                                                    { display: 'Er á', output: 'Er á Metoprolol 25mg 1x1' }
-                                                ]
-                                            },
-                                            {
-                                                display: '1x2',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Metoprolol 25mg 1x2' },
-                                                    { display: 'Set á', output: 'Set á Metoprolol 25mg 1x2' },
-                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 25mg 1x2' },
-                                                    { display: 'Er á', output: 'Er á Metoprolol 25mg 1x2' }
-                                                ]
-                                            }
+                                            { display: 'NOS', output: 'Diazepam 10 mg' },
+                                            { display: '1x1', output: 'Diazepam 10 mg 1x1' },
+                                            { display: '2x1', output: 'Diazepam 10 mg 2x1' },
+                                            { display: 'PN', output: 'Diazepam 10 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Alprazolam',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Alprazolam' },
+                                    {
+                                        display: '0.25 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Alprazolam 0.25 mg' },
+                                            { display: '1x1', output: 'Alprazolam 0.25 mg 1x1' },
+                                            { display: '2x1', output: 'Alprazolam 0.25 mg 2x1' },
+                                            { display: 'PN', output: 'Alprazolam 0.25 mg PN' }
                                         ]
                                     },
                                     {
-                                        display: '50mg',
+                                        display: '0.5 mg',
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Metoprolol 50mg' },
-                                                    { display: 'Set á', output: 'Set á Metoprolol 50mg' },
-                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 50mg' },
-                                                    { display: 'Er á', output: 'Er á Metoprolol 50mg' }
-                                                ]
-                                            },
-                                            {
-                                                display: '1x1',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Metoprolol 50mg 1x1' },
-                                                    { display: 'Set á', output: 'Set á Metoprolol 50mg 1x1' },
-                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 50mg 1x1' },
-                                                    { display: 'Er á', output: 'Er á Metoprolol 50mg 1x1' }
-                                                ]
-                                            },
-                                            {
-                                                display: '1x2',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Metoprolol 50mg 1x2' },
-                                                    { display: 'Set á', output: 'Set á Metoprolol 50mg 1x2' },
-                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 50mg 1x2' },
-                                                    { display: 'Er á', output: 'Er á Metoprolol 50mg 1x2' }
-                                                ]
-                                            }
+                                            { display: 'NOS', output: 'Alprazolam 0.5 mg' },
+                                            { display: '1x1', output: 'Alprazolam 0.5 mg 1x1' },
+                                            { display: '2x1', output: 'Alprazolam 0.5 mg 2x1' },
+                                            { display: 'PN', output: 'Alprazolam 0.5 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Flogaveikilyf', // Antiepileptics
+                        subOptions: [
+                            {
+                                display: 'Phenytoin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Phenytoin' },
+                                    {
+                                        display: '100 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Phenytoin 100 mg' },
+                                            { display: '1x1', output: 'Phenytoin 100 mg 1x1' },
+                                            { display: '2x1', output: 'Phenytoin 100 mg 2x1' },
+                                            { display: 'PN', output: 'Phenytoin 100 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Valproate',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Valproate' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Valproate 250 mg' },
+                                            { display: '1x1', output: 'Valproate 250 mg 1x1' },
+                                            { display: '2x1', output: 'Valproate 250 mg 2x1' },
+                                            { display: 'PN', output: 'Valproate 250 mg PN' }
                                         ]
                                     },
                                     {
-                                        display: '100mg',
+                                        display: '500 mg',
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Metoprolol 100mg' },
-                                                    { display: 'Set á', output: 'Set á Metoprolol 100mg' },
-                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 100mg' },
-                                                    { display: 'Er á', output: 'Er á Metoprolol 100mg' }
-                                                ]
-                                            },
-                                            {
-                                                display: '1x1',
-                                                subOptions: [
-                                                    { display: 'NOS', output: 'Metoprolol 100mg 1x1' },
-                                                    { display: 'Set á', output: 'Set á Metoprolol 100mg 1x1' },
-                                                    { display: 'Bæti við', output: 'Bæti við Metoprolol 100mg 1x1' },
-                                                    { display: 'Er á', output: 'Er á Metoprolol 100mg 1x1' }
-                                                ]
-                                            }
+                                            { display: 'NOS', output: 'Valproate 500 mg' },
+                                            { display: '1x1', output: 'Valproate 500 mg 1x1' },
+                                            { display: '2x1', output: 'Valproate 500 mg 2x1' },
+                                            { display: 'PN', output: 'Valproate 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Örvandi lyf', // Stimulants
+                        subOptions: [
+                            {
+                                display: 'Methylphenidate',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Methylphenidate' },
+                                    {
+                                        display: '10 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Methylphenidate 10 mg' },
+                                            { display: '1x1', output: 'Methylphenidate 10 mg 1x1' },
+                                            { display: '2x1', output: 'Methylphenidate 10 mg 2x1' },
+                                            { display: 'PN', output: 'Methylphenidate 10 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '20 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Methylphenidate 20 mg' },
+                                            { display: '1x1', output: 'Methylphenidate 20 mg 1x1' },
+                                            { display: '2x1', output: 'Methylphenidate 20 mg 2x1' },
+                                            { display: 'PN', output: 'Methylphenidate 20 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Dextroamphetamine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Dextroamphetamine' },
+                                    {
+                                        display: '5 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Dextroamphetamine 5 mg' },
+                                            { display: '1x1', output: 'Dextroamphetamine 5 mg 1x1' },
+                                            { display: '2x1', output: 'Dextroamphetamine 5 mg 2x1' },
+                                            { display: 'PN', output: 'Dextroamphetamine 5 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '10 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Dextroamphetamine 10 mg' },
+                                            { display: '1x1', output: 'Dextroamphetamine 10 mg 1x1' },
+                                            { display: '2x1', output: 'Dextroamphetamine 10 mg 2x1' },
+                                            { display: 'PN', output: 'Dextroamphetamine 10 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Slævandi / Svefnlyf', // Sedatives/Hypnotics
+                        subOptions: [
+                            {
+                                display: 'Zolpidem',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Zolpidem' },
+                                    {
+                                        display: '5 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Zolpidem 5 mg' },
+                                            { display: '1x1', output: 'Zolpidem 5 mg 1x1' },
+                                            { display: '2x1', output: 'Zolpidem 5 mg 2x1' },
+                                            { display: 'PN', output: 'Zolpidem 5 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '10 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Zolpidem 10 mg' },
+                                            { display: '1x1', output: 'Zolpidem 10 mg 1x1' },
+                                            { display: '2x1', output: 'Zolpidem 10 mg 2x1' },
+                                            { display: 'PN', output: 'Zolpidem 10 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Temazepam',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Temazepam' },
+                                    {
+                                        display: '10 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Temazepam 10 mg' },
+                                            { display: '1x1', output: 'Temazepam 10 mg 1x1' },
+                                            { display: '2x1', output: 'Temazepam 10 mg 2x1' },
+                                            { display: 'PN', output: 'Temazepam 10 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '20 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Temazepam 20 mg' },
+                                            { display: '1x1', output: 'Temazepam 20 mg 1x1' },
+                                            { display: '2x1', output: 'Temazepam 20 mg 2x1' },
+                                            { display: 'PN', output: 'Temazepam 20 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Verkjalyf',
+                subOptions: [
+                    {
+                        display: 'Nonsteroidal Anti-Inflammatory Drugs (NSAIDs)', // NSAIDs
+                        subOptions: [
+                            {
+                                display: 'Ibuprofen',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Ibuprofen' },
+                                    {
+                                        display: '200 mg', // Strength
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ibuprofen 200 mg' },
+                                            { display: '1x1', output: 'Ibuprofen 200 mg 1x1' },
+                                            { display: '2x1', output: 'Ibuprofen 200 mg 2x1' },
+                                            { display: '3x1', output: 'Ibuprofen 200 mg 3x1' },
+                                            { display: 'PN', output: 'Ibuprofen 200 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '400 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ibuprofen 400 mg' },
+                                            { display: '1x1', output: 'Ibuprofen 400 mg 1x1' },
+                                            { display: '2x1', output: 'Ibuprofen 400 mg 2x1' },
+                                            { display: '3x1', output: 'Ibuprofen 400 mg 3x1' },
+                                            { display: 'PN', output: 'Ibuprofen 400 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Naproxen',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Naproxen' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Naproxen 250 mg' },
+                                            { display: '1x1', output: 'Naproxen 250 mg 1x1' },
+                                            { display: '2x1', output: 'Naproxen 250 mg 2x1' },
+                                            { display: 'PN', output: 'Naproxen 250 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Naproxen 500 mg' },
+                                            { display: '1x1', output: 'Naproxen 500 mg 1x1' },
+                                            { display: '2x1', output: 'Naproxen 500 mg 2x1' },
+                                            { display: 'PN', output: 'Naproxen 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Paracetamol', // Paracetamol
+                        subOptions: [
+                            {
+                                display: 'Paracetamol',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Paracetamol' },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Paracetamol 500 mg' },
+                                            { display: '1x1', output: 'Paracetamol 500 mg 1x1' },
+                                            { display: '2x1', output: 'Paracetamol 500 mg 2x1' },
+                                            { display: '3x1', output: 'Paracetamol 500 mg 3x1' },
+                                            { display: 'PN', output: 'Paracetamol 500 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '1000 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Paracetamol 1000 mg' },
+                                            { display: '1x1', output: 'Paracetamol 1000 mg 1x1' },
+                                            { display: '2x1', output: 'Paracetamol 1000 mg 2x1' },
+                                            { display: 'PN', output: 'Paracetamol 1000 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Opioids', // Opioids
+                        subOptions: [
+                            {
+                                display: 'Codeine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Codeine' },
+                                    {
+                                        display: '15 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Codeine 15 mg' },
+                                            { display: '1x1', output: 'Codeine 15 mg 1x1' },
+                                            { display: '2x1', output: 'Codeine 15 mg 2x1' },
+                                            { display: '3x1', output: 'Codeine 15 mg 3x1' },
+                                            { display: 'PN', output: 'Codeine 15 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '30 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Codeine 30 mg' },
+                                            { display: '1x1', output: 'Codeine 30 mg 1x1' },
+                                            { display: '2x1', output: 'Codeine 30 mg 2x1' },
+                                            { display: 'PN', output: 'Codeine 30 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Tramadol',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Tramadol' },
+                                    {
+                                        display: '50 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Tramadol 50 mg' },
+                                            { display: '1x1', output: 'Tramadol 50 mg 1x1' },
+                                            { display: '2x1', output: 'Tramadol 50 mg 2x1' },
+                                            { display: '3x1', output: 'Tramadol 50 mg 3x1' },
+                                            { display: 'PN', output: 'Tramadol 50 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '100 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Tramadol 100 mg' },
+                                            { display: '1x1', output: 'Tramadol 100 mg 1x1' },
+                                            { display: '2x1', output: 'Tramadol 100 mg 2x1' },
+                                            { display: 'PN', output: 'Tramadol 100 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Atypical Pain Medications', // Atypical Pain Medications
+                        subOptions: [
+                            {
+                                display: 'Gabapentin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Gabapentin' },
+                                    {
+                                        display: '100 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Gabapentin 100 mg' },
+                                            { display: '1x1', output: 'Gabapentin 100 mg 1x1' },
+                                            { display: '2x1', output: 'Gabapentin 100 mg 2x1' },
+                                            { display: '3x1', output: 'Gabapentin 100 mg 3x1' },
+                                            { display: 'PN', output: 'Gabapentin 100 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '300 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Gabapentin 300 mg' },
+                                            { display: '1x1', output: 'Gabapentin 300 mg 1x1' },
+                                            { display: '2x1', output: 'Gabapentin 300 mg 2x1' },
+                                            { display: 'PN', output: 'Gabapentin 300 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Pregabalin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Pregabalin' },
+                                    {
+                                        display: '75 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Pregabalin 75 mg' },
+                                            { display: '1x1', output: 'Pregabalin 75 mg 1x1' },
+                                            { display: '2x1', output: 'Pregabalin 75 mg 2x1' },
+                                            { display: 'PN', output: 'Pregabalin 75 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '150 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Pregabalin 150 mg' },
+                                            { display: '1x1', output: 'Pregabalin 150 mg 1x1' },
+                                            { display: '2x1', output: 'Pregabalin 150 mg 2x1' },
+                                            { display: 'PN', output: 'Pregabalin 150 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Samsett verkjalyf', // Combination Pain Medications
+                        subOptions: [
+                            {
+                                display: 'Paracetamol/Codeine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Paracetamol/Codeine' },
+                                    {
+                                        display: '500 mg/30 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Paracetamol 500 mg / Codeine 30 mg' },
+                                            { display: '1x1', output: 'Paracetamol 500 mg / Codeine 30 mg 1x1' },
+                                            { display: '2x1', output: 'Paracetamol 500 mg / Codeine 30 mg 2x1' },
+                                            { display: 'PN', output: 'Paracetamol 500 mg / Codeine 30 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Ibuprofen/Codeine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Ibuprofen/Codeine' },
+                                    {
+                                        display: '200 mg/12.8 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ibuprofen 200 mg / Codeine 12.8 mg' },
+                                            { display: '1x1', output: 'Ibuprofen 200 mg / Codeine 12.8 mg 1x1' },
+                                            { display: '2x1', output: 'Ibuprofen 200 mg / Codeine 12.8 mg 2x1' },
+                                            { display: 'PN', output: 'Ibuprofen 200 mg / Codeine 12.8 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sýklalyf', 'Veirulyf', 'Sveppalyf', 'Snýkjudýralyf'],
+        options: [
+            {
+                display: 'Sýklalyf',
+                subOptions: [
+                    {
+                        display: 'Beta-lactam antibiotics', // Beta-lactam antibiotics
+                        subOptions: [
+                            {
+                                display: 'Amoxicillin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Amoxicillin' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Amoxicillin 250 mg' },
+                                            { display: '1x1', output: 'Amoxicillin 250 mg 1x1' },
+                                            { display: '2x1', output: 'Amoxicillin 250 mg 2x1' },
+                                            { display: '3x1', output: 'Amoxicillin 250 mg 3x1' },
+                                            { display: 'PN', output: 'Amoxicillin 250 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Amoxicillin 500 mg' },
+                                            { display: '1x1', output: 'Amoxicillin 500 mg 1x1' },
+                                            { display: '2x1', output: 'Amoxicillin 500 mg 2x1' },
+                                            { display: '3x1', output: 'Amoxicillin 500 mg 3x1' },
+                                            { display: 'PN', output: 'Amoxicillin 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Cefalexin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Cefalexin' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Cefalexin 250 mg' },
+                                            { display: '1x1', output: 'Cefalexin 250 mg 1x1' },
+                                            { display: '2x1', output: 'Cefalexin 250 mg 2x1' },
+                                            { display: '3x1', output: 'Cefalexin 250 mg 3x1' },
+                                            { display: 'PN', output: 'Cefalexin 250 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Cefalexin 500 mg' },
+                                            { display: '1x1', output: 'Cefalexin 500 mg 1x1' },
+                                            { display: '2x1', output: 'Cefalexin 500 mg 2x1' },
+                                            { display: '3x1', output: 'Cefalexin 500 mg 3x1' },
+                                            { display: 'PN', output: 'Cefalexin 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Macrolides', // Macrolides
+                        subOptions: [
+                            {
+                                display: 'Azithromycin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Azithromycin' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Azithromycin 250 mg' },
+                                            { display: '1x1', output: 'Azithromycin 250 mg 1x1' },
+                                            { display: '2x1', output: 'Azithromycin 250 mg 2x1' },
+                                            { display: 'PN', output: 'Azithromycin 250 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Azithromycin 500 mg' },
+                                            { display: '1x1', output: 'Azithromycin 500 mg 1x1' },
+                                            { display: '2x1', output: 'Azithromycin 500 mg 2x1' },
+                                            { display: 'PN', output: 'Azithromycin 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Clarithromycin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Clarithromycin' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Clarithromycin 250 mg' },
+                                            { display: '1x1', output: 'Clarithromycin 250 mg 1x1' },
+                                            { display: '2x1', output: 'Clarithromycin 250 mg 2x1' },
+                                            { display: 'PN', output: 'Clarithromycin 250 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Clarithromycin 500 mg' },
+                                            { display: '1x1', output: 'Clarithromycin 500 mg 1x1' },
+                                            { display: '2x1', output: 'Clarithromycin 500 mg 2x1' },
+                                            { display: 'PN', output: 'Clarithromycin 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Quinolones', // Quinolones
+                        subOptions: [
+                            {
+                                display: 'Ciprofloxacin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Ciprofloxacin' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ciprofloxacin 250 mg' },
+                                            { display: '1x1', output: 'Ciprofloxacin 250 mg 1x1' },
+                                            { display: '2x1', output: 'Ciprofloxacin 250 mg 2x1' },
+                                            { display: 'PN', output: 'Ciprofloxacin 250 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ciprofloxacin 500 mg' },
+                                            { display: '1x1', output: 'Ciprofloxacin 500 mg 1x1' },
+                                            { display: '2x1', output: 'Ciprofloxacin 500 mg 2x1' },
+                                            { display: 'PN', output: 'Ciprofloxacin 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Levofloxacin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Levofloxacin' },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Levofloxacin 500 mg' },
+                                            { display: '1x1', output: 'Levofloxacin 500 mg 1x1' },
+                                            { display: 'PN', output: 'Levofloxacin 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Tetracyclines', // Tetracyclines
+                        subOptions: [
+                            {
+                                display: 'Doxycycline',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Doxycycline' },
+                                    {
+                                        display: '100 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Doxycycline 100 mg' },
+                                            { display: '1x1', output: 'Doxycycline 100 mg 1x1' },
+                                            { display: '2x1', output: 'Doxycycline 100 mg 2x1' },
+                                            { display: 'PN', output: 'Doxycycline 100 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Metronidazole', // Metronidazole
+                        subOptions: [
+                            {
+                                display: 'Metronidazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Metronidazole' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Metronidazole 250 mg' },
+                                            { display: '1x1', output: 'Metronidazole 250 mg 1x1' },
+                                            { display: '2x1', output: 'Metronidazole 250 mg 2x1' },
+                                            { display: '3x1', output: 'Metronidazole 250 mg 3x1' },
+                                            { display: 'PN', output: 'Metronidazole 250 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Metronidazole 500 mg' },
+                                            { display: '1x1', output: 'Metronidazole 500 mg 1x1' },
+                                            { display: '2x1', output: 'Metronidazole 500 mg 2x1' },
+                                            { display: '3x1', output: 'Metronidazole 500 mg 3x1' },
+                                            { display: 'PN', output: 'Metronidazole 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Veirulyf',
+                subOptions: [
+                    {
+                        display: 'Nucleoside Analogues', // Nucleoside Analogues
+                        subOptions: [
+                            {
+                                display: 'Acyclovir',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Acyclovir' },
+                                    {
+                                        display: '200 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Acyclovir 200 mg' },
+                                            { display: '1x1', output: 'Acyclovir 200 mg 1x1' },
+                                            { display: '2x1', output: 'Acyclovir 200 mg 2x1' },
+                                            { display: '3x1', output: 'Acyclovir 200 mg 3x1' },
+                                            { display: 'PN', output: 'Acyclovir 200 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '400 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Acyclovir 400 mg' },
+                                            { display: '1x1', output: 'Acyclovir 400 mg 1x1' },
+                                            { display: '2x1', output: 'Acyclovir 400 mg 2x1' },
+                                            { display: '3x1', output: 'Acyclovir 400 mg 3x1' },
+                                            { display: 'PN', output: 'Acyclovir 400 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '800 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Acyclovir 800 mg' },
+                                            { display: '1x1', output: 'Acyclovir 800 mg 1x1' },
+                                            { display: '2x1', output: 'Acyclovir 800 mg 2x1' },
+                                            { display: '3x1', output: 'Acyclovir 800 mg 3x1' },
+                                            { display: 'PN', output: 'Acyclovir 800 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Valacyclovir',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Valacyclovir' },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Valacyclovir 500 mg' },
+                                            { display: '1x1', output: 'Valacyclovir 500 mg 1x1' },
+                                            { display: '2x1', output: 'Valacyclovir 500 mg 2x1' },
+                                            { display: 'PN', output: 'Valacyclovir 500 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '1000 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Valacyclovir 1000 mg' },
+                                            { display: '1x1', output: 'Valacyclovir 1000 mg 1x1' },
+                                            { display: '2x1', output: 'Valacyclovir 1000 mg 2x1' },
+                                            { display: 'PN', output: 'Valacyclovir 1000 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Neuraminidase Inhibitors', // Neuraminidase Inhibitors
+                        subOptions: [
+                            {
+                                display: 'Oseltamivir',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Oseltamivir' },
+                                    {
+                                        display: '75 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Oseltamivir 75 mg' },
+                                            { display: '1x1', output: 'Oseltamivir 75 mg 1x1' },
+                                            { display: '2x1', output: 'Oseltamivir 75 mg 2x1' },
+                                            { display: 'PN', output: 'Oseltamivir 75 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Zanamivir',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Zanamivir' },
+                                    {
+                                        display: '5 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Zanamivir 5 mg' },
+                                            { display: '1x1', output: 'Zanamivir 5 mg 1x1' },
+                                            { display: '2x1', output: 'Zanamivir 5 mg 2x1' },
+                                            { display: 'PN', output: 'Zanamivir 5 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Integrase Inhibitors', // Integrase Inhibitors
+                        subOptions: [
+                            {
+                                display: 'Dolutegravir',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Dolutegravir' },
+                                    {
+                                        display: '50 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Dolutegravir 50 mg' },
+                                            { display: '1x1', output: 'Dolutegravir 50 mg 1x1' },
+                                            { display: '2x1', output: 'Dolutegravir 50 mg 2x1' },
+                                            { display: 'PN', output: 'Dolutegravir 50 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Protease Inhibitors', // Protease Inhibitors
+                        subOptions: [
+                            {
+                                display: 'Ritonavir',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Ritonavir' },
+                                    {
+                                        display: '100 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Ritonavir 100 mg' },
+                                            { display: '1x1', output: 'Ritonavir 100 mg 1x1' },
+                                            { display: '2x1', output: 'Ritonavir 100 mg 2x1' },
+                                            { display: 'PN', output: 'Ritonavir 100 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Sveppalyf',
+                subOptions: [
+                    {
+                        display: 'Azole Antifungals', // Azole antifungals
+                        subOptions: [
+                            {
+                                display: 'Fluconazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Fluconazole' },
+                                    {
+                                        display: '50 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Fluconazole 50 mg' },
+                                            { display: '1x1', output: 'Fluconazole 50 mg 1x1' },
+                                            { display: '2x1', output: 'Fluconazole 50 mg 2x1' },
+                                            { display: 'PN', output: 'Fluconazole 50 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '100 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Fluconazole 100 mg' },
+                                            { display: '1x1', output: 'Fluconazole 100 mg 1x1' },
+                                            { display: '2x1', output: 'Fluconazole 100 mg 2x1' },
+                                            { display: 'PN', output: 'Fluconazole 100 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '150 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Fluconazole 150 mg' },
+                                            { display: '1x1', output: 'Fluconazole 150 mg 1x1' },
+                                            { display: 'PN', output: 'Fluconazole 150 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Itraconazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Itraconazole' },
+                                    {
+                                        display: '100 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Itraconazole 100 mg' },
+                                            { display: '1x1', output: 'Itraconazole 100 mg 1x1' },
+                                            { display: '2x1', output: 'Itraconazole 100 mg 2x1' },
+                                            { display: 'PN', output: 'Itraconazole 100 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '200 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Itraconazole 200 mg' },
+                                            { display: '1x1', output: 'Itraconazole 200 mg 1x1' },
+                                            { display: '2x1', output: 'Itraconazole 200 mg 2x1' },
+                                            { display: 'PN', output: 'Itraconazole 200 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Echinocandins', // Echinocandins
+                        subOptions: [
+                            {
+                                display: 'Caspofungin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Caspofungin' },
+                                    {
+                                        display: '50 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Caspofungin 50 mg' },
+                                            { display: '1x1', output: 'Caspofungin 50 mg 1x1' },
+                                            { display: 'PN', output: 'Caspofungin 50 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '70 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Caspofungin 70 mg' },
+                                            { display: '1x1', output: 'Caspofungin 70 mg 1x1' },
+                                            { display: 'PN', output: 'Caspofungin 70 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Polyenes', // Polyenes
+                        subOptions: [
+                            {
+                                display: 'Amphotericin B',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Amphotericin B' },
+                                    {
+                                        display: '50 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Amphotericin B 50 mg' },
+                                            { display: '1x1', output: 'Amphotericin B 50 mg 1x1' },
+                                            { display: 'PN', output: 'Amphotericin B 50 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Nystatin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Nystatin' },
+                                    {
+                                        display: '100,000 IU',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Nystatin 100,000 IU' },
+                                            { display: '1x1', output: 'Nystatin 100,000 IU 1x1' },
+                                            { display: '2x1', output: 'Nystatin 100,000 IU 2x1' },
+                                            { display: 'PN', output: 'Nystatin 100,000 IU PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Allylamines', // Allylamines
+                        subOptions: [
+                            {
+                                display: 'Terbinafine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Terbinafine' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Terbinafine 250 mg' },
+                                            { display: '1x1', output: 'Terbinafine 250 mg 1x1' },
+                                            { display: '2x1', output: 'Terbinafine 250 mg 2x1' },
+                                            { display: 'PN', output: 'Terbinafine 250 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Snýkjudýralyf',
+                subOptions: [
+                    {
+                        display: 'Antimalarials', // Antimalarials
+                        subOptions: [
+                            {
+                                display: 'Chloroquine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Chloroquine' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Chloroquine 250 mg' },
+                                            { display: '1x1', output: 'Chloroquine 250 mg 1x1' },
+                                            { display: '2x1', output: 'Chloroquine 250 mg 2x1' },
+                                            { display: 'PN', output: 'Chloroquine 250 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Chloroquine 500 mg' },
+                                            { display: '1x1', output: 'Chloroquine 500 mg 1x1' },
+                                            { display: 'PN', output: 'Chloroquine 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Mefloquine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Mefloquine' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Mefloquine 250 mg' },
+                                            { display: '1x1', output: 'Mefloquine 250 mg 1x1' },
+                                            { display: 'PN', output: 'Mefloquine 250 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Anthelmintics', // Anthelmintics
+                        subOptions: [
+                            {
+                                display: 'Albendazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Albendazole' },
+                                    {
+                                        display: '200 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Albendazole 200 mg' },
+                                            { display: '1x1', output: 'Albendazole 200 mg 1x1' },
+                                            { display: '2x1', output: 'Albendazole 200 mg 2x1' },
+                                            { display: 'PN', output: 'Albendazole 200 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '400 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Albendazole 400 mg' },
+                                            { display: '1x1', output: 'Albendazole 400 mg 1x1' },
+                                            { display: 'PN', output: 'Albendazole 400 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Mebendazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Mebendazole' },
+                                    {
+                                        display: '100 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Mebendazole 100 mg' },
+                                            { display: '1x1', output: 'Mebendazole 100 mg 1x1' },
+                                            { display: '2x1', output: 'Mebendazole 100 mg 2x1' },
+                                            { display: 'PN', output: 'Mebendazole 100 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Antiprotozoals', // Antiprotozoals
+                        subOptions: [
+                            {
+                                display: 'Metronidazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Metronidazole' },
+                                    {
+                                        display: '250 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Metronidazole 250 mg' },
+                                            { display: '1x1', output: 'Metronidazole 250 mg 1x1' },
+                                            { display: '2x1', output: 'Metronidazole 250 mg 2x1' },
+                                            { display: 'PN', output: 'Metronidazole 250 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Metronidazole 500 mg' },
+                                            { display: '1x1', output: 'Metronidazole 500 mg 1x1' },
+                                            { display: 'PN', output: 'Metronidazole 500 mg PN' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Tinidazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Tinidazole' },
+                                    {
+                                        display: '500 mg',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Tinidazole 500 mg' },
+                                            { display: '1x1', output: 'Tinidazole 500 mg 1x1' },
+                                            { display: 'PN', output: 'Tinidazole 500 mg PN' }
+                                        ]
+                                    },
+                                    {
+                                        display: '2 g',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Tinidazole 2 g' },
+                                            { display: '1x1', output: 'Tinidazole 2 g 1x1' },
+                                            { display: 'PN', output: 'Tinidazole 2 g PN' }
                                         ]
                                     }
                                 ]
@@ -16446,8 +20283,8 @@ const LyfData = [
             }
         ]
     }
-    
 ];
+
 const Timi = [{
     name: '',
     type: 'options',
@@ -16520,7 +20357,7 @@ const Habits = [
     {
         name: '',
         type: 'options',
-        display: ['Reykingar', 'Áfengi', 'Eiturlyf', 'Ofnæmi'],
+        display: ['Reykingar', 'Áfengi', 'Eiturlyf'],
         options: [
             {
                 display: 'Reykingar',
@@ -17149,15 +20986,65 @@ const Habits = [
                 display: 'Eiturlyf',
                 subOptions: generateInitialDrugOptions(),
                 onRightClickOutput: 'Neitar eiturlyfjanotkun'
-            },
+            }
+        ]
+    }
+];
+const OfnaemiData = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Umhverfisofnæmi', 'Lyfjaofnæmi', 'Fæðuofnæmi/óþol', 'Skordýraofnæmi'],
+        options: [
             {
-                display: 'Ofnæmi',
+                display: 'Umhverfisofnæmi',
                 subOptions: [
                     {
-                        display: 'Penisillin',
+                        display: 'Frjókorn',
+                        subOptions: [
+                            { display: 'NOS', output: 'Frjókornaofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um frjókornaofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir frjókornum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt frjókornaofnæmi'
+                    },
+                    {
+                        display: 'Rykmaurar',
+                        subOptions: [
+                            { display: 'NOS', output: 'Rykmauraofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um rykmauraofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir rykmaurum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt rykmauraofnæmi'
+                    },
+                    {
+                        display: 'Dýr',
+                        subOptions: [
+                            { display: 'NOS', output: 'Dýraofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um dýraofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir dýrum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt dýraofnæmi'
+                    },
+                    {
+                        display: 'Mygla',
+                        subOptions: [
+                            { display: 'NOS', output: 'Mygluofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um mygluofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir myglu' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt mygluofnæmi'
+                    }
+                ],
+                onRightClickOutput: 'Engin þekkt ofnæmi'
+            },
+            {
+                display: 'Lyfjaofnæmi',
+                subOptions: [
+                    {
+                        display: 'Penisillín',
                         subOptions: [
                             { display: 'NOS', output: 'Penisillinofnæmi' },
-                            { display: 'Bráðaofnæmi', output: 'Staðfest bráðaofnæmi fyrir penisillin' },
                             {
                                 display: 'Grunur',
                                 subOptions: [
@@ -17165,23 +21052,154 @@ const Habits = [
                                     { display: 'Öndunarfæraeinkenni', output: 'Grunur um penisillinofnæmi. Fengið öndunarfæraeinkenni' },
                                     { display: 'Útbrot', output: 'Grunur um penisillinofnæmi. Fékk útbrot. Ekki kláði eða öndunarfæraeinkenni' },
                                     { display: 'Útbrot og kláði', output: 'Grunur um penisillinofnæmi. Fékk útbrot og kláða' },
-                                    { display: 'Öndunrafæraeinkenni, útbrot og kláði', output: 'Grunur um penisillinofnæmi. Fékk öndunarfæraeinkenni, útbrot og kláða' }
+                                    { display: 'Öndunarfæraeinkenni, útbrot og kláði', output: 'Grunur um penisillinofnæmi. Fékk öndunarfæraeinkenni, útbrot og kláða' }
                                 ]
-                            }
-                        ]
+                            },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir penisillíni' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt penisillinofnæmi'
                     },
-                    { display: 'Sulfa', output: 'Sulfaofnæmi' }
+                    {
+                        display: 'Sulfa lyf',
+                        subOptions: [
+                            { display: 'NOS', output: 'Ofnæmi fyrir sulfalyfjum' },
+                            { display: 'Grunur', output: 'Grunur um ofnæmi fyrir sulfalyfjum' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir sulfalyfjum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt ofnæmi fyrir sulfalyfjum'
+                    },
+                    {
+                        display: 'Aspirin',
+                        subOptions: [
+                            { display: 'NOS', output: 'Aspirinofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um aspirinofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir aspirini' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt aspirinofnæmi'
+                    },
+                    {
+                        display: 'NSAIDs',
+                        subOptions: [
+                            { display: 'NOS', output: 'NSAID ofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um NSAID ofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir NSAID lyfjum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt NSAID ofnæmi'
+                    }
                 ],
-                onRightClickSubOptions: [
-                    { display: 'Engin þekkt ofnæmi', output: 'Engin þekkt ofnæmi' },
-                    { display: 'Engin þekkt lyfjaofnæmi', output: 'Engin þekkt lyfjaofnæmi' },
-                    { display: 'Ekki penisillinofnæmi', output: 'Ekki penisillinofnæmi' },
-                    { display: 'Ekki sulfaofnæmi', output: 'Ekki sulfaofnæmi' }
-                ]
+                onRightClickOutput: 'Engin þekkt lyfjaofnæmi'
+            },
+            {
+                display: 'Fæðuofnæmi/óþol',
+                subOptions: [
+                    {
+                        display: 'Hnetur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Hnetuofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um hnetuofnæmi' },
+                            { display: 'Óþol', output: 'Óþol fyrir hnetum' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir hnetum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt hnetuofnæmi'
+                    },
+                    {
+                        display: 'Skelfiskur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Skelfiskofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um skelfiskofnæmi' },
+                            { display: 'Óþol', output: 'Óþol fyrir skelfiski' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir skelfiski' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt skelfiskofnæmi'
+                    },
+                    {
+                        display: 'Mjólkurvörur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Mjólkurvöruofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um mjólkurvöruofnæmi' },
+                            { display: 'Óþol', output: 'Óþol fyrir mjólkurvörum' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir mjólkurvörum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt mjólkurvöruofnæmi'
+                    },
+                    {
+                        display: 'Egg',
+                        subOptions: [
+                            { display: 'NOS', output: 'Eggjaofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um eggjaofnæmi' },
+                            { display: 'Óþol', output: 'Óþol fyrir eggjum' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir eggjum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt eggjaofnæmi'
+                    },
+                    {
+                        display: 'Glúten',
+                        subOptions: [
+                            { display: 'NOS', output: 'Glútenofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um glútenofnæmi' },
+                            { display: 'Óþol', output: 'Óþol fyrir glúteni' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir glúteni' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt glútenofnæmi'
+                    }
+                ],
+                onRightClickOutput: 'Engin þekkt fæðuofnæmi eða óþol'
+            },
+            {
+                display: 'Skordýraofnæmi',
+                subOptions: [
+                    {
+                        display: 'Skordýr',
+                        subOptions: [
+                            { display: 'NOS', output: 'Skordýraofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um skordýraofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir skordýrum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt ofnæmi fyrir skordýrum'
+                    },
+                    {
+                        display: 'Býflugur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Býfluguofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um býfluguofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir býflugum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt býfluguofnæmi'
+                    },
+                    {
+                        display: 'Geitungar',
+                        subOptions: [
+                            { display: 'NOS', output: 'Geitungaofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um geitungaofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir geitungum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt geitungaofnæmi'
+                    },
+                    {
+                        display: 'Moskitó',
+                        subOptions: [
+                            { display: 'NOS', output: 'Moskitóofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um moskitóofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir moskitó' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt moskitóofnæmi'
+                    },
+                    {
+                        display: 'Lúsmý',
+                        subOptions: [
+                            { display: 'NOS', output: 'Ofnæmi fyrir lúsmý' },
+                            { display: 'Grunur', output: 'Grunur um ofnæmi fyrir lúsmý' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir lúsmý' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt ofnæmi fyrir lúsmý'
+                    }
+                ],
+                onRightClickOutput: 'Ekki þekkt skordýraofnæmi'
             }
-            
         ]
     }
+    
+    
 ];
 const LifsmorkData = [
     {
@@ -19128,6 +23146,14 @@ function createKerfakonnunSection(data) {
     return section;
 }
 
+function createOfnaemiSection(data) {
+    console.log('Creating Ofnaemi Section with data:', data); // Debugging line
+    const section = createSection('ofnaemi', 'Ofnæmi');
+    const container = section.querySelector('#ofnaemi');
+    createButtons(container, data, 'ofnaemi');
+    return section;
+}
+
 // Load sections depending on page
 function loadPage(page) {
     const container = document.getElementById('content-section');
@@ -19141,6 +23167,7 @@ function loadPage(page) {
         const habitsSection = createHabitsSection(Habits);
         const RiskUrinarySection = createRiskUrinarySection(RiskfactorsUrinary);
         const lifsmorkSection = createLifsmorkSection(LifsmorkData);
+        const ofnaemiSection = createOfnaemiSection(OfnaemiData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
@@ -19148,6 +23175,7 @@ function loadPage(page) {
         leftColumn.appendChild(RiskUrinarySection);
         leftColumn.appendChild(historySection);
         leftColumn.appendChild(habitsSection);
+        leftColumn.appendChild(ofnaemiSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -19217,10 +23245,12 @@ function loadPage(page) {
         const symptomsSection = createEinkenniSection(SymptomsEye);
         const examsSection = createSkodunSection(ExamsEye);
         const planSection = createPlanSection(PlanEye);
+        const raudFloggSection = createRaudFloggSection(RaudFloggEye);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(symptomsSection);
+        leftColumn.appendChild(raudFloggSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -19245,12 +23275,16 @@ function loadPage(page) {
         const habitsSection = createHabitsSection(Habits);
         const lifsmorkSection = createLifsmorkSection(LifsmorkData);
         const rannsoknirSection = createRannsoknirSection(RannsoknirViral);
+        const ofnaemiSection = createOfnaemiSection(OfnaemiData);
+        const lyfSection = createLyfSection(LyfData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
         leftColumn.appendChild(historyViralSection);
+        leftColumn.appendChild(lyfSection);
         leftColumn.appendChild(habitsSection);
+        leftColumn.appendChild(ofnaemiSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -19277,11 +23311,13 @@ function loadPage(page) {
         const habitsSection = createHabitsSection(Habits);
         const vottordSection = createVottordSection(Vottord);
         const rannsoknSection = createRannsoknSection(RannsoknData);
+        const lyfSection = createLyfSection(LyfData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(vottordSection);
         leftColumn.appendChild(rannsoknSection);
+        leftColumn.appendChild(lyfSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -19305,8 +23341,9 @@ function loadPage(page) {
         const rannsoknirSection = createRannsoknirSection(RannsoknirMelting);
         const lifsmorkSection = createLifsmorkSection(LifsmorkData);
         const raudFloggSection = createRaudFloggSection(RaudFloggMelting);
-        const lyfSection = createLyfSection(LyfMelting);
+        const lyfSection = createLyfSection(LyfData);
         const kerfakonnunSection = createKerfakonnunSection(KerfakonnunMelting);
+        const ofnaemiSection = createOfnaemiSection(OfnaemiData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
@@ -19316,6 +23353,7 @@ function loadPage(page) {
         leftColumn.appendChild(historyMeltingSection);
         leftColumn.appendChild(lyfSection);
         leftColumn.appendChild(habitsSection);
+        leftColumn.appendChild(ofnaemiSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -19917,7 +23955,8 @@ function findNextHeaderIndex(currentText, startIndex) {
     const sectionHeaders = [
         'Venjur:', 'Skoðun:', 'Plan:', 'Rannsóknir:', 'Lífsmörk:', 'Rauð Flögg:', 'Lyf:',
         'Áhættuþættir Kransæðasjúkdóms:', 'Áhættuþættir þvagblöðrukrabbameins:', 'CHADS-VASc:',
-        'Heilsufar:', 'Vottorð:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:'
+        'Heilsufar:', 'Vottorð:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:',
+        'Ofnæmi:'
     ];
     let nextHeaderIndex = -1;
 
@@ -19933,7 +23972,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'skodun', 'gedskodun', 'lifsmork', 'rannsoknir', 'plan'];
+    const sectionOrder = ['einkenni', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'gedskodun', 'lifsmork', 'rannsoknir', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
@@ -19986,6 +24025,9 @@ function getSectionHeader(sectionId) {
             return 'Geðskoðun:';
         case 'kerfakonnun':
             return 'Kerfakönnun:';
+        case 'ofnaemi':
+            return 'Ofnæmi:';
+        
         default:
             return '';
     }
