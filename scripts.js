@@ -381,6 +381,55 @@ const RannsoknData = [
                 subOptions: []  // Left-click does nothing
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóðsykur', 'Langtímasykur', 'Fastandi sykur'],
+        options: [
+            {
+                display: 'Blóðsykur',
+                onRightClickOutput: 'Blóðsykur eðlilegur',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Langtímasykur',
+                onRightClickOutput: 'Langtímasykur innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'Fastandi sykur',
+                onRightClickOutput: 'Fastandi sykur innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Skjaldkirtilsstarfsemi', 'TSH', 'T4', 'T3'],
+        options: [
+            {
+                display: 'Skjaldkirtilsstarfsemi',
+                onRightClickOutput: 'Skjaldkirtilsstarfsemi eðlileg',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'TSH',
+                onRightClickOutput: 'TSH innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'T4',
+                onRightClickOutput: 'T4 innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            },
+            {
+                display: 'T3',
+                onRightClickOutput: 'T3 innan eðlilegra marka',
+                subOptions: []  // Left-click does nothing
+            }
+        ]
     }
 ];
 
