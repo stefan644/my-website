@@ -432,6 +432,261 @@ const RannsoknData = [
         ]
     }
 ];
+const HealthHistory = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Hjarta', 'Lungu', 'Taugakerfi', 'Innkirtlar'],
+        options: [
+            {
+                display: 'Hjarta',
+                subOptions: [
+                    { display: 'Háþrýstingur', output: 'Saga um háþrýsting', onRightClickOutput: 'Engin saga um háþrýsting' },
+                    { display: 'Hjartaáfall', output: 'Saga um hjartaáfall', onRightClickOutput: 'Engin saga um hjartaáfall' },
+                    { display: 'Kransæðasjúkdómur', output: 'Saga um kransæðasjúkdóm', onRightClickOutput: 'Engin saga um kransæðasjúkdóm' },
+                    { display: 'Hjartabilun', output: 'Saga um hjartabilun', onRightClickOutput: 'Engin saga um hjartabilun' },
+                    { display: 'Hjartsláttartruflanir', output: 'Saga um hjartsláttartruflanir', onRightClickOutput: 'Engin saga um hjartsláttartruflanir' },
+                    { display: 'Lokaþrengsli', output: 'Saga um lokaþrengsli', onRightClickOutput: 'Engin saga um lokaþrengsli' },
+                    { display: 'Cardiomyopathy', output: 'Saga um cardiomyopathy', onRightClickOutput: 'Engin saga um cardiomyopathy' },
+                    { display: 'Atrial fibrillation', output: 'Saga um atrial fibrillation', onRightClickOutput: 'Engin saga um atrial fibrillation' },
+                    { display: 'Pericarditis', output: 'Saga um pericarditis', onRightClickOutput: 'Engin saga um pericarditis' },
+                    { display: 'Pulmonary hypertension', output: 'Saga um pulmonary hypertension', onRightClickOutput: 'Engin saga um pulmonary hypertension' }
+                ],
+                onRightClickOutput: 'Engin saga um hjartasjúkdóma'
+            },
+            {
+                display: 'Lungu',
+                subOptions: [
+                    { display: 'Astmi', output: 'Saga um astma', onRightClickOutput: 'Engin saga um astma' },
+                    { display: 'Lungnabólga', output: 'Saga um lungnabólgu', onRightClickOutput: 'Engin saga um lungnabólgu' },
+                    { display: 'Langvinn lungnateppa (COPD)', output: 'Saga um langvinna lungnateppu (COPD)', onRightClickOutput: 'Engin saga um langvinna lungnateppu (COPD)' },
+                    { display: 'Lungnakrabbamein', output: 'Saga um lungnakrabbamein', onRightClickOutput: 'Engin saga um lungnakrabbamein' },
+                    { display: 'Pulmonary embolism', output: 'Saga um pulmonary embolism', onRightClickOutput: 'Engin saga um pulmonary embolism' },
+                    { display: 'Sarcoidosis', output: 'Saga um sarcoidosis', onRightClickOutput: 'Engin saga um sarcoidosis' },
+                    { display: 'Pulmonary fibrosis', output: 'Saga um pulmonary fibrosis', onRightClickOutput: 'Engin saga um pulmonary fibrosis' },
+                    { display: 'Bronchitis', output: 'Saga um bronchitis', onRightClickOutput: 'Engin saga um bronchitis' },
+                    { display: 'Sleep apnea', output: 'Saga um sleep apnea', onRightClickOutput: 'Engin saga um sleep apnea' },
+                    { display: 'Pleural effusion', output: 'Saga um pleural effusion', onRightClickOutput: 'Engin saga um pleural effusion' }
+                ],
+                onRightClickOutput: 'Engin saga um lungnasjúkdóma'
+            },
+            {
+                display: 'Taugakerfi',
+                subOptions: [
+                    { display: 'Heilablóðfall', output: 'Saga um heilablóðfall', onRightClickOutput: 'Engin saga um heilablóðfall' },
+                    { display: 'Taugaþrýstingsheilkenni (Carpal Tunnel)', output: 'Saga um taugaþrýstingsheilkenni', onRightClickOutput: 'Engin saga um taugaþrýstingsheilkenni' },
+                    { display: 'Heilabilun', output: 'Saga um heilabilun', onRightClickOutput: 'Engin saga um heilabilun' },
+                    { display: 'MS sjúkdómur', output: 'Saga um MS sjúkdóm', onRightClickOutput: 'Engin saga um MS sjúkdóm' },
+                    { display: 'Parkinsons sjúkdómur', output: 'Saga um Parkinsons sjúkdóm', onRightClickOutput: 'Engin saga um Parkinsons sjúkdóm' },
+                    { display: 'Mígreni', output: 'Saga um mígreni', onRightClickOutput: 'Engin saga um mígreni' },
+                    { display: 'Taugaverkir', output: 'Saga um taugaverki', onRightClickOutput: 'Engin saga um taugaverki' },
+                    { display: 'Epilepsía', output: 'Saga um epilepsy', onRightClickOutput: 'Engin saga um epilepsy' },
+                    { display: 'Bell’s palsy', output: 'Saga um Bell’s palsy', onRightClickOutput: 'Engin saga um Bell’s palsy' },
+                    { display: 'Amyotrophic Lateral Sclerosis (ALS)', output: 'Saga um ALS', onRightClickOutput: 'Engin saga um ALS' }
+                ],
+                onRightClickOutput: 'Engin saga um taugasjúkdóma'
+            },
+            {
+                display: 'Innkirtlar',
+                subOptions: [
+                    { display: 'Sykursýki', output: 'Saga um sykursýki', onRightClickOutput: 'Engin saga um sykursýki' },
+                    { display: 'Skjaldkirtilssjúkdómar', output: 'Saga um skjaldkirtilssjúkdóm', onRightClickOutput: 'Engin saga um skjaldkirtilssjúkdóm' },
+                    { display: 'Cushing’s heilkenni', output: 'Saga um Cushing’s heilkenni', onRightClickOutput: 'Engin saga um Cushing’s heilkenni' },
+                    { display: 'Addison’s sjúkdómur', output: 'Saga um Addison’s sjúkdóm', onRightClickOutput: 'Engin saga um Addison’s sjúkdóm' },
+                    { display: 'Hyperparathyroidism', output: 'Saga um hyperparathyroidism', onRightClickOutput: 'Engin saga um hyperparathyroidism' },
+                    { display: 'Hypoparathyroidism', output: 'Saga um hypoparathyroidism', onRightClickOutput: 'Engin saga um hypoparathyroidism' },
+                    { display: 'Metabolic syndrome', output: 'Saga um metabolic syndrome', onRightClickOutput: 'Engin saga um metabolic syndrome' },
+                    { display: 'Hyperlipidemia', output: 'Saga um hyperlipidemia', onRightClickOutput: 'Engin saga um hyperlipidemia' },
+                    { display: 'Hyperthyroidism', output: 'Saga um hyperthyroidism', onRightClickOutput: 'Engin saga um hyperthyroidism' },
+                    { display: 'Hypothyroidism', output: 'Saga um hypothyroidism', onRightClickOutput: 'Engin saga um hypothyroidism' }
+                ],
+                onRightClickOutput: 'Engin saga um innkirtlasjúkdóma'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Þvagfæri', 'Nýru', 'Kynfæri', 'Melting', 'Lifrarsjúkdómar'],
+        options: [
+            {
+                display: 'Þvagfæri',
+                subOptions: [
+                    { display: 'Nýrnabilun', output: 'Saga um nýrnabilun', onRightClickOutput: 'Engin saga um nýrnabilun' },
+                    { display: 'Nýrnasteinar', output: 'Saga um nýrnasteina', onRightClickOutput: 'Engin saga um nýrnasteina' },
+                    { display: 'Blöðrubólga', output: 'Saga um blöðrubólgu', onRightClickOutput: 'Engin saga um blöðrubólgu' },
+                    { display: 'Prostatitis', output: 'Saga um prostatitis', onRightClickOutput: 'Engin saga um prostatitis' },
+                    { display: 'Þvagsýrugigt', output: 'Saga um þvagsýrugigt', onRightClickOutput: 'Engin saga um þvagsýrugigt' },
+                    { display: 'Þvagleki', output: 'Saga um þvagleka', onRightClickOutput: 'Engin saga um þvagleka' },
+                    { display: 'Interstitional cystitis', output: 'Saga um interstitial cystitis', onRightClickOutput: 'Engin saga um interstitial cystitis' },
+                    { display: 'Pyelonephritis', output: 'Saga um pyelonephritis', onRightClickOutput: 'Engin saga um pyelonephritis' },
+                    { display: 'BPH (Benign Prostatic Hyperplasia)', output: 'Saga um BPH', onRightClickOutput: 'Engin saga um BPH' },
+                    { display: 'Urinary tract infection (UTI)', output: 'Saga um þvagfærasýkingu', onRightClickOutput: 'Engin saga um þvagfærasýkingu' }
+                ],
+                onRightClickOutput: 'Engin saga um þvagfærasjúkdóma'
+            },
+            {
+                display: 'Nýru',
+                subOptions: [
+                    { display: 'Renal failure', output: 'Saga um renal failure', onRightClickOutput: 'Engin saga um renal failure' },
+                    { display: 'Glomerulonephritis', output: 'Saga um glomerulonephritis', onRightClickOutput: 'Engin saga um glomerulonephritis' },
+                    { display: 'Nephrotic syndrome', output: 'Saga um nephrotic syndrome', onRightClickOutput: 'Engin saga um nephrotic syndrome' },
+                    { display: 'Kidney stones', output: 'Saga um kidney stones', onRightClickOutput: 'Engin saga um kidney stones' },
+                    { display: 'Polycystic kidney disease', output: 'Saga um polycystic kidney disease', onRightClickOutput: 'Engin saga um polycystic kidney disease' },
+                    { display: 'Pyelonephritis', output: 'Saga um pyelonephritis', onRightClickOutput: 'Engin saga um pyelonephritis' },
+                    { display: 'Acute kidney injury', output: 'Saga um acute kidney injury', onRightClickOutput: 'Engin saga um acute kidney injury' },
+                    { display: 'Chronic kidney disease', output: 'Saga um chronic kidney disease', onRightClickOutput: 'Engin saga um chronic kidney disease' },
+                    { display: 'Renal artery stenosis', output: 'Saga um renal artery stenosis', onRightClickOutput: 'Engin saga um renal artery stenosis' },
+                    { display: 'Urinary tract infection (UTI)', output: 'Saga um UTI', onRightClickOutput: 'Engin saga um UTI' }
+                ],
+                onRightClickOutput: 'Engin saga um nýrnasjúkdóma'
+            },
+            {
+                display: 'Kynfæri',
+                subOptions: [
+                    { display: 'Amenorrhea', output: 'Saga um amenorrhea', onRightClickOutput: 'Engin saga um amenorrhea' },
+                    { display: 'Polycystic Ovary Syndrome (PCOS)', output: 'Saga um PCOS', onRightClickOutput: 'Engin saga um PCOS' },
+                    { display: 'Endometriosis', output: 'Saga um endometriosis', onRightClickOutput: 'Engin saga um endometriosis' },
+                    { display: 'Pelvic Inflammatory Disease (PID)', output: 'Saga um PID', onRightClickOutput: 'Engin saga um PID' },
+                    { display: 'Fibroids', output: 'Saga um legæxli', onRightClickOutput: 'Engin saga um legæxli' },
+                    { display: 'Sexually Transmitted Infections (STIs)', output: 'Saga um kynsjúkdóm', onRightClickOutput: 'Engin saga um kynsjúkdóm' },
+                    { display: 'Erectile Dysfunction', output: 'Saga um ristruflanir', onRightClickOutput: 'Engin saga um ristruflanir' },
+                    { display: 'Ovarian cysts', output: 'Saga um eggjastokkacysta', onRightClickOutput: 'Engin saga um eggjastokkacysta' },
+                    { display: 'Menorrhagia', output: 'Saga um menorrhagia', onRightClickOutput: 'Engin saga um menorrhagia' },
+                    { display: 'Prostate cancer', output: 'Saga um blöðruhálskirtilskrabbamein', onRightClickOutput: 'Engin saga um blöðruhálskirtilskrabbamein' }
+                ],
+                onRightClickOutput: 'Engin saga um kynfærasjúkdóma'
+            },
+            {
+                display: 'Melting',
+                subOptions: [
+                    { display: 'Gastritis', output: 'Saga um gastritis', onRightClickOutput: 'Engin saga um gastritis' },
+                    { display: 'Gallsteinar', output: 'Saga um gallsteina', onRightClickOutput: 'Engin saga um gallsteina' },
+                    { display: 'Colitis', output: 'Saga um colitis', onRightClickOutput: 'Engin saga um colitis' },
+                    { display: 'Irritable Bowel Syndrome (IBS)', output: 'Saga um IBS', onRightClickOutput: 'Engin saga um IBS' },
+                    { display: 'Crohn’s sjúkdómur', output: 'Saga um Crohn’s sjúkdóm', onRightClickOutput: 'Engin saga um Crohn’s sjúkdóm' },
+                    { display: 'Colorectal cancer', output: 'Saga um colorectal cancer', onRightClickOutput: 'Engin saga um colorectal cancer' },
+                    { display: 'Diverticulitis', output: 'Saga um diverticulitis', onRightClickOutput: 'Engin saga um diverticulitis' },
+                    { display: 'Peptic Ulcer Disease (PUD)', output: 'Saga um peptic ulcer', onRightClickOutput: 'Engin saga um peptic ulcer' },
+                    { display: 'Hemorrhoids', output: 'Saga um hemorrhoids', onRightClickOutput: 'Engin saga um hemorrhoids' },
+                    { display: 'Gastroparesis', output: 'Saga um gastroparesis', onRightClickOutput: 'Engin saga um gastroparesis' }
+                ],
+                onRightClickOutput: 'Engin saga um meltingarsjúkdóma'
+            },
+            {
+                display: 'Lifrarsjúkdómar',
+                subOptions: [
+                    { display: 'Lifrarkrabbamein', output: 'Saga um lifrarkrabbamein', onRightClickOutput: 'Engin saga um lifrarkrabbamein' },
+                    { display: 'Cirrhosis', output: 'Saga um cirrhosis', onRightClickOutput: 'Engin saga um cirrhosis' },
+                    { display: 'Hepatitis B', output: 'Saga um hepatitis B', onRightClickOutput: 'Engin saga um hepatitis B' },
+                    { display: 'Hepatitis C', output: 'Saga um hepatitis C', onRightClickOutput: 'Engin saga um hepatitis C' },
+                    { display: 'Non-alcoholic fatty liver disease (NAFLD)', output: 'Saga um NAFLD', onRightClickOutput: 'Engin saga um NAFLD' },
+                    { display: 'Primary biliary cholangitis', output: 'Saga um primary biliary cholangitis', onRightClickOutput: 'Engin saga um primary biliary cholangitis' },
+                    { display: 'Primary sclerosing cholangitis', output: 'Saga um primary sclerosing cholangitis', onRightClickOutput: 'Engin saga um primary sclerosing cholangitis' },
+                    { display: 'Hemochromatosis', output: 'Saga um hemochromatosis', onRightClickOutput: 'Engin saga um hemochromatosis' },
+                    { display: 'Wilson’s disease', output: 'Saga um Wilson’s sjúkdóm', onRightClickOutput: 'Engin saga um Wilson’s sjúkdóm' },
+                    { display: 'Liver abscess', output: 'Saga um liver abscess', onRightClickOutput: 'Engin saga um liver abscess' }
+                ],
+                onRightClickOutput: 'Engin saga um lifrarsjúkdóma'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Augu', 'Eyru', 'Stoðkerfi'],
+        options: [
+            {
+                display: 'Augu',
+                subOptions: [
+                    { display: 'Gláka', output: 'Saga um gláku', onRightClickOutput: 'Engin saga um gláku' },
+                    { display: 'Cataracts', output: 'Saga um cataracts', onRightClickOutput: 'Engin saga um cataracts' },
+                    { display: 'Macular degeneration', output: 'Saga um macular degeneration', onRightClickOutput: 'Engin saga um macular degeneration' },
+                    { display: 'Retinal detachment', output: 'Saga um retinal detachment', onRightClickOutput: 'Engin saga um retinal detachment' },
+                    { display: 'Diabetic retinopathy', output: 'Saga um diabetic retinopathy', onRightClickOutput: 'Engin saga um diabetic retinopathy' },
+                    { display: 'Dry eyes', output: 'Saga um dry eyes', onRightClickOutput: 'Engin saga um dry eyes' },
+                    { display: 'Conjunctivitis', output: 'Saga um conjunctivitis', onRightClickOutput: 'Engin saga um conjunctivitis' },
+                    { display: 'Uveitis', output: 'Saga um uveitis', onRightClickOutput: 'Engin saga um uveitis' },
+                    { display: 'Keratoconus', output: 'Saga um keratoconus', onRightClickOutput: 'Engin saga um keratoconus' },
+                    { display: 'Amblyopia', output: 'Saga um amblyopia', onRightClickOutput: 'Engin saga um amblyopia' }
+                ],
+                onRightClickOutput: 'Engin saga um augnsjúkdóma'
+            },
+            {
+                display: 'Eyru',
+                subOptions: [
+                    { display: 'Heyrnartap', output: 'Saga um heyrnartap', onRightClickOutput: 'Engin saga um heyrnartap' },
+                    { display: 'Otitis media', output: 'Saga um otitis media', onRightClickOutput: 'Engin saga um otitis media' },
+                    { display: 'Tinnitus', output: 'Saga um tinnitus', onRightClickOutput: 'Engin saga um tinnitus' },
+                    { display: 'Vertigo', output: 'Saga um vertigo', onRightClickOutput: 'Engin saga um vertigo' },
+                    { display: 'Meniere’s sjúkdómur', output: 'Saga um Meniere’s sjúkdóm', onRightClickOutput: 'Engin saga um Meniere’s sjúkdóm' },
+                    { display: 'Ear wax impaction', output: 'Saga um ear wax impaction', onRightClickOutput: 'Engin saga um ear wax impaction' },
+                    { display: 'Acoustic neuroma', output: 'Saga um acoustic neuroma', onRightClickOutput: 'Engin saga um acoustic neuroma' },
+                    { display: 'Chronic otitis externa', output: 'Saga um chronic otitis externa', onRightClickOutput: 'Engin saga um chronic otitis externa' },
+                    { display: 'Eustachian tube dysfunction', output: 'Saga um eustachian tube dysfunction', onRightClickOutput: 'Engin saga um eustachian tube dysfunction' },
+                    { display: 'Labyrinthitis', output: 'Saga um labyrinthitis', onRightClickOutput: 'Engin saga um labyrinthitis' }
+                ],
+                onRightClickOutput: 'Engin saga um eyrnasjúkdóma'
+            },
+            {
+                display: 'Stoðkerfi',
+                subOptions: [
+                    { display: 'Liðagigt', output: 'Saga um liðagigt', onRightClickOutput: 'Engin saga um liðagigt' },
+                    { display: 'Slitgigt', output: 'Saga um slitgigt', onRightClickOutput: 'Engin saga um slitgigt' },
+                    { display: 'Osteoporosis', output: 'Saga um osteoporosis', onRightClickOutput: 'Engin saga um osteoporosis' },
+                    { display: 'Fibromyalgia', output: 'Saga um fibromyalgia', onRightClickOutput: 'Engin saga um fibromyalgia' },
+                    { display: 'Ankylosing spondylitis', output: 'Saga um ankylosing spondylitis', onRightClickOutput: 'Engin saga um ankylosing spondylitis' },
+                    { display: 'Liðbólgur', output: 'Saga um liðbólgur', onRightClickOutput: 'Engin saga um liðbólgur' },
+                    { display: 'Myopathy', output: 'Saga um myopathy', onRightClickOutput: 'Engin saga um myopathy' },
+                    { display: 'Osteoarthritis', output: 'Saga um osteoarthritis', onRightClickOutput: 'Engin saga um osteoarthritis' },
+                    { display: 'Tennis elbow', output: 'Saga um tennis elbow', onRightClickOutput: 'Engin saga um tennis elbow' },
+                    { display: 'Carpal tunnel syndrome', output: 'Saga um carpal tunnel syndrome', onRightClickOutput: 'Engin saga um carpal tunnel syndrome' }
+                ],
+                onRightClickOutput: 'Engin saga um stoðkerfissjúkdóma'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóð', 'Onkologia'],
+        options: [
+            {
+                display: 'Blóð',
+                subOptions: [
+                    { display: 'Anemia', output: 'Saga um anemia', onRightClickOutput: 'Engin saga um anemia' },
+                    { display: 'Leukemia', output: 'Saga um leukemia', onRightClickOutput: 'Engin saga um leukemia' },
+                    { display: 'Lymphoma', output: 'Saga um lymphoma', onRightClickOutput: 'Engin saga um lymphoma' },
+                    { display: 'Hemophilia', output: 'Saga um hemophilia', onRightClickOutput: 'Engin saga um hemophilia' },
+                    { display: 'Thrombocytopenia', output: 'Saga um thrombocytopenia', onRightClickOutput: 'Engin saga um thrombocytopenia' },
+                    { display: 'Polycythemia vera', output: 'Saga um polycythemia vera', onRightClickOutput: 'Engin saga um polycythemia vera' },
+                    { display: 'Sickle cell disease', output: 'Saga um sickle cell disease', onRightClickOutput: 'Engin saga um sickle cell disease' },
+                    { display: 'Myelodysplastic syndrome', output: 'Saga um myelodysplastic syndrome', onRightClickOutput: 'Engin saga um myelodysplastic syndrome' },
+                    { display: 'Von Willebrand sjúkdómur', output: 'Saga um Von Willebrand sjúkdóm', onRightClickOutput: 'Engin saga um Von Willebrand sjúkdóm' },
+                    { display: 'Aplastic anemia', output: 'Saga um aplastic anemia', onRightClickOutput: 'Engin saga um aplastic anemia' }
+                ],
+                onRightClickOutput: 'Engin saga um blóðsjúkdóma'
+            },
+            {
+                display: 'Onkologia',
+                subOptions: [
+                    { display: 'Lungnakrabbamein', output: 'Saga um lungnakrabbamein', onRightClickOutput: 'Engin saga um lungnakrabbamein' },
+                    { display: 'Brjóstakrabbamein', output: 'Saga um brjóstakrabbamein', onRightClickOutput: 'Engin saga um brjóstakrabbamein' },
+                    { display: 'Prostate cancer', output: 'Saga um prostate cancer', onRightClickOutput: 'Engin saga um prostate cancer' },
+                    { display: 'Colorectal cancer', output: 'Saga um colorectal cancer', onRightClickOutput: 'Engin saga um colorectal cancer' },
+                    { display: 'Melanoma', output: 'Saga um melanoma', onRightClickOutput: 'Engin saga um melanoma' },
+                    { display: 'Lymphoma', output: 'Saga um lymphoma', onRightClickOutput: 'Engin saga um lymphoma' },
+                    { display: 'Pancreatic cancer', output: 'Saga um pancreatic cancer', onRightClickOutput: 'Engin saga um pancreatic cancer' },
+                    { display: 'Leukemia', output: 'Saga um leukemia', onRightClickOutput: 'Engin saga um leukemia' },
+                    { display: 'Ovarian cancer', output: 'Saga um ovarian cancer', onRightClickOutput: 'Engin saga um ovarian cancer' },
+                    { display: 'Bladder cancer', output: 'Saga um bladder cancer', onRightClickOutput: 'Engin saga um bladder cancer' }
+                ],
+                onRightClickOutput: 'Engin saga um krabbamein'
+            }
+        ]
+    }
+];
+
 
 // Viral symptoms
 const SymptomsViral = [
@@ -1420,7 +1675,8 @@ const ExamsViral = [
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        onRightClickOutput: 'Ekki brak'
                     },
                     {
                         display: 'Wheezing',
@@ -1476,7 +1732,8 @@ const ExamsViral = [
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        onRightClickOutput: 'Ekki wheezing'
                     },
                     {
                         display: 'Ronchi',
@@ -1493,7 +1750,8 @@ const ExamsViral = [
                                 display: 'Vinstra megin',
                                 output: 'Heyrist ronchi vinstra megin'
                             }
-                        ]
+                        ],
+                        onRightClickOutput: 'Ekki ronchi'
                     },
                     {
                         display: 'Stridor',
@@ -1510,7 +1768,8 @@ const ExamsViral = [
                                 display: 'Vinstra megin',
                                 output: 'Heyrist stridor vinstra megin'
                             }
-                        ]
+                        ],
+                        onRightClickOutput: 'Ekki stridor'
                     },
                     {
                         display: 'Pleural rub',
@@ -1527,7 +1786,8 @@ const ExamsViral = [
                                 display: 'Vinstra megin',
                                 output: 'Heyrist pleural rub vinstra megin'
                             }
-                        ]
+                        ],
+                        onRightClickOutput: 'Ekki pleural rub'
                     }
                 ],
                 onRightClickOutput: 'Ekki wheezing, brak eða önnur aukahljóð'
@@ -2429,24 +2689,6 @@ const SymptomsUrinary = [
             { display: 'Slappleiki', output: 'Verið með slappleika', onRightClickOutput: 'Ekki fundið fyrir slappleika' }
         ]
     },
-    {
-        name: '',
-        type: 'options',
-        display: ['Niðurstöður rannsókna'],
-        options: [
-
-            {
-                display: 'Niðurstöður rannsókna',
-                subOptions: [
-                    { display: 'Niðurstöður þvagstix', output: 'Niðurstöður þvagstix'},
-                    { display: 'Niðurstöður þvagræktun', output: 'Niðurstöður þvagræktun'}
-                    
-                ],
-                cancelText: ''
-            }
-            
-        ]
-    },
     {},
     {},
     {},
@@ -2580,59 +2822,6 @@ const ExamsUrinary = [
                 onRightClickOutput: 'Ekki bankeymsli yfir nýrnastað'
             }
         ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Þvagstix', 'Þvagræktun', 'Næmi'],
-        options: [
-            {
-                display: 'Þvagstix',
-                subOptions: [
-                    { display: 'Jákvætt stix', output: 'Þvagstix jákvætt' },
-                    { display: 'Nítrít', output: 'Jákvæð nítrít í þvagi' },
-                    { display: 'Hvít', output: 'Hvít í þvagi' }
-                ],
-                onRightClickSubOptions: [
-                    { display: 'Þvagstix hreint', output: 'Þvagstix hreint' },
-                    { display: 'Nítrít neikv', output: 'Nítrít neikvæð í þvagi' },
-                    { display: 'Hvít neikv', output: 'Hvít neikvæð í þvagi' }
-                ]
-            },
-            {
-                display: 'Þvagræktun',
-                subOptions: [
-                    { display: 'E. coli', output: 'Ræktast E. coli' },
-                    { display: 'Klebsiella', output: 'Ræktast Klebsiella' },
-                    { display: 'Proteus', output: 'Ræktast Proteus' },
-                    { display: 'Enterococcus', output: 'Ræktast Enterococcus' },
-                    { display: 'Pseudomonas', output: 'Ræktast Pseudomonas' },
-                    { display: 'Staphylococcus saprophyticus', output: 'Ræktast Staphylococcus saprophyticus' }
-                ],
-                onRightClickSubOptions: [
-                    { display: 'Þvagræktun neikvæð', output: 'Þvagræktun neikvæð' }
-                ]
-            },
-            {
-                display: 'Næmi',
-                subOptions: [
-                    { display: 'Pivmecillinam', output: 'Næmi fyrir Pivmecillinam' },
-                    { display: 'Amoxicillin', output: 'Næmi fyrir Amoxicillin' },
-                    { display: 'Cefalexin', output: 'Næmi fyrir Cefalexin' },
-                    { display: 'Trimethoprim', output: 'Næmi fyrir Trimethoprim' },
-                    { display: 'Nitrofurantoin', output: 'Næmi fyrir Nitrofurantoin' },
-                    { display: 'Ciprofloxacin', output: 'Næmi fyrir Ciprofloxacin' }
-                ],
-                onRightClickSubOptions: [
-                    { display: 'Pivmecillinam', output: 'Ónæm fyrir Pivmecillinam' },
-                    { display: 'Amoxicillin', output: 'Ónæm fyrir Amoxicillin' },
-                    { display: 'Cefalexin', output: 'Ónæm fyrir Cefalexin' },
-                    { display: 'Trimethoprim', output: 'Ónæm fyrir Trimethoprim' },
-                    { display: 'Nitrofurantoin', output: 'Ónæm fyrir Nitrofurantoin' },
-                    { display: 'Ciprofloxacin', output: 'Ónæm fyrir Ciprofloxacin' }
-                ]
-            }
-        ]
     }
 ];
 const PlanUrinary = [
@@ -2708,7 +2897,16 @@ const PlanUrinary = [
                     { display: 'Selexid', output: 'Ráðlegg sýklalyf. Set selexid í gáttina' },
                     { display: 'Furadantin', output: 'Ráðlegg sýklalyf. Set furadantin í gáttina' },
                     { display: 'Keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' },
-                    { display: 'Síprox', output: 'Ráðlegg sýklalyf. Set siprox í gáttina' }
+                    { display: 'Síprox', output: 'Ráðlegg sýklalyf. Set siprox í gáttina' },
+                    { display: 'Mixtúrur', 
+                        subOptions: [
+                            { display: 'Eusaprim', output: 'Ráðlegg sýklalyf. Set eusaprim mixtúru í gáttina' },
+                            { display: 'Keflex', output: 'Ráðlegg sýklalyf. Set keflex mixtúru í gáttina' }
+
+                        ]
+
+                        
+                    }
                 ]
             },
             {
@@ -2887,6 +3085,121 @@ const HistoryUrinary = [
         ]
     }
 ];
+const RannsoknirUrinary = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Þvagstix', 'Þvagræktun', 'Næmi'],
+        options: [
+            {
+                display: 'Þvagstix',  // Main button for urine test markers
+                subOptions: [
+                    {
+                        display: 'Nítrít',  // Button for nitrites
+                        output: 'Nítrít jákvætt',  // Left-click output for positive result
+                        onRightClickOutput: 'Nítrít neikvætt'  // Right-click output for negative result
+                    },
+                    {
+                        display: 'Hvít',  // Marker for leukocytes
+                        subOptions: [
+                            { display: '1+', output: 'Hvít 1+' },
+                            { display: '2+', output: 'Hvít 2+' },
+                            { display: '3+', output: 'Hvít 3+' }
+                        ],
+                        onRightClickOutput: 'Hvít neikvæð'  // Right-click output for negative result
+                    },
+                    {
+                        display: 'Blóð',  // Marker for blood
+                        subOptions: [
+                            { display: '1+', output: 'Blóð 1+' },
+                            { display: '2+', output: 'Blóð 2+' },
+                            { display: '3+', output: 'Blóð 3+' }
+                        ],
+                        onRightClickOutput: 'Blóð neikvætt'  // Right-click output for negative result
+                    },
+                    {
+                        display: 'Prótein',  // Marker for protein
+                        subOptions: [
+                            { display: '1+', output: 'Prótein 1+' },
+                            { display: '2+', output: 'Prótein 2+' },
+                            { display: '3+', output: 'Prótein 3+' }
+                        ],
+                        onRightClickOutput: 'Prótein neikvætt'  // Right-click output for negative result
+                    },
+                    {
+                        display: 'Glúkósi',  // Marker for glucose
+                        subOptions: [
+                            { display: '1+', output: 'Glúkósi 1+' },
+                            { display: '2+', output: 'Glúkósi 2+' },
+                            { display: '3+', output: 'Glúkósi 3+' }
+                        ],
+                        onRightClickOutput: 'Glúkósi neikvæður'  // Right-click output for negative result
+                    },
+                    {
+                        display: 'Ketonar',  // Marker for ketones
+                        subOptions: [
+                            { display: '1+', output: 'Ketonar 1+' },
+                            { display: '2+', output: 'Ketonar 2+' },
+                            { display: '3+', output: 'Ketonar 3+' }
+                        ],
+                        onRightClickOutput: 'Ketonar neikvæðir'  // Right-click output for negative result
+                    },
+                    {
+                        display: 'Urobilinogen',  // Marker for urobilinogen
+                        subOptions: [
+                            { display: '1+', output: 'Urobilinogen 1+' },
+                            { display: '2+', output: 'Urobilinogen 2+' },
+                            { display: '3+', output: 'Urobilinogen 3+' }
+                        ],
+                        onRightClickOutput: 'Urobilinogen neikvætt'  // Right-click output for negative result
+                    },
+                    {
+                        display: 'Bilirúbín',  // Marker for bilirubin
+                        subOptions: [
+                            { display: '1+', output: 'Bilirúbín 1+' },
+                            { display: '2+', output: 'Bilirúbín 2+' },
+                            { display: '3+', output: 'Bilirúbín 3+' }
+                        ],
+                        onRightClickOutput: 'Bilirúbín neikvætt'  // Right-click output for negative result
+                    }
+                ],
+                onRightClickOutput: 'Þvagstix hreint'  // Right-click output for overall clean urine test
+            },
+            {
+                display: 'Þvagræktun',
+                subOptions: [
+                    { display: 'E. coli', output: 'Ræktast E. coli' },
+                    { display: 'Klebsiella', output: 'Ræktast Klebsiella' },
+                    { display: 'Proteus', output: 'Ræktast Proteus' },
+                    { display: 'Enterococcus', output: 'Ræktast Enterococcus' },
+                    { display: 'Pseudomonas', output: 'Ræktast Pseudomonas' },
+                    { display: 'Staphylococcus saprophyticus', output: 'Ræktast Staphylococcus saprophyticus' }
+                ],
+                onRightClickOutput: 'Þvagræktun neikvæð'
+                
+            },
+            {
+                display: 'Næmi',
+                subOptions: [
+                    { display: 'Pivmecillinam', output: 'Ónæm fyrir Pivmecillinam' },
+                    { display: 'Amoxicillin', output: 'Ónæm fyrir Amoxicillin' },
+                    { display: 'Cefalexin', output: 'Ónæm fyrir Cefalexin' },
+                    { display: 'Trimethoprim', output: 'Ónæm fyrir Trimethoprim' },
+                    { display: 'Nitrofurantoin', output: 'Ónæm fyrir Nitrofurantoin' },
+                    { display: 'Ciprofloxacin', output: 'Ónæm fyrir Ciprofloxacin' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Pivmecillinam', output: 'Næmi fyrir Pivmecillinam' },
+                    { display: 'Amoxicillin', output: 'Næmi fyrir Amoxicillin' },
+                    { display: 'Cefalexin', output: 'Næmi fyrir Cefalexin' },
+                    { display: 'Trimethoprim', output: 'Næmi fyrir Trimethoprim' },
+                    { display: 'Nitrofurantoin', output: 'Næmi fyrir Nitrofurantoin' },
+                    { display: 'Ciprofloxacin', output: 'Næmi fyrir Ciprofloxacin' }
+                ]
+            }
+        ]
+    }
+];
 const RiskfactorsUrinary = [
     {
         name: '',
@@ -2977,6 +3290,7 @@ const SymptomsContraception = [
                 ],
                 onRightClickSubOptions: [
                     { display: '<15 sígarettur á dag', output: 'Reykir <15 sígarettur á dag' },
+                    { display: 'Reykir ekki, veipar', output: 'Reykir ekki en veipar' },
                     { display: 'Reykir ekki', output: 'Reykir ekki' },
                     { display: 'Aldrei reykt', output: 'Aldrei reykt' }
                 ]
@@ -5640,6 +5954,9 @@ const historyHeart = [
             }
         ]
     }
+];
+const lyfHeart = [
+
 ];
 
 
@@ -14099,7 +14416,113 @@ const ExamsTauga = [
         ]
     }
 ];
-
+const HeilataugaskodunData = [
+    
+    {
+        name: '',
+        type: 'options',
+        display: ['Lyktarskyn', 'Sjón', 'Augnhreyfingar', 'Þrenndartaug'],
+        options: [
+            {
+                display: 'Lyktarskyn',  // Olfactory (I)
+                subOptions: [
+                    { display: 'Lyktarpróf', output: 'Lýsir lyktarprófi', onRightClickOutput: 'Eðlilegt lyktarskyn (I)' }
+                ],
+                onRightClickOutput: 'Eðlilegt lyktarskyn (I)'
+            },
+            {
+                display: 'Sjón',  // Optic (II)
+                subOptions: [
+                    { display: 'Sjónskerpa', output: 'Sjónskerpa prófuð', onRightClickOutput: 'Eðlileg sjónskerpa (II)' },
+                    { display: 'Sjónsvið', output: 'Sjónsvið prófað', onRightClickOutput: 'Eðlilegt sjónsvið (II)' },
+                    { display: 'Funduskoðun', output: 'Funduskoðun framkvæmd', onRightClickOutput: 'Eðlileg funduskoðun (II)' }
+                ],
+                onRightClickOutput: 'Eðlileg sjónskoðun (II)'
+            },
+            {
+                display: 'Augnhreyfingar',  // Oculomotor (III), Trochlear (IV), Abducens (VI)
+                subOptions: [
+                    { display: 'Pupillureflex', output: 'Pupillureflex prófað', onRightClickOutput: 'Eðlilegt pupillureflex (III)' },
+                    { display: 'Augnhreyfingar', output: 'Augnhreyfingar prófaðar', onRightClickOutput: 'Eðlilegar augnhreyfingar (III, IV, VI)' }
+                ],
+                onRightClickOutput: 'Eðlilegar augnhreyfingar og pupillureflex (III, IV, VI)'
+            },
+            {
+                display: 'Þrenndartaug',  // Trigeminal (V)
+                subOptions: [
+                    { display: 'Skynpróf', output: 'Skynpróf á andliti', onRightClickOutput: 'Eðlilegt skyn í andliti (V)' },
+                    { display: 'Vöðvapróf', output: 'Athugað vöðvaspenna og kjálka reflex', onRightClickOutput: 'Eðlileg vöðvaspenna og kjálka reflex (V)' },
+                    { display: 'Hornhimnuviðbragð', output: 'Hornhimnuviðbragð prófað', onRightClickOutput: 'Eðlilegt hornhimnuviðbragð (V)' }
+                ],
+                onRightClickOutput: 'Eðlilegt skyn og vöðvastyrkur í andliti (V)'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Andlitstaug', 'Heyrn og jafnvægi', 'Kok og barkakýli', 'Tunguhreyfingar'],
+        options: [
+            {
+                display: 'Andlitstaug',  // Facial (VII)
+                subOptions: [
+                    { display: 'Andlitsvöðvar', output: 'Athugað andlitsvöðva hreyfingar', onRightClickOutput: 'Eðlilegur styrkur í andlitsvöðvum (VII)' },
+                    { display: 'Bragðskyn', output: 'Smekkspróf á fremri 2/3 hluta tungunnar', onRightClickOutput: 'Ekki breyting á bragðskyni (VII)' }
+                ],
+                onRightClickOutput: 'Eðlileg andlitsmímík. Ekki breyting á bragðskyni (VII)'
+            },
+            {
+                display: 'Heyrn og jafnvægi',  // Vestibulocochlear (VIII)
+                subOptions: [
+                    { display: 'Heyrn', output: 'Heyrn prófuð', onRightClickOutput: 'Eðlileg heyrn (VIII)' },
+                    { display: 'Jafnvægi', output: 'Jafnvægispróf framkvæmt', onRightClickOutput: 'Eðlilegt jafnvægi (VIII)' }
+                ],
+                onRightClickOutput: 'Eðlileg heyrn og jafnvægi (VIII)'
+            },
+            {
+                display: 'Kok og barkakýli',  // Glossopharyngeal (IX), Vagus (X)
+                subOptions: [
+                    { display: 'Kokviðbragð', output: 'Athugað kokviðbragð', onRightClickOutput: 'Eðlilegt kokviðbragð (IX)' },
+                    { display: 'Úfa', output: 'Athugað upphækkun á úfu', onRightClickOutput: 'Eðlileg hreyfing úfu (X)' },
+                    { display: 'Kynging', output: 'Athugað kyngingu', onRightClickOutput: 'Eðlileg kynging (X)' }
+                ],
+                onRightClickOutput: 'Eðlilegt kokviðbragð og kynging (IX, X)'
+            },
+            {
+                display: 'Tunguhreyfingar',  // Hypoglossal (XII)
+                subOptions: [
+                    { display: 'Tunguhreyfing', output: 'Athugað hreyfing tungunnar', onRightClickOutput: 'Eðlileg tunguhreyfing (XII)' }
+                ],
+                onRightClickOutput: 'Eðlilegar tunguhreyfingar (XII)'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Axlarlyfta', 'Öndunarvöðvar'],
+        options: [
+            {
+                display: 'Axlarlyfta',  // Accessory (XI)
+                subOptions: [
+                    { display: 'Axlarlyfta', output: 'Athugað axlarhreyfing með trapezius vöðva', onRightClickOutput: 'Eðlileg axlarlyfta (XI)' },
+                    { display: 'Höfuðsnúningur', output: 'Athugað höfuðsnúningur gegn mótstöðu', onRightClickOutput: 'Eðlilegur höfuðsnúningur (XI)' }
+                ],
+                onRightClickOutput: 'Eðlileg axlarlyfta og höfuðsnúningur (XI)'
+            },
+            {
+                display: 'Öndunarvöðvar',  // Vagus (X) - Additional for respiratory impact
+                subOptions: [
+                    { display: 'Þindarhreyfingar', output: 'Athugað þindarhreyfingar', onRightClickOutput: 'Eðlilegar þindarhreyfingar (X)' },
+                    { display: 'Hósta viðbrögð', output: 'Athugað hósta viðbragð', onRightClickOutput: 'Eðlilegt hósta viðbragð (X)' }
+                ],
+                onRightClickOutput: 'Eðlilegar öndunarhreyfingar og hósta viðbragð (X)'
+            }
+        ]
+    }
+    
+    
+];
 const PlanTauga = [
     {
         name: '',
@@ -14261,6 +14684,544 @@ const PlanTauga = [
             }
         ]
     }
+];
+
+// Svimauppvinnsla
+const SymptomsSvimi = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Einkenni', 'Onset', 'Versnar', 'Skánar', 'Staða'], // Four buttons in one row
+        options: [
+            {
+                display: 'Einkenni',
+                subOptions: [
+                    { display: 'Svimi', output: 'Svimi' },
+                    { display: 'Jafnvægisleysi', output: 'Jafnvægisleysi' },
+                    { display: 'Svimi og jafnvægisleysi', output: 'Svimi og jafnvægisleysi' }
+                ]
+            },
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
+                    { display: 'Smám saman', output: 'Þróaðist smám saman' },
+                    { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
+                ]
+            },
+            {
+                display: 'Versnar',
+                subOptions: [
+                    { display: 'Hreyfingu', output: 'Versnar við hreyfingu' },
+                    { display: 'Sofna', output: 'Versnar þegar reynt er að sofna' },
+                    { display: 'Breytingar á stöðu', output: 'Versnar við stöðubreytingar' },
+                    { display: 'Snögg hreyfing', output: 'Versnar við snöggar hreyfingar' }
+                ],
+                onRightClickOutput: 'Ekkert sem gerir verra'
+            },
+            {
+                display: 'Skánar',  // Main button for improvement
+                subOptions: [
+                    { display: 'Hvíld', output: 'Skánar við hvíld' },  // Improves with rest
+                    {
+                        display: 'Lyf',  // Medication option
+                        subOptions: [
+                            { display: 'NOS', output: 'Skánar við lyf' },  // Non-specified medication
+                            { display: 'Paracetamól', output: 'Skánar við paracetamól' },  // Improves with Paracetamol
+                            { display: 'Ibuprofen', output: 'Skánar við ibuprofen' },  // Improves with Ibuprofen
+                            { display: 'Antihistamín', output: 'Skánar við antihistamín' },  // Improves with Antihistamines
+                            { display: 'Sterar', output: 'Skánar við stera' },  // Improves with Steroids
+                            { display: 'Benzódíazepín', output: 'Skánar við benzódíazepín' },  // Improves with Benzodiazepines
+                            { display: 'Ondansetron', output: 'Skánar við ondansetron' }  // Improves with Ondansetron
+                        ]
+                    },  // Improves with medication
+                    { display: 'Svefn', output: 'Skánar við svefn' },  // Improves with sleep
+                    { display: 'Vera kyrr', output: 'Skánar þegar er kyrr' },  // Improves when not moving
+                    { display: 'Sitja', output: 'Skánar við að sitja' },  // Improves when sitting down
+                ],
+                onRightClickOutput: 'Ekkert sem gerir betra'  // Right-click output when nothing improves
+            },
+            {
+                display: 'Staða',
+                subOptions: [
+                    { display: 'Liggur', output: 'Einkenni mest í liggjandi stöðu' },
+                    { display: 'Stendur', output: 'Einkenni mest þegar stendur' },
+                    { display: 'Situr', output: 'Einkenni mest þegar situr' },
+                    { display: 'Gengur', output: 'Einkenni mest þegar gengur um' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Tímalengd', 'Gerst áður', 'Aðrir Áhrifaþættir', 'Slysasaga'], // Four buttons in one row
+        options: [
+            {
+                display: 'Tímalengd',
+                subOptions: [
+                    { display: 'Nokkra daga', output: 'Nokkra daga saga' },
+                    {
+                        display: 'Klst',
+                        subOptions: [
+                            { display: '<1 klst', output: '<1 klst saga' },
+                            { display: '1 klst', output: 'U.þ.b. 1 klst saga' },
+                            { display: '2 klst', output: 'U.þ.b. 2 klst saga' },
+                            { display: '3 klst', output: 'U.þ.b. 3 klst saga' },
+                            { display: '4 klst', output: 'U.þ.b. 4 klst saga' },
+                            { display: '5 klst', output: 'U.þ.b. 5 klst saga' },
+                            { display: '6 klst', output: 'U.þ.b. 6 klst saga' },
+                            { display: '7 klst', output: 'U.þ.b. 7 klst saga' },
+                            { display: '8 klst', output: 'U.þ.b. 8 klst saga' },
+                            { display: '9 klst', output: 'U.þ.b. 9 klst saga' },
+                            { display: '10 klst', output: 'U.þ.b. 10 klst saga' },
+                            { display: '11 klst', output: 'U.þ.b. 11 klst saga' },
+                            { display: '12 klst', output: 'U.þ.b. 12 klst saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Dagar',
+                        subOptions: [
+                            { display: '1d', output: '1d saga' },
+                            { display: '2d', output: '2d saga' },
+                            { display: '3d', output: '3d saga' },
+                            { display: '4d', output: '4d saga' },
+                            { display: '5d', output: '5d saga' },
+                            { display: '6d', output: '6d saga' }
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Vikur',
+                        subOptions: [
+                            { display: 'Nokkrar vikur', output: 'Nokkra vikna saga' },
+                            { display: 'Margar vikur', output: 'Margra vikna saga' },
+                            { display: '1v', output: '1 vikna saga' },
+                            { display: '1,5v', output: '1,5 vikna saga' },
+                            { display: '2v', output: '2 vikna saga' },
+                            { display: '3v', output: '3 vikna saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Mánuðir',
+                        subOptions: [
+                            { display: 'Nokkrir mánuðir', output: 'Nokkra mánaða saga' },
+                            { display: 'Margir mánuðir', output: 'Margra mánaða saga' },
+                            { display: '1m', output: '1 mán saga' },
+                            { display: '2m', output: '2 mán saga' },
+                            { display: '3m', output: '3 mán saga' },
+                            { display: '4m', output: '4 mán saga' },
+                            { display: '5m', output: '5 mán saga' },
+                            { display: '6m', output: '6 mán saga' }
+                            
+                        ],
+                        cancelText: ''
+                    },
+                    {
+                        display: 'Ár',
+                        subOptions: [
+                            { display: '1 ár', output: '1 ár saga' },
+                            { display: '2 ár', output: '2 ára saga' },
+                            { display: '3 ár', output: '3 ára saga' },
+                            { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
+                            { display: 'Mörg ár', output: 'Verið í mörg ár' }
+                        ],
+                        cancelText: ''
+                    }
+                ],
+                cancelText: ''
+            },
+            {
+                display: 'Gerst áður', output: 'Kannast við einkennin', onRightClickOutput: 'Aldrei fengið sambærileg einkenni'
+            },
+            {
+                display: 'Aðrir Áhrifaþættir',
+                subOptions: [
+                    { display: 'Koffín', output: 'Svimi versnar með koffíni' },
+                    { display: 'Áfengi', output: 'Svimi versnar með áfengi' },
+                    { display: 'Lyf', output: 'Svimi tengist lyfjum' }
+                ],
+                onRightClickOutput: 'Engir aðrir áhrifaþættir á svima'
+            },
+            {
+                display: 'Áverkasaga',
+                subOptions: [
+                    { display: 'Fall', output: 'Saga um fall tengt svima' },
+                    { display: 'Höfuðáverki', output: 'Höfuðáverki samfara svima' }
+                ],
+                onRightClickOutput: 'Engin áverkasaga'
+            }
+        ]
+    }
+    
+];
+
+const historySvimi = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Hraust/ur', 'Nýleg veikindi', 'Höfuðáverkar', 'Ný lyf'],
+        options: [
+            {
+                display: 'Hraust/ur',
+                subOptions: [
+                    { display: 'Hraust', output: 'Hraust í grunninn' },
+                    { display: 'Hraustur', output: 'Hraustur í grunninn' }
+                ],
+                onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunninn'
+            },
+            {
+                display: 'Nýleg veikindi',
+                onRightClickOutput: 'Ekki nýleg veikindi',
+                subOptions: [
+                    { display: 'Flensueinkenni', output: 'Nýlega með flensueinkenni' },
+                    { display: 'Eyrnabólga', output: 'Nýlega með eyrnabólgu' },
+                    { display: 'Þvagfærasýking', output: 'Nýlega með þvagfærasýkingu' }
+                ]
+            },
+            {
+                display: 'Höfuðáverkar',
+                subOptions: [
+                    { display: 'Nýlegir áverkar', output: 'Saga um nýlega höfuðáverka' },
+                    { display: 'Gamall áverki', output: 'Saga um gamlan höfuðáverka' }
+                ],
+                onRightClickOutput: 'Ekki saga um höfuðáverka'
+            },
+            {
+                display: 'Ný lyf',
+                subOptions: [
+                    { display: 'Blóðþrýstingslyf', output: 'Byrjað á nýju blóðþrýstingslyfi' },
+                    { display: 'Svima veldandi lyf', output: 'Byrjað á lyfi sem veldur svima' },
+                    { display: 'Annað lyf', output: 'Byrjað á nýju lyfi' }
+                ],
+                onRightClickOutput: 'Engin ný lyf tekin'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['HTN', 'DM', 'Migreni', 'Fjölskyldusaga'],
+        options: [
+            {
+                display: 'HTN',
+                output: 'Saga um háþrýsting',
+                onRightClickOutput: 'Ekki saga um háþrýsting'
+            },
+            {
+                display: 'DM',
+                output: 'Saga um sykursýki',
+                onRightClickOutput: 'Ekki saga um sykursýki'
+            },
+            {
+                display: 'Migreni',
+                output: 'Saga um migreni',
+                onRightClickOutput: 'Ekki saga um migreni'
+            },
+            {
+                display: 'Fjölskyldusaga',
+                subOptions: [
+                    { display: 'Migreni', output: 'Fjölskyldusaga um migreni', onRightClickOutput: 'Ekki fjölskyldusaga um migreni' },
+                    { display: 'Stroke', output: 'Fjölskyldusaga um stroke', onRightClickOutput: 'Ekki fjölskyldusaga um stroke' },
+                    { display: 'Eyrnasjúkdómar', output: 'Fjölskyldusaga um eyrnasjúkdóma', onRightClickOutput: 'Ekki fjölskyldusaga um eyrnasjúkdóma' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hálsæxli', 'Eyrnabólgur', 'Hjartasjúkdómur', 'Nýrnasjúkdómur'],
+        options: [
+            {
+                display: 'Hálsæxli',
+                output: 'Saga um hálsæxli',
+                onRightClickOutput: 'Ekki saga um hálsæxli'
+            },
+            {
+                display: 'Eyrnabólgur',
+                output: 'Saga um endurteknar eyrnabólgur',
+                onRightClickOutput: 'Ekki saga um endurteknar eyrnabólgur'
+            },
+            {
+                display: 'Hjartasjúkdómur',
+                subOptions: [
+                    { display: 'Kransæðasjúkdómur', output: 'Saga um kransæðasjúkdóm', onRightClickOutput: 'Ekki saga um kransæðasjúkdóm' },
+                    { display: 'Arrhythmia', output: 'Saga um hjartsláttaróreglu', onRightClickOutput: 'Ekki saga um hjartsláttaróreglu' }
+                ]
+            },
+            {
+                display: 'Nýrnasjúkdómur',
+                output: 'Saga um nýrnasjúkdóm',
+                onRightClickOutput: 'Ekki saga um nýrnasjúkdóm'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Nýleg skurðaðgerð', 'Blóðþynning', 'Þunglyndi/Óeðli', 'Skert sjón/heyrn'],
+        options: [
+            {
+                display: 'Nýleg skurðaðgerð',
+                subOptions: [
+                    { display: 'Eyrnaskurðaðgerð', output: 'Saga um nýlega eyrnaskurðaðgerð', onRightClickOutput: 'Ekki saga um nýlega eyrnaskurðaðgerð' },
+                    { display: 'Hjartaaðgerð', output: 'Saga um nýlega hjartaaðgerð', onRightClickOutput: 'Ekki saga um nýlega hjartaaðgerð' }
+                ]
+            },
+            {
+                display: 'Blóðþynning',
+                output: 'Er á blóðþynningu',
+                onRightClickOutput: 'Ekki á blóðþynningu'
+            },
+            {
+                display: 'Þunglyndi/Óeðli',
+                output: 'Saga um þunglyndi eða óeðli',
+                onRightClickOutput: 'Ekki saga um þunglyndi eða óeðli'
+            },
+            {
+                display: 'Skert sjón/heyrn',
+                output: 'Skert sjón eða heyrn',
+                onRightClickOutput: 'Ekki skert sjón eða heyrn'
+            }
+        ]
+    }
+];
+
+const KerfakonnunSvimi = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Hjarta', 'Öndun', 'Þvagfæri', 'Melting'],
+        options: [
+            {
+                display: 'Hjarta',
+                subOptions: [
+                    { display: 'Brjóstverkir', output: 'Lýsir brjóstverkjum', onRightClickOutput: 'Ekki brjóstverkur' },
+                    { display: 'Mæði', output: 'Aukin mæði', onRightClickOutput: 'Ekki aukin mæði' },
+                    { display: 'Palpitation', output: 'Lýsir hjartsláttartruflunum', onRightClickOutput: 'Ekki hjartsláttartruflanir' },
+                    { display: 'Angina', output: 'Lýsir anginu', onRightClickOutput: 'Ekki angina' }
+                ],
+                onRightClickOutput: 'Ekki brjóstverkur, mæði, palpitationir eða angina'
+            },
+            {
+                display: 'Öndun',
+                subOptions: [
+                    { display: 'Hósti', output: 'Lýsir hósta', onRightClickOutput: 'Enginn hósti' },
+                    { display: 'Andþyngsli', output: 'Andþyngsli', onRightClickOutput: 'Engin andþyngsli' },
+                    { display: 'Blóðhósti', output: 'Blóðhósti', onRightClickOutput: 'Enginn blóðhósti' },
+                    { display: 'Hvæsi', output: 'Lýsir hvæsi', onRightClickOutput: 'Enginn hvæsi' }
+                ],
+                onRightClickOutput: 'Engin öndunarfæraeinkenni'
+            },
+            {
+                display: 'Þvagfæri',
+                subOptions: [
+                    { display: 'Þvaglát', output: 'Einkenni við þvaglát', onRightClickOutput: 'Engin einkenni við þvaglát' },
+                    { display: 'Vont', output: 'Verkjar', onRightClickOutput: 'Ekki vont að pissa' },
+                    { display: 'Blóð í þvagi', output: 'Blóð í þvagi', onRightClickOutput: 'Engin blóð í þvagi' },
+                    { display: 'Þvagteppa', output: 'Þvagteppa', onRightClickOutput: 'Engin þvagteppa' },
+                    { display: 'Þvagleki', output: 'Þvagleki', onRightClickOutput: 'Enginn þvagleki' }
+                ],
+                onRightClickOutput: 'Engin þvagfæraeinkenni'
+            },
+            {
+                display: 'Melting',
+                subOptions: [
+                    { display: 'Ógleði', output: 'Ógleði', onRightClickOutput: 'Ekki ógleði' },
+                    { display: 'Uppköst', output: 'Uppköst', onRightClickOutput: 'Ekki uppköst' },
+                    { display: 'Uppþemba', output: 'Uppþemba', onRightClickOutput: 'Ekki uppþemba' },
+                    { display: 'Bakflæði', output: 'Bakflæði', onRightClickOutput: 'Engin bakflæði' },
+                    { display: 'Niðurgangur', output: 'Niðurgangur', onRightClickOutput: 'Enginn niðurgangur' },
+                    { display: 'Hægðatregða', output: 'Hægðatregða', onRightClickOutput: 'Engin hægðatregða' },
+                    { display: 'Kviðverkur', output: 'Kviðverkur', onRightClickOutput: 'Enginn kviðverkur' }
+                ],
+                onRightClickOutput: 'Engin meltingarvandamál'
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Taugakerfi', 'Augu', 'Eyru', 'Húð' ],
+        options: [
+            {
+                display: 'Taugakerfi',
+                subOptions: [
+                    { display: 'Dofi', output: 'Dofi í útlimum', onRightClickOutput: 'Enginn dofi' },
+                    { display: 'Skert meðvitund', output: 'Skert meðvitund', onRightClickOutput: 'Engin skert meðvitund' },
+                    { display: 'Flog', output: 'Saga um flog', onRightClickOutput: 'Engin saga um flog' },
+                    { display: 'Slappleiki', output: 'Slappleiki', onRightClickOutput: 'Enginn slappleiki' },
+                    { display: 'Taugaverkir', output: 'Taugaverkir', onRightClickOutput: 'Engir taugaverkir' }
+                ],
+                onRightClickOutput: 'Engin einkenni frá taugakerfi'
+            },
+            {
+                display: 'Augn',
+                subOptions: [
+                    { display: 'Augnverkir', output: 'Lýsir augnverkjum', onRightClickOutput: 'Engir augnverkir' },
+                    { display: 'Dauf sjón', output: 'Dauf sjón', onRightClickOutput: 'Engin dauf sjón' },
+                    { display: 'Roði í augum', output: 'Roði í augum', onRightClickOutput: 'Enginn roði í augum' }
+                ],
+                onRightClickOutput: 'Sjón í lagi'
+            },
+            {
+                display: 'Eyrna',
+                subOptions: [
+                    { display: 'Heyrnartap', output: 'Lýsir heyrnartapi', onRightClickOutput: 'Engin heyrnartap' },
+                    { display: 'Eyrnaverkur', output: 'Lýsir eyrnaverk', onRightClickOutput: 'Enginn eyrnaverkur' },
+                    { display: 'Útferð úr eyrum', output: 'Útferð úr eyrum', onRightClickOutput: 'Engin útferð úr eyrum' }
+                ],
+                onRightClickOutput: 'Engin einkenni frá eyrum'
+            },
+            {
+                display: 'Húð',
+                subOptions: [
+                    { display: 'Útbrot', output: 'Útbrot á húð', onRightClickOutput: 'Engin útbrot á húð' },
+                    { display: 'Kláði', output: 'Kláði á húð', onRightClickOutput: 'Enginn kláði á húð' },
+                    { display: 'Breytingar á húðlit', output: 'Breytingar á húðlit', onRightClickOutput: 'Engar breytingar á húðlit' }
+                ],
+                onRightClickOutput: 'Engin húðeinkenni'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Stoðkerfi', 'Innkirtlar', 'Geðheilsa', 'Ónæmiskerfi'],
+        options: [
+            
+            {
+                display: 'Stoðkerfi',
+                subOptions: [
+                    { display: 'Liðverkir', output: 'Lýsir liðverkjum', onRightClickOutput: 'Engir liðverkir' },
+                    { display: 'Bakverkur', output: 'Lýsir bakverk', onRightClickOutput: 'Enginn bakverkur' },
+                    { display: 'Vöðvaverkir', output: 'Vöðvaverkir', onRightClickOutput: 'Engir vöðvaverkir' }
+                ],
+                onRightClickOutput: 'Engin stoðkerfisvandamál'
+            },
+            {
+                display: 'Innkirtlar',
+                subOptions: [
+                    { display: 'Sykrusýki', output: 'Saga um sykursýki', onRightClickOutput: 'Engin saga um sykursýki' },
+                    { display: 'Þyroidea', output: 'Vandamál með skjaldkirtil', onRightClickOutput: 'Engin vandamál með skjaldkirtil' },
+                    { display: 'Blóðsykur', output: 'Óeðlilegur blóðsykur', onRightClickOutput: 'Eðlilegur blóðsykur' }
+                ],
+                onRightClickOutput: 'Engin innkirtlaeinkenni'
+            },
+            {
+                display: 'Geðheilsa',
+                subOptions: [
+                    { display: 'Kvíði', output: 'Lýsir kvíða', onRightClickOutput: 'Enginn kvíði' },
+                    { display: 'Þunglyndi', output: 'Lýsir þunglyndi', onRightClickOutput: 'Engin þunglyndi' },
+                    { display: 'Svefntruflanir', output: 'Lýsir svefntruflunum', onRightClickOutput: 'Engar svefntruflanir' }
+                ],
+                onRightClickOutput: 'Engin geðheilsubrot'
+            },
+            {
+                display: 'Ónæmiskerfi',
+                subOptions: [
+                    { display: 'Ónæmisbælandi meðferð', output: 'Er á ónæmisbælandi meðferð', onRightClickOutput: 'Ekki á ónæmisbælandi meðferð' },
+                    { display: 'Ofnæmi', output: 'Lýsir ofnæmi', onRightClickOutput: 'Engin ofnæmi' }
+                ],
+                onRightClickOutput: 'Engin ónæmiskerfisvandamál'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blóðsjúkdómar'],
+        options: [
+            
+            {
+                display: 'Blóðsjúkdómar',
+                subOptions: [
+                    { display: 'Blóðleysi', output: 'Blóðleysi', onRightClickOutput: 'Engin blóðleysi' },
+                    { display: 'Blæðingartruflanir', output: 'Blæðingartruflanir', onRightClickOutput: 'Engar blæðingartruflanir' },
+                    { display: 'Mar', output: 'Lýsir marblettum', onRightClickOutput: 'Engir marblettir' }
+                ],
+                onRightClickOutput: 'Engin blóðsjúkdómseinkenni'
+            }
+        ]
+    }
+];
+
+
+
+
+const ExamsSvimi = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Lasleg/ur', 'Meðtekin/n', 'Slímhúðir', 'Háræðafylling'],
+        options: [
+            {
+                display: 'Lasleg/ur',
+                subOptions: [
+                    { display: 'Lasleg/ur', output: 'Laslega útlítandi' }
+                ],
+                onRightClickOutput: 'Ekki bráðveikindalegt útlit'
+            },
+            {
+                display: 'Meðtekin/n',
+                output: 'Sjúklingur virðist meðtekinn af verk',
+                onRightClickOutput: 'Sjúklingur ekki meðtekinn af verk'
+            },
+            {
+                display: 'Slímhúðir',
+                output: 'Þurrar slímhúðir',
+                onRightClickOutput: 'Rakar slímhúðir'
+            },
+            {
+                display: 'Háræðafylling',
+                output: 'Lengd háræðafylling perifert',
+                onRightClickOutput: 'Eðlileg háræðafylling'
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Roði á hljóðhimnum', 'Roði í hlust', 'Mergur'],
+        options: [
+            {
+                display: 'Roði á hljóðhimnum',
+                subOptions: [
+                    { display: 'Hægri', output: 'Roði á hægri hljóðhimnu' },
+                    { display: 'Vinstri', output: 'Roði á vinstri hljóðhimnu' },
+                    { display: 'Beggja vegna', output: 'Roði á hljóðhimnum beggja vegna' }
+                ],
+                onRightClickOutput: 'Ekki roði á hljóðhimnum'
+            },
+            {
+                display: 'Roði í hlust',
+                subOptions: [
+                    { display: 'Hægri', output: 'Roði í hlust hægra megin' },
+                    { display: 'Vinstri', output: 'Roði í hlust vinstra megin' },
+                    { display: 'Beggja vegna', output: 'Roði í hlustum beggja vegna' }
+                ],
+                onRightClickOutput: 'Ekki roði í hlust'
+            },
+            {
+                display: 'Mergur',
+                subOptions: [
+                    { display: 'Hægri', output: 'Eyrnamergur hægra megin' },
+                    { display: 'Vinstri', output: 'Eyrnamergur vinstra megin' },
+                    { display: 'Beggja vegna', output: 'Eyrnamergur beggja vegna' }
+                ],
+                onRightClickOutput: 'Ekki eyrnamergur'
+            }
+        ]
+    }
+];
+const PlanSvimi = [
+
 ];
 
 
@@ -18008,187 +18969,170 @@ const LyfData = [
                 display: 'Meltingarlyf',
                 subOptions: [
                     {
-                        display: 'Sýrubindandi lyf', // Antacids
-                        subOptions: [
-                            {
-                                display: 'Kalsíumkarbónat', // Calcium Carbonate
-                                subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Kalsíumkarbónat'
-                                    },
-                                    {
-                                        display: '500mg',
-                                        subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Kalsíumkarbónat 500mg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Kalsíumkarbónat 500mg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Kalsíumkarbónat 500mg 2x1'
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        display: '1000mg',
-                                        subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Kalsíumkarbónat 1000mg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Kalsíumkarbónat 1000mg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Kalsíumkarbónat 1000mg 2x1'
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                            // Add more antacids as needed
-                        ]
-                    },
-                    {
-                        display: 'Prótónpumpuhemlar', // Proton Pump Inhibitors
+                        display: 'Sýruhemjandi lyf',
                         subOptions: [
                             {
                                 display: 'Omeprazole',
                                 subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Omeprazole'
-                                    },
-                                    {
-                                        display: '10mg',
+                                    { display: 'NOS', output: 'Omeprazole' },
+                                    ...[10, 20, 40].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Omeprazole 10mg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Omeprazole 10mg 1x1'
-                                            }
+                                            { display: 'NOS', output: `Omeprazole ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Omeprazole ${dose} mg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: '20mg',
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Pantoprazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Pantoprazole' },
+                                    ...[20, 40].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Omeprazole 20mg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Omeprazole 20mg 1x1'
-                                            }
+                                            { display: 'NOS', output: `Pantoprazole ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Pantoprazole ${dose} mg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: '40mg',
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Lansoprazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Lansoprazole' },
+                                    ...[15, 30].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Omeprazole 40mg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Omeprazole 40mg 1x1'
-                                            }
+                                            { display: 'NOS', output: `Lansoprazole ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Lansoprazole ${dose} mg ${freq}` }))
                                         ]
-                                    }
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Esomeprazole',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Esomeprazole' },
+                                    ...[20, 40].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Esomeprazole ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Esomeprazole ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Ranitidine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Ranitidine' },
+                                    ...[150, 300].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Ranitidine ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Ranitidine ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
                                 ]
                             }
-                            // Add more proton pump inhibitors as needed
                         ]
                     },
                     {
-                        display: 'Lyf gegn ógleði', // Antiemetics
+                        display: 'Prokinetísk lyf',
+                        subOptions: [
+                            {
+                                display: 'Metoclopramide',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Metoclopramide' },
+                                    ...[5, 10].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Metoclopramide ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Metoclopramide ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Domperidone',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Domperidone' },
+                                    ...[10, 20].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Domperidone ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Domperidone ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Antiemetísk lyf',
                         subOptions: [
                             {
                                 display: 'Ondansetron',
                                 subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Ondansetron'
-                                    },
-                                    {
-                                        display: '4mg',
+                                    { display: 'NOS', output: 'Ondansetron' },
+                                    ...[4, 8].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Ondansetron 4mg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Ondansetron 4mg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Ondansetron 4mg 2x1'
-                                            }
+                                            { display: 'NOS', output: `Ondansetron ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Ondansetron ${dose} mg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: '8mg',
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Promethazine',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Promethazine' },
+                                    ...[12.5, 25, 50].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Ondansetron 8mg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Ondansetron 8mg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Ondansetron 8mg 2x1'
-                                            }
+                                            { display: 'NOS', output: `Promethazine ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Promethazine ${dose} mg ${freq}` }))
                                         ]
-                                    }
+                                    }))
                                 ]
                             }
-                            // Add more antiemetics as needed
                         ]
                     },
                     {
-                        display: 'Hægðalyf', // Laxatives
+                        display: 'Mýkingarlyf',
                         subOptions: [
                             {
-                                display: 'Polyethylene Glycol',
+                                display: 'Lactulose',
                                 subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Polyethylene Glycol'
-                                    },
-                                    {
-                                        display: '17g',
+                                    { display: 'NOS', output: 'Lactulose' },
+                                    ...[10, 15, 30].map(dose => ({
+                                        display: `${dose} ml`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Polyethylene Glycol 17g'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Polyethylene Glycol 17g 1x1'
-                                            }
+                                            { display: 'NOS', output: `Lactulose ${dose} ml` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Lactulose ${dose} ml ${freq}` }))
                                         ]
-                                    }
-                                    // Add more strengths and dosages as needed
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Macrogol',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Macrogol' },
+                                    ...['13.7g', '17g'].map(dose => ({
+                                        display: `${dose}`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Macrogol ${dose}` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Macrogol ${dose} ${freq}` }))
+                                        ]
+                                    }))
                                 ]
                             }
-                            // Add more laxatives as needed
                         ]
                     }
-                ]
+                ],
+                onRightClickOutput: 'Engin meltingarlyf'
             },
             {
                 display: 'Innkirtlalyf',
@@ -20548,7 +21492,8 @@ const Habits = [
                     {
                         display: 'Reykir ekki',
                         subOptions: [
-                            {display: 'Reykir ekki', output: 'Reykir ekki'},
+                            {display: 'NOS', output: 'Reykir ekki'},
+                            {display: 'Veipar', output: 'Reykir ekki en veipar'},
                             {
                                 display: 'Hætti fyrir 1-10 árum',
                                 subOptions: Array.from({ length: 10 }, (_, i) => ({
@@ -21132,7 +22077,7 @@ const OfnaemiData = [
     {
         name: '',
         type: 'options',
-        display: ['Umhverfisofnæmi', 'Lyfjaofnæmi', 'Fæðuofnæmi/óþol', 'Skordýraofnæmi'],
+        display: ['Umhverfi', 'Lyf', 'Fæða', 'Skordýr'],
         options: [
             {
                 display: 'Umhverfisofnæmi',
@@ -23353,6 +24298,14 @@ function createOfnaemiSection(data) {
     return section;
 }
 
+function createHeilataugaskodunSection(data) {
+    console.log('Creating Heilataugaskoðun Section with data:', data); // Debugging line
+    const section = createSection('heilataugaskodun', 'Heilataugaskoðun');
+    const container = section.querySelector('#heilataugaskodun');
+    createButtons(container, data, 'heilataugaskodun');
+    return section;
+}
+
 // Load sections depending on page
 function loadPage(page) {
     const container = document.getElementById('content-section');
@@ -23367,6 +24320,8 @@ function loadPage(page) {
         const RiskUrinarySection = createRiskUrinarySection(RiskfactorsUrinary);
         const lifsmorkSection = createLifsmorkSection(LifsmorkData);
         const ofnaemiSection = createOfnaemiSection(OfnaemiData);
+        const rannsoknirSection = createRannsoknirSection(RannsoknirUrinary);
+        
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
@@ -23380,6 +24335,7 @@ function loadPage(page) {
         middleColumn.className = 'column';
         middleColumn.appendChild(examsSection);
         middleColumn.appendChild(lifsmorkSection);
+        middleColumn.appendChild(rannsoknirSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -23506,7 +24462,7 @@ function loadPage(page) {
         const einkenniSection = createEinkenniSection(SymptomsViral);
         const skodunSection = createSkodunSection(ExamsViral);
         const planSection = createPlanSection(PlanViral);
-        const historyViralSection = createHistoryViralSection(historyViralData);
+        const historyViralSection = createHistoryViralSection(HealthHistory);
         const habitsSection = createHabitsSection(Habits);
         const vottordSection = createVottordSection(Vottord);
         const rannsoknSection = createRannsoknSection(RannsoknData);
@@ -23517,6 +24473,7 @@ function loadPage(page) {
         leftColumn.appendChild(vottordSection);
         leftColumn.appendChild(rannsoknSection);
         leftColumn.appendChild(lyfSection);
+        leftColumn.appendChild(historyViralSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -23927,6 +24884,7 @@ function loadPage(page) {
     } else if (page === 'Tauga') {
         const einkenniSection = createEinkenniSection(SymptomsTauga);
         const skodunSection = createSkodunSection(ExamsTauga);
+        const heilataugaskodunSection = createHeilataugaskodunSection(HeilataugaskodunData);
         const planSection = createPlanSection(PlanTauga);
 
         const leftColumn = document.createElement('div');
@@ -23936,6 +24894,43 @@ function loadPage(page) {
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
+        middleColumn.appendChild(heilataugaskodunSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Svimi') {
+        const einkenniSection = createEinkenniSection(SymptomsSvimi);
+        const kerfakonnunSection = createKerfakonnunSection(KerfakonnunSvimi);
+        const historySvimiSection = createHistoryViralSection(historySvimi);
+        const habitsSection = createHabitsSection(Habits);
+        const ofnaemiSection = createOfnaemiSection(OfnaemiData);
+        const skodunSection = createSkodunSection(ExamsSvimi);
+        const heilataugaskodunSection = createHeilataugaskodunSection(HeilataugaskodunData);
+        const lifsmorkSection = createLifsmorkSection(LifsmorkData);
+        const planSection = createPlanSection(PlanSvimi);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+        leftColumn.appendChild(kerfakonnunSection);
+        leftColumn.appendChild(historySvimiSection);
+        leftColumn.appendChild(habitsSection);
+        leftColumn.appendChild(ofnaemiSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
+        middleColumn.appendChild(heilataugaskodunSection);
+        middleColumn.appendChild(lifsmorkSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -24155,7 +25150,7 @@ function findNextHeaderIndex(currentText, startIndex) {
         'Venjur:', 'Skoðun:', 'Plan:', 'Rannsóknir:', 'Lífsmörk:', 'Rauð Flögg:', 'Lyf:',
         'Áhættuþættir Kransæðasjúkdóms:', 'Áhættuþættir þvagblöðrukrabbameins:', 'CHADS-VASc:',
         'Heilsufar:', 'Vottorð:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:',
-        'Ofnæmi:'
+        'Ofnæmi:', 'Heilataugaskoðun:'
     ];
     let nextHeaderIndex = -1;
 
@@ -24171,7 +25166,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'gedskodun', 'lifsmork', 'rannsoknir', 'plan'];
+    const sectionOrder = ['einkenni', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
@@ -24226,6 +25221,8 @@ function getSectionHeader(sectionId) {
             return 'Kerfakönnun:';
         case 'ofnaemi':
             return 'Ofnæmi:';
+        case 'heilataugaskodun':
+            return 'Heilataugaskoðun:';
         
         default:
             return '';

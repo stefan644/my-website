@@ -41,7 +41,13 @@
             <button onclick="loadPage('Ged')">Geð</button> <!-- Button for Ged -->
             <button onclick="loadPage('Áfengi')">Áfengi</button>
             <button onclick="loadPage('Gigt')">Gigt</button>
-            <button onclick="loadPage('Tauga')">Tauga</button> <!-- Button for Tauga -->
+            <div class="dropdown">
+                <button class="dropbtn">Tauga</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="loadPage('Tauga')">Almennt</a>
+                    <a href="#" onclick="loadPage('Svimi')">Svimi</a>
+                </div>
+            </div>
             <button onclick="loadPage('Innkirtla')">Innkirtla</button> <!-- Button for Innkirtla -->
             <button id="enterCodeButton">Enter Code</button>
             
