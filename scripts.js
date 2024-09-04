@@ -7627,6 +7627,7 @@ const SymptomsStodkerfi = [
         ]
     }
 ];
+
 const ExamsStodkerfi = [
     // Knee Examination
     {
@@ -8530,69 +8531,33 @@ const PlanStodkerfi = [
 // Shoulder
 const SymptomsShoulder = [
     {
-        name: '',
+        name: '',  // No category name displayed
         type: 'options',
-        display: ['Staðsetning', 'Verkur'],
+        display: ['Einkenni', 'Verkur', 'Óþægindi'],  // Four buttons in one row
         options: [
             {
-                display: 'Staðsetning',
+                display: 'Einkenni',  // Main button for symptoms
                 subOptions: [
-                    { display: 'Hægri', output: 'Einkenni frá hægri öxl' },
-                    { display: 'Vinstri', output: 'Einkenni frá vinstri öxl' }
+                    { display: 'Hægri', output: 'Einkenni frá hægri öxl' },  // Right shoulder symptom
+                    { display: 'Vinstri', output: 'Einkenni frá vinstri öxl' }  // Left shoulder symptom
                 ]
             },
             {
-                display: 'Verkur',
-                onRightClickOutput: 'Neitar verk',
-                subOptions: [
-                    {
-                        display: 'NOS',
-                        subOptions: [
-                            { display: 'NOS', output: 'Verkur' },
-                            { display: 'Innanvert', output: 'Verkur. Mestur medialt á öxl' },
-                            { display: 'Utanvert', output: 'Verkur. Mestur lateralt á öxl' },
-                            { display: 'Framanvert', output: 'Verkur. Mestur framanvert á öxl' },
-                            { display: 'Aftanvert', output: 'Verkur. Mestur aftanvert á öxl' }
-                        ]
-                    },
-                    {
-                        display: 'Djúpur',
-                        subOptions: [
-                            { display: 'NOS', output: 'Djúpur verkur' },
-                            { display: 'Innanvert', output: 'Djúpur verkur. Mestur medialt á öxl' },
-                            { display: 'Utanvert', output: 'Djúpur verkur. Mestur lateralt á öxl' },
-                            { display: 'Framanvert', output: 'Djúpur verkur. Mestur framanvert á öxl' },
-                            { display: 'Aftanvert', output: 'Djúpur verkur. Mestur aftanvert á öxl' }
-                        ]
-                    },
-                    {
-                        display: 'Brennandi',
-                        subOptions: [
-                            { display: 'NOS', output: 'Brennandi verkur' },
-                            { display: 'Innanvert', output: 'Brennandi verkur. Mestur medialt á öxl' },
-                            { display: 'Utanvert', output: 'Brennandi verkur. Mestur lateralt á öxl' },
-                            { display: 'Framanvert', output: 'Brennandi verkur. Mestur framanvert á öxl' },
-                            { display: 'Aftanvert', output: 'Brennandi verkur. Mestur aftanvert á öxl' }
-                        ]
-                    },
-                    {
-                        display: 'Stingandi',
-                        subOptions: [
-                            { display: 'NOS', output: 'Stingandi verkur' },
-                            { display: 'Innanvert', output: 'Stingandi verkur. Mestur medialt á öxl' },
-                            { display: 'Utanvert', output: 'Stingandi verkur. Mestur lateralt á öxl' },
-                            { display: 'Framanvert', output: 'Stingandi verkur. Mestur framanvert á öxl' },
-                            { display: 'Aftanvert', output: 'Stingandi verkur. Mestur aftanvert á öxl' }
-                        ]
-                    }
-                ]
+                display: 'Verkur',  // Main button for pain
+                output: 'Verkur',  // Left-click output for indicating pain
+                onRightClickOutput: 'Ekki verkur'  // Right-click output for no pain
+            },
+            {
+                display: 'Óþægindi',  // Main button for pain
+                output: 'Óþægindi',  // Left-click output for indicating pain
+                onRightClickOutput: 'Ekki óþægindi'  // Right-click output for no pain
             }
         ]
     },
     {
-        name: '',
+        name: '',  // No category name displayed
         type: 'options',
-        display: ['Tímalengd', 'Onset', 'Áverki'],
+        display: ['Tímalengd', 'Onset', 'Áverki'],  // Four buttons in one row
         options: [
             {
                 display: 'Tímalengd einkenna',
@@ -8692,8 +8657,26 @@ const SymptomsShoulder = [
     {
         name: '',
         type: 'options',
-        display: ['Leiðni', 'Versnar', 'Severity'],
+        display: ['Staðsetning', 'Character', 'Leiðni', 'Versnar', 'Severity'],
         options: [
+            {
+                display: 'Staðsetning',  // Main button for location of pain
+                subOptions: [
+                    { display: 'Innanvert', output: 'Einkenni mest medialt á öxl' },  // Pain medial
+                    { display: 'Utanvert', output: 'Einkenni mest lateralt á öxl' },  // Pain lateral
+                    { display: 'Framanvert', output: 'Einkenni mest framanvert á öxl' },  // Pain anterior
+                    { display: 'Aftanvert', output: 'Einkenni mest aftanvert á öxl' }  // Pain posterior
+                ]
+            },
+            {
+                display: 'Character',  // Main button for character of pain
+                subOptions: [
+                    { display: 'Djúpur', output: 'Djúpur verkur' },  // Deep pain
+                    { display: 'Brennandi', output: 'Brennandi verkur' },  // Burning pain
+                    { display: 'Stingandi', output: 'Stingandi verkur' },  // Stabbing pain
+                    { display: 'NOS', output: 'Óákveðinn verkur' }  // Non-specific pain
+                ]
+            },
             {
                 display: 'Leiðni',
                 onRightClickOutput: 'Neitar leiðni',
@@ -8764,127 +8747,227 @@ const SymptomsShoulder = [
     }
     
 ];
+const historyShoulder = [
+
+];
 const ExamsShoulder = [
+    // First row: Inspection (Skoðun)
     {
-        name: '',
+        name: '',  // No category name displayed
         type: 'options',
-        display: ['Öxl - Útlit', 'Þreifing', 'Hreyfigeta'],
+        display: ['Samhverfa', 'Afmyndun', 'Bólga', 'Húðbreytingar'],  // Buttons for inspection
         options: [
             {
-                display: 'Öxl - Útlit',
+                display: 'Samhverfa',  // Button for assessing symmetry
                 subOptions: [
-                    {
-                        display: 'Öxl - Útlit',
-                        subOptions: [
-                            {
-                                display: 'Samhverfa',
-                                output: 'Ein öxl lítur öðruvísi út en hin að stærð, lögun eða stöðu, sem getur bent til vandamála eins og úr lið, vöðvarýrnun eða bólgu.'
-                            },
-                            {
-                                display: 'Jöfnun',
-                                output: 'Öxlin virðist færð úr stað, sem getur bent til úr lið eða subluxation.'
-                            },
-                            {
-                                display: 'Vöðva magn og lögun',
-                                subOptions: [
-                                    { display: 'Rýrnun', output: 'Minnkað vöðvamagn, sem getur bent til taugaskaða eða notkunarleysis.' },
-                                    { display: 'Hypertrophia', output: 'Aukið vöðvamagn, mögulega vegna ofnotkunar eða bótamechanisma.' }
-                                ]
-                            },
-                            {
-                                display: 'Húðbreytingar',
-                                subOptions: [
-                                    { display: 'Roði', output: 'Roði sem bendir til bólgu eða sýkingar.' },
-                                    { display: 'Mar', output: 'Sem bendir til nýlegra áverka.' },
-                                    { display: 'Ör', output: 'Nærvera skurðör eða gamalla áverkamerkja.' }
-                                ]
-                            },
-                            {
-                                display: 'Afbrigði',
-                                output: 'Nærvera óeðlilegra útstæðna eða innfellinga, sem geta bent til brota, úr lið eða annarra byggingarfrávika.'
-                            }
-                        ],
-                        
-                    }
+                    { display: 'Vinstri lægri', output: 'Vinstri öxl er lægri en sú hægri' },
+                    { display: 'Hægri lægri', output: 'Hægri öxl er lægri en sú vinstri' }
                 ],
-                onRightClickSubOptions: [
-                    { display: 'Samhverft', output: 'Báðar axlir eru samhverfar að stærð, lögun og stöðu.' },
-                    { display: 'Eðlileg jöfnun', output: 'Öxlin er í venjulegri líffærafræðilegri stöðu, með humeral höfuðið rétt stillt innan glenoid fossa.' },
-                    { display: 'Eðlilegt vöðvamagn og lögun', output: 'Vöðvar umhverfis öxlina (deltoid, trapezius, rotator cuff vöðvar) eru vel skilgreindir og samhverfir.' },
-                    { display: 'Eðlileg húð', output: 'Húðin yfir öxlinni er ómerkt, án litarbreytinga eða sára.' },
-                    { display: 'Engin afbrigði', output: 'Engin sýnileg afbrigði.' }
-                ]
+                onRightClickOutput: 'Axlir samhverfar'
             },
             {
-                display: 'Þreifing',
+                display: 'Afmyndun',  // Button for identifying deformities
                 subOptions: [
-                    { display: 'Framanvert', output: 'Þreifieymsl framanvert á axlarlið' },
-                    { display: 'Aftanvert', output: 'Þreifieymsl aftanvert á axlarlið' },
-                    { display: 'AC lið', output: 'Þreifieymsl yfir AC lið' },
-                    {
-                        display: 'Biceps sin',
-                        subOptions: [
-                            { display: 'Festu stuttu biceps sinar', output: 'Þreifieymsl yfir festu stuttu biceps sinar' },
-                            { display: 'Löngu biceps sin', output: 'Þreifieymsl yfir löngu biceps sin' }
-                        ]
-                    },
-                    { display: 'Supraspinatus', output: 'Þreifieymsl yfir supraspinatus' },
-                    { display: 'Infraspinatus', output: 'Þreifieymsl yfir infraspinatus' },
-                    { display: 'Subscapularis', output: 'Þreifieymsl yfir subscapularis' },
-                    {
-                        display: 'Deltoid Muscle',
-                        subOptions: [
-                            { display: 'Fremri', output: 'Þreifieymsl yfir anterior deltoid vöðva' },
-                            { display: 'Miðjum', output: 'Þreifieymsl yfir miðjum deltoid vöðva' },
-                            { display: 'Aftari', output: 'Þreifieymsl yfir aftari hluta deltoid vöðva' }
-                        ]
-                    },
-                    {
-                        display: 'Viðbein',
-                        subOptions: [
-                            {
-                                display: 'Hnúður',
-                                subOptions: [
-                                    { display: 'Distal þriðjung', output: 'Þreifast hnúður á distal þriðjungi viðbeins' },
-                                    { display: 'Miðju', output: 'Þreifast hnúður á miðju viðbeins' },
-                                    { display: 'Proximal þriðjung', output: 'Þreifast hnúður á proximal þriðjungi viðbeins' }
-                                ]
-                            },
-                            {
-                                display: 'Eymsli',
-                                subOptions: [
-                                    { display: 'Distal þriðjung', output: 'Eymsli á distal þriðjungi viðbeins' },
-                                    { display: 'Miðju', output: 'Eymsli á miðju viðbeins' },
-                                    { display: 'Proximal þriðjung', output: 'Eymsli á proximal þriðjungi viðbeins' }
-                                ]
-                            },
-                            {
-                                display: 'Hnúður og eymsli',
-                                subOptions: [
-                                    { display: 'Distal þriðjung', output: 'Þreifast aumur hnúður á distal þriðjungi viðbeins' },
-                                    { display: 'Miðju', output: 'Þreifast aumur hnúður á miðju viðbeins' },
-                                    { display: 'Proximal þriðjung', output: 'Þreifast aumur hnúður á proximal þriðjungi viðbeins' }
-                                ]
-                            },
-                            {
-                                display: 'Aflögun',
-                                subOptions: [
-                                    { display: 'Distal þriðjung', output: 'Aflögun á distal þriðjungi viðbeins' },
-                                    { display: 'Miðju', output: 'Aflögun á miðju viðbeini' },
-                                    { display: 'Proximal þriðjung', output: 'Aflögun á proximal þriðjungi viðbeins' }
-                                ]
-                            }
-                        ]
-                    },
-                    { display: 'Herðablað', output: 'Þreifieymsl yfir herðablað' }
+                    { display: 'Clavicula', output: 'Afmyndun við clavicula' },
+                    { display: 'Acromion', output: 'Afmyndun við acromion' },
+                    { display: 'Scapula', output: 'Afmyndun við scapula' }
                 ],
-                onRightClickSubOptions: [
-                    { display: 'Engin eymsli', output: 'Engin eymsli við þreyfingu' }
-                ]
-            },            
-            { display: 'Hreyfigeta', output: '', onRightClickOutput: 'Góð hreyfigeta' }
+                onRightClickOutput: 'Engin afmyndun sjáanleg'
+            },
+            {
+                display: 'Bólga',  // Button for detecting swelling
+                subOptions: [
+                    { display: 'Efri hluti', output: 'Bólga á efri hluta axlar' },
+                    { display: 'Neðri hluti', output: 'Bólga á neðri hluta axlar' },
+                    { display: 'Við AC liði', output: 'Bólga yfir AC lið' }
+                ],
+                onRightClickOutput: 'Engin bólga'
+            },
+            {
+                display: 'Húðbreytingar',  // Button for skin changes
+                subOptions: [
+                    { display: 'Roði', output: 'Roði yfir öxlinni' },
+                    { display: 'Mar', output: 'Mar yfir öxlinni' },
+                    { display: 'Sár', output: 'Sár eða húðskemmdir yfir öxlinni' }
+                ],
+                onRightClickOutput: 'Engar húðbreytingar'
+            }
+        ]
+    },
+    // Second row: Palpation (Þreifing)
+    {
+        name: '',  // No category name displayed
+        type: 'options',
+        display: ['Eymsli', 'Crepitus', 'Hiti'],  // Buttons for palpation
+        options: [
+            {
+                display: 'Eymsli',  // Button for tenderness on palpation
+                subOptions: [
+                    { display: 'Við AC liði', output: 'Eymsli við þreifingu á AC lið' },
+                    { display: 'Framanvert', output: 'Eymsli framan á öxlinni' },
+                    { display: 'Aftanvert', output: 'Eymsli aftan á öxlinni' }
+                ],
+                onRightClickOutput: 'Engin eymsli við þreifingu'
+            },
+            {
+                display: 'Crepitus',  // Button for detecting crepitus
+                subOptions: [
+                    { display: 'Við hreyfingu', output: 'Crepitus við hreyfingu öxl' },
+                    { display: 'Án hreyfingar', output: 'Crepitus án hreyfingar' }
+                ],
+                onRightClickOutput: 'Enginn crepitus'
+            },
+            {
+                display: 'Hiti',  // Button for detecting increased temperature
+                subOptions: [
+                    { display: 'Aukin hiti', output: 'Aukin hiti yfir öxlinni' }
+                ],
+                onRightClickOutput: 'Engin hitaaukning'
+            }
+        ]
+    },
+    {
+        name: '',  // No category name displayed
+        type: 'options',
+        display: ['Hreyfigeta', 'Styrkur'],  // Main button for strength
+        options: [
+            {
+                display: 'Hreyfigeta',  // Button for range of motion
+                subOptions: [
+                    {
+                        display: 'Framrétting',  // Flexion
+                        subOptions: [
+                            { display: 'Skert', output: 'Skert framrétting' },  // Limited flexion
+                            { display: 'Engin', output: 'Engin framrétting' }  // No flexion
+                        ],
+                        onRightClickOutput: 'Eðlileg framrétting'  // Right-click output for normal flexion
+                    },
+                    {
+                        display: 'Fráfærsla',  // Abduction
+                        subOptions: [
+                            { display: 'Skert', output: 'Skert fráfærsla' },  // Limited abduction
+                            { display: 'Engin', output: 'Engin fráfærsla' }  // No abduction
+                        ],
+                        onRightClickOutput: 'Eðlileg fráfærsla'  // Right-click output for normal abduction
+                    },
+                    {
+                        display: 'Innrotatio',  // Internal rotation
+                        subOptions: [
+                            { display: 'Skert', output: 'Skert innrotatio' }  // Limited internal rotation
+                        ],
+                        onRightClickOutput: 'Eðlileg innrotatio'  // Right-click output for normal internal rotation
+                    },
+                    {
+                        display: 'Útrotatio',  // External rotation
+                        subOptions: [
+                            { display: 'Skert', output: 'Skert útrotatio' }  // Limited external rotation
+                        ],
+                        onRightClickOutput: 'Eðlileg útrotatio'  // Right-click output for normal external rotation
+                    },
+                    {
+                        display: 'Afturrétting',  // Extension
+                        subOptions: [
+                            { display: 'Skert', output: 'Skert afturrétting' }  // Limited extension
+                        ],
+                        onRightClickOutput: 'Eðlileg afturrétting'  // Right-click output for normal extension
+                    }
+                ],
+                onRightClickOutput: 'Full hreyfigeta í öllum plönum'  // Right-click output for normal range of motion overall
+            },
+            {
+                display: 'Styrkur',  // Button for strength
+                subOptions: [
+                    {
+                        display: 'Framrétting',  // Flexion strength
+                        subOptions: [
+                            { display: 'Minnkaður', output: 'Minnkaður styrkur við framréttingu' }  // Reduced strength in flexion
+                        ],
+                        onRightClickOutput: 'Eðlilegur styrkur við framréttingu'  // Right-click output for normal flexion strength
+                    },
+                    {
+                        display: 'Fráfærsla',  // Abduction strength
+                        subOptions: [
+                            { display: 'Minnkaður', output: 'Minnkaður styrkur við fráfærslu' }  // Reduced strength in abduction
+                        ],
+                        onRightClickOutput: 'Eðlilegur styrkur við fráfærslu'  // Right-click output for normal abduction strength
+                    },
+                    {
+                        display: 'Innrotatio',  // Internal rotation strength
+                        subOptions: [
+                            { display: 'Minnkaður', output: 'Minnkaður styrkur við innrotatio' }  // Reduced strength in internal rotation
+                        ],
+                        onRightClickOutput: 'Eðlilegur styrkur við innrotatio'  // Right-click output for normal internal rotation strength
+                    },
+                    {
+                        display: 'Útrotatio',  // External rotation strength
+                        subOptions: [
+                            { display: 'Minnkaður', output: 'Minnkaður styrkur við útrotatio' }  // Reduced strength in external rotation
+                        ],
+                        onRightClickOutput: 'Eðlilegur styrkur við útrotatio'  // Right-click output for normal external rotation strength
+                    },
+                    {
+                        display: 'Afturrétting',  // Extension strength
+                        subOptions: [
+                            { display: 'Minnkaður', output: 'Minnkaður styrkur við afturréttingu' }  // Reduced strength in extension
+                        ],
+                        onRightClickOutput: 'Eðlilegur styrkur við afturréttingu'  // Right-click output for normal extension strength
+                    }
+                ],
+                onRightClickOutput: 'Eðlilegur styrkur'  // Right-click output for normal strength overall
+            }
+        ]
+    },
+    {
+        name: '',  // No category name displayed
+        type: 'options',
+        display: ['Hawkins', 'Neer', 'Empty Can', 'Drop Arm'],  // Four buttons in one row
+        options: [
+            {
+                display: 'Hawkins',
+                output: 'Hawkins próf jákvætt', // Left-click output
+                onRightClickOutput: 'Hawkins próf neikvætt' // Right-click output
+            },
+            {
+                display: 'Neer',
+                output: 'Neer próf jákvætt', // Left-click output
+                onRightClickOutput: 'Neer próf neikvætt' // Right-click output
+            },
+            {
+                display: 'Empty Can',
+                output: 'Empty Can próf jákvætt', // Left-click output
+                onRightClickOutput: 'Empty Can próf neikvætt' // Right-click output
+            },
+            {
+                display: 'Drop Arm',
+                output: 'Drop Arm próf jákvætt', // Left-click output
+                onRightClickOutput: 'Drop Arm próf neikvætt' // Right-click output
+            }
+        ]
+    },
+    // Second row: Four buttons for shoulder tests
+    {
+        name: '',  // No category name displayed
+        type: 'options',
+        display: ['Lift Off', 'Bear Hug', 'External Rotation Lag Sign'],  // Three buttons in the second row
+        options: [
+            {
+                display: 'Lift Off',
+                output: 'Lift Off próf jákvætt', // Left-click output
+                onRightClickOutput: 'Lift Off próf neikvætt' // Right-click output
+            },
+            {
+                display: 'Bear Hug',
+                output: 'Bear Hug próf jákvætt', // Left-click output
+                onRightClickOutput: 'Bear Hug próf neikvætt' // Right-click output
+            },
+            {
+                display: 'External Rotation Lag Sign',
+                output: 'External Rotation Lag Sign próf jákvætt', // Left-click output
+                onRightClickOutput: 'External Rotation Lag Sign próf neikvætt' // Right-click output
+            }
         ]
     }
+
 ];
 const PlanShoulder = [
     {
@@ -9157,12 +9240,18 @@ const PlanShoulder = [
                     { display: 'Segulómun', output: 'Ráðlegg segulómun' },
                     { display: 'TS', output: 'Ráðlegg tölvusneiðmynd' },
                     { display: 'RTG', output: 'Ráðlegg röntgenmynd' },
-                    { display: 'Ómskoðun', output: 'Ráðlegg ómskoðun' }
+                    { display: 'Ómskoðun', output: 'Ráðlegg ómskoðun' },
+                    { display: 'RTG + Ómskoðun', output: 'Ráðlegg röntgen ásamt ómskoðun' }
                 ]
             },
             {
-                display: 'Sjúkraþjálfun',
-                output: 'Ráðlegg sjúkraþjálfun'
+                display: 'Sjúkraþjálfun',  // Main button for physical therapy recommendation
+                subOptions: [
+                    { display: 'Ráðlegg + tilvísun', output: 'Ráðlegg sjúkraþjálfun. Geri tilvísun' },
+                    { display: 'Ráðlegg', output: 'Ráðlegg sjúkraþjálfun' },  // Recommend physical therapy
+                    { display: 'Tilvísun', output: 'Fær tilvísun í sjúkraþjálfun' }
+                ],
+                onRightClickOutput: 'Ekki þörf á sjúkraþjálfun eins og er'  // Right-click output for normal, no recommendation or referral
             },
             {
                 display: 'Bæklun',
@@ -9189,28 +9278,28 @@ const PlanShoulder = [
                             {
                                 display: 'Axlarlið',
                                 subOptions: [
-                                    { display: 'NOS', output: '' },
-                                    { display: 'Posterior approach', output: '' },
-                                    { display: 'Anterior approach', output: '' },
-                                    { display: 'Lateral approach', output: '' }
+                                    { display: 'NOS', output: 'Sprauta sterum í axlarlið' },
+                                    { display: 'Posterior approach', output: 'Sprauta sterum í axlarlið. Notast við posterior approach' },
+                                    { display: 'Anterior approach', output: 'Sprauta sterum í axlarlið. Notast við anterior approach' },
+                                    { display: 'Lateral approach', output: 'Sprauta sterum í axlarlið. Notast við lateral approach' }
                                 ]
                             },
                             {
                                 display: 'Subacromialt',
                                 subOptions: [
-                                    { display: 'NOS', output: '' },
-                                    { display: 'Posterior approach', output: '' },
-                                    { display: 'Anterior approach', output: '' },
-                                    { display: 'Lateral approach', output: '' }
+                                    { display: 'NOS', output: 'Sprauta sterum subacromialt' },
+                                    { display: 'Posterior approach', output: 'Sprauta sterum subacromialt. Notast við posterior approach' },
+                                    { display: 'Anterior approach', output: 'Sprauta sterum subacromialt. Notast við anterior approach' },
+                                    { display: 'Lateral approach', output: 'Sprauta sterum subacromialt. Notast við lateral approach' }
                                 ]
                             },
                             {
                                 display: 'AC lið',
                                 subOptions: [
-                                    { display: 'NOS', output: '' },
-                                    { display: 'Posterior approach', output: '' },
-                                    { display: 'Anterior approach', output: '' },
-                                    { display: 'Lateral approach', output: '' }
+                                    { display: 'NOS', output: 'Sprauta sterum í AC lið' },
+                                    { display: 'Posterior approach', output: 'Sprauta sterum í AC lið. Notast við posterior approach' },
+                                    { display: 'Anterior approach', output: 'Sprauta sterum í AC lið. Notast við anterior approach' },
+                                    { display: 'Lateral approach', output: 'Sprauta sterum í AC lið. Notast við lateral approach' }
                                 ]
                             }
                         ]
@@ -12122,7 +12211,6 @@ const GedSkodunData = [
     }
 ];
 
-
 const ExamsGed = [
     {
         name: '',
@@ -12143,6 +12231,7 @@ const ExamsGed = [
         ]
     }
 ];
+
 const PlanGed = [
     {
         name: '',
@@ -22940,6 +23029,8 @@ function createPopup(event, selectedOption, button, isRightClick = false, sectio
         btn.textContent = subOption.display;
         btn.style.display = 'block';
         btn.style.margin = '5px 0';
+
+        // Left click event for popup button
         btn.onclick = (e) => {
             e.stopPropagation(); // Prevent closing popup on button click
 
@@ -22994,6 +23085,64 @@ function createPopup(event, selectedOption, button, isRightClick = false, sectio
                 popup.remove(); // Close the main popup
             }
         };
+
+        // Right click event for popup button
+        btn.oncontextmenu = (e) => {
+            e.preventDefault(); // Prevent the context menu from appearing
+            e.stopPropagation(); // Prevent closing popup on right-click
+
+            if (subOption.onRightClickSubOptions) {
+                // Remove existing sub-popup if any
+                const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth + 1}"]`);
+                if (existingSubPopup) {
+                    existingSubPopup.remove();
+                }
+
+                // Create a new sub-popup modal for nested suboptions
+                const subPopup = document.createElement('div');
+                subPopup.className = 'sub-popup-modal';
+                subPopup.dataset.depth = depth + 1;
+
+                // Position the sub-popup next to the parent button
+                const parentRect = parentButton.getBoundingClientRect();
+                subPopup.style.position = 'absolute';
+                subPopup.style.top = `${parentRect.top + window.scrollY}px`;
+                subPopup.style.left = `${parentRect.right + window.scrollX}px`;
+                subPopup.style.backgroundColor = 'white';
+                subPopup.style.border = '1px solid #ccc';
+                subPopup.style.padding = '10px';
+                subPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                subPopup.style.zIndex = '1000';
+
+                // Add nested subOptions to the sub-popup
+                subOption.onRightClickSubOptions.forEach(nestedSubOption => {
+                    createPopupButton(subPopup, nestedSubOption, btn, sectionId, depth + 1);
+                });
+
+                // Append the sub-popup to the document body
+                document.body.appendChild(subPopup);
+
+                // Scoped click handler for sub-popup
+                const handleClickOutsideSubPopup = (e) => {
+                    if (!subPopup.contains(e.target) && e.target !== btn) {
+                        subPopup.remove();
+                        document.removeEventListener('click', handleClickOutsideSubPopup);
+                    }
+                };
+
+                // Attach the scoped click handler
+                document.addEventListener('click', handleClickOutsideSubPopup);
+
+            } else if (subOption.onRightClickOutput) {
+                insertText(subOption.onRightClickOutput, sectionId);
+                const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth}"]`);
+                if (existingSubPopup) {
+                    existingSubPopup.remove();
+                }
+                popup.remove(); // Close the main popup
+            }
+        };
+
         popup.appendChild(btn);
     };
 
@@ -23036,6 +23185,7 @@ function createPopup(event, selectedOption, button, isRightClick = false, sectio
         }
     }, { once: true });
 }
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
