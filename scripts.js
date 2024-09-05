@@ -12701,7 +12701,7 @@ const PlanGed = [
     {
         name: '',
         type: 'options',
-        display: ['Þunglyndislyf', 'Svefnlyf'],
+        display: ['Þunglyndislyf', 'Svefnlyf', 'Heilsuvera'],
         options: [
           {
             display: 'Þunglyndislyf',
@@ -13869,11 +13869,17 @@ const PlanGed = [
                 ]
             }
             ]
-          }
-        ]
-      }
-      
-,    
+          },
+          {
+            display: 'Heilsuvera',
+            subOptions: [
+              {
+                display: 'Á ensku - Yfirlit yfir helstu kvíða- og þunglyndislyf', output: 'The major categories of medications include:\n\nSSRI - These are first line medications. Include sertraline, esopram, etc\nSNRI - Usually tried if SSRI\'s don\'t work\nTricyclic antidepressants - Older versions, more side effects. Can stimulate appetite and aid with sleep.\nMirtazapine - Appetite stimulating. Works well, different mechanism from the others\nBupropion - Good for depression. Can be taken with many of the others'
+                }
+                ]
+            }
+            ]
+          },    
     {},{},{},
     {
         name: '',
