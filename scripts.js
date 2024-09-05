@@ -6690,10 +6690,37 @@ const PlanMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Kviðverkur', 'Uppköst'],
+        display: ['Kviðverkur', 'Uppköst', 'Gastritis'],
         options: [
             { display: 'Kviðverkur', output: 'Kviðverkur' },
-            { display: 'Uppköst', output: 'Uppköst' }
+            { display: 'Uppköst', output: 'Uppköst' },
+            {
+                display: 'Gastritis',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: [
+                            { display: 'Greining', output: 'Gastritis' },
+                            { display: 'Grunur', output: 'Grunur um gastritis' },
+                            { display: 'Fullmótuð plön', output: '' }
+                        ]
+                    },
+                    {
+                        display: 'H. pylori',
+                        subOptions: [
+                            { display: 'Greining', output: 'H. pylori tengd gastritis' },
+                            { display: 'Grunur', output: 'Grunur um H. pylori tengd gastritis' },
+                            { display: 'Fullmótuð plön', 
+                                subOptions: [
+                                    { display: 'Staðfest vefjagreining, tripple therapy', output: 'H. pylori tengdur gastritis. Set á tripple therapy. Amoxicillin 1gx2, clarithromycin 500mgx2 og esomeprazol 20mgx2 í 2 vikur' }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekki gastritis'
+            }
+            
         ]
     },
     {},{},{},
@@ -6730,6 +6757,7 @@ const PlanMelting = [
             {
                 display: 'Sýklalyf',
                 subOptions: [
+                    { display: 'Tripple therapy H. pylori', output: 'Set á amoxicillin 1gx2, clarithromycin 500mgx2 og esomeprazol 20mgx2 í 2 vikur.'},
                     { display: 'Amoxicillin', output: 'Ráðlegg sýklalyf. Set amoxicillin í gáttina' },
                     { display: 'Spectracillin', output: 'Ráðlegg sýklalyf. Set spectracillin í gáttina' },
                     { display: 'Metronidazole', output: 'Ráðlegg sýklalyf. Set metronidazole í gáttina' },
@@ -15151,14 +15179,11 @@ const KerfakonnunSvimi = [
     }
 ];
 
-
-
-
 const ExamsSvimi = [
     {
         name: '',
         type: 'options',
-        display: ['Lasleg/ur', 'Meðtekin/n', 'Slímhúðir', 'Háræðafylling'],
+        display: ['Lasleg/ur', 'Gengur sjálfur', 'Slímhúðir', 'Háræðafylling'],
         options: [
             {
                 display: 'Lasleg/ur',
@@ -15168,9 +15193,13 @@ const ExamsSvimi = [
                 onRightClickOutput: 'Ekki bráðveikindalegt útlit'
             },
             {
-                display: 'Meðtekin/n',
-                output: 'Sjúklingur virðist meðtekinn af verk',
-                onRightClickOutput: 'Sjúklingur ekki meðtekinn af verk'
+                display: 'Gengur sjálfur',
+                subOptions: [
+                    { display: 'Stuðning', output: 'Þarf stuðning til að komast inná stofu' },
+                    { display: 'Mikið jafnvægisleysi, stendur varla undir sér', output: 'Mikið jafnvægisleysi. Stendur varla undir sér. Þarf stuðning til að komast inná stofu' },
+                    { display: 'Hjólastól', output: 'Stendur ekki undir sér. Kemur inná stofu í hjólastól' }
+                ],
+                onRightClickOutput: 'Skjólstæðingur gengur sjálfur óstuddur inná stofu'
             },
             {
                 display: 'Slímhúðir',
@@ -15216,6 +15245,402 @@ const ExamsSvimi = [
                     { display: 'Beggja vegna', output: 'Eyrnamergur beggja vegna' }
                 ],
                 onRightClickOutput: 'Ekki eyrnamergur'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sjón', 'Sjónsvið', 'Nystagmus', 'Skew', 'Hreyfigeta', 'Cover próf'],
+        options: [
+            {
+                display: 'Sjón',  // Button for Vision
+                subOptions: [
+                    {
+                        display: 'Hægra Auga',  // Suboption for right eye
+                        subOptions: [
+                            { display: '20/20', output: 'Sjónskerpa hægra auga 20/20' },
+                            { display: '20/25', output: 'Sjónskerpa hægra auga 20/25' },
+                            { display: '20/30', output: 'Sjónskerpa hægra auga 20/30' },
+                            { display: '20/40', output: 'Sjónskerpa hægra auga 20/40' },
+                            { display: '20/50', output: 'Sjónskerpa hægra auga 20/50' },
+                            { display: '20/60', output: 'Sjónskerpa hægra auga 20/60' },
+                            { display: '20/70', output: 'Sjónskerpa hægra auga 20/70' },
+                            { display: '20/80', output: 'Sjónskerpa hægra auga 20/80' },
+                            { display: '20/100', output: 'Sjónskerpa hægra auga 20/100' },
+                            { display: '20/200', output: 'Sjónskerpa hægra auga 20/200' },
+                            { display: 'Hand Motion', output: 'Sjónskerpa hægra auga sýnir einungis skynjun við handahreyfingum' },
+                            { display: 'Light Perception', output: 'Sjónskerpa hægra auga sýnir einungis skynjun við ljósi' },
+                            { display: 'No Light Perception', output: 'Hægra auga án skynjunar. Engin ljósskynjun' }
+                        ],
+                        onRightClickOutput: 'Eðlileg sjónskerpa hægra auga'
+                    },
+                    {
+                        display: 'Vinstra Auga',  // Suboption for left eye
+                        subOptions: [
+                            { display: '20/20', output: 'Sjónskerpa vinstra auga 20/20' },
+                            { display: '20/25', output: 'Sjónskerpa vinstra auga 20/25' },
+                            { display: '20/30', output: 'Sjónskerpa vinstra auga 20/30' },
+                            { display: '20/40', output: 'Sjónskerpa vinstra auga 20/40' },
+                            { display: '20/50', output: 'Sjónskerpa vinstra auga 20/50' },
+                            { display: '20/60', output: 'Sjónskerpa vinstra auga 20/60' },
+                            { display: '20/70', output: 'Sjónskerpa vinstra auga 20/70' },
+                            { display: '20/80', output: 'Sjónskerpa vinstra auga 20/80' },
+                            { display: '20/100', output: 'Sjónskerpa vinstra auga 20/100' },
+                            { display: '20/200', output: 'Sjónskerpa vinstra auga 20/200' },
+                            { display: 'Hand Motion', output: 'Sjónskerpa vinstra auga sýnir einungis skynjun við handahreyfingum' },
+                            { display: 'Light Perception', output: 'Sjónskerpa vinstra auga sýnir einungis skynjun við ljósi' },
+                            { display: 'No Light Perception', output: 'Vinstra auga án skynjunar. Engin ljósskynjun' }
+                        ],
+                        onRightClickOutput: 'Eðlileg sjónskerpa vinstra auga'
+                    },
+                    {
+                        display: 'Bæði Augu',  // Suboption for both eyes
+                        subOptions: [
+                            { display: '20/20', output: 'Sjónskerpa beggja augna 20/20' },
+                            { display: '20/25', output: 'Sjónskerpa beggja augna 20/25' },
+                            { display: '20/30', output: 'Sjónskerpa beggja augna 20/30' },
+                            { display: '20/40', output: 'Sjónskerpa beggja augna 20/40' },
+                            { display: '20/50', output: 'Sjónskerpa beggja augna 20/50' },
+                            { display: '20/60', output: 'Sjónskerpa beggja augna 20/60' },
+                            { display: '20/70', output: 'Sjónskerpa beggja augna 20/70' },
+                            { display: '20/80', output: 'Sjónskerpa beggja augna 20/80' },
+                            { display: '20/100', output: 'Sjónskerpa beggja augna 20/100' },
+                            { display: '20/200', output: 'Sjónskerpa beggja augna 20/200' },
+                            { display: 'Hand Motion', output: 'Sjónskerpa bæði augu sýnir einungis skynjun við handahreyfingum' },
+                            { display: 'Light Perception', output: 'Sjónskerpa bæði augu sýnir einungis skynjun við ljósi' },
+                            { display: 'No Light Perception', output: 'Bæði augu án skynjunar. Engin ljósskynjun' }
+                        ],
+                        onRightClickOutput: 'Eðlileg sjónskerpa beggja augna'
+                    }
+                ],
+                onRightClickOutput: 'Eðlileg sjónskerpa beggja augna'
+            },
+            {
+                display: 'Sjónsvið',  // Button for Visual Field
+                subOptions: [
+                    {
+                        display: 'Hemianopia',
+                        subOptions: [
+                            { display: 'NOS', output: 'Hemianopia' },
+                            { display: 'Hægra megin', output: 'Hemianopia hægra megin' },
+                            { display: 'Vinstra megin', output: 'Hemianopia vinstra megin' }
+                        ],
+                        onRightClickOutput: 'Ekki hemianopia'
+                    },
+                    {
+                        display: 'Kvadrantanopia',
+                        subOptions: [
+                            { display: 'NOS', output: 'Kvadrantanopia' },
+                            { display: 'Hægra efri hluta', output: 'Við sjónsviðsprófun kemur í ljós kvadrantanopia hægra efri hluta' },
+                            { display: 'Hægra neðri hluta', output: 'Við sjónsviðsprófun kemur í ljós kvadrantanopia hægra neðri hluta' },
+                            { display: 'Vinstra efri hluta', output: 'Við sjónsviðsprófun kemur í ljós kvadrantanopia vinstra efri hluta' },
+                            { display: 'Vinstra neðri hluta', output: 'Við sjónsviðsprófun kemur í ljós kvadrantanopia vinstra neðri hluta' }
+                        ],
+                        onRightClickOutput: 'Ekki kvadrantanopia'
+                    }
+                ],
+                onRightClickOutput: 'Eðlileg sjónsviðsprófun'
+            },
+            {
+                display: 'Nystagmus',
+                subOptions: [
+                    {
+                        display: 'Horizontal',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Láréttur nystagmus' },
+                                    { display: 'Fast-beating to Right', output: 'Láréttur nystagmus, hraði komponent í átt að hægri' },
+                                    { display: 'Fast-beating to Left', output: 'Láréttur nystagmus, hraði komponent í átt að vinstri' }
+                                    
+                                ]
+                            },
+                            {
+                                display: 'Hægra auga',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Láréttur nystagmus í hægra auga' },
+                                    { display: 'Fast-beating to Right', output: 'Láréttur nystagmus í hægra auga, hraði komponent í átt að hægri' },
+                                    { display: 'Fast-beating to Left', output: 'Láréttur nystagmus í hægra auga, hraði komponent í átt að vinstri' }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra auga',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Láréttur nystagmus í vinstra auga' },
+                                    { display: 'Fast-beating to Right', output: 'Láréttur nystagmus í vinstra auga, hraði komponent í átt að hægri' },
+                                    { display: 'Fast-beating to Left', output: 'Láréttur nystagmus í vinstra auga, hraði komponent í átt að vinstri' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Vertical',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                subOptions: [
+                                    { display: 'Upbeat', output: 'Lóðréttur nystagmus, hraði komponent upp' },
+                                    { display: 'Downbeat', output: 'Lóðréttur nystagmus, hraði komponent niður' },
+                                    { display: 'NOS', output: 'Lóðréttur nystagmus' }
+                                ]
+                            },
+                            {
+                                display: 'Hægra auga',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Lóðréttur nystagmus í hægra auga' },
+                                    { display: 'Upbeat', output: 'Lóðréttur nystagmus í hægra auga, hraði komponent upp' },
+                                    { display: 'Downbeat', output: 'Lóðréttur nystagmus í hægra auga, hraði komponent niður' }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra auga',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Lóðréttur nystagmus í vinstra auga' },
+                                    { display: 'Upbeat', output: 'Lóðréttur nystagmus í vinstra auga, hraði komponent upp' },
+                                    { display: 'Downbeat', output: 'Lóðréttur nystagmus í vinstra auga, hraði komponent niður' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Rotatory',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                subOptions: [
+                                    { display: 'Clockwise', output: 'Snúnings nystagmus, hringsnúningur meðsóls' },
+                                    { display: 'Counter-Clockwise', output: 'Snúnings nystagmus, hringsnúningur á móti sól' },
+                                    { display: 'NOS', output: 'Snúnings nystagmus' }
+                                ]
+                            },
+                            {
+                                display: 'Hægra auga',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Snúnings nystagmus í hægra auga' },
+                                    { display: 'Clockwise', output: 'Snúnings nystagmus í hægra auga, hringsnúningur meðsóls' },
+                                    { display: 'Counter-Clockwise', output: 'Snúnings nystagmus í hægra auga, hringsnúningur á móti sól' }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra auga',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Snúnings nystagmus í vinstra auga' },
+                                    { display: 'Clockwise', output: 'Snúnings nystagmus í vinstra auga, hringsnúningur meðsóls' },
+                                    { display: 'Counter-Clockwise', output: 'Snúnings nystagmus í vinstra auga, hringsnúningur á móti sól' }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Engin sjáanlegur nystagmus'
+            },
+            {
+                display: 'Skew',
+                subOptions: [
+                    {
+                        display: 'NOS',  output:'Skew próf jákvætt'
+                    },
+                    {
+                        display: 'Hægra auga',
+                        subOptions: [
+                            { display: 'NOS', output: 'Skew próf jákvætt hægra megin' },
+                            { display: 'Upward Skew', output: 'Skew próf jákvætt. Hægra augað leitar upp þegar vinstra auga er afhjúpað' },
+                            { display: 'Downward Skew', output: 'Skew próf jákvætt. Hægra augað leitar niður þegar vinstra auga er afhjúpað' }
+                        ]
+                    },
+                    {
+                        display: 'Vinstra auga',
+                        subOptions: [
+                            { display: 'NOS', output: 'Skew próf jákvætt vinstra megin' },
+                            { display: 'Upward Skew', output: 'Skew próf jákvætt. Vinstra augað leitar upp þegar hægra auga er afhjúpað' },
+                            { display: 'Downward Skew', output: 'Skew próf jákvætt. Vinstra augað leitar niður þegar hægra auga er afhjúpað' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Skew próf neikvætt'
+            },
+            {
+                display: 'Hreyfigeta',
+                subOptions: [
+                    {
+                        display: 'NOS',  // Not Otherwise Specified
+                        subOptions: [
+                            { display: 'Takmörkuð hreyfigeta', output: 'Takmörkuð hreyfigeta augna, ekki tiltekið auga' }
+                        ]
+                    },
+                    {
+                        display: 'Hægra Auga',
+                        subOptions: [
+                            { display: 'Upward', output: 'Takmörkuð hreyfigeta uppávið hægra auga' },
+                            { display: 'Downward', output: 'Takmörkuð hreyfigeta niðurávið hægra auga' },
+                            { display: 'Medial', output: 'Takmörkuð hreyfigeta hægra auga medialt' },
+                            { display: 'Lateral', output: 'Takmörkuð hreyfigeta hægra auga lateralt' }
+                        ]
+                    },
+                    {
+                        display: 'Vinstra Auga',
+                        subOptions: [
+                            { display: 'Upward', output: 'Takmörkuð hreyfigeta uppávið vinstra auga' },
+                            { display: 'Downward', output: 'Takmörkuð hreyfigeta niðurávið vinstra auga' },
+                            { display: 'Medial', output: 'Takmörkuð hreyfigeta vinstra auga medialt' },
+                            { display: 'Lateral', output: 'Takmörkuð hreyfigeta vinstra auga lateralt'}
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Eðlilegar augnhreyfingar með fullri hreyfigetu í öllum plönum'
+            },
+            {
+                display: 'Cover próf',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Óeðlilegt cover próf'
+                    },
+                    {
+                        display: 'Hægra auga',
+                        subOptions: [
+                            { display: 'Leitar innávið', output: 'Óeðlilegt cover próf. Hægra augað leitar innávið þegar vinstra augað er afhjúpað' },
+                            { display: 'Leitar útávið', output: 'Óeðlilegt cover próf. Hægra augað leitar útávið þegar vinstra augað er afhjúpað' },
+                            { display: 'Leitar uppávið', output: 'Óeðlilegt cover próf. Hægra augað leitar uppávið þegar vinstra augað er afhjúpað' },
+                            { display: 'Leitar niðurávið', output: 'Óeðlilegt cover próf. Hægra augað leitar niðurávið þegar vinstra augað er afhjúpað' }
+                        ]
+                    },
+                    {
+                        display: 'Vinstra auga',
+                        subOptions: [
+                            { display: 'Leitar innávið', output: 'Óeðlilegt cover próf. Vinstra augað leitar innávið þegar hægra augað er afhjúpað' },
+                            { display: 'Leitar útávið', output: 'Óeðlilegt cover próf. Vinstra augað leitar útávið þegar hægra augað er afhjúpað' },
+                            { display: 'Leitar uppávið', output: 'Óeðlilegt cover próf. Vinstra augað leitar uppávið þegar hægra augað er afhjúpað' },
+                            { display: 'Leitar niðurávið', output: 'Óeðlilegt cover próf. Vinstra augað leitar niðurávið þegar hægra augað er afhjúpað' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Eðlilegt cover-uncover próf'
+            }
+            
+        ]
+    },    
+    // Second row: Hearing Tests
+    {
+        name: '',
+        type: 'options',
+        display: ['Weber', 'Rinne', 'Pure Tone Audiometry', 'Whisper Test'],
+        options: [
+            {
+                display: 'Weber',
+                subOptions: [
+                    { display: 'Midline', output: 'Weber próf miðlína' },
+                    { display: 'Lateralized to Left', output: 'Weber próf lateral til vinstri' },
+                    { display: 'Lateralized to Right', output: 'Weber próf lateral til hægri' }
+                ],
+                onRightClickOutput: 'Eðlilegt Weber próf'
+            },
+            {
+                display: 'Rinne',
+                subOptions: [
+                    { display: 'AC > BC (Normal)', output: 'Rinne próf jákvætt, loftleiðni betri en beinleiðni' },
+                    { display: 'BC > AC (Conductive Loss)', output: 'Rinne próf neikvætt, beinleiðni betri en loftleiðni' }
+                ],
+                onRightClickOutput: 'Eðlilegt Rinne próf'
+            },
+            {
+                display: 'Pure Tone Audiometry',
+                subOptions: [
+                    { display: 'Normal Hearing', output: 'Eðlileg heyrn á tónmælingu' },
+                    { display: 'Sensorineural Loss', output: 'Heyrnarskerðing, taugarótarheyrnartap' },
+                    { display: 'Conductive Loss', output: 'Heyrnarskerðing, leiðsluheyrnartap' }
+                ],
+                onRightClickOutput: 'Eðlileg pure tone audiometry'
+            },
+            {
+                display: 'Whisper Test',
+                subOptions: [
+                    { display: 'Normal', output: 'Eðlilegt Whisper test' },
+                    { display: 'Abnormal', output: 'Óeðlilegt Whisper test' }
+                ],
+                onRightClickOutput: 'Eðlilegt Whisper test'
+            }
+        ]
+    },
+    // Third row: Specialized Tests
+    {
+        name: '',
+        type: 'options',
+        display: ['Dix-Hallpike', 'Epley Maneuver', 'Head Impulse Test', 'Romberg Test'],
+        options: [
+            {
+                display: 'Dix-Hallpike',
+                subOptions: [
+                    { display: 'Positive', output: 'Dix-Hallpike próf jákvætt' },
+                    { display: 'Negative', output: 'Dix-Hallpike próf neikvætt' }
+                ],
+                onRightClickOutput: 'Eðlilegt Dix-Hallpike próf'
+            },
+            {
+                display: 'Epley Maneuver',
+                subOptions: [
+                    { display: 'Performed', output: 'Epley maneuver framkvæmd' },
+                    { display: 'Not Performed', output: 'Epley maneuver ekki framkvæmd' }
+                ],
+                onRightClickOutput: 'Epley maneuver ekki framkvæmd'
+            },
+            {
+                display: 'Head Impulse Test',
+                subOptions: [
+                    { display: 'Normal', output: 'Eðlilegt Head Impulse Test' },
+                    { display: 'Abnormal', output: 'Óeðlilegt Head Impulse Test' }
+                ],
+                onRightClickOutput: 'Eðlilegt Head Impulse Test'
+            },
+            {
+                display: 'Romberg Test',
+                subOptions: [
+                    { display: 'Stable', output: 'Eðlilegt Romberg Test' },
+                    { display: 'Unstable', output: 'Óstöðugt Romberg Test' }
+                ],
+                onRightClickOutput: 'Eðlilegt Romberg Test'
+            }
+        ]
+    },
+    // Fourth row: Coordination and Gait Assessment
+    {
+        name: '',
+        type: 'options',
+        display: ['Finger-to-Nose Test', 'Heel-to-Shin Test', 'Tandem Gait', 'Gait Analysis'],
+        options: [
+            {
+                display: 'Finger-to-Nose Test',
+                subOptions: [
+                    { display: 'Normal', output: 'Eðlilegt Finger-to-Nose próf' },
+                    { display: 'Dysmetria', output: 'Dysmetria á Finger-to-Nose prófi' }
+                ],
+                onRightClickOutput: 'Eðlilegt Finger-to-Nose próf'
+            },
+            {
+                display: 'Heel-to-Shin Test',
+                subOptions: [
+                    { display: 'Normal', output: 'Eðlilegt Heel-to-Shin próf' },
+                    { display: 'Ataxia', output: 'Ataxia á Heel-to-Shin prófi' }
+                ],
+                onRightClickOutput: 'Eðlilegt Heel-to-Shin próf'
+            },
+            {
+                display: 'Tandem Gait',
+                subOptions: [
+                    { display: 'Stable', output: 'Stöðug Tandem Gait' },
+                    { display: 'Unstable', output: 'Óstöðug Tandem Gait' }
+                ],
+                onRightClickOutput: 'Eðlileg Tandem Gait'
+            },
+            {
+                display: 'Gait Analysis',
+                subOptions: [
+                    { display: 'Normal', output: 'Eðlileg göngugreining' },
+                    { display: 'Abnormal', output: 'Óeðlileg göngugreining' }
+                ],
+                onRightClickOutput: 'Eðlileg göngugreining'
             }
         ]
     }
@@ -22819,11 +23244,19 @@ const LifsmorkData = [
             {
                 display: 'Mettun',
                 subOptions: [
+                    { display: '100%', output: 'Mettun 100%' },
+                    { display: '99%', output: 'Mettun 99%' },
+                    { display: '98%', output: 'Mettun 98%' },
+                    { display: '97%', output: 'Mettun 97%' },
+                    { display: '96%', output: 'Mettun 96%' },
+                    { display: '95%', output: 'Mettun 95%' },
+                    { display: '94%', output: 'Mettun 94%' },
+                    { display: '93%', output: 'Mettun 93%' },
                     {
-                        display: 'Mettun 95-100%',
+                        display: '82-92%',
                         subOptions: (function() {
                             let saturation = [];
-                            for (let i = 100; i >= 95; i -= 1) {
+                            for (let i = 92; i >= 82; i -= 1) {
                                 saturation.push({
                                     display: `${i}%`,
                                     output: `Mettun ${i}%`
@@ -22833,10 +23266,10 @@ const LifsmorkData = [
                         })()
                     },
                     {
-                        display: 'Mettun 90-94%',
+                        display: '72-81%',
                         subOptions: (function() {
                             let saturation = [];
-                            for (let i = 94; i >= 90; i -= 1) {
+                            for (let i = 81; i >= 72; i -= 1) {
                                 saturation.push({
                                     display: `${i}%`,
                                     output: `Mettun ${i}%`
@@ -22897,7 +23330,7 @@ const LifsmorkData = [
                 display: 'Hiti',
                 subOptions: [
                     {
-                        display: '36.0 - 37.0 °C',
+                        display: '36.0 - 36.9 °C',
                         subOptions: (function() {
                             let temp = [];
                             for (let i = 36.0; i <= 37.0; i += 0.1) {
@@ -22910,10 +23343,10 @@ const LifsmorkData = [
                         })()
                     },
                     {
-                        display: '37.1 - 38.0 °C',
+                        display: '37.0 - 37.9 °C',
                         subOptions: (function() {
                             let temp = [];
-                            for (let i = 37.1; i <= 38.0; i += 0.1) {
+                            for (let i = 37.0; i <= 38.0; i += 0.1) {
                                 temp.push({
                                     display: `${i.toFixed(1)} °C`,
                                     output: `Hiti ${i.toFixed(1)} °C`
@@ -22923,10 +23356,10 @@ const LifsmorkData = [
                         })()
                     },
                     {
-                        display: '38.1 - 39.0 °C',
+                        display: '38.0 - 38.9 °C',
                         subOptions: (function() {
                             let temp = [];
-                            for (let i = 38.1; i <= 39.0; i += 0.1) {
+                            for (let i = 38.0; i <= 39.0; i += 0.1) {
                                 temp.push({
                                     display: `${i.toFixed(1)} °C`,
                                     output: `Hiti ${i.toFixed(1)} °C`
@@ -22936,10 +23369,10 @@ const LifsmorkData = [
                         })()
                     },
                     {
-                        display: '39.1 - 40.0 °C',
+                        display: '39.0 - 39.9 °C',
                         subOptions: (function() {
                             let temp = [];
-                            for (let i = 39.1; i <= 40.0; i += 0.1) {
+                            for (let i = 39.0; i <= 40.0; i += 0.1) {
                                 temp.push({
                                     display: `${i.toFixed(1)} °C`,
                                     output: `Hiti ${i.toFixed(1)} °C`
@@ -22949,10 +23382,23 @@ const LifsmorkData = [
                         })()
                     },
                     {
-                        display: '40.1 - 42.0 °C',
+                        display: '40.0 - 40.9 °C',
                         subOptions: (function() {
                             let temp = [];
-                            for (let i = 40.1; i <= 42.0; i += 0.1) {
+                            for (let i = 40.0; i <= 41.0; i += 0.1) {
+                                temp.push({
+                                    display: `${i.toFixed(1)} °C`,
+                                    output: `Hiti ${i.toFixed(1)} °C`
+                                });
+                            }
+                            return temp;
+                        })()
+                    },
+                    {
+                        display: '41.0 - 41.9 °C',
+                        subOptions: (function() {
+                            let temp = [];
+                            for (let i = 41.0; i <= 42.0; i += 0.1) {
                                 temp.push({
                                     display: `${i.toFixed(1)} °C`,
                                     output: `Hiti ${i.toFixed(1)} °C`
@@ -22964,6 +23410,7 @@ const LifsmorkData = [
                 ],
                 onRightClickOutput: 'Hitalaus'
             }
+            
             
         ]
     },
@@ -23897,10 +24344,7 @@ function createButton(row, item, displayText, index, sectionId) {
 
 function handleButtonClick(event, item, displayText, index, button, sectionId) {
     // Remove any existing popup
-    const existingPopup = document.querySelector('.popup-modal');
-    if (existingPopup) {
-        existingPopup.remove();
-    }
+    removeExistingPopup();
 
     ensureHeader(sectionId); // Automatically ensure the header is added
 
@@ -23927,10 +24371,7 @@ function handleButtonClick(event, item, displayText, index, button, sectionId) {
 
 function handleButtonRightClick(event, item, displayText, index, button, sectionId) {
     // Remove any existing popup
-    const existingPopup = document.querySelector('.popup-modal');
-    if (existingPopup) {
-        existingPopup.remove();
-    }
+    removeExistingPopup();
 
     ensureHeader(sectionId); // Automatically ensure the header is added
 
@@ -23978,129 +24419,24 @@ function createPopup(event, selectedOption, button, isRightClick = false, sectio
         // Left click event for popup button
         btn.onclick = (e) => {
             e.stopPropagation(); // Prevent closing popup on button click
-
-            if (subOption.subOptions) {
-                // Remove existing sub-popup if any
-                const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth + 1}"]`);
-                if (existingSubPopup) {
-                    existingSubPopup.remove();
-                }
-
-                // Create a new sub-popup modal for nested suboptions
-                const subPopup = document.createElement('div');
-                subPopup.className = 'sub-popup-modal';
-                subPopup.dataset.depth = depth + 1;
-
-                // Position the sub-popup next to the parent button
-                const parentRect = parentButton.getBoundingClientRect();
-                subPopup.style.position = 'absolute';
-                subPopup.style.top = `${parentRect.top + window.scrollY}px`;
-                subPopup.style.left = `${parentRect.right + window.scrollX}px`;
-                subPopup.style.backgroundColor = 'white';
-                subPopup.style.border = '1px solid #ccc';
-                subPopup.style.padding = '10px';
-                subPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-                subPopup.style.zIndex = '1000';
-
-                // Add nested subOptions to the sub-popup
-                subOption.subOptions.forEach(nestedSubOption => {
-                    createPopupButton(subPopup, nestedSubOption, btn, sectionId, depth + 1);
-                });
-
-                // Append the sub-popup to the document body
-                document.body.appendChild(subPopup);
-
-                // Scoped click handler for sub-popup
-                const handleClickOutsideSubPopup = (e) => {
-                    if (!subPopup.contains(e.target) && e.target !== btn) {
-                        subPopup.remove();
-                        document.removeEventListener('click', handleClickOutsideSubPopup);
-                    }
-                };
-
-                // Attach the scoped click handler
-                document.addEventListener('click', handleClickOutsideSubPopup);
-
-            } else if (subOption.output) {
-                insertText(subOption.output, sectionId);
-                const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth}"]`);
-                if (existingSubPopup) {
-                    existingSubPopup.remove();
-                }
-                popup.remove(); // Close the main popup
-            }
+            handleSubOptionClick(subOption, sectionId, popup, btn, depth);
         };
 
         // Right click event for popup button
         btn.oncontextmenu = (e) => {
             e.preventDefault(); // Prevent the context menu from appearing
             e.stopPropagation(); // Prevent closing popup on right-click
-
-            if (subOption.onRightClickSubOptions) {
-                // Remove existing sub-popup if any
-                const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth + 1}"]`);
-                if (existingSubPopup) {
-                    existingSubPopup.remove();
-                }
-
-                // Create a new sub-popup modal for nested suboptions
-                const subPopup = document.createElement('div');
-                subPopup.className = 'sub-popup-modal';
-                subPopup.dataset.depth = depth + 1;
-
-                // Position the sub-popup next to the parent button
-                const parentRect = parentButton.getBoundingClientRect();
-                subPopup.style.position = 'absolute';
-                subPopup.style.top = `${parentRect.top + window.scrollY}px`;
-                subPopup.style.left = `${parentRect.right + window.scrollX}px`;
-                subPopup.style.backgroundColor = 'white';
-                subPopup.style.border = '1px solid #ccc';
-                subPopup.style.padding = '10px';
-                subPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-                subPopup.style.zIndex = '1000';
-
-                // Add nested subOptions to the sub-popup
-                subOption.onRightClickSubOptions.forEach(nestedSubOption => {
-                    createPopupButton(subPopup, nestedSubOption, btn, sectionId, depth + 1);
-                });
-
-                // Append the sub-popup to the document body
-                document.body.appendChild(subPopup);
-
-                // Scoped click handler for sub-popup
-                const handleClickOutsideSubPopup = (e) => {
-                    if (!subPopup.contains(e.target) && e.target !== btn) {
-                        subPopup.remove();
-                        document.removeEventListener('click', handleClickOutsideSubPopup);
-                    }
-                };
-
-                // Attach the scoped click handler
-                document.addEventListener('click', handleClickOutsideSubPopup);
-
-            } else if (subOption.onRightClickOutput) {
-                insertText(subOption.onRightClickOutput, sectionId);
-                const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth}"]`);
-                if (existingSubPopup) {
-                    existingSubPopup.remove();
-                }
-                popup.remove(); // Close the main popup
-            }
+            handleSubOptionRightClick(subOption, sectionId, popup, btn, depth);
         };
 
         popup.appendChild(btn);
     };
 
     // Add subOptions to the popup
-    if (isRightClick) {
-        selectedOption.onRightClickSubOptions.forEach(subOption => {
-            createPopupButton(popup, subOption, button, sectionId, depth);
-        });
-    } else {
-        selectedOption.subOptions.forEach(subOption => {
-            createPopupButton(popup, subOption, button, sectionId, depth);
-        });
-    }
+    const subOptions = isRightClick ? selectedOption.onRightClickSubOptions : selectedOption.subOptions;
+    subOptions.forEach(subOption => {
+        createPopupButton(popup, subOption, button, sectionId, depth);
+    });
 
     // Append the popup to the document body
     document.body.appendChild(popup);
@@ -24130,6 +24466,102 @@ function createPopup(event, selectedOption, button, isRightClick = false, sectio
         }
     }, { once: true });
 }
+
+function handleSubOptionClick(subOption, sectionId, popup, btn, depth) {
+    if (subOption.subOptions) {
+        removeExistingSubPopup(depth + 1);
+        createNestedSubPopup(subOption, btn, sectionId, depth + 1);
+    } else if (subOption.output) {
+        insertText(subOption.output, sectionId);
+        removeExistingSubPopup(depth);
+        popup.remove(); // Close the main popup
+    }
+}
+
+function handleSubOptionRightClick(subOption, sectionId, popup, btn, depth) {
+    if (subOption.onRightClickSubOptions) {
+        removeExistingSubPopup(depth + 1);
+        createNestedSubPopup(subOption, btn, sectionId, depth + 1, true);
+    } else if (subOption.onRightClickOutput) {
+        insertText(subOption.onRightClickOutput, sectionId);
+        removeExistingSubPopup(depth);
+        popup.remove(); // Close the main popup
+    }
+}
+
+function removeExistingPopup() {
+    const existingPopup = document.querySelector('.popup-modal');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+}
+
+function removeExistingSubPopup(depth) {
+    const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth}"]`);
+    if (existingSubPopup) {
+        existingSubPopup.remove();
+    }
+}
+
+function createNestedSubPopup(subOption, parentButton, sectionId, depth, isRightClick = false) {
+    const subPopup = document.createElement('div');
+    subPopup.className = 'sub-popup-modal';
+    subPopup.dataset.depth = depth;
+
+    // Position the sub-popup next to the parent button
+    const parentRect = parentButton.getBoundingClientRect();
+    subPopup.style.position = 'absolute';
+    subPopup.style.top = `${parentRect.top + window.scrollY}px`;
+    subPopup.style.left = `${parentRect.right + window.scrollX}px`;
+    subPopup.style.backgroundColor = 'white';
+    subPopup.style.border = '1px solid #ccc';
+    subPopup.style.padding = '10px';
+    subPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+    subPopup.style.zIndex = '1000';
+
+    // Add nested subOptions to the sub-popup
+    const nestedSubOptions = isRightClick ? subOption.onRightClickSubOptions : subOption.subOptions;
+    nestedSubOptions.forEach(nestedSubOption => {
+        createPopupButton(subPopup, nestedSubOption, parentButton, sectionId, depth);
+    });
+
+    // Append the sub-popup to the document body
+    document.body.appendChild(subPopup);
+
+    // Scoped click handler for sub-popup
+    const handleClickOutsideSubPopup = (e) => {
+        if (!subPopup.contains(e.target) && e.target !== parentButton) {
+            subPopup.remove();
+            document.removeEventListener('click', handleClickOutsideSubPopup);
+        }
+    };
+
+    // Attach the scoped click handler
+    document.addEventListener('click', handleClickOutsideSubPopup);
+}
+
+function createPopupButton(popup, subOption, parentButton, sectionId, depth) {
+    const btn = document.createElement('button');
+    btn.textContent = subOption.display;
+    btn.style.display = 'block';
+    btn.style.margin = '5px 0';
+
+    // Left click event for popup button
+    btn.onclick = (e) => {
+        e.stopPropagation(); // Prevent closing popup on button click
+        handleSubOptionClick(subOption, sectionId, popup, btn, depth);
+    };
+
+    // Right click event for popup button
+    btn.oncontextmenu = (e) => {
+        e.preventDefault(); // Prevent the context menu from appearing
+        e.stopPropagation(); // Prevent closing popup on right-click
+        handleSubOptionRightClick(subOption, sectionId, popup, btn, depth);
+    };
+
+    popup.appendChild(btn);
+}
+
 
 
 
@@ -25010,64 +25442,52 @@ function insertText(text, sectionId) {
     let currentText = textbox.value.trimEnd();
     let sectionHeader = getSectionHeader(sectionId);
 
-    // Ensure correct order of headers and content insertion
-    if (sectionId !== 'einkenni' && sectionHeader) {
-        const headerIndex = currentText.indexOf(sectionHeader);
-        if (headerIndex === -1) {
-            // Header not present, find correct insertion point
-            const insertPosition = getInsertPosition(sectionId, currentText);
-            currentText = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
+    console.log('Inserting text for section:', sectionId, 'Text:', text); // Debugging line
+
+    // Ensure headers are always in the correct order and inserted accordingly
+    if (sectionHeader) {
+        const insertPosition = getInsertPosition(sectionId, currentText);
+
+        if (!currentText.includes(sectionHeader)) {
+            // If the header is not already present, add it at the correct position with a space after it
+            currentText = insertPosition.textBefore + `\n\n${sectionHeader} \n\n` + insertPosition.textAfter;
         }
     }
 
-    // Insert the new text after the last entry under the correct header
+    // Now find where to insert the new text under the current section header
     const headerIndex = currentText.indexOf(sectionHeader);
     let newText = text.replace(/\.$/, '') + '.';
 
     if (headerIndex !== -1) {
-        // Find the end of the section
+        // Find the end of the current section
         const nextHeaderIndex = findNextHeaderIndex(currentText, headerIndex + sectionHeader.length);
         const endOfSection = nextHeaderIndex === -1 ? currentText.length : nextHeaderIndex;
 
-        if (sectionId === 'einkenni') {
-            // Determine if the 'einkenni' section is currently empty
-            let contentBefore = currentText.slice(0, endOfSection).trimEnd();
-            let contentAfter = currentText.slice(endOfSection).trimStart();
+        let contentBefore = currentText.slice(0, endOfSection).trimEnd();
+        let contentAfter = currentText.slice(endOfSection).trimStart();
 
-            if (contentBefore.endsWith(':')) {
-                // If the section is empty, directly append without leading space
-                currentText = contentBefore + ' ' + newText + contentAfter;
-            } else {
-                // Append with leading space only if there are existing entries
-                currentText = contentBefore + (contentBefore.endsWith(':') ? '' : ' ') + newText + contentAfter;
-            }
-
-            // Ensure there's an empty line between 'einkenni' section and the next section
-            if (!contentAfter.startsWith('\n') && contentAfter.length > 0) {
-                currentText = contentBefore + ' ' + newText + '\n\n' + contentAfter;
-            } else {
-                currentText = contentBefore + ' ' + newText + contentAfter;
-            }
+        if (sectionId === 'einkenni' || sectionId === 'skodun') {
+            // Ensure there is a space after the header text before adding new text
+            currentText = contentBefore + (contentBefore.endsWith(':') ? ' ' : ' ') + newText + '\n\n' + contentAfter;
         } else {
-            // Insert text at the end of the section, ensuring spacing for other sections
             currentText = currentText.slice(0, endOfSection).trimEnd() + ' ' + newText + '\n\n' + currentText.slice(endOfSection).trimStart();
         }
     } else {
-        // Append the text directly if no specific header is present
         currentText += newText;
     }
 
-    // Ensure there is an empty line above and below every header
-    currentText = currentText.replace(/\n{2,}/g, '\n\n'); // Replace multiple newlines with exactly two
-    currentText = currentText.replace(/([^\n])\n(?!\n)/g, '$1\n\n'); // Ensure single newlines between headers and content are doubled
+    currentText = currentText.replace(/\n{2,}/g, '\n\n');
+    currentText = currentText.replace(/([^\n])\n(?!\n)/g, '$1\n\n');
 
-    textbox.value = currentText.trim(); // Trim the final text to remove any leading or trailing whitespace
+    textbox.value = currentText.trim();
 
-    // Set focus to the textbox and move the cursor to the position after the inserted text
-    const newCursorPosition = currentText.lastIndexOf(newText) + newText.length; // Place cursor after ". "
+    const newCursorPosition = currentText.lastIndexOf(newText) + newText.length;
     textbox.focus();
     textbox.setSelectionRange(newCursorPosition, newCursorPosition);
 }
+
+
+
 
 function eraseText() {
     const textbox = document.getElementById('journalTextbox');
@@ -25138,11 +25558,15 @@ function ensureHeader(sectionId) {
     let currentText = textbox.value.trimEnd();
     let sectionHeader = getSectionHeader(sectionId);
 
+    console.log('Ensuring header:', sectionId, 'Current text:', currentText); // Debugging line
+
     if (sectionHeader && !currentText.includes(sectionHeader)) {
         const insertPosition = getInsertPosition(sectionId, currentText);
+        console.log('Inserting header:', sectionHeader, 'At position:', insertPosition); // Debugging line
         textbox.value = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
     }
 }
+
 
 // Find the next header in the document
 function findNextHeaderIndex(currentText, startIndex) {
@@ -25171,18 +25595,49 @@ function getInsertPosition(sectionId, currentText) {
     let textBefore = currentText;
     let textAfter = '';
 
+    console.log('Finding insert position for section:', sectionId, 'Current order index:', index); // Debugging line
+
+    // New logic: Iterate through the sectionOrder up to the current section
     for (let i = index + 1; i < sectionOrder.length; i++) {
         const nextSectionHeader = getSectionHeader(sectionOrder[i]);
-        const nextSectionIndex = currentText.indexOf(nextSectionHeader);
-        if (nextSectionIndex !== -1) {
-            textBefore = currentText.slice(0, nextSectionIndex);
-            textAfter = currentText.slice(nextSectionIndex);
-            break;
+        
+        if (nextSectionHeader) { // Ensure we are looking for a valid header
+            const nextSectionIndex = currentText.indexOf(nextSectionHeader);
+
+            if (nextSectionIndex !== -1) {
+                textBefore = currentText.slice(0, nextSectionIndex).trimEnd();
+                textAfter = currentText.slice(nextSectionIndex).trimStart();
+                break;
+            }
         }
     }
 
+    // If "Skoðun" is to be inserted, check if "Einkenni" header and data exist
+    if (sectionId === 'skodun' && currentText.includes(getSectionHeader('einkenni'))) {
+        // Ensure "Skoðun" goes after "Einkenni"
+        const einkenniEnd = findEndOfSection('einkenni', currentText);
+        if (einkenniEnd !== -1) {
+            textBefore = currentText.slice(0, einkenniEnd).trimEnd();
+            textAfter = currentText.slice(einkenniEnd).trimStart();
+        }
+    }
+
+    console.log('Insert position determined - Text before:', textBefore, 'Text after:', textAfter); // Debugging line
+
     return { textBefore, textAfter };
 }
+
+// New helper function to find the end of a section
+function findEndOfSection(sectionId, currentText) {
+    const sectionHeader = getSectionHeader(sectionId);
+    const headerIndex = currentText.indexOf(sectionHeader);
+    if (headerIndex === -1) return -1; // Header not found
+    
+    const nextHeaderIndex = findNextHeaderIndex(currentText, headerIndex + sectionHeader.length);
+    return nextHeaderIndex === -1 ? currentText.length : nextHeaderIndex;
+}
+
+
 
 // Get the section header text based on sectionId
 function getSectionHeader(sectionId) {
