@@ -27,28 +27,11 @@ const Vottord = [
     
 ];
 const RannsoknData = [
+    
     {
         name: '',
         type: 'options',
-        display: ['Þvagrannsókn', 'Option 2'],
-        options: [
-            {
-                display: 'Þvagrannsókn',
-                subOptions: [
-                    { display: 'Stix jákvætt', output: 'Þvagstix jákvætt' },
-                    { display: 'Hár hiti og rúmliggjandi', output: 'Verið með háan hita, mestu rúmliggjandi' },
-                    { display: 'Hiti í byrjun veikinda', output: 'Hiti í byrjun veikinda en hann yfirstaðinn nú' },
-                    { display: 'Ekki mælt', output: 'Upplifað sig með hita en ekki mælt sig' }
-                ],
-                onRightClickOutput: 'Ekki fengið hita'
-            },
-            { display: 'Option 2', output: 'Output for Option 2' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Blóðprufuniðurstöður', 'Option 2'],
+        display: ['Blóðprufuniðurstöður'],
         options: [
             {
                 display: 'Blóðprufuniðurstöður', output: 'Niðurstöður úr blóðprufum',
@@ -57,377 +40,456 @@ const RannsoknData = [
                     { display: 'Koma vel út', output: 'Blóðprufuniðurstöður koma vel út' }
                 ]
 
-            },
-            { display: 'Option 2', output: 'Output for Option 2' }
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Blóðhagur', 'Hvít', 'Neutrófílar', 'Lymphócýtar', 'Hemóglóbín'],
+        display: ['Blóðhagur', 'Járnstatus', 'Sýking/bólgumerki', 'Blóðsölt'],
         options: [
             {
                 display: 'Blóðhagur',
                 subOptions: [
                     {
-                        display: 'NOS',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Blóðhagur: ${i} x10^9/L`
-                        }))
+                        display: 'Hvít',
+                        subOptions: [
+                            {
+                                display: '0-10',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i.toFixed(1)}`,
+                                    output: `Hvít blóðkorn: ${i.toFixed(1)} x10^9/L`
+                                }))
+                            },
+                            {
+                                display: '11-20',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(i + 11).toFixed(1)}`,
+                                    output: `Hvít blóðkorn: ${(i + 11).toFixed(1)} x10^9/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Hvít blóðkorn innan eðlilegra marka'
                     },
                     {
-                        display: 'Eðlilegt',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Blóðhagur eðlilegur: ${i} x10^9/L`
-                        }))
+                        display: 'Neutrófílar',
+                        subOptions: [
+                            {
+                                display: '0-5',
+                                subOptions: Array.from({ length: 6 }, (_, i) => ({
+                                    display: `${i.toFixed(1)}`,
+                                    output: `Neutrofílar: ${i.toFixed(1)} x10^9/L`
+                                }))
+                            },
+                            {
+                                display: '6-10',
+                                subOptions: Array.from({ length: 5 }, (_, i) => ({
+                                    display: `${(i + 6).toFixed(1)}`,
+                                    output: `Neutrofílar: ${(i + 6).toFixed(1)} x10^9/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Neutrofílar innan eðlilegra marka'
                     },
                     {
-                        display: 'Hækkað',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Blóðhagur hækkaður: ${i} x10^9/L`
-                        }))
+                        display: 'Lymphócýtar',
+                        subOptions: [
+                            {
+                                display: '0-5',
+                                subOptions: Array.from({ length: 6 }, (_, i) => ({
+                                    display: `${i.toFixed(1)}`,
+                                    output: `Lymphócýtar: ${i.toFixed(1)} x10^9/L`
+                                }))
+                            },
+                            {
+                                display: '6-10',
+                                subOptions: Array.from({ length: 5 }, (_, i) => ({
+                                    display: `${(i + 6).toFixed(1)}`,
+                                    output: `Lymphócýtar: ${(i + 6).toFixed(1)} x10^9/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Lymphócýtar innan eðlilegra marka'
                     },
                     {
-                        display: 'Lækkað',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Blóðhagur lækkaður: ${i} x10^9/L`
-                        }))
+                        display: 'Hemóglóbín',
+                        subOptions: [
+                            {
+                                display: '50-100',
+                                subOptions: Array.from({ length: 6 }, (_, i) => ({
+                                    display: `${50 + i * 10}`,
+                                    output: `Hemóglóbín: ${50 + i * 10} g/L`
+                                }))
+                            },
+                            {
+                                display: '101-150',
+                                subOptions: Array.from({ length: 5 }, (_, i) => ({
+                                    display: `${100 + i * 10}`,
+                                    output: `Hemóglóbín: ${100 + i * 10} g/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Hemóglóbín innan eðlilegra marka'
                     }
                 ],
-                onRightClickOutput: 'Blóðhagur eðlilegur'
-            },
-            {
-                display: 'Hvít',
-                subOptions: [
-                    {
-                        display: 'NOS',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Hvít blóðkorn: ${i} x10^9/L`
-                        }))
-                    },
-                    {
-                        display: 'Eðlilegt',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Hvít blóðkorn eðlileg: ${i} x10^9/L`
-                        }))
-                    },
-                    {
-                        display: 'Hækkað',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Hvít blóðkorn hækkuð: ${i} x10^9/L`
-                        }))
-                    },
-                    {
-                        display: 'Lækkað',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Hvít blóðkorn lækkuð: ${i} x10^9/L`
-                        }))
-                    }
-                ],
-                onRightClickOutput: 'Hvít blóðkorn innan eðlilegra marka'
-            },
-            {
-                display: 'Neutrófílar',
-                subOptions: [
-                    {
-                        display: 'NOS',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Neutrofílar: ${i} x10^9/L`
-                        }))
-                    },
-                    {
-                        display: 'Eðlilegt',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Neutrofílar eðlilegir: ${i} x10^9/L`
-                        }))
-                    },
-                    {
-                        display: 'Hækkað',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Neutrofílar hækkaðir: ${i} x10^9/L`
-                        }))
-                    },
-                    {
-                        display: 'Lækkað',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Neutrofílar lækkaðir: ${i} x10^9/L`
-                        }))
-                    }
-                ],
-                onRightClickOutput: 'Neutrofílar innan eðlilegra marka'
-            },
-            {
-                display: 'Lymphócýtar',
-                subOptions: [
-                    {
-                        display: 'NOS',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Lymphócýtar: ${i} x10^9/L`
-                        }))
-                    },
-                    {
-                        display: 'Eðlilegt',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Lymphócýtar eðlilegir: ${i} x10^9/L`
-                        }))
-                    },
-                    {
-                        display: 'Hækkað',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Lymphócýtar hækkaðir: ${i} x10^9/L`
-                        }))
-                    },
-                    {
-                        display: 'Lækkað',
-                        subOptions: Array.from({ length: 101 }, (_, i) => ({
-                            display: `${i}`, 
-                            output: `Lymphócýtar lækkaðir: ${i} x10^9/L`
-                        }))
-                    }
-                ],
-                onRightClickOutput: 'Lymphócýtar innan eðlilegra marka'
-            },
-            {
-                display: 'Hemóglóbín',
-                onRightClickOutput: 'Hemóglóbín innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Blóðleysi', 'Járnstatus' , 'Frítt járn', 'Járnbindigeta', 'Ferritín'],
-        options: [
-            {
-                display: 'Blóðleysi',
-                onRightClickOutput: 'Ekki merki um blóðleysi',
-                subOptions: []  // Left-click does nothing
+                onRightClickOutput: 'Blóðhagur innan eðlilegra marka'
             },
             {
                 display: 'Járnstatus',
-                onRightClickOutput: 'Járnstatus innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
+                subOptions: [
+                    {
+                        display: 'Frítt járn',
+                        subOptions: [
+                            {
+                                display: '0-50',
+                                subOptions: Array.from({ length: 6 }, (_, i) => ({
+                                    display: `${i * 10}`,
+                                    output: `Frítt járn: ${i * 10} µg/dL`
+                                }))
+                            },
+                            {
+                                display: '51-100',
+                                subOptions: Array.from({ length: 5 }, (_, i) => ({
+                                    display: `${50 + i * 10}`,
+                                    output: `Frítt járn: ${50 + i * 10} µg/dL`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Frítt járn innan eðlilegra marka'
+                    },
+                    {
+                        display: 'Járnbindigeta',
+                        subOptions: [
+                            {
+                                display: '100-300',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${100 + i * 20}`,
+                                    output: `Járnbindigeta: ${100 + i * 20} µg/dL`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Járnbindigeta innan eðlilegra marka'
+                    },
+                    {
+                        display: 'Ferritín',
+                        subOptions: [
+                            {
+                                display: '0-100',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i * 10}`,
+                                    output: `Ferritín: ${i * 10} µg/L`
+                                }))
+                            },
+                            {
+                                display: '101-500',
+                                subOptions: Array.from({ length: 8 }, (_, i) => ({
+                                    display: `${100 + i * 50}`,
+                                    output: `Ferritín: ${100 + i * 50} µg/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Ferritín innan eðlilegra marka'
+                    }
+                ],
+            onRightClickOutput: 'Járnstatus innan eðlilegra marka'
             },
             {
-                display: 'Frítt járn',
-                onRightClickOutput: 'Frítt járn innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
+                display: 'Sýking/bólgumerki',
+                subOptions: [
+                    {
+                        display: 'CRP',
+                        subOptions: [
+                            {
+                                display: '0-10',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i}`,
+                                    output: `CRP: ${i} mg/L`
+                                }))
+                            },
+                            {
+                                display: '11-100',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(i + 11) * 10}`,
+                                    output: `CRP: ${(i + 11) * 10} mg/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'CRP innan eðlilegra marka'
+                    },
+                    {
+                        display: 'Sökk',
+                        subOptions: [
+                            {
+                                display: '0-10',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i}`,
+                                    output: `Sökk: ${i} mm/hr`
+                                }))
+                            },
+                            {
+                                display: '11-50',
+                                subOptions: Array.from({ length: 5 }, (_, i) => ({
+                                    display: `${(i + 11) * 5}`,
+                                    output: `Sökk: ${(i + 11) * 5} mm/hr`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Sökk innan eðlilegra marka'
+                    }
+                ],
+                onRightClickOutput: 'Sýkingar- og bólgumerki innan eðlilegra marka'
             },
             {
-                display: 'Járnbindigeta',
-                onRightClickOutput: 'Járnbindigeta innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Ferritín',
-                onRightClickOutput: 'Ferritín innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
+                display: 'Blóðsölt',
+                subOptions: [
+                    {
+                        display: 'Natríum',
+                        subOptions: [
+                            {
+                                display: '120-140',
+                                subOptions: Array.from({ length: 5 }, (_, i) => ({
+                                    display: `${120 + i * 5}`,
+                                    output: `Natríum: ${120 + i * 5} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '141-160',
+                                subOptions: Array.from({ length: 4 }, (_, i) => ({
+                                    display: `${140 + (i + 1) * 5}`,
+                                    output: `Natríum: ${140 + (i + 1) * 5} mmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Natríum innan eðlilegra marka'
+                    },
+                    {
+                        display: 'Kalíum',
+                        subOptions: [
+                            {
+                                display: '2-5',
+                                subOptions: Array.from({ length: 7 }, (_, i) => ({
+                                    display: `${(2 + i * 0.5).toFixed(1)}`,
+                                    output: `Kalíum: ${(2 + i * 0.5).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Kalíum innan eðlilegra marka'
+                    },
+                    {
+                        display: 'Kalsíum',
+                        subOptions: [
+                            {
+                                display: '2-3',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${(2 + i * 0.1).toFixed(1)}`,
+                                    output: `Kalsíum: ${(2 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Kalsíum innan eðlilegra marka'
+                    }
+                ],
+                onRightClickOutput: 'Blóðsölt innan eðlilegra marka'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Sýkingarmerki', 'Bólgumerki', 'CRP', 'Sökk'],
+        display: ['Nýru', 'Lifur', 'Vítamín', 'Sykur'],
         options: [
             {
-                display: 'Sýkingarmerki',
-                onRightClickOutput: 'Engin sýkingarmerki í blóði',
-                subOptions: []  // Left-click does nothing
+                display: 'Nýru',
+                subOptions: [
+                    {
+                        display: 'Kreatinin',
+                        subOptions: [
+                            {
+                                display: '50-150',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${50 + i * 10}`,
+                                    output: `Kreatinin: ${50 + i * 10} µmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Kreatinin innan eðlilegra marka'
+                    },
+                    {
+                        display: 'Urea',
+                        subOptions: [
+                            {
+                                display: '2-10',
+                                subOptions: Array.from({ length: 9 }, (_, i) => ({
+                                    display: `${(2 + i).toFixed(1)}`,
+                                    output: `Urea: ${(2 + i).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Urea innan eðlilegra marka'
+                    }
+                ],
+                onRightClickOutput: 'Nýrnagildi innan eðlilegra marka'
             },
             {
-                display: 'Bólgumerki',
-                onRightClickOutput: 'Ekki bólgumerki í blóði',
-                subOptions: []  // Left-click does nothing
+                display: 'Lifur',
+                subOptions: [
+                    {
+                        display: 'ALAT',
+                        subOptions: [
+                            {
+                                display: '0-100',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i * 10}`,
+                                    output: `ALAT: ${i * 10} U/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'ALAT innan eðlilegra marka'
+                    },
+                    {
+                        display: 'ASAT',
+                        subOptions: [
+                            {
+                                display: '0-100',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i * 10}`,
+                                    output: `ASAT: ${i * 10} U/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'ASAT innan eðlilegra marka'
+                    },
+                    {
+                        display: 'Bilirubin',
+                        subOptions: [
+                            {
+                                display: '0-50',
+                                subOptions: Array.from({ length: 6 }, (_, i) => ({
+                                    display: `${i * 10}`,
+                                    output: `Bilirubin: ${i * 10} µmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Bilirubin innan eðlilegra marka'
+                    }
+                ],
+                onRightClickOutput: 'Lifrarprufur innan eðlilegra marka'
             },
-            {
-                display: 'CRP',
-                onRightClickOutput: 'CRP innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Sökk',
-                onRightClickOutput: 'Sökk innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Blöðsölt', 'Natríum', 'Kalíum', 'Kalsíum'],
-        options: [
-            {
-                display: 'Blöðsölt',
-                output: 'Blóðsölt eru ekki alveg eðlileg',
-                onRightClickOutput: 'Blóðsölt innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Natríum',
-                onRightClickOutput: 'Natríum innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Kalíum',
-                onRightClickOutput: 'Kalíum innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Kalsíum',
-                onRightClickOutput: 'Kalsíum innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Nýrnagildi', 'Kreatinin', 'Urea'],
-        options: [
-            {
-                display: 'Nýrnagildi',
-                onRightClickOutput: 'Nýrnagildi innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Kreatinin',
-                onRightClickOutput: 'Kreatinin innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Urea',
-                onRightClickOutput: 'Urea innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Lifrarprufur', 'ALAT', 'ASAT', 'Lifrarstasaprufur', 'ALP', 'GGT', 'Bilirubin'],
-        options: [
-            {
-                display: 'Lifrarprufur',
-                onRightClickOutput: 'Lifrarprufur innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'ALAT',
-                onRightClickOutput: 'ALAT innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'ASAT',
-                onRightClickOutput: 'ASAT innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Lifrarstasaprufur',
-                onRightClickOutput: 'Lifrarstasaprufur eðlilegar',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'ALP',
-                onRightClickOutput: 'ALP innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'GGT',
-                onRightClickOutput: 'GGT innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Bilirubin',
-                onRightClickOutput: 'Bilirubin innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Vítamín', 'D-vítamín', 'B12-vítamín'],
-        options: [
             {
                 display: 'Vítamín',
-                onRightClickOutput: 'Vítamín mælast innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
+                subOptions: [
+                    {
+                        display: 'D-vítamín',
+                        subOptions: [
+                            {
+                                display: '0-100',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i * 10}`,
+                                    output: `D-vítamín: ${i * 10} nmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'D-vítamín innan eðlilegra marka'
+                    },
+                    {
+                        display: 'B12-vítamín',
+                        subOptions: [
+                            {
+                                display: '0-1000',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i * 100}`,
+                                    output: `B12-vítamín: ${i * 100} pmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'B12-vítamín innan eðlilegra marka'
+                    }
+                ],
+                onRightClickOutput: 'Mæld vítamín innan eðlilegra marka'
             },
             {
-                display: 'D-vítamín',
-                onRightClickOutput: 'D-vítamín innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'B12-vítamín',
-                onRightClickOutput: 'B12-vítamín innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
+                display: 'Sykur',
+                subOptions: [
+                    {
+                        display: 'Langtímasykur (HbA1c)',
+                        subOptions: [
+                            {
+                                display: '20-60',
+                                subOptions: Array.from({ length: 9 }, (_, i) => ({
+                                    display: `${20 + i * 5}`,
+                                    output: `Langtímasykur: ${20 + i * 5} mmol/mol`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Langtímasykur innan eðlilegra marka'
+                    },
+                    {
+                        display: 'Fastandi sykur',
+                        subOptions: [
+                            {
+                                display: '2-10',
+                                subOptions: Array.from({ length: 9 }, (_, i) => ({
+                                    display: `${(2 + i * 0.5).toFixed(1)}`,
+                                    output: `Fastandi sykur: ${(2 + i * 0.5).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'Fastandi sykur innan eðlilegra marka'
+                    }
+                ],
+                onRightClickOutput: 'Blóðsykur innan eðlilegra marka'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Blóðsykur', 'Langtímasykur', 'Fastandi sykur'],
-        options: [
-            {
-                display: 'Blóðsykur',
-                onRightClickOutput: 'Blóðsykur eðlilegur',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Langtímasykur',
-                onRightClickOutput: 'Langtímasykur innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'Fastandi sykur',
-                onRightClickOutput: 'Fastandi sykur innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Skjaldkirtilsstarfsemi', 'TSH', 'T4', 'T3'],
+        display: ['Skjaldkirtill'],
         options: [
             {
                 display: 'Skjaldkirtilsstarfsemi',
-                onRightClickOutput: 'Skjaldkirtilsstarfsemi eðlileg',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'TSH',
-                onRightClickOutput: 'TSH innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'T4',
-                onRightClickOutput: 'T4 innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
-            },
-            {
-                display: 'T3',
-                onRightClickOutput: 'T3 innan eðlilegra marka',
-                subOptions: []  // Left-click does nothing
+                subOptions: [
+                    {
+                        display: 'TSH',
+                        subOptions: [
+                            {
+                                display: '0.1-5',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(0.1 + i * 0.5).toFixed(1)}`,
+                                    output: `TSH: ${(0.1 + i * 0.5).toFixed(1)} mIU/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'TSH innan eðlilegra marka'
+                    },
+                    {
+                        display: 'T4',
+                        subOptions: [
+                            {
+                                display: '10-25',
+                                subOptions: Array.from({ length: 8 }, (_, i) => ({
+                                    display: `${10 + i * 2}`,
+                                    output: `T4: ${10 + i * 2} pmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'T4 innan eðlilegra marka'
+                    },
+                    {
+                        display: 'T3',
+                        subOptions: [
+                            {
+                                display: '3-8',
+                                subOptions: Array.from({ length: 6 }, (_, i) => ({
+                                    display: `${(3 + i).toFixed(1)}`,
+                                    output: `T3: ${(3 + i).toFixed(1)} pmol/L`
+                                }))
+                            }
+                        ],
+                        onRightClickOutput: 'T3 innan eðlilegra marka'
+                    }
+                ],
+                onRightClickOutput: 'Skjaldkirtilsstarfsemi innan eðlilegra marka'
             }
         ]
     }
@@ -19400,100 +19462,158 @@ const LyfData = [
                 display: 'Meltingarlyf',
                 subOptions: [
                     {
-                        display: 'Sýruhemjandi lyf',
+                        display: 'Sýrubindandi lyf',
                         subOptions: [
                             {
-                                display: 'Omeprazole',
+                                display: 'Kalsíumkarbónat',
                                 subOptions: [
-                                    { display: 'NOS', output: 'Omeprazole' },
+                                    { display: 'NOS', output: 'Kalsíumkarbónat' },
+                                    ...[500, 750, 1000].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Kalsíumkarbónat ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Kalsíumkarbónat ${dose} mg ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Magnesíumhýdroxíð',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Magnesíumhýdroxíð' },
+                                    ...[400, 800].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Magnesíumhýdroxíð ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Magnesíumhýdroxíð ${dose} mg ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'H2-blokkar',
+                        subOptions: [
+                            {
+                                display: 'Ranitidín',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Ranitidín' },
+                                    ...[75, 150, 300].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Ranitidín ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Ranitidín ${dose} mg ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Famotidín',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Famotidín' },
                                     ...[10, 20, 40].map(dose => ({
                                         display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: `Omeprazole ${dose} mg` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Omeprazole ${dose} mg ${freq}` }))
+                                            { display: 'NOS', output: `Famotidín ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Famotidín ${dose} mg ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Prótónupumpuhemlar (PPI)',
+                        subOptions: [
                             {
-                                display: 'Pantoprazole',
+                                display: 'Omeprazól',
                                 subOptions: [
-                                    { display: 'NOS', output: 'Pantoprazole' },
-                                    ...[20, 40].map(dose => ({
+                                    { display: 'NOS', output: 'Omeprazól' },
+                                    ...[10, 20, 40].map(dose => ({
                                         display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: `Pantoprazole ${dose} mg` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Pantoprazole ${dose} mg ${freq}` }))
+                                            { display: 'NOS', output: `Omeprazól ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Omeprazól ${dose} mg ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
                             },
                             {
-                                display: 'Lansoprazole',
+                                display: 'Lansoprazól',
                                 subOptions: [
-                                    { display: 'NOS', output: 'Lansoprazole' },
+                                    { display: 'NOS', output: 'Lansoprazól' },
                                     ...[15, 30].map(dose => ({
                                         display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: `Lansoprazole ${dose} mg` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Lansoprazole ${dose} mg ${freq}` }))
+                                            { display: 'NOS', output: `Lansoprazól ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Lansoprazól ${dose} mg ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
                             },
                             {
-                                display: 'Esomeprazole',
+                                display: 'Esomeprazól',
                                 subOptions: [
-                                    { display: 'NOS', output: 'Esomeprazole' },
+                                    { display: 'NOS', output: 'Esomeprazól' },
                                     ...[20, 40].map(dose => ({
                                         display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: `Esomeprazole ${dose} mg` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Esomeprazole ${dose} mg ${freq}` }))
+                                            { display: 'NOS', output: `Esomeprazól ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Esomeprazól ${dose} mg ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
                             },
                             {
-                                display: 'Ranitidine',
+                                display: 'Pantoprazól',
                                 subOptions: [
-                                    { display: 'NOS', output: 'Ranitidine' },
-                                    ...[150, 300].map(dose => ({
+                                    { display: 'NOS', output: 'Pantoprazól' },
+                                    ...[20, 40].map(dose => ({
                                         display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: `Ranitidine ${dose} mg` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Ranitidine ${dose} mg ${freq}` }))
-                                        ]
-                                    }))
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Prokinetísk lyf',
-                        subOptions: [
-                            {
-                                display: 'Metoclopramide',
-                                subOptions: [
-                                    { display: 'NOS', output: 'Metoclopramide' },
-                                    ...[5, 10].map(dose => ({
-                                        display: `${dose} mg`,
-                                        subOptions: [
-                                            { display: 'NOS', output: `Metoclopramide ${dose} mg` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Metoclopramide ${dose} mg ${freq}` }))
+                                            { display: 'NOS', output: `Pantoprazól ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Pantoprazól ${dose} mg ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
                             },
                             {
-                                display: 'Domperidone',
+                                display: 'Rabeprazól',
                                 subOptions: [
-                                    { display: 'NOS', output: 'Domperidone' },
+                                    { display: 'NOS', output: 'Rabeprazól' },
                                     ...[10, 20].map(dose => ({
                                         display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: `Domperidone ${dose} mg` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Domperidone ${dose} mg ${freq}` }))
+                                            { display: 'NOS', output: `Rabeprazól ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Rabeprazól ${dose} mg ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
@@ -19501,7 +19621,113 @@ const LyfData = [
                         ]
                     },
                     {
-                        display: 'Antiemetísk lyf',
+                        display: 'Andkrampar',
+                        subOptions: [
+                            {
+                                display: 'Loperamíð',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Loperamíð' },
+                                    ...[2].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Loperamíð ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'Eftir hverja lausa hægð, ekki meira en 8 töflur á dag'].map(freq => ({
+                                                display: freq, 
+                                                output: `Loperamíð ${dose} mg ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Dífenoxýlat með Atropíni',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Dífenoxýlat með Atropíni' },
+                                    ...[2.5].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Dífenoxýlat með Atropíni ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Dífenoxýlat með Atropíni ${dose} mg ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Hægðalosandi lyf',
+                        subOptions: [
+                            {
+                                display: 'Laktulósi',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Laktulósi' },
+                                    ...['10 ml', '15 ml', '30 ml'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Laktulósi ${dose}` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Laktulósi ${dose} ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Psyllium Husk',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Psyllium Husk' },
+                                    ...['1 tsk', '2 tsk'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Psyllium Husk ${dose}` },
+                                            ...['Blandið í vatni eða safa, tvisvar á dag'].map(freq => ({
+                                                display: freq, 
+                                                output: `Psyllium Husk ${dose} ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Sennósíð',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Sennósíð' },
+                                    ...[8.6, 17.2].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Sennósíð ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Sennósíð ${dose} mg ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Bisakódýl',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Bisakódýl' },
+                                    ...[5, 10].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Bisakódýl ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Bisakódýl ${dose} mg ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Ógleðistillandi lyf',
                         subOptions: [
                             {
                                 display: 'Ondansetron',
@@ -19511,20 +19737,42 @@ const LyfData = [
                                         display: `${dose} mg`,
                                         subOptions: [
                                             { display: 'NOS', output: `Ondansetron ${dose} mg` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Ondansetron ${dose} mg ${freq}` }))
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Ondansetron ${dose} mg ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
                             },
                             {
-                                display: 'Promethazine',
+                                display: 'Metóklópramíð',
                                 subOptions: [
-                                    { display: 'NOS', output: 'Promethazine' },
-                                    ...[12.5, 25, 50].map(dose => ({
+                                    { display: 'NOS', output: 'Metóklópramíð' },
+                                    ...[10].map(dose => ({
                                         display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: `Promethazine ${dose} mg` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Promethazine ${dose} mg ${freq}` }))
+                                            { display: 'NOS', output: `Metóklópramíð ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Metóklópramíð ${dose} mg ${freq}`
+                                            }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Dóxýlamín með Pýridoxín',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Dóxýlamín með Pýridoxín' },
+                                    ...['10/10 mg', '20/20 mg'].map(dose => ({
+                                        display: dose,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Dóxýlamín með Pýridoxín ${dose}` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Dóxýlamín með Pýridoxín ${dose} ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
@@ -19532,38 +19780,43 @@ const LyfData = [
                         ]
                     },
                     {
-                        display: 'Mýkingarlyf',
+                        display: 'Gallblöðru og gallrásarlyf',
                         subOptions: [
                             {
-                                display: 'Lactulose',
+                                display: 'Ursodeoxýkólsýra',
                                 subOptions: [
-                                    { display: 'NOS', output: 'Lactulose' },
-                                    ...[10, 15, 30].map(dose => ({
-                                        display: `${dose} ml`,
+                                    { display: 'NOS', output: 'Ursodeoxýkólsýra' },
+                                    ...[250, 500].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: `Lactulose ${dose} ml` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Lactulose ${dose} ml ${freq}` }))
+                                            { display: 'NOS', output: `Ursodeoxýkólsýra ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Ursodeoxýkólsýra ${dose} mg ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
                             },
                             {
-                                display: 'Macrogol',
+                                display: 'Kolestýramín',
                                 subOptions: [
-                                    { display: 'NOS', output: 'Macrogol' },
-                                    ...['13.7g', '17g'].map(dose => ({
-                                        display: `${dose}`,
+                                    { display: 'NOS', output: 'Kolestýramín' },
+                                    ...[4].map(dose => ({
+                                        display: `${dose} g`,
                                         subOptions: [
-                                            { display: 'NOS', output: `Macrogol ${dose}` },
-                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Macrogol ${dose} ${freq}` }))
+                                            { display: 'NOS', output: `Kolestýramín ${dose} g` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({
+                                                display: freq, 
+                                                output: `Kolestýramín ${dose} g ${freq}`
+                                            }))
                                         ]
                                     }))
                                 ]
                             }
                         ]
                     }
-                ],
-                onRightClickOutput: 'Engin meltingarlyf'
+                ]
             },
             {
                 display: 'Innkirtlalyf',
@@ -19860,298 +20113,303 @@ const LyfData = [
                 display: 'Innöndunarlyf',
                 subOptions: [
                     {
-                        display: 'Berkjuvíkkandi lyf', // Bronchodilators
+                        display: 'Beta Agonists',
                         subOptions: [
                             {
-                                display: 'Salbutamol', // Example: Albuterol
+                                display: 'Salbutamol',
                                 subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Salbutamol'
-                                    },
-                                    {
-                                        display: '100 mcg',
+                                    { display: 'NOS', output: 'Salbutamol' },
+                                    ...[100, 200, 400].map(dose => ({
+                                        display: `${dose} mcg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Salbutamol 100 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Salbutamol 100 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Salbutamol 100 mcg 2x1'
-                                            },
-                                            {
-                                                display: '3x1',
-                                                output: 'Salbutamol 100 mcg 3x1'
-                                            }
+                                            { display: 'NOS', output: `Salbutamol ${dose} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Salbutamol ${dose} mcg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: '200 mcg',
-                                        subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Salbutamol 200 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Salbutamol 200 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Salbutamol 200 mcg 2x1'
-                                            }
-                                        ]
-                                    }
+                                    }))
                                 ]
                             },
                             {
-                                display: 'Formoteról', // Example: Formoterol
+                                display: 'Formoterol',
                                 subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Formoteról'
-                                    },
-                                    {
-                                        display: '12 mcg',
+                                    { display: 'NOS', output: 'Formoterol' },
+                                    ...[4.5, 9, 12].map(dose => ({
+                                        display: `${dose} mcg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Formoteról 12 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Formoteról 12 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Formoteról 12 mcg 2x1'
-                                            }
+                                            { display: 'NOS', output: `Formoterol ${dose} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Formoterol ${dose} mcg ${freq}` }))
                                         ]
-                                    }
-                                ]
-                            }
-                            // Add more bronchodilators as needed
-                        ]
-                    },
-                    {
-                        display: 'Innöndunar barksterar', // Corticosteroids for inhalation
-                        subOptions: [
-                            {
-                                display: 'Fluticasone', // Example: Fluticasone
-                                subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Fluticasone'
-                                    },
-                                    {
-                                        display: '100 mcg',
-                                        subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Fluticasone 100 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Fluticasone 100 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Fluticasone 100 mcg 2x1'
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        display: '250 mcg',
-                                        subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Fluticasone 250 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Fluticasone 250 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Fluticasone 250 mcg 2x1'
-                                            }
-                                        ]
-                                    }
+                                    }))
                                 ]
                             },
                             {
-                                display: 'Budesonide', // Example: Budesonide
+                                display: 'Terbutaline',
                                 subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Budesonide'
-                                    },
-                                    {
-                                        display: '200 mcg',
+                                    { display: 'NOS', output: 'Terbutaline' },
+                                    ...[250, 500].map(dose => ({
+                                        display: `${dose} mcg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Budesonide 200 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Budesonide 200 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Budesonide 200 mcg 2x1'
-                                            }
+                                            { display: 'NOS', output: `Terbutaline ${dose} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Terbutaline ${dose} mcg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: '400 mcg',
-                                        subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Budesonide 400 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Budesonide 400 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Budesonide 400 mcg 2x1'
-                                            }
-                                        ]
-                                    }
+                                    }))
                                 ]
                             }
-                            // Add more inhaled corticosteroids as needed
                         ]
                     },
                     {
-                        display: 'Leukotrien hamlarar', // Leukotriene inhibitors
+                        display: 'Anticholinergics',
                         subOptions: [
                             {
-                                display: 'Montelukast', // Example: Montelukast
+                                display: 'Ipratropium',
                                 subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Montelukast'
-                                    },
-                                    {
-                                        display: '10 mg',
+                                    { display: 'NOS', output: 'Ipratropium' },
+                                    ...[20, 40].map(dose => ({
+                                        display: `${dose} mcg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Montelukast 10 mg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Montelukast 10 mg 1x1'
-                                            }
+                                            { display: 'NOS', output: `Ipratropium ${dose} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Ipratropium ${dose} mcg ${freq}` }))
                                         ]
-                                    }
-                                ]
-                            }
-                            // Add more leukotriene inhibitors as needed
-                        ]
-                    },
-                    {
-                        display: 'Samsett lyf', // Combination medications
-                        subOptions: [
-                            {
-                                display: 'Symbicort', // Example: Combination of Budesonide and Formoterol
-                                subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Symbicort'
-                                    },
-                                    {
-                                        display: '80/4.5 mcg',
-                                        subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Symbicort 80/4.5 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Symbicort 80/4.5 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Symbicort 80/4.5 mcg 2x1'
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        display: '160/4.5 mcg',
-                                        subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Symbicort 160/4.5 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Symbicort 160/4.5 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Symbicort 160/4.5 mcg 2x1'
-                                            }
-                                        ]
-                                    }
+                                    }))
                                 ]
                             },
                             {
-                                display: 'Seretide', // Example: Combination of Fluticasone and Salmeterol
+                                display: 'Tiotropium',
                                 subOptions: [
-                                    {
-                                        display: 'NOS',
-                                        output: 'Seretide'
-                                    },
-                                    {
-                                        display: '50/250 mcg',
+                                    { display: 'NOS', output: 'Tiotropium' },
+                                    ...[18].map(dose => ({
+                                        display: `${dose} mcg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Seretide 50/250 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Seretide 50/250 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Seretide 50/250 mcg 2x1'
-                                            }
+                                            { display: 'NOS', output: `Tiotropium ${dose} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Tiotropium ${dose} mcg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: '50/500 mcg',
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Aclidinium',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Aclidinium' },
+                                    ...[322].map(dose => ({
+                                        display: `${dose} mcg`,
                                         subOptions: [
-                                            {
-                                                display: 'NOS',
-                                                output: 'Seretide 50/500 mcg'
-                                            },
-                                            {
-                                                display: '1x1',
-                                                output: 'Seretide 50/500 mcg 1x1'
-                                            },
-                                            {
-                                                display: '2x1',
-                                                output: 'Seretide 50/500 mcg 2x1'
-                                            }
+                                            { display: 'NOS', output: `Aclidinium ${dose} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Aclidinium ${dose} mcg ${freq}` }))
                                         ]
-                                    }
+                                    }))
                                 ]
                             }
-                            // Add more combination medications as needed
+                        ]
+                    },
+                    {
+                        display: 'Corticosteroids',
+                        subOptions: [
+                            {
+                                display: 'Budesonide',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Budesonide' },
+                                    ...[100, 200, 400].map(dose => ({
+                                        display: `${dose} mcg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Budesonide ${dose} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Budesonide ${dose} mcg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Fluticasone',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Fluticasone' },
+                                    ...[50, 100, 250, 500].map(dose => ({
+                                        display: `${dose} mcg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Fluticasone ${dose} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Fluticasone ${dose} mcg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Beclomethasone',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Beclomethasone' },
+                                    ...[50, 100, 250].map(dose => ({
+                                        display: `${dose} mcg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Beclomethasone ${dose} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Beclomethasone ${dose} mcg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Combination Inhalers',
+                        subOptions: [
+                            {
+                                display: 'Fluticasone/Salmeterol',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Fluticasone/Salmeterol' },
+                                    ...[['100/50', '250/50', '500/50']].map(combo => ({
+                                        display: `${combo} mcg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Fluticasone/Salmeterol ${combo} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Fluticasone/Salmeterol ${combo} mcg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Budesonide/Formoterol',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Budesonide/Formoterol' },
+                                    ...[['80/4.5', '160/4.5', '320/9']].map(combo => ({
+                                        display: `${combo} mcg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Budesonide/Formoterol ${combo} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Budesonide/Formoterol ${combo} mcg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Fluticasone/Vilanterol',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Fluticasone/Vilanterol' },
+                                    ...[['100/25', '200/25']].map(combo => ({
+                                        display: `${combo} mcg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Fluticasone/Vilanterol ${combo} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Fluticasone/Vilanterol ${combo} mcg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Mometasone/Formoterol',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Mometasone/Formoterol' },
+                                    ...[['100/5', '200/5']].map(combo => ({
+                                        display: `${combo} mcg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Mometasone/Formoterol ${combo} mcg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Mometasone/Formoterol ${combo} mcg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Leukotriene Modifiers',
+                        subOptions: [
+                            {
+                                display: 'Montelukast',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Montelukast' },
+                                    ...[10].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Montelukast ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Montelukast ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Zafirlukast',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Zafirlukast' },
+                                    ...[20].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Zafirlukast ${dose} mg` },
+                                            ...['1x1', '1x2', 'PN'].map(freq => ({ display: freq, output: `Zafirlukast ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Mast Cell Stabilizers',
+                        subOptions: [
+                            {
+                                display: 'Cromolyn',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Cromolyn' },
+                                    ...[20].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Cromolyn ${dose} mg` },
+                                            ...['1x1', '1x2', '1x3', '2x1', '2x2', '2x3', 'PN'].map(freq => ({ display: freq, output: `Cromolyn ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Biologics for Asthma',
+                        subOptions: [
+                            {
+                                display: 'Omalizumab',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Omalizumab' },
+                                    ...[75, 150, 300].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Omalizumab ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Omalizumab ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Mepolizumab',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Mepolizumab' },
+                                    ...[100].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Mepolizumab ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Mepolizumab ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Benralizumab',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Benralizumab' },
+                                    ...[30].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Benralizumab ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Benralizumab ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Dupilumab',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Dupilumab' },
+                                    ...[200, 300].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Dupilumab ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Dupilumab ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            }
                         ]
                     }
                 ]
             }
+            
         ]
     },
     {
@@ -25495,6 +25753,7 @@ function insertText(text, sectionId) {
 
 
 
+
 function eraseText() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before erasing
@@ -25603,10 +25862,10 @@ function getInsertPosition(sectionId, currentText) {
 
     console.log('Finding insert position for section:', sectionId, 'Current order index:', index); // Debugging line
 
-    // New logic: Iterate through the sectionOrder up to the current section
+    // New logic: Iterate through the sectionOrder up to the current section to find the correct position
     for (let i = index + 1; i < sectionOrder.length; i++) {
         const nextSectionHeader = getSectionHeader(sectionOrder[i]);
-        
+
         if (nextSectionHeader) { // Ensure we are looking for a valid header
             const nextSectionIndex = currentText.indexOf(nextSectionHeader);
 
@@ -25618,20 +25877,11 @@ function getInsertPosition(sectionId, currentText) {
         }
     }
 
-    // If "Skoðun" is to be inserted, check if "Einkenni" header and data exist
-    if (sectionId === 'skodun' && currentText.includes(getSectionHeader('einkenni'))) {
-        // Ensure "Skoðun" goes after "Einkenni"
-        const einkenniEnd = findEndOfSection('einkenni', currentText);
-        if (einkenniEnd !== -1) {
-            textBefore = currentText.slice(0, einkenniEnd).trimEnd();
-            textAfter = currentText.slice(einkenniEnd).trimStart();
-        }
-    }
-
     console.log('Insert position determined - Text before:', textBefore, 'Text after:', textAfter); // Debugging line
 
     return { textBefore, textAfter };
 }
+
 
 // New helper function to find the end of a section
 function findEndOfSection(sectionId, currentText) {
