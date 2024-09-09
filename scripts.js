@@ -12110,6 +12110,439 @@ const PlanHud = [
     }
 ];
 
+// Skurður (Wound / superficial injury)
+const SymptomsSkurdur = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Staðsetning', 'Kom fyrir', 'Hvenær', 'Stífkrampi'],
+        options: [
+            {
+                display: 'Staðsetning',
+                subOptions: [
+                    {
+                        display: 'Höfuð- og háls',
+                        subOptions: [
+                            {
+                                display: 'Andlit',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður í andliti' },
+                                    {
+                                        display: 'Enni',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Skurður á enni' },
+                                            { display: 'Vinstri hlið', output: 'Skurður á enni, vinstri hlið' },
+                                            { display: 'Hægri hlið', output: 'Skurður á enni, hægri hlið' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Kinnar',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Skurður á kinn' },
+                                            { display: 'Vinstri kinn', output: 'Skurður á vinstri kinn' },
+                                            { display: 'Hægri kinn', output: 'Skurður á hægri kinn' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Nef',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Skurður á nefi' },
+                                            { display: 'Brún nefs', output: 'Skurður á brún nefs' },
+                                            { display: 'Við rót nefs', output: 'Skurður við rót nefs' }
+                                        ]
+                                    },
+                                    {
+                                        display: 'Varir',
+                                        subOptions: [
+                                            { display: 'NOS', output: 'Skurður á vörum' },
+                                            { display: 'Efri vör', output: 'Skurður á efri vör' },
+                                            { display: 'Neðri vör', output: 'Skurður á neðri vör' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Höfuðleðri',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður í höfuðleðri' },
+                                    { display: 'Hnakka', output: 'Skurður á hnakka' },
+                                    { display: 'Kúpu', output: 'Skurður á kúpu' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Upphandleggur',
+                        subOptions: [
+                            {
+                                display: 'Öxl',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á öxl' },
+                                    { display: 'Vinstri öxl', output: 'Skurður á vinstri öxl' },
+                                    { display: 'Hægri öxl', output: 'Skurður á hægri öxl' }
+                                ]
+                            },
+                            {
+                                display: 'Olnbogi',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á olnboga' },
+                                    { display: 'Vinstri olnbogi', output: 'Skurður á vinstri olnboga' },
+                                    { display: 'Hægri olnbogi', output: 'Skurður á hægri olnboga' }
+                                ]
+                            },
+                            {
+                                display: 'Upphandleggur',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á upphandlegg' },
+                                    { display: 'Vinstri upphandleggur', output: 'Skurður á vinstri upphandlegg' },
+                                    { display: 'Hægri upphandleggur', output: 'Skurður á hægri upphandlegg' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Neðri útlimir',
+                        subOptions: [
+                            {
+                                display: 'Læri',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á læri' },
+                                    { display: 'Vinstri læri', output: 'Skurður á vinstri læri' },
+                                    { display: 'Hægri læri', output: 'Skurður á hægri læri' }
+                                ]
+                            },
+                            {
+                                display: 'Hné',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á hné' },
+                                    { display: 'Vinstri hné', output: 'Skurður á vinstri hné' },
+                                    { display: 'Hægri hné', output: 'Skurður á hægri hné' }
+                                ]
+                            },
+                            {
+                                display: 'Fótleggur',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á fótlegg' },
+                                    { display: 'Vinstri fótleggur', output: 'Skurður á vinstri fótlegg' },
+                                    { display: 'Hægri fótleggur', output: 'Skurður á hægri fótlegg' }
+                                ]
+                            },
+                            {
+                                display: 'Ökkli',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á ökkla' },
+                                    { display: 'Vinstri ökkli', output: 'Skurður á vinstri ökkla' },
+                                    { display: 'Hægri ökkli', output: 'Skurður á hægri ökkla' }
+                                ]
+                            },
+                            {
+                                display: 'Fótur',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á fæti' },
+                                    { display: 'Vinstri fótur', output: 'Skurður á vinstri fæti' },
+                                    { display: 'Hægri fótur', output: 'Skurður á hægri fæti' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Búkur',
+                        subOptions: [
+                            {
+                                display: 'Kvið',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á kvið' },
+                                    { display: 'Vinstri kviður', output: 'Skurður á vinstri kvið' },
+                                    { display: 'Hægri kviður', output: 'Skurður á hægri kvið' }
+                                ]
+                            },
+                            {
+                                display: 'Bak',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á baki' },
+                                    { display: 'Vinstri bakhlið', output: 'Skurður á vinstri bakhlið' },
+                                    { display: 'Hægri bakhlið', output: 'Skurður á hægri bakhlið' }
+                                ]
+                            },
+                            {
+                                display: 'Brjóst',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skurður á brjósti' },
+                                    { display: 'Vinstri brjóst', output: 'Skurður á vinstri brjósti' },
+                                    { display: 'Hægri brjóst', output: 'Skurður á hægri brjósti' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Kom fyrir',
+                subOptions: [
+                    {
+                        display: 'Fall',
+                        subOptions: [
+                            { display: 'NOS', output: 'Fall. Datt' },
+                            { display: 'Af stigi', output: 'Fall. Datt af stiga' },
+                            { display: 'Af hjóli', output: 'Fall. Datt af hjóli' },
+                            { display: 'Af hæð', output: 'Fall. Datt af hæð' },
+                            { display: 'Á rökum gólfi', output: 'Fall. Rann í bleytu' },
+                            { display: 'Við hlaup', output: 'Fall. Datt við hlaup' },
+                            { display: 'Útihurð', output: 'Fall. Datt við útihurð' }
+                        ]
+                    },
+                    {
+                        display: 'Árekstur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Árekstur' },
+                            { display: 'Bifreiðaárekstur', output: 'Árekstur með bifreið' },
+                            { display: 'Reiðhjól', output: 'Árekstur með reiðhjól' },
+                            { display: 'Gangandi árekstur', output: 'Árekstur gangandi' }
+                        ]
+                    },
+                    {
+                        display: 'Slys',
+                        subOptions: [
+                            { display: 'NOS', output: 'Slys' },
+                            { display: 'Hnífur', output: 'Skurður. Skar sig með hníf' },
+                            { display: 'Vél', output: 'Slys með vél' },
+                            { display: 'Verkfæri', output: 'Slys með verkfæri' }
+                        ]
+                    },
+                    {
+                        display: 'Slag',
+                        subOptions: [
+                            { display: 'NOS', output: 'Slag' },
+                            { display: 'Með hönd', output: 'Slag með hönd' },
+                            { display: 'Með hlut', output: 'Slag með hlut' },
+                            { display: 'Kýlt', output: 'Kýlt í andlit' }
+                        ]
+                    },
+                    {
+                        display: 'Áverki',
+                        subOptions: [
+                            { display: 'NOS', output: 'Áverki' },
+                            { display: 'Við æfingu', output: 'Áverki við æfingu' },
+                            { display: 'Við vinnu', output: 'Áverki við vinnu' },
+                            { display: 'Við leik', output: 'Áverki við leik' }
+                        ]
+                    },
+                    {
+                        display: 'Skurður',
+                        subOptions: [
+                            { display: 'NOS', output: 'Skurður. Skar sig' },
+                            { display: 'Skurður með hníf', output: 'Skurður. Skar sig með hníf' },
+                            { display: 'Skurður með gler', output: 'Skurður. Skar sig með gler' },
+                            { display: 'Skurður með verkfæri', output: 'Skurður. Skar sig með verkfæri' }
+                        ]
+                    },
+                    {
+                        display: 'Klemmuáverki',
+                        subOptions: [
+                            { display: 'NOS', output: 'Klemmuáverki' },
+                            { display: 'Við dyr', output: 'Klemmuáverki. Klemmdi sig á hurð' },
+                            { display: 'Við vél', output: 'Klemmuáverki. Klemmdi sig við vél' },
+                            { display: 'Við þungt hlut', output: 'Klemmuáverki. Klemmdi sig við þungt hlut' }
+                        ]
+                    },
+                    {
+                        display: 'Bit',
+                        subOptions: [
+                            { display: 'NOS', output: 'Bit' },
+                            { display: 'Hundsbit', output: 'Hundabit' },
+                            { display: 'Kattabit', output: 'Kattabit' },
+                            { display: 'Mannebit', output: 'Mannebit' }
+                        ]
+                    },
+                    {
+                        display: 'Sjálfsskaði',
+                        subOptions: [
+                            { display: 'NOS', output: 'Sjálfsskaði' },
+                            { display: 'Skurður', output: 'Sjálfsskaði. Skar sig' },
+                            { display: 'Lyfjataka', output: 'Sjálfsskaði. Tók of mikið af lyfjum' }
+                        ]
+                    },
+                    {
+                        display: 'Önnur atvik',
+                        subOptions: [
+                            { display: 'NOS', output: 'Annað ógreint atvik' },
+                            { display: 'Tengt íþróttum', output: 'Atvik tengt íþróttum' },
+                            { display: 'Við dagleg störf', output: 'Atvik við dagleg störf' },
+                            { display: 'Óútskýrð atvik', output: 'Óútskýrð atvik' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Hvenær',
+                subOptions: [
+                    {
+                        display: 'Í dag',
+                        subOptions: [
+                            { display: 'NOS', output: 'Gerðist í dag' },
+                            { display: 'Í morgun', output: 'Gerðist í morgun' },
+                            { display: 'Fyrr í dag', output: 'Gerðist fyrr í dag' },
+                            { display: 'Rétt áðan', output: 'Gerðist rétt áðan' },
+                            { display: 'Síðdegis', output: 'Gerðist síðdegis' }
+                        ]
+                    },
+                    {
+                        display: 'Í gær',
+                        subOptions: [
+                            { display: 'NOS', output: 'Gerðist í gær' },
+                            { display: 'Um morguninn', output: 'Gerðist í gærmorgun' },
+                            { display: 'Um kvöldið', output: 'Gerðist í gærkvöldi' }
+                        ]
+                    },
+                    {
+                        display: 'Fyrir helgi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Gerðist fyrir helgi' },
+                            { display: 'Fyrir tveimur dögum', output: 'Gerðist fyrir tveimur dögum síðan' },
+                            { display: 'Fyrir þremur dögum', output: 'Gerðist fyrir þremur dögum síðan' }
+                        ]
+                    },
+                    {
+                        display: 'Um helgina',
+                        subOptions: [
+                            { display: 'NOS', output: 'Gerðist um helgina' },
+                            { display: 'Á laugardag', output: 'Gerðist á laugardag' },
+                            { display: 'Á sunnudag', output: 'Gerðist á sunnudag' }
+                        ]
+                    },
+                    {
+                        display: 'Fyrir viku',
+                        subOptions: [
+                            { display: 'NOS', output: 'Gerðist fyrir viku síðan' },
+                            { display: 'Fyrir nokkrum dögum', output: 'Gerðist fyrir nokkrum dögum síðan' },
+                            { display: 'Fyrir nákvæmlega viku', output: 'Gerðist fyrir nákvæmlega viku síðan' }
+                        ]
+                    },
+                    {
+                        display: 'Fyrir lengra síðan',
+                        subOptions: [
+                            { display: 'NOS', output: 'Gerðist fyrir lengra síðan' },
+                            { display: 'Fyrir tveimur vikum', output: 'Gerðist fyrir tveimur vikum síðan' },
+                            { display: 'Fyrir þremur vikum', output: 'Gerðist fyrir þremur vikum síðan' },
+                            { display: 'Fyrir mánuði', output: 'Gerðist fyrir mánuði síðan' }
+                        ]
+                    },
+                    {
+                        display: 'Óákveðinn tími',
+                        subOptions: [
+                            { display: 'Fyrir löngu', output: 'Gerðist fyrir löngu síðan' },
+                            { display: 'Óákveðinn tími', output: 'Gerðist á óákveðnum tíma' }
+                        ]
+                    },
+                    {
+                        display: 'Klukkustundir síðan',
+                        subOptions: [
+                            { display: '1 klukkustund síðan', output: 'Gerðist fyrir u.þ.b. 1 klukkustund síðan' },
+                            { display: '2 klukkustundir síðan', output: 'Gerðist fyrir u.þ.b. 2 klukkustundum síðan' },
+                            { display: '3 klukkustundir síðan', output: 'Gerðist fyrir u.þ.b. 3 klukkustundum síðan' },
+                            ...Array.from({ length: 21 }, (_, i) => ({
+                                display: `${i + 4} klukkustundir síðan`,
+                                output: `Gerðist fyrir u.þ.b. ${i + 4} klukkustundum síðan`
+                            }))
+                        ]
+                    },
+                    {
+                        display: 'Dagar síðan',
+                        subOptions: [
+                            { display: '1 dagur síðan', output: 'Gerðist fyrir 1 degi síðan' },
+                            { display: '2 dagar síðan', output: 'Gerðist fyrir 2 dögum síðan' },
+                            { display: '3 dagar síðan', output: 'Gerðist fyrir 3 dögum síðan' },
+                            ...Array.from({ length: 27 }, (_, i) => ({
+                                display: `${i + 4} dagar síðan`,
+                                output: `Gerðist fyrir ${i + 4} dögum síðan`
+                            }))
+                        ]
+                    }
+                ]
+            },
+
+        ]
+    }
+    
+];
+const ExamsSkurdur = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Stærð', 'Dýpt', 'Gapandi', 'Óhreint'],
+        options: [
+            {
+                name: 'Wound Characteristics',
+                type: 'options',
+                display: ['Stærð', 'Dýpt', 'Gapandi', 'Óhreint'],
+                options: [
+                    {
+                        name: 'Stærð',
+                        subOptions: [
+                            {
+                                display: 'Skrá nákvæma stærð',
+                                subOptions: Array.from({ length: 20 }, (_, i) => ({
+                                    display: `Um ${i + 1},${Math.floor(Math.random() * 10)} cm í þvermál`,
+                                    output: `Um ${i + 1},${Math.floor(Math.random() * 10)} cm í þvermál`
+                                })).concat({
+                                    display: 'Skrá eigin mælingu',
+                                    output: 'Nákvæm stærð handskráð'
+                                })
+                            }
+                        ]
+                    },
+                    {
+                        name: 'Dýpt',
+                        subOptions: [
+                            { display: 'Grunnt', output: 'Grunnt' },
+                            { display: 'Miðlungsdjúpt', output: 'Miðlungsdjúpt' },
+                            { display: 'Djúpt', output: 'Djúpt' },
+                            { display: 'Mikil dýpt', output: 'Mikil dýpt' }
+                        ]
+                    },
+                    {
+                        name: 'Gapandi',
+                        subOptions: [
+                            { display: 'Lítið gapandi', output: 'Lítið gapandi' },
+                            { display: 'Gapandi', output: 'Gapandi' },
+                            { display: 'Mjög gapandi', output: 'Mjög gapandi' },
+                            { display: 'Þarf að sauma', output: 'Þarf að sauma' }
+                        ],
+                        onRightClickSubOptions: [
+                            { display: 'Sárabrúnir leggjast vel saman', output: 'Sárabrúnir leggjast vel saman' }
+                        ]
+                    },
+                    {
+                        name: 'Óhreint',
+                        subOptions: [
+                            { display: 'Aðeins óhreint', output: 'Aðeins óhreint' },
+                            { display: 'Mikið óhreint', output: 'Mikið óhreint' },
+                            { display: 'Mengað', output: 'Mengað' }
+                        ],
+                        onRightClickSubOptions: [
+                            { display: 'Hreint', output: 'Hreint' }
+                        ]
+                    }
+                ]
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Blæðing', 'Brúnir'],
+        options: [
+            
+            
+        ]
+    }
+
+];
+const PlanSkurdur = [
+
+];
+
 // Geð (Psychiatric problems)
 const SymptomsGed = [
     {
