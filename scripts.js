@@ -755,7 +755,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna'],
+        display: ['Tímalengd einkenna', 'Leitar á vaktina', 'Sjá nótu hjkfr'],
         options: [
             {
                 display: 'Tímalengd einkenna',
@@ -814,7 +814,9 @@ const SymptomsViral = [
                     }
                 ],
                 cancelText: ''
-            }
+            },
+            { display: 'Leitar á vaktina', output: 'Leitar á vaktina'},
+            { display: 'Sjá nótu hjkfr', output: 'Sjá nótu hjúkrunarfræðings'}
         ]
     },
     {
@@ -2649,7 +2651,7 @@ const SymptomsUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna'],
+        display: ['Tímalengd einkenna', 'Leitar á vaktina', 'Sjá nótu hjkfr'],
         options: [
             {
                 display: 'Tímalengd einkenna',
@@ -2708,7 +2710,9 @@ const SymptomsUrinary = [
                     }
                 ],
                 cancelText: ''
-            }
+            },
+            { display: 'Leitar á vaktina', output: 'Leitar á vaktina'},
+            { display: 'Sjá nótu hjkfr', output: 'Sjá nótu hjúkrunarfræðings'}
         ]
     },
     {
@@ -2725,8 +2729,8 @@ const SymptomsUrinary = [
                 ],
                 cancelText: ''
             },
-            { display: 'Jákv stix heima', output: 'Jákv stix heima', onRightClickOutput: 'Neikv stix heima' },
-            { display: 'Fengið áður', output: 'Þekkir einkennin', onRightClickOutput: 'Aldrei fengið áður' }
+            { display: 'Jákv stix heima', output: 'Jákvætt þvagstix heima', onRightClickOutput: 'Neikvætt þvagstix heima' },
+            { display: 'Fengið áður', output: 'Fengið blöðrubólgu áður og þekkir einkennin', onRightClickOutput: 'Aldrei fengið þvagfærasýkingu áður' }
         ]
     },
     {
@@ -2744,11 +2748,73 @@ const SymptomsUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Hiti', 'Bakverkur', 'Slappleiki'],
+        display: ['Hiti', 'Slappleiki'],
         options: [
             { display: 'Hiti', output: 'Verið með hita', onRightClickOutput: 'Ekki fengið hita' },
-            { display: 'Bakverkur', output: 'Bakverkur, nýtilkominn', onRightClickOutput: 'Ekki nýtilkominn bakverkur' },
             { display: 'Slappleiki', output: 'Verið með slappleika', onRightClickOutput: 'Ekki fundið fyrir slappleika' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Bakverkur', 'Staðsetning'],
+        options: [
+            { 
+                display: 'Bakverkur', 
+                subOptions: [
+                    { display: 'NOS', output: 'Bakverkur' },
+                    { display: 'Nýtilkominn', output: 'Bakverkur, nýtilkominn' },
+                    { display: 'Langvinnur', output: 'Langvinnur bakverkur' }
+                ],
+                onRightClickOutput: 'Ekki fundið fyrir bakverk'
+            },
+            {
+                display: 'Staðsetning', 
+                subOptions: [
+                    {
+                        display: 'Yfir nýrnastað', 
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Staðsettur yfir nýrnastað hægra megin' },
+                            { display: 'Vinstra megin', output: 'Staðsettur yfir nýrnastað vinstra megin' },
+                            { display: 'Beggja vegna', output: 'Staðsettur yfir nýrnastað beggja vegna' }
+                        ]
+                    },
+                    {
+                        display: 'Lendhrygg', 
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Staðsettur yfir lendhrygg hægra megin' },
+                            { display: 'Vinstra megin', output: 'Staðsettur yfir lendhrygg vinstra megin' },
+                            { display: 'Beggja vegna', output: 'Staðsettur yfir lendhrygg beggja vegna' }
+                        ]
+                    },
+                    {
+                        display: 'Brjósthryggur', 
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Staðsettur yfir brjósthrygg hægra megin' },
+                            { display: 'Vinstra megin', output: 'Staðsettur yfir brjósthrygg vinstra megin' },
+                            { display: 'Beggja vegna', output: 'Staðsettur yfir brjósthrygg beggja vegna' }
+                        ]
+                    },
+                    {
+                        display: 'Herðablað', 
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Staðsettur yfir herðablað hægra megin' },
+                            { display: 'Vinstra megin', output: 'Staðsettur yfir herðablað vinstra megin' },
+                            { display: 'Beggja vegna', output: 'Staðsettur yfir herðablað beggja vegna' }
+                        ]
+                    },
+                    {
+                        display: 'Gluteal svæði', 
+                        subOptions: [
+                            { display: 'Hægra megin', output: 'Staðsettur yfir gluteal svæði hægra megin' },
+                            { display: 'Vinstra megin', output: 'Staðsettur yfir gluteal svæði vinstra megin' },
+                            { display: 'Beggja vegna', output: 'Staðsettur yfir gluteal svæði beggja vegna' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: ''
+            }
+            
         ]
     },
     {},
@@ -3225,7 +3291,7 @@ const RannsoknirUrinary = [
                         onRightClickOutput: 'Bilirúbín neikvætt'  // Right-click output for negative result
                     }
                 ],
-                onRightClickOutput: 'Þvagstix hreint'  // Right-click output for overall clean urine test
+                onRightClickOutput: 'Stix hreint'  // Right-click output for overall clean urine test
             },
             {
                 display: 'Þvagræktun',
@@ -11606,7 +11672,7 @@ const SymptomsHud = [
     {
         name: '',
         type: 'options',
-        display: ['Húðbreyting', 'Staðsetning'],
+        display: ['Húðbreyting', 'Onset', 'Staðsetning', 'Hendur/fætur'],
         options: [
             {
                 display: 'Húðbreyting',
@@ -11615,6 +11681,19 @@ const SymptomsHud = [
                     { display: 'Roði', output: 'Roði' },
                     { display: 'Útbrot', output: 'Útbrot' },
                     { display: 'Blettur', output: 'Blettur' }
+                ]
+            },
+            {
+                display: 'Onset',
+                suboptions: [
+                    {
+                        display: 'Onset',
+                        subOptions: [
+                            { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
+                            { display: 'Smám saman', output: 'Þróaðist smám saman' },
+                            { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
+                        ]
+                    }
                 ]
             },
             {
@@ -11710,9 +11789,33 @@ const SymptomsHud = [
                         ]
                     }
                 ]
+            },
+            {
+                display: 'Hendur/fætur', output: 'Legst á hendur og fætur', onRightClickOutput: 'Ekki einkenni frá höndum og fótum'
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Migration', 'Sviði'],
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Kláði', 'Sviði', 'Óþægindi', 'Verkur'],
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Lagst á fleirri', 'Fengið áður', 'Nýtt í umhverfi', 'Ný lyf/fæðubótarefni'],
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Nýleg veikindi', 'Nýleg ferðalög', 'Reynt lyf'],
     }
+    
     
 ];
 const ExamsHud = [
@@ -12074,6 +12177,14 @@ const ExamsHud = [
     
     
     
+];
+
+const HistoryHud = [
+
+];
+
+const KerfakonnunHud = [
+
 ];
 const PlanHud = [
     {
@@ -25324,6 +25435,15 @@ function createRannsoknirSection(data) {
     return section;
 }
 
+function createÞvagrannsoknSection(data) {
+    console.log('Creating Þvagrannsókn Section with data:', data); // Debugging line
+    const section = createSection('þvagrannsokn', 'Þvagrannsókn');
+    const container = section.querySelector('#þvagrannsokn');
+    createButtons(container, data, 'þvagrannsokn');
+    return section;
+}
+
+
 function createLifsmorkSection(data) {
     console.log('Creating Lífsmörk Section with data:', data); // Debugging line
     const section = createSection('lifsmork', 'Lífsmörk');
@@ -25449,7 +25569,7 @@ function loadPage(page) {
         const RiskUrinarySection = createRiskUrinarySection(RiskfactorsUrinary);
         const lifsmorkSection = createLifsmorkSection(LifsmorkData);
         const ofnaemiSection = createOfnaemiSection(OfnaemiData);
-        const rannsoknirSection = createRannsoknirSection(RannsoknirUrinary);
+        const þvagrannsoknSection = createÞvagrannsoknSection(RannsoknirUrinary);
         
 
         const leftColumn = document.createElement('div');
@@ -25464,7 +25584,7 @@ function loadPage(page) {
         middleColumn.className = 'column';
         middleColumn.appendChild(examsSection);
         middleColumn.appendChild(lifsmorkSection);
-        middleColumn.appendChild(rannsoknirSection);
+        middleColumn.appendChild(þvagrannsoknSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -26131,11 +26251,26 @@ function loadPage(page) {
 
 // Textbox manipulation functions
 let textHistory = [];
+let redoHistory = [];
+
+document.addEventListener('keydown', function(event) {
+    // Undo functionality (Ctrl + Z)
+    if ((event.ctrlKey || event.metaKey) && event.key === 'z') {
+        event.preventDefault();
+        undoLastText();
+    }
+
+    // Redo functionality (Ctrl + Y)
+    if ((event.ctrlKey || event.metaKey) && event.key === 'y') {
+        event.preventDefault();
+        redoLastText();
+    }
+});
 
 function insertText(text, sectionId) {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save the current state before modification
-
+    redoHistory = []; //Clear redo history as new actions invalidate the redo stack
     let currentText = textbox.value.trimEnd();
     let sectionHeader = getSectionHeader(sectionId);
 
@@ -26185,8 +26320,6 @@ function insertText(text, sectionId) {
 
 
 
-
-
 function eraseText() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before erasing
@@ -26198,7 +26331,23 @@ function eraseText() {
 function undoLastText() {
     const textbox = document.getElementById('journalTextbox');
     if (textHistory.length > 0) {
-        textbox.value = textHistory.pop(); // Restore the last state from history
+        // Save the current state for redo
+        redoHistory.push(textbox.value);
+        
+        // Restore the last state from undo history
+        textbox.value = textHistory.pop();
+    }
+    textbox.focus();
+}
+
+function redoLastText() {
+    const textbox = document.getElementById('journalTextbox');
+    if (redoHistory.length > 0) {
+        // Save the current state for undo
+        textHistory.push(textbox.value);
+
+        // Restore the last state from redo history
+        textbox.value = redoHistory.pop();
     }
     textbox.focus();
 }
@@ -26272,7 +26421,7 @@ function findNextHeaderIndex(currentText, startIndex) {
         'Venjur:', 'Skoðun:', 'Plan:', 'Rannsóknir:', 'Lífsmörk:', 'Rauð Flögg:', 'Lyf:',
         'Áhættuþættir Kransæðasjúkdóms:', 'Áhættuþættir þvagblöðrukrabbameins:', 'CHADS-VASc:',
         'Heilsufar:', 'Vottorð:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:',
-        'Ofnæmi:', 'Heilataugaskoðun:'
+        'Ofnæmi:', 'Heilataugaskoðun:', 'Þvagrannsókn:'
     ];
     let nextHeaderIndex = -1;
 
@@ -26288,7 +26437,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'plan'];
+    const sectionOrder = ['einkenni', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
@@ -26367,6 +26516,9 @@ function getSectionHeader(sectionId) {
             return 'Ofnæmi:';
         case 'heilataugaskodun':
             return 'Heilataugaskoðun:';
+        case 'þvagrannsokn':
+            return 'Þvagrannsókn:';
+        
         
         default:
             return '';
