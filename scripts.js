@@ -6,7 +6,7 @@ const Vottord = [
     {
         name: '',
         type: 'options',
-        display: ['Sjúkraþjálfun', 'VVV'],
+        display: ['Sjúkraþjálfun', 'VVV', 'Ökuleyfi', 'Meirapróf', 'Skotvopnaleyfi'],
         options: [
             {
                 display: 'Sjúkraþjálfun',
@@ -21,9 +21,126 @@ const Vottord = [
                     { display: 'Framlenging', output: 'Framlengi VVV' }
                 ],
                 cancelText: ''
+            },
+            {
+                display: 'Ökuleyfi', 
+                subOptions: [
+                    {
+                        display: 'NOS', 
+                        output: 'Vottorð vegna ökuleyfis'
+                    },
+                    {
+                        display: 'Endurnýjun', 
+                        output: 'Endurnýjun ökuleyfi'
+                    }
+                ],
+                onRightClickOutput: ''
+            },
+            {
+                display: 'Meirapróf', 
+                subOptions: [
+                    {
+                        display: 'NOS', 
+                        output: 'Vottorð vegna meiraprófs'
+                    },
+                    {
+                        display: 'Endurnýjun', 
+                        output: 'Endurnýjun meiraprófs'
+                    }
+                ],
+                onRightClickOutput: ''
+            },
+            {
+                display: 'Skotvopnaleyfi', 
+                subOptions: [
+                    {
+                        display: 'NOS', 
+                        output: 'Vottorð vegna skotvopnaleyfis'
+                    },
+                    {
+                        display: 'Endurnýjun', 
+                        output: 'Endurnýjun skotvopnaleyfis'
+                    }
+                ],
+                onRightClickOutput: ''
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Viðtal/skimun sjúkrasögu','Sjón'],
+        options: [
+            {
+                display: 'Viðtal/skimun sjúkrasögu', output: 'Ekkert kemur fram í viðtali eða skimun sjúkrasögu sem talar gegn veitingu',
+                onRightClickOutput: ''
+            },
+            {
+                display: 'Sjón',  // Button for Vision
+                subOptions: [
+                    {
+                        display: 'Hægra Auga',  // Suboption for right eye
+                        subOptions: [
+                            { display: '20/20', output: 'Sjónskerpa hægra auga 20/20' },
+                            { display: '20/25', output: 'Sjónskerpa hægra auga 20/25' },
+                            { display: '20/30', output: 'Sjónskerpa hægra auga 20/30' },
+                            { display: '20/40', output: 'Sjónskerpa hægra auga 20/40' },
+                            { display: '20/50', output: 'Sjónskerpa hægra auga 20/50' },
+                            { display: '20/60', output: 'Sjónskerpa hægra auga 20/60' },
+                            { display: '20/70', output: 'Sjónskerpa hægra auga 20/70' },
+                            { display: '20/80', output: 'Sjónskerpa hægra auga 20/80' },
+                            { display: '20/100', output: 'Sjónskerpa hægra auga 20/100' },
+                            { display: '20/200', output: 'Sjónskerpa hægra auga 20/200' },
+                            { display: 'Hand Motion', output: 'Sjónskerpa hægra auga sýnir einungis skynjun við handahreyfingum' },
+                            { display: 'Light Perception', output: 'Sjónskerpa hægra auga sýnir einungis skynjun við ljósi' },
+                            { display: 'No Light Perception', output: 'Hægra auga án skynjunar. Engin ljósskynjun' }
+                        ],
+                        onRightClickOutput: 'Eðlileg sjónskerpa hægra auga'
+                    },
+                    {
+                        display: 'Vinstra Auga',  // Suboption for left eye
+                        subOptions: [
+                            { display: '20/20', output: 'Sjónskerpa vinstra auga 20/20' },
+                            { display: '20/25', output: 'Sjónskerpa vinstra auga 20/25' },
+                            { display: '20/30', output: 'Sjónskerpa vinstra auga 20/30' },
+                            { display: '20/40', output: 'Sjónskerpa vinstra auga 20/40' },
+                            { display: '20/50', output: 'Sjónskerpa vinstra auga 20/50' },
+                            { display: '20/60', output: 'Sjónskerpa vinstra auga 20/60' },
+                            { display: '20/70', output: 'Sjónskerpa vinstra auga 20/70' },
+                            { display: '20/80', output: 'Sjónskerpa vinstra auga 20/80' },
+                            { display: '20/100', output: 'Sjónskerpa vinstra auga 20/100' },
+                            { display: '20/200', output: 'Sjónskerpa vinstra auga 20/200' },
+                            { display: 'Hand Motion', output: 'Sjónskerpa vinstra auga sýnir einungis skynjun við handahreyfingum' },
+                            { display: 'Light Perception', output: 'Sjónskerpa vinstra auga sýnir einungis skynjun við ljósi' },
+                            { display: 'No Light Perception', output: 'Vinstra auga án skynjunar. Engin ljósskynjun' }
+                        ],
+                        onRightClickOutput: 'Eðlileg sjónskerpa vinstra auga'
+                    },
+                    {
+                        display: 'Bæði Augu',  // Suboption for both eyes
+                        subOptions: [
+                            { display: '20/20', output: 'Sjónskerpa beggja augna 20/20' },
+                            { display: '20/25', output: 'Sjónskerpa beggja augna 20/25' },
+                            { display: '20/30', output: 'Sjónskerpa beggja augna 20/30' },
+                            { display: '20/40', output: 'Sjónskerpa beggja augna 20/40' },
+                            { display: '20/50', output: 'Sjónskerpa beggja augna 20/50' },
+                            { display: '20/60', output: 'Sjónskerpa beggja augna 20/60' },
+                            { display: '20/70', output: 'Sjónskerpa beggja augna 20/70' },
+                            { display: '20/80', output: 'Sjónskerpa beggja augna 20/80' },
+                            { display: '20/100', output: 'Sjónskerpa beggja augna 20/100' },
+                            { display: '20/200', output: 'Sjónskerpa beggja augna 20/200' },
+                            { display: 'Hand Motion', output: 'Sjónskerpa bæði augu sýnir einungis skynjun við handahreyfingum' },
+                            { display: 'Light Perception', output: 'Sjónskerpa bæði augu sýnir einungis skynjun við ljósi' },
+                            { display: 'No Light Perception', output: 'Bæði augu án skynjunar. Engin ljósskynjun' }
+                        ],
+                        onRightClickOutput: 'Eðlileg sjónskerpa beggja augna'
+                    }
+                ],
+                onRightClickOutput: 'Eðlileg sjónskerpa beggja augna'
             }
         ]
     }
+
     
 ];
 const RannsoknData = [
@@ -26420,7 +26537,7 @@ function findNextHeaderIndex(currentText, startIndex) {
     const sectionHeaders = [
         'Venjur:', 'Skoðun:', 'Plan:', 'Rannsóknir:', 'Lífsmörk:', 'Rauð Flögg:', 'Lyf:',
         'Áhættuþættir Kransæðasjúkdóms:', 'Áhættuþættir þvagblöðrukrabbameins:', 'CHADS-VASc:',
-        'Heilsufar:', 'Vottorð:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:',
+        'Heilsufar:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:',
         'Ofnæmi:', 'Heilataugaskoðun:', 'Þvagrannsókn:'
     ];
     let nextHeaderIndex = -1;
@@ -26437,7 +26554,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
+    const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
@@ -26502,8 +26619,6 @@ function getSectionHeader(sectionId) {
             return 'CHADS-VASc:';
         case 'historyViral':
             return 'Heilsufar:';
-        case 'vottord':
-            return 'Vottorð:';
         case 'rannsokn':
             return 'Rannsóknarniðurstöður:';
         case 'sigecaps':
