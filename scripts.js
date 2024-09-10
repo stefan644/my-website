@@ -1016,7 +1016,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hiti', 'Algeng gildi'],
+        display: ['Hiti', 'Algeng gildi', 'Seinasta gildi'],
         options: [
             {
                 display: 'Hiti',
@@ -1030,20 +1030,553 @@ const SymptomsViral = [
             },
             {
                 display: 'Algeng gildi',
-                subOptions: Array.from({length: 46}, (_, i) => {
-                    const lowerTemp = (37.0 + i * 0.1).toFixed(1) + '°C';
-                    return {
-                        display: lowerTemp,
-                        subOptions: Array.from({length: 46}, (_, j) => {
-                            const upperTemp = (37.0 + j * 0.1).toFixed(1) + '°C';
+                subOptions: [
+                    {
+                        display: 'Neðri mörk 36,1 - 37,0', 
+                        subOptions: Array.from({ length: 10 }, (_, i) => {
+                            const lowerTemp = (36.1 + i * 0.1).toFixed(1);
                             return {
-                                display: upperTemp,
-                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}`
+                                display: lowerTemp,
+                                subOptions: [
+                                    {
+                                        display: 'Efri mörk 36,1 - 37,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (36.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 37,1 - 38,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (37.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 38,1 - 39,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (38.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 39,1 - 40,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (39.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 40,1 - 41,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (40.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 41,1 - 42,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (41.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    }
+                                ]
                             };
                         })
-                    };
-                })
+                    },
+                    {
+                        display: 'Neðri mörk 37,1 - 38,0', 
+                        subOptions: Array.from({ length: 10 }, (_, i) => {
+                            const lowerTemp = (37.1 + i * 0.1).toFixed(1);
+                            return {
+                                display: lowerTemp,
+                                subOptions: [
+                                    {
+                                        display: 'Efri mörk 37,1 - 38,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (37.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 38,1 - 39,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (38.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 39,1 - 40,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (39.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 40,1 - 41,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (40.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 41,1 - 42,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (41.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    }
+                                ]
+                            };
+                        })
+                    },
+                    {
+                        display: 'Neðri mörk 38,1 - 39,0', 
+                        subOptions: Array.from({ length: 10 }, (_, i) => {
+                            const lowerTemp = (38.1 + i * 0.1).toFixed(1);
+                            return {
+                                display: lowerTemp,
+                                subOptions: [
+                                    {
+                                        display: 'Efri mörk 38,1 - 39,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (38.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 39,1 - 40,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (39.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 40,1 - 41,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (40.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 41,1 - 42,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (41.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    }
+                                ]
+                            };
+                        })
+                    },
+                    {
+                        display: 'Neðri mörk 39,1 - 40,0', 
+                        subOptions: Array.from({ length: 10 }, (_, i) => {
+                            const lowerTemp = (39.1 + i * 0.1).toFixed(1);
+                            return {
+                                display: lowerTemp,
+                                subOptions: [
+                                    {
+                                        display: 'Efri mörk 39,1 - 40,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (39.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 40,1 - 41,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (40.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 41,1 - 42,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (41.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    }
+                                ]
+                            };
+                        })
+                    },
+                    {
+                        display: 'Neðri mörk 40,1 - 41,0', 
+                        subOptions: Array.from({ length: 10 }, (_, i) => {
+                            const lowerTemp = (40.1 + i * 0.1).toFixed(1);
+                            return {
+                                display: lowerTemp,
+                                subOptions: [
+                                    {
+                                        display: 'Efri mörk 40,1 - 41,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (40.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    },
+                                    {
+                                        display: 'Efri mörk 41,1 - 42,0',
+                                        subOptions: Array.from({ length: 10 }, (_, j) => {
+                                            const upperTemp = (41.1 + j * 0.1).toFixed(1);
+                                            return {
+                                                display: upperTemp,
+                                                output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                            };
+                                        })
+                                    }
+                                ]
+                            };
+                        })
+                    }
+                ]
+            },
+            {
+                display: 'Seinasta gildi', 
+                subOptions: [
+                    {
+                        display: 'NOS', 
+                        subOptions: [
+                            {
+                                display: '36,1 - 37,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (36.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '37,1 - 38,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (37.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '38,1 - 39,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (38.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '39,1 - 40,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (39.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '40,1 - 41,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (40.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '41,1 - 42,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (41.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Áðan', 
+                        subOptions: [
+                            {
+                                display: '36,1 - 37,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (36.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig áðan með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '37,1 - 38,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (37.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig áðan með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '38,1 - 39,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (38.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig áðan með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '39,1 - 40,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (39.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig áðan með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '40,1 - 41,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (40.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig áðan með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '41,1 - 42,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (41.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig áðan með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Í morgun', 
+                        subOptions: [
+                            {
+                                display: '36,1 - 37,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (36.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í morgun með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '37,1 - 38,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (37.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í morgun með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '38,1 - 39,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (38.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í morgun með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '39,1 - 40,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (39.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í morgun með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '40,1 - 41,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (40.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í morgun með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '41,1 - 42,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (41.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í morgun með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Í gær', 
+                        subOptions: [
+                            {
+                                display: '36,1 - 37,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (36.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gær með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '37,1 - 38,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (37.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gær með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '38,1 - 39,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (38.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gær með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '39,1 - 40,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (39.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gær með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '40,1 - 41,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (40.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gær með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '41,1 - 42,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (41.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gær með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Í gærkvöldi', 
+                        subOptions: [
+                            {
+                                display: '36,1 - 37,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (36.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gærkvöldi með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '37,1 - 38,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (37.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gærkvöldi með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '38,1 - 39,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (38.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gærkvöldi með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '39,1 - 40,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (39.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gærkvöldi með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '40,1 - 41,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (40.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gærkvöldi með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '41,1 - 42,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (41.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í gærkvöldi með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Í fyrradag', 
+                        subOptions: [
+                            {
+                                display: '36,1 - 37,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (36.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í fyrradag með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '37,1 - 38,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (37.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í fyrradag með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '38,1 - 39,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (38.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í fyrradag með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '39,1 - 40,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (39.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í fyrradag með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '40,1 - 41,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (40.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í fyrradag með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            },
+                            {
+                                display: '41,1 - 42,0', 
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: (41.1 + i * 0.1).toFixed(1),
+                                    output: `Mældi sig síðast í fyrradag með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                                }))
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: ''
             }
+            
         ]
     },
     {
@@ -3738,10 +4271,10 @@ const SymptomsEye = [
     {
         name: '',
         type: 'options',
-        display: ['Einkenni', 'Tímalengd', 'Aðskotahlutur', 'Áverki'],
+        display: ['Staðsetning', 'Tímalengd', 'Aðskotahlutur', 'Áverki'],
         options: [
             {
-                display: 'Einkenni',
+                display: 'Staðsetning',
                 subOptions: [
                     {
                         display: 'Auga',
@@ -3878,7 +4411,43 @@ const SymptomsEye = [
     {
         name: '',
         type: 'options',
-        display: ['Verkur', 'Óþægindi', 'Þurrkur', 'Kláði', 'Roði', 'Nabbi'],
+        display: ['Óþægindi', 'Þurrkur', 'Kláði', 'Gröftur', 'Rennsli'],
+        options: [
+            
+            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Ekki mikil óþægindi' },
+            { display: 'Þurrkur', output: 'Lýsir augnþurrk', onRightClickOutput: 'Ekki augnþurrkur'},
+            { display: 'Kláði', output: 'Kláði', onRightClickOutput: 'Ekki kláði' },
+            {
+                display: 'Gröftur',
+                subOptions: [
+                    {
+                        display: 'Lekur',
+                        output: 'Lekur gröftur'
+                    },
+                    {
+                        display: 'Límd á morgnanna',
+                        output: 'Augnlok límd saman á morgnanna'
+                    }
+                ],
+                onRightClickOutput: 'Ekki tekið eftir greftri'
+            },
+            { display: 'Rennsli', output: 'Aukin táramyndun', onRightClickOutput: 'Ekki aukin táramyndun' }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Roði', 'Nabbi'],
+        options: [
+            { display: 'Roði', output: 'Roði', onRightClickOutput: 'Ekki roði' },
+            { display: 'Nabbi', output: 'Nabbamyndun', onRightClickOutput: 'Ekki nabbi' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Verkur', 'Character', 'Onset', 'Timing'],
         options: [
             {
                 display: 'Verkur',
@@ -3887,18 +4456,6 @@ const SymptomsEye = [
                 ],
                 onRightClickOutput: 'Neitar verk'
             },
-            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Ekki mikil óþægindi' },
-            { display: 'Þurrkur', output: 'Lýsir augnþurrk', onRightClickOutput: 'Ekki augnþurrkur'},
-            { display: 'Kláði', output: 'Kláði', onRightClickOutput: 'Ekki kláði' },
-            { display: 'Roði', output: 'Roði', onRightClickOutput: 'Ekki roði' },
-            { display: 'Nabbi', output: 'Nabbamyndun', onRightClickOutput: 'Ekki nabbi' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Character', 'Onset', 'Timing'],
-        options: [
             {
                 display: 'Character',
                 subOptions: [
@@ -3995,29 +4552,7 @@ const SymptomsEye = [
             }
         ]
     },        
-    {
-        name: '',
-        type: 'options',
-        display: ['Gröftur', 'Rennsli'],
-        options: [
-            {
-                display: 'Gröftur',
-                subOptions: [
-                    {
-                        display: 'Lekur',
-                        output: 'Lekur gröftur'
-                    },
-                    {
-                        display: 'Límd á morgnanna',
-                        output: 'Augnlok límd saman á morgnanna'
-                    }
-                ],
-                onRightClickOutput: 'Ekki tekið eftir greftri'
-            },
-            { display: 'Rennsli', output: 'Aukin táramyndun', onRightClickOutput: 'Ekki aukin táramyndun' }
-        ]
-    }
-    ,
+    
     {
         name: '',
         type: 'options',
@@ -4113,7 +4648,7 @@ const PlanEye = [
                 subOptions: [
                     { display: 'Greining', output: 'Blepharitis' },
                     { display: 'Grunur', output: 'Grunur um blepharitis' },
-                    { display: 'Fullmótað plan', output: 'Grunur um blepharitis. Ráðlegg heita bakstra. Set sýkladropa í gáttina, leysir út ef þarf. Endurmat ef versnar eða lagast ekki. ' }
+                    { display: 'Fullmótað plan', output: 'Grunur um blepharitis. Ráðlegg heita bakstra. Set sýkladropa í gáttina, leysir út ef þarf. Endurmat ef versnar eða lagast ekki' }
                 ]
             },
             { display: 'Vogris', 
@@ -25487,6 +26022,38 @@ function createPopupButton(popup, subOption, parentButton, sectionId, depth) {
     popup.appendChild(btn);
 }
 
+// Left-click handler for titles (only inserts the section header if not already present)
+function handleTitleLeftClick(event, title, sectionId) {
+    console.log('Left-clicked on title:', title); // Debugging line
+
+    // Only insert the section header, nothing else
+    insertHeader(sectionId);  // Insert header without any additional text
+}
+
+// Right-click handler for titles with specific output based on the title
+function handleTitleRightClick(event, title, sectionId) {
+    event.preventDefault(); // Prevent the default right-click context menu
+    console.log('Right-clicked on title:', title); // Debugging line
+
+    switch (title) {
+        case 'Lyf':
+            insertText('Engin lyf', sectionId);
+            break;
+        case 'Heilsufar':
+            insertText('Skjólstæðingur heilsuhraustur í gruninn', sectionId);
+            break;
+        case 'Venjur':
+            insertText('Reykir ekki. Drekkur ekki. Neitar eiturlyfjanotkun', sectionId);
+            break;
+        case 'Ofnæmi':
+            insertText('Engin þekkt ofnæmi', sectionId);
+            break;
+        /*default:
+            insertText(`Right-clicked on: ${title}`, sectionId);*/
+    }
+}
+
+
 
 
 
@@ -25515,10 +26082,35 @@ function createHabitsSection(data) {
 function createSection(id, title) {
     const section = document.createElement('div');
     section.id = `${id}-section`;
-    section.innerHTML = `<h2>${title}</h2><div id="${id}"></div>`;
+
+    // Create the clickable title as a button or div
+    const clickableTitle = document.createElement('div');
+    clickableTitle.innerHTML = `<h2>${title}</h2>`;
+    clickableTitle.className = 'clickable-title';
+    
+    // Add left-click functionality (inserts the title into the textbox)
+    clickableTitle.onclick = (event) => {
+        handleTitleLeftClick(event, title, id);
+    };
+
+    // Add right-click functionality (specific output or action)
+    clickableTitle.oncontextmenu = (event) => {
+        event.preventDefault(); // Prevent the default right-click menu
+        handleTitleRightClick(event, title, id);
+    };
+
+    // Append the clickable title to the section
+    section.appendChild(clickableTitle);
+
+    // Append the actual content container to the section
+    const contentContainer = document.createElement('div');
+    contentContainer.id = id;
+    section.appendChild(contentContainer);
+
     console.log('Creating section:', id, title); // Debugging line
     return section;
 }
+
 
 function createEinkenniSection(data) {
     console.log('Creating Einkenni Section with data:', data); // Debugging line
@@ -26434,6 +27026,20 @@ function insertText(text, sectionId) {
     textbox.focus();
     textbox.setSelectionRange(newCursorPosition, newCursorPosition);
 }
+function insertHeader(sectionId) {
+    const textbox = document.getElementById('journalTextbox');
+    let currentText = textbox.value.trimEnd();
+    let sectionHeader = getSectionHeader(sectionId);
+
+    console.log('Inserting header for section:', sectionId); // Debugging line
+
+    // Ensure headers are always in the correct order and inserted accordingly
+    if (sectionHeader && !currentText.includes(sectionHeader)) {
+        const insertPosition = getInsertPosition(sectionId, currentText);
+        console.log('Inserting header:', sectionHeader, 'At position:', insertPosition); // Debugging line
+        textbox.value = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
+    }
+}
 
 
 
@@ -26535,7 +27141,7 @@ function ensureHeader(sectionId) {
 // Find the next header in the document
 function findNextHeaderIndex(currentText, startIndex) {
     const sectionHeaders = [
-        'Venjur:', 'Skoðun:', 'Plan:', 'Rannsóknir:', 'Lífsmörk:', 'Rauð Flögg:', 'Lyf:',
+        'Venjur:', 'Skoðun:', 'Álit og plan:', 'Rannsóknir:', 'Lífsmörk:', 'Rauð Flögg:', 'Lyf:',
         'Áhættuþættir Kransæðasjúkdóms:', 'Áhættuþættir þvagblöðrukrabbameins:', 'CHADS-VASc:',
         'Heilsufar:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:',
         'Ofnæmi:', 'Heilataugaskoðun:', 'Þvagrannsókn:'
@@ -26602,7 +27208,7 @@ function getSectionHeader(sectionId) {
         case 'skodun':
             return 'Skoðun:';
         case 'plan':
-            return 'Plan:';
+            return 'Álit og plan:';
         case 'rannsoknir':
             return 'Rannsóknir:';
         case 'lifsmork':
