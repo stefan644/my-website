@@ -27324,9 +27324,18 @@ function insertHeader(sectionId) {
     // Ensure headers are always in the correct order and inserted accordingly
     if (sectionHeader && !currentText.includes(sectionHeader)) {
         const insertPosition = getInsertPosition(sectionId, currentText);
-        console.log('Inserting header:', sectionHeader, 'At position:', insertPosition); // Debugging line
-        textbox.value = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
+        const newText = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
+        
+        // Set the new text value
+        textbox.value = newText.trim();
+
+        // Now set the cursor at the end of the newly inserted header
+        const headerPosition = newText.indexOf(sectionHeader) + sectionHeader.length + 2; // +2 for the two newlines
+        textbox.focus();
+        textbox.setSelectionRange(headerPosition, headerPosition);
     }
+
+    
 }
 
 
