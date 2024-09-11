@@ -2900,17 +2900,8 @@ const historyViralData = [
     {
         name: '',
         type: 'options',
-        display: ['Hraust/ur', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        display: ['HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
         options: [
-            {
-                display: 'Hraust/ur',
-                subOptions: [
-                    { display: 'Hraustur', output: 'Hraustur í gruninn' },
-                    { display: 'Hraust', output: 'Hraust í gruninn' }
-                ],
-                cancelText: '',
-                onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunninn'
-            },
             {
                 display: 'HTN',
                 output: 'Saga um háþrýsting',
@@ -3772,16 +3763,8 @@ const HistoryUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Hraust', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        display: ['HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
         options: [
-            {
-                display: 'Hraust',
-                subOptions: [
-                    { display: 'Heilsuhraustur', output: 'Heilsuhraustur í gruninn' },
-                    { display: 'Heilsuhraust', output: 'Heilsuhraust í gruninn' }
-                ],
-                onRightClickOutput: 'Ekki hraust'
-            },
             {
                 display: 'HTN',
                 output: 'Saga um háþrýsting',
@@ -4421,6 +4404,10 @@ const SymptomsEye = [
                 display: 'Gröftur',
                 subOptions: [
                     {
+                        display: 'NOS',
+                        output: 'Gröftur'
+                    },
+                    {
                         display: 'Lekur',
                         output: 'Lekur gröftur'
                     },
@@ -4552,11 +4539,10 @@ const SymptomsEye = [
             }
         ]
     },        
-    
     {
         name: '',
         type: 'options',
-        display: ['Nýleg veirusýking', 'Dagleg áhrif'],
+        display: ['Nýleg veirusýking', 'Dagleg áhrif', 'Sjón'],
         options: [
             {
                 display: 'Nýleg veirusýking',
@@ -4567,12 +4553,286 @@ const SymptomsEye = [
                 display: 'Dagleg áhrif',
                 onRightClickOutput: 'Einkenni hafa ekki áhrif á daglegt líf svo sem að lesa, keyra o.fl',
                 subOptions: [
-                    { display: 'Akstur', output: 'Truflar við akstur' },
-                    { display: 'Lestur', output: 'Truflar við lestur' }
+                    { display: 'Akstur', output: 'Truflar við akstur', onRightClickOutput: 'Truflar ekki við akstur' },
+                    { display: 'Lestur', output: 'Truflar við lestur', onRightClickOutput: 'Truflar ekki við lestur' }
+                ]
+            },
+            {
+                display: 'Sjón',
+                subOptions: [
+                    {
+                        display: 'Gleraugu',
+                        output: 'Notar gleraugu',
+                        onRightClickOutput: 'Notar ekki gleraugu'
+                    },
+                    {
+                        display: 'Linsur',
+                        output: 'Notar linsur',
+                        onRightClickOutput: 'Notar ekki linsur'
+                    }
+                ],
+                onRightClickOutput: 'Notar hvorki gleraugu né linsur'
+            }
+            
+        ]
+    }
+];
+const HistoryEye = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Sjón', 'Augnsjúkdómar', 'Gleraugu/Linsur'],
+        options: [
+            {
+                display: 'Sjón',
+                subOptions: [
+                    {
+                        display: 'Nærsýni',
+                        output: 'Saga um nærsýni (myopia)'
+                    },
+                    {
+                        display: 'Fjarsýni',
+                        output: 'Saga um fjarsýni (hyperopia)'
+                    },
+                    {
+                        display: 'Almenn sjónskerðing',
+                        output: 'Saga um almenna sjónskerðingu'
+                    },
+                    {
+                        display: 'Astigmatismi',
+                        output: 'Saga um astigmatisma'
+                    },
+                    {
+                        display: 'Ellifjarsýni',
+                        output: 'Saga um ellifjarsýni (presbyopia)'
+                    },
+                    {
+                        display: 'Augnsjúkdómar hafa gert sjón verri',
+                        output: 'Sjón hefur versnað vegna augnsjúkdóma'
+                    }
+                ],
+                onRightClickOutput: 'Sjón alltaf verið góð'
+            }
+            ,            
+            {
+                display: 'Augnsjúkdómar',
+                subOptions: [
+                    { display: 'Gláka', output: 'Saga um gláku', onRightClickOutput: 'Engin saga um gláku' },
+                    { display: 'Sjónhimnulos', output: 'Saga um sjónhimnulos', onRightClickOutput: 'Engin saga um sjónhimnulos' },
+                    { display: 'Drer', output: 'Saga um drer', onRightClickOutput: 'Engin saga um drer' },
+                    { display: 'Augnþurrkur', output: 'Saga um augnþurrk', onRightClickOutput: 'Engin saga um augnþurrk' },
+                    { display: 'Hornhimnubólga', output: 'Saga um hornhimnubólgu', onRightClickOutput: 'Engin saga um hornhimnubólgu' },
+                    { display: 'Byrjandi sjónskerðing', output: 'Saga um byrjandi sjónskerðingu', onRightClickOutput: 'Engin saga um sjónskerðingu' }
+                ],
+                onRightClickOutput: 'Engin fyrri saga um augnsjúkdóma'
+            },
+            {
+                display: 'Gleraugu/Linsur',
+                subOptions: [
+                    { display: 'Notar gleraugu', output: 'Notar gleraugu', onRightClickOutput: 'Notar ekki gleraugu' },
+                    { display: 'Notar linsur', output: 'Notar linsur', onRightClickOutput: 'Notar ekki linsur' },
+                    { display: 'Skiptist á milli', output: 'Skiptist á milli gleraugna og linsa'}
+                ],
+                onRightClickOutput: 'Notar hvorki gleraugu né linsur'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Aðgerðir', 'Fjölskyldusaga'],
+        options: [
+            {
+                display: 'Aðgerðir',
+                subOptions: [
+                    { display: 'Augnlaser', output: 'Augnlaser aðgerð', onRightClickOutput: 'Engin augnlaser aðgerð' },
+                    { display: 'Dreraðgerð', output: 'Dreraðgerð', onRightClickOutput: 'Engin dreraðgerð' },
+                    { display: 'Sjónhimnuaðgerð', output: 'Sjónhimnuaðgerð', onRightClickOutput: 'Engin sjónhimnuaðgerð' },
+                    { display: 'Hornhimnuaðgerð', output: 'Hornhimnuaðgerð', onRightClickOutput: 'Engin hornhimnuaðgerð' }
+                ],
+                onRightClickOutput: 'Engar fyrri aðgerðir á augum'
+            },
+            {
+                display: 'Fjölskyldusaga',
+                subOptions: [
+                    { display: 'Gláka', output: 'Fjölskyldusaga um gláku', onRightClickOutput: 'Engin fjölskyldusaga um gláku' },
+                    { display: 'Drer', output: 'Fjölskyldusaga um drer', onRightClickOutput: 'Engin fjölskyldusaga um drer' },
+                    { display: 'Sjónhimnulos', output: 'Fjölskyldusaga um sjónhimnulos', onRightClickOutput: 'Engin fjölskyldusaga um sjónhimnulos' }
+                ],
+                onRightClickOutput: 'Engin þekkt fjölskyldusaga um augnsjúkdóma'
+            }
+        ]
+    }
+    
+    
+];
+const LyfAuga = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Glákulyf', 'Sýklalyf', 'Bólgueyðandi lyf', 'Steralyf'],
+        options: [
+            {
+                display: 'Glákulyf',
+                subOptions: [
+                    {
+                        display: 'Timolol',
+                        subOptions: [
+                            {
+                                display: '0,25%',
+                                subOptions: [
+                                    { display: '1 dropa tvisvar á dag', output: 'Timolol 0,25%, 1 dropa tvisvar á dag' },
+                                    { display: '1 dropa einu sinni á dag', output: 'Timolol 0,25%, 1 dropa einu sinni á dag' }
+                                ]
+                            },
+                            {
+                                display: '0,5%',
+                                subOptions: [
+                                    { display: '1 dropa tvisvar á dag', output: 'Timolol 0,5%, 1 dropa tvisvar á dag' },
+                                    { display: '1 dropa einu sinni á dag', output: 'Timolol 0,5%, 1 dropa einu sinni á dag' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Latanoprost',
+                        subOptions: [
+                            {
+                                display: '0,005%',
+                                subOptions: [
+                                    { display: '1 dropa einu sinni á dag', output: 'Latanoprost 0,005%, 1 dropa einu sinni á dag' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Sýklalyf',
+                subOptions: [
+                    {
+                        display: 'Chloramphenicol',
+                        subOptions: [
+                            {
+                                display: '0,5%',
+                                subOptions: [
+                                    { display: '1 dropa á tveggja tíma fresti', output: 'Chloramphenicol 0,5%, 1 dropa á tveggja tíma fresti' },
+                                    { display: '1 dropa fjórum sinnum á dag', output: 'Chloramphenicol 0,5%, 1 dropa fjórum sinnum á dag' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Ciprofloxacin',
+                        subOptions: [
+                            {
+                                display: '0,3%',
+                                subOptions: [
+                                    { display: '1 dropa á tveggja tíma fresti', output: 'Ciprofloxacin 0,3%, 1 dropa á tveggja tíma fresti' },
+                                    { display: '1 dropa fjórum sinnum á dag', output: 'Ciprofloxacin 0,3%, 1 dropa fjórum sinnum á dag' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Bólgueyðandi lyf',
+                subOptions: [
+                    {
+                        display: 'Diclofenac',
+                        subOptions: [
+                            {
+                                display: '0,1%',
+                                subOptions: [
+                                    { display: '1 dropa fjórum sinnum á dag', output: 'Diclofenac 0,1%, 1 dropa fjórum sinnum á dag' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Steralyf',
+                subOptions: [
+                    {
+                        display: 'Prednisolone',
+                        subOptions: [
+                            {
+                                display: '1%',
+                                subOptions: [
+                                    { display: '1 dropa fjórum sinnum á dag', output: 'Prednisolone 1%, 1 dropa fjórum sinnum á dag' },
+                                    { display: '1 dropa sex sinnum á dag', output: 'Prednisolone 1%, 1 dropa sex sinnum á dag' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Dexamethasone',
+                        subOptions: [
+                            {
+                                display: '0,1%',
+                                subOptions: [
+                                    { display: '1 dropa fjórum sinnum á dag', output: 'Dexamethasone 0,1%, 1 dropa fjórum sinnum á dag' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Gervitár', 'Ofnæmislyf'],
+        options: [
+            {
+                display: 'Gervitár',
+                subOptions: [
+                    {
+                        display: 'Artificial Tears',
+                        subOptions: [
+                            {
+                                display: 'Standard',
+                                subOptions: [
+                                    { display: '1 dropa eftir þörfum', output: 'Artificial Tears, 1 dropa eftir þörfum' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Ofnæmislyf',
+                subOptions: [
+                    {
+                        display: 'Olopatadine',
+                        subOptions: [
+                            {
+                                display: '0,1%',
+                                subOptions: [
+                                    { display: '1 dropa einu sinni á dag', output: 'Olopatadine 0,1%, 1 dropa einu sinni á dag' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Ketotifen',
+                        subOptions: [
+                            {
+                                display: '0,025%',
+                                subOptions: [
+                                    { display: '1 dropa tvisvar á dag', output: 'Ketotifen 0,025%, 1 dropa tvisvar á dag' }
+                                ]
+                            }
+                        ]
+                    }
                 ]
             }
         ]
     }
+    
 ];
 const ExamsEye = [
     {
@@ -4660,18 +4920,22 @@ const PlanEye = [
             {
                 display: 'Conjunctivitis',
                 subOptions: [
-                    { display: 'NOS', subOptions: [
+                    {   display: 'NOS', subOptions: [
                         { display: 'Greining', output: 'Conjunctivitis' },
                         { display: 'Grunur', output: 'Grunur um conjunctivitis' }
-                    ]},
-                    { display: 'Viral', subOptions: [
+                    ]
+                    },
+                    {   display: 'Viral', subOptions: [
                         { display: 'Greining', output: 'Viral conjunctivitis' },
                         { display: 'Grunur', output: 'Grunur um viral conjunctivitis' }
-                    ]},
-                    { display: 'Bacterial', subOptions: [
+                    ]
+                    },
+                    {   display: 'Bacterial', subOptions: [
                         { display: 'Greining', output: 'Bacterial conjunctivitis' },
-                        { display: 'Grunur', output: 'Grunur um bacterial conjunctivitis' }
-                    ]}
+                        { display: 'Grunur', output: 'Grunur um bacterial conjunctivitis' },
+                        { display: 'Fullmótað plan', output: 'Grunur um bacterial conjunctivitis. Ráðlegg sýkladropa næstu daga. Ef versnandi einkenni eða rauð flögg svo sem aukin ljósfælni, sjóntap eða miklir verkir þá þarf að hafa samband við lækni'}
+                    ]
+                    }
                 ]
             }
         ]
@@ -4745,7 +5009,13 @@ const PlanEye = [
                 display: 'Ráðleggingar',
                 subOptions: [
                     { display: 'Almennar', output: 'Almennar ráðleggingar' },
-                    { display: 'Heitir bakstrar', output: 'Ráðlegg heita bakstra' }
+                    { display: 'Heitir bakstrar', output: 'Ráðlegg heita bakstra' },
+                    { display: 'Conjunctivitis', 
+                        subOptions: [
+
+                        { display: 'Viral', output: 'Ráðlegg obs næstu daga. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat'},
+                    ]
+                    }
                 ]
             },
             {
@@ -6625,16 +6895,8 @@ const historyHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Hraust/ur', 'HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        display: ['HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
         options: [
-            {
-                display: 'Hraust/ur',
-                subOptions: [
-                    { display: 'Hraust', output: 'Hraust í gruninn' },
-                    { display: 'Hraustur', output: 'Hraustur í gruninn' }
-                ],
-                onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunninn'
-            },
             {
                 display: 'HTN',
                 output: 'Saga um háþrýsting',
@@ -7883,16 +8145,8 @@ const historyMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Hraust/ur', 'Nýleg veikindi', 'Aðgerðir', 'Utanlegsfóstur'],
+        display: ['Nýleg veikindi', 'Aðgerðir', 'Utanlegsfóstur'],
         options: [
-            {
-                display: 'Hraust/ur',
-                subOptions: [
-                    { display: 'Hraust', output: 'Hraust í gruninn' },
-                    { display: 'Hraustur', output: 'Hraustur í gruninn' }
-                ],
-                onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunninn'
-            },
             {
                 display: 'Nýleg veikindi',
                 onRightClickOutput: 'Ekki nýleg veikindi',
@@ -10089,6 +10343,18 @@ const ExamsShoulder = [
                 display: 'External Rotation Lag Sign',
                 output: 'External Rotation Lag Sign próf jákvætt', // Left-click output
                 onRightClickOutput: 'External Rotation Lag Sign próf neikvætt' // Right-click output
+            }
+        ]
+    },
+    {
+        name: '',  // No category name displayed
+        type: 'options',
+        display: ['AC compression test'],  // Three buttons in the second row
+        options: [
+            {
+                display: 'AC compression test',
+                output: 'AC compression próf jákvætt', // Left-click output
+                onRightClickOutput: 'AC compression próf neikvætt' // Right-click output
             }
         ]
     }
@@ -16155,16 +16421,8 @@ const historySvimi = [
     {
         name: '',
         type: 'options',
-        display: ['Hraust/ur', 'Nýleg veikindi', 'Höfuðáverkar', 'Ný lyf'],
+        display: ['Nýleg veikindi', 'Höfuðáverkar', 'Ný lyf'],
         options: [
-            {
-                display: 'Hraust/ur',
-                subOptions: [
-                    { display: 'Hraust', output: 'Hraust í grunninn' },
-                    { display: 'Hraustur', output: 'Hraustur í grunninn' }
-                ],
-                onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunninn'
-            },
             {
                 display: 'Nýleg veikindi',
                 onRightClickOutput: 'Ekki nýleg veikindi',
@@ -26047,7 +26305,13 @@ function handleTitleRightClick(event, title, sectionId) {
             break;
         case 'Ofnæmi':
             insertText('Engin þekkt ofnæmi', sectionId);
-            break;
+            break;6
+        case 'Augnlyf':
+            insertText('Engin augnlyf', sectionId);
+             break;
+        case 'Augnsaga':
+            insertText('Sjón alltaf verið góð. Engir augnsjúkdómar eða fjölskyldusaga um slíka. Notar hvorki gleraugu né linsur', sectionId);
+             break;
         /*default:
             insertText(`Right-clicked on: ${title}`, sectionId);*/
     }
@@ -26083,11 +26347,11 @@ function createSection(id, title) {
     const section = document.createElement('div');
     section.id = `${id}-section`;
 
-    // Create the clickable title as a button or div
+    // Create the clickable title with hover effect
     const clickableTitle = document.createElement('div');
     clickableTitle.innerHTML = `<h2>${title}</h2>`;
     clickableTitle.className = 'clickable-title';
-    
+
     // Add left-click functionality (inserts the title into the textbox)
     clickableTitle.onclick = (event) => {
         handleTitleLeftClick(event, title, id);
@@ -26107,9 +26371,9 @@ function createSection(id, title) {
     contentContainer.id = id;
     section.appendChild(contentContainer);
 
-    console.log('Creating section:', id, title); // Debugging line
     return section;
 }
+
 
 
 function createEinkenniSection(data) {
@@ -26177,6 +26441,14 @@ function createLyfSection(data) {
     return section;
 }
 
+function createAugnlyfSection(data) {
+    console.log('Creating Augnlyf Section with data:', data); // Debugging line
+    const section = createSection('augnlyf', 'Augnlyf');
+    const container = section.querySelector('#augnlyf');
+    createButtons(container, data, 'augnlyf');
+    return section;
+}
+
 function createRiskHeartSection(data) {
     console.log('Creating Risk Section with data:', data); // Debugging line
     const section = createSection('riskheart', 'Áhættuþættir Kransæðasjúkdóms');
@@ -26205,6 +26477,14 @@ function createHistoryViralSection(data) {
     const section = createSection('historyViral', 'Heilsufar');
     const container = section.querySelector('#historyViral');
     createButtons(container, data, 'historyViral');
+    return section;
+}
+
+function createAugnsagaSection(data) {
+    console.log('Creating Augnsaga Section with data:', data); // Debugging line
+    const section = createSection('augnsaga', 'Augnsaga');
+    const container = section.querySelector('#augnsaga');
+    createButtons(container, data, 'augnsaga');
     return section;
 }
 
@@ -26359,11 +26639,19 @@ function loadPage(page) {
         const examsSection = createSkodunSection(ExamsEye);
         const planSection = createPlanSection(PlanEye);
         const raudFloggSection = createRaudFloggSection(RaudFloggEye);
+        const historyViralSection = createAugnsagaSection(HistoryEye);
+        const habitsSection = createHabitsSection(Habits);
+        const ofnaemiSection = createOfnaemiSection(OfnaemiData);
+        const augnlyfSection = createAugnlyfSection(LyfAuga);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(symptomsSection);
         leftColumn.appendChild(raudFloggSection);
+        leftColumn.appendChild(historyViralSection);
+        leftColumn.appendChild(augnlyfSection);
+        leftColumn.appendChild(habitsSection);
+        leftColumn.appendChild(ofnaemiSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -27144,7 +27432,7 @@ function findNextHeaderIndex(currentText, startIndex) {
         'Venjur:', 'Skoðun:', 'Álit og plan:', 'Rannsóknir:', 'Lífsmörk:', 'Rauð Flögg:', 'Lyf:',
         'Áhættuþættir Kransæðasjúkdóms:', 'Áhættuþættir þvagblöðrukrabbameins:', 'CHADS-VASc:',
         'Heilsufar:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:',
-        'Ofnæmi:', 'Heilataugaskoðun:', 'Þvagrannsókn:'
+        'Ofnæmi:', 'Heilataugaskoðun:', 'Þvagrannsókn:', 'Augnsaga:', 'Augnlyf:'
     ];
     let nextHeaderIndex = -1;
 
@@ -27160,7 +27448,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'lyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
+    const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'augnsaga', 'lyf', 'augnlyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
@@ -27239,6 +27527,10 @@ function getSectionHeader(sectionId) {
             return 'Heilataugaskoðun:';
         case 'þvagrannsokn':
             return 'Þvagrannsókn:';
+        case 'augnsaga':
+            return 'Augnsaga:';
+        case 'augnlyf':
+            return 'Augnlyf:';
         
         
         default:

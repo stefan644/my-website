@@ -114,7 +114,7 @@ main {
     outline: none;
 }
 
-#risk, #riskheart, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral, #habits, #lyf, #lifsmork, #raudflogg, #rannsoknir, #sigecaps, #gedskodun, #kerfakonnun, #ofnaemi, #rannsokn, #heilataugaskodun, #þvagrannsokn {
+#risk, #riskheart, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral, #habits, #lyf, #lifsmork, #raudflogg, #rannsoknir, #sigecaps, #gedskodun, #kerfakonnun, #ofnaemi, #rannsokn, #heilataugaskodun, #þvagrannsokn, #augnsaga, #augnlyf {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -404,4 +404,20 @@ main {
 /* Show the dropdown menu when the user clicks on the button */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* Basic styling for the titles */
+.clickable-title {
+    display: inline-block;
+    padding: 0px 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 0px; /* Gives the button a rounded appearance */
+}
+
+/* Hover effect to make it look like a button */
+.clickable-title:hover {
+    cursor: pointer; /* Changes the cursor to pointer to show it's clickable */
 }
