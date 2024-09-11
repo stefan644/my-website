@@ -27314,29 +27314,79 @@ function insertText(text, sectionId) {
     textbox.focus();
     textbox.setSelectionRange(newCursorPosition, newCursorPosition);
 }
+
 function insertHeader(sectionId) {
     const textbox = document.getElementById('journalTextbox');
     let currentText = textbox.value.trimEnd();
     let sectionHeader = getSectionHeader(sectionId);
 
-    console.log('Inserting header for section:', sectionId); // Debugging line
+    console.log('Inserting or navigating to header for section:', sectionId);
 
-    // Ensure headers are always in the correct order and inserted accordingly
-    if (sectionHeader && !currentText.includes(sectionHeader)) {
+    // Find the position of the header in the current text
+    let headerPosition = currentText.indexOf(sectionHeader);
+
+    if (sectionHeader && headerPosition === -1) {
+        // The header is not present, so insert it and ensure it has two newlines before and after
         const insertPosition = getInsertPosition(sectionId, currentText);
-        const newText = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
-        
-        // Set the new text value
+        const newText = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter; // Insert header with blank lines around it
+
+        // Update the textarea content
         textbox.value = newText.trim();
 
-        // Now set the cursor at the end of the newly inserted header
-        const headerPosition = newText.indexOf(sectionHeader) + sectionHeader.length + 2; // +2 for the two newlines
-        textbox.focus();
-        textbox.setSelectionRange(headerPosition, headerPosition);
-    }
+        // Calculate the new header's position in the updated text
+        headerPosition = textbox.value.indexOf(sectionHeader);
 
-    
+        // Set the cursor directly after the header (no space after ":")
+        const newHeaderPosition = headerPosition + sectionHeader.length;
+        textbox.setSelectionRange(newHeaderPosition, newHeaderPosition);
+        scrollToCursor(textbox);
+    } else if (headerPosition !== -1) {
+        // Header is present, so place the cursor after the section content or header
+        const nextHeaderIndex = findNextHeaderIndex(currentText, headerPosition + sectionHeader.length);
+        const endOfSection = nextHeaderIndex === -1 ? currentText.length : nextHeaderIndex;
+
+        let sectionContent = currentText.slice(headerPosition + sectionHeader.length, endOfSection).trim();
+
+        if (sectionContent.length > 0) {
+            // Content is already present, clean up spacing and place cursor at the end of the content
+            const cleanedSectionContent = sectionContent.replace(/\s+$/, ''); // Remove trailing spaces
+            const endOfContentPosition = headerPosition + sectionHeader.length + cleanedSectionContent.length;
+            textbox.setSelectionRange(endOfContentPosition, endOfContentPosition);
+        } else {
+            // No content, place cursor immediately after the header (no space)
+            const cursorPosition = headerPosition + sectionHeader.length;
+            textbox.setSelectionRange(cursorPosition, cursorPosition);
+        }
+
+        scrollToCursor(textbox); // Ensure the cursor is visible
+    }
 }
+
+function scrollToCursor(textbox) {
+    const cursorPosition = textbox.selectionStart;
+
+    // Get the line number where the cursor is located
+    const linesBeforeCursor = textbox.value.slice(0, cursorPosition).split("\n").length;
+
+    // Get line height, accounting for any default settings
+    const lineHeight = parseFloat(window.getComputedStyle(textbox).lineHeight) || 20;
+
+    // Calculate the scrolling position such that the cursor line is vertically centered
+    const targetScrollPosition = (linesBeforeCursor * lineHeight) - (textbox.clientHeight / 2);
+
+    // Scroll to this target position to make the cursor visible
+    textbox.scrollTop = Math.max(targetScrollPosition, 0);
+
+    // Refocus on the textbox after scrolling to maintain the user's input
+    textbox.focus();
+}
+
+
+
+
+
+
+
 
 
 
