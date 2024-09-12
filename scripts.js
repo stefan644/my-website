@@ -27452,6 +27452,20 @@ function loadPage(page) {
     }
 }
 
+// Cursor active even if website is clicked
+document.addEventListener('click', function(event) {
+    const textbox = document.getElementById('journalTextbox');
+
+    // Check if the clicked element is outside the textbox
+    if (event.target !== textbox && !textbox.contains(event.target)) {
+        // Refocus the textbox if it's clicked outside
+        setTimeout(() => {
+            textbox.focus();
+        }, 0); // Short delay to allow the click action to finish
+    }
+});
+
+
 // Textbox manipulation functions
 let textHistory = [];
 let redoHistory = [];
