@@ -154,7 +154,8 @@ const RannsoknData = [
                 display: 'Blóðprufuniðurstöður', output: 'Niðurstöður úr blóðprufum',
                 onRightClickSubOptions: [
                     { display: 'Eðlilegar', output: 'Blóðprufuniðurstöður eðlilegar' },
-                    { display: 'Koma vel út', output: 'Blóðprufuniðurstöður koma vel út' }
+                    { display: 'Koma vel út', output: 'Blóðprufuniðurstöður koma vel út' },
+                    { display: 'Koma nokkuð vel út', output: 'Blóðprufuniðurstöður koma nokkuð vel út' }
                 ]
 
             }
@@ -872,7 +873,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna', 'Leitar á vaktina', 'Sjá nótu hjkfr'],
+        display: ['Tímalengd einkenna', 'Leitar á vaktina', 'Fyrri nótur'],
         options: [
             {
                 display: 'Tímalengd einkenna',
@@ -933,7 +934,24 @@ const SymptomsViral = [
                 cancelText: ''
             },
             { display: 'Leitar á vaktina', output: 'Leitar á vaktina'},
-            { display: 'Sjá nótu hjkfr', output: 'Sjá nótu hjúkrunarfræðings'}
+            {
+                display: 'Fyrri nótur',
+                subOptions: [
+                    {
+                        display: 'Sjá nótu hjúkrunarfræðings',
+                        output: 'Sjá nótu hjúkrunarfræðings'
+                    },
+                    {
+                        display: 'Sjá fyrri nótur',
+                        output: 'Sjá fyrri nótur'
+                    },
+                    {
+                        display: 'Sjá fyrri nótur ásamt nótu hjkfr',
+                        output: 'Sjá fyrri nótur ásamt nótu hjúkrunarfræðings'
+                    }
+                ]
+            }
+            
         ]
     },
     {
@@ -4896,6 +4914,76 @@ const ExamsEye = [
                 onRightClickOutput: 'Ekki sjáanlegur graftarnabbi'
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sjónskerpa'],
+        options: [
+            {
+                display: 'Sjónskerpa',  // Button for Vision
+                subOptions: [
+                    {
+                        display: 'Hægra Auga',  // Suboption for right eye
+                        subOptions: [
+                            { display: '20/20', output: 'Sjónskerpa hægra auga 20/20' },
+                            { display: '20/25', output: 'Sjónskerpa hægra auga 20/25' },
+                            { display: '20/30', output: 'Sjónskerpa hægra auga 20/30' },
+                            { display: '20/40', output: 'Sjónskerpa hægra auga 20/40' },
+                            { display: '20/50', output: 'Sjónskerpa hægra auga 20/50' },
+                            { display: '20/60', output: 'Sjónskerpa hægra auga 20/60' },
+                            { display: '20/70', output: 'Sjónskerpa hægra auga 20/70' },
+                            { display: '20/80', output: 'Sjónskerpa hægra auga 20/80' },
+                            { display: '20/100', output: 'Sjónskerpa hægra auga 20/100' },
+                            { display: '20/200', output: 'Sjónskerpa hægra auga 20/200' },
+                            { display: 'Hand Motion', output: 'Sjónskerpa hægra auga sýnir einungis skynjun við handahreyfingum' },
+                            { display: 'Light Perception', output: 'Sjónskerpa hægra auga sýnir einungis skynjun við ljósi' },
+                            { display: 'No Light Perception', output: 'Hægra auga án skynjunar. Engin ljósskynjun' }
+                        ],
+                        onRightClickOutput: 'Eðlileg sjónskerpa hægra auga'
+                    },
+                    {
+                        display: 'Vinstra Auga',  // Suboption for left eye
+                        subOptions: [
+                            { display: '20/20', output: 'Sjónskerpa vinstra auga 20/20' },
+                            { display: '20/25', output: 'Sjónskerpa vinstra auga 20/25' },
+                            { display: '20/30', output: 'Sjónskerpa vinstra auga 20/30' },
+                            { display: '20/40', output: 'Sjónskerpa vinstra auga 20/40' },
+                            { display: '20/50', output: 'Sjónskerpa vinstra auga 20/50' },
+                            { display: '20/60', output: 'Sjónskerpa vinstra auga 20/60' },
+                            { display: '20/70', output: 'Sjónskerpa vinstra auga 20/70' },
+                            { display: '20/80', output: 'Sjónskerpa vinstra auga 20/80' },
+                            { display: '20/100', output: 'Sjónskerpa vinstra auga 20/100' },
+                            { display: '20/200', output: 'Sjónskerpa vinstra auga 20/200' },
+                            { display: 'Hand Motion', output: 'Sjónskerpa vinstra auga sýnir einungis skynjun við handahreyfingum' },
+                            { display: 'Light Perception', output: 'Sjónskerpa vinstra auga sýnir einungis skynjun við ljósi' },
+                            { display: 'No Light Perception', output: 'Vinstra auga án skynjunar. Engin ljósskynjun' }
+                        ],
+                        onRightClickOutput: 'Eðlileg sjónskerpa vinstra auga'
+                    },
+                    {
+                        display: 'Bæði Augu',  // Suboption for both eyes
+                        subOptions: [
+                            { display: '20/20', output: 'Sjónskerpa beggja augna 20/20' },
+                            { display: '20/25', output: 'Sjónskerpa beggja augna 20/25' },
+                            { display: '20/30', output: 'Sjónskerpa beggja augna 20/30' },
+                            { display: '20/40', output: 'Sjónskerpa beggja augna 20/40' },
+                            { display: '20/50', output: 'Sjónskerpa beggja augna 20/50' },
+                            { display: '20/60', output: 'Sjónskerpa beggja augna 20/60' },
+                            { display: '20/70', output: 'Sjónskerpa beggja augna 20/70' },
+                            { display: '20/80', output: 'Sjónskerpa beggja augna 20/80' },
+                            { display: '20/100', output: 'Sjónskerpa beggja augna 20/100' },
+                            { display: '20/200', output: 'Sjónskerpa beggja augna 20/200' },
+                            { display: 'Hand Motion', output: 'Sjónskerpa bæði augu sýnir einungis skynjun við handahreyfingum' },
+                            { display: 'Light Perception', output: 'Sjónskerpa bæði augu sýnir einungis skynjun við ljósi' },
+                            { display: 'No Light Perception', output: 'Bæði augu án skynjunar. Engin ljósskynjun' }
+                        ],
+                        onRightClickOutput: 'Eðlileg sjónskerpa beggja augna'
+                    }
+                ],
+                onRightClickOutput: 'Eðlileg sjónskerpa beggja augna'
+            }
+        ]
     }
 ];
 const PlanEye = [
@@ -7290,8 +7378,8 @@ const ExamsMelting = [
             },
             {
                 display: 'Meðtekin/n',
-                output: 'Sjúklingur virðist meðtekinn af verk',
-                onRightClickOutput: 'Sjúklingur ekki meðtekinn af verk'
+                output: 'Skjólstæðingur virðist meðtekinn af verk',
+                onRightClickOutput: 'Skjólstæðingur ekki meðtekinn af verk'
             },
             {
                 display: 'Slímhúðir',
@@ -13656,38 +13744,6 @@ const SymptomsGed = [
     {
         name: '',
         type: 'options',
-        display: ['Einangrun', 'Stuðningur', 'Félagsstaða'],
-        options: [
-            {
-                display: 'Einangrun',
-                output: 'Aukin félagsleg einangrun',
-                onRightClickOutput: 'Ekki félagsleg einangrun. Hittir vini og fjölskyldu reglulega'
-            },
-            {
-                display: 'Stuðningur',
-                output: 'Ekki nægilega góður stuðningur heimafyrir',
-                onRightClickSubOptions: [
-                    { display: 'NOS', output: 'Er með góðan stuðning heimafyrir' },
-                    { display: 'Maka', output: 'Er með góðan stuðning frá maka' },
-                    { display: 'Foreldrum', output: 'Er með góðan stuðning frá foreldrum' },
-                    { display: 'Vinum', output: 'Er með góðan stuðning frá vinum' }
-                ]
-            },
-            {
-                display: 'Félagsstaða',
-                subOptions: [
-                    { display: 'Í hjónabandi', output: 'Í hjónabandi' },
-                    { display: 'Í sambúð', output: 'Í sambúð' },
-                    { display: 'Einstæðingur', output: 'Einstæðingur' },
-                    { display: 'Einstætt foreldri', output: 'Einstætt foreldri' },
-                    { display: 'Býr hjá foreldrum', output: 'Býr hjá foreldrum' }
-                ]
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
         display: ['ADHD', 'Einbeiting', 'Gleymska', 'Ofvirkni'],
         options: [
             { 
@@ -13756,8 +13812,8 @@ const SymptomsGed = [
                 onRightClickOutput: 'Ekkert að vakna að næturlagi'
             }
         ]
-    },
-    {},{},{}
+    }
+    //,{},{},{}
     
     // Kvíði. Ekki tilbúið
     /*
@@ -19867,7 +19923,7 @@ const PlanGigt = [
 ];
 
 
-
+// General data (habits, allergies, etc)
 const LyfData = [
     {
         name: '',
@@ -25150,6 +25206,146 @@ const LifsmorkData = [
     
 ];
 
+const Felagssaga = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Félagsstaða', 'Starfandi', 'Einangrun', 'Stuðningur' ],
+        options: [
+            {
+                display: 'Félagsstaða',
+                subOptions: [
+                    { display: 'Í hjónabandi', output: 'Í hjónabandi' },
+                    { display: 'Í sambúð', output: 'Í sambúð' },
+                    { display: 'Einstæðingur', output: 'Einstæðingur' },
+                    { display: 'Einstætt foreldri', output: 'Einstætt foreldri' },
+                    { display: 'Býr hjá foreldrum', output: 'Býr hjá foreldrum' }
+                ]
+            },
+            {
+                display: 'Starfandi',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Er á vinnumarkaði'
+                    },
+                    {
+                        display: 'Fullu starfi',
+                        output: 'Er í fullu starfi'
+                    },
+                    {
+                        display: 'Hlutastarfi',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Er í hlutastarfi'
+                            },
+                            {
+                                display: '90%',
+                                output: 'Er í 90% hlutastarfi'
+                            },
+                            {
+                                display: '85%',
+                                output: 'Er í 85% hlutastarfi'
+                            },
+                            {
+                                display: '80%',
+                                output: 'Er í 80% hlutastarfi'
+                            },
+                            {
+                                display: '75%',
+                                output: 'Er í 75% hlutastarfi'
+                            },
+                            {
+                                display: '70%',
+                                output: 'Er í 70% hlutastarfi'
+                            },
+                            {
+                                display: '65%',
+                                output: 'Er í 65% hlutastarfi'
+                            },
+                            {
+                                display: '60%',
+                                output: 'Er í 60% hlutastarfi'
+                            },
+                            {
+                                display: '55%',
+                                output: 'Er í 55% hlutastarfi'
+                            },
+                            {
+                                display: '50%',
+                                output: 'Er í 50% hlutastarfi'
+                            },
+                            {
+                                display: '45%',
+                                output: 'Er í 45% hlutastarfi'
+                            },
+                            {
+                                display: '40%',
+                                output: 'Er í 40% hlutastarfi'
+                            },
+                            {
+                                display: '35%',
+                                output: 'Er í 35% hlutastarfi'
+                            },
+                            {
+                                display: '30%',
+                                output: 'Er í 30% hlutastarfi'
+                            },
+                            {
+                                display: '25%',
+                                output: 'Er í 25% hlutastarfi'
+                            }
+                        ]
+                    }
+                ],
+                onRightClickSubOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Ekki á vinnumarkaði'
+                    },
+                    {
+                        display: 'Atvinnuleysisbætur',
+                        output: 'Er á atvinnuleysisbótum'
+                    },
+                    {
+                        display: 'Fæðingarorlof',
+                        output: 'Er í fæðingarorlofi'
+                    },
+                    {
+                        display: 'Veikindafríi',
+                        output: 'Er í veikindafríi'
+                    },
+                    {
+                        display: 'Örorka',
+                        output: 'Er á örorku'
+                    },
+                    {
+                        display: 'Endurhæfing',
+                        output: 'Er á endurhæfingu'
+                    }
+                ]
+            },            
+            {
+                display: 'Einangrun',
+                output: 'Aukin félagsleg einangrun',
+                onRightClickOutput: 'Ekki félagsleg einangrun. Hittir vini og fjölskyldu reglulega'
+            },
+            {
+                display: 'Stuðningur',
+                output: 'Ekki nægilega góður stuðningur heimafyrir',
+                onRightClickSubOptions: [
+                    { display: 'NOS', output: 'Er með góðan stuðning heimafyrir' },
+                    { display: 'Maka', output: 'Er með góðan stuðning frá maka' },
+                    { display: 'Foreldrum', output: 'Er með góðan stuðning frá foreldrum' },
+                    { display: 'Vinum', output: 'Er með góðan stuðning frá vinum' }
+                ]
+            }
+            
+        ]
+    }
+];
+
 
 // Here I am trying to generate a text that says something like "Patient uses amphetamines. Also cocain and marijuana".
 // User 
@@ -26544,6 +26740,14 @@ function createHeilataugaskodunSection(data) {
     return section;
 }
 
+function createFelagssagaSection(data) {
+    console.log('Creating Félagssaga Section with data:', data); // Debugging line
+    const section = createSection('felagssaga', 'Félagssaga');
+    const container = section.querySelector('#felagssaga');
+    createButtons(container, data, 'felagssaga');
+    return section;
+}
+
 // Load sections depending on page
 function loadPage(page) {
     const container = document.getElementById('content-section');
@@ -27106,11 +27310,13 @@ function loadPage(page) {
         const planSection = createPlanSection(PlanGed);
         const sigecapsSection = createSIGECAPSSection(SIGECAPS);
         const gedSkodunSection = createGedSkodunSection(GedSkodunData);
+        const felagssagaSection = createFelagssagaSection(Felagssaga);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
         leftColumn.appendChild(sigecapsSection);
+        leftColumn.appendChild(felagssagaSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -27316,9 +27522,6 @@ function insertText(text, sectionId) {
     textbox.focus(); // Ensure the textbox remains focused
 }
 
-
-
-
 function insertHeader(sectionId) {
     const textbox = document.getElementById('journalTextbox');
     let currentText = textbox.value.trimEnd();
@@ -27374,9 +27577,6 @@ function insertHeader(sectionId) {
     }
 }
 
-
-
-
 function scrollToCursor(textbox) {
     const cursorPosition = textbox.selectionStart;
 
@@ -27395,12 +27595,6 @@ function scrollToCursor(textbox) {
     // Refocus on the textbox after scrolling to maintain the user's input
     textbox.focus();
 }
-
-
-
-
-
-
 
 
 
@@ -27522,7 +27716,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'augnsaga', 'lyf', 'augnlyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
+    const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'felagssaga', 'augnsaga', 'lyf', 'augnlyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
@@ -27605,6 +27799,8 @@ function getSectionHeader(sectionId) {
             return 'Augnsaga:';
         case 'augnlyf':
             return 'Augnlyf:';
+        case 'felagssaga':
+            return 'Félagssaga:';
         
         
         default:
