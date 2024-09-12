@@ -27267,7 +27267,7 @@ document.addEventListener('keydown', function(event) {
 function insertText(text, sectionId) {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save the current state before modification
-    redoHistory = []; //Clear redo history as new actions invalidate the redo stack
+    redoHistory = []; // Clear redo history as new actions invalidate the redo stack
     let currentText = textbox.value.trimEnd();
     let sectionHeader = getSectionHeader(sectionId);
 
@@ -27295,12 +27295,7 @@ function insertText(text, sectionId) {
         let contentBefore = currentText.slice(0, endOfSection).trimEnd();
         let contentAfter = currentText.slice(endOfSection).trimStart();
 
-        if (sectionId === 'einkenni' || sectionId === 'skodun') {
-            // Ensure there is a space after the header text before adding new text
-            currentText = contentBefore + (contentBefore.endsWith(':') ? ' ' : ' ') + newText + '\n\n' + contentAfter;
-        } else {
-            currentText = currentText.slice(0, endOfSection).trimEnd() + ' ' + newText + '\n\n' + currentText.slice(endOfSection).trimStart();
-        }
+        currentText = contentBefore + ' ' + newText + '\n\n' + contentAfter;
     } else {
         currentText += newText;
     }
@@ -27308,12 +27303,21 @@ function insertText(text, sectionId) {
     currentText = currentText.replace(/\n{2,}/g, '\n\n');
     currentText = currentText.replace(/([^\n])\n(?!\n)/g, '$1\n\n');
 
+    // Update the textbox with new content
     textbox.value = currentText.trim();
 
+    // Scroll to the bottom of the textbox after text is inserted
+    textbox.scrollTop = textbox.scrollHeight;
+
+    // Optionally, place the cursor at the end of the inserted text
     const newCursorPosition = currentText.lastIndexOf(newText) + newText.length;
-    textbox.focus();
     textbox.setSelectionRange(newCursorPosition, newCursorPosition);
+
+    textbox.focus(); // Ensure the textbox remains focused
 }
+
+
+
 
 function insertHeader(sectionId) {
     const textbox = document.getElementById('journalTextbox');
@@ -27328,7 +27332,7 @@ function insertHeader(sectionId) {
     if (sectionHeader && headerPosition === -1) {
         // The header is not present, so insert it and ensure it has two newlines before and after
         const insertPosition = getInsertPosition(sectionId, currentText);
-        const newText = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter; // Insert header with blank lines around it
+        const newText = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
 
         // Update the textarea content
         textbox.value = newText.trim();
@@ -27341,19 +27345,27 @@ function insertHeader(sectionId) {
         textbox.setSelectionRange(newHeaderPosition, newHeaderPosition);
         scrollToCursor(textbox);
     } else if (headerPosition !== -1) {
-        // Header is present, so place the cursor after the section content or header
+        // Header is already present, so move the cursor to the end of the section content or header
         const nextHeaderIndex = findNextHeaderIndex(currentText, headerPosition + sectionHeader.length);
         const endOfSection = nextHeaderIndex === -1 ? currentText.length : nextHeaderIndex;
 
         let sectionContent = currentText.slice(headerPosition + sectionHeader.length, endOfSection).trim();
 
         if (sectionContent.length > 0) {
-            // Content is already present, clean up spacing and place cursor at the end of the content
+            // There is already content under the header, so clean up spaces and place cursor at the end
             const cleanedSectionContent = sectionContent.replace(/\s+$/, ''); // Remove trailing spaces
             const endOfContentPosition = headerPosition + sectionHeader.length + cleanedSectionContent.length;
-            textbox.setSelectionRange(endOfContentPosition, endOfContentPosition);
+
+            // Ensure the cursor is placed after the final punctuation (dot, if present)
+            const lastDotIndex = currentText.lastIndexOf('.', endOfSection);
+            const finalPosition = (lastDotIndex !== -1 && lastDotIndex >= endOfContentPosition)
+                ? lastDotIndex + 1  // Place cursor after the final dot
+                : endOfContentPosition;
+
+            // Set cursor at the correct position
+            textbox.setSelectionRange(finalPosition, finalPosition);
         } else {
-            // No content, place cursor immediately after the header (no space)
+            // No content under the header, place cursor immediately after the header
             const cursorPosition = headerPosition + sectionHeader.length;
             textbox.setSelectionRange(cursorPosition, cursorPosition);
         }
@@ -27361,6 +27373,9 @@ function insertHeader(sectionId) {
         scrollToCursor(textbox); // Ensure the cursor is visible
     }
 }
+
+
+
 
 function scrollToCursor(textbox) {
     const cursorPosition = textbox.selectionStart;
