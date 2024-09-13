@@ -1,4 +1,22 @@
 
+// Hlekkir (Links)
+const Hlekkir = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Meðganga og brjóstagjöf'],
+        options: [
+            {
+                display: 'Meðganga og brjóstagjöf',
+                subOptions: [
+                    { display: 'Lyf á meðgöngu - Fróðleiksmoli HH', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/library/Files/Frodleiksmolar-2016/Lyf%20á%20meðgöngu%20april%202016.pdf' }
+                ]
+            }
+        ]
+    }
+
+];
+
 
 // Almennt (General) / Vottorð (Certificates) / Rannsóknarniðurstöður (Study result) / Macró
 const Vottord = [
@@ -865,6 +883,360 @@ const HealthHistory = [
             }
         ]
     }
+];
+const KerfakonnunData = [
+   // First row: General Symptoms, Skin, HEENT, Respiratory
+   {
+    name: '',
+    type: 'options',
+    display: ['Almenn einkenni', 'Húð', 'HEENT', 'Öndunarfæri'],
+    options: [
+        {
+            display: 'Almenn einkenni',
+            subOptions: [
+                { display: 'Þreyta', output: 'Lýsir þreytu', onRightClickOutput: 'Neitar þreytu' },
+                { display: 'Máttleysi', output: 'Lýsir almennu máttleysi', onRightClickOutput: 'Neitar almennu máttleysi' },
+                { display: 'Svimi', output: 'Lýsir svima', onRightClickOutput: 'Neitar svima' },
+                { display: 'Svefnleysi', output: 'Lýsir svefnleysi', onRightClickOutput: 'Neitar svefnleysi' },
+                {
+                    display: 'Þyngdarbreyting',
+                    subOptions: [
+                        {
+                            display: 'Þyngdartap',
+                            subOptions: [
+                                { display: 'NOS', output: 'Þyngdartap', onRightClickOutput: 'Neitar þyngdartapi' },
+                                { display: 'Viljandi', output: 'Viljandi þyngdartap', onRightClickOutput: 'Neitar viljandi þyngdartapi' },
+                                { display: 'Óviljandi', output: 'Óviljandi þyngdartap', onRightClickOutput: 'Neitar óviljandi þyngdartapi' },
+                                { display: 'Mikilvægt', output: 'Mikilvægt þyngdartap (>5% af líkamsþyngd)', onRightClickOutput: 'Neitar mikilvægu þyngdartapi' }
+                            ]
+                        },
+                        {
+                            display: 'Þyngdaraukning',
+                            subOptions: [
+                                { display: 'NOS', output: 'Þyngdaraukning', onRightClickOutput: 'Neitar þyngdaraukningu' },
+                                { display: 'Viljandi', output: 'Viljandi þyngdaraukning', onRightClickOutput: 'Neitar viljandi þyngdaraukningu' },
+                                { display: 'Óviljandi', output: 'Óviljandi þyngdaraukning', onRightClickOutput: 'Neitar óviljandi þyngdaraukningu' },
+                                { display: 'Mikilvægt', output: 'Mikilvægt þyngdaraukning (>5% af líkamsþyngd)', onRightClickOutput: 'Neitar mikilvægu þyngdaraukningu' }
+                            ]
+                        }
+                    ],
+                    onRightClickOutput: 'Engin þyngdarbreyting'
+                },
+                {
+                    display: 'Hiti',
+                    subOptions: [
+                        { display: 'NOS', output: 'Hiti', onRightClickOutput: 'Neitar hita' },
+                        { display: 'Lágur hiti', output: 'Lágur hiti (37.5°C - 38°C)', onRightClickOutput: 'Neitar lágum hita' },
+                        { display: 'Mikill hiti', output: 'Mikill hiti (>38°C)', onRightClickOutput: 'Neitar miklum hita' },
+                        { display: 'Sótthiti', output: 'Sótthiti', onRightClickOutput: 'Neitar sótthita' }
+                    ],
+                    onRightClickOutput: 'Enginn hiti'
+                },
+                { display: 'Nætursviti', output: 'Lýsir nætursvita', onRightClickOutput: 'Enginn nætursviti' },
+                { display: 'Slappleiki', output: 'Lýsir slappleika', onRightClickOutput: 'Enginn slappleiki' }
+            ],
+            onRightClickOutput: 'Neitar almennum einkennum'
+        },
+        {
+            display: 'Húð',
+            subOptions: [
+                {
+                    display: 'Húðbreytingar',
+                    subOptions: [
+                        { display: 'Litabreytingar', output: 'Litabreytingar á húð', onRightClickOutput: 'Neitar litabreytingum' },
+                        { display: 'Þykknun', output: 'Þykknun á húð', onRightClickOutput: 'Neitar þykknun á húð' },
+                        { display: 'Hármissir', output: 'Hármissir', onRightClickOutput: 'Neitar hármissi' }
+                    ],
+                    onRightClickOutput: 'Engar húðbreytingar'
+                },
+                { display: 'Kláði', output: 'Kláði í húð', onRightClickOutput: 'Enginn kláði' },
+                {
+                    display: 'Útbrot',
+                    subOptions: [
+                        { display: 'NOS', output: 'Útbrot', onRightClickOutput: 'Neitar útbrotum' },
+                        { display: 'Bólur', output: 'Bólur', onRightClickOutput: 'Neitar bóluútbrotum' },
+                        { display: 'Blöðrur', output: 'Blöðrur', onRightClickOutput: 'Neitar blöðruútbrotum' },
+                        { display: 'Húðblæðingar', output: 'Húðblæðingar (petechiae/purpura)', onRightClickOutput: 'Neitar húðblæðingum' }
+                    ],
+                    onRightClickOutput: 'Engin útbrot'
+                },
+                { display: 'Sár', output: 'Sár á húð', onRightClickOutput: 'Engin sár' }
+            ],
+            onRightClickOutput: 'Neitar húðvandamálum'
+        },
+        {
+            display: 'HEENT',
+            subOptions: [
+                {
+                    display: 'Höfuðverkur',
+                    subOptions: [
+                        { display: 'NOS', output: 'Höfuðverkur', onRightClickOutput: 'Neitar höfuðverk' },
+                        { display: 'Tíðni', output: 'Tíðir höfuðverkir', onRightClickOutput: 'Neitar tíðum höfuðverkjum' },
+                        { display: 'Mígreni', output: 'Mígreni', onRightClickOutput: 'Neitar mígreni' },
+                        { display: 'Spennuhöfuðverkur', output: 'Spennuhöfuðverkur', onRightClickOutput: 'Neitar spennuhöfuðverk' }
+                    ],
+                    onRightClickOutput: 'Enginn höfuðverkur'
+                },
+                {
+                    display: 'Sjón',
+                    subOptions: [
+                        { display: 'Sjónskerðing', output: 'Sjónskerðing', onRightClickOutput: 'Neitar sjónskerðingu' },
+                        { display: 'Tvísýni', output: 'Tvísýni', onRightClickOutput: 'Neitar tvísýni' },
+                        { display: 'Sjóntruflanir', output: 'Sjóntruflanir', onRightClickOutput: 'Neitar sjóntruflunum' },
+                        { display: 'Sársauki í augum', output: 'Sársauki í augum', onRightClickOutput: 'Neitar sársauka í augum' }
+                    ],
+                    onRightClickOutput: 'Engin sjónvandamál'
+                },
+                {
+                    display: 'Heyrn',
+                    subOptions: [
+                        { display: 'Heyrnarskerðing', output: 'Heyrnarskerðing', onRightClickOutput: 'Neitar heyrnarskerðingu' },
+                        { display: 'Suð fyrir eyrum', output: 'Suð fyrir eyrum', onRightClickOutput: 'Neitar suði fyrir eyrum' },
+                        { display: 'Eymsli í eyrum', output: 'Eymsli í eyrum', onRightClickOutput: 'Neitar eymslum í eyrum' }
+                    ],
+                    onRightClickOutput: 'Engin heyrnarvandamál'
+                },
+                {
+                    display: 'Nef/Háls',
+                    subOptions: [
+                        { display: 'Nefrennsli', output: 'Nefrennsli', onRightClickOutput: 'Neitar nefrennslum' },
+                        { display: 'Nefstífla', output: 'Nefstífla', onRightClickOutput: 'Neitar nefstíflu' },
+                        { display: 'Blóðnasir', output: 'Blóðnasir', onRightClickOutput: 'Neitar blóðnösum' },
+                        { display: 'Hálsbólga', output: 'Hálsbólga', onRightClickOutput: 'Neitar hálsbólgu' },
+                        { display: 'Sársauki við kyngingu', output: 'Sársauki við kyngingu', onRightClickOutput: 'Neitar sársauka við kyngingu' }
+                    ],
+                    onRightClickOutput: 'Engin nef- eða hálsvandamál'
+                }
+            ],
+            onRightClickOutput: 'Neitar vandamálum í höfði, augum, eyrum, nefi eða hálsi'
+        },
+        {
+            display: 'Öndunarfæri',
+            subOptions: [
+                {
+                    display: 'Hósti',
+                    subOptions: [
+                        { display: 'Þurr', output: 'Þurr hósti', onRightClickOutput: 'Neitar þurrum hósta' },
+                        { display: 'Slímkenndur', output: 'Slímkenndur hósti', onRightClickOutput: 'Neitar slímkenndum hósta' },
+                        { display: 'Langvarandi', output: 'Langvarandi hósti', onRightClickOutput: 'Neitar langvarandi hósta' }
+                    ],
+                    onRightClickOutput: 'Enginn hósti'
+                },
+                { display: 'Mæði', output: 'Mæði', onRightClickOutput: 'Engin mæði' },
+                {
+                    display: 'Brjóstverkir',
+                    subOptions: [
+                        { display: 'Við öndun', output: 'Brjóstverkir við öndun', onRightClickOutput: 'Neitar brjóstverkjum við öndun' },
+                        { display: 'Hvíldarverkir', output: 'Brjóstverkir í hvíld', onRightClickOutput: 'Neitar brjóstverkjum í hvíld' },
+                        { display: 'Áreynsluverkir', output: 'Brjóstverkir við áreynslu', onRightClickOutput: 'Neitar brjóstverkjum við áreynslu' }
+                    ],
+                    onRightClickOutput: 'Engir brjóstverkir'
+                },
+                { display: 'Blóðhósti', output: 'Blóðhósti', onRightClickOutput: 'Enginn blóðhósti' }
+            ],
+            onRightClickOutput: 'Neitar öndunarfæraeinkennum'
+        }
+    ]
+},
+// Second row: Cardiovascular, Gastrointestinal, Genitourinary, Musculoskeletal
+{
+    name: '',
+    type: 'options',
+    display: ['Hjarta og æðakerfi', 'Meltingarfæri', 'Þvag- og kynfæri', 'Stoðkerfi'],
+    options: [
+        {
+            display: 'Hjarta og æðakerfi',
+            subOptions: [
+                {
+                    display: 'Brjóstverkur',
+                    subOptions: [
+                        { display: 'Þrýstingsverkur', output: 'Þrýstingsverkur fyrir brjósti', onRightClickOutput: 'Neitar þrýstingsverk fyrir brjósti' },
+                        { display: 'Stingandi', output: 'Stingandi verkur fyrir brjósti', onRightClickOutput: 'Neitar stingandi verk fyrir brjósti' },
+                        { display: 'Leiðni', output: 'Verkur sem leiðir út í handlegg/jaxla', onRightClickOutput: 'Neitar verk sem leiðir' }
+                    ],
+                    onRightClickOutput: 'Enginn brjóstverkur'
+                },
+                { display: 'Hjartsláttarónot', output: 'Hjartsláttarónot', onRightClickOutput: 'Engin hjartsláttarónot' },
+                { display: 'Bjúgur', output: 'Bjúgur á útlimum', onRightClickOutput: 'Enginn bjúgur' },
+                { display: 'Yfirlið', output: 'Yfirlið', onRightClickOutput: 'Engin yfirlið' }
+            ],
+            onRightClickOutput: 'Neitar hjarta- og æðakerfiseinkennum'
+        },
+        {
+            display: 'Meltingarfæri',
+            subOptions: [
+                { display: 'Ógleði', output: 'Ógleði', onRightClickOutput: 'Engin ógleði' },
+                { display: 'Uppköst', output: 'Uppköst', onRightClickOutput: 'Engin uppköst' },
+                {
+                    display: 'Kviðverkir',
+                    subOptions: [
+                        { display: 'Efri hluti', output: 'Verkir í efri hluta kviðar', onRightClickOutput: 'Neitar verkjum í efri hluta kviðar' },
+                        { display: 'Neðri hluti', output: 'Verkir í neðri hluta kviðar', onRightClickOutput: 'Neitar verkjum í neðri hluta kviðar' },
+                        { display: 'Hægri hlið', output: 'Verkir í hægri hlið kviðar', onRightClickOutput: 'Neitar verkjum í hægri hlið kviðar' },
+                        { display: 'Vinstri hlið', output: 'Verkir í vinstri hlið kviðar', onRightClickOutput: 'Neitar verkjum í vinstri hlið kviðar' }
+                    ],
+                    onRightClickOutput: 'Engir kviðverkir'
+                },
+                { display: 'Brjóstsviði', output: 'Brjóstsviði', onRightClickOutput: 'Enginn brjóstsviði' },
+                {
+                    display: 'Hægðir',
+                    subOptions: [
+                        { display: 'Niðurgangur', output: 'Niðurgangur', onRightClickOutput: 'Neitar niðurgangi' },
+                        { display: 'Hægðatregða', output: 'Hægðatregða', onRightClickOutput: 'Neitar hægðatregðu' },
+                        { display: 'Blóð í hægðum', output: 'Blóð í hægðum', onRightClickOutput: 'Neitar blóði í hægðum' },
+                        { display: 'Svartar hægðir', output: 'Svartar hægðir', onRightClickOutput: 'Neitar svörtum hægðum' }
+                    ],
+                    onRightClickOutput: 'Eðlilegar hægðir'
+                }
+            ],
+            onRightClickOutput: 'Neitar meltingarfæraeinkennum'
+        },
+        {
+            display: 'Þvag- og kynfæri',
+            subOptions: [
+                {
+                    display: 'Þvaglát',
+                    subOptions: [
+                        { display: 'Tíð', output: 'Tíð þvaglát', onRightClickOutput: 'Neitar tíðri þvaglátum' },
+                        { display: 'Minnkuð', output: 'Minnkuð þvaglát', onRightClickOutput: 'Neitar minnkuðum þvaglátum' },
+                        { display: 'Engin', output: 'Engin þvaglát (þvagþurrð)', onRightClickOutput: 'Neitar þvagþurrð' },
+                        { display: 'Næturþvaglát', output: 'Næturþvaglát', onRightClickOutput: 'Neitar næturþvaglátum' }
+                    ],
+                    onRightClickOutput: 'Eðlileg þvaglát'
+                },
+                { display: 'Þvagleki', output: 'Þvagleki', onRightClickOutput: 'Enginn þvagleki' },
+                { display: 'Verkir við þvaglát', output: 'Verkir við þvaglát', onRightClickOutput: 'Engir verkir við þvaglát' },
+                {
+                    display: 'Útferð',
+                    subOptions: [
+                        { display: 'Gruggug', output: 'Gruggug útferð', onRightClickOutput: 'Neitar gruggugri útferð' },
+                        { display: 'Blóðug', output: 'Blóðug útferð', onRightClickOutput: 'Neitar blóðugri útferð' },
+                        { display: 'Lyktandi', output: 'Lyktandi útferð', onRightClickOutput: 'Neitar lyktandi útferð' }
+                    ],
+                    onRightClickOutput: 'Engin útferð'
+                },
+                {
+                    display: 'Tíðablæðingar',
+                    subOptions: [
+                        { display: 'Reglulegar', output: 'Fer á reglulegar blæðingar', onRightClickOutput: 'Neitar reglulegum blæðingum' },
+                        { display: 'Óreglulegar', output: 'Er með óreglulegar blæðingar', onRightClickOutput: 'Neitar óreglulegum blæðingum' },
+                        { display: 'Ekki', output: 'Fer ekki á blæðingar', onRightClickOutput: 'Neitar blæðingum' }
+                    ],
+                    onRightClickOutput: 'Engin tíðablæðingareinkenni'
+                },
+                {
+                    display: 'Getnaðarvörn',
+                    subOptions: [
+                        { display: 'Á getnaðarvörn', output: 'Er á getnaðarvörn', onRightClickOutput: 'Ekki á getnaðarvörn' },
+                        { display: 'Pillan', output: 'Er á pillunni', onRightClickOutput: 'Neitar notkun pillu' },
+                        { display: 'Lykkjan', output: 'Er með lykkjuna', onRightClickOutput: 'Neitar lykkju' },
+                        { display: 'Smokkar', output: 'Notar smokka', onRightClickOutput: 'Neitar notkun smokka' }
+                    ],
+                    onRightClickOutput: 'Engin notkun getnaðarvarna'
+                }
+            ],
+            onRightClickOutput: 'Neitar þvag- og kynfæraeinkennum'
+        },
+        {
+            display: 'Stoðkerfi',
+            subOptions: [
+                {
+                    display: 'Liðverkir',
+                    subOptions: [
+                        { display: 'NOS', output: 'Liðverkir', onRightClickOutput: 'Neitar liðverkjum' },
+                        { display: 'Margir liðir', output: 'Verkir í mörgum liðum', onRightClickOutput: 'Neitar verkjum í mörgum liðum' },
+                        { display: 'Bólga', output: 'Bólga í liðum', onRightClickOutput: 'Neitar bólgu í liðum' }
+                    ],
+                    onRightClickOutput: 'Engir liðverkir'
+                },
+                { display: 'Bakverkir', output: 'Bakverkir', onRightClickOutput: 'Engir bakverkir' },
+                { display: 'Vöðvaverkir', output: 'Vöðvaverkir', onRightClickOutput: 'Engir vöðvaverkir' },
+                { display: 'Bjúgur í liðum', output: 'Bjúgur í liðum', onRightClickOutput: 'Enginn bjúgur í liðum' }
+            ],
+            onRightClickOutput: 'Neitar stoðkerfiseinkennum'
+        }
+    ]
+},
+// Third row: Neurological, Psychiatric, Endocrine, Hematologic/Lymphatic
+{
+    name: '',
+    type: 'options',
+    display: ['Taugakerfi', 'Geðeinkenni', 'Innkirtlar', 'Blóð/Lifur'],
+    options: [
+        {
+            display: 'Taugakerfi',
+            subOptions: [
+                { display: 'Dofi', output: 'Dofi', onRightClickOutput: 'Enginn dofi' },
+                { display: 'Máttleysi', output: 'Máttleysi', onRightClickOutput: 'Eðlilegur kraftur' },
+                { display: 'Krampaköst', output: 'Krampaköst', onRightClickOutput: 'Engin krampaköst' },
+                { display: 'Talmálserfiðleikar', output: 'Erfiðleikar með talmál', onRightClickOutput: 'Engir talmálserfiðleikar' }
+            ],
+            onRightClickOutput: 'Neitar taugakerfiseinkennum'
+        },
+        {
+            display: 'Geðeinkenni',
+            subOptions: [
+                { display: 'Kvíði', output: 'Kvíði', onRightClickOutput: 'Enginn kvíði' },
+                { display: 'Þunglyndi', output: 'Þunglyndi', onRightClickOutput: 'Ekki þunglynd/ur' },
+                { display: 'Svefnleysi', output: 'Svefnleysi', onRightClickOutput: 'Engin svefnvandamál' },
+                { display: 'Skapbreytingar', output: 'Skapbreytingar', onRightClickOutput: 'Engar skapbreytingar' }
+            ],
+            onRightClickOutput: 'Neitar geðeinkennum'
+        },
+        {
+            display: 'Innkirtlar',
+            subOptions: [
+                { display: 'Kulvísi', output: 'Kulvísi', onRightClickOutput: 'Engin kulvísi' },
+                { display: 'Hitavæmi', output: 'Hitavæmi', onRightClickOutput: 'Engin hitavæmi' },
+                { display: 'Þorsti', output: 'Aukin þorsti', onRightClickOutput: 'Eðlilegur þorsti' },
+                {
+                    display: 'Húðbreytingar',
+                    subOptions: [
+                        { display: 'Litabreytingar', output: 'Litabreytingar á húð', onRightClickOutput: 'Neitar litabreytingum' },
+                        { display: 'Hármissir', output: 'Hármissir', onRightClickOutput: 'Neitar hármissi' }
+                    ],
+                    onRightClickOutput: 'Engar húðbreytingar'
+                }
+            ],
+            onRightClickOutput: 'Neitar innkirtlaeinkennum'
+        },
+        {
+            display: 'Blóð/Lifur',
+            subOptions: [
+                { display: 'Marblettir', output: 'Marblettir', onRightClickOutput: 'Engir marblettir' },
+                { display: 'Blæðingar', output: 'Blæðingarvandamál', onRightClickOutput: 'Engin blæðingarvandamál' },
+                { display: 'Hálseitlar', output: 'Stækkaðir hálseitlar', onRightClickOutput: 'Engir stækkaðir hálseitlar' },
+                { display: 'Blóðleysi', output: 'Blóðleysi', onRightClickOutput: 'Engin einkenni um blóðleysi' }
+            ],
+            onRightClickOutput: 'Neitar blóð- eða eitlakefisvandamálum'
+        }
+    ]
+},
+// Fourth row: Allergic/Immunologic
+{
+    name: '',
+    type: 'options',
+    display: ['Ofnæmi/Ónæmiskerfi'],
+    options: [
+        {
+            display: 'Ofnæmi/Ónæmiskerfi',
+            subOptions: [
+                {
+                    display: 'Ofnæmi',
+                    subOptions: [
+                        { display: 'Fæðuofnæmi', output: 'Fæðuofnæmi', onRightClickOutput: 'Neitar fæðuofnæmi' },
+                        { display: 'Lyfjaofnæmi', output: 'Lyfjaofnæmi', onRightClickOutput: 'Neitar lyfjaofnæmi' },
+                        { display: 'Umhverfisofnæmi', output: 'Umhverfisofnæmi', onRightClickOutput: 'Neitar umhverfisofnæmi' }
+                    ],
+                    onRightClickOutput: 'Engin ofnæmi'
+                },
+                { display: 'Sýkingar', output: 'Endurteknar sýkingar', onRightClickOutput: 'Engar sýkingar' },
+                { display: 'Ónæmisbæling', output: 'Ónæmisbæling', onRightClickOutput: 'Engin ónæmisbæling' }
+            ],
+            onRightClickOutput: 'Neitar ofnæmis- eða ónæmiskerfiseinkennum'
+        }
+    ]
+}
 ];
 
 
@@ -2592,7 +2964,14 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Sinusitis' },
                     { display: 'Grunur', output: 'Grunur um sinusitis' },
-                    { display: 'Fullmótað plan', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki' }
+                    { display: 'Fullmótað plan', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki' },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Uptodate - Greining fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-sinusitis-and-rhinosinusitis-in-adults-clinical-manifestations-and-diagnosis' },
+                            { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/uncomplicated-acute-sinusitis-and-rhinosinusitis-in-adults-treatment' }
+                            
+                        ]
+                    }
                 ]
             },
             {
@@ -2613,7 +2992,12 @@ const PlanViral = [
                 display: 'Bronchitis',
                 subOptions: [
                     { display: 'Greining', output: 'Bronchitis' },
-                    { display: 'Grunur', output: 'Grunur um bronchitis' }
+                    { display: 'Grunur', output: 'Grunur um bronchitis' },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Uptodate - Greining og meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bronchitis-in-adults' }
+                        ]
+                    }
                 ]
             },
             {
@@ -2829,7 +3213,7 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Sýklalyf', 'Sýkladropar', 'Leysir út ef lagast ekki', 'VVV'],
+        display: ['Sýklalyf', 'Sýkladropar', 'Leysir út ef lagast ekki', 'Vottorð'],
         options: [
             {
                 display: 'Sýklalyf',
@@ -2850,7 +3234,20 @@ const PlanViral = [
                 ]
             },
             { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' },
-            { display: 'VVV', output: 'Fær veikindavottorð' }
+            {
+                display: 'Vottorð',
+                subOptions: [
+                    {
+                        display: 'Vinnuveitenda',
+                        output: 'Fær vinnuveitendavottorð'
+                    },
+                    {
+                        display: 'Skóli',
+                        output: 'Fær skólavottorð'
+                    }
+                ]
+            }
+            
         ]
     },
     {
@@ -3015,7 +3412,7 @@ const RannsoknirViral = [
     {
         name: '',
         type: 'options',
-        display: ['Strep', 'CRP'],
+        display: ['Strep', 'CRP', 'COVID'],
         options: [
             { display: 'Strep', output: 'Streptest jákvætt', onRightClickOutput: 'Streptest neikvætt' },
             {
@@ -3263,7 +3660,8 @@ const RannsoknirViral = [
                     }
                 ],
                 onRightClickOutput: 'CRP <5'
-            }
+            },
+            { display: 'COVID', output: 'COVID próf jákvætt', onRightClickOutput: 'COVID próf neikvætt' }
         ]
     }
 ];
@@ -5549,16 +5947,114 @@ const ExamsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Lasleg/ur', 'Yfirþyngd'],
+        display: ['Lasleg/ur', 'Holdafar', 'BMI'],
         options: [
             { display: 'Lasleg/ur', output: 'Laslega útlítandi', onRightClickOutput: 'Ekki bráðveikindalegt útlit' },
-            { display: 'Yfirþyngd', output: 'Er í yfirþyngd', onRightClickOutput: 'Ekki yfirþyngd' }
+            { display: 'Holdarfar', 
+                subOptions: [
+                    { display: 'Yfirþyngd', output: 'Er í yfirþyngd' },
+                    { display: 'Grannvaxinn', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Skjólstæðingur grannvaxinn' },
+                            { display: 'Aðeins', output: 'Skjólstæðingur aðeins grannvaxinn' },
+                            { display: 'Verulega', output: 'Skjólstæðingur verulega grannvaxinn' }
+                        ]
+                        
+                    },
+                    
+                ],
+                 onRightClickOutput: 'Eðlilegt holdafar' 
+            },
+            {
+                display: 'BMI',
+                subOptions: [
+                    {
+                        display: '150-160 cm',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${150 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${150 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(150 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '161-170 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${161 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${161 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(161 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '171-180 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${171 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${171 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(171 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '181-190 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${181 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${181 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(181 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '191-200 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${191 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${191 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(191 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    },
+                    {
+                        display: '201-210 cm',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${201 + i} cm`,
+                            subOptions: Array.from({ length: 14 }, (_, j) => ({
+                                display: `${40 + j * 10}-${49 + j * 10} kg`,
+                                subOptions: Array.from({ length: 10 }, (_, k) => ({
+                                    display: `${40 + j * 10 + k} kg`,
+                                    output: `Hæð ${201 + i}cm. Þyngd ${40 + j * 10 + k}kg. BMI: ${calculateBMI(201 + i, 40 + j * 10 + k)}`
+                                }))
+                            }))
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'BMI innan eðlilegra marka'
+            }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Hjartahlustun', 'Lungnahlustun'],
+        display: ['Hjartahlustun'],
         options: [
             {
                 display: 'Óhljóð',
@@ -5903,21 +6399,430 @@ const ExamsHeart = [
                     }
                 ],
                 onRightClickOutput: 'Hjartahlustun sýnir S1-S2 án auka- eða óhljóða'
-            },
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Lungnahlustun', 'Styrkur', 'Symmetría', 'Aukahljóð'],
+        options: [
             {
                 display: 'Lungnahlustun',
                 subOptions: [
-                    { display: 'Hrein', output: 'Lungnahlustun, hrein. Eðlileg vesiculer öndunarhljóð' },
-                    { display: 'Slímhljóð basalt', output: 'Lungnahlustun sýnir slímhljóð basalt' },
-                    { display: 'Obstrúktíf', output: 'Lungnahlustun sýnir lengda útöndun' },
-                    { display: 'Gróf', output: 'Lungnahlustun sýnir gróf öndunarhljóð' },
-                    { display: 'Gróf, ronchi og lengd útöndun', output: 'Lungnahlustun sýnir gróf öndunarhljóð, ronchi og lengda útöndun' },
-                    { display: 'Brak hægra megin basalt', output: 'Heyrist brak hægra megin basalt' },
-                    { display: 'Brak vinstra megin basalt', output: 'Heyrist brak vinstra megin basalt' }
+                    { 
+                        display: 'Gróf', 
+                        output: 'Lungnahlustun sýnir gróf öndunarhljóð' 
+                    },
+                    { 
+                        display: 'Gróf og lengd útöndun', 
+                        output: 'Lungnahlustun sýnir gróf öndunarhljóð og lengda útöndun' 
+                    },
+                    {
+                        display: 'Lengd útöndun',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Lungnahlustun sýnir lengda útöndun'
+                            },
+                            {
+                                display: 'Vægt',
+                                output: 'Lungnahlustun sýnir vægt lengda útöndun'
+                            },
+                            {
+                                display: 'Mikið',
+                                output: 'Lungnahlustun sýnir verulega lengda útöndun'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Lengd innöndun',
+                        output: 'Lungnahlustun sýnir lengda innöndun'
+                    }
                 ],
-                onRightClickOutput: 'Lungnahlustun án athugasemda'
+                onRightClickOutput: 'Lungnahlustun sýnir vesiculer öndunarhljóð'
+            },
+            {
+                display: 'Styrkur',
+                subOptions: [
+                    {
+                        display: 'Fjarlæg',
+                        output: 'Öndunarhljóð fjarlæg'
+                    },
+                    {
+                        display: 'Aðeins fjarlæg',
+                        output: 'Aðeins fjarlæg öndunarhljóð'
+                    },
+                    {
+                        display: 'Verulega fjarlæg',
+                        output: 'Verulega fjarlæg öndunarhljóð'
+                    }
+                ],
+                onRightClickOutput: 'Heyrast vel'
+            },
+            {
+                display: 'Symmetría',
+                subOptions: [
+                    {
+                        display: 'Minnkuð öndunarhljóð',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Minnkuð öndunarhljóð dreift'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Minnkuð öndunarhljóð yfir hægra lungnafelti'
+                                    },
+                                    {
+                                        display: 'Efri hluti',
+                                        output: 'Minnkuð öndunarhljóð yfir efri hluta hægra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Mið hluti',
+                                        output: 'Minnkuð öndunarhljóð yfir mið hluta hægra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Neðri hluta',
+                                        output: 'Minnkuð öndunarhljóð yfir neðri hluta hægra lungnafeltis'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Minnkuð öndunarhljóð yfir vinstra lungnafelti'
+                                    },
+                                    {
+                                        display: 'Efri hluti',
+                                        output: 'Minnkuð öndunarhljóð yfir efri hluta vinstra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Mið hluti',
+                                        output: 'Minnkuð öndunarhljóð yfir mið hluta vinstra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Neðri hluta',
+                                        output: 'Minnkuð öndunarhljóð yfir neðri hluta vinstra lungnafeltis'
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Aukin öndunarhljóð',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Aukin öndunarhljóð dreift'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Aukin öndunarhljóð yfir hægra lungnafelti'
+                                    },
+                                    {
+                                        display: 'Efri hluti',
+                                        output: 'Aukin öndunarhljóð yfir efri hluta hægra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Mið hluti',
+                                        output: 'Aukin öndunarhljóð yfir mið hluta hægra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Neðri hluta',
+                                        output: 'Aukin öndunarhljóð yfir neðri hluta hægra lungnafeltis'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Aukin öndunarhljóð yfir vinstra lungnafelti'
+                                    },
+                                    {
+                                        display: 'Efri hluti',
+                                        output: 'Aukin öndunarhljóð yfir efri hluta vinstra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Mið hluti',
+                                        output: 'Aukin öndunarhljóð yfir mið hluta vinstra lungnafeltis'
+                                    },
+                                    {
+                                        display: 'Neðri hluta',
+                                        output: 'Aukin öndunarhljóð yfir neðri hluta vinstra lungnafeltis'
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Symmetrísk'
+            },
+            {
+                display: 'Aukahljóð',
+                subOptions: [
+                    {
+                        display: 'Slímhljóð',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrast slímhljóð beggja vegna'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrast slímhljóð basalt beggja vegna'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrast slímhljóð yfir miðju lunga beggja vegna'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrast slímhljóð yfir superior lungnafelti beggja vegna'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrast slímhljóð hægra megin'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrast slímhljóð basalt hægra megin'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrast slímhljóð í miðju lunga hægra megin'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrast slímhljóð superior í hægra lunga'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrast slímhljóð vinstra megin'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrast slímhljóð basalt vinstra megin'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrast slímhljóð í miðju lunga vinstra megin'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrast slímhljóð superior í vinstra lunga'
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Brak',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist brak beggja vegna'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrist brak basalt beggja vegna'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrist brak yfir miðju lunga beggja vegna'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrist brak yfir superior lungnafelti beggja vegna'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist brak hægra megin'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrist brak basalt hægra megin'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrist brak í miðju lunga hægra megin'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrist brak superior í hægra lunga'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist brak vinstra megin'
+                                    },
+                                    {
+                                        display: 'Basalt',
+                                        output: 'Heyrist brak basalt vinstra megin'
+                                    },
+                                    {
+                                        display: 'Miðju lunga',
+                                        output: 'Heyrist brak í miðju lunga vinstra megin'
+                                    },
+                                    {
+                                        display: 'Superiort',
+                                        output: 'Heyrist brak superior í vinstra lunga'
+                                    }
+                                ]
+                            }
+                        ],
+                        onRightClickOutput: 'Ekki brak'
+                    },
+                    {
+                        display: 'Wheezing',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist wheezing beggja vegna'
+                                    },
+                                    {
+                                        display: 'Mikið',
+                                        output: 'Heyrist áberandi wheezing dreift yfir báðum lungnafeltum'
+                                    },
+                                    {
+                                        display: 'Vægt',
+                                        output: 'Heyrist vægt wheezing dreift yfir báðum lungnafeltum'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Hægra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist wheezing hægra megin'
+                                    },
+                                    {
+                                        display: 'Mikið',
+                                        output: 'Heyrist áberandi wheezing hægra megin'
+                                    },
+                                    {
+                                        display: 'Vægt',
+                                        output: 'Heyrist vægt wheezing hægra megin'
+                                    }
+                                ]
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                subOptions: [
+                                    {
+                                        display: 'NOS',
+                                        output: 'Heyrist wheezing vinstra megin'
+                                    },
+                                    {
+                                        display: 'Mikið',
+                                        output: 'Heyrist áberandi wheezing vinstra megin'
+                                    },
+                                    {
+                                        display: 'Vægt',
+                                        output: 'Heyrist vægt wheezing vinstra megin'
+                                    }
+                                ]
+                            }
+                        ],
+                        onRightClickOutput: 'Ekki wheezing'
+                    },
+                    {
+                        display: 'Ronchi',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                output: 'Heyrist ronchi beggja vegna'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                output: 'Heyrist ronchi hægra megin'
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                output: 'Heyrist ronchi vinstra megin'
+                            }
+                        ],
+                        onRightClickOutput: 'Ekki ronchi'
+                    },
+                    {
+                        display: 'Stridor',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                output: 'Heyrist stridor beggja vegna'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                output: 'Heyrist stridor hægra megin'
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                output: 'Heyrist stridor vinstra megin'
+                            }
+                        ],
+                        onRightClickOutput: 'Ekki stridor'
+                    },
+                    {
+                        display: 'Pleural rub',
+                        subOptions: [
+                            {
+                                display: 'Beggja vegna',
+                                output: 'Heyrist pleural rub beggja vegna'
+                            },
+                            {
+                                display: 'Hægra megin',
+                                output: 'Heyrist pleural rub hægra megin'
+                            },
+                            {
+                                display: 'Vinstra megin',
+                                output: 'Heyrist pleural rub vinstra megin'
+                            }
+                        ],
+                        onRightClickOutput: 'Ekki pleural rub'
+                    }
+                ],
+                onRightClickOutput: 'Ekki wheezing, brak eða önnur aukahljóð'
             }
-            
         ]
     }
 ];
@@ -26244,17 +27149,33 @@ function createButton(row, item, displayText, index, sectionId) {
     const button = document.createElement('button');
     button.textContent = displayText;
 
-    // Left click event
-    button.onclick = (event) => handleButtonClick(event, item, displayText, index, button, sectionId);
+    // Check if the first-level option has subOptions or is a hyperlink
+    if (item.type === 'options') {
+        const selectedOption = item.options[index];
 
-    // Right click event
-    button.oncontextmenu = (event) => {
-        event.preventDefault(); // Prevent the context menu from appearing
-        handleButtonRightClick(event, item, displayText, index, button, sectionId);
-    };
+        if (selectedOption.type === 'hyperlink' && selectedOption.url) {
+            // Handle as hyperlink
+            button.onclick = () => {
+                window.open(selectedOption.url, '_blank'); // Open link in a new tab
+            };
+        } else {
+            // Left click event
+            button.onclick = (event) => handleButtonClick(event, item, displayText, index, button, sectionId);
+
+            // Right click event
+            button.oncontextmenu = (event) => {
+                event.preventDefault(); // Prevent the context menu from appearing
+                handleButtonRightClick(event, item, displayText, index, button, sectionId);
+            };
+        }
+    } else {
+        // If the item is not of type 'options', handle it as a normal button
+        button.onclick = (event) => handleButtonClick(event, item, displayText, index, button, sectionId);
+    }
 
     row.appendChild(button);
 }
+
 
 function handleButtonClick(event, item, displayText, index, button, sectionId) {
     // Remove any existing popup
@@ -26271,9 +27192,14 @@ function handleButtonClick(event, item, displayText, index, button, sectionId) {
                 openLifsmorkModal(); // Open the Lífsmörk modal
             } else if (selectedOption.output === 'OPEN_ORTHOSTATISM_MODAL') {
                 openOrthostatismModal(); // Open the Orthostatism modal
+            } else if (selectedOption.type === 'hyperlink' && selectedOption.url) {
+                // Handle hyperlink at the first level
+                window.open(selectedOption.url, '_blank'); // Open the hyperlink in a new tab
             } else if (selectedOption.subOptions) {
+                // If there are suboptions, open a popup
                 createPopup(event, selectedOption, button, false, sectionId);
             } else if (selectedOption.output) {
+                // Insert the output text if present
                 insertText(selectedOption.output, sectionId);
             }
         }
@@ -26282,6 +27208,8 @@ function handleButtonClick(event, item, displayText, index, button, sectionId) {
         handleDefaultButtonClick(item, displayText, index, sectionId);
     }
 }
+
+
 
 function handleButtonRightClick(event, item, displayText, index, button, sectionId) {
     // Remove any existing popup
@@ -26324,12 +27252,19 @@ function createPopup(event, selectedOption, button, isRightClick = false, sectio
     popup.style.zIndex = '1000';
 
     // Function to create a button in the popup
-    const createPopupButton = (popup, subOption, parentButton, sectionId, depth) => {
-        const btn = document.createElement('button');
-        btn.textContent = subOption.display;
-        btn.style.display = 'block';
-        btn.style.margin = '5px 0';
+const createPopupButton = (popup, subOption, parentButton, sectionId, depth) => {
+    const btn = document.createElement('button');
+    btn.textContent = subOption.display;
+    btn.style.display = 'block';
+    btn.style.margin = '5px 0';
 
+    if (subOption.type === 'hyperlink' && subOption.url) {
+        // Handle as hyperlink
+        btn.onclick = (e) => {
+            e.stopPropagation(); // Prevent closing popup on click
+            window.open(subOption.url, '_blank'); // Open link in a new tab
+        };
+    } else {
         // Left click event for popup button
         btn.onclick = (e) => {
             e.stopPropagation(); // Prevent closing popup on button click
@@ -26342,9 +27277,11 @@ function createPopup(event, selectedOption, button, isRightClick = false, sectio
             e.stopPropagation(); // Prevent closing popup on right-click
             handleSubOptionRightClick(subOption, sectionId, popup, btn, depth);
         };
+    }
 
-        popup.appendChild(btn);
-    };
+    popup.appendChild(btn);
+};
+
 
     // Add subOptions to the popup
     const subOptions = isRightClick ? selectedOption.onRightClickSubOptions : selectedOption.subOptions;
@@ -26460,18 +27397,26 @@ function createPopupButton(popup, subOption, parentButton, sectionId, depth) {
     btn.style.display = 'block';
     btn.style.margin = '5px 0';
 
-    // Left click event for popup button
-    btn.onclick = (e) => {
-        e.stopPropagation(); // Prevent closing popup on button click
-        handleSubOptionClick(subOption, sectionId, popup, btn, depth);
-    };
+    if (subOption.type === 'hyperlink' && subOption.url) {
+        // Handle as hyperlink
+        btn.onclick = (e) => {
+            e.stopPropagation(); // Prevent closing popup on click
+            window.open(subOption.url, '_blank'); // Open link in a new tab
+        };
+    } else {
+        // Left click event for popup button
+        btn.onclick = (e) => {
+            e.stopPropagation(); // Prevent closing popup on button click
+            handleSubOptionClick(subOption, sectionId, popup, btn, depth);
+        };
 
-    // Right click event for popup button
-    btn.oncontextmenu = (e) => {
-        e.preventDefault(); // Prevent the context menu from appearing
-        e.stopPropagation(); // Prevent closing popup on right-click
-        handleSubOptionRightClick(subOption, sectionId, popup, btn, depth);
-    };
+        // Right click event for popup button
+        btn.oncontextmenu = (e) => {
+            e.preventDefault(); // Prevent the context menu from appearing
+            e.stopPropagation(); // Prevent closing popup on right-click
+            handleSubOptionRightClick(subOption, sectionId, popup, btn, depth);
+        };
+    }
 
     popup.appendChild(btn);
 }
@@ -26748,6 +27693,15 @@ function createFelagssagaSection(data) {
     return section;
 }
 
+function createHlekkirSection(data) {
+    console.log('Creating Hlekkir Section with data:', data); // Debugging line
+    const section = createSection('hlekkir', 'Hlekkir');
+    const container = section.querySelector('#hlekkir');
+    createButtons(container, data, 'hlekkir');
+    return section;
+}
+
+
 // Load sections depending on page
 function loadPage(page) {
     const container = document.getElementById('content-section');
@@ -26917,16 +27871,18 @@ function loadPage(page) {
         const vottordSection = createVottordSection(Vottord);
         const rannsoknSection = createRannsoknSection(RannsoknData);
         const lyfSection = createLyfSection(LyfData);
+        const kerfakonnunSection = createKerfakonnunSection(KerfakonnunData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(vottordSection);
-        leftColumn.appendChild(rannsoknSection);
+        leftColumn.appendChild(kerfakonnunSection);
         leftColumn.appendChild(lyfSection);
         leftColumn.appendChild(historyViralSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
+        middleColumn.appendChild(rannsoknSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -26938,6 +27894,26 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
+    } else if (page === 'Hlekkir') {
+        const hlekkirSection = createHlekkirSection(Hlekkir);
+
+    const leftColumn = document.createElement('div');
+    leftColumn.className = 'column';
+    leftColumn.appendChild(hlekkirSection);
+
+    const middleColumn = document.createElement('div');
+    middleColumn.className = 'column';
+
+    const rightColumn = document.createElement('div');
+    rightColumn.className = 'column';
+
+    const horizontalContainer = document.createElement('div');
+    horizontalContainer.className = 'horizontal-sections';
+    horizontalContainer.appendChild(leftColumn);
+    horizontalContainer.appendChild(middleColumn);
+    horizontalContainer.appendChild(rightColumn);
+
+    container.appendChild(horizontalContainer);
     } else if (page === 'Melting') {
         const einkenniSection = createEinkenniSection(SymptomsMelting);
         const skodunSection = createSkodunSection(ExamsMelting);
@@ -26983,6 +27959,7 @@ function loadPage(page) {
         const skodunSection = createSkodunSection(ExamsHeart);
         const planSection = createPlanSection(PlanHeart);
         const habitsSection = createHabitsSection(Habits);
+        const ofnaemiSection = createOfnaemiSection(OfnaemiData);
         const RiskHeartSection = createRiskHeartSection(RiskFactorsHeart);
         const CHADSVASCSection = createCHADSVASCSection(CHADSVASCHeart);
         const historyHeartSection = createHistoryViralSection(historyHeart);
@@ -26998,6 +27975,7 @@ function loadPage(page) {
         leftColumn.appendChild(historyHeartSection);
         leftColumn.appendChild(lyfSection);
         leftColumn.appendChild(habitsSection);
+        leftColumn.appendChild(ofnaemiSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -27453,17 +28431,23 @@ function loadPage(page) {
 }
 
 // Cursor active even if website is clicked
+// Cursor remains active in the textbox unless an interactive element is clicked
 document.addEventListener('click', function(event) {
     const textbox = document.getElementById('journalTextbox');
+    const clickedElement = event.target;
 
-    // Check if the clicked element is outside the textbox
-    if (event.target !== textbox && !textbox.contains(event.target)) {
-        // Refocus the textbox if it's clicked outside
+    // List of interactive elements that should not trigger refocusing the textbox
+    const interactiveElements = ['SELECT', 'OPTION', 'INPUT', 'BUTTON', 'TEXTAREA', 'LABEL'];
+
+    // Check if the clicked element is outside the textbox and not an interactive element
+    if (event.target !== textbox && !textbox.contains(event.target) && !interactiveElements.includes(event.target.tagName)) {
+        // Refocus the textbox if it's clicked outside interactive elements
         setTimeout(() => {
             textbox.focus();
         }, 0); // Short delay to allow the click action to finish
     }
 });
+
 
 
 // Textbox manipulation functions
