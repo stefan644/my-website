@@ -2967,6 +2967,7 @@ const PlanViral = [
                     { display: 'Fullmótað plan', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki' },
                     { display: 'Hlekkir', 
                         subOptions: [
+                            
                             { display: 'Uptodate - Greining fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-sinusitis-and-rhinosinusitis-in-adults-clinical-manifestations-and-diagnosis' },
                             { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/uncomplicated-acute-sinusitis-and-rhinosinusitis-in-adults-treatment' }
                             
@@ -2995,7 +2996,15 @@ const PlanViral = [
                     { display: 'Grunur', output: 'Grunur um bronchitis' },
                     { display: 'Hlekkir', 
                         subOptions: [
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bronchitis-in-adults-the-basics' },
+                                    { display: 'Uptodate - Beyond the basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bronchitis-in-adults-beyond-the-basics' }
+                                    
+                                ]
+                            },
                             { display: 'Uptodate - Greining og meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bronchitis-in-adults' }
+                            
                         ]
                     }
                 ]
@@ -3253,7 +3262,7 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Myndataka', 'Blóðprufa', 'BMT'],
+        display: ['Myndataka', 'Blóðprufa', 'BMT', 'Prentaðar leiðbeiningar'],
         options: [
             {
                 display: 'Myndataka',
@@ -3263,7 +3272,16 @@ const PlanViral = [
                 ]
             },
             { display: 'Blóðprufa', output: 'Panta blóðprufu' },
-            { display: 'BMT', output: 'Vísa á bráðamóttöku' }
+            { display: 'BMT', output: 'Vísa á bráðamóttöku' },
+            { display: 'Prentaðar leiðbeiningar', 
+
+                subOptions: [
+                    { display: 'NOS', output: 'Skjólstæðingur fær útprentaðar leiðbeiningar tengdar sinni greiningu' },
+                    { display: 'Uptodate', output: 'Skjólstæðingur fær útprentaðar leiðbeiningar frá uptodate tengdar sinni greiningu' }
+                ]
+                
+                 
+            }
         ]
     },
     
