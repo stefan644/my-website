@@ -169,8 +169,9 @@ const RannsoknData = [
         display: ['Blóðprufuniðurstöður'],
         options: [
             {
-                display: 'Blóðprufuniðurstöður', output: 'Niðurstöður úr blóðprufum',
-                onRightClickSubOptions: [
+                display: 'Blóðprufuniðurstöður',
+                subOptions: [
+                    { display: 'NOS', output: 'Niðurstöður úr blóðprufum' },
                     { display: 'Eðlilegar', output: 'Blóðprufuniðurstöður eðlilegar' },
                     { display: 'Koma vel út', output: 'Blóðprufuniðurstöður koma vel út' },
                     { display: 'Koma nokkuð vel út', output: 'Blóðprufuniðurstöður koma nokkuð vel út' }
@@ -5763,6 +5764,7 @@ const SymptomsHeart = [
             {
                 display: 'Háþrýstingur',
                 subOptions: [
+                    { display: 'Leitar vegna', output: 'Leitar vegna háþrýstings' },
                     { display: 'Eftirfylgd', output: 'Eftirfylgd með háþrýstingi' },
                     { display: 'Grunur um háþrýsting', output: 'Grunur um háþrýsting. Mælt þrýstinginn hækkaðan heimafyrir' }
                 ],
@@ -5802,25 +5804,99 @@ const SymptomsHeart = [
                 onRightClickOutput: 'Engar heimamælingar'
             }
         ]
-    }
-    ,
+    },
     {
         name: '',
         type: 'options',
-        display: ['Hjartsláttaróþægindi', 'Mæði', 'Slappleiki', 'Fótabjúg'],
+        display: ['Hjartsláttaróþægindi', 'Tími dags', 'Trigger', 'Staðsetning'],
         options: [
             { display: 'Hjartsláttaróþægindi', output: 'Fundið fyrir hjartsláttaróþægindum', onRightClickOutput: 'Ekki fundið fyrir hjartsláttaróþægindum'},
             {
-                display: 'Mæði',
+                display: 'Tími dags',
                 subOptions: [
-                    { display: 'Mæði', output: 'Játar mæði' },
-                    { display: 'Meira en áður', output: 'Mæðist meira en áður' },
-                    { display: 'Mæði við áreynslu', output: 'Lýsir mæði við áreynslu' }
+                    { 
+                        display: 'Á morgnana', 
+                        output: 'Einkenni koma helst fram á morgnanna', 
+                        onRightClickOutput: 'Einkenni koma síður fram á morgnanna' 
+                    },
+                    { 
+                        display: 'Á daginn', 
+                        output: 'Einkenni koma helst fram á daginn', 
+                        onRightClickOutput: 'Einkenni koma síður fram á daginn' 
+                    },
+                    { 
+                        display: 'Á kvöldin', 
+                        output: 'Einkenni koma helst fram á kvöldin', 
+                        onRightClickOutput: 'Einkenni koma síður fram á kvöldin' 
+                    },
+                    { 
+                        display: 'Á nóttunni', 
+                        output: 'Einkenni koma helst fram á nóttunni', 
+                        onRightClickOutput: 'Einkenni koma síður fram á nóttunni' 
+                    }
                 ],
-                onRightClickOutput: 'Neitar mæði'
+                onRightClickOutput: 'Einkenni geta komið fram hvaða tíma dags sem er'
             },
-            { display: 'Slappleiki', output: 'Fundið fyrir auknum slappleika', onRightClickOutput: 'Ekki fundið fyrir auknum slappleika' },
-            { display: 'Fótabjúg', output: 'Verið með bjúg á fótum', onRightClickOutput: 'Neitar bjúg á fótum' }
+            {
+                display: 'Trigger',
+                subOptions: [
+                    { 
+                        display: 'Áreynsla', 
+                        output: 'Kemur gjarnan fram við áreynslu' 
+                    },
+                    { 
+                        display: 'Stress', 
+                        output: 'Kemur gjarnan fram við stress' 
+                    },
+                    { 
+                        display: 'Hvíld', 
+                        output: 'Kemur gjarnan fram í hvíld' 
+                    },
+                    { 
+                        display: 'Máltíð', 
+                        output: 'Kemur gjarnan fram eftir máltíð' 
+                    },
+                    { 
+                        display: 'Sofa', 
+                        output: 'Kemur gjarnan fram þegar fer að sofa' 
+                    },
+                    { 
+                        display: 'Vakna', 
+                        output: 'Kemur gjarnan fram þegar vaknar' 
+                    }
+                ],
+                onRightClickOutput: 'Ekki fundið neinn greinilegan trigger'
+            },
+            {
+                display: 'Staðsetning',
+                subOptions: [
+                    { 
+                        display: 'Fyrir miðri bringu', 
+                        output: 'Finnur mest fyrir þessu fyrir miðri bringu' 
+                    },
+                    { 
+                        display: 'Ofarlega í bringu', 
+                        output: 'Finnur mest fyrir þessu ofarlega í bringu' 
+                    },
+                    { 
+                        display: 'Neðarlega í bringu', 
+                        output: 'Finnur mest fyrir þessu neðarlega í bringu' 
+                    },
+                    { 
+                        display: 'Ofarlega í kvið', 
+                        output: 'Finnur mest fyrir þessu ofarlega í kvið' 
+                    },
+                    { 
+                        display: 'Neðarlega í kvið', 
+                        output: 'Finnur mest fyrir þessu neðarlega í kvið' 
+                    },
+                    { 
+                        display: 'Í hálsinum', 
+                        output: 'Finnur mest fyrir þessu í hálsinum' 
+                    }
+                ],
+                onRightClickOutput: 'Getur illa staðsett einkennin'
+            }
         ]
     },
     {},
@@ -5829,7 +5905,7 @@ const SymptomsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Brjóstverkur', 'Onset', 'Tegund', 'Staðsettning'],
+        display: ['Brjóstverkur', 'Onset', 'Tegund', 'Staðsetning'],
         options: [
             { display: 'Brjóstverkur', output: 'Fundið fyrir bjóstverk', onRightClickOutput: 'Ekki fundið fyrir bjóstverk' },
             {
@@ -5959,15 +6035,55 @@ const SymptomsHeart = [
                 onRightClickOutput: 'Ekkert sem gerir verkinn betri eða verri'
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Mæði', 'Slappleiki', 'Fótabjúg'],
+        options: [
+            {
+                display: 'Mæði',
+                subOptions: [
+                    { display: 'Mæði', output: 'Játar mæði' },
+                    { display: 'Meira en áður', output: 'Mæðist meira en áður' },
+                    { display: 'Mæði við áreynslu', output: 'Lýsir mæði við áreynslu' }
+                ],
+                onRightClickOutput: 'Neitar mæði'
+            },
+            { display: 'Slappleiki', output: 'Fundið fyrir auknum slappleika', onRightClickOutput: 'Ekki fundið fyrir auknum slappleika' },
+            {
+                display: 'Fótabjúg',
+                subOptions: [
+                    { 
+                        display: 'NOS', 
+                        output: 'Verið með bjúg á fótum'
+                    },
+                    { 
+                        display: 'Hægri', 
+                        output: 'Verið með bjúg á fótum. Meira hægra megin'
+                    },
+                    { 
+                        display: 'Vinstri', 
+                        output: 'Verið með bjúg á fótum. Meira vinstra megin'
+                    },
+                    { 
+                        display: 'Beggja vegna', 
+                        output: 'Verið með bjúg á fótum beggja vegna'
+                    }
+                ],
+                onRightClickOutput: 'Neitar bjúg á fótum'
+            }
+        ]
     }
 ];
 const ExamsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Lasleg/ur', 'Holdafar', 'BMI'],
+        display: ['Lasleg/ur', 'Mæði', 'Holdafar', 'BMI'],
         options: [
             { display: 'Lasleg/ur', output: 'Laslega útlítandi', onRightClickOutput: 'Ekki bráðveikindalegt útlit' },
+            { display: 'Mæði', output: 'Skjólstæðingur móður', onRightClickOutput: 'Ekki áberandi mæði' },
             { display: 'Holdarfar', 
                 subOptions: [
                     { display: 'Yfirþyngd', output: 'Er í yfirþyngd' },
@@ -6072,7 +6188,7 @@ const ExamsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Hjartahlustun'],
+        display: ['Hjartahlustun', 'Carotis', 'Fótabjúgur', 'Hálsvenustasi'],
         options: [
             {
                 display: 'Óhljóð',
@@ -6417,8 +6533,174 @@ const ExamsHeart = [
                     }
                 ],
                 onRightClickOutput: 'Hjartahlustun sýnir S1-S2 án auka- eða óhljóða'
-            }
-            
+            },
+            {
+                display: 'Carotis',
+                subOptions: [
+                    { 
+                        display: 'Hægri', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Heyrist bruit yfir hálsslagæð hægra megin' },
+                            { display: 'Hávært', output: 'Heyrist hávært bruit yfir hálsslagæð hægra megin' },
+                            { display: 'Lágvært', output: 'Heyrist lágvært bruit yfir hálsslagæð hægra megin' },
+                            { display: 'Greinilegt', output: 'Heyrist greinilegt bruit yfir hálsslagæð hægra megin' },
+                            { display: 'Áberandi', output: 'Heyrist áberandi bruit yfir hálsslagæð hægra megin' }
+                        ],
+                        onRightClickOutput: 'Ekki heyrist bruit yfir hálsslagæð hægra megin'
+                    },
+                    { 
+                        display: 'Vinstri', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Heyrist bruit yfir hálsslagæð vinstra megin' },
+                            { display: 'Hávært', output: 'Heyrist hávært bruit yfir hálsslagæð vinstra megin' },
+                            { display: 'Lágvært', output: 'Heyrist lágvært bruit yfir hálsslagæð vinstra megin' },
+                            { display: 'Greinilegt', output: 'Heyrist greinilegt bruit yfir hálsslagæð vinstra megin' },
+                            { display: 'Áberandi', output: 'Heyrist áberandi bruit yfir hálsslagæð vinstra megin' }
+                        ],
+                        onRightClickOutput: 'Ekki heyrist bruit yfir hálsslagæð vinstra megin'
+                    },
+                    { 
+                        display: 'Beggja vegna', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Heyrist bruit yfir hálsslagæðum beggja vegna' },
+                            { display: 'Hávært', output: 'Heyrist hávært bruit yfir hálsslagæðum beggja vegna' },
+                            { display: 'Lágvært', output: 'Heyrist lágvært bruit yfir hálsslagæðum beggja vegna' },
+                            { display: 'Greinilegt', output: 'Heyrist greinilegt bruit yfir hálsslagæðum beggja vegna' },
+                            { display: 'Áberandi', output: 'Heyrist áberandi bruit yfir hálsslagæðum beggja vegna' }
+                        ],
+                        onRightClickOutput: 'Ekki heyrist bruit yfir hálsslagæðum beggja vegna'
+                    }
+                ],
+                onRightClickOutput: 'Ekki heyrist bruit yfir hálsslagæðum'
+            },
+            {
+                display: 'Fótabjúgur',
+                subOptions: [
+                    { 
+                        display: 'Hægri', 
+                        subOptions: [
+                            { 
+                                display: 'NOS', 
+                                subOptions: [
+                                    { display: 'NOS', output: 'Fótabjúgur hægra megin' },
+                                    { display: 'Mikill', output: 'Mikill fótabjúgur hægra megin' },
+                                    { display: 'Miðlungs', output: 'Miðlungs fótabjúgur hægra megin' },
+                                    { display: 'Vægur', output: 'Vægur fótabjúgur hægra megin' },
+                                    { display: 'Minniháttar', output: 'Minniháttar fótabjúgur hægra megin' }
+                                ]
+                            },
+                            { 
+                                display: 'Pitting', 
+                                subOptions: [
+                                    { display: 'NOS', output: 'Pitting fótabjúgur hægra megin' },
+                                    { display: 'Mikill', output: 'Mikill pitting bjúgur á fótum hægra megin' },
+                                    { display: 'Miðlungs', output: 'Miðlungs pitting bjúgur á fótum hægra megin' },
+                                    { display: 'Vægur', output: 'Vægur pitting bjúgur á fótum hægra megin' },
+                                    { display: 'Minniháttar', output: 'Minniháttar pitting bjúgur á fótum hægra megin' }
+                                ]
+                            },
+                            { 
+                                display: 'Nonpitting', 
+                                subOptions: [
+                                    { display: 'NOS', output: 'Nonpitting fótabjúgur hægra megin' },
+                                    { display: 'Mikill', output: 'Mikill nonpitting bjúgur á fótum hægra megin' },
+                                    { display: 'Miðlungs', output: 'Miðlungs nonpitting bjúgur á fótum hægra megin' },
+                                    { display: 'Vægur', output: 'Vægur nonpitting bjúgur á fótum hægra megin' },
+                                    { display: 'Minniháttar', output: 'Minniháttar nonpitting bjúgur á fótum hægra megin' }
+                                ]
+                            }
+                        ]
+                    },
+                    { 
+                        display: 'Vinstri', 
+                        subOptions: [
+                            { 
+                                display: 'NOS', 
+                                subOptions: [
+                                    { display: 'NOS', output: 'Fótabjúgur vinstra megin' },
+                                    { display: 'Mikill', output: 'Mikill fótabjúgur vinstra megin' },
+                                    { display: 'Miðlungs', output: 'Miðlungs fótabjúgur vinstra megin' },
+                                    { display: 'Vægur', output: 'Vægur fótabjúgur vinstra megin' },
+                                    { display: 'Minniháttar', output: 'Minniháttar fótabjúgur vinstra megin' }
+                                ]
+                            },
+                            { 
+                                display: 'Pitting', 
+                                subOptions: [
+                                    { display: 'NOS', output: 'Pitting fótabjúgur vinstra megin' },
+                                    { display: 'Mikill', output: 'Mikill pitting bjúgur á fótum vinstra megin' },
+                                    { display: 'Miðlungs', output: 'Miðlungs pitting bjúgur á fótum vinstra megin' },
+                                    { display: 'Vægur', output: 'Vægur pitting bjúgur á fótum vinstra megin' },
+                                    { display: 'Minniháttar', output: 'Minniháttar pitting bjúgur á fótum vinstra megin' }
+                                ]
+                            },
+                            { 
+                                display: 'Nonpitting', 
+                                subOptions: [
+                                    { display: 'NOS', output: 'Nonpitting fótabjúgur vinstra megin' },
+                                    { display: 'Mikill', output: 'Mikill nonpitting bjúgur á fótum vinstra megin' },
+                                    { display: 'Miðlungs', output: 'Miðlungs nonpitting bjúgur á fótum vinstra megin' },
+                                    { display: 'Vægur', output: 'Vægur nonpitting bjúgur á fótum vinstra megin' },
+                                    { display: 'Minniháttar', output: 'Minniháttar nonpitting bjúgur á fótum vinstra megin' }
+                                ]
+                            }
+                        ]
+                    },
+                    { 
+                        display: 'Beggja vegna', 
+                        subOptions: [
+                            { 
+                                display: 'NOS', 
+                                subOptions: [
+                                    { display: 'NOS', output: 'Fótabjúgur beggja vegna' },
+                                    { display: 'Mikill', output: 'Mikill fótabjúgur beggja vegna' },
+                                    { display: 'Miðlungs', output: 'Miðlungs fótabjúgur beggja vegna' },
+                                    { display: 'Vægur', output: 'Vægur fótabjúgur beggja vegna' },
+                                    { display: 'Minniháttar', output: 'Minniháttar fótabjúgur beggja vegna' }
+                                ]
+                            },
+                            { 
+                                display: 'Pitting', 
+                                subOptions: [
+                                    { display: 'NOS', output: 'Pitting fótabjúgur beggja vegna' },
+                                    { display: 'Mikill', output: 'Mikill pitting bjúgur á fótum beggja vegna' },
+                                    { display: 'Miðlungs', output: 'Miðlungs pitting bjúgur á fótum beggja vegna' },
+                                    { display: 'Vægur', output: 'Vægur pitting bjúgur á fótum beggja vegna' },
+                                    { display: 'Minniháttar', output: 'Minniháttar pitting bjúgur á fótum beggja vegna' }
+                                ]
+                            },
+                            { 
+                                display: 'Nonpitting', 
+                                subOptions: [
+                                    { display: 'NOS', output: 'Nonpitting fótabjúgur beggja vegna' },
+                                    { display: 'Mikill', output: 'Mikill nonpitting bjúgur á fótum beggja vegna' },
+                                    { display: 'Miðlungs', output: 'Miðlungs nonpitting bjúgur á fótum beggja vegna' },
+                                    { display: 'Vægur', output: 'Vægur nonpitting bjúgur á fótum beggja vegna' },
+                                    { display: 'Minniháttar', output: 'Minniháttar nonpitting bjúgur á fótum beggja vegna' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Hálsvenustasi',
+                subOptions: [
+                    { 
+                        display: 'Hægri', 
+                        output: 'Merki um hálsvenustasa hægra megin' 
+                    },
+                    { 
+                        display: 'Vinstri', 
+                        output: 'Merki um hálsvenustasa vinstra megin' 
+                    },
+                    { 
+                        display: 'Beggja vegna', 
+                        output: 'Merki um hálsvenustasa beggja vegna' 
+                    }
+                ],
+                onRightClickOutput: 'Ekki merki um hálsvenustasa'
+            }            
         ]
     },
     {
@@ -6900,7 +7182,524 @@ const RannsoknirHeart = [
             
             
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Kólesteról', 'LDL', 'HDL', 'Þrýglyceríðar'],
+        options: [
+            {
+                display: 'Kólesteról',
+                subOptions: [
+                    {
+                        display: '0 - 1.0 mmol/L',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${(0.0 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Heildarkólesteról mælist ${(0.0 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '1.1 - 2.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(1.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Heildarkólesteról mælist ${(1.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '2.1 - 3.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(2.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Heildarkólesteról mælist ${(2.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '3.1 - 4.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(3.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Heildarkólesteról mælist ${(3.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '4.1 - 5.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(4.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Heildarkólesteról mælist ${(4.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '5.1 - 6.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(5.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Heildarkólesteról mælist ${(5.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '6.1 - 7.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(6.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Heildarkólesteról mælist ${(6.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '7.1 - 8.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(7.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Heildarkólesteról mælist ${(7.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '8.1 - 9.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(8.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Heildarkólesteról mælist ${(8.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'Heildarkólsteról innan eðlilegra marka'
+            },
+            {
+                display: 'LDL',
+                subOptions: [
+                    {
+                        display: '1.0 - 2.0 mmol/L',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${(1.0 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `LDL ${(1.0 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '2.1 - 3.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(2.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `LDL ${(2.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '3.1 - 4.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(3.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `LDL ${(3.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '4.1 - 5.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(4.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `LDL ${(4.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '5.1 - 6.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(5.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `LDL ${(5.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '6.1 - 7.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(6.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `LDL ${(6.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'LDL innan eðlilegra marka'
+            },
+            {
+                display: 'HDL',
+                subOptions: [
+                    {
+                        display: '0.0 - 1.0 mmol/L',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${(0.0 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `HDL ${(0.0 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '1.1 - 2.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(1.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `HDL ${(1.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '2.1 - 3.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(2.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `HDL ${(2.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'HDL innan eðlilegra marka'
+            },
+            {
+                display: 'Þríglyceríðar',
+                subOptions: [
+                    {
+                        display: '0.0 - 1.0 mmol/L',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${(0.0 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Þríglyceríðar ${(0.0 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '1.1 - 2.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(1.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Þríglyceríðar ${(1.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '2.1 - 3.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(2.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Þríglyceríðar ${(2.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    },
+                    {
+                        display: '3.1 - 4.0 mmol/L',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${(3.1 + i * 0.1).toFixed(1)} mmol/L`,
+                            output: `Þríglyceríðar ${(3.1 + i * 0.1).toFixed(1)} mmol/L`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'Þríglyceríðar innan eðlilegra marka'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Fastandi blóðsykur', 'HBA1c'],
+        options: [
+            {
+                display: 'Fastandi blóðsykur',
+                subOptions: [
+                    {
+                        display: '0.0 - 5.0 mmol/L',
+                        subOptions: [
+                            {
+                                display: '0.0 - 1.0 mmol/L',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${(0.0 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(0.0 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '1.1 - 2.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(1.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(1.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '2.1 - 3.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(2.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(2.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '3.1 - 4.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(3.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(3.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '4.1 - 5.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(4.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(4.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: '5.1 - 10.0 mmol/L',
+                        subOptions: [
+                            {
+                                display: '5.1 - 6.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(5.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(5.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '6.1 - 7.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(6.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(6.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '7.1 - 8.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(7.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(7.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '8.1 - 9.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(8.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(8.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '9.1 - 10.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(9.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(9.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: '10.1 - 15.0 mmol/L',
+                        subOptions: [
+                            {
+                                display: '10.1 - 11.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(10.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(10.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '11.1 - 12.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(11.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(11.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '12.1 - 13.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(12.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(12.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '13.1 - 14.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(13.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(13.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '14.1 - 15.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(14.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(14.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: '15.1 - 20.0 mmol/L',
+                        subOptions: [
+                            {
+                                display: '15.1 - 16.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(15.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(15.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '16.1 - 17.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(16.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(16.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '17.1 - 18.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(17.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(17.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '18.1 - 19.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(18.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(18.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '19.1 - 20.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(19.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(19.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: '20.1 - 25.0 mmol/L',
+                        subOptions: [
+                            {
+                                display: '20.1 - 21.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(20.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(20.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '21.1 - 22.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(21.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(21.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '22.1 - 23.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(22.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(22.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '23.1 - 24.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(23.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(23.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '24.1 - 25.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(24.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(24.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: '25.1 - 30.0 mmol/L',
+                        subOptions: [
+                            {
+                                display: '25.1 - 26.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(25.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(25.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '26.1 - 27.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(26.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(26.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '27.1 - 28.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(27.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(27.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '28.1 - 29.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(28.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(28.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            },
+                            {
+                                display: '29.1 - 30.0 mmol/L',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${(29.1 + i * 0.1).toFixed(1)} mmol/L`,
+                                    output: `Fastandi blóðsykur mælist ${(29.1 + i * 0.1).toFixed(1)} mmol/L`
+                                }))
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Fastandi blóðsykur innan eðlilgra marka'
+            },
+            {
+                display: 'HbA1c',
+                subOptions: [
+                    {
+                        display: '20-30 mmol/L (4-6%)',
+                        subOptions: Array.from({ length: 11 }, (_, i) => ({
+                            display: `${20 + i} mmol/L (4.${i}%)`,
+                            output: `HbA1c ${20 + i} mmol/L (4.${i}%)`
+                        }))
+                    },
+                    {
+                        display: '31-40 mmol/L (6-8%)',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${31 + i} mmol/L (6.${i}%)`,
+                            output: `HbA1c ${31 + i} mmol/L (6.${i}%)`
+                        }))
+                    },
+                    {
+                        display: '41-50 mmol/L (8-10%)',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${41 + i} mmol/L (8.${i}%)`,
+                            output: `HbA1c ${41 + i} mmol/L (8.${i}%)`
+                        }))
+                    },
+                    {
+                        display: '51-60 mmol/L (10-12%)',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${51 + i} mmol/L (10.${i}%)`,
+                            output: `HbA1c ${51 + i} mmol/L (10.${i}%)`
+                        }))
+                    },
+                    {
+                        display: '61-70 mmol/L (12-14%)',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${61 + i} mmol/L (12.${i}%)`,
+                            output: `HbA1c ${61 + i} mmol/L (12.${i}%)`
+                        }))
+                    },
+                    {
+                        display: '71-80 mmol/L (14-16%)',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${71 + i} mmol/L (14.${i}%)`,
+                            output: `HbA1c ${71 + i} mmol/L (14.${i}%)`
+                        }))
+                    },
+                    {
+                        display: '81-90 mmol/L (16-18%)',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${81 + i} mmol/L (16.${i}%)`,
+                            output: `HbA1c ${81 + i} mmol/L (16.${i}%)`
+                        }))
+                    },
+                    {
+                        display: '91-100 mmol/L (18-20%)',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${91 + i} mmol/L (18.${i}%)`,
+                            output: `HbA1c ${91 + i} mmol/L (18.${i}%)`
+                        }))
+                    },
+                    {
+                        display: '101-110 mmol/L (20-22%)',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${101 + i} mmol/L (20.${i}%)`,
+                            output: `HbA1c ${101 + i} mmol/L (20.${i}%)`
+                        }))
+                    },
+                    {
+                        display: '111-120 mmol/L (22-24%)',
+                        subOptions: Array.from({ length: 10 }, (_, i) => ({
+                            display: `${111 + i} mmol/L (22.${i}%)`,
+                            output: `HbA1c ${111 + i} mmol/L (22.${i}%)`
+                        }))
+                    }
+                ],
+                onRightClickOutput: 'Langtímasykur innan eðlilgra marka'
+            }
+            
+            
+        ]
     }
+    
 ];
 const PlanHeart = [
     {
@@ -6913,13 +7712,102 @@ const PlanHeart = [
                 subOptions: [
                     { display: 'Háþrýstingur', output: 'Háþrýstingur' },
                     { display: 'Háþrýstingur + heimamælingar góðar', output: 'Háþrýstingur. Ásættanlegar heimamælingar' },
-                    { display: 'Háþrýstingur + hækkaður á stofu', output: 'Háþrýstingur. Mælist of hár á stofu' }
+                    { display: 'Háþrýstingur + hækkaður á stofu', output: 'Háþrýstingur. Mælist of hár á stofu' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Fyrsta greining, rannsóknir, lyf og endurkoma', output: 'Háþrýstingur. Fær tíma í hjartalínurit, þvagprufu og blóðrannsókn. Hefjum blóðþrýstingslækkandi meðferð. Fær nýjan tíma til eftirfylgdar í framhaldi til að fara yfir rannsóknir og meta meðferðarárangur.' } 
+                        ]    
+                    },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-hypertension-in-adults#H16080896' }
+                                    
+                                ]
+                            },
+                            { display: 'Uptodate - Greining og meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-hypertension-in-adults' },
+                            { display: 'Uptodate - Meðferðarval', type: 'hyperlink', url: 'https://www.uptodate.com/contents/choice-of-drug-therapy-in-primary-essential-hypertension#H3514635944' }
+                            
+                            
+                        ]
+                    }
+                    
                 ],
                 onRightClickOutput: 'Ekki háþrýstingur'
             },
-            { 
-                display: 'Brjóstverkur', 
-                output: 'Brjóstverkur', 
+            {
+                display: 'Brjóstverkur',
+                subOptions: [
+                    {
+                        display: 'NOS', 
+                        output: 'Brjóstverkur'
+                    },
+                    {
+                        display: 'STEMI',
+                        subOptions: [
+                            {
+                                display: 'Greining',
+                                output: 'Brjóstverkur. Greining á STEMI'
+                            },
+                            {
+                                display: 'Grunur',
+                                output: 'Brjóstverkur. Grunur um STEMI'
+                            },
+                            { display: 'Fullmótuð plön', 
+                                subOptions: [
+                                    { display: 'Grunur, meðferð, bmt', output: 'Brjóstverkur. Presentation og hjartalínurit vekur grun um STEMI. Fær 300mg hleðsluskammt af hjartamagnýl ásamt 600mg clopidogrel. Flyst yfir á bráðamóttöku.' } 
+                                ]    
+                            },
+                            { display: 'Hlekkir', 
+                                subOptions: [
+                                    { display: 'Uptodate - STEMI', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-the-acute-management-of-st-elevation-myocardial-infarction' },
+                                    { display: 'Uptodate - Hleðsluskammtur STEMI', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-st-elevation-myocardial-infarction-antiplatelet-therapy#H36' }
+                                ]
+                            }
+                        ],
+                        output: 'Brjóstverkur. STEMI'
+                    },
+                    {
+                        display: 'NSTEMI',
+                        subOptions: [
+                            {
+                                display: 'Greining',
+                                output: 'Brjóstverkur. Greining á NSTEMI'
+                            },
+                            {
+                                display: 'Grunur',
+                                output: 'Brjóstverkur. Grunur um NSTEMI'
+                            },
+                            { display: 'Fullmótuð plön', 
+                                subOptions: [
+                                    { display: 'Grunur, meðferð, bmt', output: 'Brjóstverkur. Presentation og hjartalínurit vekur grun um NSTEMI. Fær 300mg hleðsluskammt af hjartamagnýl ásamt 600mg clopidogrel. Flyst yfir á bráðamóttöku.' } 
+                                ]    
+                            },
+                            { display: 'Hlekkir', 
+                                subOptions: [
+                                    { display: 'Uptodate - NSTEMI', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-the-acute-management-of-non-st-elevation-acute-coronary-syndromes' },
+                                    { display: 'Uptodate - Lyfjameðferð NSTEMI', type: 'hyperlink', url: 'https://www.uptodate.com/contents/anticoagulant-therapy-in-non-st-elevation-acute-coronary-syndromes' }
+                                ]
+                            }
+                        ],
+                        output: 'Brjóstverkur. NSTEMI'
+                    },
+                    { 
+                        display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate', type: 'hyperlink', url: 'https://www.uptodate.com/contents/outpatient-evaluation-of-the-adult-with-chest-pain#H24' }
+                                    
+                                ]
+                            },
+                            { display: 'Uptodate - Outpatient evaluation of chest pain', type: 'hyperlink', url: 'https://www.uptodate.com/contents/outpatient-evaluation-of-the-adult-with-chest-pain' }
+                            
+                            
+                        ]
+                    }
+                ],
                 onRightClickOutput: 'Ekki brjóstverkur'
             },
             {
@@ -7005,6 +7893,25 @@ const PlanHeart = [
                 display: 'Mitral regurgitation', 
                 output: 'Mitral regurgitation', 
                 onRightClickOutput: 'Ekki mitral regurgitation'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Metabolic syndrome', 'Obesity', 'Sykursýki II', 'Blóðfituröskun'],
+        options: [
+            { 
+                
+            },
+            { 
+                
+            },
+            { 
+               
+            },
+            { 
+               
             }
         ]
     }
@@ -7829,79 +8736,65 @@ const CHADSVASCHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Aldur','Kyn', 'Hjartabilun', 'Háþrýstingur'],
+        display: ['Aldur', 'Kyn', 'Hjartabilun', 'Háþrýstingur'],
         options: [
             {
                 display: 'Aldur',
                 subOptions: [
-                    { display: '<65', output: 'Aldur <65 (+0)' },
                     { display: '65-74', output: 'Aldur milli 65-74 (+1)' },
                     { display: 'Aldur >74', output: 'Aldur >74 (+2)' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Aldur <65 (+0)'
             },
             {
-                display: 'Kyn',
-                subOptions: [
-                    { display: 'KK', output: 'Karlkyn (+0)' },
-                    { display: 'Kvk', output: 'Kvenkyn (+1)' }
-                ],
-                cancelText: ''
+                display: 'Kyn', 
+                output: 'Kvenkyn (+1)',
+                onRightClickOutput: 'Karlkyn (+0)'
             },
             {
                 display: 'Hjartabilun',
-                subOptions: [
-                    { display: 'Saga um CHF', output: 'Saga um hjartabilun (+1)' },
-                    { display: 'Ekki saga um CHF', output: 'Ekki saga um hjartabilun (+0)' }
-                ],
-                cancelText: ''
+                output: 'Saga um hjartabilun (+1)',
+                onRightClickOutput: 'Ekki saga um hjartabilun (+0)'
             },
             {
                 display: 'Háþrýsting',
-                subOptions: [
-                    { display: 'Saga um háþrýsting', output: 'Saga um háþrýsting (+1)' },
-                    { display: 'Ekki saga um háþrýsting', output: 'Ekki saga háþrýsting (+0)' }
-                ],
-                cancelText: ''
+                output: 'Saga um háþrýsting (+1)',
+                onRightClickOutput: 'Ekki saga um háþrýsting (+0)'
             }
-        ]              
+        ]
     },
     {
         name: '',
         type: 'options',
         display: ['TIA/STROKE', 'Æðasjúkdóm', 'Sykursýki'],
         options: [
-           
             {
                 display: 'TIA/STROKE',
                 subOptions: [
                     { display: 'Fengið TIA', output: 'Saga um TIA (+2)' },
-                    { display: 'Fengið stroke', output: 'Saga um heilablóðfall (+2)' },
-                    { display: 'Ekki fengið TIA/stroke', output: 'Ekki saga um TIA eða heilablóðfall (+0)' }
+                    { display: 'Fengið stroke', output: 'Saga um heilablóðfall (+2)' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki saga um TIA eða heilablóðfall (+0)'
             },
             {
                 display: 'Æðasjúkdóm',
                 subOptions: [
-                    { display: 'Kransæðasjúkdóm', output: 'Saga um kransæða sjúkdóm (+1)' },
+                    { display: 'Kransæðasjúkdóm', output: 'Saga um kransæðasjúkdóm (+1)' },
                     { display: 'Útæðasjúkdóm', output: 'Saga um útæðasjúkdóm (+1)' },
-                    { display: 'Hvorugt', output: 'Ekki saga um kransæða eða útæðasjúkdóm (+0)' }
+                    { display: 'Kransæða- og útæðasjúkdóm', output: 'Saga um kransæða- og útæðasjúkdóm (+1)' }
                 ],
-                cancelText: ''
+                onRightClickOutput: 'Ekki saga um kransæða eða útæðasjúkdóm (+0)'
             },
             {
                 display: 'Sykursýki',
-                subOptions: [
-                    { display: 'Saga um sykursýki', output: 'Saga um sykursýki (+1)' },
-                    { display: 'Ekki saga um sykursýki', output: 'Ekki saga um sykursýki (+0)' }
-                ],
-                cancelText: ''
+                output: 'Saga um sykursýki (+1)',
+                onRightClickOutput: 'Ekki saga um sykursýki (+0)'
             }
-        ]              
+        ]
     }
-    
 ];
+
+
 const historyHeart = [
     {
         name: '',
@@ -9070,11 +9963,66 @@ const KerfakonnunMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Ógleði', 'Uppköst', 'Uppþemba'],
+        display: ['Ógleði', 'Uppþemba', 'Uppköst', 'Fjöldi', 'Lýsing'],
         options: [
             { display: 'Ógleði', output: 'Ógleði', onRightClickOutput: 'Ekki ógleði' },
+            { display: 'Uppþemba', output: 'Uppþemba', onRightClickOutput: 'Ekki uppþemba' },
             { display: 'Uppköst', output: 'Uppköst', onRightClickOutput: 'Ekki uppköst' },
-            { display: 'Uppþemba', output: 'Uppþemba', onRightClickOutput: 'Ekki uppþemba' }
+            {
+                display: 'Fjöldi',
+                subOptions: [
+                    {
+                        display: 'Einu sinni',
+                        output: 'Kastað upp einu sinni'
+                    },
+                    {
+                        display: 'Tvisvar',
+                        output: 'Kastað upp tvisvar'
+                    },
+                    {
+                        display: 'Þrígang',
+                        output: 'Kastað upp í þrígang'
+                    },
+                    {
+                        display: 'Fjórum sinnum',
+                        output: 'Kastað upp fjórum sinnum'
+                    },
+                    {
+                        display: 'Fimm sinnum eða oftar',
+                        output: 'Kastað upp fimm sinnum eða oftar'
+                    }
+                ]
+            },
+            {
+                display: 'Lýsing',
+                subOptions: [
+                    {
+                        display: 'Gulgrænn',
+                        output: 'Uppköstin eru gulgræn'
+                    },
+                    {
+                        display: 'Blóðugur',
+                        output: 'Uppköstin eru blóðug'
+                    },
+                    {
+                        display: 'Kaffikorgslík',
+                        output: 'Uppköstin líkjast kaffikorgi'
+                    },
+                    {
+                        display: 'Froðukenndur',
+                        output: 'Uppköstin eru froðukennd'
+                    },
+                    {
+                        display: 'Vatnskenndur',
+                        output: 'Uppköstin eru vatnskennd'
+                    },
+                    {
+                        display: 'Illalyktandi',
+                        output: 'Uppköstin eru illalyktandi'
+                    }
+                ]
+            }                        
+            
         ]
     },
     {
@@ -21660,136 +22608,132 @@ const LyfData = [
                         ]
                     },
                     {
-                        display: 'Blóðflöguhemmlar og blóðþynnandi',
+                        display: 'Blóðflöguhemmlar',
                         subOptions: [
                             {
-                                display: 'Antiplatelets',
+                                display: 'Clopidogrel',
                                 subOptions: [
-                                    {
-                                        display: 'Clopidogrel',
+                                    { display: 'NOS', output: 'Clopidogrel' },
+                                    ...[75, 300].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: 'Clopidogrel' },
-                                            ...[75, 300].map(dose => ({
-                                                display: `${dose} mg`,
-                                                subOptions: [
-                                                    { display: 'NOS', output: `Clopidogrel ${dose} mg` },
-                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Clopidogrel ${dose} mg ${freq}` }))
-                                                ]
-                                            }))
+                                            { display: 'NOS', output: `Clopidogrel ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Clopidogrel ${dose} mg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: 'Aspirin',
-                                        subOptions: [
-                                            { display: 'NOS', output: 'Aspirin' },
-                                            ...[81, 325].map(dose => ({
-                                                display: `${dose} mg`,
-                                                subOptions: [
-                                                    { display: 'NOS', output: `Aspirin ${dose} mg` },
-                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Aspirin ${dose} mg ${freq}` }))
-                                                ]
-                                            }))
-                                        ]
-                                    },
-                                    {
-                                        display: 'Ticagrelor',
-                                        subOptions: [
-                                            { display: 'NOS', output: 'Ticagrelor' },
-                                            ...[60, 90].map(dose => ({
-                                                display: `${dose} mg`,
-                                                subOptions: [
-                                                    { display: 'NOS', output: `Ticagrelor ${dose} mg` },
-                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Ticagrelor ${dose} mg ${freq}` }))
-                                                ]
-                                            }))
-                                        ]
-                                    },
-                                    {
-                                        display: 'Prasugrel',
-                                        subOptions: [
-                                            { display: 'NOS', output: 'Prasugrel' },
-                                            ...[5, 10].map(dose => ({
-                                                display: `${dose} mg`,
-                                                subOptions: [
-                                                    { display: 'NOS', output: `Prasugrel ${dose} mg` },
-                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Prasugrel ${dose} mg ${freq}` }))
-                                                ]
-                                            }))
-                                        ]
-                                    }
+                                    }))
                                 ]
                             },
                             {
-                                display: 'Anticoagulants',
+                                display: 'Aspirin',
                                 subOptions: [
-                                    {
-                                        display: 'Warfarin',
+                                    { display: 'NOS', output: 'Aspirin' },
+                                    ...[81, 325].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: 'Warfarin' },
-                                            ...[1, 2, 2.5, 3, 4, 5, 6, 7.5, 10].map(dose => ({
-                                                display: `${dose} mg`,
-                                                subOptions: [
-                                                    { display: 'NOS', output: `Warfarin ${dose} mg` },
-                                                    { display: '1x1', output: `Warfarin ${dose} mg 1x1` }
-                                                ]
-                                            }))
+                                            { display: 'NOS', output: `Aspirin ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Aspirin ${dose} mg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: 'Apixaban',
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Ticagrelor',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Ticagrelor' },
+                                    ...[60, 90].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: 'Apixaban' },
-                                            ...[2.5, 5].map(dose => ({
-                                                display: `${dose} mg`,
-                                                subOptions: [
-                                                    { display: 'NOS', output: `Apixaban ${dose} mg` },
-                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Apixaban ${dose} mg ${freq}` }))
-                                                ]
-                                            }))
+                                            { display: 'NOS', output: `Ticagrelor ${dose} mg` },
+                                            ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Ticagrelor ${dose} mg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: 'Rivaroxaban',
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Prasugrel',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Prasugrel' },
+                                    ...[5, 10].map(dose => ({
+                                        display: `${dose} mg`,
                                         subOptions: [
-                                            { display: 'NOS', output: 'Rivaroxaban' },
-                                            ...[10, 15, 20].map(dose => ({
-                                                display: `${dose} mg`,
-                                                subOptions: [
-                                                    { display: 'NOS', output: `Rivaroxaban ${dose} mg` },
-                                                    ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Rivaroxaban ${dose} mg ${freq}` }))
-                                                ]
-                                            }))
+                                            { display: 'NOS', output: `Prasugrel ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Prasugrel ${dose} mg ${freq}` }))
                                         ]
-                                    },
-                                    {
-                                        display: 'Dabigatran',
-                                        subOptions: [
-                                            { display: 'NOS', output: 'Dabigatran' },
-                                            ...[75, 110, 150].map(dose => ({
-                                                display: `${dose} mg`,
-                                                subOptions: [
-                                                    { display: 'NOS', output: `Dabigatran ${dose} mg` },
-                                                    ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Dabigatran ${dose} mg ${freq}` }))
-                                                ]
-                                            }))
-                                        ]
-                                    },
-                                    {
-                                        display: 'Enoxaparin',
-                                        subOptions: [
-                                            { display: 'NOS', output: 'Enoxaparin' },
-                                            ...[30, 40, 1].map(dose => ({
-                                                display: dose === 1 ? '1 mg/kg every 12 hours' : `${dose} mg`,
-                                                subOptions: [
-                                                    { display: 'NOS', output: `Enoxaparin ${dose === 1 ? '1 mg/kg every 12 hours' : `${dose} mg`}` },
-                                                    { display: '1x1', output: `Enoxaparin ${dose === 1 ? '1 mg/kg every 12 hours' : `${dose} mg`} 1x1` }
-                                                ]
-                                            }))
-                                        ]
-                                    }
+                                    }))
                                 ]
                             }
                         ]
+                    },
+                    {
+                        display: 'Blóðþynnandi',
+                        subOptions: [
+                            {
+                                display: 'Warfarin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Warfarin' },
+                                    ...[1, 2, 2.5, 3, 4, 5, 6, 7.5, 10].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Warfarin ${dose} mg` },
+                                            { display: '1x1', output: `Warfarin ${dose} mg 1x1` }
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Apixaban',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Apixaban' },
+                                    ...[2.5, 5].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Apixaban ${dose} mg` },
+                                            ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Apixaban ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Rivaroxaban',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Rivaroxaban' },
+                                    ...[10, 15, 20].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Rivaroxaban ${dose} mg` },
+                                            ...['1x1', 'PN'].map(freq => ({ display: freq, output: `Rivaroxaban ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Dabigatran',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Dabigatran' },
+                                    ...[75, 110, 150].map(dose => ({
+                                        display: `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Dabigatran ${dose} mg` },
+                                            ...['1x1', '2x1', 'PN'].map(freq => ({ display: freq, output: `Dabigatran ${dose} mg ${freq}` }))
+                                        ]
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Enoxaparin',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Enoxaparin' },
+                                    ...[30, 40, 1].map(dose => ({
+                                        display: dose === 1 ? '1 mg/kg every 12 hours' : `${dose} mg`,
+                                        subOptions: [
+                                            { display: 'NOS', output: `Enoxaparin ${dose === 1 ? '1 mg/kg every 12 hours' : `${dose} mg`}` },
+                                            { display: '1x1', output: `Enoxaparin ${dose === 1 ? '1 mg/kg every 12 hours' : `${dose} mg`} 1x1` }
+                                        ]
+                                    }))
+                                ]
+                            }
+                        ],
+                        onRightClickOutput: 'Ekki á blóðþynnandi'
                     },
                     {
                         display: 'Lyf við hjartaöng, arrythmíu o.fl',
@@ -21889,7 +22833,7 @@ const LyfData = [
                     }
                     
                 ],
-                onRightClickOutput: 'Engin lyf'
+                onRightClickOutput: 'Engin hjartalyf'
             },
             {
                 display: 'Meltingarlyf',
