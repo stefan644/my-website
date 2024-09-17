@@ -6681,7 +6681,8 @@ const ExamsHeart = [
                             }
                         ]
                     }
-                ]
+                ],
+                onRightClickOutput: 'Ekki bjúgur á fótum'
             },
             {
                 display: 'Hálsvenustasi',
@@ -8867,8 +8868,8 @@ const historyHeart = [
             },
             {
                 display: 'Aortic Stenosis',
-                output: 'Saga um ósæðarþrengsli',
-                onRightClickOutput: 'Ekki saga um ósæðarþrengsli'
+                output: 'Saga um ósæðarlokuþrengsli',
+                onRightClickOutput: 'Ekki saga um ósæðarlokuþrengsli'
             },
             {
                 display: 'Pericarditis',
@@ -15843,6 +15844,183 @@ const SymptomsGed = [
 */
     
 ];
+const GedheilsufarData = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Þunglyndi', 'Kvíðaröskun', 'Geðklofi', 'Bipolar'],
+        options: [
+            {
+                display: 'Þunglyndi',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um þunglyndi' },
+                    { display: 'Miðlungs', output: 'Saga um miðlungs þunglyndi' },
+                    { display: 'Alvarlegt', output: 'Saga um alvarlegt þunglyndi' }
+                ],
+                onRightClickOutput: 'Ekki saga um þunglyndi'
+            },
+            {
+                display: 'Kvíðaröskun',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um kvíðaröskun' },
+                    { display: 'Félagskvíði', output: 'Saga um félagskvíða' },
+                    { display: 'Almenn kvíði', output: 'Saga um almennan kvíða' },
+                    { display: 'Ofsakvíði', output: 'Saga um ofsakvíða' }
+                ],
+                onRightClickOutput: 'Ekki saga um kvíðaröskun'
+            },
+            {
+                display: 'Geðklofi',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um geðklofa' },
+                    { display: 'Heilabilun', output: 'Saga um heilabilun' }
+                ],
+                onRightClickOutput: 'Ekki saga um geðklofa'
+            },
+            {
+                display: 'Bipolar',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um bipolar' },
+                    { display: 'Fasi I', output: 'Saga um bipolar fasi I' },
+                    { display: 'Fasi II', output: 'Saga um bipolar fasi II' }
+                ],
+                onRightClickOutput: 'Ekki saga um bipolar'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Lotugræðgi', 'Anorexia', 'ADHD', 'PTSD'],
+        options: [
+            {
+                display: 'Lotugræðgi',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um lotugræðgi' },
+                    { display: 'Mild', output: 'Saga um milda lotugræðgi' },
+                    { display: 'Alvarlegt', output: 'Saga um alvarlega lotugræðgi' }
+                ],
+                onRightClickOutput: 'Ekki saga um lotugræðgi'
+            },
+            {
+                display: 'Anorexia',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um anorexíu' },
+                    { display: 'Mild', output: 'Saga um milda anorexíu' },
+                    { display: 'Alvarlegt', output: 'Saga um alvarlega anorexíu' }
+                ],
+                onRightClickOutput: 'Ekki saga um anorexíu'
+            },
+            {
+                display: 'ADHD',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um ADHD' },
+                    { display: 'Einkenni frá barnæsku', output: 'Saga um ADHD með upphaf í barnæsku' },
+                    { display: 'Einkenni frá fullorðinsárum', output: 'Saga um ADHD með upphaf á fullorðinsárum' }
+                ],
+                onRightClickOutput: 'Ekki saga um ADHD'
+            },
+            {
+                display: 'PTSD',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um PTSD' },
+                    { display: 'Lítil áföll', output: 'Saga um lítil áföll með PTSD' },
+                    { display: 'Mikil áföll', output: 'Saga um mikil áföll með PTSD' }
+                ],
+                onRightClickOutput: 'Ekki saga um PTSD'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Áfengismisnotkun', 'Vímuefnamisnotkun', 'Lyfjamisnotkun'],
+        options: [
+            {
+                display: 'Áfengismisnotkun',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um áfengismisnotkun' },
+                    { display: 'Meðferð', output: 'Áfengismisnotkun, hefur farið í meðferð' },
+                    { display: 'Edrú', output: 'Áfengismisnotkun, nú edrú' }
+                ],
+                onRightClickOutput: 'Ekki saga um áfengismisnotkun'
+            },
+            {
+                display: 'Vímuefnamisnotkun',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um vímuefnamisnotkun' },
+                    { display: 'Kannabis', output: 'Saga um kannabismisnotkun' },
+                    { display: 'Ópíóíðar', output: 'Saga um ópíóíða misnotkun' },
+                    { display: 'Kókaín', output: 'Saga um kókaínmisnotkun' },
+                    { display: 'Amfetamín', output: 'Saga um amfetamínmisnotkun' },
+                    { display: 'MDMA', output: 'Saga um MDMA misnotkun' }
+                ],
+                onRightClickOutput: 'Ekki saga um vímuefnamisnotkun'
+            },
+            {
+                display: 'Lyfjamisnotkun',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um lyfjamisnotkun' },
+                    { display: 'Benzódíazepín', output: 'Saga um benzódíazepín misnotkun' },
+                    { display: 'Ópíata', output: 'Saga um mistnotkun á ópíataskyldum lyfjum' },
+                    { display: 'ADHD', output: 'Saga um mistnotkun á ADHD lyfjum' },
+                    { display: 'Svefnlyf', output: 'Saga um svefnlyfjamisnotkun' }
+                ],
+                onRightClickOutput: 'Ekki saga um lyfjamisnotkun'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Geðlyf', 'Róandi lyf'],
+        options: [
+            {
+                display: 'Geðlyf',
+                subOptions: [
+                    { display: 'NOS', output: 'Notar geðlyf' },
+                    { display: 'SSRI', output: 'Notar SSRI geðlyf' },
+                    { display: 'Geðrofslyf', output: 'Notar geðrofslyf' }
+                ],
+                onRightClickOutput: 'Ekki saga um notkun geðlyfja'
+            },
+            {
+                display: 'Róandi lyf',
+                subOptions: [
+                    { display: 'NOS', output: 'Notar róandi lyf' },
+                    { display: 'Benzódíazepín', output: 'Notar benzódíazepín' }
+                ],
+                onRightClickOutput: 'Ekki saga um notkun róandi lyfja'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sjálfsvígstilraunir', 'Geðrof'],
+        options: [
+            {
+                display: 'Sjálfsvígstilraunir',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um sjálfsvígstilraunir' },
+                    { display: 'Eina sjálfsvígstilraun', output: 'Saga um eina sjálfsvígstilraun' },
+                    { display: 'Endurteknar sjálfsvígstilraunir', output: 'Saga um endurteknar sjálfsvígstilraunir' }
+                ],
+                onRightClickOutput: 'Engin saga um sjálfsvígstilraunir'
+            },
+            {
+                display: 'Geðrof',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um geðrof' },
+                    { display: 'Með geðrofi', output: 'Saga um geðrof' },
+                    { display: 'Án geðrofs', output: 'Saga um geðroflausa atburði' }
+                ],
+                onRightClickOutput: 'Engin saga um geðrof'
+            }
+        ]
+    }
+];
+
 const GedSkodunData = [
     {
         name: '',
@@ -16006,7 +16184,6 @@ const GedSkodunData = [
         ]
     }
 ];
-
 const ExamsGed = [
     {
         name: '',
@@ -16027,7 +16204,6 @@ const ExamsGed = [
         ]
     }
 ];
-
 const PlanGed = [
     {
         name: '',
@@ -28412,6 +28588,9 @@ function handleTitleRightClick(event, title, sectionId) {
         case 'Augnlyf':
             insertText('Engin augnlyf', sectionId);
              break;
+        case 'Geðheilsufar':
+            insertText('Engin fyrri saga um geðsjúkdóma', sectionId);
+             break;
         case 'Augnsaga':
             insertText('Sjón alltaf verið góð. Engir augnsjúkdómar eða fjölskyldusaga um slíka. Notar hvorki gleraugu né linsur', sectionId);
              break;
@@ -28662,6 +28841,15 @@ function createHlekkirSection(data) {
     createButtons(container, data, 'hlekkir');
     return section;
 }
+
+function createGedheilsufarSection(data) {
+    console.log('Creating Geðheilsufar Section with data:', data); // Debugging line
+    const section = createSection('gedheilsufar', 'Geðheilsufar');
+    const container = section.querySelector('#gedheilsufar');
+    createButtons(container, data, 'gedheilsufar');
+    return section;
+}
+
 
 
 // Load sections depending on page
@@ -29251,12 +29439,20 @@ function loadPage(page) {
         const sigecapsSection = createSIGECAPSSection(SIGECAPS);
         const gedSkodunSection = createGedSkodunSection(GedSkodunData);
         const felagssagaSection = createFelagssagaSection(Felagssaga);
+        const gedheilsufarSection = createGedheilsufarSection(GedheilsufarData);
+        const lyfSection = createLyfSection(LyfData);
+        const habitsSection = createHabitsSection(Habits);
+        const ofnaemiSection = createOfnaemiSection(OfnaemiData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
         leftColumn.appendChild(sigecapsSection);
         leftColumn.appendChild(felagssagaSection);
+        leftColumn.appendChild(gedheilsufarSection);
+        leftColumn.appendChild(lyfSection);
+        leftColumn.appendChild(habitsSection);
+        leftColumn.appendChild(ofnaemiSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -29660,7 +29856,8 @@ function findNextHeaderIndex(currentText, startIndex) {
         'Venjur:', 'Skoðun:', 'Álit og plan:', 'Rannsóknir:', 'Lífsmörk:', 'Rauð Flögg:', 'Lyf:',
         'Áhættuþættir Kransæðasjúkdóms:', 'Áhættuþættir þvagblöðrukrabbameins:', 'CHADS-VASc:',
         'Heilsufar:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:',
-        'Ofnæmi:', 'Heilataugaskoðun:', 'Þvagrannsókn:', 'Augnsaga:', 'Augnlyf:'
+        'Ofnæmi:', 'Heilataugaskoðun:', 'Þvagrannsókn:', 'Augnsaga:', 'Augnlyf:', 'Félagssaga:',
+        'Geðheilsufar:'
     ];
     let nextHeaderIndex = -1;
 
@@ -29676,7 +29873,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'felagssaga', 'augnsaga', 'lyf', 'augnlyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
+    const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'felagssaga','gedheilsufar', 'augnsaga', 'lyf', 'augnlyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
@@ -29761,7 +29958,8 @@ function getSectionHeader(sectionId) {
             return 'Augnlyf:';
         case 'felagssaga':
             return 'Félagssaga:';
-        
+        case 'gedheilsufar':
+            return 'Geðheilsufar:';
         
         default:
             return '';
