@@ -2472,9 +2472,9 @@ const ExamsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Eitlastækkanir'],
+        display: ['Hálseitlar'],
         options: [
-            { display: 'Eitlastækkanir', output: 'Eitlastækkanir á hálssvæði', onRightClickOutput: 'Ekki eitlastækkanir á hálssvæði' }
+            { display: 'Hálseitlar', output: 'Eitlastækkanir á hálssvæði', onRightClickOutput: 'Ekki eitlastækkanir á hálssvæði' }
         ]
     },
     {
