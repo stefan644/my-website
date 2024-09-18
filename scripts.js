@@ -15898,7 +15898,7 @@ const GedheilsufarData = [
                 subOptions: [
                     { display: 'NOS', output: 'Saga um lotugræðgi' },
                     { display: 'Mild', output: 'Saga um milda lotugræðgi' },
-                    { display: 'Alvarlegt', output: 'Saga um alvarlega lotugræðgi' }
+                    { display: 'Alvarleg', output: 'Saga um alvarlega lotugræðgi' }
                 ],
                 onRightClickOutput: 'Ekki saga um lotugræðgi'
             },
@@ -15924,8 +15924,7 @@ const GedheilsufarData = [
                 display: 'PTSD',
                 subOptions: [
                     { display: 'NOS', output: 'Saga um PTSD' },
-                    { display: 'Lítil áföll', output: 'Saga um lítil áföll með PTSD' },
-                    { display: 'Mikil áföll', output: 'Saga um mikil áföll með PTSD' }
+                    { display: 'Mikil áfallasaga', output: 'Saga um PTSD. Mikil áfallasaga' }
                 ],
                 onRightClickOutput: 'Ekki saga um PTSD'
             }
@@ -15940,8 +15939,8 @@ const GedheilsufarData = [
                 display: 'Áfengismisnotkun',
                 subOptions: [
                     { display: 'NOS', output: 'Saga um áfengismisnotkun' },
-                    { display: 'Meðferð', output: 'Áfengismisnotkun, hefur farið í meðferð' },
-                    { display: 'Edrú', output: 'Áfengismisnotkun, nú edrú' }
+                    { display: 'Áfengi, meðferð, edrú', output: 'Saga um áfengismisnotkun. Farið í meðferð, nú edrú' },
+                    { display: 'Áfengi, meðferð, drekkur enn', output: 'Saga um áfengismisnotkun. Farið í meðferð, drekkur enn' }
                 ],
                 onRightClickOutput: 'Ekki saga um áfengismisnotkun'
             },
@@ -29911,6 +29910,11 @@ function findEndOfSection(sectionId, currentText) {
     return nextHeaderIndex === -1 ? currentText.length : nextHeaderIndex;
 }
 
+// If top left corner of textbox is clicked, it changes size
+function toggleTextboxSize() {
+    const textbox = document.getElementById("journalTextbox");
+    textbox.classList.toggle("enlarged");
+}
 
 
 // Get the section header text based on sectionId

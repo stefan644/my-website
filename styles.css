@@ -108,10 +108,35 @@ main {
     border-radius: 4px;
     resize: none;
     overflow: auto;
+    transition: width 0.3s ease, height 0.3s ease; /* Smooth transition */
 }
 
 #journalTextbox:focus {
     outline: none;
+}
+
+.textarea-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Creates a clickable area in the top left corner of the textbox. Used to enlarge and delarge */
+.clickable-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px; /* Increase size for better clickability */
+    height: 10px;
+    cursor: pointer;
+    z-index: 10;
+    background-color: transparent; /* Make it invisible */
+}
+
+
+#journalTextbox.enlarged {
+    width: 910px;  /* Double the width */
+    height: 700px;  /* Double the height */
+    transition: width 0.3s ease, height 0.3s ease;  /* Smooth transition */
 }
 
 #risk, #riskheart, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral, #habits, #lyf, #lifsmork, #raudflogg, #rannsoknir, #sigecaps, #gedskodun, #kerfakonnun, #ofnaemi, #rannsokn, #heilataugaskodun, #þvagrannsokn, #augnsaga, #augnlyf, #felagssaga, #gedheilsufar {
