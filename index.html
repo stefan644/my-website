@@ -12,7 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Journal</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -108,5 +107,20 @@
     <!-- Placeholders for buttons -->
     <div id="exams-buttons" class="exams-buttons"></div>
     <div id="plan-buttons" class="plan-buttons"></div>
+
+
+
+    <!-- Include EmailJS SDK just before the closing </body> tag -->
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init('IkduBj1II7x6PCGwy'); // Replace 'YOUR_USER_ID' with your actual User ID
+   })();
+</script>
+<!-- Include your scripts.js file after initializing EmailJS -->
+<script src="scripts.js" defer></script>
+
+
+
 </body>
 </html>

@@ -30272,3 +30272,27 @@ document.getElementById('journalTextbox').addEventListener('input', function() {
     });
 });
 
+function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const form = event.target;
+
+    // Collect form data
+    const formData = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        message: form.message.value,
+    };
+
+    // Send the email using EmailJS
+    emailjs.send('service_ptekx3f', 'template_kqjavmq', formData)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Skilaboðin þín hafa verið send. Takk fyrir!');
+            form.reset();
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('Eitthvað fór úrskeiðis. Vinsamlegast reyndu aftur.');
+        });
+}
