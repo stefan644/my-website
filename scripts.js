@@ -27613,8 +27613,9 @@ function calculateDosage(medicationName, dosagePerKg, weight) {
     const concentration = medicationName.includes('50mg/ml') ? 50 : 100;
     
     const dosePerMl = dosePerDose / concentration; // Calculate ml per dose
-    return `Set ${medicationName} í gáttina. Þyngd ${weight}kg. Notum ${dosagePerKg}mg/kg í þremur aðskildum skömmtum. Skammtastærð því ${dosePerMl.toFixed(1)}ml 3x á dag`;
+    return `Set ${medicationName} í gáttina. Þyngd ${weight}kg. Notum ${dosagePerKg}mg/kg í þremur aðskildum skömmtum. Skammtastærð því ${dosePerMl.toFixed(1)}ml 3x á dag. Heildarskammtur ${totalDailyDose}mg á sólahring.`;
 }
+
 
 
 
@@ -30273,11 +30274,10 @@ document.getElementById('journalTextbox').addEventListener('input', function() {
 });
 
 function handleFormSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
     const form = event.target;
 
-    // Collect form data
     const formData = {
         name: form.name.value,
         phone: form.phone.value,
@@ -30285,8 +30285,8 @@ function handleFormSubmit(event) {
         message: form.message.value,
     };
 
-    // Send the email using EmailJS
-    emailjs.send('service_ptekx3f', 'template_kqjavmq', formData)
+    // Use window.emailjs instead of emailjs
+    window.emailjs.send('service_ptekx3f', 'template_kqjavmq', formData)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             alert('Skilaboðin þín hafa verið send. Takk fyrir!');
