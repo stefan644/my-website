@@ -190,15 +190,17 @@ main {
     align-items: center;
 }
 
+/* Existing CSS for modal-content */
 .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 890%;
-    max-width: 800px;
-    text-align: center;
+    width: 80%; /* Increase the width from 60% to 80% */
+    max-width: 1000px; /* Increase the max-width if needed */
+    box-sizing: border-box;
 }
+
 
 .close-button {
     color: #aaa;
@@ -485,4 +487,121 @@ main {
 
 #feedbackForm button:hover {
     background-color: #0056b3;
+}
+
+
+/* Toolbar styles */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Button grid styles */
+.button-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-row {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.generator-button, .add-button {
+    padding: 10px 15px;
+    margin-right: 5px;
+    /* Customize button styles as needed */
+}
+
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Button editor form styles */
+.button-editor-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-editor-form .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.button-editor-form .form-group label {
+    flex: 0 0 180px; /* Fixed width for labels */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.button-editor-form .form-group input[type="text"],
+.button-editor-form .form-group input[type="file"],
+.button-editor-form .form-group textarea {
+    flex: 1;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Suboptions styles */
+.suboptions-section {
+    margin-top: 15px;
+}
+
+.suboption {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.suboption .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.suboption .form-group label {
+    flex: 0 0 160px; /* Adjust label width if needed */
+    margin-right: 10px;
+    font-weight: normal;
+}
+
+.suboption .form-group input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.nested-suboptions-container,
+.nested-onrightclick-suboptions-container {
+    margin-left: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+    }
+
+    .button-editor-form .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button-editor-form .form-group label {
+        margin-bottom: 5px;
+        width: auto;
+    }
+
+    .suboption .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .suboption .form-group label {
+        margin-bottom: 5px;
+        width: auto;
+    }
 }

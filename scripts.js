@@ -2338,7 +2338,6 @@ const SymptomsViral = [
                     { display: 'Drekkur vel', output: 'Drekkur vel' },
                     { display: 'Borðar og drekkur vel', output: 'Borðar og drekkur vel' }
                 ],
-                cancelText: ''
             }
         ]
     }
@@ -28427,6 +28426,591 @@ function addOrthostatismButton(parentElement) {
     parentElement.appendChild(orthostatismButton);
 }
 
+// Modals to create button structure for user contribution
+function openButtonStructureGeneratorModal() {
+    let modal = document.getElementById('buttonStructureGeneratorModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'buttonStructureGeneratorModal';
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal('buttonStructureGeneratorModal')">&times;</span>
+                <div id="buttonStructureGeneratorContainer"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    modal.style.display = 'flex';
+    const container = document.getElementById('buttonStructureGeneratorContainer');
+    container.innerHTML = '';
+    createButtonStructureGeneratorInterface(container);
+}
+function createButtonStructureGeneratorInterface(container) {
+    const toolbar = document.createElement('div');
+    toolbar.className = 'toolbar';
+
+    const addRowButton = document.createElement('button');
+    addRowButton.textContent = 'Add Row';
+    addRowButton.onclick = () => addButtonRow(buttonGrid);
+
+    const loadStructureButton = document.createElement('button');
+    loadStructureButton.textContent = 'Load Structure';
+    loadStructureButton.onclick = () => loadButtonStructure(buttonGrid);
+
+    const generateButton = document.createElement('button');
+    generateButton.textContent = 'Generate Structure';
+    generateButton.onclick = generateButtonStructure;
+
+    toolbar.appendChild(addRowButton);
+    toolbar.appendChild(loadStructureButton);
+    toolbar.appendChild(generateButton);
+    container.appendChild(toolbar);
+
+    const buttonGrid = document.createElement('div');
+    buttonGrid.className = 'button-grid';
+    container.appendChild(buttonGrid);
+
+    // Start with one row
+    addButtonRow(buttonGrid);
+}
+function addButtonRow(gridContainer, buttonsData = []) {
+    const row = document.createElement('div');
+    row.className = 'button-row';
+
+    buttonsData.forEach(buttonData => {
+        addButtonToRow(row, buttonData);
+    });
+
+    const addButton = document.createElement('button');
+    addButton.textContent = '+';
+    addButton.className = 'add-button';
+    addButton.onclick = () => addButtonToRow(row);
+    row.appendChild(addButton);
+
+    gridContainer.appendChild(row);
+}
+function addButtonToRow(row, buttonData = null) {
+    const button = document.createElement('button');
+    button.className = 'generator-button';
+    button.textContent = buttonData ? buttonData.display : 'New Button';
+
+    if (buttonData) {
+        button.dataset.leftClickOutput = buttonData.output || '';
+        button.dataset.rightClickOutput = buttonData.onRightClickOutput || '';
+        if (buttonData.subOptions) {
+            button.dataset.subOptions = JSON.stringify(buttonData.subOptions);
+        }
+        if (buttonData.onRightClickSubOptions) {
+            button.dataset.onRightClickSubOptions = JSON.stringify(buttonData.onRightClickSubOptions);
+        }
+    }
+
+    button.onclick = () => openButtonEditorModal(button);
+
+    // Insert before the add button
+    row.insertBefore(button, row.lastElementChild);
+}
+function openButtonEditorModal(button) {
+    let modal = document.getElementById('buttonEditorModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'buttonEditorModal';
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal('buttonEditorModal')">&times;</span>
+                <div id="buttonEditorContainer"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    modal.style.display = 'flex';
+    const container = document.getElementById('buttonEditorContainer');
+    container.innerHTML = '';
+    createButtonEditorInterface(container, button);
+}
+function createButtonEditorInterface(container, button) {
+    const form = document.createElement('form');
+    form.className = 'button-editor-form';
+
+    // Helper function to create form groups
+    function createFormGroup(labelText, inputElement) {
+        const group = document.createElement('div');
+        group.className = 'form-group';
+
+        const label = document.createElement('label');
+        label.textContent = labelText;
+        group.appendChild(label);
+
+        group.appendChild(inputElement);
+        return group;
+    }
+
+    // Display Text
+    const displayTextInput = document.createElement('input');
+    displayTextInput.type = 'text';
+    displayTextInput.value = button.textContent;
+    form.appendChild(createFormGroup('Display Text:', displayTextInput));
+
+    // Left Click Output
+    const leftClickInput = document.createElement('input');
+    leftClickInput.type = 'text';
+    leftClickInput.value = button.dataset.leftClickOutput || '';
+    form.appendChild(createFormGroup('Left Click Output:', leftClickInput));
+
+    // Right Click Output
+    const rightClickInput = document.createElement('input');
+    rightClickInput.type = 'text';
+    rightClickInput.value = button.dataset.rightClickOutput || '';
+    form.appendChild(createFormGroup('Right Click Output:', rightClickInput));
+
+    // SubOptions Section (Left Click)
+    const subOptionsSection = document.createElement('div');
+    subOptionsSection.className = 'suboptions-section';
+
+    const subOptionsLabel = document.createElement('h4');
+    subOptionsLabel.textContent = 'SubOptions (Left Click):';
+    subOptionsSection.appendChild(subOptionsLabel);
+
+    // Add SubOption Button
+    const addSubOptionButton = document.createElement('button');
+    addSubOptionButton.type = 'button';
+    addSubOptionButton.textContent = 'Add SubOption';
+    addSubOptionButton.onclick = () => addSubOption(subOptionsSection);
+    subOptionsSection.appendChild(addSubOptionButton);
+
+    // Load existing suboptions if any
+    if (button.dataset.subOptions) {
+        const existingSubOptions = JSON.parse(button.dataset.subOptions);
+        existingSubOptions.forEach(subOptionData => {
+            addSubOption(subOptionsSection, subOptionData);
+        });
+    }
+
+    form.appendChild(subOptionsSection);
+
+    // onRightClickSubOptions Section (Right Click)
+    const onRightClickSubOptionsSection = document.createElement('div');
+    onRightClickSubOptionsSection.className = 'suboptions-section';
+
+    const onRightClickSubOptionsLabel = document.createElement('h4');
+    onRightClickSubOptionsLabel.textContent = 'SubOptions (Right Click):';
+    onRightClickSubOptionsSection.appendChild(onRightClickSubOptionsLabel);
+
+    // Add onRightClickSubOption Button
+    const addOnRightClickSubOptionButton = document.createElement('button');
+    addOnRightClickSubOptionButton.type = 'button';
+    addOnRightClickSubOptionButton.textContent = 'Add Right Click SubOption';
+    addOnRightClickSubOptionButton.onclick = () => addSubOption(onRightClickSubOptionsSection);
+    onRightClickSubOptionsSection.appendChild(addOnRightClickSubOptionButton);
+
+    // Load existing onRightClickSubOptions if any
+    if (button.dataset.onRightClickSubOptions) {
+        const existingOnRightClickSubOptions = JSON.parse(button.dataset.onRightClickSubOptions);
+        existingOnRightClickSubOptions.forEach(subOptionData => {
+            addSubOption(onRightClickSubOptionsSection, subOptionData);
+        });
+    }
+
+    form.appendChild(onRightClickSubOptionsSection);
+
+    // Save Button
+    const saveButton = document.createElement('button');
+    saveButton.type = 'button';
+    saveButton.textContent = 'Save';
+    saveButton.onclick = () => {
+        button.textContent = displayTextInput.value;
+        button.dataset.leftClickOutput = leftClickInput.value;
+        button.dataset.rightClickOutput = rightClickInput.value;
+
+        // Collect subOptions
+        const subOptions = collectSubOptions(subOptionsSection);
+        if (subOptions.length > 0) {
+            button.dataset.subOptions = JSON.stringify(subOptions);
+        } else {
+            delete button.dataset.subOptions;
+        }
+
+        // Collect onRightClickSubOptions
+        const onRightClickSubOptions = collectSubOptions(onRightClickSubOptionsSection);
+        if (onRightClickSubOptions.length > 0) {
+            button.dataset.onRightClickSubOptions = JSON.stringify(onRightClickSubOptions);
+        } else {
+            delete button.dataset.onRightClickSubOptions;
+        }
+
+        closeModal('buttonEditorModal');
+    };
+    form.appendChild(saveButton);
+
+    container.appendChild(form);
+}
+function addSubOption(container, subOptionData = {}) {
+    const subOptionDiv = document.createElement('div');
+    subOptionDiv.className = 'suboption';
+
+    // Helper function to create form groups within suboptions
+    function createSubFormGroup(labelText, inputElement) {
+        const group = document.createElement('div');
+        group.className = 'form-group';
+
+        const label = document.createElement('label');
+        label.textContent = labelText;
+        group.appendChild(label);
+
+        group.appendChild(inputElement);
+        return group;
+    }
+
+    // Display Text
+    const displayTextInput = document.createElement('input');
+    displayTextInput.type = 'text';
+    displayTextInput.value = subOptionData.display || '';
+    subOptionDiv.appendChild(createSubFormGroup('Display Text:', displayTextInput));
+
+    // Left Click Output
+    const leftClickInput = document.createElement('input');
+    leftClickInput.type = 'text';
+    leftClickInput.value = subOptionData.output || '';
+    subOptionDiv.appendChild(createSubFormGroup('Left Click Output:', leftClickInput));
+
+    // Right Click Output
+    const rightClickInput = document.createElement('input');
+    rightClickInput.type = 'text';
+    rightClickInput.value = subOptionData.onRightClickOutput || '';
+    subOptionDiv.appendChild(createSubFormGroup('Right Click Output:', rightClickInput));
+
+    // Nested SubOptions Container (Left Click)
+    const nestedSubOptionsContainer = document.createElement('div');
+    nestedSubOptionsContainer.className = 'nested-suboptions-container';
+    subOptionDiv.appendChild(nestedSubOptionsContainer);
+
+    // Add Nested SubOption Button (Left Click)
+    const addNestedSubOptionButton = document.createElement('button');
+    addNestedSubOptionButton.type = 'button';
+    addNestedSubOptionButton.textContent = 'Add Nested SubOption (Left Click)';
+    addNestedSubOptionButton.onclick = () => addSubOption(nestedSubOptionsContainer);
+    subOptionDiv.appendChild(addNestedSubOptionButton);
+
+    // Nested OnRightClickSubOptions Container (Right Click)
+    const nestedOnRightClickSubOptionsContainer = document.createElement('div');
+    nestedOnRightClickSubOptionsContainer.className = 'nested-onrightclick-suboptions-container';
+    subOptionDiv.appendChild(nestedOnRightClickSubOptionsContainer);
+
+    // Add Nested OnRightClickSubOption Button (Right Click)
+    const addNestedOnRightClickSubOptionButton = document.createElement('button');
+    addNestedOnRightClickSubOptionButton.type = 'button';
+    addNestedOnRightClickSubOptionButton.textContent = 'Add Nested SubOption (Right Click)';
+    addNestedOnRightClickSubOptionButton.onclick = () => addSubOption(nestedOnRightClickSubOptionsContainer);
+    subOptionDiv.appendChild(addNestedOnRightClickSubOptionButton);
+
+    // Remove SubOption Button
+    const removeSubOptionButton = document.createElement('button');
+    removeSubOptionButton.type = 'button';
+    removeSubOptionButton.textContent = 'Remove SubOption';
+    removeSubOptionButton.onclick = () => container.removeChild(subOptionDiv);
+    subOptionDiv.appendChild(removeSubOptionButton);
+
+    // Load nested suboptions if any
+    if (subOptionData.subOptions) {
+        subOptionData.subOptions.forEach(nestedData => {
+            addSubOption(nestedSubOptionsContainer, nestedData);
+        });
+    }
+
+    // Load nested onRightClickSubOptions if any
+    if (subOptionData.onRightClickSubOptions) {
+        subOptionData.onRightClickSubOptions.forEach(nestedData => {
+            addSubOption(nestedOnRightClickSubOptionsContainer, nestedData);
+        });
+    }
+
+    container.appendChild(subOptionDiv);
+}
+function addSubOption(container, subOptionData = {}) {
+    const subOptionDiv = document.createElement('div');
+    subOptionDiv.className = 'suboption';
+
+    // Display Text
+    const displayTextLabel = document.createElement('label');
+    displayTextLabel.textContent = 'Display Text:';
+    const displayTextInput = document.createElement('input');
+    displayTextInput.type = 'text';
+    displayTextInput.value = subOptionData.display || '';
+    subOptionDiv.appendChild(displayTextLabel);
+    subOptionDiv.appendChild(displayTextInput);
+
+    // Left Click Output
+    const leftClickLabel = document.createElement('label');
+    leftClickLabel.textContent = 'Left Click Output:';
+    const leftClickInput = document.createElement('input');
+    leftClickInput.type = 'text';
+    leftClickInput.value = subOptionData.output || '';
+    subOptionDiv.appendChild(leftClickLabel);
+    subOptionDiv.appendChild(leftClickInput);
+
+    // Right Click Output
+    const rightClickLabel = document.createElement('label');
+    rightClickLabel.textContent = 'Right Click Output:';
+    const rightClickInput = document.createElement('input');
+    rightClickInput.type = 'text';
+    rightClickInput.value = subOptionData.onRightClickOutput || '';
+    subOptionDiv.appendChild(rightClickLabel);
+    subOptionDiv.appendChild(rightClickInput);
+
+    // Nested SubOptions Container (Left Click)
+    const nestedSubOptionsContainer = document.createElement('div');
+    nestedSubOptionsContainer.className = 'nested-suboptions-container';
+    subOptionDiv.appendChild(nestedSubOptionsContainer);
+
+    // Add Nested SubOption Button (Left Click)
+    const addNestedSubOptionButton = document.createElement('button');
+    addNestedSubOptionButton.type = 'button';
+    addNestedSubOptionButton.textContent = 'Add Nested SubOption (Left Click)';
+    addNestedSubOptionButton.onclick = () => addSubOption(nestedSubOptionsContainer);
+    subOptionDiv.appendChild(addNestedSubOptionButton);
+
+    // Nested OnRightClickSubOptions Container (Right Click)
+    const nestedOnRightClickSubOptionsContainer = document.createElement('div');
+    nestedOnRightClickSubOptionsContainer.className = 'nested-onrightclick-suboptions-container';
+    subOptionDiv.appendChild(nestedOnRightClickSubOptionsContainer);
+
+    // Add Nested OnRightClickSubOption Button (Right Click)
+    const addNestedOnRightClickSubOptionButton = document.createElement('button');
+    addNestedOnRightClickSubOptionButton.type = 'button';
+    addNestedOnRightClickSubOptionButton.textContent = 'Add Nested SubOption (Right Click)';
+    addNestedOnRightClickSubOptionButton.onclick = () => addSubOption(nestedOnRightClickSubOptionsContainer);
+    subOptionDiv.appendChild(addNestedOnRightClickSubOptionButton);
+
+    // Remove SubOption Button
+    const removeSubOptionButton = document.createElement('button');
+    removeSubOptionButton.type = 'button';
+    removeSubOptionButton.textContent = 'Remove SubOption';
+    removeSubOptionButton.onclick = () => container.removeChild(subOptionDiv);
+    subOptionDiv.appendChild(removeSubOptionButton);
+
+    // Load nested suboptions if any
+    if (subOptionData.subOptions) {
+        subOptionData.subOptions.forEach(nestedData => {
+            addSubOption(nestedSubOptionsContainer, nestedData);
+        });
+    }
+
+    // Load nested onRightClickSubOptions if any
+    if (subOptionData.onRightClickSubOptions) {
+        subOptionData.onRightClickSubOptions.forEach(nestedData => {
+            addSubOption(nestedOnRightClickSubOptionsContainer, nestedData);
+        });
+    }
+
+    container.appendChild(subOptionDiv);
+}
+function collectSubOptions(container) {
+    const subOptions = [];
+    const subOptionDivs = container.querySelectorAll(':scope > .suboption');
+    subOptionDivs.forEach(subOptionDiv => {
+        const inputs = subOptionDiv.querySelectorAll('input[type="text"]');
+        const display = inputs[0].value;
+        const output = inputs[1].value;
+        const onRightClickOutput = inputs[2].value;
+
+        // Collect nested suboptions
+        const nestedContainer = subOptionDiv.querySelector('.nested-suboptions-container');
+        const nestedSubOptions = collectSubOptions(nestedContainer);
+
+        // Collect nested onRightClickSubOptions
+        const nestedOnRightClickContainer = subOptionDiv.querySelector('.nested-onrightclick-suboptions-container');
+        const nestedOnRightClickSubOptions = collectSubOptions(nestedOnRightClickContainer);
+
+        const subOption = {
+            display: display,
+            output: output || undefined,
+            onRightClickOutput: onRightClickOutput || undefined,
+            subOptions: nestedSubOptions.length > 0 ? nestedSubOptions : undefined,
+            onRightClickSubOptions: nestedOnRightClickSubOptions.length > 0 ? nestedOnRightClickSubOptions : undefined,
+        };
+        subOptions.push(subOption);
+    });
+    return subOptions;
+}
+function generateButtonStructure() {
+    const buttonGrid = document.querySelector('.button-grid');
+    const buttonRows = buttonGrid.querySelectorAll('.button-row');
+    const options = [];
+
+    buttonRows.forEach(row => {
+        const buttons = row.querySelectorAll('.generator-button');
+        buttons.forEach(button => {
+            const buttonData = {};
+
+            if (button.textContent) buttonData.display = button.textContent;
+            if (button.dataset.leftClickOutput) buttonData.output = button.dataset.leftClickOutput;
+            if (button.dataset.rightClickOutput) buttonData.onRightClickOutput = button.dataset.rightClickOutput;
+
+            if (button.dataset.subOptions) {
+                const subOptions = JSON.parse(button.dataset.subOptions);
+                if (subOptions.length > 0) buttonData.subOptions = subOptions;
+            }
+
+            if (button.dataset.onRightClickSubOptions) {
+                const onRightClickSubOptions = JSON.parse(button.dataset.onRightClickSubOptions);
+                if (onRightClickSubOptions.length > 0) buttonData.onRightClickSubOptions = onRightClickSubOptions;
+            }
+
+            options.push(buttonData);
+        });
+    });
+
+    // Build the final structure
+    const buttonStructure = [{
+        name: 'GeneratedButtons',
+        type: 'options',
+        display: options.map(opt => opt.display),
+        options: options,
+    }];
+
+    // Convert to script content using stringifyObject
+    const scriptContent = 'const GeneratedButtons = ' + stringifyObject(buttonStructure, 4) + ';';
+
+    // Download the script file
+    downloadScriptFile('GeneratedButtons.js', scriptContent);
+
+    // Create a Blob from the script content
+    const blob = new Blob([scriptContent], { type: 'application/javascript' });
+    const file = new File([blob], 'GeneratedButtons.js', { type: 'application/javascript' });
+
+    // Assign the file to selectedFile (ensure selectedFile is in scope)
+    selectedFile = file;
+
+    // Update the drop area (ensure dropArea is in scope)
+    dropArea.textContent = 'Skrá valin: ' + selectedFile.name;
+
+    alert('Button structure generated, downloaded, and attached as GeneratedButtons.js');
+    closeModal('buttonStructureGeneratorModal');
+}
+function stringifyObject(obj, indent = 4, inlineArray = false) {
+    const indentStr = ' '.repeat(indent);
+
+    // Base case: Handle null and primitive types
+    if (obj === null || typeof obj !== 'object') {
+        if (typeof obj === 'string') {
+            // Use single quotes and escape any single quotes in the string
+            return '\'' + obj.replace(/\\/g, '\\\\').replace(/'/g, '\\\'') + '\'';
+        } else if (typeof obj === 'undefined') {
+            return ''; // Skip undefined values
+        } else {
+            return String(obj); // Converts numbers, booleans, etc., to string
+        }
+    }
+
+    // Check if obj is an array
+    const isArray = Array.isArray(obj);
+    let result = isArray ? '[' : '{';
+
+    // Get entries for objects or use the array itself
+    let entries = isArray ? obj : Object.entries(obj);
+
+    let content = '';
+
+    if (isArray) {
+        // Inline array if it contains only primitives
+        const shouldInline = entries.every(
+            item => typeof item === 'string' || typeof item === 'number' || typeof item === 'boolean'
+        );
+
+        if (shouldInline) {
+            content = entries.map(item => stringifyObject(item, 0, true)).join(', ');
+        } else {
+            content = entries.map(item => {
+                return '\n' + indentStr + stringifyObject(item, indent + 4);
+            }).join(',');
+        }
+
+        if (!shouldInline) {
+            result += content + '\n' + ' '.repeat(indent - 4);
+        } else {
+            result += content;
+        }
+    } else {
+        content = entries
+            .filter(([key, value]) => value !== undefined && value !== '')
+            .map(([key, value]) => {
+                // Format the key
+                let keyStr = /^[a-zA-Z_][a-zA-Z0-9_]*$/.test(key)
+                    ? key
+                    : '\'' + key.replace(/\\/g, '\\\\').replace(/'/g, '\\\'') + '\'';
+                // Recursively stringify the value
+                return '\n' + indentStr + keyStr + ': ' + stringifyObject(value, indent + 4);
+            })
+            .join(',');
+        result += content + '\n' + ' '.repeat(indent - 4);
+    }
+
+    result += isArray ? ']' : '}';
+    return result;
+}
+function downloadScriptFile(filename, content) {
+    const blob = new Blob([content], { type: 'application/javascript' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+function loadButtonStructure(buttonGrid) {
+    // Create a file input element
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = '.json, .js';
+
+    fileInput.onchange = (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            let content = e.target.result;
+
+            // Attempt to extract JSON data from the content
+            content = content.trim();
+
+            // Remove any variable declarations (e.g., 'const GeneratedButtons =')
+            content = content.replace(/^\s*(const|let|var)\s+\w+\s*=\s*/, '');
+
+            // Remove trailing semicolons
+            content = content.replace(/;\s*$/, '');
+
+            try {
+                // Parse the content as JSON
+                const buttonStructure = eval('(' + content + ')');
+                populateButtonGrid(buttonGrid, buttonStructure);
+            } catch (error) {
+                alert('Error parsing the button structure file. Please ensure it is in the correct format.');
+                console.error(error);
+            }
+        };
+        reader.readAsText(file);
+    };
+
+    // Trigger the file input dialog
+    fileInput.click();
+}
+function populateButtonGrid(buttonGrid, buttonStructure) {
+    // Clear existing buttons
+    buttonGrid.innerHTML = '';
+
+    // Iterate over the button groups
+    buttonStructure.forEach(group => {
+        // Create a new row for each group
+        addButtonRow(buttonGrid, group.options);
+    });
+}
+
+
+
 
 // Create buttons and manage sections
 function createButtons(container, data, sectionId) {
@@ -29805,7 +30389,7 @@ function loadPage(page) {
         // Create the form
         const form = document.createElement('form');
         form.id = 'feedbackForm';
-
+    
         // Name field
         const nameLabel = document.createElement('label');
         nameLabel.textContent = 'Nafn:';
@@ -29815,7 +30399,7 @@ function loadPage(page) {
         nameInput.required = true;
         form.appendChild(nameLabel);
         form.appendChild(nameInput);
-
+    
         // Phone number field
         const phoneLabel = document.createElement('label');
         phoneLabel.textContent = 'Símanúmer:';
@@ -29824,7 +30408,7 @@ function loadPage(page) {
         phoneInput.name = 'phone';
         form.appendChild(phoneLabel);
         form.appendChild(phoneInput);
-
+    
         // Email field
         const emailLabel = document.createElement('label');
         emailLabel.textContent = 'Tölvupóstfang:';
@@ -29834,7 +30418,7 @@ function loadPage(page) {
         emailInput.required = true;
         form.appendChild(emailLabel);
         form.appendChild(emailInput);
-
+    
         // Message textarea
         const messageLabel = document.createElement('label');
         messageLabel.textContent = 'Skilaboð:';
@@ -29843,19 +30427,187 @@ function loadPage(page) {
         messageTextarea.required = true;
         form.appendChild(messageLabel);
         form.appendChild(messageTextarea);
-
+    
+        // Attachment field (Viðhengi)
+        const attachmentLabel = document.createElement('label');
+        attachmentLabel.textContent = 'Viðhengi:';
+        form.appendChild(attachmentLabel);
+    
+        // Container for attachment field and button
+        const attachmentFieldContainer = document.createElement('div');
+        attachmentFieldContainer.className = 'attachment-field-container';
+    
+        // Attachment container
+        const attachmentContainer = document.createElement('div');
+        attachmentContainer.id = 'attachmentContainer';
+        attachmentContainer.className = 'attachment-container';
+    
+        // Drop area
+        const dropArea = document.createElement('div');
+        dropArea.id = 'dropArea';
+        dropArea.className = 'drop-area';
+        dropArea.textContent = 'Dragðu viðhengi hingað eða smelltu til að velja skrá. Athugið að því miður er ekki hægt að senda viðhengi eins og er. Hægt er að senda viðhengi úr tölvupósti beint á qtnote.net@gmail.com eða afrita innihaldið í textaskilaboð';
+    
+        attachmentContainer.appendChild(dropArea);
+    
+        // Hidden file input
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.style.display = 'none';
+    
+        attachmentContainer.appendChild(fileInput);
+    
+        // Button to open the modal for generating button structure
+        const generateButtonStructureButton = document.createElement('button');
+        generateButtonStructureButton.type = 'button';
+        generateButtonStructureButton.textContent = 'Búa til takkastrúktúr';
+        generateButtonStructureButton.onclick = function() {
+            openButtonStructureGeneratorModal();
+        };
+    
+        // Append the attachment container and the button to the field container
+        attachmentFieldContainer.appendChild(attachmentContainer);
+        attachmentFieldContainer.appendChild(generateButtonStructureButton);
+    
+        // Append the attachment field container to the form
+        form.appendChild(attachmentFieldContainer);
+    
         // Send button
         const sendButton = document.createElement('button');
         sendButton.type = 'submit';
         sendButton.textContent = 'Senda';
         form.appendChild(sendButton);
-
-        // Append form to container
-        container.appendChild(form);
-
+    
+        // Create the columns
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+    
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+    
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+    
+        // Add descriptive text above the form in the left column
+        const description = document.createElement('div');
+        description.className = 'form-description';
+        description.innerHTML = `
+            <h2>Hafðu Samband</h2>
+            <p>Hægt er að hafa samband beint við qtnote.net@gmail.com eða með því að fylla út formið neðan. Viljum endilega heyra ef eitthvað má bæta eða þarfnast lagfæringar sem og aðrar pælingar. Ef þú villt bæta við einhverjum ákveðnum takkastrúktúr máttu endilega fylla út takkainnihaldið sem þú hafðir í huga og lýsa hvar þú villt að því sé bætt við. Athugið að viðhengi virka ekki sem skyldi eins og er, þannig best er þá að senda skránna úr email beint eða afrita innihaldið í textagluggann.</p>
+        `;
+        leftColumn.appendChild(description);
+    
+        // Append the form to the left column, below the description
+        leftColumn.appendChild(form);
+    
+        // The middle and right columns can be used for additional content or left empty
+        // For now, we'll leave them empty
+    
+        // Create the horizontal container and append the columns
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+    
+        // Append the horizontal container to the main container
+        container.appendChild(horizontalContainer);
+    
+        // Variables to hold the selected file
+        let selectedFile = null;
+    
+        // Handle drag-and-drop functionality
+        dropArea.addEventListener('dragover', function(event) {
+            event.preventDefault();
+            dropArea.classList.add('dragover');
+        });
+    
+        dropArea.addEventListener('dragleave', function(event) {
+            dropArea.classList.remove('dragover');
+        });
+    
+        dropArea.addEventListener('drop', function(event) {
+            event.preventDefault();
+            dropArea.classList.remove('dragover');
+            const files = event.dataTransfer.files;
+            handleFiles(files);
+        });
+    
+        dropArea.addEventListener('click', function() {
+            fileInput.click();
+        });
+    
+        fileInput.addEventListener('change', function(event) {
+            const files = event.target.files;
+            handleFiles(files);
+        });
+    
+        // Function to handle the selected files
+        function handleFiles(files) {
+            if (files.length > 0) {
+                selectedFile = files[0];
+                dropArea.textContent = 'Skrá valin: ' + selectedFile.name;
+            }
+        }
+    
         // Add event listener to handle form submission
         form.addEventListener('submit', handleFormSubmit);
-    } else {
+    
+        // Function to handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            const form = event.target;
+    
+            // Collect form data
+            const formData = {
+                name: form.name.value,
+                phone: form.phone.value,
+                email: form.email.value,
+                message: form.message.value,
+            };
+    
+            // Prepare email parameters
+            const emailParams = {
+                ...formData,
+            };
+    
+            if (selectedFile) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const base64File = e.target.result.split(',')[1]; // Remove data MIME type prefix
+    
+                    // Attach the file
+                    emailParams.attachment = base64File;
+                    emailParams.attachment_filename = selectedFile.name;
+    
+                    // Send the email with attachment
+                    sendEmailWithAttachment(emailParams, form);
+                };
+                reader.readAsDataURL(selectedFile);
+            } else {
+                // No attachment, send email directly
+                sendEmailWithAttachment(emailParams, form);
+            }
+        }
+    
+        // Function to send email using EmailJS
+        function sendEmailWithAttachment(emailParams, form) {
+            emailjs.send('service_ptekx3f', 'template_kqjavmq', emailParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Skilaboðin þín hafa verið send. Takk fyrir!');
+                    form.reset();
+                    dropArea.textContent = 'Dragðu viðhengi hingað eða smelltu til að velja skrá';
+                    selectedFile = null;
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Eitthvað fór úrskeiðis. Vinsamlegast reyndu aftur.');
+                });
+        }
+    }
+    
+     else {
         console.error('Unknown page:', page);
     }
 }
@@ -30285,7 +31037,40 @@ function handleFormSubmit(event) {
         message: form.message.value,
     };
 
-    // Use window.emailjs instead of emailjs
+    // Get the file input element
+    const fileInput = form.querySelector('input[name="attachment"]');
+    const file = fileInput.files[0];
+
+    if (file) {
+        const maxSize = 15 * 1024 * 1024; // 15 MB
+        const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'text/plain', 'application/javascript'];
+
+        if (file.size > maxSize) {
+            alert('Skráin er of stór. Hámarksstærð er 15 MB.');
+            return;
+        }
+
+        if (!allowedTypes.includes(file.type)) {
+            alert('Óleyfileg skráargerð. Leyfðar gerðir eru PDF, JPG, PNG, TXT, JS.');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const base64File = e.target.result.split(',')[1];
+
+            formData.attachment = base64File;
+            formData.attachment_filename = file.name;
+
+            sendEmail(formData, form);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        sendEmail(formData, form);
+    }
+}
+
+function sendEmail(formData, form) {
     window.emailjs.send('service_ptekx3f', 'template_kqjavmq', formData)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
@@ -30296,3 +31081,5 @@ function handleFormSubmit(event) {
             alert('Eitthvað fór úrskeiðis. Vinsamlegast reyndu aftur.');
         });
 }
+
+
