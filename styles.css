@@ -446,3 +446,43 @@ main {
 .clickable-title:hover {
     cursor: pointer; /* Changes the cursor to pointer to show it's clickable */
 }
+
+/* Form Styles (Upplýsingar page) */
+#feedbackForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#feedbackForm label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#feedbackForm input, #feedbackForm textarea {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#feedbackForm textarea {
+    min-height: 100px;
+}
+
+#feedbackForm button {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#feedbackForm button:hover {
+    background-color: #0056b3;
+}

@@ -3223,7 +3223,7 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Sýklalyf', 'Sýkladropar', 'Leysir út ef lagast ekki', 'Vottorð'],
+        display: ['Sýklalyf', 'Sýkladropar', 'Sýklamixtúra'],
         options: [
             {
                 display: 'Sýklalyf',
@@ -3243,20 +3243,129 @@ const PlanViral = [
                     { display: 'Ciflox', output: 'Ráðlegg sýkladropa. Set ciflox í gáttina' }
                 ]
             },
-            { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' },
             {
-                display: 'Vottorð',
+                display: 'Sýklamixtúra',
                 subOptions: [
                     {
-                        display: 'Vinnuveitenda',
-                        output: 'Fær vinnuveitendavottorð'
+                        display: 'Amoxin 50mg/ml',
+                        subOptions: [
+                            {
+                                display: 'Háskammta (80mg/kg)',
+                                subOptions: generateWeightSuboptions('Amoxin mixtúru 50mg/ml', 80)
+                            },
+                            {
+                                display: 'Venjuleg (50mg/kg)',
+                                subOptions: generateWeightSuboptions('Amoxin mixtúru 50mg/ml', 50)
+                            },
+                            {
+                                display: 'Lágskammta (30mg/kg)',
+                                subOptions: generateWeightSuboptions('Amoxin mixtúru 50mg/ml', 30)
+                            }
+                        ]
                     },
                     {
-                        display: 'Skóli',
-                        output: 'Fær skólavottorð'
+                        display: 'Amoxin 100mg/ml',
+                        subOptions: [
+                            {
+                                display: 'Háskammta (80mg/kg)',
+                                subOptions: generateWeightSuboptions('Amoxin mixtúru 100mg/ml', 80)
+                            },
+                            {
+                                display: 'Venjuleg (50mg/kg)',
+                                subOptions: generateWeightSuboptions('Amoxin mixtúru 100mg/ml', 50)
+                            },
+                            {
+                                display: 'Lágskammta (30mg/kg)',
+                                subOptions: generateWeightSuboptions('Amoxin mixtúru 100mg/ml', 30)
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Kaavepenin 100mg/ml',
+                        subOptions: [
+                            {
+                                display: 'Háskammta (80mg/kg)',
+                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 80)
+                            },
+                            {
+                                display: 'Venjuleg (50mg/kg)',
+                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 50)
+                            },
+                            {
+                                display: 'Lágskammta (30mg/kg)',
+                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 30)
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Cefalexin 50mg/ml',
+                        subOptions: [
+                            {
+                                display: 'Háskammta (80mg/kg)',
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 80)
+                            },
+                            {
+                                display: 'Venjuleg (50mg/kg)',
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 50)
+                            },
+                            {
+                                display: 'Lágskammta (30mg/kg)',
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 30)
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Cefalexin 100mg/ml',
+                        subOptions: [
+                            {
+                                display: 'Háskammta (80mg/kg)',
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 80)
+                            },
+                            {
+                                display: 'Venjuleg (50mg/kg)',
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 50)
+                            },
+                            {
+                                display: 'Lágskammta (30mg/kg)',
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 30)
+                            }
+                        ]
                     }
                 ]
             }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Meðferðarlengd', 'Ef lagast ekki'],
+        options: [
+            {
+                display: 'Meðferðarlengd',
+                subOptions: [
+                    {
+                        display: 'Nákvæm lengd',
+                        subOptions: [
+                            { display: '5 dagar', output: 'Meðferðarlengd 5 dagar' },
+                            { display: '7 dagar', output: 'Meðferðarlengd 7 daga' },
+                            { display: '10 dagar', output: 'Meðferðarlengd 10 daga' },
+                            { display: 'Tvær vikur', output: 'Meðferðarlengd tvær vikur' }
+                        ]
+                    },
+                    {
+                        display: 'Bil (daga)',
+                        subOptions: [
+                            { display: '3-5 dagar', output: 'Meðferðarlengd 3-5 dagar' },
+                            { display: '5-7 dagar', output: 'Meðferðarlengd 5-7 dagar' },
+                            { display: '7-10 dagar', output: 'Meðferðarlengd 7-10 dagar' },
+                            { display: '10-14 dagar', output: 'Meðferðarlengd 10-14 dagar' },
+                            { display: '14-21 dagar', output: 'Meðferðarlengd 14-21 dagar' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Engin meðferðarlengd tilgreind'
+            },
+            { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' }
             
         ]
     },
@@ -3283,6 +3392,28 @@ const PlanViral = [
                 
                  
             }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Vottorð'],
+        options: [
+            
+            {
+                display: 'Vottorð',
+                subOptions: [
+                    {
+                        display: 'Vinnuveitenda',
+                        output: 'Fær vinnuveitendavottorð'
+                    },
+                    {
+                        display: 'Skóli',
+                        output: 'Fær skólavottorð'
+                    }
+                ]
+            }
+            
         ]
     },
     
@@ -27432,12 +27563,59 @@ function formatDrug(drug) {
     return drug === 'LSD' ? 'LSD' : drug.toLowerCase();
 }
 
+
+// Supportive functions to calculate BMI, drug strengths etc..
 // BMI calc (BMI button in Habits calls this function)
 function calculateBMI(height, weight) {
     const heightInMeters = height / 100;
     const bmi = weight / (heightInMeters * heightInMeters);
     return bmi.toFixed(1).replace('.', ','); // Replace dot with comma for BMI
 }
+// Function to generate weight-based suboptions and exact dosage values
+function generateWeightSuboptions(medicationName, dosagePerKg) {
+    return [
+        {
+            display: '1-10 kg',
+            subOptions: Array.from({ length: 10 }, (_, i) => ({
+                display: `${i + 1} kg`,
+                output: calculateDosage(medicationName, dosagePerKg, i + 1)
+            }))
+        },
+        {
+            display: '11-20 kg',
+            subOptions: Array.from({ length: 10 }, (_, i) => ({
+                display: `${i + 11} kg`,
+                output: calculateDosage(medicationName, dosagePerKg, i + 11)
+            }))
+        },
+        {
+            display: '21-30 kg',
+            subOptions: Array.from({ length: 10 }, (_, i) => ({
+                display: `${i + 21} kg`,
+                output: calculateDosage(medicationName, dosagePerKg, i + 21)
+            }))
+        },
+        {
+            display: '31-40 kg',
+            subOptions: Array.from({ length: 10 }, (_, i) => ({
+                display: `${i + 31} kg`,
+                output: calculateDosage(medicationName, dosagePerKg, i + 31)
+            }))
+        }
+    ];
+}
+// Function to calculate dosage output based on medication, dosage per kg, and weight
+function calculateDosage(medicationName, dosagePerKg, weight) {
+    const totalDailyDose = dosagePerKg * weight; // Total mg per day
+    const dosePerDose = totalDailyDose / 3; // Split into 3 doses per day
+    
+    // Assume concentrations are 50mg/ml or 100mg/ml for calculations
+    const concentration = medicationName.includes('50mg/ml') ? 50 : 100;
+    
+    const dosePerMl = dosePerDose / concentration; // Calculate ml per dose
+    return `Set ${medicationName} í gáttina. Þyngd ${weight}kg. Notum ${dosagePerKg}mg/kg í þremur aðskildum skömmtum. Skammtastærð því ${dosePerMl.toFixed(1)}ml 3x á dag`;
+}
+
 
 
 // Lífsmörk modals (Vital signs)
@@ -28377,48 +28555,8 @@ function createPopup(event, selectedOption, button, isRightClick = false, sectio
     popup.className = 'popup-modal';
     popup.dataset.depth = depth;
 
-    // Position the popup next to the button
-    const rect = button.getBoundingClientRect();
-    popup.style.position = 'absolute';
-    popup.style.top = `${rect.top + window.scrollY}px`;
-    popup.style.left = `${rect.right + window.scrollX}px`;
-    popup.style.backgroundColor = 'white';
-    popup.style.border = '1px solid #ccc';
-    popup.style.padding = '10px';
-    popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-    popup.style.zIndex = '1000';
-
-    // Function to create a button in the popup
-const createPopupButton = (popup, subOption, parentButton, sectionId, depth) => {
-    const btn = document.createElement('button');
-    btn.textContent = subOption.display;
-    btn.style.display = 'block';
-    btn.style.margin = '5px 0';
-
-    if (subOption.type === 'hyperlink' && subOption.url) {
-        // Handle as hyperlink
-        btn.onclick = (e) => {
-            e.stopPropagation(); // Prevent closing popup on click
-            window.open(subOption.url, '_blank'); // Open link in a new tab
-        };
-    } else {
-        // Left click event for popup button
-        btn.onclick = (e) => {
-            e.stopPropagation(); // Prevent closing popup on button click
-            handleSubOptionClick(subOption, sectionId, popup, btn, depth);
-        };
-
-        // Right click event for popup button
-        btn.oncontextmenu = (e) => {
-            e.preventDefault(); // Prevent the context menu from appearing
-            e.stopPropagation(); // Prevent closing popup on right-click
-            handleSubOptionRightClick(subOption, sectionId, popup, btn, depth);
-        };
-    }
-
-    popup.appendChild(btn);
-};
-
+    // Append the popup to the document body before setting its position
+    document.body.appendChild(popup);
 
     // Add subOptions to the popup
     const subOptions = isRightClick ? selectedOption.onRightClickSubOptions : selectedOption.subOptions;
@@ -28426,8 +28564,52 @@ const createPopupButton = (popup, subOption, parentButton, sectionId, depth) => 
         createPopupButton(popup, subOption, button, sectionId, depth);
     });
 
-    // Append the popup to the document body
-    document.body.appendChild(popup);
+    // Position the popup next to the button
+    const rect = button.getBoundingClientRect();
+    const popupWidth = popup.offsetWidth;
+    const popupHeight = popup.offsetHeight;
+
+    let leftPos, topPos;
+
+    // First, try to position to the right of the button
+    leftPos = rect.right + window.scrollX;
+    topPos = rect.top + window.scrollY;
+
+    // Check if the popup goes off the right edge
+    if (leftPos + popupWidth > window.innerWidth + window.scrollX) {
+        // Try positioning to the left of the button
+        leftPos = rect.left - popupWidth + window.scrollX;
+
+        // Check if the popup goes off the left edge
+        if (leftPos < 0) {
+            // Position below the button
+            leftPos = rect.left + window.scrollX;
+            topPos = rect.bottom + window.scrollY;
+        }
+    }
+
+    // Adjust vertical position if popup goes off-screen at the bottom
+    if (topPos + popupHeight > window.innerHeight + window.scrollY) {
+        // Try positioning above the button
+        let newTopPos = rect.top - popupHeight + window.scrollY;
+        if (newTopPos >= 0) {
+            topPos = newTopPos;
+        } else {
+            // Adjust to fit within the viewport
+            topPos = window.innerHeight + window.scrollY - popupHeight;
+            if (topPos < 0) topPos = 0;
+        }
+    }
+
+    // Apply the calculated position
+    popup.style.position = 'absolute';
+    popup.style.top = `${topPos}px`;
+    popup.style.left = `${leftPos}px`;
+    popup.style.backgroundColor = 'white';
+    popup.style.border = '1px solid #ccc';
+    popup.style.padding = '10px';
+    popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+    popup.style.zIndex = '1000';
 
     // Close popup when clicking outside of it and any sub-popups
     const handleClickOutsidePopup = (e) => {
@@ -28496,16 +28678,8 @@ function createNestedSubPopup(subOption, parentButton, sectionId, depth, isRight
     subPopup.className = 'sub-popup-modal';
     subPopup.dataset.depth = depth;
 
-    // Position the sub-popup next to the parent button
-    const parentRect = parentButton.getBoundingClientRect();
-    subPopup.style.position = 'absolute';
-    subPopup.style.top = `${parentRect.top + window.scrollY}px`;
-    subPopup.style.left = `${parentRect.right + window.scrollX}px`;
-    subPopup.style.backgroundColor = 'white';
-    subPopup.style.border = '1px solid #ccc';
-    subPopup.style.padding = '10px';
-    subPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-    subPopup.style.zIndex = '1000';
+    // Append the sub-popup to the document body before setting its position
+    document.body.appendChild(subPopup);
 
     // Add nested subOptions to the sub-popup
     const nestedSubOptions = isRightClick ? subOption.onRightClickSubOptions : subOption.subOptions;
@@ -28513,8 +28687,52 @@ function createNestedSubPopup(subOption, parentButton, sectionId, depth, isRight
         createPopupButton(subPopup, nestedSubOption, parentButton, sectionId, depth);
     });
 
-    // Append the sub-popup to the document body
-    document.body.appendChild(subPopup);
+    // Position the sub-popup next to the parent button
+    const parentRect = parentButton.getBoundingClientRect();
+    const subPopupWidth = subPopup.offsetWidth;
+    const subPopupHeight = subPopup.offsetHeight;
+
+    let leftPos, topPos;
+
+    // First, try to position to the right of the parent popup
+    leftPos = parentRect.right + window.scrollX;
+    topPos = parentRect.top + window.scrollY;
+
+    // Check if the sub-popup goes off the right edge
+    if (leftPos + subPopupWidth > window.innerWidth + window.scrollX) {
+        // Try positioning to the left of the parent popup
+        leftPos = parentRect.left - subPopupWidth + window.scrollX;
+
+        // Check if the sub-popup goes off the left edge
+        if (leftPos < 0) {
+            // Position below the parent button
+            leftPos = parentRect.left + window.scrollX;
+            topPos = parentRect.bottom + window.scrollY;
+        }
+    }
+
+    // Adjust vertical position if sub-popup goes off-screen at the bottom
+    if (topPos + subPopupHeight > window.innerHeight + window.scrollY) {
+        // Try positioning above the parent button
+        let newTopPos = parentRect.top - subPopupHeight + window.scrollY;
+        if (newTopPos >= 0) {
+            topPos = newTopPos;
+        } else {
+            // Adjust to fit within the viewport
+            topPos = window.innerHeight + window.scrollY - subPopupHeight;
+            if (topPos < 0) topPos = 0;
+        }
+    }
+
+    // Apply the calculated position
+    subPopup.style.position = 'absolute';
+    subPopup.style.top = `${topPos}px`;
+    subPopup.style.left = `${leftPos}px`;
+    subPopup.style.backgroundColor = 'white';
+    subPopup.style.border = '1px solid #ccc';
+    subPopup.style.padding = '10px';
+    subPopup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+    subPopup.style.zIndex = '1000';
 
     // Scoped click handler for sub-popup
     const handleClickOutsideSubPopup = (e) => {
@@ -29582,6 +29800,60 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         container.appendChild(horizontalContainer);
+    } else if (page === 'Upplýsingar') {
+        // Create the form
+        const form = document.createElement('form');
+        form.id = 'feedbackForm';
+
+        // Name field
+        const nameLabel = document.createElement('label');
+        nameLabel.textContent = 'Nafn:';
+        const nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.name = 'name';
+        nameInput.required = true;
+        form.appendChild(nameLabel);
+        form.appendChild(nameInput);
+
+        // Phone number field
+        const phoneLabel = document.createElement('label');
+        phoneLabel.textContent = 'Símanúmer:';
+        const phoneInput = document.createElement('input');
+        phoneInput.type = 'tel';
+        phoneInput.name = 'phone';
+        form.appendChild(phoneLabel);
+        form.appendChild(phoneInput);
+
+        // Email field
+        const emailLabel = document.createElement('label');
+        emailLabel.textContent = 'Tölvupóstfang:';
+        const emailInput = document.createElement('input');
+        emailInput.type = 'email';
+        emailInput.name = 'email';
+        emailInput.required = true;
+        form.appendChild(emailLabel);
+        form.appendChild(emailInput);
+
+        // Message textarea
+        const messageLabel = document.createElement('label');
+        messageLabel.textContent = 'Skilaboð:';
+        const messageTextarea = document.createElement('textarea');
+        messageTextarea.name = 'message';
+        messageTextarea.required = true;
+        form.appendChild(messageLabel);
+        form.appendChild(messageTextarea);
+
+        // Send button
+        const sendButton = document.createElement('button');
+        sendButton.type = 'submit';
+        sendButton.textContent = 'Senda';
+        form.appendChild(sendButton);
+
+        // Append form to container
+        container.appendChild(form);
+
+        // Add event listener to handle form submission
+        form.addEventListener('submit', handleFormSubmit);
     } else {
         console.error('Unknown page:', page);
     }
@@ -29987,4 +30259,16 @@ function parseCode() {
         }
     }
 }
+
+// Track text generation
+document.getElementById('journalTextbox').addEventListener('input', function() {
+    let totalTextGenerated = this.value.length;
+    console.log('Total text generated:', totalTextGenerated);
+    
+    // Send event to Google Tag Manager
+    window.dataLayer.push({
+        'event': 'textGenerated',
+        'textLength': totalTextGenerated
+    });
+});
 
