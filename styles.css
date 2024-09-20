@@ -605,3 +605,46 @@ main {
         width: auto;
     }
 }
+
+/* Button Container */
+.button-container {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-right: 5px;
+}
+
+/* Remove Button Icon */
+.remove-button-icon {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Remove Row Button */
+.remove-row-button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Dragging Styles */
+.button-container.dragging,
+.button-row.dragging {
+    opacity: 0.5;
+}
+
+.button-container.over,
+.button-row.over {
+    border: 2px dashed #000;
+}

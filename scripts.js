@@ -14,7 +14,7 @@ const Hlekkir = [
             }
         ]
     }
-
+    
 ];
 
 
@@ -14802,7 +14802,9 @@ const SymptomsHud = [
                 display: 'Hendur/fætur', output: 'Legst á hendur og fætur', onRightClickOutput: 'Ekki einkenni frá höndum og fótum'
             }
         ]
-    },
+    }
+ /*   
+    ,
     {
         name: '',
         type: 'options',
@@ -14823,7 +14825,7 @@ const SymptomsHud = [
         type: 'options',
         display: ['Nýleg veikindi', 'Nýleg ferðalög', 'Reynt lyf'],
     }
-    
+    */
     
 ];
 const ExamsHud = [
@@ -15198,22 +15200,12 @@ const PlanHud = [
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar', 'Lyf', 'Tilvísun'],
+        display: ['Ráðleggingar'],
         options: [
-            { display: 'Ráðleggingar', output: 'Veita ráðleggingar um húðmeðferð' },
             {
-                display: 'Lyf',
+                display: 'Ráðleggingar',
                 subOptions: [
-                    { display: 'Sterakrem', output: 'Ávísun á sterakrem' },
-                    { display: 'Sýklalyf', output: 'Ávísun á sýklalyf' },
-                    { display: 'Andhistamín', output: 'Ávísun á andhistamín' }
-                ]
-            },
-            {
-                display: 'Tilvísun',
-                subOptions: [
-                    { display: 'Húðsjúkdómalæknir', output: 'Vísa til húðsjúkdómalæknis' },
-                    { display: 'Sérfræðingur', output: 'Vísa til sérfræðings' }
+                    { display: 'Óhófleg svitamyndun', output: 'Ráðleggingar vegna óhóflegar svitamyndunar. Fyrsta meðferð að prófa álsölt (t.d. perspi guard). Virkar vel á flesta og takmarkaðar aukaverkanir. Getur verið smá erting frá svæði fyrst um sinn, má bera mildison til að minnka það. Annars eru til lausnir líkt og Miradry sem er permanent lausn og hægt að kynna sér það t.d. á sviti.is' }
                 ]
             }
         ]
@@ -16449,6 +16441,12 @@ const PlanGed = [
                     { 
                         display: 'Tilvísun heilsugæslan ADHD', 
                         output: 'Tilvísun á ADHD teymi heilsugæslunnar. Fyllum út matskvarða og sendi viðeigandi fylgiskjöl' 
+                    },
+                    {
+                        display: 'Hlekkir',
+                        subOptions: [
+                            { display: 'ADHD greiningarskjöl heilsugæslan', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/gedheilsa/gedheilsuteymi-adhd/#Tab4' }
+                        ]
                     }
                 ]
             }
@@ -21344,6 +21342,28 @@ const SymptomsGigt = [
     },
     {
         name: '',
+    type: 'options',
+    display: ['Morgunstirðleiki'],
+    options: [
+        {
+            display: 'Morgunstirðleiki',
+            subOptions: [
+                { display: 'NOS', output: 'Morgunstirðleiki, ótilgreindur tími' },
+                {
+                    display: 'Tímalengd',
+                    subOptions: [
+                        { display: '0-30 mínútur', output: 'Morgunstirðleiki sem gengur yfir innan 30 mínútna' },
+                        { display: '30-60 mínútur', output: 'Morgunstirðleiki sem gengur yfir innan 30-60 mínútna' },
+                        { display: '1-2 klukkustundir', output: 'Morgunstirðleiki sem gengur yfir á 1-2 tímum' }
+                    ]
+                }
+            ],
+            onRightClickOutput: 'Neitar morgunstirðleika'
+        }
+    ]
+    },
+    {
+        name: '',
         type: 'options',
         display: ['Staðsetning'],
         options: [
@@ -22080,20 +22100,33 @@ const PlanGigt = [
     {
         name: '',
         type: 'options',
-        display: ['Lyfjameðferð', 'Liðástungur', 'Fylgjast með þróun', 'Vísun til sérfræðings'],
+        display: ['Liðverkir'],
         options: [
             {
-                display: 'Lyfjameðferð',
+                display: 'Liðverkir',
                 subOptions: [
-                    { display: 'Bólgueyðandi lyf', output: 'Ávísun á bólgueyðandi lyf' },
-                    { display: 'Sterar', output: 'Ávísun á stera' },
-                    { display: 'Methotrexate', output: 'Ávísun á methotrexate' }
-                ],
-                onRightClickOutput: 'Engin lyfjameðferð'
-            },
-            { display: 'Liðástungur', output: 'Áform um liðástungu', onRightClickOutput: 'Engin þörf á liðástungu' },
-            { display: 'Fylgjast með þróun', output: 'Áform um að fylgjast með þróun sjúkdóms', onRightClickOutput: 'Engin fylgni áformuð' },
-            { display: 'Vísun til sérfræðings', output: 'Sjúkling vísað til gigtarlæknis', onRightClickOutput: 'Engin vísun til sérfræðings' }
+                    {
+                        display: 'Greining',
+                        output: 'Liðverkir'
+                    },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            {
+                                display: 'Grunur, gigtaruppvinnsla, pantar símatíma',
+                                output: 'Grunur um gigtarvanda. Ráðlegg röntgen og blóðprufur. Pantar sér símatíma fyrir niðurstöður'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Hlekkir',
+                        subOptions: [
+                            {
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
     }
 ];
@@ -28089,12 +28122,18 @@ function closeModal(modalId) {
         modal.style.display = 'none';
         document.removeEventListener('keydown', handleEscapeKey);
 
-        // Check if the modal being closed is the one from "Reykingar"
+        // Save the current button structure data when closing the 'buttonStructureGeneratorModal'
+        if (modalId === 'buttonStructureGeneratorModal') {
+            saveButtonStructureData();
+        }
+
+        // Existing code for 'reykingarModal'
         if (modalId === 'reykingarModal' && !reykingarFlag) {
             insertText('Reykir');
         }
     }
 }
+
 window.onclick = function(event) {
     const modals = document.getElementsByClassName('modal');
     for (let i = 0; i < modals.length; i++) {
@@ -28426,7 +28465,13 @@ function addOrthostatismButton(parentElement) {
     parentElement.appendChild(orthostatismButton);
 }
 
-// Modals to create button structure for user contribution
+
+
+
+// Modals to create button structure for user contribution. Used in the page "Upplýsingar (Information)
+// Just want to highlight the importance of users being able to edit on the page. 
+// I want users to be able to create new pages, buttons, headers etc by simply clicking somekind of edit mode button.
+// Function to open the Button Structure Generator Modal
 function openButtonStructureGeneratorModal() {
     let modal = document.getElementById('buttonStructureGeneratorModal');
     if (!modal) {
@@ -28444,9 +28489,18 @@ function openButtonStructureGeneratorModal() {
     modal.style.display = 'flex';
     const container = document.getElementById('buttonStructureGeneratorContainer');
     container.innerHTML = '';
-    createButtonStructureGeneratorInterface(container);
+
+    // Load saved data if available
+    const savedData = localStorage.getItem('buttonStructureData');
+    if (savedData) {
+        // Restore the button structure from saved data
+        createButtonStructureGeneratorInterface(container, JSON.parse(savedData));
+    } else {
+        createButtonStructureGeneratorInterface(container);
+    }
 }
-function createButtonStructureGeneratorInterface(container) {
+// Function to create the Button Structure Generator Interface
+function createButtonStructureGeneratorInterface(container, savedData) {
     const toolbar = document.createElement('div');
     toolbar.className = 'toolbar';
 
@@ -28462,35 +28516,52 @@ function createButtonStructureGeneratorInterface(container) {
     generateButton.textContent = 'Generate Structure';
     generateButton.onclick = generateButtonStructure;
 
+    // Add a Clear button
+    const clearButton = document.createElement('button');
+    clearButton.textContent = 'Clear';
+    clearButton.onclick = () => {
+        // Clear the button grid and remove saved data
+        buttonGrid.innerHTML = '';
+        localStorage.removeItem('buttonStructureData');
+        // Start with one row
+        addButtonRow(buttonGrid);
+    };
+
     toolbar.appendChild(addRowButton);
     toolbar.appendChild(loadStructureButton);
     toolbar.appendChild(generateButton);
+    toolbar.appendChild(clearButton);
     container.appendChild(toolbar);
 
     const buttonGrid = document.createElement('div');
     buttonGrid.className = 'button-grid';
     container.appendChild(buttonGrid);
 
-    // Start with one row
-    addButtonRow(buttonGrid);
+    if (savedData) {
+        // Populate the button grid with saved data
+        populateButtonGrid(buttonGrid, savedData);
+    } else {
+        // Start with one row
+        addButtonRow(buttonGrid);
+    }
 }
-function addButtonRow(gridContainer, buttonsData = []) {
-    const row = document.createElement('div');
-    row.className = 'button-row';
-
-    buttonsData.forEach(buttonData => {
-        addButtonToRow(row, buttonData);
-    });
-
-    const addButton = document.createElement('button');
-    addButton.textContent = '+';
-    addButton.className = 'add-button';
-    addButton.onclick = () => addButtonToRow(row);
-    row.appendChild(addButton);
-
-    gridContainer.appendChild(row);
+// Function to save the current button structure data to localStorage
+function saveButtonStructureData() {
+    const data = collectButtonStructureData();
+    localStorage.setItem('buttonStructureData', JSON.stringify(data));
 }
 function addButtonToRow(row, buttonData = null) {
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'button-container';
+    buttonContainer.draggable = true;
+
+    // Drag events for buttons
+    buttonContainer.addEventListener('dragstart', onButtonDragStart);
+    buttonContainer.addEventListener('dragover', onButtonDragOver);
+    buttonContainer.addEventListener('drop', onButtonDrop);
+    buttonContainer.addEventListener('dragend', onButtonDragEnd);
+    buttonContainer.addEventListener('dragleave', onButtonDragLeave);
+
     const button = document.createElement('button');
     button.className = 'generator-button';
     button.textContent = buttonData ? buttonData.display : 'New Button';
@@ -28508,8 +28579,123 @@ function addButtonToRow(row, buttonData = null) {
 
     button.onclick = () => openButtonEditorModal(button);
 
+    // Remove Button Icon
+    const removeButtonIcon = document.createElement('span');
+    removeButtonIcon.className = 'remove-button-icon';
+    removeButtonIcon.textContent = '×';
+    removeButtonIcon.onclick = (e) => {
+        e.stopPropagation();
+        row.removeChild(buttonContainer);
+        saveButtonStructureData(); // Save after removal
+    };
+
+    buttonContainer.appendChild(button);
+    buttonContainer.appendChild(removeButtonIcon);
+
     // Insert before the add button
-    row.insertBefore(button, row.lastElementChild);
+    const addButton = row.querySelector('.add-button');
+    row.insertBefore(buttonContainer, addButton);
+
+    saveButtonStructureData();
+}
+
+function addButtonRow(gridContainer, buttonsData = []) {
+    const row = document.createElement('div');
+    row.className = 'button-row';
+    row.draggable = true;
+
+    // Drag events for rows
+    row.addEventListener('dragstart', onRowDragStart);
+    row.addEventListener('dragover', onRowDragOver);
+    row.addEventListener('drop', onRowDrop);
+    row.addEventListener('dragend', onRowDragEnd);
+    row.addEventListener('dragleave', onRowDragLeave);
+
+    buttonsData.forEach(buttonData => {
+        addButtonToRow(row, buttonData);
+    });
+
+    const addButton = document.createElement('button');
+    addButton.textContent = '+';
+    addButton.className = 'add-button';
+    addButton.onclick = () => addButtonToRow(row);
+    row.appendChild(addButton);
+
+    // Remove Row Button
+    const removeRowButton = document.createElement('button');
+    removeRowButton.textContent = 'Remove Row';
+    removeRowButton.className = 'remove-row-button';
+    removeRowButton.onclick = () => gridContainer.removeChild(row);
+    row.appendChild(removeRowButton);
+
+    gridContainer.appendChild(row);
+    saveButtonStructureData();
+}
+// Drag-and-Drop Event Handlers for Buttons
+let draggedButton = null;
+function onButtonDragStart(event) {
+    draggedButton = event.currentTarget;
+    event.dataTransfer.effectAllowed = 'move';
+    event.currentTarget.classList.add('dragging');
+}
+function onButtonDragOver(event) {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = 'move';
+    event.currentTarget.classList.add('over');
+}
+function onButtonDrop(event) {
+    event.preventDefault();
+    event.currentTarget.classList.remove('over');
+    if (draggedButton && draggedButton !== event.currentTarget) {
+        const targetButton = event.currentTarget;
+        const targetRow = targetButton.parentElement;
+        const draggedRow = draggedButton.parentElement;
+
+        targetRow.insertBefore(draggedButton, targetButton);
+
+        // Save the new order after dropping
+        saveButtonStructureData();
+    }
+}
+
+function onButtonDragLeave(event) {
+    event.currentTarget.classList.remove('over');
+}
+function onButtonDragEnd(event) {
+    event.currentTarget.classList.remove('dragging');
+    draggedButton = null;
+}
+// Drag-and-Drop Event Handlers for Rows
+let draggedRow = null;
+function onRowDragStart(event) {
+    draggedRow = event.currentTarget;
+    event.dataTransfer.effectAllowed = 'move';
+    event.currentTarget.classList.add('dragging');
+}
+function onRowDragOver(event) {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = 'move';
+    event.currentTarget.classList.add('over');
+}
+function onRowDrop(event) {
+    event.preventDefault();
+    event.currentTarget.classList.remove('over');
+    if (draggedRow && draggedRow !== event.currentTarget) {
+        const targetRow = event.currentTarget;
+        const gridContainer = targetRow.parentElement;
+
+        gridContainer.insertBefore(draggedRow, targetRow);
+
+        // Save the new order after dropping
+        saveButtonStructureData();
+    }
+}
+function onRowDragLeave(event) {
+    event.currentTarget.classList.remove('over');
+}
+function onRowDragEnd(event) {
+    event.currentTarget.classList.remove('dragging');
+    draggedRow = null;
 }
 function openButtonEditorModal(button) {
     let modal = document.getElementById('buttonEditorModal');
@@ -28556,14 +28742,9 @@ function createButtonEditorInterface(container, button) {
     // Left Click Output
     const leftClickInput = document.createElement('input');
     leftClickInput.type = 'text';
+    leftClickInput.name = 'leftClickOutput';
     leftClickInput.value = button.dataset.leftClickOutput || '';
     form.appendChild(createFormGroup('Left Click Output:', leftClickInput));
-
-    // Right Click Output
-    const rightClickInput = document.createElement('input');
-    rightClickInput.type = 'text';
-    rightClickInput.value = button.dataset.rightClickOutput || '';
-    form.appendChild(createFormGroup('Right Click Output:', rightClickInput));
 
     // SubOptions Section (Left Click)
     const subOptionsSection = document.createElement('div');
@@ -28577,7 +28758,10 @@ function createButtonEditorInterface(container, button) {
     const addSubOptionButton = document.createElement('button');
     addSubOptionButton.type = 'button';
     addSubOptionButton.textContent = 'Add SubOption';
-    addSubOptionButton.onclick = () => addSubOption(subOptionsSection);
+    addSubOptionButton.onclick = () => {
+        addSubOption(subOptionsSection);
+        checkSubOptions();
+    };
     subOptionsSection.appendChild(addSubOptionButton);
 
     // Load existing suboptions if any
@@ -28590,22 +28774,33 @@ function createButtonEditorInterface(container, button) {
 
     form.appendChild(subOptionsSection);
 
-    // onRightClickSubOptions Section (Right Click)
+    // Right Click Output and SubOptions (apply same logic)
+    // Right Click Output
+    const rightClickInput = document.createElement('input');
+    rightClickInput.type = 'text';
+    rightClickInput.name = 'rightClickOutput';
+    rightClickInput.value = button.dataset.rightClickOutput || '';
+    form.appendChild(createFormGroup('Right Click Output:', rightClickInput));
+
+    // SubOptions Section (Right Click)
     const onRightClickSubOptionsSection = document.createElement('div');
-    onRightClickSubOptionsSection.className = 'suboptions-section';
+    onRightClickSubOptionsSection.className = 'onrightclick-suboptions-section';
 
     const onRightClickSubOptionsLabel = document.createElement('h4');
     onRightClickSubOptionsLabel.textContent = 'SubOptions (Right Click):';
     onRightClickSubOptionsSection.appendChild(onRightClickSubOptionsLabel);
 
-    // Add onRightClickSubOption Button
+    // Add SubOption Button
     const addOnRightClickSubOptionButton = document.createElement('button');
     addOnRightClickSubOptionButton.type = 'button';
     addOnRightClickSubOptionButton.textContent = 'Add Right Click SubOption';
-    addOnRightClickSubOptionButton.onclick = () => addSubOption(onRightClickSubOptionsSection);
+    addOnRightClickSubOptionButton.onclick = () => {
+        addSubOption(onRightClickSubOptionsSection);
+        checkRightClickSubOptions();
+    };
     onRightClickSubOptionsSection.appendChild(addOnRightClickSubOptionButton);
 
-    // Load existing onRightClickSubOptions if any
+    // Load existing suboptions if any
     if (button.dataset.onRightClickSubOptions) {
         const existingOnRightClickSubOptions = JSON.parse(button.dataset.onRightClickSubOptions);
         existingOnRightClickSubOptions.forEach(subOptionData => {
@@ -28614,6 +28809,63 @@ function createButtonEditorInterface(container, button) {
     }
 
     form.appendChild(onRightClickSubOptionsSection);
+
+    // Event listeners for Left Click Output
+    leftClickInput.addEventListener('input', () => {
+        if (leftClickInput.value.trim() !== '') {
+            // Disable adding suboptions
+            addSubOptionButton.disabled = true;
+            // Disable existing suboptions
+            disableSubOptions(subOptionsSection, true);
+        } else {
+            addSubOptionButton.disabled = false;
+            disableSubOptions(subOptionsSection, false);
+        }
+    });
+
+    // Event listeners for Right Click Output
+    rightClickInput.addEventListener('input', () => {
+        if (rightClickInput.value.trim() !== '') {
+            addOnRightClickSubOptionButton.disabled = true;
+            disableSubOptions(onRightClickSubOptionsSection, true);
+        } else {
+            addOnRightClickSubOptionButton.disabled = false;
+            disableSubOptions(onRightClickSubOptionsSection, false);
+        }
+    });
+
+    // Functions to check if suboptions exist
+    function checkSubOptions() {
+        const hasSubOptions = subOptionsSection.querySelector('.suboption');
+        if (hasSubOptions) {
+            leftClickInput.disabled = true;
+        } else {
+            leftClickInput.disabled = false;
+        }
+    }
+
+    function checkRightClickSubOptions() {
+        const hasSubOptions = onRightClickSubOptionsSection.querySelector('.suboption');
+        if (hasSubOptions) {
+            rightClickInput.disabled = true;
+        } else {
+            rightClickInput.disabled = false;
+        }
+    }
+
+    // Call checks initially
+    checkSubOptions();
+    checkRightClickSubOptions();
+
+    // Helper function to disable suboptions
+    function disableSubOptions(container, disable) {
+        const inputs = container.querySelectorAll('input, button');
+        inputs.forEach(input => {
+            if (input !== addSubOptionButton && input !== addOnRightClickSubOptionButton) {
+                input.disabled = disable;
+            }
+        });
+    }
 
     // Save Button
     const saveButton = document.createElement('button');
@@ -28727,84 +28979,7 @@ function addSubOption(container, subOptionData = {}) {
     }
 
     container.appendChild(subOptionDiv);
-}
-function addSubOption(container, subOptionData = {}) {
-    const subOptionDiv = document.createElement('div');
-    subOptionDiv.className = 'suboption';
-
-    // Display Text
-    const displayTextLabel = document.createElement('label');
-    displayTextLabel.textContent = 'Display Text:';
-    const displayTextInput = document.createElement('input');
-    displayTextInput.type = 'text';
-    displayTextInput.value = subOptionData.display || '';
-    subOptionDiv.appendChild(displayTextLabel);
-    subOptionDiv.appendChild(displayTextInput);
-
-    // Left Click Output
-    const leftClickLabel = document.createElement('label');
-    leftClickLabel.textContent = 'Left Click Output:';
-    const leftClickInput = document.createElement('input');
-    leftClickInput.type = 'text';
-    leftClickInput.value = subOptionData.output || '';
-    subOptionDiv.appendChild(leftClickLabel);
-    subOptionDiv.appendChild(leftClickInput);
-
-    // Right Click Output
-    const rightClickLabel = document.createElement('label');
-    rightClickLabel.textContent = 'Right Click Output:';
-    const rightClickInput = document.createElement('input');
-    rightClickInput.type = 'text';
-    rightClickInput.value = subOptionData.onRightClickOutput || '';
-    subOptionDiv.appendChild(rightClickLabel);
-    subOptionDiv.appendChild(rightClickInput);
-
-    // Nested SubOptions Container (Left Click)
-    const nestedSubOptionsContainer = document.createElement('div');
-    nestedSubOptionsContainer.className = 'nested-suboptions-container';
-    subOptionDiv.appendChild(nestedSubOptionsContainer);
-
-    // Add Nested SubOption Button (Left Click)
-    const addNestedSubOptionButton = document.createElement('button');
-    addNestedSubOptionButton.type = 'button';
-    addNestedSubOptionButton.textContent = 'Add Nested SubOption (Left Click)';
-    addNestedSubOptionButton.onclick = () => addSubOption(nestedSubOptionsContainer);
-    subOptionDiv.appendChild(addNestedSubOptionButton);
-
-    // Nested OnRightClickSubOptions Container (Right Click)
-    const nestedOnRightClickSubOptionsContainer = document.createElement('div');
-    nestedOnRightClickSubOptionsContainer.className = 'nested-onrightclick-suboptions-container';
-    subOptionDiv.appendChild(nestedOnRightClickSubOptionsContainer);
-
-    // Add Nested OnRightClickSubOption Button (Right Click)
-    const addNestedOnRightClickSubOptionButton = document.createElement('button');
-    addNestedOnRightClickSubOptionButton.type = 'button';
-    addNestedOnRightClickSubOptionButton.textContent = 'Add Nested SubOption (Right Click)';
-    addNestedOnRightClickSubOptionButton.onclick = () => addSubOption(nestedOnRightClickSubOptionsContainer);
-    subOptionDiv.appendChild(addNestedOnRightClickSubOptionButton);
-
-    // Remove SubOption Button
-    const removeSubOptionButton = document.createElement('button');
-    removeSubOptionButton.type = 'button';
-    removeSubOptionButton.textContent = 'Remove SubOption';
-    removeSubOptionButton.onclick = () => container.removeChild(subOptionDiv);
-    subOptionDiv.appendChild(removeSubOptionButton);
-
-    // Load nested suboptions if any
-    if (subOptionData.subOptions) {
-        subOptionData.subOptions.forEach(nestedData => {
-            addSubOption(nestedSubOptionsContainer, nestedData);
-        });
-    }
-
-    // Load nested onRightClickSubOptions if any
-    if (subOptionData.onRightClickSubOptions) {
-        subOptionData.onRightClickSubOptions.forEach(nestedData => {
-            addSubOption(nestedOnRightClickSubOptionsContainer, nestedData);
-        });
-    }
-
-    container.appendChild(subOptionDiv);
+    saveButtonStructureData();
 }
 function collectSubOptions(container) {
     const subOptions = [];
@@ -28837,10 +29012,14 @@ function collectSubOptions(container) {
 function generateButtonStructure() {
     const buttonGrid = document.querySelector('.button-grid');
     const buttonRows = buttonGrid.querySelectorAll('.button-row');
-    const options = [];
+
+    // Create an array to hold the rows
+    const rowsData = [];
 
     buttonRows.forEach(row => {
         const buttons = row.querySelectorAll('.generator-button');
+        const buttonsData = [];
+
         buttons.forEach(button => {
             const buttonData = {};
 
@@ -28858,17 +29037,17 @@ function generateButtonStructure() {
                 if (onRightClickSubOptions.length > 0) buttonData.onRightClickSubOptions = onRightClickSubOptions;
             }
 
-            options.push(buttonData);
+            buttonsData.push(buttonData);
         });
+
+        // Add the buttonsData array for this row to rowsData
+        rowsData.push(buttonsData);
     });
 
-    // Build the final structure
-    const buttonStructure = [{
-        name: 'GeneratedButtons',
-        type: 'options',
-        display: options.map(opt => opt.display),
-        options: options,
-    }];
+    // Build the final structure including rows
+    const buttonStructure = {
+        rows: rowsData,
+    };
 
     // Convert to script content using stringifyObject
     const scriptContent = 'const GeneratedButtons = ' + stringifyObject(buttonStructure, 4) + ';';
@@ -28876,19 +29055,10 @@ function generateButtonStructure() {
     // Download the script file
     downloadScriptFile('GeneratedButtons.js', scriptContent);
 
-    // Create a Blob from the script content
-    const blob = new Blob([scriptContent], { type: 'application/javascript' });
-    const file = new File([blob], 'GeneratedButtons.js', { type: 'application/javascript' });
-
-    // Assign the file to selectedFile (ensure selectedFile is in scope)
-    selectedFile = file;
-
-    // Update the drop area (ensure dropArea is in scope)
-    dropArea.textContent = 'Skrá valin: ' + selectedFile.name;
-
     alert('Button structure generated, downloaded, and attached as GeneratedButtons.js');
     closeModal('buttonStructureGeneratorModal');
 }
+
 function stringifyObject(obj, indent = 4, inlineArray = false) {
     const indentStr = ' '.repeat(indent);
 
@@ -28984,9 +29154,18 @@ function loadButtonStructure(buttonGrid) {
             content = content.replace(/;\s*$/, '');
 
             try {
-                // Parse the content as JSON
+                // Parse the content as a JavaScript object
                 const buttonStructure = eval('(' + content + ')');
-                populateButtonGrid(buttonGrid, buttonStructure);
+
+                // Check if buttonStructure is an array or object
+                const buttonDataRows = Array.isArray(buttonStructure) ? buttonStructure : buttonStructure.rows;
+
+                if (!buttonDataRows || !Array.isArray(buttonDataRows)) {
+                    throw new Error('Invalid button structure format.');
+                }
+
+                // Populate the button grid with the loaded data
+                populateButtonGrid(buttonGrid, buttonDataRows);
             } catch (error) {
                 alert('Error parsing the button structure file. Please ensure it is in the correct format.');
                 console.error(error);
@@ -28998,16 +29177,54 @@ function loadButtonStructure(buttonGrid) {
     // Trigger the file input dialog
     fileInput.click();
 }
-function populateButtonGrid(buttonGrid, buttonStructure) {
+
+
+// Function to collect the current button structure data
+function collectButtonStructureData() {
+    const buttonGrid = document.querySelector('.button-grid');
+    const buttonRows = buttonGrid.querySelectorAll('.button-row');
+    const rowsData = [];
+
+    buttonRows.forEach(row => {
+        const buttons = row.querySelectorAll('.generator-button');
+        const buttonsData = [];
+        buttons.forEach(button => {
+            const buttonData = {};
+
+            if (button.textContent) buttonData.display = button.textContent;
+            if (button.dataset.leftClickOutput) buttonData.output = button.dataset.leftClickOutput;
+            if (button.dataset.rightClickOutput) buttonData.onRightClickOutput = button.dataset.rightClickOutput;
+
+            if (button.dataset.subOptions) {
+                const subOptions = JSON.parse(button.dataset.subOptions);
+                if (subOptions.length > 0) buttonData.subOptions = subOptions;
+            }
+
+            if (button.dataset.onRightClickSubOptions) {
+                const onRightClickSubOptions = JSON.parse(button.dataset.onRightClickSubOptions);
+                if (onRightClickSubOptions.length > 0) buttonData.onRightClickSubOptions = onRightClickSubOptions;
+            }
+
+            buttonsData.push(buttonData);
+        });
+        // Include all rows, even if they are empty
+        rowsData.push(buttonsData);
+    });
+
+    return rowsData;
+}
+// Function to populate the button grid with saved data
+function populateButtonGrid(buttonGrid, buttonDataRows) {
     // Clear existing buttons
     buttonGrid.innerHTML = '';
 
-    // Iterate over the button groups
-    buttonStructure.forEach(group => {
-        // Create a new row for each group
-        addButtonRow(buttonGrid, group.options);
+    // Iterate over the rows
+    buttonDataRows.forEach(buttonsData => {
+        // Create a new row for each set of buttons (even if empty)
+        addButtonRow(buttonGrid, buttonsData);
     });
 }
+
 
 
 
@@ -29044,7 +29261,6 @@ function createButtons(container, data, sectionId) {
         console.log('Row appended:', row); // Debugging line
     });
 }
-
 function createButton(row, item, displayText, index, sectionId) {
     const button = document.createElement('button');
     button.textContent = displayText;
@@ -29075,8 +29291,6 @@ function createButton(row, item, displayText, index, sectionId) {
 
     row.appendChild(button);
 }
-
-
 function handleButtonClick(event, item, displayText, index, button, sectionId) {
     // Remove any existing popup
     removeExistingPopup();
@@ -29108,9 +29322,6 @@ function handleButtonClick(event, item, displayText, index, button, sectionId) {
         handleDefaultButtonClick(item, displayText, index, sectionId);
     }
 }
-
-
-
 function handleButtonRightClick(event, item, displayText, index, button, sectionId) {
     // Remove any existing popup
     removeExistingPopup();
@@ -29133,7 +29344,6 @@ function handleButtonRightClick(event, item, displayText, index, button, section
         handleDefaultButtonRightClick(item, displayText);
     }
 }
-
 function createPopup(event, selectedOption, button, isRightClick = false, sectionId, depth = 0) {
     // Create a new popup modal
     const popup = document.createElement('div');
@@ -29221,7 +29431,6 @@ function createPopup(event, selectedOption, button, isRightClick = false, sectio
         }
     }, { once: true });
 }
-
 function handleSubOptionClick(subOption, sectionId, popup, btn, depth) {
     if (subOption.subOptions) {
         removeExistingSubPopup(depth + 1);
@@ -29232,7 +29441,6 @@ function handleSubOptionClick(subOption, sectionId, popup, btn, depth) {
         popup.remove(); // Close the main popup
     }
 }
-
 function handleSubOptionRightClick(subOption, sectionId, popup, btn, depth) {
     if (subOption.onRightClickSubOptions) {
         removeExistingSubPopup(depth + 1);
@@ -29243,21 +29451,18 @@ function handleSubOptionRightClick(subOption, sectionId, popup, btn, depth) {
         popup.remove(); // Close the main popup
     }
 }
-
 function removeExistingPopup() {
     const existingPopup = document.querySelector('.popup-modal');
     if (existingPopup) {
         existingPopup.remove();
     }
 }
-
 function removeExistingSubPopup(depth) {
     const existingSubPopup = document.querySelector(`.sub-popup-modal[data-depth="${depth}"]`);
     if (existingSubPopup) {
         existingSubPopup.remove();
     }
 }
-
 function createNestedSubPopup(subOption, parentButton, sectionId, depth, isRightClick = false) {
     const subPopup = document.createElement('div');
     subPopup.className = 'sub-popup-modal';
@@ -29330,7 +29535,6 @@ function createNestedSubPopup(subOption, parentButton, sectionId, depth, isRight
     // Attach the scoped click handler
     document.addEventListener('click', handleClickOutsideSubPopup);
 }
-
 function createPopupButton(popup, subOption, parentButton, sectionId, depth) {
     const btn = document.createElement('button');
     btn.textContent = subOption.display;
@@ -29360,7 +29564,6 @@ function createPopupButton(popup, subOption, parentButton, sectionId, depth) {
 
     popup.appendChild(btn);
 }
-
 // Left-click handler for titles (only inserts the section header if not already present)
 function handleTitleLeftClick(event, title, sectionId) {
     console.log('Left-clicked on title:', title); // Debugging line
@@ -29368,7 +29571,6 @@ function handleTitleLeftClick(event, title, sectionId) {
     // Only insert the section header, nothing else
     insertHeader(sectionId);  // Insert header without any additional text
 }
-
 // Right-click handler for titles with specific output based on the title
 function handleTitleRightClick(event, title, sectionId) {
     event.preventDefault(); // Prevent the default right-click context menu
@@ -29426,7 +29628,6 @@ function createHabitsSection(data) {
     createButtons(container, data, 'habits');
     return section;
 }
-
 function createSection(id, title) {
     const section = document.createElement('div');
     section.id = `${id}-section`;
@@ -29457,9 +29658,6 @@ function createSection(id, title) {
 
     return section;
 }
-
-
-
 function createEinkenniSection(data) {
     console.log('Creating Einkenni Section with data:', data); // Debugging line
     const section = createSection('einkenni', 'Einkenni');
@@ -29467,7 +29665,6 @@ function createEinkenniSection(data) {
     createButtons(container, data, 'einkenni');
     return section;
 }
-
 function createSkodunSection(data) {
     console.log('Creating Skodun Section with data:', data); // Debugging line
     const section = createSection('skodun', 'Skoðun');
@@ -29475,7 +29672,6 @@ function createSkodunSection(data) {
     createButtons(container, data, 'skodun');
     return section;
 }
-
 function createPlanSection(data) {
     console.log('Creating Plan Section with data:', data); // Debugging line
     const section = createSection('plan', 'Plan');
@@ -29483,7 +29679,6 @@ function createPlanSection(data) {
     createButtons(container, data, 'plan');
     return section;
 }
-
 function createRannsoknirSection(data) {
     console.log('Creating Rannsoknir Section with data:', data); // Debugging line
     const section = createSection('rannsoknir', 'Rannsóknir');
@@ -29491,7 +29686,6 @@ function createRannsoknirSection(data) {
     createButtons(container, data, 'rannsoknir');
     return section;
 }
-
 function createÞvagrannsoknSection(data) {
     console.log('Creating Þvagrannsókn Section with data:', data); // Debugging line
     const section = createSection('þvagrannsokn', 'Þvagrannsókn');
@@ -29499,8 +29693,6 @@ function createÞvagrannsoknSection(data) {
     createButtons(container, data, 'þvagrannsokn');
     return section;
 }
-
-
 function createLifsmorkSection(data) {
     console.log('Creating Lífsmörk Section with data:', data); // Debugging line
     const section = createSection('lifsmork', 'Lífsmörk');
@@ -29508,7 +29700,6 @@ function createLifsmorkSection(data) {
     createButtons(container, data, 'lifsmork');
     return section;
 }
-
 function createRaudFloggSection(data) {
     console.log('Creating Raud Flögg Section with data:', data); // Debugging line
     const section = createSection('raudflogg', 'Rauð Flögg');
@@ -29516,7 +29707,6 @@ function createRaudFloggSection(data) {
     createButtons(container, data, 'raudflogg');
     return section;
 }
-
 function createLyfSection(data) {
     console.log('Creating Lyf Section with data:', data); // Debugging line
     const section = createSection('lyf', 'Lyf');
@@ -29524,7 +29714,6 @@ function createLyfSection(data) {
     createButtons(container, data, 'lyf');
     return section;
 }
-
 function createAugnlyfSection(data) {
     console.log('Creating Augnlyf Section with data:', data); // Debugging line
     const section = createSection('augnlyf', 'Augnlyf');
@@ -29532,7 +29721,6 @@ function createAugnlyfSection(data) {
     createButtons(container, data, 'augnlyf');
     return section;
 }
-
 function createRiskHeartSection(data) {
     console.log('Creating Risk Section with data:', data); // Debugging line
     const section = createSection('riskheart', 'Áhættuþættir Kransæðasjúkdóms');
@@ -29540,7 +29728,6 @@ function createRiskHeartSection(data) {
     createButtons(container, data, 'riskheart');
     return section;
 }
-
 function createRiskUrinarySection(data) {
     console.log('Creating Risk Section with data:', data); // Debugging line
     const section = createSection('riskurinary', 'Áhættuþættir þvagblöðrukrabbameins');
@@ -29548,7 +29735,6 @@ function createRiskUrinarySection(data) {
     createButtons(container, data, 'riskurinary');
     return section;
 }
-
 function createCHADSVASCSection(data) {
     console.log('Creating CHADSVASC Section with data:', data); // Debugging line
     const section = createSection('CHADSVASC', 'CHADS-VASc');
@@ -29556,14 +29742,12 @@ function createCHADSVASCSection(data) {
     createButtons(container, data, 'CHADSVASC');
     return section;
 }
-
 function createHistoryViralSection(data) {
     const section = createSection('historyViral', 'Heilsufar');
     const container = section.querySelector('#historyViral');
     createButtons(container, data, 'historyViral');
     return section;
 }
-
 function createAugnsagaSection(data) {
     console.log('Creating Augnsaga Section with data:', data); // Debugging line
     const section = createSection('augnsaga', 'Augnsaga');
@@ -29571,7 +29755,6 @@ function createAugnsagaSection(data) {
     createButtons(container, data, 'augnsaga');
     return section;
 }
-
 function createVottordSection(data) {
     console.log('Creating Vottord Section with data:', data); // Debugging line
     const section = createSection('vottord', 'Vottorð');
@@ -29579,7 +29762,6 @@ function createVottordSection(data) {
     createButtons(container, data, 'vottord');
     return section;
 }
-
 function createRannsoknSection(data) {
     console.log('Creating Rannsokn Section with data:', data); // Debugging line
     const section = createSection('rannsokn', 'Rannsóknarniðurstöður');
@@ -29587,7 +29769,6 @@ function createRannsoknSection(data) {
     createButtons(container, data, 'rannsokn');
     return section;
 }
-
 function createSIGECAPSSection(data) {
     console.log('Creating SIGECAPS Section with data:', data); // Debugging line
     const section = createSection('sigecaps', 'SIGECAPS');
@@ -29595,7 +29776,6 @@ function createSIGECAPSSection(data) {
     createButtons(container, data, 'sigecaps');
     return section;
 }
-
 function createGedSkodunSection(data) {
     console.log('Creating Geð Skoðun Section with data:', data); // Debugging line
     const section = createSection('gedskodun', 'Skoðun');
@@ -29603,7 +29783,6 @@ function createGedSkodunSection(data) {
     createButtons(container, data, 'gedskodun');
     return section;
 }
-
 function createKerfakonnunSection(data) {
     console.log('Creating Kerfakonnun Section with data:', data); // Debugging line
     const section = createSection('kerfakonnun', 'Kerfakönnun');
@@ -29611,7 +29790,6 @@ function createKerfakonnunSection(data) {
     createButtons(container, data, 'kerfakonnun');
     return section;
 }
-
 function createOfnaemiSection(data) {
     console.log('Creating Ofnaemi Section with data:', data); // Debugging line
     const section = createSection('ofnaemi', 'Ofnæmi');
@@ -29619,7 +29797,6 @@ function createOfnaemiSection(data) {
     createButtons(container, data, 'ofnaemi');
     return section;
 }
-
 function createHeilataugaskodunSection(data) {
     console.log('Creating Heilataugaskoðun Section with data:', data); // Debugging line
     const section = createSection('heilataugaskodun', 'Heilataugaskoðun');
@@ -29627,7 +29804,6 @@ function createHeilataugaskodunSection(data) {
     createButtons(container, data, 'heilataugaskodun');
     return section;
 }
-
 function createFelagssagaSection(data) {
     console.log('Creating Félagssaga Section with data:', data); // Debugging line
     const section = createSection('felagssaga', 'Félagssaga');
@@ -29635,7 +29811,6 @@ function createFelagssagaSection(data) {
     createButtons(container, data, 'felagssaga');
     return section;
 }
-
 function createHlekkirSection(data) {
     console.log('Creating Hlekkir Section with data:', data); // Debugging line
     const section = createSection('hlekkir', 'Hlekkir');
@@ -29643,7 +29818,6 @@ function createHlekkirSection(data) {
     createButtons(container, data, 'hlekkir');
     return section;
 }
-
 function createGedheilsufarSection(data) {
     console.log('Creating Geðheilsufar Section with data:', data); // Debugging line
     const section = createSection('gedheilsufar', 'Geðheilsufar');
@@ -30493,7 +30667,7 @@ function loadPage(page) {
         description.className = 'form-description';
         description.innerHTML = `
             <h2>Hafðu Samband</h2>
-            <p>Hægt er að hafa samband beint við qtnote.net@gmail.com eða með því að fylla út formið neðan. Viljum endilega heyra ef eitthvað má bæta eða þarfnast lagfæringar sem og aðrar pælingar. Ef þú villt bæta við einhverjum ákveðnum takkastrúktúr máttu endilega fylla út takkainnihaldið sem þú hafðir í huga og lýsa hvar þú villt að því sé bætt við. Athugið að viðhengi virka ekki sem skyldi eins og er, þannig best er þá að senda skránna úr email beint eða afrita innihaldið í textagluggann.</p>
+            <p>Hægt er að hafa samband beint við qtnote.net@gmail.com eða með því að fylla út formið neðan. Viljum endilega heyra ef eitthvað má bæta eða þarfnast lagfæringar sem og aðrar pælingar. Ef þú villt bæta við einhverjum ákveðnum takkastrúktúr máttu endilega fylla út takkainnihaldið sem þú hafðir í huga og lýsa síðan hvar þú villt að því sé bætt við. Athugið að viðhengi virka ekki sem skyldi eins og er, þannig best er þá að senda skránna úr email beint eða afrita innihaldið í textagluggann.</p>
         `;
         leftColumn.appendChild(description);
     
@@ -30611,9 +30785,9 @@ function loadPage(page) {
         console.error('Unknown page:', page);
     }
 }
-
 // Cursor active even if website is clicked
 // Cursor remains active in the textbox unless an interactive element is clicked
+// Used to facilitate writing. Clicking the headers also positions cursor correctly in the textbox.
 document.addEventListener('click', function(event) {
     const textbox = document.getElementById('journalTextbox');
     const clickedElement = event.target;
@@ -30701,7 +30875,6 @@ function insertText(text, sectionId) {
 
     textbox.focus(); // Ensure the textbox remains focused
 }
-
 function insertHeader(sectionId) {
     const textbox = document.getElementById('journalTextbox');
     let currentText = textbox.value.trimEnd();
@@ -30756,7 +30929,6 @@ function insertHeader(sectionId) {
         scrollToCursor(textbox); // Ensure the cursor is visible
     }
 }
-
 function scrollToCursor(textbox) {
     const cursorPosition = textbox.selectionStart;
 
@@ -30775,10 +30947,6 @@ function scrollToCursor(textbox) {
     // Refocus on the textbox after scrolling to maintain the user's input
     textbox.focus();
 }
-
-
-
-
 function eraseText() {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save current state before erasing
@@ -30786,7 +30954,6 @@ function eraseText() {
     isFirstLungnahlustunClick = true; // Reset flag on erase
     inLungnahlustunContext = false; // Reset context on erase
 }
-
 function undoLastText() {
     const textbox = document.getElementById('journalTextbox');
     if (textHistory.length > 0) {
@@ -30798,7 +30965,6 @@ function undoLastText() {
     }
     textbox.focus();
 }
-
 function redoLastText() {
     const textbox = document.getElementById('journalTextbox');
     if (redoHistory.length > 0) {
@@ -30810,18 +30976,15 @@ function redoLastText() {
     }
     textbox.focus();
 }
-
 function copyText() {
     const textbox = document.getElementById('journalTextbox');
     textbox.select();
     document.execCommand('copy');
 }
-
 function analyzeText() {
     console.log('AI Analyze button clicked');
     alert('AI Analyze feature is not implemented in this demo.');
 }
-
 function retrieveData() {
     const patientNumber = document.getElementById('retrievePatientNumber').value;
     if (patientNumber) {
@@ -30858,6 +31021,7 @@ function retrieveData() {
     }
 }
 
+// Functions to determine header relative locations and if they're present
 // Ensure header is present when buttons are clicked
 function ensureHeader(sectionId) {
     const textbox = document.getElementById('journalTextbox');
@@ -30872,8 +31036,6 @@ function ensureHeader(sectionId) {
         textbox.value = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
     }
 }
-
-
 // Find the next header in the document
 function findNextHeaderIndex(currentText, startIndex) {
     const sectionHeaders = [
@@ -30894,7 +31056,6 @@ function findNextHeaderIndex(currentText, startIndex) {
 
     return nextHeaderIndex;
 }
-
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
     const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'raudflogg', 'sigecaps', 'historyViral', 'felagssaga','gedheilsufar', 'augnsaga', 'lyf', 'augnlyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
@@ -30923,8 +31084,6 @@ function getInsertPosition(sectionId, currentText) {
 
     return { textBefore, textAfter };
 }
-
-
 // New helper function to find the end of a section
 function findEndOfSection(sectionId, currentText) {
     const sectionHeader = getSectionHeader(sectionId);
