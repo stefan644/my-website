@@ -11648,45 +11648,243 @@ const RannsoknirMelting = [
                 subOptions: [
                     {
                         display: 'CRP 0-50',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${i * 5}`,
-                            output: `CRP: ${i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '0-10',
+                                subOptions: Array.from({ length: 11 }, (_, i) => ({
+                                    display: `${i}`,
+                                    output: `CRP ${i}`
+                                }))
+                            },
+                            {
+                                display: '11-20',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${11 + i}`,
+                                    output: `CRP ${11 + i}`
+                                }))
+                            },
+                            {
+                                display: '21-30',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${21 + i}`,
+                                    output: `CRP ${21 + i}`
+                                }))
+                            },
+                            {
+                                display: '31-40',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${31 + i}`,
+                                    output: `CRP ${31 + i}`
+                                }))
+                            },
+                            {
+                                display: '41-50',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${41 + i}`,
+                                    output: `CRP ${41 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 51-100',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${55 + i * 5}`,
-                            output: `CRP: ${55 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '51-60',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${51 + i}`,
+                                    output: `CRP ${51 + i}`
+                                }))
+                            },
+                            {
+                                display: '61-70',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${61 + i}`,
+                                    output: `CRP ${61 + i}`
+                                }))
+                            },
+                            {
+                                display: '71-80',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${71 + i}`,
+                                    output: `CRP ${71 + i}`
+                                }))
+                            },
+                            {
+                                display: '81-90',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${81 + i}`,
+                                    output: `CRP ${81 + i}`
+                                }))
+                            },
+                            {
+                                display: '91-100',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${91 + i}`,
+                                    output: `CRP ${91 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 101-150',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${105 + i * 5}`,
-                            output: `CRP: ${105 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '101-110',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${101 + i}`,
+                                    output: `CRP ${101 + i}`
+                                }))
+                            },
+                            {
+                                display: '111-120',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${111 + i}`,
+                                    output: `CRP ${111 + i}`
+                                }))
+                            },
+                            {
+                                display: '121-130',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${121 + i}`,
+                                    output: `CRP ${121 + i}`
+                                }))
+                            },
+                            {
+                                display: '131-140',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${131 + i}`,
+                                    output: `CRP ${131 + i}`
+                                }))
+                            },
+                            {
+                                display: '141-150',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${141 + i}`,
+                                    output: `CRP ${141 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 151-200',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${155 + i * 5}`,
-                            output: `CRP: ${155 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '151-160',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${151 + i}`,
+                                    output: `CRP ${151 + i}`
+                                }))
+                            },
+                            {
+                                display: '161-170',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${161 + i}`,
+                                    output: `CRP ${161 + i}`
+                                }))
+                            },
+                            {
+                                display: '171-180',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${171 + i}`,
+                                    output: `CRP ${171 + i}`
+                                }))
+                            },
+                            {
+                                display: '181-190',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${181 + i}`,
+                                    output: `CRP ${181 + i}`
+                                }))
+                            },
+                            {
+                                display: '191-200',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${191 + i}`,
+                                    output: `CRP ${191 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 201-250',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${205 + i * 5}`,
-                            output: `CRP: ${205 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '201-210',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${201 + i}`,
+                                    output: `CRP ${201 + i}`
+                                }))
+                            },
+                            {
+                                display: '211-220',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${211 + i}`,
+                                    output: `CRP ${211 + i}`
+                                }))
+                            },
+                            {
+                                display: '221-230',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${221 + i}`,
+                                    output: `CRP ${221 + i}`
+                                }))
+                            },
+                            {
+                                display: '231-240',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${231 + i}`,
+                                    output: `CRP ${231 + i}`
+                                }))
+                            },
+                            {
+                                display: '241-250',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${241 + i}`,
+                                    output: `CRP ${241 + i}`
+                                }))
+                            }
+                        ]
                     },
                     {
                         display: 'CRP 251-300',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${255 + i * 5}`,
-                            output: `CRP: ${255 + i * 5}`
-                        }))
+                        subOptions: [
+                            {
+                                display: '251-260',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${251 + i}`,
+                                    output: `CRP ${251 + i}`
+                                }))
+                            },
+                            {
+                                display: '261-270',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${261 + i}`,
+                                    output: `CRP ${261 + i}`
+                                }))
+                            },
+                            {
+                                display: '271-280',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${271 + i}`,
+                                    output: `CRP ${271 + i}`
+                                }))
+                            },
+                            {
+                                display: '281-290',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${281 + i}`,
+                                    output: `CRP ${281 + i}`
+                                }))
+                            },
+                            {
+                                display: '291-300',
+                                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                                    display: `${291 + i}`,
+                                    output: `CRP ${291 + i}`
+                                }))
+                            }
+                        ]
                     }
                 ],
                 onRightClickOutput: 'CRP <5'
