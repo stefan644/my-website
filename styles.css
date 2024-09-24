@@ -139,7 +139,7 @@ main {
     transition: width 0.3s ease, height 0.3s ease;  /* Smooth transition */
 }
 
-#risk, #riskheart, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral, #habits, #lyf, #lifsmork, #raudflogg, #rannsoknir, #sigecaps, #gedskodun, #kerfakonnun, #ofnaemi, #rannsokn, #heilataugaskodun, #þvagrannsokn, #augnsaga, #augnlyf, #felagssaga, #gedheilsufar {
+#risk, #riskheart, #CHADSVASC, #vottord, #einkenni, #skodun, #timalengd, #mettun, #plan, #historyViral, #habits, #lyf, #lifsmork, #raudflogg, #rannsoknir, #sigecaps, #gedskodun, #kerfakonnun, #ofnaemi, #rannsokn, #heilataugaskodun, #þvagrannsokn, #augnsaga, #augnlyf, #felagssaga, #gedheilsufar, #gynsaga {
     display: flex;
     flex-direction: column;
     gap: 10px;
