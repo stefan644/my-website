@@ -885,13 +885,10 @@ const HealthHistory = [
             {
                 display: 'Hjarta',
                 subOptions: [
-                    {   display: 'Háþrýstingur',
-                        subOptions: [
-                            { display: 'NOS', output: 'Háþrýstingur' },
-                        ...generateYearIntervals('Háþrýstingur', 'Greindist')
-                        ],
+                    {
+                        display: 'Háþrýstingur',
+                        subOptions: generateYearIntervals('Háþrýstingur', 'Greindist', 'meðhöndlaður'), // For "meðhöndlaður" masculine form
                         onRightClickOutput: 'Ekki saga um háþrýsting'
-
                     },
                     { display: 'Kransæðasjúkdómur', output: 'Kransæðasjúkdómur', onRightClickOutput: 'Engin saga um kransæðasjúkdóm' },
                     { display: 'Hjartabilun', output: 'Hjartabilun', onRightClickOutput: 'Engin saga um hjartabilun' },
@@ -942,16 +939,59 @@ const HealthHistory = [
             {
                 display: 'Innkirtlar',
                 subOptions: [
-                    { display: 'Sykursýki', output: 'Sykursýki', onRightClickOutput: 'Engin saga um sykursýki' },
-                    { display: 'Skjaldkirtilssjúkdómar', output: 'Skjaldkirtilssjúkdómur', onRightClickOutput: 'Engin saga um skjaldkirtilssjúkdóm' },
+                    {
+                        display: 'Sykursýki',
+                        subOptions: [
+                            { display: 'NOS', 
+                                subOptions: generateYearIntervals('Sykursýki', 'Greindist', 'meðhöndluð') 
+
+                            },
+                            { display: 'Sykursýki I', 
+                                subOptions: generateYearIntervals('Sykursýki I', 'Greindist', 'meðhöndluð') 
+
+                            },
+                            { display: 'Sykursýki II', 
+                                subOptions: generateYearIntervals('Sykursýki II', 'Greindist', 'meðhöndluð') 
+
+                            }
+                        ],
+                        onRightClickOutput: 'Ekki saga um sykursýki'
+                    },
+                    { display: 'Skjaldkirtilssjúkdómar', 
+                        subOptions: [
+                            { display: 'NOS', output: 'Skjaldkirtilssjúkdómur' },
+                            { display: 'Hyperthyroidism', output: 'Hyperthyroidism' },
+                            { display: 'Hypothyroidism', output: 'Hypothyroidism' }
+                            
+                        ],
+                         onRightClickOutput: 'Engin saga um skjaldkirtilssjúkdóm' 
+                    },
                     { display: 'Cushing’s heilkenni', output: 'Cushing’s heilkenni', onRightClickOutput: 'Engin saga um Cushing’s heilkenni' },
                     { display: 'Addison’s sjúkdómur', output: 'Addison’s sjúkdómur', onRightClickOutput: 'Engin saga um Addison’s sjúkdóm' },
                     { display: 'Hyperparathyroidism', output: 'Hyperparathyroidism', onRightClickOutput: 'Engin saga um hyperparathyroidism' },
                     { display: 'Hypoparathyroidism', output: 'Hypoparathyroidism', onRightClickOutput: 'Engin saga um hypoparathyroidism' },
                     { display: 'Metabolic syndrome', output: 'Metabolic syndrome', onRightClickOutput: 'Engin saga um metabolic syndrome' },
-                    { display: 'Hyperlipidemia', output: 'Hyperlipidemia', onRightClickOutput: 'Engin saga um hyperlipidemia' },
-                    { display: 'Hyperthyroidism', output: 'Hyperthyroidism', onRightClickOutput: 'Engin saga um hyperthyroidism' },
-                    { display: 'Hypothyroidism', output: 'Hypothyroidism', onRightClickOutput: 'Engin saga um hypothyroidism' }
+                    {
+                        display: 'Blóðfituröskun',
+                        subOptions: [
+                            { 
+                                display: 'NOS', 
+                                output: 'Blóðfituröskun', 
+                                onRightClickOutput: 'Engin saga um blóðfituröskun' 
+                            },
+                            { 
+                                display: 'Hyperkólesterólemía', 
+                                output: 'Hyperkólesterólemía', 
+                                onRightClickOutput: 'Engin saga um hyperkólesterólemíu' 
+                            },
+                            { 
+                                display: 'Hyperþríglyceríðemía', 
+                                output: 'Hyperþríglyceríðemía', 
+                                onRightClickOutput: 'Engin saga um hyperþríglyceríðemíu' 
+                            }
+                        ],
+                        onRightClickOutput: 'Engin saga um blóðfituröskun'
+                    }
                 ],
                 onRightClickOutput: 'Engin saga um innkirtlasjúkdóma'
             }
@@ -960,55 +1000,20 @@ const HealthHistory = [
     {
         name: '',
         type: 'options',
-        display: ['Þvagfæri', 'Nýru', 'Kynfæri', 'Melting', 'Lifrarsjúkdómar'],
+        display: ['Nýru', 'Melting', 'Lifrarsjúkdómar'],
         options: [
             {
-                display: 'Þvagfæri',
+                display: 'Þvag/nýru',
                 subOptions: [
                     { display: 'Nýrnabilun', output: 'Nýrnabilun', onRightClickOutput: 'Engin saga um nýrnabilun' },
                     { display: 'Nýrnasteinar', output: 'Nýrnasteinar', onRightClickOutput: 'Engin saga um nýrnasteina' },
-                    { display: 'Blöðrubólga', output: 'Blöðrubólga', onRightClickOutput: 'Engin saga um blöðrubólgu' },
                     { display: 'Prostatitis', output: 'Prostatitis', onRightClickOutput: 'Engin saga um prostatitis' },
-                    { display: 'Þvagsýrugigt', output: 'Þvagsýrugigt', onRightClickOutput: 'Engin saga um þvagsýrugigt' },
                     { display: 'Þvagleki', output: 'Þvagleki', onRightClickOutput: 'Engin saga um þvagleka' },
                     { display: 'Interstitional cystitis', output: 'Interstitial cystitis', onRightClickOutput: 'Engin saga um interstitial cystitis' },
                     { display: 'Pyelonephritis', output: 'Pyelonephritis', onRightClickOutput: 'Engin saga um pyelonephritis' },
-                    { display: 'BPH (Benign Prostatic Hyperplasia)', output: 'BPH', onRightClickOutput: 'Engin saga um BPH' },
-                    { display: 'Urinary tract infection (UTI)', output: 'Þvagfærasýking', onRightClickOutput: 'Engin saga um þvagfærasýkingu' }
+                    { display: 'BPH (Benign Prostatic Hyperplasia)', output: 'BPH', onRightClickOutput: 'Engin saga um BPH' }
                 ],
                 onRightClickOutput: 'Engin saga um þvagfærasjúkdóma'
-            },
-            {
-                display: 'Nýru',
-                subOptions: [
-                    { display: 'Renal failure', output: 'Renal failure', onRightClickOutput: 'Engin saga um renal failure' },
-                    { display: 'Glomerulonephritis', output: 'Glomerulonephritis', onRightClickOutput: 'Engin saga um glomerulonephritis' },
-                    { display: 'Nephrotic syndrome', output: 'Nephrotic syndrome', onRightClickOutput: 'Engin saga um nephrotic syndrome' },
-                    { display: 'Kidney stones', output: 'Kidney stones', onRightClickOutput: 'Engin saga um kidney stones' },
-                    { display: 'Polycystic kidney disease', output: 'Polycystic kidney disease', onRightClickOutput: 'Engin saga um polycystic kidney disease' },
-                    { display: 'Pyelonephritis', output: 'Pyelonephritis', onRightClickOutput: 'Engin saga um pyelonephritis' },
-                    { display: 'Acute kidney injury', output: 'Acute kidney injury', onRightClickOutput: 'Engin saga um acute kidney injury' },
-                    { display: 'Chronic kidney disease', output: 'Chronic kidney disease', onRightClickOutput: 'Engin saga um chronic kidney disease' },
-                    { display: 'Renal artery stenosis', output: 'Renal artery stenosis', onRightClickOutput: 'Engin saga um renal artery stenosis' },
-                    { display: 'Urinary tract infection (UTI)', output: 'UTI', onRightClickOutput: 'Engin saga um UTI' }
-                ],
-                onRightClickOutput: 'Engin saga um nýrnasjúkdóma'
-            },
-            {
-                display: 'Kynfæri',
-                subOptions: [
-                    { display: 'Amenorrhea', output: 'Amenorrhea', onRightClickOutput: 'Engin saga um amenorrhea' },
-                    { display: 'Polycystic Ovary Syndrome (PCOS)', output: 'PCOS', onRightClickOutput: 'Engin saga um PCOS' },
-                    { display: 'Endometriosis', output: 'Endometriosis', onRightClickOutput: 'Engin saga um endometriosis' },
-                    { display: 'Pelvic Inflammatory Disease (PID)', output: 'PID', onRightClickOutput: 'Engin saga um PID' },
-                    { display: 'Fibroids', output: 'Legæxli', onRightClickOutput: 'Engin saga um legæxli' },
-                    { display: 'Sexually Transmitted Infections (STIs)', output: 'Kynsjúkdómur', onRightClickOutput: 'Engin saga um kynsjúkdóm' },
-                    { display: 'Erectile Dysfunction', output: 'Ristruflanir', onRightClickOutput: 'Engin saga um ristruflanir' },
-                    { display: 'Ovarian cysts', output: 'Eggjastokkacysta', onRightClickOutput: 'Engin saga um eggjastokkacysta' },
-                    { display: 'Menorrhagia', output: 'Menorrhagia', onRightClickOutput: 'Engin saga um menorrhagia' },
-                    { display: 'Prostate cancer', output: 'Blöðruhálskirtilskrabbamein', onRightClickOutput: 'Engin saga um blöðruhálskirtilskrabbamein' }
-                ],
-                onRightClickOutput: 'Engin saga um kynfærasjúkdóma'
             },
             {
                 display: 'Melting',
@@ -1018,7 +1023,7 @@ const HealthHistory = [
                     { display: 'Colitis', output: 'Colitis', onRightClickOutput: 'Engin saga um colitis' },
                     { display: 'Irritable Bowel Syndrome (IBS)', output: 'IBS', onRightClickOutput: 'Engin saga um IBS' },
                     { display: 'Crohn’s sjúkdómur', output: 'Crohn’s sjúkdómur', onRightClickOutput: 'Engin saga um Crohn’s sjúkdóm' },
-                    { display: 'Colorectal cancer', output: 'Colorectal cancer', onRightClickOutput: 'Engin saga um colorectal cancer' },
+                    { display: 'Ristilkrabbamein', output: 'Ristilkrabbamein', onRightClickOutput: 'Engin saga um ristilkrabbamein' },
                     { display: 'Diverticulitis', output: 'Diverticulitis', onRightClickOutput: 'Engin saga um diverticulitis' },
                     { display: 'Peptic Ulcer Disease (PUD)', output: 'Peptic ulcer', onRightClickOutput: 'Engin saga um peptic ulcer' },
                     { display: 'Hemorrhoids', output: 'Hemorrhoids', onRightClickOutput: 'Engin saga um hemorrhoids' },
@@ -1047,7 +1052,7 @@ const HealthHistory = [
     {
         name: '',
         type: 'options',
-        display: ['Augu', 'Eyru', 'Stoðkerfi', 'Blóð', 'Onkologia'],
+        display: ['Augu', 'Eyru', 'Stoðkerfi', 'Blóð', 'Krabbamein'],
         options: [
             {
                 display: 'Augu',
@@ -1156,12 +1161,12 @@ const HealthHistory = [
                 onRightClickOutput: 'Engin saga um blóðsjúkdóma'
             },
             {
-                display: 'Onkologia',
+                display: 'Krabbamein',
                 subOptions: [
                     { display: 'Lungnakrabbamein', output: 'Lungnakrabbamein', onRightClickOutput: 'Engin saga um lungnakrabbamein' },
                     { display: 'Brjóstakrabbamein', output: 'Brjóstakrabbamein', onRightClickOutput: 'Engin saga um brjóstakrabbamein' },
-                    { display: 'Prostate cancer', output: 'Prostate cancer', onRightClickOutput: 'Engin saga um prostate cancer' },
-                    { display: 'Colorectal cancer', output: 'Colorectal cancer', onRightClickOutput: 'Engin saga um colorectal cancer' },
+                    { display: 'Krabbamein í blöðruhálskirtli', output: 'Krabbamein í blöðruhálskirtli', onRightClickOutput: 'Engin saga um krabbamein í blöðruhálskirtli' },
+                    { display: 'Ristilkrabbamein', output: 'Ristilkrabbamein', onRightClickOutput: 'Engin saga um ristilkrabbamein' },
                     { display: 'Melanoma', output: 'Melanoma', onRightClickOutput: 'Engin saga um melanoma' },
                     { display: 'Lymphoma', output: 'Lymphoma', onRightClickOutput: 'Engin saga um lymphoma' },
                     { display: 'Pancreatic cancer', output: 'Pancreatic cancer', onRightClickOutput: 'Engin saga um pancreatic cancer' },
@@ -16413,7 +16418,98 @@ const GedheilsufarData = [
         ]
     }
 ];
-
+const RiskSuicideData =[
+// Row 1
+{
+    name: '',
+    type: 'options',
+    display: ['Geðsjúkdómur', 'Fyrri tilraunir', 'Fjölskyldusaga', 'Langvinnur sjúkdómur'],
+    options: [
+        {
+            display: 'Geðsjúkdómur',
+            subOptions: [
+                { display: 'Þunglyndi', output: 'Saga um þunglyndi', onRightClickOutput: 'Ekki saga um þunglyndi' },
+                { display: 'Bipolar disorder', output: 'Saga um bipolar disorder', onRightClickOutput: 'Ekki saga um bipolar disorder' },
+                { display: 'Geðklofi', output: 'Saga um geðklofa', onRightClickOutput: 'Ekki saga um geðklofa' },
+                { display: 'Kvíðaraskanir', output: 'Saga um kvíðaraskanir', onRightClickOutput: 'Ekki saga um kvíðaraskanir' },
+                { display: 'Vímuefnaneysla', output: 'Saga um vímuefnaneyslu', onRightClickOutput: 'Ekki saga um vímuefnaneyslu' }
+            ],
+            onRightClickOutput: 'Engin saga um geðsjúkdóm'
+        },
+        {
+            display: 'Fyrri sjálfsvígstilraunir',
+            output: 'Fyrri sjálfsvígstilraunir',
+            onRightClickOutput: 'Ekki saga um fyrri sjálfsvígstilraunir'
+        },
+        {
+            display: 'Fjölskyldusaga sjálfsvígs',
+            output: 'Fjölskyldusaga sjálfsvígs',
+            onRightClickOutput: 'Engin fjölskyldusaga um sjálfsvíg'
+        },
+        {
+            display: 'Langvinnir sjúkdómar',
+            output: 'Langvinnir sjúkdómar',
+            onRightClickOutput: 'Ekki saga um langvinna sjúkdóma'
+        }
+    ]
+},
+// Row 2
+{
+    name: '',
+    type: 'options',
+    display: ['Félagsleg einangrun', 'Nýleg áföll', 'Ofbeldi eða misnotkun', 'Aðgangur að hættulegum aðferðum'],
+    options: [
+        {
+            display: 'Félagsleg einangrun',
+            output: 'Félagsleg einangrun',
+            onRightClickOutput: 'Ekki saga um félagslega einangrun'
+        },
+        {
+            display: 'Nýleg áföll',
+            output: 'Nýleg áföll',
+            onRightClickOutput: 'Ekki saga um nýleg áföll'
+        },
+        {
+            display: 'Ofbeldi eða misnotkun',
+            output: 'Ofbeldi eða misnotkun',
+            onRightClickOutput: 'Ekki saga um ofbeldi eða misnotkun'
+        },
+        {
+            display: 'Aðgangur að hættulegum aðferðum',
+            output: 'Aðgangur að hættulegum aðferðum',
+            onRightClickOutput: 'Ekki aðgangur að hættulegum aðferðum'
+        }
+    ]
+},
+// Row 3
+{
+    name: '',
+    type: 'options',
+    display: ['Vímuefnaneysla', 'Áfengi', 'Fjölskylduerfiðleikar', 'Erfiðleikar í vinnu eða skóla'],
+    options: [
+        {
+            display: 'Vímuefnaneysla',
+            output: 'Vímuefnaneysla',
+            onRightClickOutput: 'Ekki saga um vímuefnaneyslu'
+        },
+        {
+            display: 'Áfengi',
+            output: 'Áfengismisnotkun',
+            onRightClickOutput: 'Ekki saga um áfengismisnotkun'
+        },
+        {
+            display: 'Fjölskylduerfiðleikar',
+            output: 'Fjölskylduerfiðleikar',
+            onRightClickOutput: 'Ekki saga um fjölskylduerfiðleika'
+        },
+        {
+            display: 'Erfiðleikar í vinnu eða skóla',
+            output: 'Erfiðleikar í vinnu eða skóla',
+            onRightClickOutput: 'Ekki saga um erfiðleika í vinnu eða skóla'
+        }
+    ]
+}
+];
 const GedSkodunData = [
     {
         name: '',
@@ -27674,7 +27770,8 @@ const Felagssaga = [
 
 
 // Here I am trying to generate a text that says something like "Patient uses amphetamines. Also cocain and marijuana".
-// User 
+// Doesn't work particularly well and I never use it. Might need to find some other solution to exact drug usage.
+// Isn't important.
 function generateInitialDrugOptions() {
     const drugs = ['Kannabis', 'Amfetamín', 'Kókaín', 'Sveppir', 'LSD', 'Ópíöt', 'Benzolyf'];
     return [
@@ -27770,49 +27867,72 @@ function calculateDosage(medicationName, dosagePerKg, weight) {
     const dosePerMl = dosePerDose / concentration; // Calculate ml per dose
     return `Set ${medicationName} í gáttina. Þyngd ${weight}kg. Notum ${dosagePerKg}mg/kg í þremur aðskildum skömmtum. Skammtastærð því ${dosePerMl.toFixed(1)}ml (${dosePerDose.toFixed(0)}mg) 3x á dag. Heildarskammtur ${totalDailyDose}mg á sólahring.`;
 }
-// Function to generate year and month-based suboptions with diagnosis and event
-function generateYearSuboptions(startYear, endYear, diagnosis, event) {
-    return Array.from({ length: endYear - startYear + 1 }, (_, i) => {
-        const year = startYear + i;
-        return {
-            display: `${year}`,
-            subOptions: generateMonthSuboptions(year, diagnosis, event)
-        };
-    });
-}
-
-// Function to generate month-based suboptions with diagnosis and event
-function generateMonthSuboptions(year, diagnosis, event) {
-    const months = [
-        { display: 'janúar', output: `${diagnosis}. ${event} í janúar ${year}` },
-        { display: 'febrúar', output: `${diagnosis}. ${event} í febrúar ${year}` },
-        { display: 'mars', output: `${diagnosis}. ${event} í mars ${year}` },
-        { display: 'apríl', output: `${diagnosis}. ${event} í apríl ${year}` },
-        { display: 'maí', output: `${diagnosis}. ${event} í maí ${year}` },
-        { display: 'júní', output: `${diagnosis}. ${event} í júní ${year}` },
-        { display: 'júlí', output: `${diagnosis}. ${event} í júlí ${year}` },
-        { display: 'ágúst', output: `${diagnosis}. ${event} í ágúst ${year}` },
-        { display: 'september', output: `${diagnosis}. ${event} í september ${year}` },
-        { display: 'október', output: `${diagnosis}. ${event} í október ${year}` },
-        { display: 'nóvember', output: `${diagnosis}. ${event} í nóvember ${year}` },
-        { display: 'desember', output: `${diagnosis}. ${event} í desember ${year}` }
+// Function to generate year intervals, year, month, and treatment suboptions
+function generateYearIntervals(diagnosis, diagnosisWord, treatWord) {
+    const intervals = [
+        { start: 1960, end: 1969 },
+        { start: 1970, end: 1979 },
+        { start: 1980, end: 1989 },
+        { start: 1990, end: 1999 },
+        { start: 2000, end: 2009 },
+        { start: 2010, end: 2019 },
+        { start: 2020, end: 2024 }
     ];
 
-    // Add NOS option for the month
-    return [{ display: 'NOS', output: `${diagnosis}. ${event} ${year}` }, ...months];
+    return [
+        {
+            display: 'NOS', // NOS at the year interval level
+            subOptions: generateTreatmentSuboptions(diagnosis, treatWord)
+        },
+        ...intervals.map(interval => ({
+            display: `${interval.start}-${interval.end}`,
+            subOptions: [
+                ...Array.from({ length: interval.end - interval.start + 1 }, (_, i) => ({
+                    display: `${interval.start + i}`,
+                    subOptions: generateMonthSuboptions(diagnosis, diagnosisWord, treatWord, `${interval.start + i}`)
+                }))
+            ]
+        }))
+    ];
 }
 
-// Function to generate intervals for year ranges with diagnosis and event
-function generateYearIntervals(diagnosis, event) {
-    const intervals = [];
-    for (let startYear = 1960; startYear <= 2020; startYear += 10) {
-        const endYear = Math.min(startYear + 9, 2024); // Ensure the last range doesn't exceed 2024
-        intervals.push({
-            display: `${startYear}-${endYear}`,
-            subOptions: generateYearSuboptions(startYear, endYear, diagnosis, event)
-        });
-    }
-    return intervals;
+// Function to generate months with the option for treatment
+function generateMonthSuboptions(diagnosis, diagnosisWord, treatWord, year) {
+    const months = [
+        'janúar', 'febrúar', 'mars', 'apríl', 'maí', 'júní',
+        'júlí', 'ágúst', 'september', 'október', 'nóvember', 'desember'
+    ];
+
+    return [
+        {
+            display: 'NOS', // Skip the month and directly go to treatment
+            subOptions: generateTreatmentSuboptions(diagnosis, treatWord, year, false) // Set false for skipping "í"
+        },
+        ...months.map(month => ({
+            display: month,
+            subOptions: generateTreatmentSuboptions(diagnosis, treatWord, `${month} ${year}`, true) // Set true for using "í"
+        }))
+    ];
+}
+
+// Function to generate treatment options
+function generateTreatmentSuboptions(diagnosis, treatWord, date = '', includeIn = false) {
+    const datePart = date ? (includeIn ? `í ${date}` : `${date}`) : ''; // Use "í" for months, skip it for year only
+
+    return [
+        {
+            display: 'NOS', // Just the diagnosis without specifying the date
+            output: `${diagnosis}.`
+        },
+        {
+            display: `Vel ${treatWord}`,
+            output: datePart ? `${diagnosis}. Greindist ${datePart}. Vel ${treatWord}.` : `${diagnosis}. Vel ${treatWord}.`
+        },
+        {
+            display: `Illa ${treatWord}`,
+            output: datePart ? `${diagnosis}. Greindist ${datePart}. Illa ${treatWord}.` : `${diagnosis}. Illa ${treatWord}.`
+        }
+    ];
 }
 
 
@@ -28299,7 +28419,6 @@ function closeModal(modalId) {
         }
     }
 }
-
 window.onclick = function(event) {
     const modals = document.getElementsByClassName('modal');
     for (let i = 0; i < modals.length; i++) {
@@ -28329,6 +28448,8 @@ function handleEscapeKey(event) {
 }
 
 // Orthostatism modals
+// Used to enter patient blood pressure when sitting, standing for 1 minute, 3 minutes etc...
+// Useful to determine of the patient is orthostatic.
 function createOrthostatismInterface(containerId) {
     const container = document.getElementById(containerId);
     if (!container) {
@@ -28546,7 +28667,6 @@ function createOrthostatismInterface(containerId) {
     orthostatismContainer.appendChild(submitButton);
     container.appendChild(orthostatismContainer);
 }
-
 function createExactValueButtons(section, type, min, max, inputElement) {
     // Remove any existing exact value buttons
     const existingDropdown = section.querySelector('.exact-value-dropdown');
@@ -28634,7 +28754,9 @@ function addOrthostatismButton(parentElement) {
 
 
 
+
 // Modals to create button structure for user contribution. Used in the page "Upplýsingar (Information)
+// These functions won't be used when user editing becomes available.
 // Just want to highlight the importance of users being able to edit on the page. 
 // I want users to be able to create new pages, buttons, headers etc by simply clicking somekind of edit mode button.
 // Function to open the Button Structure Generator Modal
@@ -29343,8 +29465,6 @@ function loadButtonStructure(buttonGrid) {
     // Trigger the file input dialog
     fileInput.click();
 }
-
-
 // Function to collect the current button structure data
 function collectButtonStructureData() {
     const buttonGrid = document.querySelector('.button-grid');
@@ -29390,6 +29510,7 @@ function populateButtonGrid(buttonGrid, buttonDataRows) {
         addButtonRow(buttonGrid, buttonsData);
     });
 }
+
 
 
 
@@ -29787,6 +29908,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// The loadpage and generate sections are not well set up to be honest.
+// It's complicated generating the new sections and adding new pages.
+// The AI suggested a solution that seemed good but it was complicated
+// adding it without compromising other functions.
 // Generate the different sections
 function createHabitsSection(data) {
     const section = createSection('habits', 'Venjur');
@@ -29901,6 +30026,14 @@ function createRiskUrinarySection(data) {
     createButtons(container, data, 'riskurinary');
     return section;
 }
+function createRiskSuicideSection(data) {
+    console.log('Creating Risk Suicide Section with data:', data); // Debugging line
+    const section = createSection('risksuicide', 'Áhættuþættir sjálfsvíga');
+    const container = section.querySelector('#risksuicide');
+    createButtons(container, data, 'risksuicide');
+    return section;
+}
+
 function createCHADSVASCSection(data) {
     console.log('Creating CHADSVASC Section with data:', data); // Debugging line
     const section = createSection('CHADSVASC', 'CHADS-VASc');
@@ -29998,7 +30131,6 @@ function createGynsagaSection(data) {
     createButtons(container, data, 'gynsaga');
     return section;
 }
-
 // Load sections depending on page
 function loadPage(page) {
     const container = document.getElementById('content-section');
@@ -30170,6 +30302,7 @@ function loadPage(page) {
         const lyfSection = createLyfSection(LyfData);
         const kerfakonnunSection = createKerfakonnunSection(KerfakonnunData);
         const gynsection = createGynsagaSection(Gynsaga);
+        const riskSuicideSection = createRiskSuicideSection(RiskSuicideData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
@@ -30178,6 +30311,7 @@ function loadPage(page) {
         leftColumn.appendChild(lyfSection);
         leftColumn.appendChild(historyViralSection);
         leftColumn.appendChild(gynsection);
+        leftColumn.appendChild(riskSuicideSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
@@ -30596,11 +30730,13 @@ function loadPage(page) {
         const lyfSection = createLyfSection(LyfData);
         const habitsSection = createHabitsSection(Habits);
         const ofnaemiSection = createOfnaemiSection(OfnaemiData);
+        const riskSuicideSection = createRiskSuicideSection(RiskSuicideData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
         leftColumn.appendChild(sigecapsSection);
+        //leftColumn.appendChild(riskSuicideSection);
         leftColumn.appendChild(felagssagaSection);
         leftColumn.appendChild(gedheilsufarSection);
         leftColumn.appendChild(lyfSection);
@@ -31016,11 +31152,6 @@ document.addEventListener('mouseup', function(event) {
     isManualCursorMove = false; // Allow clearing selection in future interactions
 });
 
-
-// Textbox manipulation functions
-let textHistory = [];
-let redoHistory = [];
-
 // Keyboard shortcuts
 document.addEventListener('keydown', function(event) {
     const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
@@ -31064,6 +31195,7 @@ document.addEventListener('keydown', function(event) {
         copyText();
     }
 });
+// These functions call insertHeader to either move the cursor or create a header if it's not present
 document.addEventListener('keydown', function(event) {
     if (event.ctrlKey && !event.shiftKey) {
         // Ctrl + Letter shortcuts for left-clicking (inserting the header)
@@ -31149,6 +31281,9 @@ document.addEventListener('keydown', function(event) {
 });
 
 
+// Textbox manipulation functions
+let textHistory = [];
+let redoHistory = [];
 function insertText(text, sectionId) {
     const textbox = document.getElementById('journalTextbox');
     textHistory.push(textbox.value); // Save the current state before modification
@@ -31200,6 +31335,9 @@ function insertText(text, sectionId) {
 
     textbox.focus(); // Ensure the textbox remains focused
 }
+// This function moves the cursor correctly when headers are clicked.
+// It's important to be able to navigate the journal when there's lots of data
+// Shortcuts above call this function.
 function insertHeader(sectionId) {
     const textbox = document.getElementById('journalTextbox');
     let currentText = textbox.value.trimEnd();
@@ -31260,7 +31398,7 @@ function insertHeader(sectionId) {
     // Reset the manual cursor move flag after cursor placement
     isManualCursorMove = false;
 }
-
+// Supportive function with insertHeader. Important that the text that user is editing is visible in the textbox.
 function scrollToCursor(textbox) {
     const cursorPosition = textbox.selectionStart;
 
@@ -31286,6 +31424,8 @@ function eraseText() {
     isFirstLungnahlustunClick = true; // Reset flag on erase
     inLungnahlustunContext = false; // Reset context on erase
 }
+// Undo and redo functions work okay for button data but they don't work for headers and for written info (it should undo to the last dot, 
+// not remove all that has been written since last button entry it including the last entered button with no option to redo)
 function undoLastText() {
     const textbox = document.getElementById('journalTextbox');
     if (textHistory.length > 0) {
@@ -31375,7 +31515,7 @@ function findNextHeaderIndex(currentText, startIndex) {
         'Áhættuþættir kransæðasjúkdóms:', 'Áhættuþættir þvagblöðrukrabbameins:', 'CHADS-VASc:',
         'Heilsufar:', 'Rannsóknarniðurstöður:', 'SIGECAPS:', 'Geðskoðun:', 'Kerfakönnun:',
         'Ofnæmi:', 'Heilataugaskoðun:', 'Þvagrannsókn:', 'Augnsaga:', 'Augnlyf:', 'Félagssaga:',
-        'Geðsaga:', 'Gynsaga:'
+        'Geðsaga:', 'Gynsaga:', 'Áhættuþættir sjálfsvíga:'
     ];
     let nextHeaderIndex = -1;
 
@@ -31390,7 +31530,7 @@ function findNextHeaderIndex(currentText, startIndex) {
 }
 // Get the correct insertion position for headers based on section order
 function getInsertPosition(sectionId, currentText) {
-    const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'gynsaga', 'raudflogg', 'sigecaps', 'historyViral', 'felagssaga','gedheilsufar', 'augnsaga', 'lyf', 'augnlyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
+    const sectionOrder = ['einkenni', 'vottord', 'kerfakonnun', 'gynsaga', 'raudflogg', 'sigecaps', 'historyViral', 'risksuicide', 'felagssaga','gedheilsufar', 'augnsaga', 'lyf', 'augnlyf', 'riskheart', 'riskurinary', 'CHADSVASC', 'habits', 'ofnaemi', 'skodun', 'heilataugaskoðun', 'gedskodun', 'lifsmork', 'rannsoknir', 'þvagrannsokn', 'plan'];
     const index = sectionOrder.indexOf(sectionId);
     let textBefore = currentText;
     let textAfter = '';
@@ -31484,6 +31624,8 @@ function getSectionHeader(sectionId) {
             return 'Geðsaga:';
         case 'gynsaga':
             return 'Gynsaga:';
+        case 'risksuicide':
+            return 'Áhættuþættir sjálfsvíga:';
         
         default:
             return '';
@@ -31520,6 +31662,7 @@ document.getElementById('journalTextbox').addEventListener('input', function() {
     });
 });
 
+// Functions for form in the information page. To be able to send emails.
 function handleFormSubmit(event) {
     event.preventDefault();
 
@@ -31564,7 +31707,6 @@ function handleFormSubmit(event) {
         sendEmail(formData, form);
     }
 }
-
 function sendEmail(formData, form) {
     window.emailjs.send('service_ptekx3f', 'template_kqjavmq', formData)
         .then(function(response) {
