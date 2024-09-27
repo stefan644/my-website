@@ -14116,7 +14116,7 @@ const PlanKnee = [
     {
         name: '',
         type: 'options',
-        display: ['Langvarandi hnévandi', 'Slitgigt', 'Aðrar greiningar'],
+        display: ['Langvarandi hnévandi', 'Slitgigt', 'Osgood-Schlatter'],
         options: [
             {
                 display: 'Langvarandi hnévandi',
@@ -14148,6 +14148,42 @@ const PlanKnee = [
                     }
                 ]
             },
+            {
+                display: 'Osgood-Schlatter',
+                subOptions: [
+                    { display: 'Greining', output: 'Osgood-Schlatter' },
+                    { display: 'Grunur', output: 'Grunur um Osgood-Schlatter' },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/osgood-schlatter-disease-the-basics' }
+                                    
+                                ]
+                            },
+                            { display: 'Uptodate', type: 'hyperlink', url: 'https://www.uptodate.com/contents/osgood-schlatter-disease-tibial-tuberosity-avulsion' }
+                            
+                        ]
+                    },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Ráðleggingar, sjúkraþjálfun, endurmat pn', output: 'Osgood-Schlatter. Almennar ráðleggingar, m.a. kælingu eftir æfingar, '
+                                + 'hvíld ef einkenni mikil (sérstaklega ef standa yfir í >24klst) og verkjalyf í nokkra daga í senn eftir þörfum. '
+                                + 'Ekki ráðlagt að hætta æfingum en mikilvægt að hlusta á líkamann. Sjúkraþjálfun til styrkingar og liðkunnar á hamstrings og quadriceps'
+                                + ' Endurmat eftir þörfum' 
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Aðrar greiningar'],
+        options: [
             {
                 display: 'Aðrar greiningar',
                 subOptions: [
@@ -14221,21 +14257,6 @@ const PlanKnee = [
                                     { display: 'Verkjameðferð, sjúkraþjálfun', output: 'Ráðlegg verkjameðferð og sjúkraþjálfun til að draga úr einkennum.' },
                                     { display: 'Myndgreining, endurmat', output: 'Ráðlegg myndgreiningu (segulómun) til frekari greiningar.' },
                                     { display: 'Skurðaðgerð ef engin framför', output: 'Langvarandi chondromalacia. Ráðlegg skurðaðgerð ef ekki hefur orðið bati.' }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Osgood-Schlatter',
-                        subOptions: [
-                            { display: 'Greining', output: 'Osgood-Schlatter' },
-                            { display: 'Grunur', output: 'Grunur um Osgood-Schlatter' },
-                            {
-                                display: 'Fullmótuð plön',
-                                subOptions: [
-                                    { display: 'Hvíld, sjúkraþjálfun, verkjameðferð', output: 'Osgood-Schlatter. Ráðlegg hvíld, sjúkraþjálfun og verkjameðferð.' },
-                                    { display: 'Verndun, forðast álag', output: 'Grunur um Osgood-Schlatter. Ráðlegg forðast álag og veita stuðning.' },
-                                    { display: 'Langvarandi einkenni, segulómun', output: 'Staðfest Osgood-Schlatter. Ef langvarandi einkenni, segulómun og endurmat.' }
                                 ]
                             }
                         ]
@@ -30265,10 +30286,12 @@ function loadPage(page) {
         const rannsoknirSection = createRannsoknirSection(RannsoknirViral);
         const ofnaemiSection = createOfnaemiSection(OfnaemiData);
         const lyfSection = createLyfSection(LyfData);
+        const kerfakonnunSection = createKerfakonnunSection(KerfakonnunData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
+        leftColumn.appendChild(kerfakonnunSection);
         leftColumn.appendChild(historyViralSection);
         leftColumn.appendChild(lyfSection);
         leftColumn.appendChild(habitsSection);
@@ -31235,6 +31258,10 @@ document.addEventListener('keydown', function(event) {
             case 'b': // Ctrl + B for Venjur
                 event.preventDefault();
                 insertHeader('habits');
+                break;
+            case 'k': // Ctrl + S for Skoðun
+                event.preventDefault();
+                insertHeader('kerfakonnun');
                 break;
         }
     } else if (event.ctrlKey && event.shiftKey) {
