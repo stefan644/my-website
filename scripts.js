@@ -6609,31 +6609,31 @@ const ExamsHeart = [
                             { 
                                 display: 'NOS', 
                                 subOptions: [
-                                    { display: 'NOS', output: 'Fótabjúgur hægra megin' },
-                                    { display: 'Mikill', output: 'Mikill fótabjúgur hægra megin' },
-                                    { display: 'Miðlungs', output: 'Miðlungs fótabjúgur hægra megin' },
-                                    { display: 'Vægur', output: 'Vægur fótabjúgur hægra megin' },
-                                    { display: 'Minniháttar', output: 'Minniháttar fótabjúgur hægra megin' }
+                                    { display: 'NOS', output: 'Fótabjúgur á hægri fæti' },
+                                    { display: 'Mikill', output: 'Mikill fótabjúgur á hægri fæti' },
+                                    { display: 'Miðlungs', output: 'Miðlungs fótabjúgur á hægri fæti' },
+                                    { display: 'Vægur', output: 'Vægur fótabjúgur á hægri fæti' },
+                                    { display: 'Minniháttar', output: 'Minniháttar fótabjúgur á hægri fæti' }
                                 ]
                             },
                             { 
                                 display: 'Pitting', 
                                 subOptions: [
-                                    { display: 'NOS', output: 'Pitting fótabjúgur hægra megin' },
-                                    { display: 'Mikill', output: 'Mikill pitting bjúgur á fótum hægra megin' },
-                                    { display: 'Miðlungs', output: 'Miðlungs pitting bjúgur á fótum hægra megin' },
-                                    { display: 'Vægur', output: 'Vægur pitting bjúgur á fótum hægra megin' },
-                                    { display: 'Minniháttar', output: 'Minniháttar pitting bjúgur á fótum hægra megin' }
+                                    { display: 'NOS', output: 'Pitting fótabjúgur á hægri fæti' },
+                                    { display: 'Mikill', output: 'Mikill pitting bjúgur á hægri fæti' },
+                                    { display: 'Miðlungs', output: 'Miðlungs pitting bjúgur á hægri fæti' },
+                                    { display: 'Vægur', output: 'Vægur pitting bjúgur á hægri fæti' },
+                                    { display: 'Minniháttar', output: 'Minniháttar pitting bjúgur á hægri fæti' }
                                 ]
                             },
                             { 
                                 display: 'Nonpitting', 
                                 subOptions: [
-                                    { display: 'NOS', output: 'Nonpitting fótabjúgur hægra megin' },
-                                    { display: 'Mikill', output: 'Mikill nonpitting bjúgur á fótum hægra megin' },
-                                    { display: 'Miðlungs', output: 'Miðlungs nonpitting bjúgur á fótum hægra megin' },
-                                    { display: 'Vægur', output: 'Vægur nonpitting bjúgur á fótum hægra megin' },
-                                    { display: 'Minniháttar', output: 'Minniháttar nonpitting bjúgur á fótum hægra megin' }
+                                    { display: 'NOS', output: 'Nonpitting fótabjúgur á hægri fæti' },
+                                    { display: 'Mikill', output: 'Mikill nonpitting bjúgur á hægri fæti' },
+                                    { display: 'Miðlungs', output: 'Miðlungs nonpitting bjúgur á hægri fæti' },
+                                    { display: 'Vægur', output: 'Vægur nonpitting bjúgur á hægri fæti' },
+                                    { display: 'Minniháttar', output: 'Minniháttar nonpitting bjúgur á hægri fæti' }
                                 ]
                             }
                         ]
@@ -6644,31 +6644,31 @@ const ExamsHeart = [
                             { 
                                 display: 'NOS', 
                                 subOptions: [
-                                    { display: 'NOS', output: 'Fótabjúgur vinstra megin' },
-                                    { display: 'Mikill', output: 'Mikill fótabjúgur vinstra megin' },
-                                    { display: 'Miðlungs', output: 'Miðlungs fótabjúgur vinstra megin' },
-                                    { display: 'Vægur', output: 'Vægur fótabjúgur vinstra megin' },
-                                    { display: 'Minniháttar', output: 'Minniháttar fótabjúgur vinstra megin' }
+                                    { display: 'NOS', output: 'Fótabjúgur á vinstri fæti' },
+                                    { display: 'Mikill', output: 'Mikill fótabjúgur á vinstri fæti' },
+                                    { display: 'Miðlungs', output: 'Miðlungs fótabjúgur á vinstri fæti' },
+                                    { display: 'Vægur', output: 'Vægur fótabjúgur á vinstri fæti' },
+                                    { display: 'Minniháttar', output: 'Minniháttar fótabjúgur á vinstri fæti' }
                                 ]
                             },
                             { 
                                 display: 'Pitting', 
                                 subOptions: [
-                                    { display: 'NOS', output: 'Pitting fótabjúgur vinstra megin' },
-                                    { display: 'Mikill', output: 'Mikill pitting bjúgur á fótum vinstra megin' },
-                                    { display: 'Miðlungs', output: 'Miðlungs pitting bjúgur á fótum vinstra megin' },
-                                    { display: 'Vægur', output: 'Vægur pitting bjúgur á fótum vinstra megin' },
-                                    { display: 'Minniháttar', output: 'Minniháttar pitting bjúgur á fótum vinstra megin' }
+                                    { display: 'NOS', output: 'Pitting fótabjúgur á vinstri fæti' },
+                                    { display: 'Mikill', output: 'Mikill pitting bjúgur á vinstri fæti' },
+                                    { display: 'Miðlungs', output: 'Miðlungs pitting bjúgur á vinstri fæti' },
+                                    { display: 'Vægur', output: 'Vægur pitting bjúgur á vinstri fæti' },
+                                    { display: 'Minniháttar', output: 'Minniháttar pitting bjúgur á vinstri fæti' }
                                 ]
                             },
                             { 
                                 display: 'Nonpitting', 
                                 subOptions: [
-                                    { display: 'NOS', output: 'Nonpitting fótabjúgur vinstra megin' },
-                                    { display: 'Mikill', output: 'Mikill nonpitting bjúgur á fótum vinstra megin' },
-                                    { display: 'Miðlungs', output: 'Miðlungs nonpitting bjúgur á fótum vinstra megin' },
-                                    { display: 'Vægur', output: 'Vægur nonpitting bjúgur á fótum vinstra megin' },
-                                    { display: 'Minniháttar', output: 'Minniháttar nonpitting bjúgur á fótum vinstra megin' }
+                                    { display: 'NOS', output: 'Nonpitting fótabjúgur á vinstri fæti' },
+                                    { display: 'Mikill', output: 'Mikill nonpitting bjúgur á vinstri fæti' },
+                                    { display: 'Miðlungs', output: 'Miðlungs nonpitting bjúgur á vinstri fæti' },
+                                    { display: 'Vægur', output: 'Vægur nonpitting bjúgur á vinstri fæti' },
+                                    { display: 'Minniháttar', output: 'Minniháttar nonpitting bjúgur á vinstri fæti' }
                                 ]
                             }
                         ]
@@ -10724,7 +10724,7 @@ const Gynsaga = [
     {
       name: '',
       type: 'options',
-      display: ['Heilsufar', 'Sýkingar', 'Barneignir'],
+      display: ['Heilsufar', 'Sýkingar'/*, 'Barneignir'*/],
       options: [
         {
             display: 'Heilsufar',
@@ -10744,7 +10744,8 @@ const Gynsaga = [
               { display: 'Pelvic Inflammatory Disease', output: 'Saga um PID', onRightClickOutput: 'Engin saga um PID' },
             ],
             onRightClickOutput: 'Ekki fyrri saga um blöðrubólgur eða sveppasýkingar',
-        },
+        }
+        /*,
         {
           display: 'Barneignir',
           subOptions: [
@@ -10778,7 +10779,7 @@ const Gynsaga = [
             },
           ],
           onRightClickOutput: 'Engin plön um að eignast börn',
-        }
+        }*/
         
       ],
     },
@@ -14170,8 +14171,8 @@ const PlanKnee = [
                         subOptions: [
                             { display: 'Ráðleggingar, sjúkraþjálfun, endurmat pn', output: 'Osgood-Schlatter. Almennar ráðleggingar, m.a. kælingu eftir æfingar, '
                                 + 'hvíld ef einkenni mikil (sérstaklega ef standa yfir í >24klst) og verkjalyf í nokkra daga í senn eftir þörfum. '
-                                + 'Ekki ráðlagt að hætta æfingum en mikilvægt að hlusta á líkamann. Sjúkraþjálfun til styrkingar og liðkunnar á hamstrings og quadriceps'
-                                + ' Endurmat eftir þörfum' 
+                                + 'Ekki ráðlagt að hætta æfingum en mikilvægt að hlusta á líkamann. Sjúkraþjálfun til styrkingar og liðkunnar á hamstrings og quadriceps. '
+                                + 'Endurmat eftir þörfum' 
                             }
                         ]
                     }
@@ -15248,26 +15249,28 @@ const PlanHud = [
     {
         name: '',
         type: 'options',
-        display: ['Exem', 'Psoriasis', 'Akne', 'Dermatítis'],
+        display: ['Exem', 'Psoriasis', 'Acne', 'Dermatitis'],
         options: [
             {
                 display: 'Exem',
                 subOptions: [
                     { display: 'Greining', output: 'Exem' },
                     { display: 'Grunur', output: 'Grunur um exem' },
-                    {
-                        display: 'Meðferðaráætlun',
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Efni til að raka húð', output: 'Notaðu rakaefni og staðbundnar kortikosósteróíð' },
-                            { display: 'Þáttunaraðferðir', output: 'Greindu og forðastu þættara eins og ofnæmi og áreiti' },
-                            { display: 'Fræðsla skjólstæðings', output: 'Fræðslu skjólstæðing um húðrútínur og lífsstílsbreytingar' }
+                            { display: 'Exem meðferð með sterakremi (AI)', output: 'Exem. Ráðlegg notkun á sterakremi. Fær fræðslu um réttan notkun sterakrema. Endurmat ef lagast ekki' },
+                            { display: 'Exem meðferð með rakakremi (AI)', output: 'Exem. Ráðlegg notkun á rakakremi. Fræðsla um mikilvægi rakakrema. Endurmat ef lagast ekki' }
                         ]
                     },
-                    {
-                        display: 'Hlekkir',
+                    { display: 'Hlekkir', 
                         subOptions: [
-                            { display: 'UpToDate - Meðferð á exemi', type: 'hyperlink', url: 'https://www.uptodate.com/contents/eczema-management' },
-                            { display: 'DermNet NZ - Exem', type: 'hyperlink', url: 'https://dermnetnz.org/topics/dermatitis' }
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/atopic-dermatitis-eczema-in-children-beyond-the-basics' }
+                                ]
+                            },
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/atopic-dermatitis-eczema-management' },
+                            { display: 'DermNet NZ - Eczema treatment (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/atopic-dermatitis/' }
                         ]
                     }
                 ]
@@ -15277,63 +15280,97 @@ const PlanHud = [
                 subOptions: [
                     { display: 'Greining', output: 'Psoriasis' },
                     { display: 'Grunur', output: 'Grunur um psoriasis' },
-                    {
-                        display: 'Meðferðaráætlun',
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Efni til að raka húð', output: 'Notaðu kortikosósteróíð, D-vítamín sambærilegar efni og retínóíð' },
-                            { display: 'Ljósmeðferð', output: 'Íhugaðu þunnu geislavél UVB meðferð' },
-                            { display: 'Kerfisbundnar meðferðir', output: 'Meta þörf fyrir methotrexate, líffræðileg lyf eða önnur kerfisbundin lyf' }
+                            { display: 'Psoriasis meðferð með sterakremi (AI)', output: 'Psoriasis. Ráðlegg notkun á sterakremi. Fær fræðslu um réttan notkun sterakrema. Endurmat ef lagast ekki' },
+                            { display: 'Psoriasis meðferð með D-vítamín kremi (AI)', output: 'Psoriasis. Ráðlegg notkun á D-vítamín kremi. Fræðsla um meðferð. Endurmat ef lagast ekki' }
                         ]
                     },
-                    {
-                        display: 'Hlekkir',
+                    { display: 'Hlekkir', 
                         subOptions: [
-                            { display: 'UpToDate - Meðferð á psoriasis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/psoriasis-treatment' },
-                            { display: 'American Academy of Dermatology - Psoriasis', type: 'hyperlink', url: 'https://www.aad.org/public/diseases/psoriasis' }
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/psoriasis-the-basics' }
+                                ]
+                            },
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/psoriasis-treatment-of-psoriasis' },
+                            { display: 'DermNet NZ - Psoriasis (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/psoriasis/' }
                         ]
                     }
                 ]
             },
             {
-                display: 'Akne',
+                display: 'Acne',
                 subOptions: [
-                    { display: 'Greining', output: 'Akne' },
-                    { display: 'Grunur', output: 'Grunur um akne' },
-                    {
-                        display: 'Meðferðaráætlun',
+                    { display: 'Greining', output: 'Acne' },
+                    { display: 'Grunur', output: 'Grunur um acne' },
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Efni til að raka húð', output: 'Notaðu benzóylperoxíð, retínóíð og sýklalyf' },
-                            { display: 'Mikil lyf', output: 'Íhugaðu munnleg sýklalyf eða hormónameðferð fyrir meðal til alvarleg tilfelli' },
-                            { display: 'Lífsstílsbreytingar', output: 'Ráðleggðu viðeigandi húðhreinsunar- og mataræði' }
+                            { display: 'Acne meðferð með topical lyfjum (AI)', output: 'Acne. Ráðlegg notkun á staðbundnum lyfjum eins og benzoyl peroxide eða retinoid. Fræðsla um notkun og aukaverkanir. Endurmat ef lagast ekki' },
+                            { display: 'Acne meðferð með sýklalyfjum (AI)', output: 'Acne. Ráðlegg notkun á sýklalyfjum. Fræðsla um meðferð og mikilvægi reglulegrar notkunar. Endurmat ef lagast ekki' }
                         ]
                     },
-                    {
-                        display: 'Hlekkir',
+                    { display: 'Hlekkir', 
                         subOptions: [
-                            { display: 'UpToDate - Akne Vulgaris', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acne-vulgaris-treatment-and-management' },
-                            { display: 'American Academy of Dermatology - Akne', type: 'hyperlink', url: 'https://www.aad.org/public/diseases/acne' }
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acne-the-basics' }
+                                ]
+                            },
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acne-vulgaris-management' },
+                            { display: 'DermNet NZ - Acne (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/acne/' }
                         ]
                     }
                 ]
             },
             {
-                display: 'Dermatítis',
+                display: 'Dermatitis',
                 subOptions: [
-                    { display: 'Greining', output: 'Dermatítis' },
-                    { display: 'Grunur', output: 'Grunur um dermatitis' },
                     {
-                        display: 'Meðferðaráætlun',
+                        display: 'NOS',
                         subOptions: [
-                            { display: 'Ástæðugreining', output: 'Ákvarða hvort um sé að ræða snertingar-, atópíska- eða seboréísk dermatítis' },
-                            { display: 'Efni til að raka húð', output: 'Notaðu kortikosósteróíð og kalkinérínþögulík efni eftir þörfum' },
-                            { display: 'Lífsstíls- og umhverfisbreytingar', output: 'Ráðleggðu við að forðast áreiti og innleiða húðrútínur' }
+                            { display: 'Greining', output: 'Dermatitis' },
+                            { display: 'Grunur', output: 'Grunur um dermatitis' },
+                            { display: 'Fullmótuð plön', 
+                                subOptions: [
+                                    { display: 'Dermatitis meðferð með sterakremi (AI)', output: 'Dermatitis. Ráðlegg notkun á sterakremi. Fræðsla um forvarnir og meðferð. Endurmat ef lagast ekki' }
+                                ]
+                            }
                         ]
                     },
                     {
-                        display: 'Hlekkir',
+                        display: 'Atopic dermatitis',
                         subOptions: [
-                            { display: 'UpToDate - Dermatítis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/dermatitis-overview' },
-                            { display: 'DermNet NZ - Dermatítis', type: 'hyperlink', url: 'https://dermnetnz.org/topics/dermatitis' }
+                            { display: 'Greining', output: 'Atopic dermatitis' },
+                            { display: 'Grunur', output: 'Grunur um atopic dermatitis' },
+                            { display: 'Fullmótuð plön', 
+                                subOptions: [
+                                    { display: 'Atopic dermatitis meðferð með rakakremi og sterum (AI)', output: 'Atopic dermatitis. Ráðlegg reglulega notkun rakakrema og sterakrema eftir þörfum. Fræðsla um forvarnir. Endurmat ef lagast ekki' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Contact dermatitis',
+                        subOptions: [
+                            { display: 'Greining', output: 'Contact dermatitis' },
+                            { display: 'Grunur', output: 'Grunur um contact dermatitis' },
+                            { display: 'Fullmótuð plön', 
+                                subOptions: [
+                                    { display: 'Contact dermatitis meðferð með forvörnum og sterakremi (AI)', output: 'Contact dermatitis. Ráðlegg að forðast snertingu við þekkta ertandi efni. Notkun á sterakremi eftir þörfum. Endurmat ef lagast ekki' }
+                                ]
+                            }
+                        ]
+                    },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/contact-dermatitis-the-basics' }
+                                ]
+                            },
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/contact-dermatitis-treatment' },
+                            { display: 'DermNet NZ - Dermatitis (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/dermatitis/' }
                         ]
                     }
                 ]
@@ -15343,92 +15380,58 @@ const PlanHud = [
     {
         name: '',
         type: 'options',
-        display: ['Sveppasýkingar', 'Bakteríusýkingar', 'Víresýkingar', 'Parasítasýkingar'],
+        display: ['Fungal infections', 'Herpes zoster', 'Urticaria'],
         options: [
             {
-                display: 'Sveppasýkingar',
+                display: 'Fungal infections',
                 subOptions: [
-                    { display: 'Tinea Corporis', output: 'Greining og meðferð á Tinea Corporis' },
-                    { display: 'Candida sýking', output: 'Greining og stjórnun á Candida sýkingu' },
-                    {
-                        display: 'Meðferðaráætlun',
+                    { display: 'Greining', output: 'Sveppasýking' },
+                    { display: 'Grunur', output: 'Grunur um sveppasýkingu' },
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Efnaþurrkur til húðar', output: 'Notaðu clotrimazole, terbinafine eða miconazole' },
-                            { display: 'Munnleg efnaþurrkur', output: 'Íhugaðu munnlegan terbinafine eða itraconazole fyrir umfangsmiklar sýkingar' },
-                            { display: 'Hreinlæti', output: 'Ráðleggðu við að halda áhrifum þurrum og hreinlæti' }
+                            { display: 'Sveppasýking meðferð með sveppalyfjum (AI)', output: 'Sveppasýking. Ráðlegg notkun á sveppalyfjum staðbundið. Fræðsla um meðferð og hreinlæti. Endurmat ef lagast ekki' }
                         ]
                     },
-                    {
-                        display: 'Hlekkir',
+                    { display: 'Hlekkir', 
                         subOptions: [
-                            { display: 'UpToDate - Sveppasýkingar á húð', type: 'hyperlink', url: 'https://www.uptodate.com/contents/fungal-skin-infections-overview' },
-                            { display: 'CDC - Sveppasýkingar', type: 'hyperlink', url: 'https://www.cdc.gov/fungal/index.html' }
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-dermatophyte-infections' },
+                            { display: 'DermNet NZ - Fungal infections (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/fungal-infections/' }
                         ]
                     }
                 ]
             },
             {
-                display: 'Bakteríusýkingar',
+                display: 'Herpes zoster',
                 subOptions: [
-                    { display: 'Impetigo', output: 'Greining og meðferð á Impetigo' },
-                    { display: 'Cellulitis', output: 'Greining og stjórnun á Cellulitis' },
-                    {
-                        display: 'Meðferðaráætlun',
+                    { display: 'Greining', output: 'Herpes zoster' },
+                    { display: 'Grunur', output: 'Grunur um herpes zoster' },
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Sýklalyf meðferð', output: 'Notaðu staðbundin mupirocin fyrir impetigo; munnleg sýklalyf eins og cephalexin fyrir cellulitis' },
-                            { display: 'Sármeðferð', output: 'Rétt hreinsun og klæðning á áhrifaríkum svæðum' },
-                            { display: 'Fræðsla skjólstæðings', output: 'Fræðslu um hreinlæti og hvernig á að koma í veg fyrir útbreiðslu' }
+                            { display: 'Herpes zoster meðferð með veirulyfjum (AI)', output: 'Herpes zoster. Ráðlegg notkun á veirulyfjum. Fræðsla um sjúkdóminn og meðferð. Endurmat ef lagast ekki' }
                         ]
                     },
-                    {
-                        display: 'Hlekkir',
+                    { display: 'Hlekkir', 
                         subOptions: [
-                            { display: 'UpToDate - Bakteríusýkingar á húð', type: 'hyperlink', url: 'https://www.uptodate.com/contents/bacterial-skin-infections-overview' },
-                            { display: 'American Academy of Dermatology - Bakteríusýkingar', type: 'hyperlink', url: 'https://www.aad.org/public/diseases/bacterial-infections' }
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/treatment-of-herpes-zoster-in-immunocompetent-adults' },
+                            { display: 'DermNet NZ - Herpes zoster (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/herpes-zoster-shingles/' }
                         ]
                     }
                 ]
             },
             {
-                display: 'Víresýkingar',
+                display: 'Urticaria',
                 subOptions: [
-                    { display: 'Herpes simplex', output: 'Greining og stjórnun á Herpes simplex' },
-                    { display: 'Varicella-Zoster', output: 'Greining og meðferð á Varicella-Zoster vírus sýkingum' },
-                    {
-                        display: 'Meðferðaráætlun',
+                    { display: 'Greining', output: 'Urticaria' },
+                    { display: 'Grunur', output: 'Grunur um urticaria' },
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Vírsýklalyf', output: 'Notaðu acyclovir, valacyclovir eða famciclovir' },
-                            { display: 'Stuðningsmeðferð', output: 'Veita sársaukareliefis- og vökva eftir þörfum' },
-                            { display: 'Einangrunaraðgerðir', output: 'Ráðleggðu um að koma í veg fyrir smitun' }
+                            { display: 'Urticaria meðferð með andhistamínum (AI)', output: 'Urticaria. Ráðlegg notkun á andhistamínum. Fræðsla um forvarnir og meðferð. Endurmat ef lagast ekki' }
                         ]
                     },
-                    {
-                        display: 'Hlekkir',
+                    { display: 'Hlekkir', 
                         subOptions: [
-                            { display: 'UpToDate - Víresýkingar á húð', type: 'hyperlink', url: 'https://www.uptodate.com/contents/viral-skin-infections-overview' },
-                            { display: 'CDC - Víresýkingar á húð', type: 'hyperlink', url: 'https://www.cdc.gov/viral/index.html' }
-                        ]
-                    }
-                ]
-            },
-            {
-                display: 'Parasítasýkingar',
-                subOptions: [
-                    { display: 'Súsk', output: 'Greining og meðferð á súsk' },
-                    { display: 'Lintuskertur', output: 'Greining og stjórnun á lintuskertum' },
-                    {
-                        display: 'Meðferðaráætlun',
-                        subOptions: [
-                            { display: 'Permethrin meðferð', output: 'Notaðu permethrin 5% kremu fyrir súsk' },
-                            { display: 'Munnleg ivermectin', output: 'Íhugaðu munnlegan ivermectin fyrir mótbyrjandi tilfelli' },
-                            { display: 'Umhverfisstjórn', output: 'Þvottuðu og ryksvuðu rúm og föt' }
-                        ]
-                    },
-                    {
-                        display: 'Hlekkir',
-                        subOptions: [
-                            { display: 'UpToDate - Parasítasýkingar á húð', type: 'hyperlink', url: 'https://www.uptodate.com/contents/parasitic-skin-infections-overview' },
-                            { display: 'CDC - Parasítasjúkdómar', type: 'hyperlink', url: 'https://www.cdc.gov/parasites/index.html' }
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-urticaria-management' },
+                            { display: 'DermNet NZ - Urticaria (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/urticaria-hives/' }
                         ]
                     }
                 ]
@@ -15438,34 +15441,128 @@ const PlanHud = [
     {
         name: '',
         type: 'options',
-        display: ['Meðferðarúrræði', 'Lyf', 'Eftirfylgd'],
+        display: ['Scabies', 'Impetigo', 'Cellulitis'],
         options: [
             {
-                display: 'Meðferðarúrræði',
+                display: 'Scabies',
                 subOptions: [
-                    { display: 'Efnaþurrkur til húðar', output: 'Notaðu viðeigandi efnaþurrkur byggt á greiningu' },
-                    { display: 'Kerfisbundnar meðferðir', output: 'Íhugaðu kerfisbundnar meðferðir fyrir alvarleg eða umfangsmiklar ástæður' },
-                    { display: 'Ljósmeðferð', output: 'Notaðu UV ljósmeðferð fyrir ákveðnar tilstæður' },
-                    { display: 'Skurðaðgerðir', output: 'Vísun til skurðaðgerða ef nauðsynlegt er' }
+                    { display: 'Greining', output: 'Kláðamaur (scabies)' },
+                    { display: 'Grunur', output: 'Grunur um kláðamaur (scabies)' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Scabies meðferð með permetrín kremi (AI)', output: 'Kláðamaur (scabies). Ráðlegg notkun á permetrín kremi. Fræðsla um meðferð og sótthreinsun fatnaðar. Meðhöndla fjölskyldumeðlimi. Endurmat ef lagast ekki' }
+                        ]
+                    },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/scabies-treatment' },
+                            { display: 'DermNet NZ - Scabies (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/scabies/' }
+                        ]
+                    }
                 ]
             },
             {
-                display: 'Lyf',
+                display: 'Impetigo',
                 subOptions: [
-                    { display: 'Kortikosósteróíð', output: 'Ráðleggja staðbundin eða kerfisbundin kortikosósteróíð eftir þörfum' },
-                    { display: 'Sýklalyf', output: 'Hefja sýklalyfmeðferð byggt á tegund sýkingar' },
-                    { display: 'Sveppasýklalyf', output: 'Notaðu staðbundin eða munnleg sveppasýklalyf fyrir sveppasýkingar' },
-                    { display: 'Víresýklalyf', output: 'Byrja víresýklalyf fyrir víresýkingar' },
-                    { display: 'Önnur lyf', output: 'Íhugaðu ónæmiskjarnaefni, retínóíð eða líffræðileg lyf eftir þörfum' }
+                    { display: 'Greining', output: 'Impetigo' },
+                    { display: 'Grunur', output: 'Grunur um impetigo' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Impetigo meðferð með sýkladropum (AI)', output: 'Impetigo. Ráðlegg notkun á staðbundnum sýklalyfjum. Fræðsla um hreinlæti og forvarnir. Endurmat ef lagast ekki' }
+                        ]
+                    },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/impetigo-treatment' },
+                            { display: 'DermNet NZ - Impetigo (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/impetigo/' }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Cellulitis',
+                subOptions: [
+                    { display: 'Greining', output: 'Cellulitis' },
+                    { display: 'Grunur', output: 'Grunur um cellulitis' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Cellulitis meðferð með sýklalyfjum (AI)', output: 'Cellulitis. Ráðlegg sýklalyf. Fræðsla um mikilvægi að fylgja meðferð. Endurmat ef lagast ekki eða versnar' }
+                        ]
+                    },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Uptodate - Meðferð (AI)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/cellulitis-treatment' },
+                            { display: 'DermNet NZ - Cellulitis (AI)', type: 'hyperlink', url: 'https://dermnetnz.org/topics/cellulitis/' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Langvarandi einkenni'],
+        options: [
+            {
+                display: 'Langvarandi einkenni', output: 'Einkenni langvarandi', onRightClickOutput: 'Stutt saga'                  
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar', 'Stuðningsmeðferð'],
+        options: [
+            { display: 'Ráðleggingar',
+                subOptions: [
+                    { display: 'Exem (AI)', output: 'Veiti ráðleggingar um meðferð við eczema. Ráðlegg notkun á rakakremi og forðast þekkta þætti sem gera einkenni verri' },
+                    { display: 'Psoriasis (AI)', output: 'Veiti ráðleggingar um meðferð við psoriasis. Ráðlegg notkun á sterakremi og D-vítamín kremi. Fræðsla um meðferð' },
+                    { display: 'Acne (AI)', output: 'Veiti ráðleggingar um meðferð við acne. Ráðlegg húðumhirðu og notkun á viðeigandi lyfjum. Forðast of mikla húðhreinsun' },
+                    { display: 'Almennar (AI)', output: 'Almennar ráðleggingar um húðumhirðu og meðferð' }
+                ]
+            },
+            {
+                display: 'Stuðningsmeðferð',
+                subOptions: [
+                    { display: 'Verkjalyf', output: 'Ráðlegg verkjalyf eftir þörfum' },
+                    { display: 'Rakakrem', output: 'Ráðlegg notkun á rakakremi reglulega' },
+                    { display: 'Kláðastillandi (AI)', output: 'Ráðlegg kláðastillandi lyf ef þarf' }
                 ],
-                onRightClickOutput: 'Metið nauðsyn áður en lyf eru ritstafað'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sterar', 'Sýklalyf', 'Andhistamín', 'Veirulyf'],
+        options: [
+            { display: 'Sterar', 
+                subOptions: [
+                    { display: 'Sterakrem', output: 'Ráðlegg notkun á sterakremi' },
+                    { display: 'Steratöflur', output: 'Ráðlegg stuttan sterakúr' }
+                ]
             },
             {
-                display: 'Eftirfylgd',
+                display: 'Sýklalyf',
                 subOptions: [
-                    { display: 'Venjuleg eftirfylgd', output: 'Skipulegg venjulegar eftirfylgdarsamkomur til að fylgjast með framvindu' },
-                    { display: 'Vísun til sérfræðings', output: 'Vísun til húðlækna ef ástandið heldur áfram eða versnar' },
-                    { display: 'Fræðsla skjólstæðings', output: 'Veita fræðsluefni og leiðbeiningar um sjálfshjálp' }
+                    { display: 'Topical', output: 'Ráðlegg staðbundin sýklalyf' },
+                    { display: 'Oral', output: 'Ráðlegg sýklalyf í töfluformi' }
+                ]
+            },
+            {
+                display: 'Andhistamín',
+                subOptions: [
+                    { display: 'Cetirizine', output: 'Ráðlegg cetirizine gegn kláða' },
+                    { display: 'Loratadine', output: 'Ráðlegg loratadine gegn kláða' }
+                ]
+            },
+            {
+                display: 'Veirulyf',
+                subOptions: [
+                    { display: 'Acyclovir', output: 'Ráðlegg acyclovir' },
+                    { display: 'Valacyclovir', output: 'Ráðlegg valacyclovir' }
                 ]
             }
         ]
@@ -15473,30 +15570,15 @@ const PlanHud = [
     {
         name: '',
         type: 'options',
-        display: ['Skjólstæðingafræðsla', 'Lífsstílsbreytingar', 'Forvarnarviðbrögð'],
+        display: ['Myndataka', 'Blóðprufa', 'Sérfræðingur'],
         options: [
+            { display: 'Myndataka', output: 'Ráðlegg myndrannsókn ef við á' },
+            { display: 'Blóðprufa', output: 'Panta blóðprufu til frekari greiningar' },
             {
-                display: 'Skjólstæðingafræðsla',
+                display: 'Vísa á sérfræðing',
                 subOptions: [
-                    { display: 'Húðrútínur', output: 'Fræðslu um rétt húðhreinsun og raka' },
-                    { display: 'Forðast þætti', output: 'Upplýsa um forðast þekkta þætti og áreiti' },
-                    { display: 'Viðhald lyfja', output: 'Leggja áherslu á mikilvægi þess að fylgja fyrirskiptum meðferðarreglugerðum' }
-                ]
-            },
-            {
-                display: 'Lífsstílsbreytingar',
-                subOptions: [
-                    { display: 'Mataræðisbreytingar', output: 'Mæla með mataræðisbreytingum ef viðeigandi fyrir ástandið' },
-                    { display: 'Streituviðhald', output: 'Ráðleggja um streitustjórnunartækni' },
-                    { display: 'Fötaval', output: 'Bjóða upp á viðeigandi föt til að lágmarka húðáreiti' }
-                ]
-            },
-            {
-                display: 'Forvarnarviðbrögð',
-                subOptions: [
-                    { display: 'Bólusetningar', output: 'Uppfæra viðeigandi bólusetningar ef viðeigandi' },
-                    { display: 'Hreinlæti', output: 'Koma á góðum hreinlæti til að koma í veg fyrir sýkingar' },
-                    { display: 'Regluleg húðskoðun', output: 'Áhersla á reglulega húðskoðun til að greina vandamál snemma' }
+                    { display: 'Húðlæknir', output: 'Ráðlegg mat húðlæknis' },
+                    { display: 'Sýkingalæknir', output: 'Ráðlegg mat sýkingalæknis ef við á' }
                 ]
             }
         ]
@@ -15504,61 +15586,12 @@ const PlanHud = [
     {
         name: '',
         type: 'options',
-        display: ['Vísun', 'Framhaldameðferðir', 'Stuðningsþjónusta'],
+        display: ['Prentaðar leiðbeiningar'],
         options: [
-            {
-                display: 'Vísun',
+            { display: 'Prentaðar leiðbeiningar', 
                 subOptions: [
-                    { display: 'Húðlækni', output: 'Vísun til húðlækna fyrir sérhæfða greiningu og stjórnun' },
-                    { display: 'Allergíastjóri', output: 'Íhugaðu vísun til allergíastjóra ef grunur leikur á ofnæmiskröfu' },
-                    { display: 'Sýkingarfræðingur', output: 'Vísun til sýkingarfræðings fyrir flókna sýkingu' }
-                ]
-            },
-            {
-                display: 'Framhaldameðferðir',
-                subOptions: [
-                    { display: 'Líffræðileg lyf', output: 'Meta hæfi líffræðilegra lyfja í ástand eins og psoriasis' },
-                    { display: 'Ljósmeðferð', output: 'Byrja á framhaldi ljósmeðferðarskrá ef viðeigandi' },
-                    { display: 'Ljósröðmeðferð', output: 'Íhugaðu ljósmeðferð fyrir tilteknar húðástand' }
-                ]
-            },
-            {
-                display: 'Stuðningsþjónusta',
-                subOptions: [
-                    { display: 'Ráðgjöf', output: 'Veita aðgang að sálfræðilegu stuðningi ef þörf er á' },
-                    { display: 'Stuðningshópar', output: 'Vísun til stuðningshópa fyrir langvinnar húðástand' },
-                    { display: 'Fræðsluefni', output: 'Veita auka fræðsluefni og heimildir' }
-                ]
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Skjalagerð', 'Lyfseðlar', 'Leiðbeiningar skjólstæðings'],
-        options: [
-            {
-                display: 'Skjalagerð',
-                subOptions: [
-                    { display: 'Klínískar athugasemdir', output: 'Skjala allar niðurstöður, áætlanir og samskipti við skjólstæðing' },
-                    { display: 'Myndatil', output: 'Taka og geyma myndir ef nauðsynlegt er til eftirlits' },
-                    { display: 'Útvarpsgögn', output: 'Skrá og skoða viðeigandi úrvinnslu eða prófunarniðurstöður' }
-                ]
-            },
-            {
-                display: 'Lyfseðlar',
-                subOptions: [
-                    { display: 'Staðbundin lyf', output: 'Ritstafa viðeigandi staðbundin meðferðar lyf byggt á ástandi' },
-                    { display: 'Munnleg lyf', output: 'Hefja munnleg meðferðarform eins og nauðsynlegt er' },
-                    { display: 'Sérfræðilyf', output: 'Samskipti við sérfræðinga fyrir framhaldalyf ef þörf er á' }
-                ]
-            },
-            {
-                display: 'Leiðbeiningar skjólstæðings',
-                subOptions: [
-                    { display: 'Notkunarleiðbeiningar', output: 'Veita skýrar leiðbeiningar um notkun á fyrirskiptum meðferðar' },
-                    { display: 'Eftirfylgdarsamkomur', output: 'Skipuleggja og miðla upplýsingum um eftirfylgdarsamkomur' },
-                    { display: 'Bráðaleiðbeiningar', output: 'Ráðleggja um einkenni og aðgerðir sem krefjast tafarlausrar athygli' }
+                    { display: 'NOS', output: 'Skjólstæðingur fær útprentaðar leiðbeiningar tengdar sinni greiningu' },
+                    { display: 'Uptodate', output: 'Skjólstæðingur fær útprentaðar leiðbeiningar frá Uptodate tengdar sinni greiningu' }
                 ]
             }
         ]
@@ -15574,6 +15607,7 @@ const PlanHud = [
         ]
     }
 ];
+
 
 
 // Skurður (Wound / superficial injury)
@@ -16681,16 +16715,83 @@ const GedSkodunData = [
     {
         name: '',
         type: 'options',
-        display: ['Fyrri sjálfsvígstilraunir'],
+        display: ['Fyrri tilraunir', 'Plön', 'Aðferð', 'Stoppari'],
         options: [
             {
-                display: 'Fyrri sjálfsvígshugsanir',
+                display: 'Fyrri tilraunir',
                 subOptions: [
                     { display: '1x', output: 'Saga um fyrri sjálfsvígstilraun' },
                     { display: 'Oftar', output: 'Saga um fyrri sjálfsvígstilraunir. Oftar en 1x' }
                 ],
                 onRightClickOutput: 'Ekki saga um fyrri sjálfsvígstilraunir'
+            },
+            {
+                display: 'Plön', output: 'Er með mótað plan', onRightClickOutput: 'Ekki með plön'
+            },
+            {
+                display: 'Aðferð', output: 'Hefur pælt í mismunandi aðferðum',
+                /*subOptions: [
+                    { display: 'NOS', output: 'Hefur pælt í mismunandi aðferðum' },
+                    { display: 'Lyf', output: 'Hefur pælt í mismunandi aðferðum. Lyf yrði líklega fyrir valinu' },
+                    { display: 'Skera sig', output: 'Hefur pælt í mismunandi aðferðum. Myndi líklega skera sig' },
+                    { display: 'Henging', output: 'Hefur pælt í mismunandi aðferðum. Henging yrði líklega fyrir valinu' },
+                    { display: 'Bílslys', output: 'Hefur pælt í mismunandi aðferðum. Bílslys yrði líklega fyrir valinu' },
+                    { display: 'Drukknun', output: 'Hefur pælt í mismunandi aðferðum. Myndi reyna að drekkja sér' },
+                    { display: 'Skotvopn', output: 'Hefur pælt í mismunandi aðferðum. Skotvopn yrði líklega fyrir valinu' },
+                    { display: 'Fall úr mikillri hæð', output: 'Hefur pælt í mismunandi aðferðum. Fall úr mikillri hæð yrði líklega fyrir valinu' }
+                ],*/
+                onRightClickOutput: 'Ekki með aðferð í huga'
             }
+            ,
+            {
+                display: 'Stoppari', 
+                output: 'Hefur lítið að lifa fyrir. Ekkert sem myndi stoppa sig frá að fremja sjálfsvíg',
+                onRightClickSubOptions: 
+                [
+                    { display: 'Fjölskylda', output: 'Fjölskylda helsta sem myndi stoppa frá að fremja sjálfsvíg' },
+                    { display: 'Maki', output: 'Maki helsta sem myndi stoppa frá að fremja sjálfsvíg' },
+                    { display: 'Börn', output: 'Börn helsta sem myndi stoppa frá að fremja sjálfsvíg' },
+                    { display: 'Gæludýr', output: 'Gæludýr helsta sem myndi stoppa frá að fremja sjálfsvíg' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Aðgengi (Skotvopn/Lyf)', 'Sjálfsskaði'],
+        options: [
+            {
+                display: 'Aðgengi',
+                subOptions: [
+                    { display: 'Skotvopn', output: 'Er með gott aðgengi að skotvopnum' },
+                    { display: 'Lyfjum', output: 'Er með gott aðgengi að lyfjum sem myndi nota til sjálfsvíga' }
+                ],
+                onRightClickSubOptions: [
+                    { display: 'Skotvopn', output: 'Ekki með greitt aðgengi að skotvopnum' },
+                    { display: 'Lyfjum', output: 'Ekki með greitt aðgengi að lyfjum sem myndi nota til sjálfsvíga' }
+                ]
+            },
+            {
+                display: 'Sjálfsskaði',
+                subOptions: [
+                    { display: 'NOS', output: 'Er með fyrri sögu um sjálfsskaða' },
+                    {
+                        display: 'Ör eftir að skera sig',
+                        subOptions: [
+                            { display: 'NOS', output: 'Er með fyrri sögu um sjálfsskaða. Með ör eftir að hafa skorið sig' },
+                            { display: 'Á handleggjum', output: 'Er með fyrri sögu um sjálfsskaða. Með ör á handleggjum eftir að hafa skorið sig' },
+                            { display: 'Á fótleggjum', output: 'Er með fyrri sögu um sjálfsskaða. Með ör á fótleggjum eftir að hafa skorið sig' },
+                            { display: 'Á bringu', output: 'Er með fyrri sögu um sjálfsskaða. Með ör á bringu eftir að hafa skorið sig' },
+                            { display: 'Á baki', output: 'Er með fyrri sögu um sjálfsskaða. Með ör á baki eftir að hafa skorið sig' },
+                            { display: 'Á kvið', output: 'Er með fyrri sögu um sjálfsskaða. Með ör á kvið eftir að hafa skorið sig' },
+                            { display: 'Mörg víðsvegar á líkama', output: 'Er með fyrri sögu um sjálfsskaða. Með mörg ör víðsvegar á líkama eftir að hafa skorið sig' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekki fyrri saga um sjálfsskaða svo sem að skera sig'
+            }
+            
         ]
     }
 ];
@@ -30722,14 +30823,24 @@ function loadPage(page) {
         const einkenniSection = createEinkenniSection(SymptomsHud);
         const skodunSection = createSkodunSection(ExamsHud);
         const planSection = createPlanSection(PlanHud);
+        const habitsSection = createHabitsSection(Habits);
+        const lifsmorkSection = createLifsmorkSection(LifsmorkData);
+        const ofnaemiSection = createOfnaemiSection(OfnaemiData);
+        const lyfSection = createLyfSection(LyfData);
+        const kerfakonnunSection = createKerfakonnunSection(KerfakonnunData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(einkenniSection);
+        leftColumn.appendChild(kerfakonnunSection);
+        leftColumn.appendChild(lyfSection);
+        leftColumn.appendChild(habitsSection);
+        leftColumn.appendChild(ofnaemiSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
+        middleColumn.appendChild(lifsmorkSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
@@ -31028,7 +31139,28 @@ function loadPage(page) {
 
         // Add descriptive text below "Um okkur"
         const umOkkurText = document.createElement('p');
-        umOkkurText.textContent = '';
+        umOkkurText.innerHTML = 'Flýtileiðir:<br>' +
+    'Ctrl + Z - Afturkalla síðustu aðgerð (Undo)<br>' +
+    'Ctrl + Y - Endurtaka síðustu aðgerð (Redo)<br>' +
+    'Ctrl + C - Afrita valda texta (Copy). Athugið ef enginn texti er valinn í textaboxi afritast öll nótan<br><br>' +
+    'Eftirfarandi flýtihnappar virka á sama hátt og að smella á titlana (þ.e. búa til titil ef hann er ekki til og flytja textabendil á réttann stað) <br>' +
+    'Ctrl + S - Skoðun:<br>' +
+    'Ctrl + P - Álit og plan:<br>' +
+    'Ctrl + E - Einkenni:<br>' +
+    'Ctrl + H - Heilsufar:<br>' +
+    'Ctrl + M - Lífsmörk:<br>' +
+    'Ctrl + R - Rannsóknir:<br>' +
+    'Ctrl + L - Lyf:<br>' +
+    'Ctrl + O - Ofnæmi:<br>' +
+    'Ctrl + B - Venjur:<br>' +
+    'Ctrl + K - Kerfakönnun:<br>' +
+    'Ctrl + F - Félagssaga:<br><br>' +
+    'Ef notað er Ctrl + Shift er það líkt og að hægri smella á titil. Virkar fyrir eftirfarandi:<br>' +
+    'Ctrl + Shift + H - Heilsufar: Skjólstæðingur heilsuhraustur í gruninn<br>' +
+    'Ctrl + Shift + L - Lyf: Engin lyf<br>' +
+    'Ctrl + Shift + O - Ofnæmi: Engin þekkt ofnæmi<br>' +
+    'Ctrl + Shift + B - Venjur: Reykir ekki. Drekkur ekki. Neitar eiturlyfjanotkun<br>';
+
         middleColumn.appendChild(umOkkurText);
 
         // Create "Sýningarmyndbönd" header
@@ -31259,9 +31391,13 @@ document.addEventListener('keydown', function(event) {
                 event.preventDefault();
                 insertHeader('habits');
                 break;
-            case 'k': // Ctrl + S for Skoðun
+            case 'k': // Ctrl + K for Kerfakönnun
                 event.preventDefault();
                 insertHeader('kerfakonnun');
+                break;
+            case 'f': // Ctrl + F for Félagssaga
+                event.preventDefault();
+                insertHeader('felagssaga');
                 break;
         }
     } else if (event.ctrlKey && event.shiftKey) {
