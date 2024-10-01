@@ -3409,7 +3409,22 @@ const PlanViral = [
                 display: 'Strep',
                 subOptions: [
                     { display: 'Greining', output: 'Strep throat' },
-                    { display: 'Grunur', output: 'Grunur um strep throat' }
+                    { display: 'Grunur', output: 'Grunur um strep throat' },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/strep-throat-in-adults-the-basics' },
+                                    { display: 'Uptodate - Basics börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/strep-throat-in-children-the-basics' }
+                                    
+                                ]
+                            },
+                            { display: 'Uptodate - Greining barna og unglinga', type: 'hyperlink', url: 'https://www.uptodate.com/contents/group-a-streptococcal-tonsillopharyngitis-in-children-and-adolescents-clinical-features-and-diagnosis' },
+                            { display: 'Uptodate - Meðferð fullorðna og barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/treatment-and-prevention-of-streptococcal-pharyngitis-in-adults-and-children' },
+                            { display: 'MDCALC - CENTOR', type: 'hyperlink', url: 'https://www.mdcalc.com/calc/104/centor-score-modified-mcisaac-strep-pharyngitis' }
+                            
+                        ]
+                    }
                 ]
             },
             {
@@ -29987,7 +30002,7 @@ function handleTitleRightClick(event, title, sectionId) {
 
     switch (title) {
         case 'Lyf':
-            insertText('Engin lyf', sectionId);
+            insertText('Tekur engin lyf að staðaldri', sectionId);
             break;
         case 'Heilsufar':
             insertText('Skjólstæðingur heilsuhraustur í gruninn', sectionId);
