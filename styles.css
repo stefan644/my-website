@@ -648,3 +648,11 @@ main {
 .button-row.over {
     border: 2px dashed #000;
 }
+
+.header-spacing {
+    margin-bottom: -17px; /* Adjust this value as needed */
+}
+
+.form-description {
+    margin-bottom: 30px; /* Adjust this value for specific elements like "Hafðu Samband" */
+}

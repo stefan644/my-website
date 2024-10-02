@@ -2431,7 +2431,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Einkenni frá eyra', 'Óþægindi', 'Verkur', 'Hella',],
+        display: ['Einkenni frá eyra', 'Óþægindi', 'Verkur', 'Hella', 'Gröftur'],
         options: [
             {
                 display: 'Einkenni',
@@ -2452,7 +2452,8 @@ const SymptomsViral = [
                 ],
                 onRightClickOutput: 'Ekki verkur'
             },
-            { display: 'Hella', output: 'Hella', onRightClickOutput: 'Ekki hella'}
+            { display: 'Hella', output: 'Hella', onRightClickOutput: 'Ekki hella'},
+            { display: 'Gröftur', output: 'Lekur gröftur', onRightClickOutput: 'Ekki gröftur'}
         ]
     },
     {
@@ -3618,36 +3619,63 @@ const PlanViral = [
                 display: 'Sýklamixtúra',
                 subOptions: [
                     {
-                        display: 'Amoxin 50mg/ml',
+                        display: 'Amoxicillin 50mg/ml',
                         subOptions: [
                             {
                                 display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxin mixtúru 50mg/ml', 80)
+                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 50mg/ml', 80, 50)
                             },
                             {
                                 display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxin mixtúru 50mg/ml', 50)
+                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 50mg/ml', 50, 50)
                             },
                             {
                                 display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxin mixtúru 50mg/ml', 30)
+                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 50mg/ml', 30, 50)
                             }
                         ]
                     },
                     {
-                        display: 'Amoxin 100mg/ml',
+                        display: 'Amoxicillin 100mg/ml',
                         subOptions: [
                             {
                                 display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxin mixtúru 100mg/ml', 80)
+                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 100mg/ml', 80, 100)
                             },
                             {
                                 display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxin mixtúru 100mg/ml', 50)
+                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 100mg/ml', 50, 100)
                             },
                             {
                                 display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxin mixtúru 100mg/ml', 30)
+                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 100mg/ml', 30, 100)
+                            },
+                            {
+                                display: 'Hlekkir',
+                                subOptions: [
+                                    {
+                                        display: 'Sérlyfjaskrá Amoxicillin Sandoz 100mg/ml SMPC',
+                                        type: 'hyperlink',
+                                        url: 'https://old.serlyfjaskra.is/FileRepos/894258b5-41e4-ed11-8120-005056a1b61b/Amoxicillin_Sandoz_SmPC.pdf'
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Amoxicillin comp 80mg/ml',
+                        subOptions: [
+                            {
+                                display: 'Háskammta (80mg/kg)',
+                                subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 80, 80)
+                            },
+                            {
+                                display: 'Venjuleg (50mg/kg)',
+                                subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 50, 80)
+                            },
+                            {
+                                display: 'Lágskammta (30mg/kg)',
+                                subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 30, 80)
                             }
                         ]
                     },
@@ -3656,15 +3684,15 @@ const PlanViral = [
                         subOptions: [
                             {
                                 display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 80)
+                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 80, 100)
                             },
                             {
                                 display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 50)
+                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 50, 100)
                             },
                             {
                                 display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 30)
+                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 30, 100)
                             }
                         ]
                     },
@@ -3673,15 +3701,15 @@ const PlanViral = [
                         subOptions: [
                             {
                                 display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 80)
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 80, 50)
                             },
                             {
                                 display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 50)
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 50, 50)
                             },
                             {
                                 display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 30)
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 30, 50)
                             }
                         ]
                     },
@@ -3690,15 +3718,15 @@ const PlanViral = [
                         subOptions: [
                             {
                                 display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 80)
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 80, 100)
                             },
                             {
                                 display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 50)
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 50, 100)
                             },
                             {
                                 display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 30)
+                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 30, 100)
                             }
                         ]
                     }
@@ -3718,8 +3746,8 @@ const PlanViral = [
                         display: 'Nákvæm lengd',
                         subOptions: [
                             { display: '5 dagar', output: 'Meðferðarlengd 5 dagar' },
-                            { display: '7 dagar', output: 'Meðferðarlengd 7 daga' },
-                            { display: '10 dagar', output: 'Meðferðarlengd 10 daga' },
+                            { display: '7 dagar', output: 'Meðferðarlengd 7 dagar' },
+                            { display: '10 dagar', output: 'Meðferðarlengd 10 dagar' },
                             { display: 'Tvær vikur', output: 'Meðferðarlengd tvær vikur' }
                         ]
                     },
@@ -3733,8 +3761,7 @@ const PlanViral = [
                             { display: '14-21 dagar', output: 'Meðferðarlengd 14-21 dagar' }
                         ]
                     }
-                ],
-                onRightClickOutput: 'Engin meðferðarlengd tilgreind'
+                ]
             },
             { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' }
             
@@ -20292,7 +20319,7 @@ const PlanInnkirtla = [
     {
         name: '',
         type: 'options',
-        display: ['Sykursýki', 'Skjaldkirtill'],
+        display: ['Sykursýki', 'Skjaldkirtill', 'Járnskortur'],
         options: [
             {
                 display: 'Sykursýki',
@@ -20363,6 +20390,28 @@ const PlanInnkirtla = [
                         ]
                     }
                 ]
+            },
+            {
+                display: 'Járnskortur',
+                subOptions: [
+                    {
+                        display: 'Greining',
+                        output: 'Járnskortsblóðleysi'
+                    },
+                    {
+                        display: 'Grunur',
+                        output: 'Grunur um járnskort'
+                    },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            {
+                                display: 'Greining, duroferon, bpr eftir mánuð',
+                                output: 'Járnskortsblóðleysi. Ráðlegg duroferon að morgni. Gott að taka með C-vítamín freyðitöflu eða glasi af safa. Sýran bætir frásog járnsinns. Passa að ekki taka með t.d. mjólk því kalkið minnkar frásogið. Ný blóðprufa til eftirfylgdar eftir mánuð'
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -20370,8 +20419,19 @@ const PlanInnkirtla = [
     {
         name: '',
         type: 'options',
-        display: ['Sykursýkislyf', 'Skjaldkirtilslyf'],
+        display: ['Ráðleggingar', 'Sykursýkislyf', 'Skjaldkirtilslyf'],
         options: [
+            {
+                display: 'Ráðleggingar',
+                subOptions: [
+                    {
+                        display: 'Járnskortur', 
+                        output: 'Veiti ráðleggingar vegna járnskortsblóðleysis. Ráðlegg duroferon að morgni. Gott að taka með C-vítamín freyðitöflu eða glasi af safa. '
+                        + 'Sýran bætir frásog járnsinns. Passa að ekki taka með t.d. mjólk því kalkið minnkar frásogið. Ný blóðprufa til eftirfylgdar eftir mánuð'
+                        
+                    }
+                ]
+            },
             {
                 display: 'Sykursýkislyf',
                 subOptions: [
@@ -27959,50 +28019,52 @@ function calculateBMI(height, weight) {
     return bmi.toFixed(1).replace('.', ','); // Replace dot with comma for BMI
 }
 // Function to generate weight-based suboptions and exact dosage values
-function generateWeightSuboptions(medicationName, dosagePerKg) {
+function generateWeightSuboptions(medicationName, dosagePerKg, concentration) {
     return [
         {
             display: '1-10 kg',
             subOptions: Array.from({ length: 10 }, (_, i) => ({
                 display: `${i + 1} kg`,
-                output: calculateDosage(medicationName, dosagePerKg, i + 1)
+                output: calculateDosage(medicationName, dosagePerKg, i + 1, concentration)
             }))
         },
         {
             display: '11-20 kg',
             subOptions: Array.from({ length: 10 }, (_, i) => ({
                 display: `${i + 11} kg`,
-                output: calculateDosage(medicationName, dosagePerKg, i + 11)
+                output: calculateDosage(medicationName, dosagePerKg, i + 11, concentration)
             }))
         },
         {
             display: '21-30 kg',
             subOptions: Array.from({ length: 10 }, (_, i) => ({
                 display: `${i + 21} kg`,
-                output: calculateDosage(medicationName, dosagePerKg, i + 21)
+                output: calculateDosage(medicationName, dosagePerKg, i + 21, concentration)
             }))
         }
-        /*
-        ,
-        {
-            display: '31-40 kg',
-            subOptions: Array.from({ length: 10 }, (_, i) => ({
-                display: `${i + 31} kg`,
-                output: calculateDosage(medicationName, dosagePerKg, i + 31)
-            }))
-        }*/
     ];
 }
 // Function to calculate dosage output based on medication, dosage per kg, and weight
-function calculateDosage(medicationName, dosagePerKg, weight) {
+function calculateDosage(medicationName, dosagePerKg, weight, concentration) {
+    // Ensure concentration is a number
+    concentration = Number(concentration);
+    
+    // Check if concentration is valid
+    if (!concentration) {
+        return `Error: Invalid concentration for ${medicationName}.`;
+    }
+
     const totalDailyDose = dosagePerKg * weight; // Total mg per day
     const dosePerDose = totalDailyDose / 3; // Split into 3 doses per day
-    
-    // Assume concentrations are 50mg/ml or 100mg/ml for calculations
-    const concentration = medicationName.includes('50mg/ml') ? 50 : 100;
-    
+
     const dosePerMl = dosePerDose / concentration; // Calculate ml per dose
-    return `Set ${medicationName} í gáttina. Þyngd ${weight}kg. Notum ${dosagePerKg}mg/kg í þremur aðskildum skömmtum. Skammtastærð því ${dosePerMl.toFixed(1)}ml (${dosePerDose.toFixed(0)}mg) 3x á dag. Heildarskammtur ${totalDailyDose}mg á sólahring.`;
+
+    // Check if dosePerMl is a valid number
+    if (isNaN(dosePerMl)) {
+        return `Error: Unable to calculate dose per ml for ${medicationName}.`;
+    }
+
+    return `Set ${medicationName} í gáttina. Þyngd ${weight} kg. Notum ${dosagePerKg} mg/kg í þremur aðskildum skömmtum. Skammtastærð því ${dosePerMl.toFixed(1)} ml (${dosePerDose.toFixed(0)} mg) 3x á dag. Heildarskammtur ${totalDailyDose} mg á sólahring.`;
 }
 // Function to generate year intervals, year, month, and treatment suboptions
 function generateYearIntervals(diagnosis, diagnosisWord, treatWord) {
@@ -31147,14 +31209,34 @@ function loadPage(page) {
         horizontalContainer.appendChild(rightColumn);
 
         // Middle column data
-        // Create "Um okkur" header
-        const umOkkurHeader = document.createElement('h2');
-        umOkkurHeader.textContent = 'Um okkur';
-        middleColumn.appendChild(umOkkurHeader);
+        
 
-        // Add descriptive text below "Um okkur"
-        const umOkkurText = document.createElement('p');
-        umOkkurText.innerHTML = 'Flýtileiðir:<br>' +
+        // Create "Lýsing á virkni" header
+const lysingHeader = document.createElement('h2');
+lysingHeader.textContent = 'Lýsing á virkni';
+middleColumn.appendChild(lysingHeader);
+
+// Add descriptive text below "Lýsing á virkni"
+const lysingText = document.createElement('p');
+lysingText.innerHTML = 
+    'Vinstri smellur gefur jákvæð einkenni og hægri smellur neikvæð einkenni. Ef skilgreina þarf nánar kemur fram fellilisti. '
+    + 'Texti fer alltaf á réttan stað, undir sinn "Header". Þannig er einfalt að viðhalda nótustrúktúr þó að atriði séu ekki skráð í nákvæmlega réttri röð. '
+    + 'Hægt er að ýta á header eða nota flýtileiðir á takkaborði til að staðsetja sig rétt í nótunni og byrja þannig beint að skrifa. '
+    + 'Ef fylla á t.d. inn rannsóknir myndi notandinn ýta á Ctrl + R og byrja síðan beint að skrifa inn sínar rannsóknaniðurstöður.'
+    + ' Með þessu móti er einfalt fyrir notenda að byrja að skrifa í mismunandi köflum án þess að þurfa að fara og leita með músabendlinum í nótuglugganum til að '
+    + ' finna hvar á að halda áfram að skrifa.';
+    lysingHeader.className = 'header-spacing';
+lysingHeader.textContent = 'Lýsing á virkni';
+middleColumn.appendChild(lysingText);
+
+// Create "Flýtileiðir" header
+const flytileidirHeader = document.createElement('h2');
+flytileidirHeader.textContent = 'Flýtileiðir';
+middleColumn.appendChild(flytileidirHeader);
+
+// Add descriptive text below "Flýtileiðir"
+const flytileidirText = document.createElement('p');
+flytileidirText.innerHTML = 
     'Ctrl + Z - Afturkalla síðustu aðgerð (Undo)<br>' +
     'Ctrl + Y - Endurtaka síðustu aðgerð (Redo)<br>' +
     'Ctrl + C - Afrita valda texta (Copy). Athugið ef enginn texti er valinn í textaboxi afritast öll nótan<br><br>' +
@@ -31175,8 +31257,21 @@ function loadPage(page) {
     'Ctrl + Shift + L - Lyf: Engin lyf<br>' +
     'Ctrl + Shift + O - Ofnæmi: Engin þekkt ofnæmi<br>' +
     'Ctrl + Shift + B - Venjur: Reykir ekki. Drekkur ekki. Neitar eiturlyfjanotkun<br>';
+    flytileidirHeader.className = 'header-spacing';
+flytileidirHeader.textContent = 'Flýtileiðir';
+    
+middleColumn.appendChild(flytileidirText);
 
-        middleColumn.appendChild(umOkkurText);
+// Create "Um okkur" header
+const umOkkurHeader = document.createElement('h2');
+umOkkurHeader.textContent = 'Um okkur';
+middleColumn.appendChild(umOkkurHeader);
+
+// Add descriptive text below "Um okkur"
+const umOkkurText = document.createElement('p');
+umOkkurText.innerHTML = '';
+
+middleColumn.appendChild(umOkkurText);
 
         // Create "Sýningarmyndbönd" header
         const myndbandHeader = document.createElement('h2');
@@ -31308,16 +31403,15 @@ document.addEventListener('mousedown', function(event) {
 document.addEventListener('mouseup', function(event) {
     const textbox = document.getElementById('journalTextbox');
 
-    // Only clear selection if we clicked and released outside the textbox
+    // Only refocus the textbox if we clicked and released outside it
     if (isSelectingOutside && !isManualCursorMove) {
         setTimeout(() => {
             textbox.focus();
-            const textLength = textbox.value.length;
-            textbox.setSelectionRange(textLength, textLength); // Move cursor to the end, clear selection
+            // Cursor position remains unchanged
         }, 0);
     }
 
-    // Reset the flag after mouseup event
+    // Reset the flags after mouseup event
     isSelectingOutside = false;
     isManualCursorMove = false; // Allow clearing selection in future interactions
 });
@@ -31518,81 +31612,131 @@ function insertText(text, sectionId) {
 // Shortcuts above call this function.
 function insertHeader(sectionId) {
     const textbox = document.getElementById('journalTextbox');
-    let currentText = textbox.value.trimEnd();
+    let currentText = textbox.value;
     let sectionHeader = getSectionHeader(sectionId);
 
     console.log('Inserting or navigating to header for section:', sectionId);
 
-    // Find the position of the header in the current text
-    let headerPosition = currentText.indexOf(sectionHeader);
-
     // Set flag to avoid overriding manual cursor placement
     isManualCursorMove = true;
 
-    if (sectionHeader && headerPosition === -1) {
-        // The header is not present, so insert it and ensure it has two newlines before and after
-        const insertPosition = getInsertPosition(sectionId, currentText);
-        const newText = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
+    if (sectionId === 'einkenni') {
+        // Handle 'Einkenni' separately
+        // Find the index of the first header (excluding Einkenni which has no header)
+        const firstHeaderIndex = findNextHeaderIndex(currentText, 0);
 
-        // Update the textarea content
-        textbox.value = newText.trim();
+        // Get the text before the first header
+        let textBeforeFirstHeader = firstHeaderIndex !== -1 ? currentText.slice(0, firstHeaderIndex).trim() : currentText.trim();
 
-        // Calculate the new header's position in the updated text
-        headerPosition = textbox.value.indexOf(sectionHeader);
-
-        // Set the cursor directly after the header (no space after ":")
-        const newHeaderPosition = headerPosition + sectionHeader.length;
-        textbox.setSelectionRange(newHeaderPosition, newHeaderPosition);
-        scrollToCursor(textbox);
-    } else if (headerPosition !== -1) {
-        // Header is already present, so move the cursor to the end of the section content or header
-        const nextHeaderIndex = findNextHeaderIndex(currentText, headerPosition + sectionHeader.length);
-        const endOfSection = nextHeaderIndex === -1 ? currentText.length : nextHeaderIndex;
-
-        let sectionContent = currentText.slice(headerPosition + sectionHeader.length, endOfSection).trim();
-
-        if (sectionContent.length > 0) {
-            // There is already content under the header, so clean up spaces and place cursor at the end
-            const cleanedSectionContent = sectionContent.replace(/\s+$/, ''); // Remove trailing spaces
-            const endOfContentPosition = headerPosition + sectionHeader.length + cleanedSectionContent.length;
-
-            // Ensure the cursor is placed after the final punctuation (dot, if present)
-            const lastDotIndex = currentText.lastIndexOf('.', endOfSection);
-            const finalPosition = (lastDotIndex !== -1 && lastDotIndex >= endOfContentPosition)
-                ? lastDotIndex + 1  // Place cursor after the final dot
-                : endOfContentPosition;
-
-            // Set cursor at the correct position
-            textbox.setSelectionRange(finalPosition, finalPosition);
+        if (textBeforeFirstHeader === '') {
+            // No data before first header (no Einkenni data)
+            if (firstHeaderIndex !== -1) {
+                // There is a header in the text, but no data before it
+                // Check if there are at least two newlines before the first header
+                let newlinesBeforeHeader = currentText.slice(0, firstHeaderIndex).match(/\n*$/)[0].length;
+                if (newlinesBeforeHeader < 2) {
+                    // Insert necessary newlines before the first header
+                    currentText = currentText.slice(0, firstHeaderIndex).replace(/\n*$/, '\n\n') + currentText.slice(firstHeaderIndex);
+                    // Update the textbox content
+                    textbox.value = currentText;
+                }
+            }
+            // Place cursor at the very start
+            textbox.setSelectionRange(0, 0);
+            scrollToCursor(textbox);
         } else {
-            // No content under the header, place cursor immediately after the header
-            const cursorPosition = headerPosition + sectionHeader.length;
-            textbox.setSelectionRange(cursorPosition, cursorPosition);
-        }
+            // There is existing Einkenni data
+            // Find the end of the Einkenni data
+            let endOfEinkenni = firstHeaderIndex !== -1 ? firstHeaderIndex : currentText.length;
 
-        scrollToCursor(textbox); // Ensure the cursor is visible
+            // Remove any trailing whitespace from Einkenni data
+            while (endOfEinkenni > 0 && /\s/.test(currentText[endOfEinkenni - 1])) {
+                endOfEinkenni--;
+            }
+
+            // Place the cursor at the end of Einkenni data
+            textbox.setSelectionRange(endOfEinkenni, endOfEinkenni);
+            scrollToCursor(textbox);
+        }
+    } else {
+        // Existing code for other sections
+        let headerPosition = currentText.indexOf(sectionHeader);
+
+        if (sectionHeader && headerPosition === -1) {
+            // The header is not present, so insert it with two newlines before and after
+            const insertPosition = getInsertPosition(sectionId, currentText);
+            const newText = insertPosition.textBefore + `\n\n${sectionHeader}\n\n` + insertPosition.textAfter;
+
+            // Update the textarea content
+            textbox.value = newText.trim();
+
+            // Calculate the new header's position in the updated text
+            headerPosition = textbox.value.indexOf(sectionHeader);
+
+            // Set the cursor directly after the header
+            const newHeaderPosition = headerPosition + sectionHeader.length;
+            textbox.setSelectionRange(newHeaderPosition, newHeaderPosition);
+            scrollToCursor(textbox);
+        } else if (headerPosition !== -1) {
+            // Header is already present
+            const nextHeaderIndex = findNextHeaderIndex(currentText, headerPosition + sectionHeader.length);
+            const endOfSection = nextHeaderIndex === -1 ? currentText.length : nextHeaderIndex;
+
+            // Calculate the position of the last non-whitespace character in the section
+            let cursorPosition = endOfSection;
+            while (cursorPosition > headerPosition + sectionHeader.length && /\s/.test(currentText[cursorPosition - 1])) {
+                cursorPosition--;
+            }
+
+            // Set the cursor at the correct position
+            textbox.setSelectionRange(cursorPosition, cursorPosition);
+            scrollToCursor(textbox); // Ensure the cursor is visible
+        }
     }
 
     // Reset the manual cursor move flag after cursor placement
     isManualCursorMove = false;
 }
+
 // Supportive function with insertHeader. Important that the text that user is editing is visible in the textbox.
 function scrollToCursor(textbox) {
+    // Get the cursor position
     const cursorPosition = textbox.selectionStart;
 
-    // Get the line number where the cursor is located
-    const linesBeforeCursor = textbox.value.slice(0, cursorPosition).split("\n").length;
+    // Create a hidden div to calculate the position
+    const div = document.createElement('div');
+    div.style.visibility = 'hidden';
+    div.style.whiteSpace = 'pre-wrap';
+    div.style.wordWrap = 'break-word';
+    div.style.position = 'absolute';
+    div.style.top = '0px';
+    div.style.left = '-9999px'; // Move off-screen
 
-    // Get line height, accounting for any default settings
-    const lineHeight = parseFloat(window.getComputedStyle(textbox).lineHeight) || 20;
+    // Copy the styles from the textbox to the div
+    const styles = window.getComputedStyle(textbox);
+    div.style.width = textbox.clientWidth + 'px';
+    div.style.fontFamily = styles.fontFamily;
+    div.style.fontSize = styles.fontSize;
+    div.style.lineHeight = styles.lineHeight;
+    div.style.padding = styles.padding;
+    div.style.border = styles.border;
 
-    // Calculate the scrolling position such that the cursor line is vertically centered
-    const targetScrollPosition = (linesBeforeCursor * lineHeight) - (textbox.clientHeight / 2);
+    // Set the text content of the div to the text before the cursor
+    div.textContent = textbox.value.substring(0, cursorPosition);
 
-    // Scroll to this target position to make the cursor visible
-    textbox.scrollTop = Math.max(targetScrollPosition, 0);
+    // Append the div to the body
+    document.body.appendChild(div);
 
-    // Refocus on the textbox after scrolling to maintain the user's input
+    // Get the height of the text before the cursor
+    const textHeight = div.offsetHeight;
+
+    // Remove the div from the body
+    document.body.removeChild(div);
+
+    // Set the scrollTop of the textbox
+    textbox.scrollTop = textHeight - textbox.clientHeight / 2;
+
+    // Focus the textbox
     textbox.focus();
 }
 function eraseText() {
