@@ -31598,15 +31598,16 @@ function insertText(text, sectionId) {
     // Update the textbox with new content
     textbox.value = currentText.trim();
 
-    // Scroll to the bottom of the textbox after text is inserted
-    textbox.scrollTop = textbox.scrollHeight;
-
     // Optionally, place the cursor at the end of the inserted text
     const newCursorPosition = currentText.lastIndexOf(newText) + newText.length;
     textbox.setSelectionRange(newCursorPosition, newCursorPosition);
 
+    // Scroll to the cursor position
+    scrollToCursor(textbox);
+
     textbox.focus(); // Ensure the textbox remains focused
 }
+
 // This function moves the cursor correctly when headers are clicked.
 // It's important to be able to navigate the journal when there's lots of data
 // Shortcuts above call this function.
