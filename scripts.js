@@ -86,12 +86,37 @@ const FyrriNoturButton ={
             output: 'Sjá nótu hjúkrunarfræðings'
         },
         {
+            display: 'Sjá síðustu nótu',
+            output: 'Sjá síðustu nótu'
+        },
+        {
             display: 'Sjá fyrri nótur',
             output: 'Sjá fyrri nótur'
         },
         {
             display: 'Sjá fyrri nótur ásamt nótu hjkfr',
             output: 'Sjá fyrri nótur ásamt nótu hjúkrunarfræðings'
+        }
+    ]
+};
+const Viðtalstegund = {
+    display: 'Viðtalstegund',
+    subOptions: [
+        {
+            display: 'Leitar á vaktina', 
+            output: 'Leitar á vaktina'
+        },
+        {
+            display: 'Bókað viðtal',
+            output: 'Mætir í bókað viðtal'
+        },
+        {
+            display: 'Tvöfalt viðtal',
+            output: 'Mætir í tvöfaldan viðtalstíma'
+        },
+        {
+            display: 'Nóta vaktlæknis',
+            output: 'Nóta vaktlæknis'
         }
     ]
 };
@@ -1742,10 +1767,10 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna', 'Leitar á vaktina', 'Fyrri nótur'],
+        display: ['Tímalengd', 'Viðtalstegund', 'Fyrri nótur'],
         options: [
             timalengdButton,
-            { display: 'Leitar á vaktina', output: 'Leitar á vaktina'},
+            Viðtalstegund,
             FyrriNoturButton
             
         ]
@@ -3256,6 +3281,7 @@ const ExamsViral = [
             }
         ]
     },
+    /*
     {
         name: '',
         type: 'options',
@@ -3288,6 +3314,186 @@ const ExamsViral = [
                 ],
                 onRightClickOutput: 'Ekki eyrnamergur'
             }
+        ]
+    },*/
+    {
+        name: '',
+        type: 'options',
+        display: ['Hljóðhimna', 'Hlust'],
+        options: [
+            {
+                display: 'Hljóðhimna',
+                subOptions: [
+                    {
+                        display: 'Roði',
+                        subOptions: [
+                            { 
+                                display: 'Hægri', 
+                                output: 'Roði á hægri hljóðhimnu', 
+                                onRightClickOutput: 'Enginn roði á hægri hljóðhimnu' 
+                            },
+                            { 
+                                display: 'Vinstri', 
+                                output: 'Roði á vinstri hljóðhimnu', 
+                                onRightClickOutput: 'Enginn roði á vinstri hljóðhimnu' 
+                            },
+                            { 
+                                display: 'Beggja vegna', 
+                                output: 'Roði á hljóðhimnum beggja vegna', 
+                                onRightClickOutput: 'Enginn roði á hljóðhimnum beggja vegna' 
+                            }
+                        ],
+                        onRightClickOutput: 'Engin roði á hljóðhimnum'
+                    },
+                    {
+                        display: 'Roði og útbungandi',
+                        subOptions: [
+                            { 
+                                display: 'Hægri', 
+                                output: 'Roði á hægri hljóðhimnu sem er útbungandi' 
+                            },
+                            { 
+                                display: 'Vinstri', 
+                                output: 'Roði á vinstri hljóðhimnu sem er útbungandi'
+                            },
+                            { 
+                                display: 'Beggja vegna', 
+                                output: 'Roði á hljóðhimnum beggja vegna. Báðar útbungandi'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Gröftur og lélegt skygni',
+                        subOptions: [
+                            { 
+                                display: 'Hægri', 
+                                output: 'Lekur gröftur úr hægra eyra. Sést ekki inn að hljóðhimnu'
+                            },
+                            { 
+                                display: 'Vinstri', 
+                                output: 'Lekur gröftur úr vinstra eyra. Sést ekki inn að hljóðhimnu'
+                            },
+                            { 
+                                display: 'Beggja vegna', 
+                                output: 'Lekur gröftur úr báðum eyrum. Sést ekki innað hljóðhimnum'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Gröftur og roði',
+                        subOptions: [
+                            { 
+                                display: 'Hægri', 
+                                output: 'Lekur gröftur úr hægra eyra. Sést glitta í hljóðhimnu sem er útbungandi með roða'
+                            },
+                            { 
+                                display: 'Vinstri', 
+                                output: 'Lekur gröftur úr vinstra eyra. Sést glitta í hljóðhimnu sem er útbungandi með roða'
+                            },
+                            { 
+                                display: 'Beggja vegna', 
+                                output: 'Lekur gröftur úr báðum eyrum. Sést glitta í hljóðhimnur sem eru útbungandi og með roða beggja vegna'
+                            }
+                        ]
+                    }
+    ],
+    onRightClickSubOptions: [
+        {
+            display: 'Eðlileg',
+            subOptions: [
+                { display: 'Hægri', output: 'Hægri hljóðhimna eðlileg' },
+                { display: 'Vinstri', output: 'Vinstri hljóðhimna eðlileg' },
+                { display: 'Beggja vegna', output: 'Hljóðhimnur eðlilegar beggja vegna' }
+            ]
+        },
+        {
+            display: 'Eðlileg + rör',
+            subOptions: [
+                { display: 'Hægri', output: 'Hægri hljóðhimna eðlileg. Rör visualiserast' },
+                { display: 'Vinstri', output: 'Vinstri hljóðhimna eðlileg. Rör visualiserast' },
+                { display: 'Beggja vegna', output: 'Hljóðhimnur eðlilegar beggja vegna. Rör visualiserast beggja vegna' }
+            ]
+        },
+        {
+            display: 'Rör',
+            subOptions: [
+                { display: 'Hægri', output: 'Rör visualiserast hægra megin' },
+                { display: 'Vinstri', output: 'Rör visualiserast vinstra megin' },
+                { display: 'Beggja vegna', output: 'Rör visualiserast beggja vegna' }
+            ]
+        },
+        {
+            display: 'Sést ekki',
+            subOptions: [
+                { display: 'Hægri', output: 'Sést ekki inn að hægri hljóðhimnu' },
+                { display: 'Vinstri', output: 'Sést ekki inn að vinstri hljóðhimnu' },
+                { display: 'Beggja vegna', output: 'Sést ekki inn að hljóðhimnum' }
+            ]
+        }
+    ]
+    },
+    {
+        display: 'Hlust',
+        subOptions: [
+            {
+                display: 'Roði',
+                subOptions: [
+                    { 
+                        display: 'Hægri', 
+                        output: 'Roði í hægri hlust', 
+                        onRightClickOutput: 'Enginn roði í hægri hlust' 
+                    },
+                    { 
+                        display: 'Vinstri', 
+                        output: 'Roði í vinstri hlust', 
+                        onRightClickOutput: 'Enginn roði í vinstri hlust' 
+                    },
+                    { 
+                        display: 'Beggja vegna', 
+                        output: 'Roði í hlustum beggja vegna', 
+                        onRightClickOutput: 'Enginn roði í hlustum beggja vegna' 
+                    }
+                ],
+                onRightClickOutput: 'Engin roði í hlust'
+            },
+            {
+                display: 'Mergur',
+                subOptions: [
+                    { 
+                        display: 'Hægri', 
+                        output: 'Mergur í hægri hlust', 
+                        onRightClickOutput: 'Enginn mergur í hægri hlust' 
+                    },
+                    { 
+                        display: 'Vinstri', 
+                        output: 'Mergur í vinstri hlust', 
+                        onRightClickOutput: 'Enginn mergur í vinstri hlust' 
+                    },
+                    { 
+                        display: 'Beggja vegna', 
+                        output: 'Mergur í hlustum beggja vegna', 
+                        onRightClickOutput: 'Enginn mergur í hlustum beggja vegna' 
+                    }
+                ],
+                onRightClickOutput: 'Engin eyrnamergur'
+            }
+        ],
+        onRightClickSubOptions: [
+            {
+                display: 'Hægri hlust',
+                output: 'Hægri hlust eðlilega útlítandi'
+            },
+            {
+                display: 'Vinstri hlust',
+                output: 'Vinstri hlust eðlilega útlítandi'
+            },
+            {
+                display: 'Beggja vegna',
+                output: 'Hlustir líta eðlilega út'
+            }
+    ]
+    }
+            
         ]
     }
     
@@ -5980,9 +6186,12 @@ const SymptomsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna'],
+        display: ['Tímalengd', 'Viðtalstegund', 'Fyrri nótur'],
         options: [
-            timalengdButton
+            timalengdButton,
+            Viðtalstegund,
+            FyrriNoturButton
+            
         ]
     },
     {
@@ -18316,6 +18525,9 @@ const SIGECAPS = [
     }
     
 ];
+const LyfGed = [
+
+];
 
 
 // Tauga (Neurological)
@@ -28094,7 +28306,7 @@ function generateYearIntervals(diagnosis, diagnosisWord, treatWord) {
         }))
     ];
 }
-
+// Works with health history. When patient was diagnosed and how treatment is going.
 // Function to generate months with the option for treatment
 function generateMonthSuboptions(diagnosis, diagnosisWord, treatWord, year) {
     const months = [
@@ -28113,7 +28325,6 @@ function generateMonthSuboptions(diagnosis, diagnosisWord, treatWord, year) {
         }))
     ];
 }
-
 // Function to generate treatment options
 function generateTreatmentSuboptions(diagnosis, treatWord, date = '', includeIn = false) {
     const datePart = date ? (includeIn ? `í ${date}` : `${date}`) : ''; // Use "í" for months, skip it for year only
@@ -28133,6 +28344,21 @@ function generateTreatmentSuboptions(diagnosis, treatWord, date = '', includeIn 
         }
     ];
 }
+// Function to generate common dosing options
+function generateDosingOptions(medication) {
+    return [
+        { display: 'NOS', output: `${medication}` },
+        { display: 'PN', output: `${medication} PN` },
+        { display: 'PN fyrir svefn', output: `${medication} PN fyrir svefn` },
+        { display: '1x1', output: `${medication} 1x1` },
+        { display: '1x2', output: `${medication} 1x2` },
+        { display: '1x3', output: `${medication} 1x3` },
+        { display: '2x1', output: `${medication} 2x1` },
+        { display: '2x2', output: `${medication} 2x2` },
+        { display: '2x3', output: `${medication} 2x3` }
+    ];
+}
+
 
 
 
