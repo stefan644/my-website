@@ -251,6 +251,35 @@ const BMIButton ={
     ],
     onRightClickOutput: 'BMI innan eðlilegra marka'
 };
+const Meðferðarlengd ={
+    display: 'Meðferðarlengd',
+    subOptions: [
+        {
+            display: 'Nákvæm lengd',
+            subOptions: [
+                { display: '5 dagar', output: 'Meðferðarlengd 5 dagar' },
+                { display: '7 dagar', output: 'Meðferðarlengd 7 dagar' },
+                { display: '10 dagar', output: 'Meðferðarlengd 10 dagar' },
+                { display: 'Tvær vikur', output: 'Meðferðarlengd tvær vikur' },
+                { display: 'Þrjár vikur', output: 'Meðferðarlengd tvær vikur' },
+                { display: 'Fjórar vikur', output: 'Meðferðarlengd tvær vikur' }
+                
+            ]
+        },
+        {
+            display: 'Bil (daga)',
+            subOptions: [
+                { display: '3-5 dagar', output: 'Meðferðarlengd 3-5 dagar' },
+                { display: '5-7 dagar', output: 'Meðferðarlengd 5-7 dagar' },
+                { display: '7-10 dagar', output: 'Meðferðarlengd 7-10 dagar' },
+                { display: '10-14 dagar', output: 'Meðferðarlengd 10-14 dagar' },
+                { display: '1-2 vikur', output: 'Meðferðarlengd 1-2 vikur' },
+                { display: '2-3 vikur', output: 'Meðferðarlengd 2-3 vikur' },
+                { display: '3-4 vikur', output: 'Meðferðarlengd 3-4 vikur' }
+            ]
+        }
+    ]
+};
 
 // Hlekkir (Links)
 const Hlekkir = [
@@ -3945,30 +3974,7 @@ const PlanViral = [
         type: 'options',
         display: ['Meðferðarlengd', 'Ef lagast ekki'],
         options: [
-            {
-                display: 'Meðferðarlengd',
-                subOptions: [
-                    {
-                        display: 'Nákvæm lengd',
-                        subOptions: [
-                            { display: '5 dagar', output: 'Meðferðarlengd 5 dagar' },
-                            { display: '7 dagar', output: 'Meðferðarlengd 7 dagar' },
-                            { display: '10 dagar', output: 'Meðferðarlengd 10 dagar' },
-                            { display: 'Tvær vikur', output: 'Meðferðarlengd tvær vikur' }
-                        ]
-                    },
-                    {
-                        display: 'Bil (daga)',
-                        subOptions: [
-                            { display: '3-5 dagar', output: 'Meðferðarlengd 3-5 dagar' },
-                            { display: '5-7 dagar', output: 'Meðferðarlengd 5-7 dagar' },
-                            { display: '7-10 dagar', output: 'Meðferðarlengd 7-10 dagar' },
-                            { display: '10-14 dagar', output: 'Meðferðarlengd 10-14 dagar' },
-                            { display: '14-21 dagar', output: 'Meðferðarlengd 14-21 dagar' }
-                        ]
-                    }
-                ]
-            },
+            Meðferðarlengd,
             { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' }
             
         ]
@@ -15787,35 +15793,191 @@ const PlanHud = [
     {
         name: '',
         type: 'options',
-        display: ['Sterar', 'Sýklalyf', 'Andhistamín', 'Veirulyf'],
+        display: ['Sterakrem', 'Sýklakrem', 'Sveppakrem'],
         options: [
-            { display: 'Sterar', 
+            {
+                display: 'Sterakrem',
                 subOptions: [
-                    { display: 'Sterakrem', output: 'Ráðlegg notkun á sterakremi' },
-                    { display: 'Steratöflur', output: 'Ráðlegg stuttan sterakúr' }
+                    {
+                        display: 'Very high potency',
+                        subOptions: [
+                            {
+                                display: 'Dermovat húðlausn (0.5 mg/ml)',
+                                subOptions: generateCreamActions('dermovat húðlausn (0.5mg/ml)')
+                            },
+                            {
+                                display: 'Dermovat krem (0.5 mg/g)',
+                                subOptions: generateCreamActions('dermovat krem (0.5mg/g)')
+                            },
+                            {
+                                display: 'Dermovat smyrsli (0.5 mg/g)',
+                                subOptions: generateCreamActions('dermovat smyrsli (0.5mg/g)')
+                            }
+                        ]
+                    },
+                    {
+                        display: 'High potency',
+                        subOptions: [
+                            {
+                                display: 'Betnovat húðlausn (1 mg/ml)',
+                                subOptions: generateCreamActions('betnovat húðlausn (1mg/ml)')
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Medium potency',
+                        subOptions: [
+                            {
+                                display: 'Elocon húðlausn (0.1%)',
+                                subOptions: generateCreamActions('elocon húðlausn (0.1%)')
+                            },
+                            {
+                                display: 'Elocon krem (0.1%)',
+                                subOptions: generateCreamActions('elocon krem (0.1%)')
+                            },
+                            {
+                                display: 'Elocon smyrsli (0.1%)',
+                                subOptions: generateCreamActions('elocon smyrsli (0.1%)')
+                            },
+                            {
+                                display: 'Ovixan krem (1 mg/g)',
+                                subOptions: generateCreamActions('ovixan krem (1mg/g)')
+                            },
+                            {
+                                display: 'Ovixan húðlausn (1 mg/g)',
+                                subOptions: generateCreamActions('ovixan húðlausn (1mg/g)')
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Medium to low potency',
+                        subOptions: [
+                            {
+                                display: 'Locoid húðlausn (1 mg/ml)',
+                                subOptions: generateCreamActions('locoid húðlausn (1mg/ml)')
+                            },
+                            {
+                                display: 'Locoid krem (1 mg/g)',
+                                subOptions: generateCreamActions('locoid krem (1mg/g)')
+                            },
+                            {
+                                display: 'Locoid smyrsli (1 mg/g)',
+                                subOptions: generateCreamActions('locoid smyrsli (1mg/g)')
+                            },
+                            {
+                                display: 'Locoid Crelo húðfleyti (0.1%)',
+                                subOptions: generateCreamActions('locoid crelo húðfleyti (0.1%)')
+                            },
+                            {
+                                display: 'Locoid Lipid krem (1 mg/g)',
+                                subOptions: generateCreamActions('locoid lipid krem (1mg/g)')
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Low potency',
+                        subOptions: [
+                            {
+                                display: 'Hydrokortison Evolan krem (10 mg/g)',
+                                subOptions: generateCreamActions('hydrokortison evolan krem (10mg/g)')
+                            },
+                            {
+                                display: 'Mildison Lipid krem (10 mg/g)',
+                                subOptions: generateCreamActions('mildison lipid krem (10mg/g)')
+                            },
+                            {
+                                display: 'Mildison Lipid (Heilsa) krem (10 mg/g)',
+                                subOptions: generateCreamActions('mildison lipid (heilsa) krem (10mg/g)')
+                            }
+                        ]
+                    }
                 ]
             },
             {
-                display: 'Sýklalyf',
+                display: 'Sýklakrem',
                 subOptions: [
-                    { display: 'Topical', output: 'Ráðlegg staðbundin sýklalyf' },
-                    { display: 'Oral', output: 'Ráðlegg sýklalyf í töfluformi' }
+                    {
+                        display: 'Fucidin krem (20 mg/g)',
+                        subOptions: generateCreamActions('fucidin krem (20 mg/g)')
+                    },
+                    {
+                        display: 'Fucidin smyrsli (20 mg/g)',
+                        subOptions: generateCreamActions('fucidin smyrsli (20 mg/g)')
+                    },
+                    {
+                        display: 'Fucidin-Hydrocortison krem (20 + 10 mg)',
+                        subOptions: generateCreamActions('fucidin-hydrocortison krem (20 + 10 mg)')
+                    },
+                    {
+                        display: 'Bactroban smyrsli (20 mg/g)',
+                        subOptions: generateCreamActions('bactroban smyrsli (20 mg/g)')
+                    }
                 ]
             },
             {
-                display: 'Andhistamín',
+                display: 'Sveppakrem',
                 subOptions: [
-                    { display: 'Cetirizine', output: 'Ráðlegg cetirizine gegn kláða' },
-                    { display: 'Loratadine', output: 'Ráðlegg loratadine gegn kláða' }
-                ]
-            },
-            {
-                display: 'Veirulyf',
-                subOptions: [
-                    { display: 'Acyclovir', output: 'Ráðlegg acyclovir' },
-                    { display: 'Valacyclovir', output: 'Ráðlegg valacyclovir' }
+                    {
+                        display: 'Daktacort krem',
+                        subOptions: generateCreamActions('Daktacort krem')
+                    },
+                    {
+                        display: 'Pevione krem (1%)',
+                        subOptions: generateCreamActions('Pevione krem (1%)')
+                    },
+                    {
+                        display: 'Pevaryl krem (10 mg/g)',
+                        subOptions: generateCreamActions('Pevaryl krem (10 mg/g)')
+                    },
+                    {
+                        display: 'Canesten krem (10 mg/g)',
+                        subOptions: generateCreamActions('Canesten krem (10 mg/g)')
+                    },
+                    {
+                        display: 'Lamisil krem (10 mg/g)',
+                        subOptions: generateCreamActions('Lamisil krem (10 mg/g)')
+                    },
+                    {
+                        display: 'Lamisil Once húðlausn (10 mg/g)',
+                        subOptions: generateCreamActions('Lamisil Once húðlausn (10 mg/g)')
+                    },
+                    {
+                        display: 'Amorolfin Alvogen lyfjalakk á neglur (5%)',
+                        subOptions: generateCreamActions('Amorolfin Alvogen lyfjalakk á neglur (5%)')
+                    },
+                    {
+                        display: 'Amorolfin Apofri lyfjalakk á neglur (5%)',
+                        subOptions: generateCreamActions('Amorolfin Apofri lyfjalakk á neglur (5%)')
+                    },
+                    {
+                        display: 'Dermatin hársápa (20 mg/g)',
+                        subOptions: generateCreamActions('Dermatin hársápa (20 mg/g)')
+                    },
+                    {
+                        display: 'Fungoral hársápa (20 mg/ml)',
+                        subOptions: generateCreamActions('Fungoral hársápa (20 mg/ml)')
+                    }
                 ]
             }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Notkun', 'Meðferðarlengd'],
+        options: [
+            {
+                display: 'Notkun',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Notar eftir þörfum' },
+                    { display: '1x á dag', output: 'Notar 1x á dag' },
+                    { display: '2x á dag', output: 'Notar 2x á dag' },
+                    { display: '3x á dag', output: 'Notar 3x á dag' },
+                    { display: '1-2x á dag', output: 'Notar 1-2x á dag' },
+                    { display: '2-3x á dag', output: 'Notar 2-3x á dag' }
+                ]
+            },
+            Meðferðarlengd
         ]
     },
     {
@@ -22726,6 +22888,80 @@ const PlanGigt = [
     }
 ];
 
+// Meðganga (Pregnancy)
+const SymptomsMeðganga = [];
+const ExamsMeðganga = [];
+
+
+
+const PlanMeðganga = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Ógleði á meðgöngu'],
+        options: [
+            {
+                display: 'Ógleði á meðgöngu',
+                subOptions: [
+                    {
+                        display: 'Greining',
+                        output: 'Ógleði á meðgöngu'
+                    },
+                    {
+                        display: 'Grunur',
+                        output: 'Grunur ógleði á meðgöngu'
+                    },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            {
+                                display: 'Svæsin, reynum Xonvea',
+                                output: 'Svæsin ógleði á meðgöngu. Heimaráð dugað takmarkað. Reynum xonvea'
+                            }
+                        ]
+
+                    },
+                    {
+                        display: 'Hlekkir',
+                        subOptions: [
+                            { display: 'Xonvea - Lyfja', type: 'hyperlink', url: 'https://www.lyfja.is/lyfjabokin/lyf/Xonvea' },
+                            { display: 'Xonvea - Sérlyfjaskrá', type: 'hyperlink', url: 'https://www.serlyfjaskra.is/lyf/xonvea-7b5a5d0e-fc5b-ec11-8110-005056a1b61b' },
+                            { display: 'Xonvea - Sérlyfjaskrá SMPC', type: 'hyperlink', url: 'https://old.serlyfjaskra.is/FileRepos/273b4970-da28-ef11-8122-80f82c6a84ee/Xonvea_SmPC.pdf' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar'],
+        options: [
+            {
+                display: 'Ráðleggingar',
+                subOptions: [
+                    {
+                    }
+                ]
+            },
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            EndurmatButton,
+            EftirfylgdButton
+
+        ]
+    }
+
+];
+
 
 // General data (habits, allergies, etc)
 const LyfData = [
@@ -28359,6 +28595,17 @@ function generateDosingOptions(medication) {
     ];
 }
 
+// Actions for steroid, antibiotic and antifungal ointments
+function generateCreamActions(medicationName) {
+    return [
+        { display: 'Endurnýja', output: `Endurnýja ${medicationName}` },
+        { display: 'Ráðlegg', output: `Ráðlegg ${medicationName}` },
+        { display: 'Prófum', output: `Prófum ${medicationName}` },
+        { display: 'Í gáttina', output: `Set ${medicationName} í gáttina` },
+        { display: 'Set á', output: `Set á ${medicationName}` },
+        { display: 'Skiptum yfir í', output: `Skiptum yfir í ${medicationName}` }
+    ];
+}
 
 
 
@@ -31297,6 +31544,32 @@ function loadPage(page) {
         middleColumn.className = 'column';
         middleColumn.appendChild(skodunSection);
         middleColumn.appendChild(rannsoknirSection);
+
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column';
+        rightColumn.appendChild(planSection);
+
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+
+        container.appendChild(horizontalContainer);
+    } else if (page === 'Meðganga') {
+        const einkenniSection = createEinkenniSection(SymptomsMeðganga);
+        const skodunSection = createSkodunSection(ExamsMeðganga);
+        const planSection = createPlanSection(PlanMeðganga);
+        const lyfSection = createLyfSection(LyfData);
+
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column';
+        leftColumn.appendChild(einkenniSection);
+        leftColumn.appendChild(lyfSection);
+
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column';
+        middleColumn.appendChild(skodunSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
