@@ -280,6 +280,16 @@ const Meðferðarlengd ={
         }
     ]
 };
+const PrentaðarLeiðbeiningar = { 
+    
+    display: 'Prentaðar leiðbeiningar', 
+    subOptions: [
+        { display: 'NOS', output: 'Skjólstæðingur fær útprentaðar leiðbeiningar tengdar sinni greiningu' },
+        { display: 'Uptodate', output: 'Skjólstæðingur fær útprentaðar leiðbeiningar frá uptodate tengdar sinni greiningu' }
+    ]
+    
+     
+};
 
 // Hlekkir (Links)
 const Hlekkir = [
@@ -292,7 +302,9 @@ const Hlekkir = [
                 display: 'Meðganga og brjóstagjöf',
                 subOptions: [
                     { display: 'Mæðravernd - Fróðleiksmolar HH', type: 'hyperlink', url: 'https://throunarmidstod.is/svid-thih/maedravernd/#Flipi3' },
-                    { display: 'Lyf á meðgöngu - Fróðleiksmoli HH', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/library/Files/Frodleiksmolar-2016/Lyf%20á%20meðgöngu%20april%202016.pdf' }
+                    { display: 'Lyf á meðgöngu - Fróðleiksmoli HH', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/library/Files/Frodleiksmolar-2016/Lyf%20á%20meðgöngu%20april%202016.pdf' },
+                    { display: 'Sjúklingaleiðbeiningar Uptodate', type: 'hyperlink', url: 'https://www.uptodate.com/contents/common-breastfeeding-problems-beyond-the-basics' }
+                    
                 ]
             },
             {
@@ -3993,15 +4005,7 @@ const PlanViral = [
             },
             { display: 'Blóðprufa', output: 'Panta blóðprufu' },
             { display: 'BMT', output: 'Vísa á bráðamóttöku' },
-            { display: 'Prentaðar leiðbeiningar', 
-
-                subOptions: [
-                    { display: 'NOS', output: 'Skjólstæðingur fær útprentaðar leiðbeiningar tengdar sinni greiningu' },
-                    { display: 'Uptodate', output: 'Skjólstæðingur fær útprentaðar leiðbeiningar frá uptodate tengdar sinni greiningu' }
-                ]
-                
-                 
-            }
+            PrentaðarLeiðbeiningar
         ]
     },
     {
@@ -22898,7 +22902,7 @@ const PlanMeðganga = [
     {
         name: '',
         type: 'options',
-        display: ['Ógleði á meðgöngu'],
+        display: ['Ógleði á meðgöngu', 'Mastitis'],
         options: [
             {
                 display: 'Ógleði á meðgöngu',
@@ -22930,6 +22934,45 @@ const PlanMeðganga = [
                         ]
                     }
                 ]
+            },
+            {
+                display: 'Mastitis',
+                subOptions: [
+                    {
+                        display: 'Greining',
+                        output: 'Mastitis'
+                    },
+                    {
+                        display: 'Grunur',
+                        output: 'Grunur um mastitis'
+                    },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            {
+                                display: 'Greining, ráðleggingar, sýklalyf, endurmat ef versnar/lagast ekki',
+                                output: 'Mastitis. Ráðlegg sýklalyf. Háir skammtar af dicloxacillin, 1gx4 í ca 7 daga. Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd. Endurmat ef versnar eða lagast ekki'
+                            },
+                            {
+                                display: 'Væg einkenni/stutt saga, ráðleggingar, sýklalyf (dicloxacillin) ef lagast ekki',
+                                output: 'Mastitis. Væg einkenni og stutt saga. Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd. Ef lagast ekki á 1-2 dögum leysir hún út sýklalyf úr gáttinni (dicloxacillin 1gx4 í 5-7 daga). Endurmat ef versnar eða lagast ekki á sýklalyfjameðferð'
+                            }
+                        ]
+
+                    },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/mastitis-the-basics' }
+                                    
+                                ]
+                            },
+                            { display: 'Uptodate - Mastitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/lactational-mastitis' }
+                            
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -22937,15 +22980,18 @@ const PlanMeðganga = [
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar'],
+        display: ['Ráðleggingar', 'Prentaðar leiðbeiningar'],
         options: [
             {
                 display: 'Ráðleggingar',
                 subOptions: [
                     {
+                        display: 'Mastitis',
+                        output: 'Veiti fræðslu og ráðleggingar. Drekka vel af vökva. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd.'
                     }
                 ]
             },
+            PrentaðarLeiðbeiningar
         ]
     },
     {},{},{},
