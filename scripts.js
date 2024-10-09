@@ -8934,29 +8934,29 @@ const PlanHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Endurmat', 'Eftirfylgd'],
+        display: ['Endurmat', 'Eftirfylgd', 'Leiðbeiningar til skjólstæðings'],
         options: [
             EndurmatButton,
+            EftirfylgdButton,
             {
-                display: 'Eftirfylgd',
+                display: 'Leiðbeiningar til skjólstæðings',
                 subOptions: [
                     {
-                        display: 'Bókar sjálfur',
+                        display: 'Háþrýstingur',
                         subOptions: [
-                            { display: 'Símatíma', output: 'Pantar sér símatíma til að fá niðurstöður' },
-                            { display: 'Viðtalstíma', output: 'Pantar sér viðtalstíma í framhaldi' },
-                            { display: 'Sinni heilsugæslu', output: 'Eftirfylgd á sinni heilsugæslu' }
+                            {
+                                display: 'Fyrsta greining (heimamælingar, blóðprufa, þvagprufa, hjartalínurit)',
+                                output: '\n\n'
+                                    + 'Ráðlegg eftirfarandi vegna uppvinnslu á háþrýstingi:\n'
+                                    + '- Heimamælingar. Mikilvægt að eigir góðan upphandleggsmæli. Úlnliðsmælar gefa ónákvæm gildi. '
+                                    + 'Mælir blóðþrýstinginn eftir 5-10 mínútur í hvíld og skrifar niður á blað. 2-3 mælingar á dag nokkrum dögum fyrir næsta tíma.\n'
+                                    + '- Færð tíma hjá hjúkrunarfræðingi kl X þann X til að taka hjartalínurit og stixa þvag. Kemur með þvagprufu með þér. '
+                                    + 'Getur keypt þvagprufuglas í apóteki.\n'
+                                    + '- Blóðrannsókn. Þarft að mæta fastandi. Mátt ekki borða neitt sem inniheldur hitaeiningar a.m.k. 8klst fyrir rannsókn. Vatn er í lagi. Bóka þig þann X kl X.\n'
+                                    + '- Endurkoma. Færð tíma í endurkomu þann X kl X.'
+                            }
                         ]
-                    },
-                    {
-                        display: 'Gef tíma í endurkomu',
-                        subOptions: [
-                            { display: 'Símatíma', output: 'Fær símatíma til eftirfylgdar' },
-                            { display: 'Viðtalstíma', output: 'Fær nýjan tíma til eftirfylgdar' }
-                            
-                        ]
-                    },
-                    { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
+                    }
                 ]
             }
 
@@ -19253,6 +19253,19 @@ const PlanTauga = [
                                     { display: 'Greining', output: 'Mígreni án auru' },
                                     { display: 'Grunur', output: 'Grunur um mígreni án auru' }
                                 ]
+                            },
+                            { display: 'Hlekkir', 
+                                subOptions: [
+                                    { display: 'Leiðbeiningar til skjólstæðings',
+                                        subOptions: [
+                                            { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/migraine-in-adults-the-basics' },
+                                            { display: 'Uptodate - Beyond the basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/migraine-in-adults-beyond-the-basics' }
+                                            
+                                        ]
+                                    },
+                                    { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-treatment-of-migraine-in-adults' }
+                                    
+                                ]
                             }
                         ]
                     },
@@ -19380,6 +19393,53 @@ const PlanTauga = [
                     { display: 'Grunur', output: 'Grunur um peripheral neuropathy' }
                 ]
             }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Ráðleggingar'],
+        options: [
+            {
+                display: 'Ráðleggingar',
+                subOptions: [
+                    {
+                        display: 'Mígreni',
+                        subOptions: [
+                            {
+                                display: 'Sumatriptan', 
+                                output: 'Ráðlegg að reyna sumatriptan við mígreni. Tekur 50-100mg í upphafi kasts. Ef dugar ekki á ekki að taka annan skammt við sama kasti. '
+                                +'Ef dugar en kemur fram nýtt kast má taka aftur ef það eru liðnar a.m.k. 2 klst frá síðasta skammti. Ekki má taka meira en 300mg á sólahring '
+                                +'Má líka taka triptön með NSAID'
+                            },
+                            {
+                                display: 'NSAID', output: 'Ráðlegg að reyna NSAID við mígreni. Mikilvægt að taka nægilega skammta til að reyna að stoppa kastið'
+                            },
+                            {
+                                display: 'Ógleðisstillandi', output: 'Fær ógleðisstillandi við mígreni'
+                            },
+                            { display: 'Hlekkir', 
+                                subOptions: [
+                                    { display: 'Sumatriptan Sérlyfjaskrá SMPC', type: 'hyperlink', url: 'https://old.serlyfjaskra.is/FileRepos/c44f4d2b-a31f-ed11-8119-005056a1b61b/Sumatriptan_Apofri_SmPC.pdf' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            EndurmatButton,
+            EftirfylgdButton
+
         ]
     }
 ];
