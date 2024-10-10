@@ -14653,9 +14653,12 @@ const SymptomsAnkle = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna'],
+        display: ['Tímalengd', 'Viðtalstegund', 'Fyrri nótur'],
         options: [
-            timalengdButton
+            timalengdButton,
+            Viðtalstegund,
+            FyrriNoturButton
+            
         ]
     },
     {
@@ -14865,7 +14868,41 @@ const PlanAnkle = [
                 display: 'Ökklatognun',
                 subOptions: [
                     { display: 'Greining', output: 'Ökklatognun' },
-                    { display: 'Grunur', output: 'Grunur um ökklatognun' }
+                    { display: 'Grunur', output: 'Grunur um ökklatognun' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Mild einkenni, OTTAWA neikv. RICE og bólgueyðandi PN. Endurmat ef lagast ekki', 
+                                output: 'Tognun á ökkla. Mild einkenni. Ráðlegg bólgueyðandi næstu daga eftir þörfum. RICE. '
+                                +'Getur keypt sér teygjusokk til að styðja við. Gengur yfirleitt yfir á nokkrum dögum / vikum. '
+                                +'Endurmat ef versnar eða lagast ekki' 
+                            },
+                            { display: 'Jákvætt Ottawa, beiðni í RTG á domus/orkuhus, ef neikv meðhöndla sem tognun, ef jákv G3', 
+                                output: 'Grunur um ökklatognun. Þar sem ottawa jákvætt sendi beiðni í rtg. '
+                                +'Ef RTG eðlileg meðhöndlum við sem tognun (RICE og bólgueyðandi PN). '
+                                +'Ef reynist brot ráðlegg nánara mat á G3. Endurmat PN'
+                            },
+                            { display: 'Jákvætt Ottawa, slæm einkenni, þar sem helgi vísað á bráðamóttöku', 
+                                output: 'Ökklatognun. Get ekki útilokað brot. OTTAWA jákvætt. '
+                                +'Þar sem einkenni slæm og ekki hægt að fá rannsókn á einkastofu yfir helgi '
+                                +'ráðlagt nánara mat á bráðamóttöku'
+                            }
+                        ]
+                    },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ankle-sprain-the-basics' },
+                                    { display: 'Gæðaskjal Landspítala - Ökklatognun', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Bradamottaka-Flaedisdeild/okklatognun.pdf' }
+                                    
+                                ]
+                            },
+                            { display: 'Uptodate - Greining og mat fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ankle-sprain-in-adults-evaluation-and-diagnosis' },
+                            { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ankle-sprain-in-adults-management' }
+                            
+                        ]
+                    }
                 ]
             },
             {
@@ -14948,16 +14985,91 @@ const PlanAnkle = [
         options: [
             {
                 display: 'Ráðleggingar',
-                output: 'Ráðleggingar gefnar um meðferð'
+                subOptions: [
+                    { display: 'Ökklatognun', 
+                        subOptions: [
+                            { display: 'Mild', output: '' }
+                        ]
+                    }
+                    
+                ]
             },
             {
                 display: 'Myndataka',
-                output: 'Myndataka ráðlögð'
+                subOptions: [
+                    { display: 'Segulómun', output: 'Ráðlegg segulómun' },
+                    { display: 'TS', output: 'Ráðlegg tölvusneiðmynd' },
+                    { display: 'RTG', output: 'Ráðlegg röntgenmynd' },
+                    { display: 'Ómskoðun', output: 'Ráðlegg ómskoðun' }
+                ]
             },
             {
                 display: 'Bráðamóttaka',
                 output: 'Beinist á bráðamóttöku'
             }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd', 'Leiðbeiningar til skjólstæðings'],
+        options: [
+            EndurmatButton,
+            EftirfylgdButton,
+            {
+                display: 'Leiðbeiningar til skjólstæðings',
+                subOptions: [
+                    {
+                        display: 'Ökklatognun',
+                        subOptions: [
+                            {
+                                display: 'Grunur um tognun, OTTAWA neikv, ráðleggingar',
+                                output: 'Skjólstæðingur fær útprentaðar leiðbeiningar.\n\n'
+                                    + 'Leiðbeiningar vegna ökklatognunar:\n'
+                                    
+                                    + '- Þar sem skoðun bendir ekki til ökklabrots meðhöndlum við sem tognun. Ráðlagt er að hvíla ökklan, einungis létt '
+                                    + 'ástig fyrst um sinn. Þá er ráðlagt að hafa hátt undir fæti '
+                                    + 'fyrstu dagana á meðan bólgan hjaðnar. Gott er að nota kælipoka í 15-20mín í senn (20 mín on, 20 mín off). Mikilvægt er að hafa t.d. '
+                                    + 'þunnt viskarstykki milli kælipoka og húðar. Passa þarf að kælipoki komist ekki í beina snertingu '
+                                    + 'við húð en slíkt gæti leitt til kælibruna. Teygjusokkur getur hjálpað við að stöðga ökklan, hægt er að nálagast þá í flestum '
+                                    + 'apótekum landsins og/eða stoðkerfisverslunum. Gott getur verið að nota bólgueyðandi verkjalyf (svo sem íbúfen) '
+                                    + 'með eða án paracetamól við verkjum.\n'
+                                    + '- Bataferli er mismunandi eftir alvarleika tognunar. Stundum ganga einkenni að mestu '
+                                    + 'yfir á fáeinum vikum en stundum þarf lengri tíma (6-8 vikur). '
+                                    + 'Ef batagangur er ekki eins og búist er við (t.d. ef einkenni fara versnandi á dögum/vikum þrátt fyrir ofangreinda meðferð '
+                                    + 'eða einkenni áfram slæm eftir 6-8 vikur) er ráðlagt að hafa samband. Þyrfti þá e.t.v. að taka afstöðu til frekari myndgreininga. '
+                                    + 'Þá getur sjúkraþjálfun einnig verið að gagni.\n'
+                                    + '- Hægt er að nálagast ítarlegri upplýsingar um ökklatognun á vef landspítala'
+                            },
+                            {
+                                display: 'Grunur um tognun, OTTAWA jákv, RTG á stofu til útilokunnar, ráðleggingar',
+                                output: 'Skjólstæðingur fær útprentaðar leiðbeiningar.\n\n'
+                                    + 'Leiðbeiningar vegna gruns um tognun á ökkla:\n'
+                                    + '- Myndgreining. Þar sem erfitt er að útiloka brot er ráðlögð röntgenmynd af ökklanum. '
+                                    + 'Á dagvinnutíma tekur yfirleitt um 1-2klst að fá niðustöður hjá RTG Dómus / Orkuhúsinu. '
+                                    + 'Ekki þarf að bíða eftir tímapöntun heldur má mæta beint á staðinn. Orkuhúsið er staðsett í Urðarhvarfi 8, 203 Kópavogi. '
+                                    + 'Röntgen Dómus er staðsett á þremur stöðum: Egilsgata 3, 101 RVK. Þönglabakka 6, 109 RVK. Bíldshöfða 9, 110 RVK. '
+                                    + 'Hægt er að nálgast frekari upplýsingar á www.orkuhusid.is (Orkuhúsið) og www.rd.is (Röntgen Dómus)\n'
+                                    + '- Ef reynist brot er ráðlagt nánara mat á G3 (brotadeild BMT í Fossvogi)\n'
+                                    + '- Ef reynist ekki brotið meðhöndlum við sem tognun. Hvíla ökklan, einungis létt ástig fyrst um sinn. Þá er ráðlagt að hafa hátt undir fæti '
+                                    + 'fyrstu dagana á meðan bólgan hjaðnar. Gott er að nota kælipoka í 15-20mín í senn (20 mín on, 20 mín off). Mikilvægt er að hafa t.d. '
+                                    + 'þunnt viskarstykki milli kælipoka og húðar. Passa þarf að kælipoki komist ekki í beina snertingu '
+                                    + 'við húð en slíkt gæti leitt til kælibruna. Teygjusokkur getur hjálpað við að stöðga ökklan, hægt er að nálagast þá í flestum '
+                                    + 'apótekum landsins og/eða stoðkerfisverslunum. Gott getur verið að nota bólgueyðandi verkjalyf (svo sem íbúfen) '
+                                    + 'með eða án paracetamól við verkjum.\n'
+                                    + '- Bataferli er mismunandi eftir alvarleika tognunar. Stundum ganga einkenni að mestu '
+                                    + 'yfir á fáeinum vikum en stundum þarf lengri tíma (6-8 vikur). '
+                                    + 'Ef batagangur er ekki eins og búist er við (t.d. ef einkenni fara versnandi á dögum/vikum þrátt fyrir ofangreinda meðferð '
+                                    + 'eða einkenni áfram slæm eftir 6-8 vikur) er ráðlagt að hafa samband. Þyrfti þá e.t.v. að taka afstöðu til frekari myndgreininga. '
+                                    + 'Þá getur sjúkraþjálfun einnig verið að gagni.\n'
+                                    + '- Hægt er að nálagast ítarlegri upplýsingar um ökklatognun á vef landspítala'
+                            }
+                        ]
+                    }
+                ]
+            }
+
         ]
     }
     
@@ -20505,252 +20617,6 @@ const SymptomsInnkirtla = [
     }
 ];
 const ExamsInnkirtla = [
-    {
-        name: '',
-        type: 'options',
-        display: ['Blóðprufa', 'Hormonamæling'],
-        options: [
-            { display: 'Blóðprufa', output: 'Blóðprufa pantað' },
-            { display: 'Hormonamæling', output: 'Hormonamæling pantað' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Sykurmæling', 'Þvagprufa'],
-        options: [
-            { display: 'Sykurmæling', output: 'Sykurmæling pantað' },
-            { display: 'Þvagprufa', output: 'Þvagprufa pantað' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Blóðprufa'],
-        options: [
-            {
-                display: 'Blóðprufa',
-                subOptions: [
-                    {
-                        display: 'HbA1c',
-                        subOptions: [
-                            {
-                                display: '20-30 mmol/L (4-6%)',
-                                subOptions: Array.from({ length: 11 }, (_, i) => ({
-                                    display: `${20 + i} mmol/L (4.${i}%)`,
-                                    output: `HbA1c ${20 + i} mmol/L (4.${i}%)`
-                                }))
-                            },
-                            {
-                                display: '31-40 mmol/L (6-8%)',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${31 + i} mmol/L (6.${i}%)`,
-                                    output: `HbA1c ${31 + i} mmol/L (6.${i}%)`
-                                }))
-                            },
-                            {
-                                display: '41-50 mmol/L (8-10%)',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${41 + i} mmol/L (8.${i}%)`,
-                                    output: `HbA1c ${41 + i} mmol/L (8.${i}%)`
-                                }))
-                            },
-                            {
-                                display: '51-60 mmol/L (10-12%)',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${51 + i} mmol/L (10.${i}%)`,
-                                    output: `HbA1c ${51 + i} mmol/L (10.${i}%)`
-                                }))
-                            },
-                            {
-                                display: '61-70 mmol/L (12-14%)',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${61 + i} mmol/L (12.${i}%)`,
-                                    output: `HbA1c ${61 + i} mmol/L (12.${i}%)`
-                                }))
-                            },
-                            {
-                                display: '71-80 mmol/L (14-16%)',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${71 + i} mmol/L (14.${i}%)`,
-                                    output: `HbA1c ${71 + i} mmol/L (14.${i}%)`
-                                }))
-                            },
-                            {
-                                display: '81-90 mmol/L (16-18%)',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${81 + i} mmol/L (16.${i}%)`,
-                                    output: `HbA1c ${81 + i} mmol/L (16.${i}%)`
-                                }))
-                            },
-                            {
-                                display: '91-100 mmol/L (18-20%)',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${91 + i} mmol/L (18.${i}%)`,
-                                    output: `HbA1c ${91 + i} mmol/L (18.${i}%)`
-                                }))
-                            },
-                            {
-                                display: '101-110 mmol/L (20-22%)',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${101 + i} mmol/L (20.${i}%)`,
-                                    output: `HbA1c ${101 + i} mmol/L (20.${i}%)`
-                                }))
-                            },
-                            {
-                                display: '111-120 mmol/L (22-24%)',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${111 + i} mmol/L (22.${i}%)`,
-                                    output: `HbA1c ${111 + i} mmol/L (22.${i}%)`
-                                }))
-                            }
-                        ]
-                    },
-                    {
-                        display: 'T3',
-                        subOptions: [
-                            {
-                                display: '0-10 pmol/L',
-                                subOptions: Array.from({ length: 11 }, (_, i) => ({
-                                    display: `${0 + i} pmol/L`,
-                                    output: `T3 ${0 + i} pmol/L`
-                                }))
-                            },
-                            {
-                                display: '11-20 pmol/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${11 + i} pmol/L`,
-                                    output: `T3 ${11 + i} pmol/L`
-                                }))
-                            },
-                            {
-                                display: '21-30 pmol/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${21 + i} pmol/L`,
-                                    output: `T3 ${21 + i} pmol/L`
-                                }))
-                            }
-                        ]
-                    },
-                    {
-                        display: 'T4',
-                        subOptions: [
-                            {
-                                display: '0-10 pmol/L',
-                                subOptions: Array.from({ length: 11 }, (_, i) => ({
-                                    display: `${0 + i} pmol/L`,
-                                    output: `T4 ${0 + i} pmol/L`
-                                }))
-                            },
-                            {
-                                display: '11-20 pmol/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${11 + i} pmol/L`,
-                                    output: `T4 ${11 + i} pmol/L`
-                                }))
-                            },
-                            {
-                                display: '21-30 pmol/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${21 + i} pmol/L`,
-                                    output: `T4 ${21 + i} pmol/L`
-                                }))
-                            },
-                            {
-                                display: '31-40 pmol/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${31 + i} pmol/L`,
-                                    output: `T4 ${31 + i} pmol/L`
-                                }))
-                            },
-                            {
-                                display: '41-50 pmol/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${41 + i} pmol/L`,
-                                    output: `T4 ${41 + i} pmol/L`
-                                }))
-                            }
-                        ]
-                    },
-                    {
-                        display: 'TSH',
-                        subOptions: [
-                            {
-                                display: '0-10 mU/L',
-                                subOptions: Array.from({ length: 11 }, (_, i) => ({
-                                    display: `${0 + i} mU/L`,
-                                    output: `TSH ${0 + i} mU/L`
-                                }))
-                            },
-                            {
-                                display: '11-20 mU/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${11 + i} mU/L`,
-                                    output: `TSH ${11 + i} mU/L`
-                                }))
-                            },
-                            {
-                                display: '21-30 mU/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${21 + i} mU/L`,
-                                    output: `TSH ${21 + i} mU/L`
-                                }))
-                            },
-                            {
-                                display: '31-40 mU/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${31 + i} mU/L`,
-                                    output: `TSH ${31 + i} mU/L`
-                                }))
-                            },
-                            {
-                                display: '41-50 mU/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${41 + i} mU/L`,
-                                    output: `TSH ${41 + i} mU/L`
-                                }))
-                            },
-                            {
-                                display: '51-60 mU/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${51 + i} mU/L`,
-                                    output: `TSH ${51 + i} mU/L`
-                                }))
-                            },
-                            {
-                                display: '61-70 mU/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${61 + i} mU/L`,
-                                    output: `TSH ${61 + i} mU/L`
-                                }))
-                            },
-                            {
-                                display: '71-80 mU/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${71 + i} mU/L`,
-                                    output: `TSH ${71 + i} mU/L`
-                                }))
-                            },
-                            {
-                                display: '81-90 mU/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${81 + i} mU/L`,
-                                    output: `TSH ${81 + i} mU/L`
-                                }))
-                            },
-                            {
-                                display: '91-100 mU/L',
-                                subOptions: Array.from({ length: 10 }, (_, i) => ({
-                                    display: `${91 + i} mU/L`,
-                                    output: `TSH ${91 + i} mU/L`
-                                }))
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
     
 ];
 const PlanInnkirtla = [
@@ -23028,7 +22894,8 @@ const PlanMeðganga = [
                                     
                                 ]
                             },
-                            { display: 'Uptodate - Mastitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/lactational-mastitis' }
+                            { display: 'Uptodate - Mastitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/lactational-mastitis' },
+                            { display: 'Mastitis - Leiðbeiningar ÞÍH', type: 'hyperlink', url: 'https://throunarmidstod.is/library/contentfiles/Brjóstabólga%20-%20Mastitis%20-.pdf' }
                             
                         ]
                     }
@@ -31407,14 +31274,20 @@ function loadPage(page) {
         const symptomsSection = createEinkenniSection(SymptomsAnkle);
         const examsSection = createSkodunSection(ExamsAnkle);
         const planSection = createPlanSection(PlanAnkle);
+        const habitsSection = createHabitsSection(Habits);
+        const lifsmorkSection = createLifsmorkSection(LifsmorkData);
+        const ofnaemiSection = createOfnaemiSection(OfnaemiData);
 
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column';
         leftColumn.appendChild(symptomsSection);
+        leftColumn.appendChild(habitsSection);
+        leftColumn.appendChild(ofnaemiSection);
 
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column';
         middleColumn.appendChild(examsSection);
+        middleColumn.appendChild(lifsmorkSection);
 
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column';
