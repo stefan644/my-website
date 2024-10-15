@@ -8,6 +8,7 @@ const timalengdButton = {
             display: 'Klst',
             subOptions: [
                 { display: 'Núna', output: 'Einkenni byrjuðu rétt í þessu' },
+                { display: 'Nokkrar', output: 'Einkenni byrjuðu fyrir nokkrum klukkustundum' },
                 { display: '<30 mín', output: 'Einkenni byrjuðu fyrir minna en hálftíma' },
                 { display: '30 mín - 1klst', output: 'Einkenni byrjuðu fyrir innan við klst' },
                 { display: '2 klst>', output: 'Einkenni byrjuðu fyrir u.þ.b. 2 klst síðan' },
@@ -22,7 +23,7 @@ const timalengdButton = {
                 { display: '11 klst', output: 'Einkenni byrjuðu fyrir u.þ.b. 11 klst síðan' },
                 { display: '12 klst', output: 'Einkenni byrjuðu fyrir u.þ.b. 12 klst síðan' }
             ],
-            cancelText: ''
+            onRightClickOutput: 'Einkenni byrjuðu fyrir nokkrum klukkustundum'
         },
         {
             display: 'Dagar',
@@ -32,9 +33,13 @@ const timalengdButton = {
                 { display: '3d', output: '3d saga' },
                 { display: '4d', output: '4d saga' },
                 { display: '5d', output: '5d saga' },
-                { display: '6d', output: '6d saga' }
+                { display: '6d', output: '6d saga' },
+                { display: '7d', output: '6d saga' },
+                { display: '8d', output: '6d saga' },
+                { display: '9d', output: '6d saga' },
+                { display: '10d', output: '6d saga' }
             ],
-            cancelText: ''
+            onRightClickOutput: 'Nokkra daga saga'
         },
         {
             display: 'Vikur',
@@ -44,10 +49,15 @@ const timalengdButton = {
                 { display: '1v', output: '1 vikna saga' },
                 { display: '1,5v', output: '1,5 vikna saga' },
                 { display: '2v', output: '2 vikna saga' },
-                { display: '3v', output: '3 vikna saga' }
+                { display: '3v', output: '3 vikna saga' },
+                { display: '4v', output: '3 vikna saga' },
+                { display: '5v', output: '3 vikna saga' },
+                { display: '6v', output: '3 vikna saga' },
+                { display: '7v', output: '3 vikna saga' },
+                { display: '8v', output: '3 vikna saga' }
                 
             ],
-            cancelText: ''
+            onRightClickOutput: 'Nokkra vikna saga'
         },
         {
             display: 'Mánuðir',
@@ -62,7 +72,7 @@ const timalengdButton = {
                 { display: '6m', output: '6 mán saga' }
                 
             ],
-            cancelText: ''
+            onRightclickoutput: 'Nokkra mánaða saga'
         },
         {
             display: 'Ár',
@@ -73,10 +83,10 @@ const timalengdButton = {
                 { display: 'Nokkur ár', output: 'Verið í nokkur ár' },
                 { display: 'Mörg ár', output: 'Verið í mörg ár' }
             ],
-            cancelText: ''
+            onRightClickOutput: 'Einhverja ára saga'
         }
     ],
-    cancelText: ''
+    onRightClickOutput: 'Nokkra daga saga'
 };
 const FyrriNoturButton ={
     display: 'Fyrri nótur',
@@ -125,6 +135,7 @@ const EndurmatButton ={
                 subOptions: [
                     { display: 'Eftir þörfum', output: 'Endurmat eftir þörfum' },
                     { display: 'Ef versnar eða lagast ekki', output: 'Endurmat ef versnar eða lagast ekki' },
+                    { display: 'Fær tíma í endurmat', output: 'Fær tíma í endurmat' },
                     {
                         display: 'Ráðgerð endurkoma',
                         subOptions: [
@@ -275,7 +286,8 @@ const Meðferðarlengd ={
                 { display: '10-14 dagar', output: 'Meðferðarlengd 10-14 dagar' },
                 { display: '1-2 vikur', output: 'Meðferðarlengd 1-2 vikur' },
                 { display: '2-3 vikur', output: 'Meðferðarlengd 2-3 vikur' },
-                { display: '3-4 vikur', output: 'Meðferðarlengd 3-4 vikur' }
+                { display: '3-4 vikur', output: 'Meðferðarlengd 3-4 vikur' },
+                { display: '4-6 vikur', output: 'Meðferðarlengd 4-6 vikur' }
             ]
         }
     ]
@@ -2494,13 +2506,30 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Flensueinkenni', 'Hálssærindi'],
+        display: ['Flensueinkenni', 'Kvef'],
         options: [
             {
                 display: 'Flensueinkenni',
                 output: 'Flensueinkenni',
                 onRightClickOutput: 'Ekki flensueinkenni'
             },
+            {
+                display: 'Kvef',
+                subOptions: [
+                    { display: 'NOS', output: 'Kvefeinkenni' },
+                    { display: 'Vægt', output: 'Væg kvefeinkenni' },
+                    { display: 'Mikið', output: 'Mikil kvefeinkenni' }
+                ],
+                onRightClickOutput: 'Ekki kvef'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hálssærindi', 'Hæsi', 'Munnangur'],
+        options: [
+            
             {
                 display: 'Hálssærindi',
                 subOptions: [
@@ -2510,58 +2539,7 @@ const SymptomsViral = [
                     { display: 'Veruleg. Raddbreyting. Getur varla kyngt', output: 'Verulega mikil hálssærindi. Lýsir raddbreytingu. Getur varla kyngt munnvatni' }
                 ],
                 onRightClickOutput: 'Neitar hálssærindum'
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Kvef', 'Hósti', 'Höfuðverkur'],
-        options: [
-            {
-                display: 'Kvef',
-                output: 'Kvef',
-                onRightClickOutput: 'Ekki kvef'
             },
-            {
-                display: 'Hósti',
-                subOptions: [
-                    { display: 'NOS', output: 'Hósti' },
-                    { display: 'Blautur', output: 'Blautur hósti' },
-                    { display: 'Þurr', output: 'Þurr hósti' },
-                    { display: 'Slæmur, heldur fyrir vöku', output: 'Slæmur hósti. Heldur fyrir vöku á næturna' }
-                ],
-                onRightClickOutput: 'Ekki verið með hósta'
-            },
-            {
-                display: 'Höfuðverkur',
-                output: 'Lýsir höfuðverk',
-                onRightClickOutput: 'Neitar höfuðverk'
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Takverkur', 'Slappleiki'],
-        options: [
-            {
-                display: 'Takverkur',
-                output: 'Fundið fyrir takverk',
-                onRightClickOutput: 'Ekki fundið fyrir takverk'
-            },
-            {
-                display: 'Slappleiki',
-                output: 'Slappleiki',
-                onRightClickOutput: 'Ekki áberandi slappleiki'
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Hæsi', 'Munnangur'],
-        options: [
             {
                 display: 'Hæsi',
                 output: 'Hæsi',
@@ -2576,6 +2554,46 @@ const SymptomsViral = [
                     { display: 'Svæsinn, getur lítið borðað', output: 'Svæsinn munnangur. Hefur lítið getað borðað vegna þessa' }
                 ],
                 onRightClickOutput: 'Ekki munnangur'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hósti', 'Takverkur'],
+        options: [
+            
+            {
+                display: 'Hósti',
+                subOptions: [
+                    { display: 'NOS', output: 'Hósti' },
+                    { display: 'Blautur', output: 'Blautur hósti' },
+                    { display: 'Þurr', output: 'Þurr hósti' },
+                    { display: 'Slæmur, heldur fyrir vöku', output: 'Slæmur hósti. Heldur fyrir vöku á næturna' }
+                ],
+                onRightClickOutput: 'Ekki verið með hósta'
+            },
+            {
+                display: 'Takverkur',
+                output: 'Fundið fyrir takverk',
+                onRightClickOutput: 'Ekki fundið fyrir takverk'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Slappleiki', 'Höfuðverkur'],
+        options: [
+            {
+                display: 'Slappleiki',
+                output: 'Slappleiki',
+                onRightClickOutput: 'Ekki áberandi slappleiki'
+            },
+            {
+                display: 'Höfuðverkur',
+                output: 'Lýsir höfuðverk',
+                onRightClickOutput: 'Neitar höfuðverk'
             }
         ]
     },
@@ -2937,7 +2955,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hitalækkandi', 'Verkjalyf', 'Næring'],
+        display: ['Hitalækkandi', 'Verkjalyf', 'Hóstastillandi'],
         options: [
             {
                 display: 'Hitalækkandi',
@@ -2983,6 +3001,58 @@ const SymptomsViral = [
                 ],
                 onRightClickOutput: 'Ekki notað verkjalyf'
             },
+            {
+                display: 'Hóstastillandi',
+                subOptions: [
+                    {
+                        display: 'Lausasölu', 
+                        subOptions: [
+                            {
+                                display: 'Dugað vel', 
+                                output: 'Hóstastillandi úr lausasölu dugað vel við hósta'
+                            },
+                            {
+                                display: 'Dugað illa', 
+                                output: 'Hóstastillandi úr lausasölu ekki dugað nægilega vel við hósta'
+                            }
+                        ], onRightClickOutput: 'Hóstastillandi úr lausasölu ekki dugað nægilega vel við hósta'
+                    },
+                    {
+                        display: 'Parkódín', 
+                        subOptions: [
+                            {
+                                display: 'Dugað vel', 
+                                output: 'Tekið parkódín við hósta. Slær vel á'
+                            },
+                            {
+                                display: 'Dugað illa', 
+                                output: 'Tekið parkódín við hósta. Ekki slegið nægilega vel á'
+                            }
+                        ], onRightClickOutput: 'Tekið parkódín við hósta. Ekki slegið nægilega vel á'
+                    },
+                    {
+                        display: 'SEM mixtúra', 
+                        subOptions: [
+                            {
+                                display: 'Dugað vel', 
+                                output: 'Tekið SEM mixtúru við hósta. Slær vel á'
+                            },
+                            {
+                                display: 'Dugað illa', 
+                                output: 'Tekið SEM mixtúru við hósta. Ekki slegið nægilega vel á'
+                            }
+                        ], onRightClickOutput: 'Tekið SEM mixtúru við hósta. Ekki slegið nægilega vel á'
+                    }
+                ],
+                onRightClickOutput: 'Ekki notað hóstastillandi'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Næring'],
+        options: [
             Næring
         ]
     },
@@ -3740,6 +3810,12 @@ const PlanViral = [
                             { display: 'Uptodate - Uppvinnsla á krónískum hósta hjá börnum', type: 'hyperlink', url: 'https://www.uptodate.com/contents/approach-to-chronic-cough-in-children' }
                             
                         ]
+                    },
+                    {
+                        display: 'Leiðbeiningar til skjólstæðings',
+                            subOptions:[
+                                
+                            ]
                     }
                 ]
             },
@@ -3792,18 +3868,24 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Bronchitis' },
                     { display: 'Grunur', output: 'Grunur um bronchitis' },
-                    { display: 'Hlekkir', 
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Leiðbeiningar til skjólstæðings',
-                                subOptions: [
-                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bronchitis-in-adults-the-basics' },
-                                    { display: 'Uptodate - Beyond the basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bronchitis-in-adults-beyond-the-basics' }
-                                    
-                                ]
-                            },
+                            { display: 'Grunur, ráð, endurmat ef lagast ekki', output: 'Berkjubólga. Veiti ráðleggingar. Tekur yfirleitt 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi. Endurmat eftir þörfum' },
+                            { display: 'Slæm einkenni, >6 vikur, empírísk sýklalyfjameðferð, endurmat ef lagast ekki', output: 'Berkjubólga. Veiti ráðleggingar. Þar sem einkenni slæm og staðið svona lengi ákveðið að reyna empírískan sýklalyfjakúr. Hefur samband ef lagast ekki' }
+                        ]
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+
+                            { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bronchitis-in-adults-the-basics' },
+                            { display: 'Uptodate - Beyond the basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bronchitis-in-adults-beyond-the-basics' }
+                            
+                        ]
+                    },
+                    { display: 'Fræðsluefni og hjálpargögn', 
+                        subOptions: [
                             { display: 'Uptodate - Greining og meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bronchitis-in-adults' },
                             { display: 'ÞÍH - Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/brad-berkjubolga-og-lungnabolga-hja-fullordnum-og-bornum/' }
-                            
                         ]
                     }
                 ]
@@ -3835,7 +3917,7 @@ const PlanViral = [
                     { display: 'Grunur', output: 'Grunur um astma' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Fyrsta greining', output: 'Grunur um astma. Ráðlegg spírómetríu til nánari greininga. Fær ventolin til notkunar PN' }
+                            { display: 'Grunur, spírómetría, ventolin pn, endurmat í framhaldi', output: 'Grunur um astma. Ráðlegg spírómetríu. Hefjum meðferð með ventolin til reynslu. Mikilvægt að taki ekki ventolin sama dag og fer í rannsóknina (a.m.k. 4-6klst þurfa að líða á milli). Endurmat í framhaldi' }
                         ]
                     }
                 ]
@@ -3926,15 +4008,22 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Eyrnabólga' },
                     { display: 'Grunur', output: 'Grunur um eyrnabólgu' },
-                    { display: 'Hlekkir', 
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Leiðbeiningar til skjólstæðings',
-                                subOptions: [
-                                    { display: 'Uptodate - Basics börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ear-infections-in-children-the-basics' },
-                                    { display: 'Uptodate - Beyond the basics börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ear-infections-otitis-media-in-children-beyond-the-basics' },
-                                    { display: 'Uptodate - Rofin hljóðhimna börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ruptured-eardrum-the-basics' }
-                                ]
-                            },
+                            { display: 'Sýklalyf, endurmat ef lagast ekki', output: 'Otitis media. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Rofin himna, sýklalyf, endurmat eftir 3-4 vikur', output: 'Otitis media. Grunur um rof á hljóðhimnu. Ráðlegg sýklalyfjameðferð. Ráðlagt endurmat eftir 3-4 vikur til að staðfesta að hljóðhimna hafi gróið. Endurmat fyrr ef lagast ekki eða versnar' },
+                            { display: 'Sýkladropar, endurmat ef lagast ekki', output: 'Otitis media. Ráðlegg sýkladropa. Endurmat ef lagast ekki' }
+                        ]
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Uptodate - Basics börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ear-infections-in-children-the-basics' },
+                            { display: 'Uptodate - Beyond the basics börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ear-infections-otitis-media-in-children-beyond-the-basics' },
+                            { display: 'Uptodate - Rofin hljóðhimna börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ruptured-eardrum-the-basics' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
                             { display: 'Uptodate - Greining barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-otitis-media-in-children-clinical-manifestations-and-diagnosis' },
                             { display: 'Uptodate - Meðferð barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-otitis-media-in-children-treatment' },
                             { display: 'Uptodate - Greining og meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-otitis-media-in-adults' },
@@ -3955,7 +4044,6 @@ const PlanViral = [
                     },
                     { display: 'Hlekkir', 
                         subOptions: [
-                            
                             { display: 'Uptodate - Mat á eyrnaverk börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-earache-in-children' }
                         ]
                     }
@@ -3967,9 +4055,10 @@ const PlanViral = [
                     { display: 'NOS', output: 'Eyrnamergur' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Merglosandi - Endurkoma í skolun', output: 'Eyrnamergur. Ráðlegg merglosandi dropa. Endurkoma í merghreinsun' },
-                            { display: 'Merghreinsun hjá mér', output: 'Eyrnamergur. Spúla hlustir. Gengur vel. Endurmat pn' },
-                            { display: 'Merghreinsun hjá hjúkrunarfræðingi', output: 'Eyrnamergur. Fær tíma hjá hjúkrunarfræðingi í merghreinsun' }
+                            { display: 'Merglosandi, endurkoma í hreinsun', output: 'Eyrnamergur. Ráðlegg merglosandi dropa. Endurkoma í merghreinsun' },
+                            { display: 'Merghreinsun á stofu', output: 'Eyrnamergur. Spúla hlustir. Endurmat pn' },
+                            { display: 'Mergur, bóka hjá hjkfr', output: 'Eyrnamergur. Fær tíma hjá hjúkrunarfræðingi í merghreinsun' },
+                            { display: 'Mergur, fer yfir til hjkfr', output: 'Eyrnamergur. Fer yfir til vakthafandi hjúkrunarfræðings í merghreinsun. Endurmat pn' }
                         ]
                     }
                 ]
@@ -3979,7 +4068,12 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Otitis externa' },
                     { display: 'Grunur', output: 'Grunur um otitis externa' },
-                    { display: 'Fullmótað plan', output: 'Grunur um otitis externa. Veiti ráðleggingar og fræðslu. Set HTP dropa í gáttina. Endurmat ef versnar eða lagast ekki' }
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Otitis externa, fræðsla, sýkladropar, re pn', output: 'Grunur um otitis externa. Veiti ráðleggingar og fræðslu. Set sýkladropa í gáttina. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Langvarandi, meðferðarresistant, HNE læknir', output: 'Otitis externa. Löng saga og gengið illa að meðhöndla. Ráðlegg mat HNE læknis' }
+                        ]
+                    }
                 ]
             }
         ]
@@ -4199,7 +4293,7 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Meðferðarlengd', 'Ef lagast ekki'],
+        display: ['Meðferðarlengd', 'Leysir út ef lagast ekki'],
         options: [
             Meðferðarlengd,
             { display: 'Ef lagast ekki', output: 'Leysir út ef fer ekki skánandi á næstu dögum' }
@@ -8225,26 +8319,34 @@ const PlanHeart = [
             {
                 display: 'Háþrýstingur',
                 subOptions: [
-                    { display: 'Háþrýstingur', output: 'Háþrýstingur' },
-                    { display: 'Háþrýstingur + heimamælingar góðar', output: 'Háþrýstingur. Ásættanlegar heimamælingar' },
-                    { display: 'Háþrýstingur + hækkaður á stofu', output: 'Háþrýstingur. Mælist of hár á stofu' },
+                    { display: 'Greining', output: 'Háþrýstingur' },
+                    { display: 'Grunur', output: 'Grunur um háþrýsting' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Fyrsta greining, rannsóknir, lyf og endurkoma', output: 'Háþrýstingur. Fær tíma í hjartalínurit, þvagprufu og blóðrannsókn. Hefjum blóðþrýstingslækkandi meðferð. Fær nýjan tíma til eftirfylgdar í framhaldi til að fara yfir rannsóknir og meta meðferðarárangur.' } 
                         ]    
                     },
-                    { display: 'Hlekkir', 
+                    { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
-                            { display: 'Leiðbeiningar til skjólstæðings',
-                                subOptions: [
-                                    { display: 'Uptodate', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-hypertension-in-adults#H16080896' }
-                                    
-                                ]
+                            {
+                                display: 'Fyrsta greining (heimamælingar, blóðprufa, þvagprufa, hjartalínurit)',
+                                output: '\n\n'
+                                    + 'Ráðlegg eftirfarandi vegna uppvinnslu á háþrýstingi:\n'
+                                    + '- Heimamælingar. Mikilvægt að eigir góðan upphandleggsmæli. Úlnliðsmælar gefa ónákvæm gildi. '
+                                    + 'Mælir blóðþrýstinginn eftir 5-10 mínútur í hvíld og skrifar niður á blað. 2-3 mælingar á dag nokkrum dögum fyrir næsta tíma.\n'
+                                    + '- Færð tíma hjá hjúkrunarfræðingi kl X þann X til að taka hjartalínurit og stixa þvag. Kemur með þvagprufu með þér. '
+                                    + 'Getur keypt þvagprufuglas í apóteki.\n'
+                                    + '- Blóðrannsókn. Þarft að mæta fastandi. Mátt ekki borða neitt sem inniheldur hitaeiningar a.m.k. 8klst fyrir rannsókn. Vatn er í lagi. Bóka þig þann X kl X.\n'
+                                    + '- Endurkoma. Færð tíma í endurkomu þann X kl X.'
                             },
+                            { display: 'Uptodate', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-hypertension-in-adults#H16080896' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
                             { display: 'Uptodate - Greining og meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-hypertension-in-adults' },
-                            { display: 'Uptodate - Meðferðarval', type: 'hyperlink', url: 'https://www.uptodate.com/contents/choice-of-drug-therapy-in-primary-essential-hypertension#H3514635944' }
-                            
-                            
+                            { display: 'Uptodate - Meðferðarval', type: 'hyperlink', url: 'https://www.uptodate.com/contents/choice-of-drug-therapy-in-primary-essential-hypertension#H3514635944' },
+                            { display: 'ÞÍH - Greining og lyfjaval', type: 'hyperlink', url: 'https://throunarmidstod.is/svid-thih/lyfjasvid/leidbeiningar-um-lyfjaval/hathrystingur/' }
                         ]
                     }
                     
@@ -8380,12 +8482,12 @@ const PlanHeart = [
                 display: 'Hjartabilun', 
                 subOptions: [
                     {
-                        display: 'Grunur um',
-                        output: 'Grunur um hjartabilun'
+                        display: 'Greining',
+                        output: 'Hjartabilun'
                     },
                     {
-                        display: 'Hjartabilun',
-                        output: 'Hjartabilun'
+                        display: 'Grunur',
+                        output: 'Grunur um hjartabilun'
                     },
                     {
                         display: 'NYHA',
@@ -8394,6 +8496,19 @@ const PlanHeart = [
                             { display: 'NYHA II', output: 'Hjartabilun. NYHA II: Væg einkenni við venjulega áreynslu' },
                             { display: 'NYHA III', output: 'Hjartabilun. NYHA III: Miðlungs einkenni við litla áreynslu' },
                             { display: 'NYHA IV', output: 'Hjartabilun. NYHA IV: Alvarleg einkenni í hvíld' }
+                        ]
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            {
+                                
+                            },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'ÞÍH - Skilgreining og lyfjaval', type: 'hyperlink', url: 'https://throunarmidstod.is/svid-thih/lyfjasvid/leidbeiningar-um-lyfjaval/hjartabilun/' }
                         ]
                     }
                 ],
@@ -9160,32 +9275,10 @@ const PlanHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Endurmat', 'Eftirfylgd', 'Leiðbeiningar til skjólstæðings'],
+        display: ['Endurmat', 'Eftirfylgd'],
         options: [
             EndurmatButton,
-            EftirfylgdButton,
-            {
-                display: 'Leiðbeiningar til skjólstæðings',
-                subOptions: [
-                    {
-                        display: 'Háþrýstingur',
-                        subOptions: [
-                            {
-                                display: 'Fyrsta greining (heimamælingar, blóðprufa, þvagprufa, hjartalínurit)',
-                                output: '\n\n'
-                                    + 'Ráðlegg eftirfarandi vegna uppvinnslu á háþrýstingi:\n'
-                                    + '- Heimamælingar. Mikilvægt að eigir góðan upphandleggsmæli. Úlnliðsmælar gefa ónákvæm gildi. '
-                                    + 'Mælir blóðþrýstinginn eftir 5-10 mínútur í hvíld og skrifar niður á blað. 2-3 mælingar á dag nokkrum dögum fyrir næsta tíma.\n'
-                                    + '- Færð tíma hjá hjúkrunarfræðingi kl X þann X til að taka hjartalínurit og stixa þvag. Kemur með þvagprufu með þér. '
-                                    + 'Getur keypt þvagprufuglas í apóteki.\n'
-                                    + '- Blóðrannsókn. Þarft að mæta fastandi. Mátt ekki borða neitt sem inniheldur hitaeiningar a.m.k. 8klst fyrir rannsókn. Vatn er í lagi. Bóka þig þann X kl X.\n'
-                                    + '- Endurkoma. Færð tíma í endurkomu þann X kl X.'
-                            }
-                        ]
-                    }
-                ]
-            }
-
+            EftirfylgdButton
         ]
     }
 ];
@@ -26683,10 +26776,13 @@ const Habits = [
             {
                 display: 'Áfengi',
                 subOptions: [
-                    
                     {
                         display: 'Drekkur áfengi',
                         output: 'Drekkur áfengi'
+                    },
+                    {
+                        display: 'Drekkur í hófi að eigin mati',
+                        output: 'Drekkur áfengi í hófi að eigin mati'
                     },
                     {
                         
