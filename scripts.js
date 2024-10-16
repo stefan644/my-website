@@ -977,6 +977,139 @@ const Næring = {
     ],
 };
 
+const HBA1c = {
+    display: 'HbA1c',
+    subOptions: [
+        {
+            display: '31-40 mmol/mol',
+            subOptions: [
+                { display: '31 mmol/mol (5.0%)', output: 'HbA1c 31 mmol/mol (5.0%)' },
+                { display: '32 mmol/mol (5.1%)', output: 'HbA1c 32 mmol/mol (5.1%)' },
+                { display: '33 mmol/mol (5.2%)', output: 'HbA1c 33 mmol/mol (5.2%)' },
+                { display: '34 mmol/mol (5.3%)', output: 'HbA1c 34 mmol/mol (5.3%)' },
+                { display: '36 mmol/mol (5.4%)', output: 'HbA1c 36 mmol/mol (5.4%)' },
+                { display: '37 mmol/mol (5.5%)', output: 'HbA1c 37 mmol/mol (5.5%)' },
+                { display: '38 mmol/mol (5.6%)', output: 'HbA1c 38 mmol/mol (5.6%)' },
+                { display: '39 mmol/mol (5.7%)', output: 'HbA1c 39 mmol/mol (5.7%)' },
+                { display: '40 mmol/mol (5.8%)', output: 'HbA1c 40 mmol/mol (5.8%)' }
+            ]
+        },
+        {
+            display: '41-50 mmol/mol',
+            subOptions: [
+                { display: '41 mmol/mol (5.9%)', output: 'HbA1c 41 mmol/mol (5.9%)' },
+                { display: '42 mmol/mol (6.0%)', output: 'HbA1c 42 mmol/mol (6.0%)' },
+                { display: '43 mmol/mol (6.1%)', output: 'HbA1c 43 mmol/mol (6.1%)' },
+                { display: '44 mmol/mol (6.2%)', output: 'HbA1c 44 mmol/mol (6.2%)' },
+                { display: '45 mmol/mol (6.3%)', output: 'HbA1c 45 mmol/mol (6.3%)' },
+                { display: '46 mmol/mol (6.4%)', output: 'HbA1c 46 mmol/mol (6.4%)' },
+                { display: '47 mmol/mol (6.5%)', output: 'HbA1c 47 mmol/mol (6.5%)' },
+                { display: '48 mmol/mol (6.6%)', output: 'HbA1c 48 mmol/mol (6.6%)' },
+                { display: '49 mmol/mol (6.7%)', output: 'HbA1c 49 mmol/mol (6.7%)' },
+                { display: '50 mmol/mol (6.8%)', output: 'HbA1c 50 mmol/mol (6.8%)' }
+            ]
+        },
+        {
+            display: '51-60 mmol/mol',
+            subOptions: [
+                { display: '51 mmol/mol (6.9%)', output: 'HbA1c 51 mmol/mol (6.9%)' },
+                { display: '53 mmol/mol (7.0%)', output: 'HbA1c 53 mmol/mol (7.0%)' },
+                { display: '54 mmol/mol (7.1%)', output: 'HbA1c 54 mmol/mol (7.1%)' },
+                { display: '55 mmol/mol (7.2%)', output: 'HbA1c 55 mmol/mol (7.2%)' },
+                { display: '56 mmol/mol (7.3%)', output: 'HbA1c 56 mmol/mol (7.3%)' },
+                { display: '57 mmol/mol (7.4%)', output: 'HbA1c 57 mmol/mol (7.4%)' },
+                { display: '58 mmol/mol (7.5%)', output: 'HbA1c 58 mmol/mol (7.5%)' },
+                { display: '60 mmol/mol (7.6%)', output: 'HbA1c 60 mmol/mol (7.6%)' }
+            ]
+        },
+        {
+            display: '61-70 mmol/mol',
+            subOptions: [
+                { display: '61 mmol/mol (7.7%)', output: 'HbA1c 61 mmol/mol (7.7%)' },
+                { display: '62 mmol/mol (7.8%)', output: 'HbA1c 62 mmol/mol (7.8%)' },
+                { display: '63 mmol/mol (7.9%)', output: 'HbA1c 63 mmol/mol (7.9%)' },
+                { display: '64 mmol/mol (8.0%)', output: 'HbA1c 64 mmol/mol (8.0%)' },
+                { display: '65 mmol/mol (8.1%)', output: 'HbA1c 65 mmol/mol (8.1%)' },
+                { display: '66 mmol/mol (8.2%)', output: 'HbA1c 66 mmol/mol (8.2%)' },
+                { display: '67 mmol/mol (8.3%)', output: 'HbA1c 67 mmol/mol (8.3%)' },
+                { display: '68 mmol/mol (8.4%)', output: 'HbA1c 68 mmol/mol (8.4%)' },
+                { display: '69 mmol/mol (8.5%)', output: 'HbA1c 69 mmol/mol (8.5%)' },
+                { display: '70 mmol/mol (8.6%)', output: 'HbA1c 70 mmol/mol (8.6%)' }
+            ]
+        },
+        {
+            display: '71-80 mmol/mol',
+            subOptions: [
+                { display: '71 mmol/mol (8.7%)', output: 'HbA1c 71 mmol/mol (8.7%)' },
+                { display: '72 mmol/mol (8.8%)', output: 'HbA1c 72 mmol/mol (8.8%)' },
+                { display: '74 mmol/mol (8.9%)', output: 'HbA1c 74 mmol/mol (8.9%)' },
+                { display: '75 mmol/mol (9.0%)', output: 'HbA1c 75 mmol/mol (9.0%)' },
+                { display: '76 mmol/mol (9.1%)', output: 'HbA1c 76 mmol/mol (9.1%)' },
+                { display: '77 mmol/mol (9.2%)', output: 'HbA1c 77 mmol/mol (9.2%)' },
+                { display: '78 mmol/mol (9.3%)', output: 'HbA1c 78 mmol/mol (9.3%)' },
+                { display: '79 mmol/mol (9.4%)', output: 'HbA1c 79 mmol/mol (9.4%)' },
+                { display: '80 mmol/mol (9.5%)', output: 'HbA1c 80 mmol/mol (9.5%)' }
+            ]
+        },
+        {
+            display: '81-90 mmol/mol',
+            subOptions: [
+                { display: '81 mmol/mol (9.6%)', output: 'HbA1c 81 mmol/mol (9.6%)' },
+                { display: '83 mmol/mol (9.7%)', output: 'HbA1c 83 mmol/mol (9.7%)' },
+                { display: '84 mmol/mol (9.8%)', output: 'HbA1c 84 mmol/mol (9.8%)' },
+                { display: '85 mmol/mol (9.9%)', output: 'HbA1c 85 mmol/mol (9.9%)' },
+                { display: '86 mmol/mol (10.0%)', output: 'HbA1c 86 mmol/mol (10.0%)' },
+                { display: '87 mmol/mol (10.1%)', output: 'HbA1c 87 mmol/mol (10.1%)' },
+                { display: '88 mmol/mol (10.2%)', output: 'HbA1c 88 mmol/mol (10.2%)' },
+                { display: '89 mmol/mol (10.3%)', output: 'HbA1c 89 mmol/mol (10.3%)' },
+                { display: '90 mmol/mol (10.4%)', output: 'HbA1c 90 mmol/mol (10.4%)' }
+            ]
+        },
+        {
+            display: '91-100 mmol/mol',
+            subOptions: [
+                { display: '91 mmol/mol (10.5%)', output: 'HbA1c 91 mmol/mol (10.5%)' },
+                { display: '92 mmol/mol (10.6%)', output: 'HbA1c 92 mmol/mol (10.6%)' },
+                { display: '93 mmol/mol (10.7%)', output: 'HbA1c 93 mmol/mol (10.7%)' },
+                { display: '94 mmol/mol (10.8%)', output: 'HbA1c 94 mmol/mol (10.8%)' },
+                { display: '95 mmol/mol (10.9%)', output: 'HbA1c 95 mmol/mol (10.9%)' },
+                { display: '96 mmol/mol (11.0%)', output: 'HbA1c 96 mmol/mol (11.0%)' },
+                { display: '97 mmol/mol (11.1%)', output: 'HbA1c 97 mmol/mol (11.1%)' },
+                { display: '98 mmol/mol (11.2%)', output: 'HbA1c 98 mmol/mol (11.2%)' },
+                { display: '99 mmol/mol (11.3%)', output: 'HbA1c 99 mmol/mol (11.3%)' },
+                { display: '100 mmol/mol (11.4%)', output: 'HbA1c 100 mmol/mol (11.4%)' }
+            ]
+        },
+        {
+            display: '101-110 mmol/mol',
+            subOptions: [
+                { display: '101 mmol/mol (11.5%)', output: 'HbA1c 101 mmol/mol (11.5%)' },
+                { display: '103 mmol/mol (11.6%)', output: 'HbA1c 103 mmol/mol (11.6%)' },
+                { display: '104 mmol/mol (11.7%)', output: 'HbA1c 104 mmol/mol (11.7%)' },
+                { display: '106 mmol/mol (11.8%)', output: 'HbA1c 106 mmol/mol (11.8%)' },
+                { display: '107 mmol/mol (11.9%)', output: 'HbA1c 107 mmol/mol (11.9%)' },
+                { display: '108 mmol/mol (12.0%)', output: 'HbA1c 108 mmol/mol (12.0%)' },
+                { display: '109 mmol/mol (12.1%)', output: 'HbA1c 109 mmol/mol (12.1%)' },
+                { display: '110 mmol/mol (12.2%)', output: 'HbA1c 110 mmol/mol (12.2%)' }
+            ]
+        },
+        {
+            display: '111-120 mmol/mol',
+            subOptions: [
+                { display: '111 mmol/mol (12.3%)', output: 'HbA1c 111 mmol/mol (12.3%)' },
+                { display: '112 mmol/mol (12.4%)', output: 'HbA1c 112 mmol/mol (12.4%)' },
+                { display: '113 mmol/mol (12.5%)', output: 'HbA1c 113 mmol/mol (12.5%)' },
+                { display: '114 mmol/mol (12.6%)', output: 'HbA1c 114 mmol/mol (12.6%)' },
+                { display: '115 mmol/mol (12.7%)', output: 'HbA1c 115 mmol/mol (12.7%)' },
+                { display: '116 mmol/mol (12.8%)', output: 'HbA1c 116 mmol/mol (12.8%)' },
+                { display: '117 mmol/mol (12.9%)', output: 'HbA1c 117 mmol/mol (12.9%)' },
+                { display: '119 mmol/mol (13.0%)', output: 'HbA1c 119 mmol/mol (13.0%)' },
+                { display: '120 mmol/mol (13.1%)', output: 'HbA1c 120 mmol/mol (13.1%)' }
+            ]
+        }
+    ]
+};
+
 // Hlekkir (Links)
 const Hlekkir = [
     {
@@ -3848,14 +3981,32 @@ const PlanViral = [
                     subOptions: [
                         { display: 'Greining', output: 'Lungnabólga' },
                         { display: 'Grunur', output: 'Grunur um lungnabólgu' },
+                        { display: 'Fullmótuð plön', 
+                            subOptions: [
+                                { display: 'Grunur, sýklalyf, endurmat ef lagast ekki', output: 'Grunur um lungnabólgu. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki' },
+                                { display: 'Get ekki útilokað, myndataka+blóðprufur, sýklalyf í gáttina, símaeftirfylgd', output: 'Get ekki útilokað m.a. lungnabólgu. Ráðlegg blóðprufur og lungnamynd. Set sýklalyf í gáttina, leysir út ef versnandi einkenni á meðan beðið eftir niðurstöðum. Símatími til eftirfylgdar. Ef mikil versnun þá endurmat fyrr eða bráðamóttaka' },
+                                { display: 'Grunur, treysti ekki heim, bráðamóttaka', output: 'Grunur um lungnabólgu. Treysti skjólstæðing ekki í outpatient meðferð. Fer á bráðamóttöku' }
+                            ]
+                        },
+                        { display: 'Leiðbeiningar til skjólstæðings',
+                            subOptions: [
+    
+                                { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/pneumonia-in-adults-the-basics' },
+                                { display: 'Uptodate - Beyond the basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/pneumonia-in-adults-beyond-the-basics' }
+                                
+                            ]
+                        },
                         { display: 'Hlekkir', 
                             subOptions: [
-                                { display: 'ÞÍH - Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/brad-berkjubolga-og-lungnabolga-hja-fullordnum-og-bornum/' }
+                                { display: 'ÞÍH - Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/brad-berkjubolga-og-lungnabolga-hja-fullordnum-og-bornum/' },
+                                { display: 'Uptodate - Greining og meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-community-acquired-pneumonia-in-adults' },
+                                { display: 'CURB-65', type: 'hyperlink', url: 'https://www.mdcalc.com/calc/324/curb-65-score-pneumonia-severity' }
                                 
                             ]
                         }
+                        
                     ],
-                }
+            }
         ]
     },
     {
@@ -3894,7 +4045,29 @@ const PlanViral = [
                 display: 'Bronchiolitis',
                 subOptions: [
                     { display: 'Greining', output: 'Bronchiolitis' },
-                    { display: 'Grunur', output: 'Grunur um bronchiolitis' }
+                    { display: 'Grunur', output: 'Grunur um bronchiolitis' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Grunur, mild einkenni, ráðleggingar og stuðningsmeðferð, endurmat ef versnar annars re pn', output: 'Grunur um bronchiolitis. Algengast að RSV valdi. Mild einkenni. Ráðlegg stuðningsmeðferð. Passa að barnið drekki vel. Nota nefsugu til að fjarlægja slím úr nös. Má nota hitalækkandi pn. Endurmat ef einkenni versna eða lagast ekki á næstu dögum. Engin eftirfylgd ef skánandi' },
+                            { display: 'Grunur, >5 stig á Respiratory Severity Score, bmt barna', output: 'Grunur um bronchiolitis. Laslega útlítandi. Fær >5 stig á respiratory severity score. Ráðlegg nánara mat á bmt barna' }
+                    
+                        ]
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+
+                            { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/bronchiolitis-and-rsv-in-babies-and-children-the-basics' },
+                            { display: 'Uptodate - Beyond the basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/bronchiolitis-and-rsv-in-infants-and-children-beyond-the-basics' }
+                            
+                        ]
+                    },
+                    { display: 'Fræðsluefni og hjálpargögn', 
+                        subOptions: [
+                            { display: 'Uptodate - Greining barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/bronchiolitis-in-infants-and-children-clinical-features-and-diagnosis' },
+                            { display: 'Uptodate - Meðferð barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/bronchiolitis-in-infants-and-children-treatment-outcome-and-prevention' },
+                            { display: 'Uptodate - Respiratory Severity Score', type: 'hyperlink', url: 'https://www.uptodate.com/contents/image?imageKey=PEDS%2F143449&topicKey=PEDS%2F6020' }
+                        ]
+                    }
                 ]
             },
             {
@@ -3906,6 +4079,20 @@ const PlanViral = [
                         subOptions: [
                             { display: 'Sýklalyf', output: 'Grunur um versnun á COPD. Set sýklalyf í gáttina. Endurmat ef lagast ekki' },
                             { display: 'Sýkalyf og sterar', output: 'Grunur um versnun á COPD. Ráðlegg sýklalyf og stuttan sterakúr. Set hvoru tveggja í gáttina. Endurmat ef lagast ekki' }
+                        ]
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Uptodate - Beyond the basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/chronic-obstructive-pulmonary-disease-copd-treatments-beyond-the-basics' },   
+                            { display: 'Landspítali - Fræðslubæklingur um LLT', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Lyflaekningasvid/langvinn_lungnateppa-upplysingar_fyrir_sjuklinga_og_adstandendur_2022.pdf' },
+                            
+                        ]
+                    },
+                    { display: 'Fræðsluefni og hjálpargögn', 
+                        subOptions: [
+                            { display: 'Uptodate - Greining fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/copd-exacerbations-clinical-manifestations-and-evaluation' },
+                            { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/copd-exacerbations-management' },
+                            { display: 'Læknablaðið - Yfirlitsgrein 2015', type: 'hyperlink', url: 'https://www.laeknabladid.is/tolublod/2015/0708/nr/5555' }
                         ]
                     }
                 ]
@@ -3927,8 +4114,34 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Strep', 'Mónó', 'Herpes', 'Enterovirus'],
+        display: ['Hálsbólga', 'Strep', 'Mónó', 'Herpes', 'Enterovirus'],
         options: [
+            {
+                display: 'Hálsbólga',
+                subOptions: [
+                    { display: 'Greining', output: 'Hálsbólga' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Mild einkenni, strep neikv, ráðl og obs, endurmat ef versnar', output: 'Hálsbólga. Mild einkenni. Streptest neikvætt. Veiti ráðleggingar, oft viral orsök. Nota verkjalyf og strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Mild einkenni, ráðl og obs, endurmat ef versnar', output: 'Hálsbólga. Mild einkenni. Veiti ráðleggingar, oft viral orsök. Nota verkjalyf og strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Slæm einkenni, strep neikv, engin rauð flögg, ráðl og obs, endurmat ef versnar', output: 'Hálsbólga. Slæm einkenni. Engin rauð flögg. Streptest neikvætt. Veiti ráðleggingar, oft viral orsök. Nota verkjalyf og strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' }
+                        ]
+                    },
+                    { display: 'Hlekkir', 
+                        subOptions: [
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sore-throat-in-adults-the-basics' },
+                                    { display: 'Uptodate - Beyond the basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sore-throat-in-adults-beyond-the-basics' }
+                                    
+                                ]
+                            },
+                            { display: 'Uptodate - Uppvinnsla fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-acute-pharyngitis-in-adults' },
+                            { display: 'Uptodate - Uppvinnsla barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-sore-throat-in-children' }
+                        ]
+                    }
+                ]
+            },
             {
                 display: 'Strep',
                 subOptions: [
@@ -8228,83 +8441,7 @@ const RannsoknirHeart = [
                 ],
                 onRightClickOutput: 'Fastandi blóðsykur innan eðlilgra marka'
             },
-            {
-                display: 'HbA1c',
-                subOptions: [
-                    {
-                        display: '20-30 mmol/L (4-6%)',
-                        subOptions: Array.from({ length: 11 }, (_, i) => ({
-                            display: `${20 + i} mmol/L (4.${i}%)`,
-                            output: `HbA1c ${20 + i} mmol/L (4.${i}%)`
-                        }))
-                    },
-                    {
-                        display: '31-40 mmol/L (6-8%)',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${31 + i} mmol/L (6.${i}%)`,
-                            output: `HbA1c ${31 + i} mmol/L (6.${i}%)`
-                        }))
-                    },
-                    {
-                        display: '41-50 mmol/L (8-10%)',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${41 + i} mmol/L (8.${i}%)`,
-                            output: `HbA1c ${41 + i} mmol/L (8.${i}%)`
-                        }))
-                    },
-                    {
-                        display: '51-60 mmol/L (10-12%)',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${51 + i} mmol/L (10.${i}%)`,
-                            output: `HbA1c ${51 + i} mmol/L (10.${i}%)`
-                        }))
-                    },
-                    {
-                        display: '61-70 mmol/L (12-14%)',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${61 + i} mmol/L (12.${i}%)`,
-                            output: `HbA1c ${61 + i} mmol/L (12.${i}%)`
-                        }))
-                    },
-                    {
-                        display: '71-80 mmol/L (14-16%)',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${71 + i} mmol/L (14.${i}%)`,
-                            output: `HbA1c ${71 + i} mmol/L (14.${i}%)`
-                        }))
-                    },
-                    {
-                        display: '81-90 mmol/L (16-18%)',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${81 + i} mmol/L (16.${i}%)`,
-                            output: `HbA1c ${81 + i} mmol/L (16.${i}%)`
-                        }))
-                    },
-                    {
-                        display: '91-100 mmol/L (18-20%)',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${91 + i} mmol/L (18.${i}%)`,
-                            output: `HbA1c ${91 + i} mmol/L (18.${i}%)`
-                        }))
-                    },
-                    {
-                        display: '101-110 mmol/L (20-22%)',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${101 + i} mmol/L (20.${i}%)`,
-                            output: `HbA1c ${101 + i} mmol/L (20.${i}%)`
-                        }))
-                    },
-                    {
-                        display: '111-120 mmol/L (22-24%)',
-                        subOptions: Array.from({ length: 10 }, (_, i) => ({
-                            display: `${111 + i} mmol/L (22.${i}%)`,
-                            output: `HbA1c ${111 + i} mmol/L (22.${i}%)`
-                        }))
-                    }
-                ],
-                onRightClickOutput: 'Langtímasykur innan eðlilgra marka'
-            }
-            
+            HBA1c
             
         ]
     }
@@ -20956,138 +21093,7 @@ const RannsoknirInnkirtla = [
         type: 'options',
         display: ['HbA1c', 'T3', 'T4', 'TSH'],
         options: [
-            {
-                display: 'HbA1c',
-                subOptions: [
-                    {
-                        display: '31-40 mmol/mol',
-                        subOptions: [
-                            { display: '31 mmol/mol (5.0%)', output: 'HbA1c 31 mmol/mol (5.0%)' },
-                            { display: '32 mmol/mol (5.1%)', output: 'HbA1c 32 mmol/mol (5.1%)' },
-                            { display: '33 mmol/mol (5.2%)', output: 'HbA1c 33 mmol/mol (5.2%)' },
-                            { display: '34 mmol/mol (5.3%)', output: 'HbA1c 34 mmol/mol (5.3%)' },
-                            { display: '36 mmol/mol (5.4%)', output: 'HbA1c 36 mmol/mol (5.4%)' },
-                            { display: '37 mmol/mol (5.5%)', output: 'HbA1c 37 mmol/mol (5.5%)' },
-                            { display: '38 mmol/mol (5.6%)', output: 'HbA1c 38 mmol/mol (5.6%)' },
-                            { display: '39 mmol/mol (5.7%)', output: 'HbA1c 39 mmol/mol (5.7%)' },
-                            { display: '40 mmol/mol (5.8%)', output: 'HbA1c 40 mmol/mol (5.8%)' }
-                        ]
-                    },
-                    {
-                        display: '41-50 mmol/mol',
-                        subOptions: [
-                            { display: '41 mmol/mol (5.9%)', output: 'HbA1c 41 mmol/mol (5.9%)' },
-                            { display: '42 mmol/mol (6.0%)', output: 'HbA1c 42 mmol/mol (6.0%)' },
-                            { display: '43 mmol/mol (6.1%)', output: 'HbA1c 43 mmol/mol (6.1%)' },
-                            { display: '44 mmol/mol (6.2%)', output: 'HbA1c 44 mmol/mol (6.2%)' },
-                            { display: '45 mmol/mol (6.3%)', output: 'HbA1c 45 mmol/mol (6.3%)' },
-                            { display: '46 mmol/mol (6.4%)', output: 'HbA1c 46 mmol/mol (6.4%)' },
-                            { display: '47 mmol/mol (6.5%)', output: 'HbA1c 47 mmol/mol (6.5%)' },
-                            { display: '48 mmol/mol (6.6%)', output: 'HbA1c 48 mmol/mol (6.6%)' },
-                            { display: '49 mmol/mol (6.7%)', output: 'HbA1c 49 mmol/mol (6.7%)' },
-                            { display: '50 mmol/mol (6.8%)', output: 'HbA1c 50 mmol/mol (6.8%)' }
-                        ]
-                    },
-                    {
-                        display: '51-60 mmol/mol',
-                        subOptions: [
-                            { display: '51 mmol/mol (6.9%)', output: 'HbA1c 51 mmol/mol (6.9%)' },
-                            { display: '53 mmol/mol (7.0%)', output: 'HbA1c 53 mmol/mol (7.0%)' },
-                            { display: '54 mmol/mol (7.1%)', output: 'HbA1c 54 mmol/mol (7.1%)' },
-                            { display: '55 mmol/mol (7.2%)', output: 'HbA1c 55 mmol/mol (7.2%)' },
-                            { display: '56 mmol/mol (7.3%)', output: 'HbA1c 56 mmol/mol (7.3%)' },
-                            { display: '57 mmol/mol (7.4%)', output: 'HbA1c 57 mmol/mol (7.4%)' },
-                            { display: '58 mmol/mol (7.5%)', output: 'HbA1c 58 mmol/mol (7.5%)' },
-                            { display: '60 mmol/mol (7.6%)', output: 'HbA1c 60 mmol/mol (7.6%)' }
-                        ]
-                    },
-                    {
-                        display: '61-70 mmol/mol',
-                        subOptions: [
-                            { display: '61 mmol/mol (7.7%)', output: 'HbA1c 61 mmol/mol (7.7%)' },
-                            { display: '62 mmol/mol (7.8%)', output: 'HbA1c 62 mmol/mol (7.8%)' },
-                            { display: '63 mmol/mol (7.9%)', output: 'HbA1c 63 mmol/mol (7.9%)' },
-                            { display: '64 mmol/mol (8.0%)', output: 'HbA1c 64 mmol/mol (8.0%)' },
-                            { display: '65 mmol/mol (8.1%)', output: 'HbA1c 65 mmol/mol (8.1%)' },
-                            { display: '66 mmol/mol (8.2%)', output: 'HbA1c 66 mmol/mol (8.2%)' },
-                            { display: '67 mmol/mol (8.3%)', output: 'HbA1c 67 mmol/mol (8.3%)' },
-                            { display: '68 mmol/mol (8.4%)', output: 'HbA1c 68 mmol/mol (8.4%)' },
-                            { display: '69 mmol/mol (8.5%)', output: 'HbA1c 69 mmol/mol (8.5%)' },
-                            { display: '70 mmol/mol (8.6%)', output: 'HbA1c 70 mmol/mol (8.6%)' }
-                        ]
-                    },
-                    {
-                        display: '71-80 mmol/mol',
-                        subOptions: [
-                            { display: '71 mmol/mol (8.7%)', output: 'HbA1c 71 mmol/mol (8.7%)' },
-                            { display: '72 mmol/mol (8.8%)', output: 'HbA1c 72 mmol/mol (8.8%)' },
-                            { display: '74 mmol/mol (8.9%)', output: 'HbA1c 74 mmol/mol (8.9%)' },
-                            { display: '75 mmol/mol (9.0%)', output: 'HbA1c 75 mmol/mol (9.0%)' },
-                            { display: '76 mmol/mol (9.1%)', output: 'HbA1c 76 mmol/mol (9.1%)' },
-                            { display: '77 mmol/mol (9.2%)', output: 'HbA1c 77 mmol/mol (9.2%)' },
-                            { display: '78 mmol/mol (9.3%)', output: 'HbA1c 78 mmol/mol (9.3%)' },
-                            { display: '79 mmol/mol (9.4%)', output: 'HbA1c 79 mmol/mol (9.4%)' },
-                            { display: '80 mmol/mol (9.5%)', output: 'HbA1c 80 mmol/mol (9.5%)' }
-                        ]
-                    },
-                    {
-                        display: '81-90 mmol/mol',
-                        subOptions: [
-                            { display: '81 mmol/mol (9.6%)', output: 'HbA1c 81 mmol/mol (9.6%)' },
-                            { display: '83 mmol/mol (9.7%)', output: 'HbA1c 83 mmol/mol (9.7%)' },
-                            { display: '84 mmol/mol (9.8%)', output: 'HbA1c 84 mmol/mol (9.8%)' },
-                            { display: '85 mmol/mol (9.9%)', output: 'HbA1c 85 mmol/mol (9.9%)' },
-                            { display: '86 mmol/mol (10.0%)', output: 'HbA1c 86 mmol/mol (10.0%)' },
-                            { display: '87 mmol/mol (10.1%)', output: 'HbA1c 87 mmol/mol (10.1%)' },
-                            { display: '88 mmol/mol (10.2%)', output: 'HbA1c 88 mmol/mol (10.2%)' },
-                            { display: '89 mmol/mol (10.3%)', output: 'HbA1c 89 mmol/mol (10.3%)' },
-                            { display: '90 mmol/mol (10.4%)', output: 'HbA1c 90 mmol/mol (10.4%)' }
-                        ]
-                    },
-                    {
-                        display: '91-100 mmol/mol',
-                        subOptions: [
-                            { display: '91 mmol/mol (10.5%)', output: 'HbA1c 91 mmol/mol (10.5%)' },
-                            { display: '92 mmol/mol (10.6%)', output: 'HbA1c 92 mmol/mol (10.6%)' },
-                            { display: '93 mmol/mol (10.7%)', output: 'HbA1c 93 mmol/mol (10.7%)' },
-                            { display: '94 mmol/mol (10.8%)', output: 'HbA1c 94 mmol/mol (10.8%)' },
-                            { display: '95 mmol/mol (10.9%)', output: 'HbA1c 95 mmol/mol (10.9%)' },
-                            { display: '96 mmol/mol (11.0%)', output: 'HbA1c 96 mmol/mol (11.0%)' },
-                            { display: '97 mmol/mol (11.1%)', output: 'HbA1c 97 mmol/mol (11.1%)' },
-                            { display: '98 mmol/mol (11.2%)', output: 'HbA1c 98 mmol/mol (11.2%)' },
-                            { display: '99 mmol/mol (11.3%)', output: 'HbA1c 99 mmol/mol (11.3%)' },
-                            { display: '100 mmol/mol (11.4%)', output: 'HbA1c 100 mmol/mol (11.4%)' }
-                        ]
-                    },
-                    {
-                        display: '101-110 mmol/mol',
-                        subOptions: [
-                            { display: '101 mmol/mol (11.5%)', output: 'HbA1c 101 mmol/mol (11.5%)' },
-                            { display: '103 mmol/mol (11.6%)', output: 'HbA1c 103 mmol/mol (11.6%)' },
-                            { display: '104 mmol/mol (11.7%)', output: 'HbA1c 104 mmol/mol (11.7%)' },
-                            { display: '106 mmol/mol (11.8%)', output: 'HbA1c 106 mmol/mol (11.8%)' },
-                            { display: '107 mmol/mol (11.9%)', output: 'HbA1c 107 mmol/mol (11.9%)' },
-                            { display: '108 mmol/mol (12.0%)', output: 'HbA1c 108 mmol/mol (12.0%)' },
-                            { display: '109 mmol/mol (12.1%)', output: 'HbA1c 109 mmol/mol (12.1%)' },
-                            { display: '110 mmol/mol (12.2%)', output: 'HbA1c 110 mmol/mol (12.2%)' }
-                        ]
-                    },
-                    {
-                        display: '111-120 mmol/mol',
-                        subOptions: [
-                            { display: '111 mmol/mol (12.3%)', output: 'HbA1c 111 mmol/mol (12.3%)' },
-                            { display: '112 mmol/mol (12.4%)', output: 'HbA1c 112 mmol/mol (12.4%)' },
-                            { display: '113 mmol/mol (12.5%)', output: 'HbA1c 113 mmol/mol (12.5%)' },
-                            { display: '114 mmol/mol (12.6%)', output: 'HbA1c 114 mmol/mol (12.6%)' },
-                            { display: '115 mmol/mol (12.7%)', output: 'HbA1c 115 mmol/mol (12.7%)' },
-                            { display: '116 mmol/mol (12.8%)', output: 'HbA1c 116 mmol/mol (12.8%)' },
-                            { display: '117 mmol/mol (12.9%)', output: 'HbA1c 117 mmol/mol (12.9%)' },
-                            { display: '119 mmol/mol (13.0%)', output: 'HbA1c 119 mmol/mol (13.0%)' },
-                            { display: '120 mmol/mol (13.1%)', output: 'HbA1c 120 mmol/mol (13.1%)' }
-                        ]
-                    }
-                ]
-            },
+            HBA1c,
             {
                 display: 'T3',
                 subOptions: [
