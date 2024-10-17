@@ -2720,13 +2720,79 @@ const SymptomsViral = [
         options: [
             {
                 display: 'Slappleiki',
-                output: 'Slappleiki',
-                onRightClickOutput: 'Ekki áberandi slappleiki'
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Slappleiki'
+                    },
+                    {
+                        display: 'Vægur',
+                        output: 'Fundið fyrir vægum slappleika'
+                    },
+                    {
+                        display: 'Töluverður',
+                        output: 'Lýsir töluverðum slappleika'
+                    }
+                ], onRightClickOutput: 'Ekki áberandi slappleiki'
             },
             {
                 display: 'Höfuðverkur',
-                output: 'Lýsir höfuðverk',
-                onRightClickOutput: 'Neitar höfuðverk'
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Lýsir höfuðverk'
+                    },
+                    {
+                        display: 'Vægur',
+                        output: 'Fundið fyrir vægum höfuðverk'
+                    },
+                    {
+                        display: 'Mikill',
+                        output: 'Lýsir töluverðum höfuðverk'
+                    }
+                ], onRightClickOutput: 'Neitar höfuðverk'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Útbrot', 'Byrjuðu', 'Kláði'],
+        options: [
+            {
+                display: 'Útbrot',
+                subOptions:
+                [
+                    { display: 'NOS', output: 'Útbrot' },
+                    { display: 'Dreift um líkama', output: 'Útbrot dreift um líkama' },
+                    { display: 'Háls', output: 'Útbrot á hálsi' },
+                    { display: 'Búk', output: 'Útbrot á búk' },
+                    { display: 'Efri útlimir', output: 'Útbrot á efri útlimum' },
+                    { display: 'Neðri útlimir', output: 'Útbrot á neðri útlimum' },
+                    { display: 'Efri og neðri útlimir', output: 'Útbrot á efri og neðri útlimum' }
+                ], onRightClickOutput: 'Ekki tekið eftir útbrotum'
+            },
+            {
+                display: 'Byrjuðu',
+                subOptions: [
+                    { display: 'Í dag', output: 'Byrjuðu í dag' },
+                    { display: 'Í gær', output: 'Byrjuðu í gær' },
+                    { display: 'Í fyrradag', output: 'Byrjuðu í fyrradag' },
+                    { display: 'Fyrir 2 dögum', output: 'Byrjuðu fyrir 2 dögum' },
+                    { display: 'Fyrir 3 dögum', output: 'Byrjuðu fyrir 3 dögum' },
+                    { display: 'Fyrir 4 dögum', output: 'Byrjuðu fyrir 4 dögum' },
+                    { display: 'Fyrir 5 dögum', output: 'Byrjuðu fyrir 5 dögum' },
+                    { display: 'Fyrir viku síðan', output: 'Byrjuðu fyrir viku síðan' }
+                ]
+            },
+            {
+                display: 'Kláði',
+                subOptions: [
+                    { display: 'NOS', output: 'Kláði' },
+                    { display: 'Vægur', output: 'Vægur kláði' },
+                    { display: 'Mikill', output: 'Mikill kláði' }
+                ],
+                onRightClickOutput: 'Ekki fundið fyrir kláða'
             }
         ]
     },
@@ -2824,10 +2890,22 @@ const SymptomsViral = [
                         display: 'Í vinnunni',
                         output: 'Margir veikir á vinnustað'
                     },
+                    {
+                        display: 'Í skólanum',
+                        output: 'Margir veikir í skólanum'
+                    },
+                    {
+                        display: 'Í leikskóla',
+                        output: 'Margir veikir í leikskólanum'
+                    },
+                    {
+                        display: 'Hjá dagmömmu',
+                        output: 'Margir veikir hjá dagmömmu'
+                    }
 
                     
                 ],
-                onRightClickOutput: 'Ekki aðrir veikir á heimili eða vinnustað'
+                onRightClickOutput: 'Ekki aðrir verið veikir í kring'
             },
             {
                 display: 'Nýleg veikindi',
@@ -3224,6 +3302,7 @@ const SymptomsViral = [
             }
         ]
     }
+    
 ];
 const ExamsViral = [
     {
@@ -4127,15 +4206,15 @@ const PlanViral = [
                             { display: 'Slæm einkenni, strep neikv, engin rauð flögg, ráðl og obs, endurmat ef versnar', output: 'Hálsbólga. Slæm einkenni. Engin rauð flögg. Streptest neikvætt. Veiti ráðleggingar, oft viral orsök. Nota verkjalyf og strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' }
                         ]
                     },
-                    { display: 'Hlekkir', 
+                    { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
-                            { display: 'Leiðbeiningar til skjólstæðings',
-                                subOptions: [
-                                    { display: 'Uptodate - Basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sore-throat-in-adults-the-basics' },
-                                    { display: 'Uptodate - Beyond the basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sore-throat-in-adults-beyond-the-basics' }
-                                    
-                                ]
-                            },
+                            { display: 'Uptodate - Basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sore-throat-in-adults-the-basics' },
+                            { display: 'Uptodate - Beyond the basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sore-throat-in-adults-beyond-the-basics' }
+                            
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
                             { display: 'Uptodate - Uppvinnsla fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-acute-pharyngitis-in-adults' },
                             { display: 'Uptodate - Uppvinnsla barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-sore-throat-in-children' }
                         ]
@@ -4147,15 +4226,21 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Strep throat' },
                     { display: 'Grunur', output: 'Grunur um strep throat' },
-                    { display: 'Hlekkir', 
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Leiðbeiningar til skjólstæðings',
-                                subOptions: [
-                                    { display: 'Uptodate - Basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/strep-throat-in-adults-the-basics' },
-                                    { display: 'Uptodate - Basics börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/strep-throat-in-children-the-basics' }
-                                    
-                                ]
-                            },
+                            { display: 'Grunur, meðferð, endurmat ef lagast ekki', output: 'Grunur um streptokokkasýkingu í hálsi. Set á sýklalyf. Veiti ráðleggingar. Nota verkjalyf og t.d. strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Jákv streptest, meðferð og ráð', output: 'Streptokkasýking í hálsi. Streptest jákvætt. Set sýklalyf í gáttina. Veiti ráðleggingar. Nota verkjalyf og t.d. strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' }
+                        ]
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Uptodate - Basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/strep-throat-in-adults-the-basics' },
+                            { display: 'Uptodate - Basics börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/strep-throat-in-children-the-basics' }
+                            
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
                             { display: 'Uptodate - Greining barna og unglinga', type: 'hyperlink', url: 'https://www.uptodate.com/contents/group-a-streptococcal-tonsillopharyngitis-in-children-and-adolescents-clinical-features-and-diagnosis' },
                             { display: 'Uptodate - Meðferð fullorðna og barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/treatment-and-prevention-of-streptococcal-pharyngitis-in-adults-and-children' },
                             { display: 'MDCALC - CENTOR', type: 'hyperlink', url: 'https://www.mdcalc.com/calc/104/centor-score-modified-mcisaac-strep-pharyngitis' },
@@ -4268,7 +4353,7 @@ const PlanViral = [
                     { display: 'NOS', output: 'Eyrnamergur' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Merglosandi, endurkoma í hreinsun', output: 'Eyrnamergur. Ráðlegg merglosandi dropa. Endurkoma í merghreinsun' },
+                            { display: 'Merglosandi, endurkoma í hreinsun', output: 'Eyrnamergur. Frekar harður. Ráðlegg merglosandi dropa. Endurkoma í merghreinsun' },
                             { display: 'Merghreinsun á stofu', output: 'Eyrnamergur. Spúla hlustir. Endurmat pn' },
                             { display: 'Mergur, bóka hjá hjkfr', output: 'Eyrnamergur. Fær tíma hjá hjúkrunarfræðingi í merghreinsun' },
                             { display: 'Mergur, fer yfir til hjkfr', output: 'Eyrnamergur. Fer yfir til vakthafandi hjúkrunarfræðings í merghreinsun. Endurmat pn' }
@@ -4546,6 +4631,19 @@ const PlanViral = [
                     {
                         display: 'Skóli',
                         output: 'Fær skólavottorð'
+                    },
+                    {
+                        display: 'Sjúkraþjálfun',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Fær beiðni í sjúkraþjálfun'
+                            },
+                            {
+                                display: 'Endurnýja',
+                                output: 'Endurnýja sjúkraþjálfunarbeiðni'
+                            }
+                        ]
                     }
                 ]
             }
@@ -15519,6 +15617,40 @@ const KerfakonnunHud = [
 
 ];
 const PlanHud = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Húðsýking'],
+        options: [
+            {
+                display: 'Húðsýking',
+                subOptions: [
+                    { display: 'Greining', output: 'Húðsýking' },
+                    { display: 'Grunur', output: 'Grunur um húðsýkingu' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Grunur, sýklalyf, fylgjast vel með, endurmat pn', output: 'Grunur um húðsýkingu. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' },
+                            { display: 'Ekki hægt að útiloka, DDX þvagsýrugigt, sýklalyf, fylgjast vel með, endurmat pn', output: 'DDX húðsýking, þvagsýrugigt. Þar sem ekki hægt að útiloka sýkingu ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' }
+                        ]
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings', 
+                        subOptions: [
+                            { display: 'Landspítali - Fræðslubæklingur Húðsýkingar', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Lyflaekningasvid/Hudsyking.pdf' },
+                        ]
+                    },
+                    { display: 'Fræðsluefni og ítarefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Greining', type: 'hyperlink', url: 'https://www.uptodate.com/contents/cellulitis-and-skin-abscess-epidemiology-microbiology-clinical-manifestations-and-diagnosis' },
+                            { display: 'Uptodate - Meðferð Fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-cellulitis-and-erysipelas-in-adults-treatment' },
+                            { display: 'Strama - Impetigo, erysipelas, sýkt fótasár', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/hrudurgeit-impetigo-heimakoma-erysipelas-sarasyking-sykt-fotasar/' }
+                        
+                            
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     {
         name: '',
         type: 'options',
