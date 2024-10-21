@@ -16941,10 +16941,8 @@ const SymptomsGed = [
         type: 'options',
         display: ['Svefnvandi', 'Gæði', 'Lengd', 'Vakna'],
         options: [
-            { 
-                display: 'Svefnvandi', output: 'Lýsir svefnvanda', onRightClickOutput: 'Ekki svefnvandi'
-                    
-                
+            {
+                display: 'Svefnvandi', output: 'Lýsir svefnvanda', onRightClickOutput: 'Neitar svefnvanda'
             },
             {display: 'Gæði', output: 'Slæm gæði svefns. Þreyta til staðar þegar vaknar', onRightClickOutput: 'Gæði svefns góð'},
             {
@@ -17703,7 +17701,43 @@ const PlanGed = [
                 ]
             },
             {
-                display: 'Svefnvandi', output: 'Svefnvandi'
+                display: 'Svefnvandi',
+                subOptions: [
+                            { display: 'Greining', output: 'Svefnvandi' },
+                            { display: 'Fullmótuð plön', 
+                                subOptions: [
+                                    { display: '', output: '' } 
+                                ]    
+                            },
+                            { display: 'Ráðleggingar', 
+                                subOptions: [
+                                    { display: 'Svefnvenjur', output: 'Veiti ráðleggingar um svefnvenjur. Passa að viðhalda reglulegum svefntíma. Ef gengur illa að sofna gefa því korter, annars fara framúr og t.d. lesa þar til syfjar. Ekki leggja sig á daginn, ef neyðist til þá hámark 15 mín. Slökun og rólegheit á kvöldin. Forðast skjánotkun fyrir svefn. Forðast þunga máltíð rétt fyrir svefn en samt ekki fara svangur í háttinn, frekar létt snarl. Ef miklar áhyggjur skrifa niður á blað og geyma til morguns. Forðast áfengi, koffín og reykingar' } 
+                                ]    
+                            },
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Landspítali - Góðar svefnvenjur (leiðbeiningabæklingur)', type: 'hyperlink', url: 'https://www.landspitali.is/lisalib/getfile.aspx?itemid=4c68a9ed-ac19-11e2-9ccc-005056be0005' },
+                                    { display: 'Embætti landlæknis - Yfirlitssíða', type: 'hyperlink', url: 'https://island.is/svefn-og-hvild' },
+                                    { display: 'Embætti landlæknis - Ráðleggingarplaggat', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/1OC4E8gh5Olu0unSgTu3Wl/3619836fe239c35c4f4f187c3e89fb04/Svefn_r__leggingar_23_3_2020uppf.pdf' },
+                                    { display: 'Sálstofan - Góðar svefnvenjur barna- og unglinga', type: 'hyperlink', url: 'https://salstofan.is/wp-content/uploads/2020/08/Góðar-svefnvenjur-1.pdf' },
+                                    { display: 'Svefnsálfræðingur Erla Björnsdóttir - Betrisvefn.is', type: 'hyperlink', url: 'https://www.betrisvefn.is' },
+                                    { display: 'Heilsugæslan - HAM námskeið', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/serthjonusta/namskeid/ham-svefn' },
+                                    { display: 'Uptodate - Sleep hygiene (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/good-sleep-hygiene-the-basics' },
+                                    { display: 'Uptodate - Insomnia (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/insomnia-the-basics' },
+                                    { display: 'Uptodate - Insomnia (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/insomnia-beyond-the-basics' },
+                                    { display: 'Uptodate - Insomnia Treatments (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/insomnia-treatments-beyond-the-basics' },
+                                    { display: 'Uptodate - Daytime Sleepiness (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/daytime-sleepiness-the-basics' }
+                                ]
+                            },
+                            { display: 'Fræðsluefni lækna', 
+                                subOptions: [
+                                    { display: 'Uptodate - Evaluation of insomnia in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-and-diagnosis-of-insomnia-in-adults' },
+                                    { display: 'Uptodate - Overview of treatments for insomnia in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-the-treatment-of-insomnia-in-adults' },
+                                    { display: 'Uptodate - Pharmacotherapy for insomnia in children and adolescents', type: 'hyperlink', url: 'https://www.uptodate.com/contents/pharmacotherapy-for-insomnia-in-children-and-adolescents-a-rational-approach' },
+                                    { display: '', type: 'hyperlink', url: '' }
+                                ]
+                            }
+                ]
             }
         ]
     },
