@@ -4299,7 +4299,23 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Herpes' },
                     { display: 'Grunur', output: 'Grunur um herpes' },
-                    { display: 'Fullmótað plan', output: 'Grunur um herpes. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Endurmat PN' }
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Grunur, fræðsla, lyf, re PN', output: 'Grunur um herpes. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Endurmat PN' }
+                        ]
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: 'Heilsuvera.is - Frunsa', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/frunsa/' },
+                            { display: 'Heilsuvera.is - Kynfæraáblástur', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/kynfaeraablastur-herpes-simplex/' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    }
                 ]
             },
             {
@@ -13953,7 +13969,44 @@ const SymptomsElbow = [
     }
 ];
 const ExamsElbow = [];
-const PlanElbow = [];
+const PlanElbow = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Epicondylitis'],
+        options: [
+            { 
+                display: 'Epicondylitis', 
+                    subOptions: [
+                        { display: 'Greining', output: 'Epicondylitis' },
+                        { display: 'Grunur', output: 'Grunur um epicondylitis' },
+                        { display: 'Fullmótuð plön', 
+                            subOptions: [
+                                { display: 'Grunur, ráðleggingar, sjúkraþjálfun, re pn ', output: 'Grunur um epicondylitis. Veiti viðeigandi ráðleggingar. Lagast yfirleitt af sjálfu sér. Forðast álag sem eykur á einkenni. Kæling og verkjalyf pn. Fær beiðni í sjúkraþjálfun. Endurmat eftir þörfum' }
+                            ]    
+                        },
+                        { display: 'Leiðbeiningar til skjólstæðings',
+                            subOptions: [
+                                
+                                { display: 'Heilsuvera.is - Tennisolnbogi', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/tennisolnbogi/' },
+                                { display: 'Uptodate - Elbow tendinpathy (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/elbow-tendinopathy-tennis-and-golf-elbow-the-basics' },
+                                { display: 'Uptodate - Elbow tendinopathy (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/elbow-tendinopathy-tennis-and-golf-elbow-beyond-the-basics' }
+                            ]
+                        },
+                        { display: 'Fræðsluefni lækna', 
+                            subOptions: [
+                                { display: 'Uptodate - Elbow tendinopathy', type: 'hyperlink', url: 'https://www.uptodate.com/contents/elbow-tendinopathy-tennis-and-golf-elbow' }
+                            ]
+                        }
+                        
+                    ],
+                    onRightClickOutput: ''
+
+            }
+        ]
+    }
+
+];
 
 // Wrist
 const SymptomsWrist = [
@@ -15161,15 +15214,57 @@ const PlanAnkle = [
                             }
                         ]
                     },
-                    { display: 'Hlekkir', 
+                    { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
-                            { display: 'Leiðbeiningar til skjólstæðings',
-                                subOptions: [
-                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ankle-sprain-the-basics' },
-                                    { display: 'Gæðaskjal Landspítala - Ökklatognun', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Bradamottaka-Flaedisdeild/okklatognun.pdf' }
+                            {
+                                display: 'Grunur um tognun, OTTAWA neikv, ráðleggingar',
+                                output: '\n\n'
+                                    + 'Leiðbeiningar vegna ökklatognunar:\n'
                                     
-                                ]
+                                    + '- Þar sem skoðun bendir ekki til ökklabrots meðhöndlum við sem tognun. Ráðlagt er að hvíla ökklan, einungis létt '
+                                    + 'ástig fyrst um sinn. Þá er ráðlagt að hafa hátt undir fæti '
+                                    + 'fyrstu dagana á meðan bólgan hjaðnar. Gott er að nota kælipoka í 15-20mín í senn (20 mín on, 20 mín off). Mikilvægt er að hafa t.d. '
+                                    + 'þunnt viskarstykki milli kælipoka og húðar. Passa þarf að kælipoki komist ekki í beina snertingu '
+                                    + 'við húð en slíkt gæti leitt til kælibruna. Teygjusokkur getur hjálpað við að stöðga ökklan, hægt er að nálagast þá í flestum '
+                                    + 'apótekum landsins og/eða stoðkerfisverslunum. Gott getur verið að nota bólgueyðandi verkjalyf (svo sem íbúfen) '
+                                    + 'með eða án paracetamól við verkjum.\n'
+                                    + '- Bataferli er mismunandi eftir alvarleika tognunar. Stundum ganga einkenni að mestu '
+                                    + 'yfir á fáeinum vikum en stundum þarf lengri tíma (6-8 vikur). '
+                                    + 'Ef batagangur er ekki eins og búist er við (t.d. ef einkenni fara versnandi á dögum/vikum þrátt fyrir ofangreinda meðferð '
+                                    + 'eða einkenni áfram slæm eftir 6-8 vikur) er ráðlagt að hafa samband. Þyrfti þá e.t.v. að taka afstöðu til frekari myndgreininga. '
+                                    + 'Þá getur sjúkraþjálfun einnig verið að gagni.\n'
+                                    + '- Hægt er að nálagast ítarlegri upplýsingar um ökklatognun á vef landspítala'
                             },
+                            {
+                                display: 'Grunur um tognun, OTTAWA jákv, RTG á stofu til útilokunnar, ráðleggingar',
+                                output: '\n\n'
+                                    + 'Leiðbeiningar vegna gruns um tognun á ökkla:\n'
+                                    + '- Myndgreining. Þar sem erfitt er að útiloka brot er ráðlögð röntgenmynd af ökklanum. '
+                                    + 'Á dagvinnutíma tekur yfirleitt um 1-2klst að fá niðustöður hjá RTG Dómus / Orkuhúsinu. '
+                                    + 'Ekki þarf að bíða eftir tímapöntun heldur má mæta beint á staðinn. Orkuhúsið er staðsett í Urðarhvarfi 8, 203 Kópavogi. '
+                                    + 'Röntgen Dómus er staðsett á þremur stöðum: Egilsgata 3, 101 RVK. Þönglabakka 6, 109 RVK. Bíldshöfða 9, 110 RVK. '
+                                    + 'Hægt er að nálgast frekari upplýsingar á www.orkuhusid.is (Orkuhúsið) og www.rd.is (Röntgen Dómus)\n'
+                                    + '- Ef reynist brot er ráðlagt nánara mat á G3 (brotadeild BMT í Fossvogi)\n'
+                                    + '- Ef reynist ekki brotið meðhöndlum við sem tognun. Hvíla ökklan, einungis létt ástig fyrst um sinn. Þá er ráðlagt að hafa hátt undir fæti '
+                                    + 'fyrstu dagana á meðan bólgan hjaðnar. Gott er að nota kælipoka í 15-20mín í senn (20 mín on, 20 mín off). Mikilvægt er að hafa t.d. '
+                                    + 'þunnt viskarstykki milli kælipoka og húðar. Passa þarf að kælipoki komist ekki í beina snertingu '
+                                    + 'við húð en slíkt gæti leitt til kælibruna. Teygjusokkur getur hjálpað við að stöðga ökklan, hægt er að nálagast þá í flestum '
+                                    + 'apótekum landsins og/eða stoðkerfisverslunum. Gott getur verið að nota bólgueyðandi verkjalyf (svo sem íbúfen) '
+                                    + 'með eða án paracetamól við verkjum.\n'
+                                    + '- Bataferli er mismunandi eftir alvarleika tognunar. Stundum ganga einkenni að mestu '
+                                    + 'yfir á fáeinum vikum en stundum þarf lengri tíma (6-8 vikur). '
+                                    + 'Ef batagangur er ekki eins og búist er við (t.d. ef einkenni fara versnandi á dögum/vikum þrátt fyrir ofangreinda meðferð '
+                                    + 'eða einkenni áfram slæm eftir 6-8 vikur) er ráðlagt að hafa samband. Þyrfti þá e.t.v. að taka afstöðu til frekari myndgreininga. '
+                                    + 'Þá getur sjúkraþjálfun einnig verið að gagni.\n'
+                                    + '- Hægt er að nálagast ítarlegri upplýsingar um ökklatognun á vef landspítala'
+                            },
+                            { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ankle-sprain-the-basics' },
+                            { display: 'Gæðaskjal Landspítala - Ökklatognun', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Bradamottaka-Flaedisdeild/okklatognun.pdf' }
+                            
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
                             { display: 'Uptodate - Greining og mat fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ankle-sprain-in-adults-evaluation-and-diagnosis' },
                             { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ankle-sprain-in-adults-management' }
                             
@@ -15285,63 +15380,10 @@ const PlanAnkle = [
     {
         name: '',
         type: 'options',
-        display: ['Endurmat', 'Eftirfylgd', 'Leiðbeiningar til skjólstæðings'],
+        display: ['Endurmat', 'Eftirfylgd'],
         options: [
             EndurmatButton,
-            EftirfylgdButton,
-            {
-                display: 'Leiðbeiningar til skjólstæðings',
-                subOptions: [
-                    {
-                        display: 'Ökklatognun',
-                        subOptions: [
-                            {
-                                display: 'Grunur um tognun, OTTAWA neikv, ráðleggingar',
-                                output: 'Skjólstæðingur fær útprentaðar leiðbeiningar.\n\n'
-                                    + 'Leiðbeiningar vegna ökklatognunar:\n'
-                                    
-                                    + '- Þar sem skoðun bendir ekki til ökklabrots meðhöndlum við sem tognun. Ráðlagt er að hvíla ökklan, einungis létt '
-                                    + 'ástig fyrst um sinn. Þá er ráðlagt að hafa hátt undir fæti '
-                                    + 'fyrstu dagana á meðan bólgan hjaðnar. Gott er að nota kælipoka í 15-20mín í senn (20 mín on, 20 mín off). Mikilvægt er að hafa t.d. '
-                                    + 'þunnt viskarstykki milli kælipoka og húðar. Passa þarf að kælipoki komist ekki í beina snertingu '
-                                    + 'við húð en slíkt gæti leitt til kælibruna. Teygjusokkur getur hjálpað við að stöðga ökklan, hægt er að nálagast þá í flestum '
-                                    + 'apótekum landsins og/eða stoðkerfisverslunum. Gott getur verið að nota bólgueyðandi verkjalyf (svo sem íbúfen) '
-                                    + 'með eða án paracetamól við verkjum.\n'
-                                    + '- Bataferli er mismunandi eftir alvarleika tognunar. Stundum ganga einkenni að mestu '
-                                    + 'yfir á fáeinum vikum en stundum þarf lengri tíma (6-8 vikur). '
-                                    + 'Ef batagangur er ekki eins og búist er við (t.d. ef einkenni fara versnandi á dögum/vikum þrátt fyrir ofangreinda meðferð '
-                                    + 'eða einkenni áfram slæm eftir 6-8 vikur) er ráðlagt að hafa samband. Þyrfti þá e.t.v. að taka afstöðu til frekari myndgreininga. '
-                                    + 'Þá getur sjúkraþjálfun einnig verið að gagni.\n'
-                                    + '- Hægt er að nálagast ítarlegri upplýsingar um ökklatognun á vef landspítala'
-                            },
-                            {
-                                display: 'Grunur um tognun, OTTAWA jákv, RTG á stofu til útilokunnar, ráðleggingar',
-                                output: 'Skjólstæðingur fær útprentaðar leiðbeiningar.\n\n'
-                                    + 'Leiðbeiningar vegna gruns um tognun á ökkla:\n'
-                                    + '- Myndgreining. Þar sem erfitt er að útiloka brot er ráðlögð röntgenmynd af ökklanum. '
-                                    + 'Á dagvinnutíma tekur yfirleitt um 1-2klst að fá niðustöður hjá RTG Dómus / Orkuhúsinu. '
-                                    + 'Ekki þarf að bíða eftir tímapöntun heldur má mæta beint á staðinn. Orkuhúsið er staðsett í Urðarhvarfi 8, 203 Kópavogi. '
-                                    + 'Röntgen Dómus er staðsett á þremur stöðum: Egilsgata 3, 101 RVK. Þönglabakka 6, 109 RVK. Bíldshöfða 9, 110 RVK. '
-                                    + 'Hægt er að nálgast frekari upplýsingar á www.orkuhusid.is (Orkuhúsið) og www.rd.is (Röntgen Dómus)\n'
-                                    + '- Ef reynist brot er ráðlagt nánara mat á G3 (brotadeild BMT í Fossvogi)\n'
-                                    + '- Ef reynist ekki brotið meðhöndlum við sem tognun. Hvíla ökklan, einungis létt ástig fyrst um sinn. Þá er ráðlagt að hafa hátt undir fæti '
-                                    + 'fyrstu dagana á meðan bólgan hjaðnar. Gott er að nota kælipoka í 15-20mín í senn (20 mín on, 20 mín off). Mikilvægt er að hafa t.d. '
-                                    + 'þunnt viskarstykki milli kælipoka og húðar. Passa þarf að kælipoki komist ekki í beina snertingu '
-                                    + 'við húð en slíkt gæti leitt til kælibruna. Teygjusokkur getur hjálpað við að stöðga ökklan, hægt er að nálagast þá í flestum '
-                                    + 'apótekum landsins og/eða stoðkerfisverslunum. Gott getur verið að nota bólgueyðandi verkjalyf (svo sem íbúfen) '
-                                    + 'með eða án paracetamól við verkjum.\n'
-                                    + '- Bataferli er mismunandi eftir alvarleika tognunar. Stundum ganga einkenni að mestu '
-                                    + 'yfir á fáeinum vikum en stundum þarf lengri tíma (6-8 vikur). '
-                                    + 'Ef batagangur er ekki eins og búist er við (t.d. ef einkenni fara versnandi á dögum/vikum þrátt fyrir ofangreinda meðferð '
-                                    + 'eða einkenni áfram slæm eftir 6-8 vikur) er ráðlagt að hafa samband. Þyrfti þá e.t.v. að taka afstöðu til frekari myndgreininga. '
-                                    + 'Þá getur sjúkraþjálfun einnig verið að gagni.\n'
-                                    + '- Hægt er að nálagast ítarlegri upplýsingar um ökklatognun á vef landspítala'
-                            }
-                        ]
-                    }
-                ]
-            }
-
+            EftirfylgdButton
         ]
     }
     
@@ -15359,7 +15401,55 @@ const SymptomsFoot = [
     }
 ];
 const ExamsFoot = [];
-const PlanFoot = [];
+const PlanFoot = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Hallux Valgus'],
+        options: [
+            {
+                display: 'Hallux Valgus',
+                subOptions: [
+                    { display: 'Greining', output: 'Hallux valgus' },
+                    { display: 'Grunur', output: 'Grunur um Hallux valgus' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Greining, ráðleggingar, myndataka, pantar símatíma fyrir niðurstöður', output: 'Hallux valgus. Veiti ráðleggingar. Gott að vera í rúmgóðum skóm. Hægt að kaupa innlegg sem styður við stóru tánna og kemur henni í rétta stöðu. Teygjur geta hjálpað. Verkjalyf eftir þörfum. Ráðlegg nú myndatöku til að meta frekar. Pantar símatíma fyrir niðurstöður' } 
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: 'Bunion - Skóbúnaður, innlegg o.fl.', output: 'Veiti ráðleggingar. Gott að vera í rúmgóðum skóm. Hægt að kaupa innlegg sem styður við stóru tánna og kemur henni í rétta stöðu. Teygjur geta hjálpað. Verkjalyf eftir þörfum' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Uptodate - Bunion (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/bunion-the-basics' },
+                            { display: 'Lækning - Fræðsla um bunion og aðgerðina', type: 'hyperlink', url: 'https://laekning.is/wp-content/uploads/2022/02/Upplysingar-fyrir-adgerdir-vegna-storutaarskekkju.pdf' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Hallux valgus deformity (bunion) in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/hallux-valgus-deformity-bunion-in-adults' }
+                        ]
+                    }
+                    
+                ],
+                onRightClickOutput: ''
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            EndurmatButton,
+            EftirfylgdButton
+        ]
+    }
+];
 
 // Húðvandamál (Skin problems)
 const SymptomsHud = [
