@@ -1319,7 +1319,7 @@ const Hlekkir = [
     {
         name: '',
         type: 'options',
-        display: ['Meðganga og brjóstagjöf', 'ÞÍH (MMSE, PHQ9, stramaverkefnið o.fl)', 'Læknahandbók'],
+        display: ['Meðganga og brjóstagjöf', 'ÞÍH (MMSE, PHQ9, stramaverkefnið o.fl)'],
         options: [
             {
                 display: 'Meðganga og brjóstagjöf',
@@ -1346,9 +1346,30 @@ const Hlekkir = [
 
 
                 ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Uppflettirit', 'Uppflettisíður lyfja'],
+        options: [
+            {
+                display: 'Uppflettirit',
+                subOptions: [
+                    { display: 'Uptodate', type: 'hyperlink', url: 'https://www.uptodate.com/contents/search' },
+                    { display: 'Internetmedicin', type: 'hyperlink', url: 'https://www.internetmedicin.se/' },
+                    { display: 'Dermnetz (Húðvandamál)', type: 'hyperlink', url: 'https://dermnetnz.org/' },
+                    { display: 'Læknahandbók (Sérnámsverkefni Valtýr)', type: 'hyperlink', url: 'https://www.laeknahandbok.is/' }
+                    
+                ]
             },
             {
-                display: 'Læknahandbók', type: 'hyperlink', url: 'https://www.laeknahandbok.is/'
+                display: 'Uppflettisíður lyfja',
+                subOptions: [
+                    { display: 'Sérlyfjaskrá', type: 'hyperlink', url: 'https://www.serlyfjaskra.is/' },
+                    { display: 'FASS.SE', type: 'hyperlink', url: 'https://www.fass.se/' }
+                ]
             }
         ]
     }
@@ -5619,7 +5640,35 @@ const PlanUrinary = [
                 display: 'Prostatitis',
                 subOptions: [
                     { display: 'Greining', output: 'Prostatitis' },
-                    { display: 'Grunur', output: 'Grunur um prostatitis' }
+                    { display: 'Grunur', output: 'Grunur um prostatitis' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Akút bacterial prostatitis - Sýklalyf - Ráðleggingar - Endurmat PN', output: 'Grunur um bacterial prostatitis. Set sýklalyf í gáttina. Tekur yfirleitt 2-6 daga fyrir einkenni að ganga yfir. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Akút bacterial prostaitis - Treysti ekki í outpatient - BMT', output: 'Grunur um bacterial prostatitis. Skjólstæðingur laslegur og treysti illa í outpatient meðferð. Vísa á bráðamóttöku' },
+                            { display: 'Krónískur prostatitis - Þvagfæraskurðlæknir', output: 'Grunur um krónískan prostaitits. Ráðlegg nánara mat hjá þvagfæraskurðlækni' },
+                            { display: 'Krónískur prostaititis - Ráðleggingar - Sýklalyf - Endurmat ef lagast ekki', output: 'Grunur um krónískan prostatitis. Leiðbeiningar fengnar frá uptodate. Algengt að þvaglátareinkenni hafi staðið í nokkra mánuði. Þarf >6 vikna sýklalyfjameðferð til að uppræta. Ráðlagt sýklalyfjaval fluoroquinolone (500mg 1x2) eða TMP-SMX (160mg/800mg 1x2). Má nota doxycycline eða azithromycin. Set sýklalyf í gáttina. Veiti ráðleggingar vegna greiningar. Endurmat ef lagast ekki á næstu vikum, fyrr ef versnar' }
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: 'Uptodate - Chronic prostatitis and pelvic pain syndrome (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/chronic-prostatitis-and-chronic-pelvic-pain-syndrome-the-basics' },
+                            { display: 'Uptodate - Bacterial prostatitis (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/bacterial-prostatitis-the-basics' } ,
+                            { display: 'Heilsuvera.is - Bólga í blöðruhálskirtli', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/bolga-i-blodruhalskirtli/' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Acute bacterial prostatitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bacterial-prostatitis' },
+                            { display: 'Uptodate - Chronic bacterial prostatitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/chronic-bacterial-prostatitis' },
+                            { display: 'Uptodate - Chronic prostatitis and pelvic pain syndrome', type: 'hyperlink', url: 'https://www.uptodate.com/contents/chronic-prostatitis-and-chronic-pelvic-pain-syndrome' }
+                        ]
+                    }
                 ]
             }
         ]
