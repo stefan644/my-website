@@ -4468,7 +4468,9 @@ const PlanViral = [
                     { display: 'Grunur', output: 'Grunur um herpes' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Grunur, fræðsla, lyf, re PN', output: 'Grunur um herpes. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Endurmat PN' }
+                            { display: 'Grunur, fræðsla, lyf, re PN', output: 'Grunur um herpes. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Endurmat PN' },
+                            { display: 'Grunur, sýnataka, fræðsla, lyf, símatími fyrir niðurstöður', output: 'Grunur um herpes. Tökum sýni í ræktun/pcr. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Fær símatíma fyrir niðurstöður rannsókna' },
+                            { display: 'Grunur, sýnataka, fræðsla, lyf, niðurstöður á sinni heilsugæslu', output: 'Grunur um herpes. Tökum sýni í ræktun/pcr. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Pantar sér símatíma á sinni heilsugæslu fyrir niðurstöður' }
                         ]
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
@@ -14439,114 +14441,475 @@ const ExamsElbow = [
     {
         name: '',
         type: 'options',
-        display: ['Útlit'],
+        display: ['Útlit', 'Þreifing', 'Hreyfigeta'],
         options: [
             {
-                    
-                        display: 'Útlit',
+                display: 'Útlit',
+                subOptions: [
+                    {
+                        display: 'Bólga',  // Swelling
+                        onRightClickOutput: 'Engin bólga sjáanleg',
                         subOptions: [
                             {
-                                display: 'Bólga',
+                                display: 'NOS',  // Not otherwise specified
                                 subOptions: [
-                                    { display: 'Medialt', output: 'Bólga medialt á olnboga' },
-                                    { display: 'Lateralt', output: 'Bólga lateralt á olnboga' }
+                                    { display: 'Olecranon', output: 'Bólga yfir olecranon', onRightClickOutput: 'Engin bólga yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Bólga yfir medial epicondyle', onRightClickOutput: 'Engin bólga yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Bólga yfir lateral epicondyle', onRightClickOutput: 'Engin bólga yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Bólga við liðamótin', onRightClickOutput: 'Engin bólga við liðamótin' }
                                 ]
                             },
                             {
-                                display: 'Bólga og roði',
+                                display: 'Væg',  // Mild swelling
                                 subOptions: [
-                                    { display: 'Medialt', output: 'Bólga og roði medialt á olnboga' },
-                                    { display: 'Lateralt', output: 'Bólga og roði lateralt á olnboga' }
+                                    { display: 'Olecranon', output: 'Væg bólga yfir olecranon', onRightClickOutput: 'Engin bólga yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Væg bólga yfir medial epicondyle', onRightClickOutput: 'Engin bólga yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Væg bólga yfir lateral epicondyle', onRightClickOutput: 'Engin bólga yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Væg bólga við liðamótin', onRightClickOutput: 'Engin bólga við liðamótin' }
                                 ]
                             },
                             {
-                                display: 'Roði',
+                                display: 'Mikil',  // Severe swelling
                                 subOptions: [
-                                    { display: 'Medialt', output: 'Roði medialt á olnboga' },
-                                    { display: 'Lateralt', output: 'Roði lateralt á olnboga' }
-                                ]
-                            },
-                            {
-                                display: 'Blámi',
-                                subOptions: [
-                                    { display: 'Medialt', output: 'Blámi medialt á olnboga' },
-                                    { display: 'Lateralt', output: 'Blámi lateralt á olnboga' }
-                                ]
-                            },
-                            {
-                                display: 'Vöðvarýrnun',
-                                subOptions: [
-                                    { display: 'Medialt', output: 'Vöðvarýrnun medialt á olnboga' },
-                                    { display: 'Lateralt', output: 'Vöðvarýrnun lateralt á olnboga' }
-                                ]
-                            },
-                            {
-                                display: 'Ör',
-                                subOptions: [
-                                    { display: 'Medialt', output: 'Ör medialt á olnboga' },
-                                    { display: 'Lateralt', output: 'Ör lateralt á olnboga' }
+                                    { display: 'Olecranon', output: 'Mikil bólga yfir olecranon', onRightClickOutput: 'Engin bólga yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Mikil bólga yfir medial epicondyle', onRightClickOutput: 'Engin bólga yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Mikil bólga yfir lateral epicondyle', onRightClickOutput: 'Engin bólga yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Mikil bólga við liðamótin', onRightClickOutput: 'Engin bólga við liðamótin' }
                                 ]
                             }
-                        ],
-                        onRightClickOutput: 'Eðlilegt útlit. Ekki áberandi bólga eða roði'
-                    
-                
+                        ]
+                    },
+                    {
+                        display: 'Roði',  // Redness
+                        onRightClickOutput: 'Enginn roði sjáanlegur',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Roði yfir olecranon', onRightClickOutput: 'Enginn roði yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Roði yfir medial epicondyle', onRightClickOutput: 'Enginn roði yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Roði yfir lateral epicondyle', onRightClickOutput: 'Enginn roði yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Roði við liðamótin', onRightClickOutput: 'Enginn roði við liðamótin' }
+                                ]
+                            },
+                            {
+                                display: 'Væg',
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Vægur roði yfir olecranon', onRightClickOutput: 'Enginn roði yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Vægur roði yfir medial epicondyle', onRightClickOutput: 'Enginn roði yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Vægur roði yfir lateral epicondyle', onRightClickOutput: 'Enginn roði yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Vægur roði við liðamótin', onRightClickOutput: 'Enginn roði við liðamótin' }
+                                ]
+                            },
+                            {
+                                display: 'Mikill',
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Mikill roði yfir olecranon', onRightClickOutput: 'Enginn roði yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Mikill roði yfir medial epicondyle', onRightClickOutput: 'Enginn roði yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Mikill roði yfir lateral epicondyle', onRightClickOutput: 'Enginn roði yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Mikill roði við liðamótin', onRightClickOutput: 'Enginn roði við liðamótin' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Bólga og roði',  // Combined swelling and redness
+                        onRightClickOutput: 'Ekki að sjá bólgu eða roða',
+                        subOptions: [
+                            {
+                                display: 'NOS',  // Not otherwise specified
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Bólga og roði yfir olecranon', onRightClickOutput: 'Engin bólga eða roði yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Bólga og roði yfir medial epicondyle', onRightClickOutput: 'Engin bólga eða roði yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Bólga og roði yfir lateral epicondyle', onRightClickOutput: 'Engin bólga eða roði yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Bólga og roði við liðamótin', onRightClickOutput: 'Engin bólga eða roði við liðamótin' }
+                                ]
+                            },
+                            {
+                                display: 'Væg',  // Mild swelling and redness
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Væg bólga og roði yfir olecranon', onRightClickOutput: 'Engin bólga eða roði yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Væg bólga og roði yfir medial epicondyle', onRightClickOutput: 'Engin bólga eða roði yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Væg bólga og roði yfir lateral epicondyle', onRightClickOutput: 'Engin bólga eða roði yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Væg bólga og roði við liðamótin', onRightClickOutput: 'Engin bólga eða roði við liðamótin' }
+                                ]
+                            },
+                            {
+                                display: 'Mikil',  // Severe swelling and redness
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Mikil bólga og roði yfir olecranon', onRightClickOutput: 'Engin bólga eða roði yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Mikil bólga og roði yfir medial epicondyle', onRightClickOutput: 'Engin bólga eða roði yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Mikil bólga og roði yfir lateral epicondyle', onRightClickOutput: 'Engin bólga eða roði yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Mikil bólga og roði við liðamótin', onRightClickOutput: 'Engin bólga eða roði við liðamótin' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Mar',  // Bruising
+                        onRightClickOutput: 'Ekkert sjáanlegt mar',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Mar yfir olecranon', onRightClickOutput: 'Ekkert sjáanlegt mar yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Mar yfir medial epicondyle', onRightClickOutput: 'Ekkert sjáanlegt mar yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Mar yfir lateral epicondyle', onRightClickOutput: 'Ekkert sjáanlegt mar yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Mar við liðamótin', onRightClickOutput: 'Ekkert sjáanlegt mar við liðamótin' }
+                                ]
+                            },
+                            {
+                                display: 'Vottar fyrir',
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Vottar fyrir mari yfir olecranon', onRightClickOutput: 'Ekkert sjáanlegt mar yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Vottar fyrir mari yfir medial epicondyle', onRightClickOutput: 'Ekkert sjáanlegt mar yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Vottar fyrir mari yfir lateral epicondyle', onRightClickOutput: 'Ekkert sjáanlegt mar yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Vottar fyrir mari við liðamótin', onRightClickOutput: 'Ekkert sjáanlegt mar við liðamótin' }
+                                ]
+                            },
+                            {
+                                display: 'Áberandi',
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Áberandi mar yfir olecranon', onRightClickOutput: 'Ekkert sjáanlegt mar yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Áberandi mar yfir medial epicondyle', onRightClickOutput: 'Ekkert sjáanlegt mar yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Áberandi mar yfir lateral epicondyle', onRightClickOutput: 'Ekkert sjáanlegt mar yfir lateral epicondyle' },
+                                    { display: 'Joint Line', output: 'Áberandi mar við liðamótin', onRightClickOutput: 'Ekkert sjáanlegt mar við liðamótin' }
+                                ]
+                            }
+                        ]
+                    }
+                    // Additional options like 'Bólga og roði' and 'Húðbreytingar' can be similarly structured.
+                ],
+                onRightClickOutput: 'Eðlilegt útlit. Ekki að sjá áberandi bólgu, mar eða roða'
             },            
             {
                 display: 'Þreifing',
+                onRightClickOutput: 'Þreifing án athugasemda. Ekki áberandi eymsli, hiti eða crepitus.',
                 subOptions: [
                     {
-                        display: 'Liðbil',
+                        display: 'Eymsli',  // Tenderness
+                        onRightClickOutput: 'Engin eymsli við þreifingu',
                         subOptions: [
-                            { display: 'Innanvert', output: 'Eymsl yfir innanverðu liðbili' },
-                            { display: 'Utanvert', output: 'Eymsl yfir utanverðu liðbili' }
+                            {
+                                display: 'NOS',  // Not otherwise specified
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Eymsli við þreifingu yfir olecranon', onRightClickOutput: 'Engin eymsli við þreifingu yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Eymsli við þreifingu yfir medial epicondyle', onRightClickOutput: 'Engin eymsli við þreifingu yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Eymsli við þreifingu yfir lateral epicondyle', onRightClickOutput: 'Engin eymsli við þreifingu yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Eymsli við þreifingu yfir liðamótum', onRightClickOutput: 'Engin eymsli við þreifingu yfir liðamótum' }
+                                ]
+                            },
+                            {
+                                display: 'Væg',  // Mild tenderness
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Væg eymsli við þreifingu yfir olecranon', onRightClickOutput: 'Engin eymsli við þreifingu yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Væg eymsli við þreifingu yfir medial epicondyle', onRightClickOutput: 'Engin eymsli við þreifingu yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Væg eymsli við þreifingu yfir lateral epicondyle', onRightClickOutput: 'Engin eymsli við þreifingu yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Væg eymsli við þreifingu yfir liðamótum', onRightClickOutput: 'Engin eymsli við þreifingu yfir liðamótum' }
+                                ]
+                            },
+                            {
+                                display: 'Mikil',  // Severe tenderness
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Mikil eymsli við þreifingu yfir olecranon', onRightClickOutput: 'Engin eymsli við þreifingu yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Mikil eymsli við þreifingu yfir medial epicondyle', onRightClickOutput: 'Engin eymsli við þreifingu yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Mikil eymsli við þreifingu yfir lateral epicondyle', onRightClickOutput: 'Engin eymsli við þreifingu yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Mikil eymsli við þreifingu yfir liðamótum', onRightClickOutput: 'Engin eymsli við þreifingu yfir liðamótum' }
+                                ]
+                            }
                         ]
                     },
                     {
-                        display: 'Patellar',
+                        display: 'Hiti',  // Warmth
+                        onRightClickOutput: 'Engin hitaaukning',
                         subOptions: [
-                            { display: 'Infrapatellar', output: 'Eymsl infrapatellart' },
-                            { display: 'Suprapatellar', output: 'Eymsl suprapatellart' }
+                            {
+                                display: 'NOS',
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Hiti yfir olecranon', onRightClickOutput: 'Engin hitaaukning yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Hiti yfir medial epicondyle', onRightClickOutput: 'Engin hitaaukning yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Hiti yfir lateral epicondyle', onRightClickOutput: 'Engin hitaaukning yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Hiti við þreifingu yfir liðamótum', onRightClickOutput: 'Engin hitaaukning við þreifingu yfir liðamótum' }
+                                ]
+                            },
+                            {
+                                display: 'Væg',  // Mild warmth
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Væg hitaaukning yfir olecranon', onRightClickOutput: 'Engin hitaaukning yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Væg hitaaukning yfir medial epicondyle', onRightClickOutput: 'Engin hitaaukning yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Væg hitaaukning yfir lateral epicondyle', onRightClickOutput: 'Engin hitaaukning yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Væg hitaaukning við þreifingu yfir liðamótum', onRightClickOutput: 'Engin hitaaukning við þreifingu yfir liðamótum' }
+                                ]
+                            },
+                            {
+                                display: 'Mikil',  // Severe warmth
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Mikil hitaaukning yfir olecranon', onRightClickOutput: 'Engin hitaaukning yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Mikil hitaaukning yfir medial epicondyle', onRightClickOutput: 'Engin hitaaukning yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Mikil hitaaukning yfir lateral epicondyle', onRightClickOutput: 'Engin hitaaukning yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Mikil hitaaukning við þreifingu yfir liðamótum', onRightClickOutput: 'Engin hitaaukning við þreifingu yfir liðamótum' }
+                                ]
+                            }
                         ]
                     },
-                    { display: 'Pes anserinus', output: 'Eymsl yfir pes anserinus' },
-                    { display: 'Hnésbót', output: 'Eymsl yfir hnésbót' },
-                    { display: 'Medial femoral epicondyle', output: 'Eymsl yfir medial femoral epicondyle' },
-                    { display: 'Lateral femoral epicondyle', output: 'Eymsl yfir lateral femoral epicondyle' },
-                    { display: 'Tibial tuberosity', output: 'Eymsl yfir tibial tuberosity' }
-                ],
-                onRightClickOutput: 'Engin eymsli við þreifingu'
-            }
-            ,
+                    {
+                        display: 'Eymsli og Hiti',  // Combined tenderness and warmth
+                        onRightClickOutput: 'Engin eymsli eða hiti við þreifingu',
+                        subOptions: [
+                            {
+                                display: 'NOS',  // Not otherwise specified
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Eymsli og hiti við þreifingu yfir olecranon', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Eymsli og hiti við þreifingu yfir medial epicondyle', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Eymsli og hiti við þreifingu yfir lateral epicondyle', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Eymsli og hiti við þreifingu yfir liðamótum', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir liðamótum' }
+                                ]
+                            },
+                            {
+                                display: 'Væg',  // Mild tenderness and warmth
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Væg eymsli og hiti við þreifingu yfir olecranon', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Væg eymsli og hiti við þreifingu yfir medial epicondyle', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Væg eymsli og hiti við þreifingu yfir lateral epicondyle', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Væg eymsli og hiti við þreifingu yfir liðamótum', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir liðamótum' }
+                                ]
+                            },
+                            {
+                                display: 'Mikil',  // Severe tenderness and warmth
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Mikil eymsli og hiti við þreifingu yfir olecranon', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Mikil eymsli og hiti við þreifingu yfir medial epicondyle', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Mikil eymsli og hiti við þreifingu yfir lateral epicondyle', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Mikil eymsli og hiti við þreifingu yfir liðamótum', onRightClickOutput: 'Engin eymsli eða hiti við þreifingu yfir liðamótum' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Crepitus',  // Crepitus
+                        onRightClickOutput: 'Enginn crepitus',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Crepitus við þreifingu yfir olecranon', onRightClickOutput: 'Enginn crepitus við þreifingu yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Crepitus við þreifingu yfir medial epicondyle', onRightClickOutput: 'Enginn crepitus við þreifingu yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Crepitus við þreifingu yfir lateral epicondyle', onRightClickOutput: 'Enginn crepitus við þreifingu yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Crepitus við þreifingu yfir liðamótum', onRightClickOutput: 'Enginn crepitus við þreifingu yfir liðamótum' }
+                                ]
+                            },
+                            {
+                                display: 'Væg',  // Mild crepitus
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Vægur crepitus við þreifingu yfir olecranon', onRightClickOutput: 'Enginn crepitus við þreifingu yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Vægur crepitus við þreifingu yfir medial epicondyle', onRightClickOutput: 'Enginn crepitus við þreifingu yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Vægur crepitus við þreifingu yfir lateral epicondyle', onRightClickOutput: 'Enginn crepitus við þreifingu yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Vægur crepitus við þreifingu yfir liðamótum', onRightClickOutput: 'Enginn crepitus við þreifingu yfir liðamótum' }
+                                ]
+                            },
+                            {
+                                display: 'Mikil',  // Severe crepitus
+                                subOptions: [
+                                    { display: 'Olecranon', output: 'Mikill crepitus við þreifingu yfir olecranon', onRightClickOutput: 'Enginn crepitus við þreifingu yfir olecranon' },
+                                    { display: 'Medial Epicondyle', output: 'Mikill crepitus við þreifingu yfir medial epicondyle', onRightClickOutput: 'Enginn crepitus við þreifingu yfir medial epicondyle' },
+                                    { display: 'Lateral Epicondyle', output: 'Mikill crepitus við þreifingu yfir lateral epicondyle', onRightClickOutput: 'Enginn crepitus við þreifingu yfir lateral epicondyle' },
+                                    { display: 'Liðamót', output: 'Mikill crepitus við þreifingu yfir liðamótum', onRightClickOutput: 'Enginn crepitus við þreifingu yfir liðamótum' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
             {
                 display: 'Hreyfigeta',
-                subOptions: Array.from({ length: 7 }, (_, i) => ({
-                    display: `Extension ${-10 + i * 5} gráður`,
-                    subOptions: Array.from({ length: 13 }, (_, j) => ({
-                        display: `Flexion ${90 + j * 5} gráður`,
-                        output: `Nær ${-10 + i * 5} gráða extension. Nær ${90 + j * 5} gráða flexion.`
-                    }))
-                })),
-                onRightClickOutput: 'Full hreyfigeta'
+                onRightClickOutput: 'Full hreyfigeta án takmarkana',
+                subOptions: [
+                    {
+                        display: 'Flexion',
+                        onRightClickOutput: 'Engin takmörkun á flexion',
+                        subOptions: [
+                            {
+                                display: 'Skert',  // Limited range
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skert flexion' },
+                                    ...Array.from({ length: 13 }, (_, j) => ({
+                                        display: `${90 + j * 5} gráður`,  // Degrees from 90° to 150°
+                                        output: `Skert flexion. Nær ${90 + j * 5} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Aðeins Skert',  // Slightly limited
+                                subOptions: [
+                                    { display: 'NOS', output: 'Aðeins skert flexion' },
+                                    ...Array.from({ length: 13 }, (_, j) => ({
+                                        display: `${90 + j * 5} gráður`,
+                                        output: `Aðeins skert flexion. Nær ${90 + j * 5} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Mikið Skert',  // Significantly limited
+                                subOptions: [
+                                    { display: 'NOS', output: 'Mikið skert flexion' },
+                                    ...Array.from({ length: 13 }, (_, j) => ({
+                                        display: `${90 + j * 5} gráður`,
+                                        output: `Mikið skert flexion. Nær ${90 + j * 5} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Gráður',  // Exact degrees only
+                                subOptions: Array.from({ length: 13 }, (_, j) => ({
+                                    display: `${90 + j * 5} gráður`,
+                                    output: `Nær ${90 + j * 5} gráða flexion.`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Extension',
+                        onRightClickOutput: 'Engin takmörkun á extension',
+                        subOptions: [
+                            {
+                                display: 'Skert',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skert extension' },
+                                    ...Array.from({ length: 7 }, (_, i) => ({
+                                        display: `${-10 + i * 5} gráður`,  // Degrees from -10° to 20°
+                                        output: `Skert extension. Nær ${-10 + i * 5} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Aðeins Skert',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Aðeins skert extension' },
+                                    ...Array.from({ length: 7 }, (_, i) => ({
+                                        display: `${-10 + i * 5} gráður`,
+                                        output: `Aðeins skert extension. Nær ${-10 + i * 5} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Mikið Skert',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Mikið skert extension' },
+                                    ...Array.from({ length: 7 }, (_, i) => ({
+                                        display: `${-10 + i * 5} gráður`,
+                                        output: `Mikið skert extension. Nær ${-10 + i * 5} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Gráður',
+                                subOptions: Array.from({ length: 7 }, (_, i) => ({
+                                    display: `${-10 + i * 5} gráður`,
+                                    output: `Nær ${-10 + i * 5} gráða extension.`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Pronation',
+                        onRightClickOutput: 'Engin takmörkun á pronation',
+                        subOptions: [
+                            {
+                                display: 'Skert',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skert pronation' },
+                                    ...Array.from({ length: 9 }, (_, j) => ({
+                                        display: `${j * 10} gráður`,  // Degrees from 0° to 80°
+                                        output: `Skert pronation. Nær ${j * 10} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Aðeins Skert',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Aðeins skert pronation' },
+                                    ...Array.from({ length: 9 }, (_, j) => ({
+                                        display: `${j * 10} gráður`,
+                                        output: `Aðeins skert pronation. Nær ${j * 10} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Mikið Skert',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Mikið skert pronation' },
+                                    ...Array.from({ length: 9 }, (_, j) => ({
+                                        display: `${j * 10} gráður`,
+                                        output: `Mikið skert pronation. Nær ${j * 10} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Gráður',
+                                subOptions: Array.from({ length: 9 }, (_, j) => ({
+                                    display: `${j * 10} gráður`,
+                                    output: `Nær ${j * 10} gráða pronation.`
+                                }))
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Supination',
+                        onRightClickOutput: 'Engin takmörkun á supination',
+                        subOptions: [
+                            {
+                                display: 'Skert',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Skert supination' },
+                                    ...Array.from({ length: 9 }, (_, j) => ({
+                                        display: `${j * 10} gráður`,  // Degrees from 0° to 80°
+                                        output: `Skert supination. Nær ${j * 10} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Aðeins Skert',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Aðeins skert supination' },
+                                    ...Array.from({ length: 9 }, (_, j) => ({
+                                        display: `${j * 10} gráður`,
+                                        output: `Aðeins skert supination. Nær ${j * 10} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Mikið Skert',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Mikið skert supination' },
+                                    ...Array.from({ length: 9 }, (_, j) => ({
+                                        display: `${j * 10} gráður`,
+                                        output: `Mikið skert supination. Nær ${j * 10} gráðum`
+                                    }))
+                                ]
+                            },
+                            {
+                                display: 'Gráður',
+                                subOptions: Array.from({ length: 9 }, (_, j) => ({
+                                    display: `${j * 10} gráður`,
+                                    output: `Nær ${j * 10} gráða supination.`
+                                }))
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sértæk próf (Vantar)', 'Æða- og taugaskoðun (Vantar)'],
+        options: [
+            {
+
             },
             {
-                display: 'Liðbandaprófun',
-                subOptions: [
-                    { display: 'MCL', output: 'Verkur og aukið laxitet við prófun á MCL' },
-                    { display: 'LCL', output: 'Verkur og aukið laxitet við prófun á LCL' },
-                    { display: 'ACL', output: 'Aukið laxitet við prófun á fremra krossbandi' },
-                    { display: 'PCL', output: 'Aukið laxitet við prófun á aftara krossbandi' }
-                ],
-                onRightClickOutput: 'Liðbandaprófun eðlileg'
-            },
-            {
-                display: 'Mcmurray',
-                subOptions: [
-                    { display: 'Jákvætt medialt', output: 'Mcmurray jákvætt medialt' },
-                    { display: 'Jákvætt lateralt', output: 'Mcmurray jákvætt lateralt' },
-                    { display: 'Jákvætt beggja vegna', output: 'Mcmurray jákvætt beggja vegna' }
-                ],
-                onRightClickOutput: 'Mcmurray neikvætt'
+                
             }
         ]
     }
