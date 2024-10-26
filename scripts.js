@@ -4241,7 +4241,7 @@ const PlanViral = [
                     { display: 'Greining', output: 'Vírósa' },
                     { display: 'Grunur', output: 'Grunur um byrjandi veirusýkingu' },
                     { display: 'Fullmótað plan', output: 'Vírósa. Veiti viðeigandi ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar' }
-                ]
+                ], onRightClickOutput: 'Vírósa. Veiti viðeigandi ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar'
             },
             {
                 display: 'Sinusitis',
@@ -4251,14 +4251,12 @@ const PlanViral = [
                     { display: 'Fullmótað plan', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki' },
                     { display: 'Hlekkir', 
                         subOptions: [
-                            
                             { display: 'Uptodate - Greining fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-sinusitis-and-rhinosinusitis-in-adults-clinical-manifestations-and-diagnosis' },
                             { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/uncomplicated-acute-sinusitis-and-rhinosinusitis-in-adults-treatment' },
-                            { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/skutabolga/' }
-                            
+                            { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/skutabolga/' } 
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki'
             },
             {
                 display: 'Lungnabólga',
@@ -4289,7 +4287,7 @@ const PlanViral = [
                             ]
                         }
                         
-                    ],
+                    ], onRightClickOutput: 'Grunur um lungnabólgu. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki'
             }
         ]
     },
@@ -4323,7 +4321,7 @@ const PlanViral = [
                             { display: 'ÞÍH - Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/brad-berkjubolga-og-lungnabolga-hja-fullordnum-og-bornum/' }
                         ]
                     }
-                ]
+                ], onRightClickOutput:'Berkjubólga. Veiti ráðleggingar. Tekur yfirleitt 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi. Endurmat eftir þörfum'
             },
             {
                 display: 'Bronchiolitis',
@@ -4352,7 +4350,7 @@ const PlanViral = [
                             { display: 'Uptodate - Respiratory Severity Score', type: 'hyperlink', url: 'https://www.uptodate.com/contents/image?imageKey=PEDS%2F143449&topicKey=PEDS%2F6020' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Grunur um bronchiolitis. Algengast að RSV valdi. Mild einkenni. Ráðlegg stuðningsmeðferð. Passa að barnið drekki vel. Nota nefsugu til að fjarlægja slím úr nös. Má nota hitalækkandi pn. Endurmat ef einkenni versna eða lagast ekki á næstu dögum. Engin eftirfylgd ef skánandi'
             },
             {
                 display: 'Versnun á COPD',
@@ -4361,7 +4359,7 @@ const PlanViral = [
                     { display: 'Grunur', output: 'Grunur um versnun á COPD' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Sýklalyf', output: 'Grunur um versnun á COPD. Set sýklalyf í gáttina. Endurmat ef lagast ekki' },
+                            { display: 'Sýklalyf', output: 'Grunur um versnun á COPD. Í ljósi einkenna ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Endurmat ef lagast ekki' },
                             { display: 'Sýkalyf og sterar', output: 'Grunur um versnun á COPD. Ráðlegg sýklalyf og stuttan sterakúr. Set hvoru tveggja í gáttina. Endurmat ef lagast ekki' }
                         ]
                     },
@@ -4379,7 +4377,7 @@ const PlanViral = [
                             { display: 'Læknablaðið - Yfirlitsgrein 2015', type: 'hyperlink', url: 'https://www.laeknabladid.is/tolublod/2015/0708/nr/5555' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Grunur um versnun á COPD. Í ljósi einkenna ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Endurmat ef lagast ekki'
             },
             {
                 display: 'Astmi',
@@ -4424,7 +4422,7 @@ const PlanViral = [
                             { display: 'Uptodate - Uppvinnsla barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-sore-throat-in-children' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Hálsbólga. Streptest neikvætt. Veiti ráðleggingar, oft viral orsök. Nota verkjalyf og strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki'
             },
             {
                 display: 'Strep',
@@ -4433,7 +4431,7 @@ const PlanViral = [
                     { display: 'Grunur', output: 'Grunur um strep throat' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Grunur, meðferð, endurmat ef lagast ekki', output: 'Grunur um streptokokkasýkingu í hálsi. Set á sýklalyf. Veiti ráðleggingar. Nota verkjalyf og t.d. strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Grunur, meðferð, endurmat ef lagast ekki', output: 'Grunur um streptokokkasýkingu í hálsi. Set sýklalyf í gáttina. Veiti ráðleggingar. Nota verkjalyf og t.d. strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' },
                             { display: 'Jákv streptest, meðferð og ráð', output: 'Streptokkasýking í hálsi. Streptest jákvætt. Set sýklalyf í gáttina. Veiti ráðleggingar. Nota verkjalyf og t.d. strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' }
                         ]
                     },
@@ -4452,7 +4450,7 @@ const PlanViral = [
                             { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/halsbolga/' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Grunur um streptokokkasýkingu í hálsi. Set sýklalyf í gáttina. Veiti ráðleggingar. Nota verkjalyf og t.d. strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki'
             },
             {
                 display: 'Mónó',
@@ -4485,7 +4483,7 @@ const PlanViral = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Grunur um herpes. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Endurmat PN'
             },
             {
                 display: 'Enterovirus',
@@ -4514,7 +4512,7 @@ const PlanViral = [
                             { display: 'Fullmótað plan', output: 'Grunur um herpangina. Veiti almennar ráðleggingar. Stuðningsmeðferð. Endurmat pn' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Grunur um enteroveirusýkingu. Veiti almennar ráðleggingar. Sárin geta verið kalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar oft takmarkað. Endurmat ef versnar eða lagast ekki'
             }
             
         ]
@@ -4551,7 +4549,7 @@ const PlanViral = [
                             { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/brad-mideyrnabolga/' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Otitis media. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki'
             },
             {
                 display: 'Eyrnaverkur',
@@ -4595,7 +4593,7 @@ const PlanViral = [
                             { display: 'Langvarandi, meðferðarresistant, HNE læknir', output: 'Otitis externa. Löng saga og gengið illa að meðhöndla. Ráðlegg mat HNE læknis' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Otitis externa. Veiti ráðleggingar og fræðslu. Set sýkladropa í gáttina. Endurmat ef versnar eða lagast ekki'
             }
         ]
     },
@@ -14903,13 +14901,77 @@ const ExamsElbow = [
     {
         name: '',
         type: 'options',
-        display: ['Sértæk próf (Vantar)', 'Æða- og taugaskoðun (Vantar)'],
+        display: ['Sértæk próf', 'Æða- og taugaskoðun'],
         options: [
             {
-
+                display: 'Sértæk próf',
+                subOptions: [
+                    {
+                        display: 'Tinel Sign',  // Test for ulnar nerve compression
+                        output: 'Jákvætt Tinel merki',  // Output for left-click (positive)
+                        onRightClickOutput: 'Neikvætt Tinel merki'  // Output for right-click (negative)
+                    },
+                    {
+                        display: 'Mill’s Test',  // Test for lateral epicondylitis (tennis elbow)
+                        output: 'Jákvætt Mill’s próf',
+                        onRightClickOutput: 'Neikvætt Mill’s próf'
+                    },
+                    {
+                        display: 'Golfer’s Elbow Test',  // Test for medial epicondylitis (golfer's elbow)
+                        output: 'Jákvætt Golfer’s Elbow próf',
+                        onRightClickOutput: 'Neikvætt Golfer’s Elbow próf'
+                    },
+                    {
+                        display: 'Varus Stress Test',  // Test for lateral collateral ligament stability
+                        output: 'Jákvætt Varus stress próf',
+                        onRightClickOutput: 'Neikvætt Varus stress próf'
+                    },
+                    {
+                        display: 'Valgus Stress Test',  // Test for medial collateral ligament stability
+                        output: 'Jákvætt Valgus stress próf',
+                        onRightClickOutput: 'Neikvætt Valgus stress próf'
+                    }
+                ]
             },
             {
-                
+                display: 'Æða- og taugaskoðun',
+                subOptions: [
+                    {
+                        display: 'Radial púls',  // Radial pulse check
+                        output: 'Óeðlilegur radial púls',  // Output for left-click (abnormal)
+                        onRightClickOutput: 'Eðlilegur radial púls'  // Output for right-click (normal)
+                    },
+                    {
+                        display: 'Ulnar púls',  // Ulnar pulse check
+                        output: 'Óeðlilegur ulnar púls',
+                        onRightClickOutput: 'Eðlilegur ulnar púls'
+                    },
+                    {
+                        display: 'Háræðafylling',  // Capillary refill check
+                        output: 'Seinkuð háræðafylling',  // Abnormal if delayed
+                        onRightClickOutput: 'Eðlileg háræðafylling'  // Normal if within 2 seconds
+                    },
+                    {
+                        display: 'Skynjun',  // Sensation check (general)
+                        output: 'Skert skynjun við þreifingu',  // Output for left-click (reduced sensation)
+                        onRightClickOutput: 'Eðlileg skynjun við þreifingu'  // Output for right-click (normal sensation)
+                    },
+                    {
+                        display: 'Titringsskyn',  // Vibration sense check
+                        output: 'Skert titringsskyn',  // Abnormal finding
+                        onRightClickOutput: 'Eðlilegt titringsskyn'  // Normal finding
+                    },
+                    {
+                        display: 'Two-point discrimination',  // Two-point discrimination check
+                        output: 'Skert two-point discrimination',  // Output for left-click (abnormal)
+                        onRightClickOutput: 'Eðlileg prófun á two-point discrimination'  // Output for right-click (normal)
+                    },
+                    {
+                        display: 'Kraftur',  // Motor function check
+                        output: 'Skertur kraftur',  // Output for left-click (motor impairment)
+                        onRightClickOutput: 'Eðlilegur styrkur'  // Output for right-click (normal motor function)
+                    }
+                ], onRightClickOutput: 'Distal æða- og taugaskoðun án athugasemda. Kraftur, skyn og púlsar gróft metið eðlilegt'
             }
         ]
     }
@@ -14928,6 +14990,11 @@ const PlanElbow = [
                         { display: 'Fullmótuð plön', 
                             subOptions: [
                                 { display: 'Grunur, ráðleggingar, sjúkraþjálfun, re pn ', output: 'Grunur um epicondylitis. Veiti viðeigandi ráðleggingar. Lagast yfirleitt af sjálfu sér. Forðast álag sem eykur á einkenni. Kæling og verkjalyf pn. Fær beiðni í sjúkraþjálfun. Endurmat eftir þörfum' }
+                            ]    
+                        },
+                        { display: 'Ráðleggingar', 
+                            subOptions: [
+                                { display: 'Epicondylitis', output: 'Veiti ráðleggingar vegna epicondylitis. Lagast yfirleitt af sjálfu sér. Forðast álag sem eykur á einkenni. Kæling og verkjalyf pn' }
                             ]    
                         },
                         { display: 'Leiðbeiningar til skjólstæðings',
@@ -15058,6 +15125,80 @@ const PlanElbow = [
                 onRightClickOutput: ''
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Tognun'],
+        options: [
+            {
+                display: 'Tognun',
+                subOptions: [
+                    { display: 'Greining', output: 'Tognun á olnboga' },
+                    { display: 'Grunur', output: 'Grunur um tognun á olnboga' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Mild einkenni, RICE og bólgueyðandi PN. Endurmat ef lagast ekki', 
+                                output: 'Tognun. Mild einkenni. Ráðlegg bólgueyðandi næstu daga eftir þörfum. RICE. '
+                                +'Getur keypt sér teygjusokk til að styðja við. Gengur yfirleitt yfir á nokkrum dögum / vikum. '
+                                +'Endurmat ef versnar eða lagast ekki' 
+                            },
+                            { display: 'Get ekki útilokað brot, RTG á stofu, ef neikv meðhöndla sem tognun, ef jákv G3, re pn', 
+                                output: 'Áverki á olnboga. Get illa útilokað brot m.v. sögu og skoðun. Ráðlegg því RTG. '
+                                +'Ef RTG eðlileg meðhöndlum við sem tognun (RICE og bólgueyðandi PN). '
+                                +'Ef reynist brot ráðlegg nánara mat á G3. Endurmat PN'
+                            },
+                            { display: 'Get ekki útilokað brot, bráðamóttaka', output: 'Áverki á olnboga. Get ekki útilokað brot m.v. sögu og skoðun. Vísa á bráðamóttöku í nánara mat' }
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: 'Ráðleggingar við tognun', output: 'Veiti ráðleggingar. Ráðlegg bólgueyðandi næstu daga eftir þörfum. RICE. '
+                                +'Getur keypt sér teygjusokk til að styðja við. Gengur yfirleitt yfir á nokkrum dögum / vikum. ' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            {
+                                display: 'Heimaráð við tognun',
+                                output: '\n\n'
+                                    + 'Leiðbeiningar vegna tognunar:\n'
+                                    
+                                    + '- Þar sem skoðun bendir ekki til brots meðhöndlum við sem tognun. Hvíld er ráðlögð '
+                                    + 'fyrstu dagana á meðan bólgan hjaðnar. Gott er að nota kælipoka í 15-20mín í senn (20 mín on, 20 mín off). Mikilvægt er að hafa t.d. '
+                                    + 'þunnt viskarstykki milli kælipoka og húðar. Passa þarf að kælipoki komist ekki í beina snertingu '
+                                    + 'við húð en slíkt gæti leitt til kælibruna. Teygjusokkur getur hjálpað, hægt er að nálagast þá í flestum '
+                                    + 'apótekum landsins og/eða stoðkerfisverslunum. Gott getur verið að nota bólgueyðandi verkjalyf (svo sem íbúfen) '
+                                    + 'með eða án paracetamól við verkjum.\n'
+                                    + '- Bataferli er mismunandi eftir alvarleika tognunar. Lang oftast gagna einkenni yfir á nokkrum dögum en '
+                                    + 'stundum tekur það fáeinar vikur. '
+                                    + 'Ef batagangur er ekki eins og búist er við (t.d. ef einkenni fara versnandi á næstu dögum/vikum þrátt fyrir ofangreinda meðferð '
+                                    + 'eða einkenni áfram slæm) er ráðlagt að hafa samband. Þyrfti þá e.t.v. að taka afstöðu til frekari myndgreininga. '
+                                    + 'Þá getur sjúkraþjálfun einnig verið að gagni'
+                            },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Evaluation of elbow pain in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-elbow-pain-in-adults' },
+                            { display: 'Uptodate - Elbow injuries in children', type: 'hyperlink', url: 'https://www.uptodate.com/contents/elbow-injuries-in-active-children-or-skeletally-immature-adolescents-approach' }
+                        ]
+                    }
+                    
+                ],
+                onRightClickOutput: ''
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd', 'Prentaðar leiðbeiningar'],
+        options: [
+        EndurmatButton, EftirfylgdButton, PrentaðarLeiðbeiningar
+    ]
     }
 
 ];
@@ -15092,14 +15233,266 @@ const PlanHand = [];
 
 // Back
 const SymptomsBack = [
+    /*
+    Vaktaheader,
+    Timalengd2,
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna'],
+        display: ['Staðsetning'],
         options: [
-            timalengdButton
+            {
+                display: 'Staðsetning',
+                subOptions: [
+                    {
+                        display: 'Cervical',
+                        output: 'Leitar vegna einkenna frá cervical hluta hryggs'
+                    },
+                    {
+                        display: 'Brjóstbak',
+                        output: 'Leitar vegna einkenna frá brjóstbaki'
+                    },
+                    {
+                        display: 'Lend (Lumbar)',
+                        output: 'Leitar vegna einkenna frá lend (lumbar) hluta hryggs'
+                    },
+                    {
+                        display: 'Spjaldhryggur (Sacral)',
+                        output: 'Leitar vegna einkenna frá spjaldhrygg (sacral)'
+                    },
+                    {
+                        display: 'Dreift',
+                        output: 'Leitar vegna einkenna frá dreifðu svæði í baki'
+                    },
+                    {
+                        display: 'Getur illa staðsett',
+                        output: 'Leitar vegna einkenna sem erfitt er að staðsetja í baki'
+                    }
+                ]
+            }
         ]
-    }
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Onset', 'Áverki'],
+        options: [
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: 'Hægt og rólega', output: 'Byrjaði hægt og rólega' },
+                    { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
+                    { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
+                ]
+            },
+            {
+                display: 'Áverki',
+                subOptions: [
+                    {
+                        display: 'Lyfting',
+                        subOptions: [
+                            { display: 'NOS', output: 'Lyftingaáverki' },
+                            { display: 'Í vinnu', output: 'Lyfti þungu í vinnunni' },
+                            { display: 'Heima', output: 'Lyfti þungu heima' },
+                            { display: 'Íþróttir', output: 'Lyfti þungu í íþróttum' }
+                        ]
+                    },
+                    {
+                        display: 'Fall',
+                        subOptions: [
+                            { display: 'NOS', output: 'Falláverki' },
+                            { display: 'Á hálku', output: 'Féll á hálku' },
+                            { display: 'Úr hæð', output: 'Féll úr hæð' }
+                        ]
+                    },
+                    {
+                        display: 'Snúningsáverki',
+                        subOptions: [
+                            { display: 'NOS', output: 'Snúningsáverki' },
+                            { display: 'Í vinnu', output: 'Snéri upp á bakið í vinnunni' },
+                            { display: 'Í íþróttum', output: 'Snéri upp á bakið í íþróttum' }
+                        ]
+                    },
+                    {
+                        display: 'Bílslys',
+                        output: 'Bakslys í bílslysi'
+                    },
+                    {
+                        display: 'Án áverka',
+                        output: 'Engin saga um áverka'
+                    }
+                ],
+                onRightClickOutput: 'Engin saga um áverka'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Verkur', 'Leiðni', 'Versnar', 'Skánar', 'Severity'],
+        options: [
+            {
+                display: 'Verkur',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Lýsir verk í baki'
+                    },
+                    {
+                        display: 'Daufur',
+                        output: 'Lýsir daufa verk'
+                    },
+                    {
+                        display: 'Brennandi',
+                        output: 'Lýsir brennandi verk'
+                    },
+                    {
+                        display: 'Beittur',
+                        output: 'Lýsir beittum verk'
+                    }
+                ],
+                onRightClickOutput: 'Neitar verk'
+            },
+            {
+                display: 'Leiðni',
+                subOptions: [
+                    { display: 'Út í fótlegg', output: 'Verkur leiðir út í fótlegg' },
+                    { display: 'Út í rass', output: 'Verkur leiðir út í rass' },
+                    { display: 'Upp í herðar', output: 'Verkur leiðir upp í herðar' },
+                    { display: 'Upp í háls', output: 'Verkur leiðir upp í háls' }
+                ],
+                onRightClickOutput: 'Neitar leiðni'
+            },
+            {
+                display: 'Versnar',
+                subOptions: [
+                    { display: 'Við hreyfingu', output: 'Versnar við hreyfingu' },
+                    { display: 'Við setu', output: 'Versnar við að sitja' },
+                    { display: 'Við standandi stöðu', output: 'Versnar við að standa' },
+                    { display: 'Við framhalla', output: 'Versnar við að halla sér fram' },
+                    { display: 'Við bakhalla', output: 'Versnar við að halla sér aftur' },
+                    { display: 'Við lyftingu', output: 'Versnar við að lyfta þungu' },
+                    {
+                        display: 'Næturlagi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Versnar á nóttunni' },
+                            { display: 'Vaknar vegna verkja', output: 'Vaknar á nóttunni vegna verkja' },
+                            { display: 'Sofnar ekki og vaknar', output: 'Á erfitt með svefn vegna verkja' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekkert sem gerir verkinn verri'
+            },
+            {
+                display: 'Skánar',
+                subOptions: [
+                    { display: 'Við hvíld', output: 'Skánar við hvíld' },
+                    { display: 'Við liggjandi stöðu', output: 'Skánar við að leggjast' },
+                    { display: 'Við hita', output: 'Skánar við hita' },
+                    { display: 'Við teygjur', output: 'Skánar við teygjur' },
+                    { display: 'Við verkjalyf', output: 'Skánar við töku verkjalyfja' }
+                ],
+                onRightClickOutput: 'Ekkert sem gerir verkinn betri'
+            },
+            {
+                display: 'Severity',
+                subOptions: [
+                    { display: '1', output: 'Skalar verkinn 1/10' },
+                    { display: '2', output: 'Skalar verkinn 2/10' },
+                    { display: '3', output: 'Skalar verkinn 3/10' },
+                    { display: '4', output: 'Skalar verkinn 4/10' },
+                    { display: '5', output: 'Skalar verkinn 5/10' },
+                    { display: '6', output: 'Skalar verkinn 6/10' },
+                    { display: '7', output: 'Skalar verkinn 7/10' },
+                    { display: '8', output: 'Skalar verkinn 8/10' },
+                    { display: '9', output: 'Skalar verkinn 9/10' },
+                    { display: '10', output: 'Skalar verkinn 10/10' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Doði', 'Máttleysi', 'Vandamál með þvaglát', 'Sár'],
+        options: [
+            {
+                display: 'Doði',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Lýsir dofa í baki eða útlimum'
+                    },
+                    { display: 'Í fótlegg', output: 'Doði í fótlegg' },
+                    { display: 'Í fætur', output: 'Doði í fótum' },
+                    { display: 'Í hendur', output: 'Doði í höndum' }
+                ],
+                onRightClickOutput: 'Neitar dofa'
+            },
+            {
+                display: 'Máttleysi',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Lýsir máttleysi'
+                    },
+                    { display: 'Í fótlegg', output: 'Máttleysi í fótlegg' },
+                    { display: 'Í fætur', output: 'Máttleysi í fótum' },
+                    { display: 'Í hendur', output: 'Máttleysi í höndum' }
+                ],
+                onRightClickOutput: 'Neitar máttleysi'
+            },
+            {
+                display: 'Vandamál með þvaglát',
+                output: 'Lýsir vandamálum með þvaglát',
+                onRightClickOutput: 'Neitar vandamálum með þvaglát'
+            },
+            {
+                display: 'Sár',
+                subOptions: [
+                    { display: 'NOS', output: 'Sáramyndun á baki' }
+                ],
+                onRightClickOutput: 'Neitar sáramyndun'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Verkjalyf'],
+        options: [
+            Verkjalyf
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Fengið áður', 'Fyrri áverkar', 'Aðgerðasaga'],
+        options: [
+            {
+                display: 'Fengið áður',
+                output: 'Hefur fundið fyrir sambærilegum bakverkjum áður',
+                onRightClickOutput: 'Aldrei fundið fyrir sambærilegum bakverkjum áður'
+            },
+            {
+                display: 'Fyrri áverkar',
+                subOptions: [
+                    { display: 'Samfallsbrot', output: 'Saga um samfallsbrot á hrygg' },
+                    { display: 'Brot', output: 'Saga um brot á hrygg' }
+                ],
+                onRightClickOutput: 'Engin saga um fyrri áverka á hrygg'
+            },
+            {
+                display: 'Aðgerðasaga',
+                subOptions: [
+                    { display: 'NOS', output: 'Aðgerðasaga á baki' },
+                    { display: 'Hryggspenging', output: 'Saga um hryggspengingu' },
+                    { display: 'Herniuaðgerð', output: 'Saga um aðgerð vegna brjóskloss' }
+                ],
+                onRightClickOutput: 'Engin saga um aðgerðir á baki'
+            }
+        ]
+    }*/
 ];
 const ExamsBack = [
     {
@@ -16434,10 +16827,11 @@ const PlanAnkle = [
     {
         name: '',
         type: 'options',
-        display: ['Endurmat', 'Eftirfylgd'],
+        display: ['Endurmat', 'Eftirfylgd', 'Prentaðar leiðbeiningar'],
         options: [
             EndurmatButton,
-            EftirfylgdButton
+            EftirfylgdButton,
+            PrentaðarLeiðbeiningar
         ]
     }
     
