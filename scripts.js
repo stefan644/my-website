@@ -1148,12 +1148,7 @@ const Næring = {
         }
         
         
-    ],
-    onRightClickSubOptions: [
-        { display: 'Borðar vel', output: 'Borðar vel' },
-        { display: 'Drekkur vel', output: 'Drekkur vel' },
-        { display: 'Borðar og drekkur vel', output: 'Borðar og drekkur vel' }
-    ],
+    ], onRightClickOutput: 'Borðar og drekkur vel'
 };
 const HBA1c = {
     display: 'HbA1c',
@@ -4675,11 +4670,11 @@ const PlanViral = [
             {
                 display: 'Sýklalyf',
                 subOptions: [
-                    { display: 'azithromycin', output: 'Ráðlegg sýklalyf. Set azithromycin í gáttina' },
-                    { display: 'amoxin', output: 'Ráðlegg sýklalyf. Set amoxin í gáttina' },
-                    { display: 'spectracillin', output: 'Ráðlegg sýklalyf. Set spectracillin í gáttina' },
-                    { display: 'kaavepenin', output: 'Ráðlegg sýklalyf. Set kaavepenin í gáttina' },
-                    { display: 'keflex', output: 'Ráðlegg sýklalyf. Set keflex í gáttina' }
+                    { display: 'azithromycin', output: 'Set azithromycin í gáttina' },
+                    { display: 'amoxin', output: 'Set amoxin í gáttina' },
+                    { display: 'spectracillin', output: 'Set spectracillin í gáttina' },
+                    { display: 'kaavepenin', output: 'Set kaavepenin í gáttina' },
+                    { display: 'keflex', output: 'Set keflex í gáttina' }
                 ],
                 onRightClickOutput: 'Tel ekki þörf á sýklalyfjum eins og er'
             },
@@ -5281,30 +5276,14 @@ const SymptomsUrinary = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd einkenna', 'Leitar á vaktina', 'Fyrri nótur'],
+        display: ['Viðtalstegund', 'Fyrri nótur'],
         options: [
-            timalengdButton,
-            { display: 'Leitar á vaktina', output: 'Leitar á vaktina'},
-            {
-                display: 'Fyrri nótur',
-                subOptions: [
-                    {
-                        display: 'Sjá nótu hjúkrunarfræðings',
-                        output: 'Sjá nótu hjúkrunarfræðings'
-                    },
-                    {
-                        display: 'Sjá fyrri nótur',
-                        output: 'Sjá fyrri nótur'
-                    },
-                    {
-                        display: 'Sjá fyrri nótur ásamt nótu hjkfr',
-                        output: 'Sjá fyrri nótur ásamt nótu hjúkrunarfræðings'
-                    }
-                ]
-            }
+            Viðtalstegund,
+            FyrriNoturButton
             
         ]
     },
+    Timalengd2,
     {
         name: '',
         type: 'options',
@@ -5626,15 +5605,64 @@ const PlanUrinary = [
                 display: 'Blöðrubólga',
                 subOptions: [
                     { display: 'Greining', output: 'Blöðrubólga' },
-                    { display: 'Grunur', output: 'Grunur um blöðrubólgu' }
-                ]
+                    { display: 'Grunur', output: 'Grunur um blöðrubólgu' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Drekka vel. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) mikilvægt að hafa samband' } 
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: 'Landspitali - Þvagfærasýking', type: 'hyperlink', url: 'https://www.landspitali.is/lisalib/getfile.aspx?itemid=70eee189-ac19-11e2-9ccc-005056be0005' },
+                            { display: 'Landspitali - Þvagfærasýking hjá barni', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Barnaspitalinn/thvagfaerasyking_hja_barni_2020.pdf' }
+                            
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'ÞÍH - Þvagfærasýking á meðgöngu með eða án einkenna (Fróðleiksmoli)', type: 'hyperlink', url: 'https://throunarmidstod.is/library/Frodleiksmolar/Þvagfærasýking%20á%20meðgöngu%20með%20eða%20án%20einkenna%20-%20Copy%20(1).pdf' },
+                            { display: 'Heilsugæslan - Þvagfærasýkingar hjá konum', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/lisalib/getfile.aspx?itemid=85e829fe-0a55-11e7-9408-005056bc0bdb' },
+                            { display: 'Heilsugæslan - Sýklamiga og þvagfærasýking á meðgöngu (Fróðleiksmoli)', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/library/Files/Frodleiksmolar-2016/Syklamiga,%20einkennalaus%20og%20tvagfaerasykingar%20á%20medgongu%202016.pdf' },
+                            { display: 'EL - Þvagfærasýkingar hjá eldra fólki utan sjúkrahúsa', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/5B9bKyBL8TWcwdefyd5Hzv/42ab6b13b5445890bc3f96fe2ba134db/_vagf_ras_kingar_hj__eldra_f_lki._20.10.2023.pdf' },
+                            { display: 'Uptodate - Acute simple cystitis in adult females', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-simple-cystitis-in-adult-females' },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    }
+                ], onRightClickOutput: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Drekka vel. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) mikilvægt að hafa samband'
             },
             {
                 display: 'Pyelonephritis',
                 subOptions: [
                     { display: 'Greining', output: 'Pyelonephritis' },
-                    { display: 'Grunur', output: 'Grunur um pyelonephritis' }
-                ]
+                    { display: 'Grunur', output: 'Grunur um pyelonephritis' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Grunur, bráðamóttaka', output: 'Grunur um pyelonephritis. Ráðlegg nánara mat á bráðamóttöku' } 
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Complicated UTI', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-complicated-urinary-tract-infection-including-pyelonephritis-in-adults-and-adolescents' }
+                        ]
+                    }
+                ], onRightClickOutput: 'Grunur um pyelonephritis. Ráðlegg nánara mat á bráðamóttöku'
             },
             {
                 display: 'Prostatitis',
@@ -24741,14 +24769,25 @@ const PlanMeðganga = [
                         ]
 
                     },
-                    { display: 'Hlekkir', 
+                    {
+                        display: 'Ráðleggingar',
                         subOptions: [
-                            { display: 'Leiðbeiningar til skjólstæðings',
-                                subOptions: [
-                                    { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/mastitis-the-basics' }
-                                    
-                                ]
-                            },
+                            {
+                                display: 'Mastitis ráðleggingar',
+                                output: 'Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd'
+                            }
+                        ]
+
+                    },
+                    { 
+                        display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/mastitis-the-basics' }  
+                        ]
+                    },
+                    { 
+                        display: 'Fræðsluefni lækna', 
+                        subOptions: [
                             { display: 'Uptodate - Mastitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/lactational-mastitis' },
                             { display: 'Mastitis - Leiðbeiningar ÞÍH', type: 'hyperlink', url: 'https://throunarmidstod.is/library/contentfiles/Brjóstabólga%20-%20Mastitis%20-.pdf' }
                             
