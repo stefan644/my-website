@@ -485,9 +485,20 @@ const Hiti = {
     display: 'Hiti',
         subOptions: [
             { display: 'NOS', output: 'Verið með hita' },
+            { display: 'Hiti síðan í...', 
+                subOptions: [
+                    { display: 'Síðan í gær', output: 'Verið með hita síðan í gær' },
+                    { display: 'Síðan í fyrradag', output: 'Verið með hita síðan í fyrradag' },
+                    { display: 'S.l. 3 daga', output: 'Verið með hita s.l. 3 daga' },
+                    { display: 'S.l. 4 daga', output: 'Verið með hita s.l. 4 daga' },
+                    { display: 'S.l. 5 daga', output: 'Verið með hita s.l. 5 daga' },
+                    { display: 'S.l. 6 daga', output: 'Verið með hita s.l. 6 daga' }
+                ]
+
+            },
             { display: 'Upplifað en ekki mælt', output: 'Upplifað sig með hita en ekki mælt sig' },
             { display: 'Nokkrar kommur, aldrei yfir 38', output: 'Verið með nokkrar kommur. Hiti aldrei farið yfir 38°C' },
-            { display: 'Hiti í byrjun veikinda', output: 'Hiti í byrjun veikinda en hann yfirstaðinn nú' },
+            { display: 'Í upphafi veikinda', output: 'Hiti í byrjun veikinda en hann yfirstaðinn nú' },
             { display: 'Sveiflukennt í gegnum veikindi', output: 'Verið með hita af og á í gegnum veikindin' },
             { display: 'Hár hiti og rúmliggjandi', output: 'Verið með háan hita, mestu rúmliggjandi' }
         ],
@@ -509,7 +520,7 @@ const HitiAlgeng = {
                                 const upperTemp = (36.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -519,7 +530,7 @@ const HitiAlgeng = {
                                 const upperTemp = (37.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -529,7 +540,7 @@ const HitiAlgeng = {
                                 const upperTemp = (38.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -539,7 +550,7 @@ const HitiAlgeng = {
                                 const upperTemp = (39.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -549,7 +560,7 @@ const HitiAlgeng = {
                                 const upperTemp = (40.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -559,7 +570,7 @@ const HitiAlgeng = {
                                 const upperTemp = (41.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         }
@@ -580,7 +591,7 @@ const HitiAlgeng = {
                                 const upperTemp = (37.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -590,7 +601,7 @@ const HitiAlgeng = {
                                 const upperTemp = (38.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -600,7 +611,7 @@ const HitiAlgeng = {
                                 const upperTemp = (39.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -610,7 +621,7 @@ const HitiAlgeng = {
                                 const upperTemp = (40.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -620,7 +631,7 @@ const HitiAlgeng = {
                                 const upperTemp = (41.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         }
@@ -641,7 +652,7 @@ const HitiAlgeng = {
                                 const upperTemp = (38.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -651,7 +662,7 @@ const HitiAlgeng = {
                                 const upperTemp = (39.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -661,7 +672,7 @@ const HitiAlgeng = {
                                 const upperTemp = (40.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -671,7 +682,7 @@ const HitiAlgeng = {
                                 const upperTemp = (41.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         }
@@ -692,7 +703,7 @@ const HitiAlgeng = {
                                 const upperTemp = (39.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -702,7 +713,7 @@ const HitiAlgeng = {
                                 const upperTemp = (40.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -712,7 +723,7 @@ const HitiAlgeng = {
                                 const upperTemp = (41.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         }
@@ -733,7 +744,7 @@ const HitiAlgeng = {
                                 const upperTemp = (40.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         },
@@ -743,7 +754,7 @@ const HitiAlgeng = {
                                 const upperTemp = (41.1 + j * 0.1).toFixed(1);
                                 return {
                                     display: upperTemp,
-                                    output: `Verið að mæla sig heima yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
+                                    output: `Hiti heimafyrir yfirleitt um ${lowerTemp} - ${upperTemp}` + '°C'
                                 };
                             })
                         }
@@ -763,42 +774,42 @@ const HitiSeinasta = {
                     display: '36,1 - 37,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (36.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Seinasta hitamæling heimafyrir ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '37,1 - 38,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (37.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Seinasta hitamæling heimafyrir ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '38,1 - 39,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (38.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Seinasta hitamæling heimafyrir ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '39,1 - 40,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (39.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Seinasta hitamæling heimafyrir ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '40,1 - 41,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (40.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Seinasta hitamæling heimafyrir ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '41,1 - 42,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (41.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Seinasta hitamæling heimafyrir ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 }
             ]
@@ -810,42 +821,42 @@ const HitiSeinasta = {
                     display: '36,1 - 37,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (36.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig áðan með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling áðan ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '37,1 - 38,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (37.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig áðan með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling áðan ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '38,1 - 39,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (38.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig áðan með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling áðan ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '39,1 - 40,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (39.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig áðan með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling áðan ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '40,1 - 41,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (40.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig áðan með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling áðan ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '41,1 - 42,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (41.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig áðan með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling áðan ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 }
             ]
@@ -857,42 +868,42 @@ const HitiSeinasta = {
                     display: '36,1 - 37,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (36.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í morgun með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í morgun ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '37,1 - 38,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (37.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í morgun með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í morgun ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '38,1 - 39,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (38.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í morgun með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í morgun ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '39,1 - 40,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (39.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í morgun með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í morgun ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '40,1 - 41,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (40.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í morgun með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í morgun ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '41,1 - 42,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (41.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í morgun með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í morgun ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 }
             ]
@@ -904,42 +915,42 @@ const HitiSeinasta = {
                     display: '36,1 - 37,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (36.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gær með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gær ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '37,1 - 38,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (37.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gær með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gær ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '38,1 - 39,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (38.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gær með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gær ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '39,1 - 40,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (39.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gær með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gær ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '40,1 - 41,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (40.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gær með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gær ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '41,1 - 42,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (41.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gær með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gær ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 }
             ]
@@ -951,42 +962,42 @@ const HitiSeinasta = {
                     display: '36,1 - 37,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (36.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gærkvöldi með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gærkvöldi ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '37,1 - 38,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (37.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gærkvöldi með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gærkvöldi ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '38,1 - 39,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (38.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gærkvöldi með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gærkvöldi ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '39,1 - 40,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (39.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gærkvöldi með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gærkvöldi ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '40,1 - 41,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (40.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gærkvöldi með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gærkvöldi ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '41,1 - 42,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (41.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í gærkvöldi með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í gærkvöldi ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 }
             ]
@@ -998,42 +1009,42 @@ const HitiSeinasta = {
                     display: '36,1 - 37,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (36.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í fyrradag með ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í fyrradag ${(36.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '37,1 - 38,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (37.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í fyrradag með ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í fyrradag ${(37.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '38,1 - 39,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (38.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í fyrradag með ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í fyrradag ${(38.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '39,1 - 40,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (39.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í fyrradag með ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í fyrradag ${(39.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '40,1 - 41,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (40.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í fyrradag með ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í fyrradag ${(40.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 },
                 {
                     display: '41,1 - 42,0', 
                     subOptions: Array.from({ length: 10 }, (_, i) => ({
                         display: (41.1 + i * 0.1).toFixed(1),
-                        output: `Mældi sig síðast í fyrradag með ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
+                        output: `Hitamæling í fyrradag ${(41.1 + i * 0.1).toFixed(1)}` + '°C'
                     }))
                 }
             ]
@@ -2872,7 +2883,8 @@ const SymptomsViral = [
                 subOptions: [
                     { display: 'NOS', output: 'Kvefeinkenni' },
                     { display: 'Vægt', output: 'Væg kvefeinkenni' },
-                    { display: 'Mikið', output: 'Mikil kvefeinkenni' }
+                    { display: 'Mikið', output: 'Mikil kvefeinkenni' },
+                    { display: 'Í upphafi veikinda', output: 'Kvefeinkenni í upphafi veikinda en þau yfirstaðin nú' }
                 ],
                 onRightClickOutput: 'Ekki kvef'
             }
@@ -2890,7 +2902,8 @@ const SymptomsViral = [
                     { display: 'NOS', output: 'Hálssærindi' },
                     { display: 'Væg', output: 'Væg hálssærindi' },
                     { display: 'Mikil', output: 'Mikil hálssærindi' },
-                    { display: 'Veruleg. Raddbreyting. Getur varla kyngt', output: 'Verulega mikil hálssærindi. Lýsir raddbreytingu. Getur varla kyngt munnvatni' }
+                    { display: 'Veruleg. Raddbreyting. Getur varla kyngt', output: 'Verulega mikil hálssærindi. Lýsir raddbreytingu. Getur varla kyngt munnvatni' },
+                    { display: 'Í upphafi veikinda', output: 'Hálssærindi í upphafi veikinda en þau yfirstaðin nú' }
                 ],
                 onRightClickOutput: 'Neitar hálssærindum'
             },
@@ -2914,18 +2927,27 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hósti', 'Takverkur'],
+        display: ['Hósti', 'Uppgangur', 'Takverkur'],
         options: [
             
             {
                 display: 'Hósti',
                 subOptions: [
                     { display: 'NOS', output: 'Hósti' },
-                    { display: 'Blautur', output: 'Blautur hósti' },
-                    { display: 'Þurr', output: 'Þurr hósti' },
+                    { display: 'Vægur', output: 'Vægur hósti' },
+                    { display: 'Mikill', output: 'Mikill hósti' },
                     { display: 'Slæmur, heldur fyrir vöku', output: 'Slæmur hósti. Heldur fyrir vöku á næturna' }
                 ],
                 onRightClickOutput: 'Ekki verið með hósta'
+            },
+            {
+                display: 'Uppgangur',
+                subOptions: [
+                    { display: 'NOS', output: 'Uppgangur' },
+                    { display: 'Vægur', output: 'Vægur uppgangur' },
+                    { display: 'Mikill uppgangur', output: 'Mikill uppgangur' }
+                ],
+                onRightClickOutput: 'Ekki uppgangur'
             },
             {
                 display: 'Takverkur',
@@ -3094,7 +3116,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Veikindi í kring', 'Nýleg veikindi', 'Ferðalag'],
+        display: ['Veikindi í kring', 'Nýleg veikindi', 'Ferðalag', 'Endurteknar sýkingar'],
         options: [
             {
                 display: 'Veikindi í kring',
@@ -3191,7 +3213,17 @@ const SymptomsViral = [
                 display: 'Ferðalag',
                 output: 'Var að koma út ferðalagi erlendis',
                 onRightClickOutput: 'Ekki verið erlendis nýlega'
-            }   
+            },
+            {
+                display: 'Endurteknar sýkingar',
+                subOptions: [
+                    { display: 'Endurteknar veirusýkingar', output: 'Verið að glíma við endurteknar veirusýkingar' },
+                    { display: 'Lungnabólgur', output: 'Fengið lungnabólgur endurtekið' },
+                    { display: 'Sinusita', output: 'Fengið endurtekna sinusita' },
+                    { display: 'Eyrnabólgur', output: 'Endurteknar eyrnabólgur' }
+                ],
+                onRightClickOutput: 'Ekki að glíma við endurteknar sýkingar'
+            } 
         ]
     },
     {
@@ -3467,9 +3499,106 @@ const SymptomsViral = [
             Næring
         ]
     },
-    {},
-    {},
-    {},
+    {
+        name: '',
+        type: 'options',
+        display: ['Lungnasjúkdómur', 'Reykingasaga', 'Ónæmisbæling'],
+        options: [
+            {
+                display: 'Lungnasjúkdómur',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um lungnasjúkdóm' },
+                    { display: 'Astma', output: 'Saga um astma' },
+                    { display: 'COPD', output: 'Saga um COPD' }
+                ],
+                onRightClickOutput: 'Ekki undirliggjandi lungnasjúkdómur'
+            },
+            {
+                display: 'Reykingasaga',
+                subOptions: [
+                    { display: 'NOS', output: 'Reykingasaga' },
+                    { display: 'Minniháttar', output: 'Minniháttar reykingarsaga' },
+                    { display: 'Mikil', output: 'Mikil reykingarsaga' }
+                ],
+                onRightClickOutput: 'Ekki reykingasaga'
+            },
+            {
+                display: 'Ónæmisbæling',
+                subOptions: [
+                    { display: 'NOS', output: 'Ónæmisbæling' },
+                    { display: 'Ónæmisbælandi lyf', output: 'Á ónæmisbælandi lyfjum' }
+                ],
+                onRightClickOutput: 'Engin ónæmisbæling'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Lyf', 'Lyfjaofnæmi'],
+        options: [
+            {
+                display: 'Lyf',
+                subOptions: [
+                    { display: 'Háþrýstingslyf', output: 'Er á háþrýstingslyfjum' },
+                    { display: 'Púst að staðaldri', output: 'Tekur púst að staðaldri' },
+                    { display: 'Sykursýkislyf', output: 'Er á sykursýkislyfjum' }
+                ],
+                onRightClickOutput: 'Tekur engin lyf að staðaldri'
+            },
+            {
+                display: 'Lyfjaofnæmi',
+                subOptions: [
+                    {
+                        display: 'Penisillín',
+                        subOptions: [
+                            { display: 'NOS', output: 'Penisillinofnæmi' },
+                            {
+                                display: 'Grunur',
+                                subOptions: [
+                                    { display: 'NOS', output: 'Grunur um penisillinofnæmi' },
+                                    { display: 'Öndunarfæraeinkenni', output: 'Grunur um penisillinofnæmi. Fengið öndunarfæraeinkenni' },
+                                    { display: 'Útbrot', output: 'Grunur um penisillinofnæmi. Fékk útbrot. Ekki kláði eða öndunarfæraeinkenni' },
+                                    { display: 'Útbrot og kláði', output: 'Grunur um penisillinofnæmi. Fékk útbrot og kláða' },
+                                    { display: 'Öndunarfæraeinkenni, útbrot og kláði', output: 'Grunur um penisillinofnæmi. Fékk öndunarfæraeinkenni, útbrot og kláða' }
+                                ]
+                            },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir penisillíni' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt penisillinofnæmi'
+                    },
+                    {
+                        display: 'Sulfa lyf',
+                        subOptions: [
+                            { display: 'NOS', output: 'Ofnæmi fyrir sulfalyfjum' },
+                            { display: 'Grunur', output: 'Grunur um ofnæmi fyrir sulfalyfjum' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir sulfalyfjum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt ofnæmi fyrir sulfalyfjum'
+                    },
+                    {
+                        display: 'Aspirin',
+                        subOptions: [
+                            { display: 'NOS', output: 'Aspirinofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um aspirinofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir aspirini' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt aspirinofnæmi'
+                    },
+                    {
+                        display: 'NSAIDs',
+                        subOptions: [
+                            { display: 'NOS', output: 'NSAID ofnæmi' },
+                            { display: 'Grunur', output: 'Grunur um NSAID ofnæmi' },
+                            { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir NSAID lyfjum' }
+                        ],
+                        onRightClickOutput: 'Ekki þekkt NSAID ofnæmi'
+                    }
+                ],
+                onRightClickOutput: 'Engin þekkt lyfjaofnæmi'
+            }
+        ]
+    },
     {
         name: '',
         type: 'options',
@@ -7096,14 +7225,61 @@ const PlanEye = [
                 subOptions: [
                     { display: 'Greining', output: 'Blepharitis' },
                     { display: 'Grunur', output: 'Grunur um blepharitis' },
-                    { display: 'Fullmótað plan', output: 'Grunur um blepharitis. Ráðlegg heita bakstra. Set sýkladropa í gáttina, leysir út ef þarf. Endurmat ef versnar eða lagast ekki' }
-                ]
+                    { display: 'Fullmótað plan', 
+                        subOptions: [
+                            { display: 'Grunur - Bakstrar - Re pn', output: 'Grunur um blepharitis. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'} ,
+                            { display: 'Grunur - Bakstrar - Sýkladropar í gátt - Re pn', output: 'Grunur um blepharitis. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Set sýkladropa í gáttina, leysir út ef þarf. Endurmat ef versnar eða lagast ekki' } 
+                        ]
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: 'Blepharitis', output: 'Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: 'Sjónlag - Hvarmabólga', type: 'hyperlink', url: 'https://www.sjonlag.is/Frodleikur/Augnsjukdomar/Hvarmabolga/' },
+                            { display: 'American Optometric Associatoion - Blepharitis', type: 'hyperlink', url: 'https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/blepharitis' }
+                            
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Blepharitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/blepharitis' }
+                        ]
+                    }
+                ], onRightClickOutput: 'Grunur um blepharitis. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'
             },
             { display: 'Vogris', 
                 subOptions: [
                     { display: 'Greining', output: 'Vogris' },
-                    { display: 'Grunur', output: 'Grunur um vogris' }
-                ]
+                    { display: 'Grunur', output: 'Grunur um vogris' },
+                    { display: 'Fullmótað plan', 
+                        subOptions: [
+                            { display: 'Greining - Bakstrar - Re pn', output: 'Vogris. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'} ,
+                            { display: 'Greining - Bakstrar - Sýkladropar í gátt - Re pn', output: 'Vogris. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Set sýkladropa í gáttina, leysir út ef þarf. Endurmat ef versnar eða lagast ekki' } 
+                        ]
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: 'Vogris', output: 'Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: 'Sjónlag - Hvarmabólga', type: 'hyperlink', url: 'https://www.sjonlag.is/Frodleikur/Augnsjukdomar/Hvarmabolga/' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Eyelid lesions (Hordeolum / Chalazion)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/eyelid-lesions?search=chalazion&source=search_result&selectedTitle=2%7E16&usage_type=default&display_rank=2#H130613690' },
+                            { display: 'Uptodate - Yfirlitsmynd hordeolum vs chalazion', type: 'hyperlink', url: 'https://www.uptodate.com/contents/image?imageKey=PC/139242' }
+                        ]
+                    }
+                    
+                ], onRightClickOutput: 'Vogris. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'
             },
             {
                 display: 'Conjunctivitis',
@@ -10277,6 +10453,17 @@ const SymptomsMelting = [
     {
         name: '',
         type: 'options',
+        display: ['Viðtalstegund', 'Fyrri nótur'],
+        options: [
+            Viðtalstegund,
+            FyrriNoturButton
+            
+        ]
+    },
+    Timalengd2,
+    {
+        name: '',
+        type: 'options',
         display: ['Einkenni', 'Verkur', 'Meltingarónot'],
         options: [
             { display: 'Einkenni', output: 'Einkenni frá kvið' },
@@ -10287,9 +10474,8 @@ const SymptomsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd', 'Fengið áður', 'Character', 'Staðsetning', 'Onset'],
+        display: ['Fengið áður', 'Character', 'Staðsetning', 'Onset'],
         options: [
-            timalengdButton,
             {
                 display: 'Fengið áður',
                 output: 'Hefur fengið sambærileg einkenni áður',
@@ -10316,9 +10502,6 @@ const SymptomsMelting = [
             {
                 display: 'Staðsetning',
                 subOptions: [
-                    {
-                        display: 'NOS', output: 'Staðsett í kvið'
-                    },
                     {
                         display: 'Dreift', output: 'Staðsett dreift yfir öllu kviðarholi'
                     },
@@ -10457,6 +10640,157 @@ const SymptomsMelting = [
         display: ['Verkjalyf'],
         options: [
             Verkjalyf
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hægðir', 'Hægðatregða', 'Niðurgangur', 'Dyschezia', 'Klósettferðir'],
+        options: [
+            {
+                display: 'Hægðir',
+                subOptions: [
+                    { display: 'Svartar', output: 'Svartar hægðir' },
+                    {
+                        display: 'Blóð',
+                        subOptions: [
+                            { display: 'NOS', output: 'Blóð í hægðum' },
+                            { display: 'Á pappír', output: 'Stundum blóð í hægðum. Kemur þá á pappír' },
+                            { display: 'Lítið magn í skál', output: 'Lýsir blóði í hægðum. Blóðlitað vatn eftir hægðalosun' },
+                            { display: 'Mikið magn í skál', output: 'Lýsir blóði í hægðum. Mikið magn af fersku blóði í skál' }
+                        ]
+                    },
+                    { display: 'Ljósar og fljótandi', output: 'Ljósar og fljótandi hægðir' },
+                    { display: 'Þunnar ræmur', output: 'Lýsir hægðum sem þunnum ræmum' },
+                    { display: 'Pebbles', output: 'Lýsir hægðum sem litlum hnúðum' }
+                ],
+                onRightClickOutput: 'Hægðir í lagi'
+            },
+            {
+                display: 'Hægðatregða',
+                subOptions: [
+                    { display: 'Hægðatregða', output: 'Hægðatregða' },
+                    { display: 'Grunur um', output: 'Grunur um hægðatregðu' },
+                    { display: 'Rembingur', output: 'Hægðatregða. Rembist mikið en kemur lítið' },
+                    { display: 'Grunur + rembingur + slæmt mataræði', output: 'Grunur um hægðatregða. Rembist mikið en kemur lítið. Drekkur ekki mikið vatn. Trefjaneysla mætti vera betri' }
+                ],
+                onRightClickOutput: 'Ekki hægðatregða'
+            },
+            { display: 'Niðurgangur', output: 'Niðurgangur', onRightClickOutput: 'Ekki niðurgangur' },
+            { display: 'Dyschezia', output: 'Verkir við hægðalosun', onRightClickOutput: 'Ekki verkir við hægðalosun' },
+            {
+                display: 'Klósettferðir',
+                subOptions: [
+                    {
+                        display: 'Margar á dag',
+                        subOptions: [
+                            { display: '2 sinnum á dag', output: 'Losar hægðir 2 sinnum á dag' },
+                            { display: '3 sinnum á dag', output: 'Losar hægðir 3 sinnum á dag' },
+                            { display: '4 sinnum á dag', output: 'Losar hægðir 4 sinnum á dag' },
+                            { display: '5 sinnum á dag', output: 'Losar hægðir 5 sinnum á dag' },
+                            { display: '6 sinnum á dag', output: 'Losar hægðir 6 sinnum á dag' },
+                            { display: 'Meira en 6 sinnum á dag', output: 'Losar hægðir meira en 6 sinnum á dag' }
+                        ]
+                    },
+                    { display: 'Ein á dag', output: 'Losar hægðir einu sinni á dag' },
+                    { display: 'Annan hvern dag', output: 'Losar hægðir annan hvern dag' },
+                    { display: '2-3 sinnum í viku', output: 'Losar hægðir 2-3 sinnum í viku' },
+                    { display: 'Ein sinni í viku', output: 'Losar hægðir einu sinni í viku' },
+                    { display: 'Sjaldnar en einu sinni í viku', output: 'Losar hægðir sjaldnar en einu sinni í viku' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Ógleði', 'Uppþemba', 'Uppköst', 'Fjöldi', 'Lýsing'],
+        options: [
+            { display: 'Ógleði', output: 'Ógleði', onRightClickOutput: 'Ekki ógleði' },
+            { display: 'Uppþemba', output: 'Uppþemba', onRightClickOutput: 'Ekki uppþemba' },
+            { display: 'Uppköst', output: 'Uppköst', onRightClickOutput: 'Ekki uppköst' },
+            {
+                display: 'Fjöldi',
+                subOptions: [
+                    {
+                        display: 'Einu sinni',
+                        output: 'Kastað upp einu sinni'
+                    },
+                    {
+                        display: 'Tvisvar',
+                        output: 'Kastað upp tvisvar'
+                    },
+                    {
+                        display: 'Þrígang',
+                        output: 'Kastað upp í þrígang'
+                    },
+                    {
+                        display: 'Fjórum sinnum',
+                        output: 'Kastað upp fjórum sinnum'
+                    },
+                    {
+                        display: 'Fimm sinnum eða oftar',
+                        output: 'Kastað upp fimm sinnum eða oftar'
+                    }
+                ]
+            },
+            {
+                display: 'Lýsing',
+                subOptions: [
+                    {
+                        display: 'Gulgrænn',
+                        output: 'Uppköstin eru gulgræn'
+                    },
+                    {
+                        display: 'Blóðugur',
+                        output: 'Uppköstin eru blóðug'
+                    },
+                    {
+                        display: 'Kaffikorgslík',
+                        output: 'Uppköstin líkjast kaffikorgi'
+                    },
+                    {
+                        display: 'Froðukenndur',
+                        output: 'Uppköstin eru froðukennd'
+                    },
+                    {
+                        display: 'Vatnskenndur',
+                        output: 'Uppköstin eru vatnskennd'
+                    },
+                    {
+                        display: 'Illalyktandi',
+                        output: 'Uppköstin eru illalyktandi'
+                    }
+                ]
+            }                        
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Þvaglát', 'Vont', 'Óþægindi', 'Blóð', 'Tregða'],
+        options: [
+            { display: 'Þvaglát', output: 'Einkenni við þvaglát', onRightClickOutput: 'Engin einkenni við þvaglát' },
+            { display: 'Vont', output: 'Verkjar', onRightClickOutput: 'Ekki vont að pissa' },
+            { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Engin óþægindi' },
+            { display: 'Blóð', output: 'Blóð í þvagi', onRightClickOutput: 'Ekki blóð í þvagi' },
+            { display: 'Tregða', output: 'Þvagtregða', onRightClickOutput: 'Neitar þvagtregðu' }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Áverki'],
+        options: [
+            {
+                display: 'Áverki',
+                onRightClickOutput: 'Ekki áverkasaga',
+                subOptions: [
+                    { display: 'Högg', output: 'Högg' },
+                    { display: 'Bylta', output: 'Bylta' }
+                ]
+            }
         ]
     }
     
@@ -10828,6 +11162,22 @@ const PlanMelting = [
                         subOptions: [
                             { display: 'Viral, obs, endurmat pn', output: 'Grunur um viral gastroenteritis. Veiti almennar ráðleggingar. Passa vökvainntöku og næringu. Gengur yfirleitt yfir á 1-2 vikum. Endurmat ef lagast ekki eða fyrr ef versnar' },
                         ]
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
                     }
                 ]
             },
@@ -10875,7 +11225,27 @@ const PlanMelting = [
                 subOptions: [
                     { display: 'Greining', output: 'Diverticulitis' },
                     { display: 'Grunur', output: 'Grunur um diverticulitis' },
-                    { display: 'Fullmótuð úrlausn', output: 'Grunur um diverticulitis. Fær viðeigandi ráðleggingar um meðferð. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar' }
+                    { display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Grunur - Ráð - Sýklalyf í gáttina - Endurmat ef versnar', output: 'Grunur um diverticulitis. Fær viðeigandi ráðleggingar um meðferð. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar' } 
+                        ] 
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: 'Fljótandi fæði - Sýklalyf í gáttina', output: 'Fær viðeigandi ráðleggingar um meðferð diverticulitis. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: 'Landspitali - Ristilpokabólga (Fræðslubæklingur)', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/ristilpokabolga_2018.pdf' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    }
                 ]
             },
             {
@@ -10887,9 +11257,14 @@ const PlanMelting = [
                         display: 'Gyllinæð',
                         subOptions: [
                             { display: 'Greining', output: 'Gyllinæð' },
-                            { display: 'Grunur', output: 'Grunur um gyllinæð' }
-                        ],
-                        cancelText: ''
+                            { display: 'Grunur', output: 'Grunur um gyllinæð' },
+                            { display: 'Fullmótuð plön',
+                                subOptions: [
+                                    { display: 'Grunur - Ráð - Krem og stílar - Endurmat ef lagast ekki', output: 'Grunur um gyllinæð. Veiti ráðleggingar. Set krem og stíla í gáttina. Endurmat ef lagast ekki' } ,
+                                    { display: 'Ytri gyllinæð - Ráð - Lyf - Endurmat ef lagast ekki', output: 'Ytri gyllinæð. Veiti ráðleggingar. Set lyf í gáttina. Endurmat ef lagast ekki' }
+                                ] 
+                            }
+                        ], onRightClickOutput: 'Grunur um gyllinæð. Veiti ráðleggingar. Set krem og stíla í gáttina. Endurmat ef lagast ekki'
                     },
                     {
                         display: 'Anal fissúra',
@@ -15792,6 +16167,17 @@ const SymptomsKnee = [
     {
         name: '',
         type: 'options',
+        display: ['Viðtalstegund', 'Fyrri nótur'],
+        options: [
+            Viðtalstegund,
+            FyrriNoturButton
+            
+        ]
+    },
+    Timalengd2,
+    {
+        name: '',
+        type: 'options',
         display: ['Staðsetning', 'Verkur', 'Þrýstingur', 'Doði'],
         options: [
             {
@@ -15862,9 +16248,8 @@ const SymptomsKnee = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd', 'Onset', 'Áverki'],
+        display: ['Onset', 'Áverki'],
         options: [
-            timalengdButton,
             {
                 display: 'Onset',
                 subOptions: [
@@ -15968,7 +16353,8 @@ const SymptomsKnee = [
                 onRightClickOutput: 'Ekki fyrri saga um hnévandamál',
                 subOptions: [
                     { display: 'NOS', output: 'Saga um hnjávandamál áður' },
-                    { display: 'Íþróttameiðsl', output: 'Saga um hnévandamál. Gömul íþróttameiðsl' }
+                    { display: 'Íþróttameiðsl', output: 'Saga um hnévandamál. Gömul íþróttameiðsl' },
+                    { display: 'Liðþófavanda', output: 'Saga um hnévandamál. Liðþófavandi' }
                 ]
             },
             {
@@ -15980,17 +16366,52 @@ const SymptomsKnee = [
                 ]
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Slappleiki'],
+        options: [
+            {
+                display: 'Slappleiki',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Slappleiki'
+                    },
+                    {
+                        display: 'Vægur',
+                        output: 'Fundið fyrir vægum slappleika'
+                    },
+                    {
+                        display: 'Töluverður',
+                        output: 'Lýsir töluverðum slappleika'
+                    }
+                ], onRightClickOutput: 'Ekki áberandi slappleiki'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hiti', 'Algeng gildi', 'Seinasta gildi'],
+        options: [
+            Hiti,
+            HitiAlgeng,
+            HitiSeinasta
+            
+        ]
     }
 ];
 const ExamsKnee = [
     {
         name: '',
         type: 'options',
-        display: ['Hné - Útlit', 'Þreifing', 'Hreyfigeta', 'Liðbönd', 'Mcmurray'],
+        display: ['Útlit', 'Þreifing', 'Hreyfigeta', 'Liðbönd', 'Mcmurray'],
         options: [
             {
                     
-                        display: 'Hné - útlit',
+                        display: 'Útlit',
                         subOptions: [
                             {
                                 display: 'Bólga',
@@ -16124,8 +16545,8 @@ const PlanKnee = [
                     {
                         display: 'Fullmótuð plön',
                         subOptions: [
-                            { display: 'Milt, bólgueyðandi, endurmat pn', output: 'Áverki á hné. Mild einkenni. Ráðlegg bólgueyðandi næstu daga. RICE. Endurmat ef versnar eða lagast ekki.' },
-                            { display: 'Áverki, BMT', output: 'Áverki á hné. Mikil einkenni. Ráðlegg nánara mat á BMT.' }
+                            { display: 'Milt, bólgueyðandi, endurmat pn', output: 'Áverki á hné. Mild einkenni. Ráðlegg bólgueyðandi næstu daga. RICE. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Áverki, BMT', output: 'Áverki á hné. Mikil einkenni. Ráðlegg nánara mat á BMT' }
                         ]
                     }
                 ]
@@ -16138,11 +16559,11 @@ const PlanKnee = [
                     {
                         display: 'Fullmótuð plön',
                         subOptions: [
-                            { display: 'Mild, sakleysisleg skoðun, RICE', output: 'Tognun á hné. Sakleysisleg skoðun. Veiti almennar ráðleggingar. RICE og verkjalyf pn. Ef lagast ekki eða versnar á næstu dögum þá endurmat.' },
-                            { display: 'Meðalsvæsin tognun, ráðl, sjúkraþjálfun', output: 'Tognun á hné. Almennar ráðleggingar. RICE og verkjalyf. Einnig sjúkraþjálfun. Endurmat ef lagast ekki eða versnar.' }
+                            { display: 'Mild, sakleysisleg skoðun, RICE', output: 'Tognun á hné. Sakleysisleg skoðun. Veiti almennar ráðleggingar. RICE og verkjalyf pn. Ef lagast ekki eða versnar á næstu dögum þá endurmat' },
+                            { display: 'Meðalsvæsin tognun, ráðl, sjúkraþjálfun', output: 'Tognun á hné. Almennar ráðleggingar. RICE og verkjalyf. Einnig sjúkraþjálfun. Endurmat ef lagast ekki eða versnar' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Tognun á hné. Ekki grunur um brot. Veiti almennar ráðleggingar. RICE og verkjalyf pn. Ef lagast ekki eða versnar á næstu dögum þá endurmat'
             },
             {
                 display: 'Meniscus',
@@ -16152,12 +16573,31 @@ const PlanKnee = [
                     {
                         display: 'Fullmótuð plön',
                         subOptions: [
-                            { display: 'Grunur, ráðleggingar 4-6v', output: 'Grunur um liðþófavanda. Veiti almennar ráðleggingar. Hvíld, kæling, hækjur pn. Forðast það sem gerir einkenni verri. Getur keypt sér teygjusokk til stuðnings. Grær í meiri hluta tilfella en ef einkenni eru til staðar í >4 vikur er segulómun ráðlögð sem og sjúkraþjálfun.' },
+                            { display: 'Grunur, ráðleggingar 4-6v', output: 'Grunur um liðþófavanda. Veiti almennar ráðleggingar. Hvíld, kæling, hækjur pn. Forðast það sem gerir einkenni verri. Getur keypt sér teygjusokk til stuðnings. Grær í meiri hluta tilfella en ef einkenni eru til staðar í >4 vikur er segulómun ráðlögð sem og sjúkraþjálfun' },
                             { display: 'Langvarandi einkenni, segulómun, sjúkraþjálfun', output: 'Grunur um liðþófavanda. Veiti almennar ráðleggingar. Þar sem einkenni staðið í >4 vikur er segulómun ráðlögð sem og sjúkraþjálfun.' },
                             { display: 'Staðfest meniscal rifa, sjkþj ekki dugað, bæklun', output: 'Staðfest meniscal rifa. Sjúkraþjálfun ekki skilað tiltækum árangri. Ráðlegg mat bæklunarlæknis.' }
                         ]
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: 'Ráðleggingar stutt saga', output: ' Veiti ráðleggingar. Hvíld, kæling, hækjur pn. Forðast það sem gerir einkenni verri. Getur keypt sér teygjusokk til stuðnings. Grær í meiri hluta tilfella en ef einkenni eru til staðar í >4 vikur er segulómun ráðlögð sem og sjúkraþjálfun' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Uptodate - Knee pain (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/knee-pain-the-basics' },
+                            { display: 'Uptodate - Meniscal tear (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/meniscal-tear-the-basics' },
+                            { display: 'Uptodate - How to use crutches (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/how-to-use-crutches-the-basics' },
+                            { display: 'Uptodate - Knee pain (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/knee-pain-beyond-the-basics' },
+                            { display: 'Aflið sjúkraþjálfun - Leiðbeiningar', type: 'hyperlink', url: 'https://aflid.is/fraedsla/ithrottameidsli/hne/rifinn-lidthofi-meniscus-lesion/' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Meniscus injury of the knee', type: 'hyperlink', url: 'https://www.uptodate.com/contents/meniscus-injury-of-the-knee' }
+                        ]
                     }
-                ]
+                ], onRightClickOutput: 'Grunur um liðþófavanda. Veiti almennar ráðleggingar. Hvíld, kæling, hækjur pn. Forðast það sem gerir einkenni verri. Getur keypt sér teygjusokk til stuðnings. Grær í meiri hluta tilfella en ef einkenni eru til staðar í >4 vikur er segulómun ráðlögð sem og sjúkraþjálfun'
             },
             {
                 display: 'Liðbandaáverki',
@@ -16167,8 +16607,24 @@ const PlanKnee = [
                     {
                         display: 'Fullmótuð plön',
                         subOptions: [
-                            { display: 'Grunur, ómun', output: 'Grunur um liðbandaáverka. Ráðlegg ómskoðun.' },
-                            { display: 'Liðbandaáverki, staðfest, bæklun', output: 'Liðbandaáverki. Staðfest á myndgreiningu. Ráðlegg nánara mat hjá bæklunarlækni.' }
+                            { display: 'Grunur, ómun', output: 'Grunur um liðbandaáverka. Ráðlegg ómskoðun' },
+                            { display: 'Liðbandaáverki, staðfest, bæklun', output: 'Liðbandaáverki. Staðfest á myndgreiningu. Ráðlegg nánara mat hjá bæklunarlækni' }
+                        ]
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Lateral collateral ligament injury', type: 'hyperlink', url: 'https://www.uptodate.com/contents/lateral-collateral-ligament-injury-and-related-posterolateral-corner-injuries-of-the-knee' },
+                            { display: 'Uptodate - Medial collateral ligament injury', type: 'hyperlink', url: 'https://www.uptodate.com/contents/medial-tibial-collateral-ligament-injury-of-the-knee' }
                         ]
                     }
                 ]
@@ -16193,7 +16649,7 @@ const PlanKnee = [
                             { display: 'Verkjameðferð, bólgueyðandi', output: 'Langvarandi einkenni frá hné. Ráðlegg verkjalyf og bólgueyðandi meðferð.' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Langvarandi einkenni frá hné. Ekki lagast þrátt fyrir stuðningsmeðferð. Ráðlögð segulómun til nánari greininga'
             },
             {
                 display: 'Slitgigt',
@@ -16203,9 +16659,9 @@ const PlanKnee = [
                     {
                         display: 'Fullmótuð plön',
                         subOptions: [
-                            { display: 'Grunur, RTG, pantar sér símatíma', output: 'Grunur um slitgigt sem skýringu einkenna. Ráðlegg RTG. Pantar sér símatíma fyrir niðurstöður eftir rannsókn.' },
-                            { display: 'Greining, Ráðleggingar, sjúkrþjálfun', output: 'Staðfest slitgigt. Almennar ráðleggingar. Ráðlegg sjúkraþjálfun. Verkjalyf PN. Gott að nota NSAID áburð, minni líkur á aukaverknunum. Ef konservatíf meðferð dugar illa er næsta skref liðskipti' },
-                            { display: 'Greining, konservatív meðferð ekki dugað, liðskipti', output: 'Slitgigt í hné. Einkenni slæm þrátt fyrir sjúkraþjálfun og verkjameðferð. Tilvísun í liðskipti.' }
+                            { display: 'Grunur, RTG, pantar sér símatíma', output: 'Grunur um slitgigt sem skýringu einkenna. Ráðlegg RTG. Pantar sér símatíma fyrir niðurstöður eftir rannsókn' },
+                            { display: 'Greining, Ráðleggingar, sjúkraþjálfun', output: 'Staðfest slitgigt. Almennar ráðleggingar. Ráðlegg sjúkraþjálfun. Verkjalyf PN. Gott að nota NSAID áburð, minni líkur á aukaverknunum. Ef konservatíf meðferð dugar illa er næsta skref liðskipti' },
+                            { display: 'Greining, konservatív meðferð ekki dugað, liðskipti', output: 'Slitgigt í hné. Einkenni slæm þrátt fyrir sjúkraþjálfun og verkjameðferð. Tilvísun í liðskipti' }
                         ]
                     }
                 ]
@@ -16237,11 +16693,14 @@ const PlanKnee = [
                             }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Osgood-Schlatter. Almennar ráðleggingar, m.a. kælingu eftir æfingar, '
+                                + 'hvíld ef einkenni mikil (sérstaklega ef standa yfir í >24klst) og verkjalyf í nokkra daga í senn eftir þörfum. '
+                                + 'Ekki ráðlagt að hætta æfingum en mikilvægt að hlusta á líkamann. Sjúkraþjálfun til styrkingar og liðkunnar á hamstrings og quadriceps. '
+                                + 'Endurmat eftir þörfum'
             }
         ]
     },
-    {
+    /*{
         name: '',
         type: 'options',
         display: ['Aðrar greiningar'],
@@ -16401,13 +16860,12 @@ const PlanKnee = [
                 ]
             }
         ]
-    }
-    ,
+    },*/
     {},{},{},
     {
         name: '',
         type: 'options',
-        display: ['Ráðleggingar', 'Myndataka', 'Bæklun'],
+        display: ['Ráðleggingar', 'Myndataka', 'Sjúkraþjálfun', 'Bæklun'],
         options: [
             {
                 display: 'Ráðleggingar',
@@ -16424,6 +16882,10 @@ const PlanKnee = [
                     { display: 'RTG', output: 'Ráðlegg röntgenmynd' },
                     { display: 'Ómskoðun', output: 'Ráðlegg ómskoðun' }
                 ]
+            },
+            {
+                display: 'Sjúkraþjálfun',
+                output: 'Beiðni í sjúkraþjálfun'
             },
             {
                 display: 'Bæklun',
@@ -16453,21 +16915,21 @@ const SymptomsAnkle = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd', 'Viðtalstegund', 'Fyrri nótur'],
+        display: ['Viðtalstegund', 'Fyrri nótur'],
         options: [
-            timalengdButton,
             Viðtalstegund,
             FyrriNoturButton
             
         ]
     },
+    Timalengd2,
     {
         name: '',
         type: 'options',
-        display: ['Einkenni', 'Verkur', 'Bólga', 'Roði', 'Hiti'],
+        display: ['Staðsetning', 'Verkur', 'Bólga', 'Roði', 'Hiti'],
         options: [
             {
-                display: 'Einkenni',
+                display: 'Staðsetning',
                 subOptions: [
                     { display: 'Hægri', output: 'Einkenni frá hægri ökkla' },
                     { display: 'Vinstri', output: 'Einkenni frá vinstri ökkla' }
@@ -16476,8 +16938,9 @@ const SymptomsAnkle = [
             {
                 display: 'Verkur',
                 subOptions: [
-                    { display: 'Mikill', output: 'Lýsir miklum verk' },
-                    { display: 'Vægur', output: 'Lýsir vægum verk' },
+                    { display: 'NOS', output: 'Verkur' },
+                    { display: 'Vægur', output: 'Vægur verkur' },
+                    { display: 'Mikill', output: 'Mikill verkur' },
                     { display: 'Stingandi', output: 'Lýsir stingandi verk' },
                     { display: 'Dofnandi', output: 'Lýsir dofnandi verk' }
                 ],
@@ -16500,27 +16963,16 @@ const SymptomsAnkle = [
             },
             {
                 display: 'Hiti',
-                output: 'Lýsir hita',
-                onRightClickOutput: 'Neitar hita'
+                output: 'Lýsir hitamyndun',
+                onRightClickOutput: 'Ekki fundið fyrir aukinnri hitamyndun'
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Staðsetning', 'Áverki', 'Hvar', 'Smellur', 'Ástig'],
+        display: ['Áverki', 'Hvar', 'Smellur', 'Ástig'],
         options: [
-            {
-                display: 'Staðsetning',
-                subOptions: [
-                    { display: 'Framan', output: 'Staðsett framan á ökkla' },
-                    { display: 'Aftan', output: 'Staðsett aftan á ökkla' },
-                    { display: 'Hliðlægt', output: 'Staðsett hliðlægt á ökkla' },
-                    { display: 'Miðlægt', output: 'Staðsett miðlægt á ökkla' },
-                    { display: 'Ofan', output: 'Staðsett ofan á ökkla' },
-                    { display: 'Undir', output: 'Staðsett undir ökkla' }
-                ]
-            },
             {
                 display: 'Áverki',
                 subOptions: [
@@ -16551,6 +17003,66 @@ const SymptomsAnkle = [
                 onRightClickOutput: 'Getur stigið í fótinn'
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Fyrri vandamál', 'Aðgerð'],
+        options: [
+            {
+                display: 'Fyrri vandamál',
+                onRightClickOutput: 'Ekki fyrri saga um ökklavandamál',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um ökklavandamál áður' },
+                    { display: 'Íþróttameiðsl', output: 'Saga um ökklavanda. Gömul íþróttameiðsl' },
+                    { display: 'Liðbandaáverki', output: 'Saga um ökklavandamál. Liðbandáverki' }
+                ]
+            },
+            {
+                display: 'Aðgerð',
+                onRightClickOutput: 'Aldrei farið í aðgerð á ökkla', output: 'Þurft að fara í aðgerð á ökkla'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Slappleiki', 'Kuldahrollur'],
+        options: [
+            {
+                display: 'Slappleiki',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Slappleiki'
+                    },
+                    {
+                        display: 'Vægur',
+                        output: 'Fundið fyrir vægum slappleika'
+                    },
+                    {
+                        display: 'Töluverður',
+                        output: 'Lýsir töluverðum slappleika'
+                    }
+                ], onRightClickOutput: 'Ekki áberandi slappleiki'
+            },
+            {
+                display: 'Kuldahrollur',
+                output: 'Kuldahrollur',
+                onRightClickOutput: 'Ekki fengið kuldahroll'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hiti', 'Algeng gildi', 'Seinasta gildi'],
+        options: [
+            Hiti,
+            HitiAlgeng,
+            HitiSeinasta
+            
+        ]
     }
     
     
@@ -16560,10 +17072,10 @@ const ExamsAnkle = [
     {
         name: '',
         type: 'options',
-        display: ['Ökkli - Útlit', 'Ottawa', 'Hreyfigeta'],
+        display: ['Útlit', 'Ottawa', 'Hreyfigeta'],
         options: [
             {
-                display: 'Ökkli - Útlit',
+                display: 'Útlit',
                 subOptions: [
                     {
                         display: 'Bólga',
@@ -16745,7 +17257,9 @@ const PlanAnkle = [
                             
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Tognun á ökkla. Ráðlegg bólgueyðandi næstu daga eftir þörfum. RICE. '
+                                +'Getur keypt sér teygjusokk til að styðja við. Gengur yfirleitt yfir á nokkrum dögum / vikum. '
+                                +'Endurmat ef versnar eða lagast ekki'
             },
             {
                 display: 'Sinabólga',
@@ -16766,7 +17280,7 @@ const PlanAnkle = [
     {
         name: '',
         type: 'options',
-        display: ['Álagsbrot', 'Liðþófaáverki', 'Arthrosis', 'Bursitis'],
+        display: ['Álagsbrot', 'Slit', 'Bursitis'],
         options: [
             {
                 display: 'Álagsbrot',
@@ -16776,14 +17290,7 @@ const PlanAnkle = [
                 ]
             },
             {
-                display: 'Liðþófaáverki',
-                subOptions: [
-                    { display: 'Greining', output: 'Liðþófaáverki í ökkla' },
-                    { display: 'Grunur', output: 'Grunur um liðþófaáverka í ökkla' }
-                ]
-            },
-            {
-                display: 'Arthrosis',
+                display: 'Slit',
                 subOptions: [
                     { display: 'Greining', output: 'Arthrosis í ökkla' },
                     { display: 'Grunur', output: 'Grunur um arthrosis í ökkla' }
@@ -32503,6 +33010,7 @@ const pageDefinitions = {
                 { id: 'skodun', title: 'Skoðun', data: ExamsUrinary },
                 { id: 'lifsmork', title: 'Lífsmörk', data: LifsmorkData },
                 { id: 'þvagrannsokn', title: 'Þvagrannsókn', data: RannsoknirUrinary },
+                { id: 'rannsoknir', title: 'Rannsóknir', data: RannsoknirViral }
             ],
             [
                 { id: 'plan', title: 'Álit og plan', data: PlanUrinary },
@@ -32539,7 +33047,8 @@ const pageDefinitions = {
         columns: [
             [
                 { id: 'einkenni', title: 'Einkenni', data: SymptomsEye },
-                { id: 'raudflogg', title: 'Rauð Flögg', data: RaudFloggEye },
+                { id: 'einkenni', title: 'Rauð Flögg', data: RaudFloggEye },
+                //{ id: 'raudflogg', title: 'Rauð Flögg', data: RaudFloggEye },
                 { id: 'augnsaga', title: 'Augnsaga', data: HistoryEye },
                 { id: 'augnlyf', title: 'Augnlyf', data: LyfAuga },
                 { id: 'habits', title: 'Venjur', data: Habits },
@@ -32604,7 +33113,7 @@ const pageDefinitions = {
         columns: [
             [
                 { id: 'einkenni', title: 'Kviðverkur', data: SymptomsMelting },
-                { id: 'kerfakonnun', title: 'Kerfakönnun', data: KerfakonnunMelting },
+                //{ id: 'kerfakonnun', title: 'Kerfakönnun', data: KerfakonnunMelting },
                 { id: 'gynsaga', title: 'Gynsaga', data: Gynsaga },
                 { id: 'raudflogg', title: 'Rauð Flögg', data: RaudFloggMelting },
                 { id: 'historyViral', title: 'Heilsufar', data: historyMelting },
@@ -32780,13 +33289,10 @@ const pageDefinitions = {
     'Ankle': {
         columns: [
             [
-                { id: 'einkenni', title: 'Einkenni', data: SymptomsAnkle },
-                { id: 'habits', title: 'Venjur', data: Habits },
-                { id: 'ofnaemi', title: 'Ofnæmi', data: OfnaemiData },
+                { id: 'einkenni', title: 'Einkenni', data: SymptomsAnkle }
             ],
             [
-                { id: 'skodun', title: 'Skoðun', data: ExamsAnkle },
-                { id: 'lifsmork', title: 'Lífsmörk', data: LifsmorkData },
+                { id: 'skodun', title: 'Skoðun', data: ExamsAnkle }
             ],
             [
                 { id: 'plan', title: 'Álit og plan', data: PlanAnkle },
