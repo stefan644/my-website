@@ -4210,7 +4210,7 @@ const ExamsViral = [
                         ]
                     },
                     {
-                        display: 'Gröftur og roði',
+                        display: 'Gröftur, roði og útbungandi',
                         subOptions: [
                             { 
                                 display: 'Hægri', 
@@ -5737,7 +5737,7 @@ const PlanUrinary = [
                     { display: 'Grunur', output: 'Grunur um blöðrubólgu' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Drekka vel. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) mikilvægt að hafa samband' } 
+                            { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Drekka vel. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband' } 
                         ]    
                     },
                     { display: 'Ráðleggingar', 
@@ -5763,7 +5763,7 @@ const PlanUrinary = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Drekka vel. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) mikilvægt að hafa samband'
+                ], onRightClickOutput: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Drekka vel. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband'
             },
             {
                 display: 'Pyelonephritis',
@@ -5850,7 +5850,11 @@ const PlanUrinary = [
                     },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Jákv klamydía, skilar rakningu, hefjum meðferð með doxylín, endurmat pn', output: 'Klamydíupróf reynist jákvætt. Skilar rakningarblaði. Hefjum meðferð með doxylín í kjölfarið. 1 tafla 2x á dag í 7 daga. Upplýsi um helstu aukaverkanir. Ekki með barn á brjósti. Forðast sólarljós. Endurmat ef lagast ekki' } 
+                            { display: 'PCR, símatími til eftirfylgdar', output: 'Grunur um kynsjúkdóm. Skilar sýni í klamydíu/lekanda. Set beiðni í kerfið. Símatími til eftirfylgdar' },
+                            { display: 'PCR, eftirfylgd á sinni heilsugæslu', output: 'Grunur um kynsjúkdóm. Skilar sýni í klamydíu/lekanda. Set beiðni í kerfið. Eftirfylgd á sinni heilsugæslu' },
+                            { display: 'PCR + blóðprufa, símatími til eftirfylgdar', output: 'Grunur um kynsjúkdóm. Skilar sýni í klamydíu/lekanda. Einnig blóðprufa. Set beiðni í kerfið. Símatími til eftirfylgdar' },
+                            { display: 'PCR + blóðprufa, eftirfylgd á sinni heilsugæslu', output: 'Grunur um kynsjúkdóm. Skilar sýni í klamydíu/lekanda. Einnig blóðprufa. Eftirfylgd á sinni heilsugæslu' },
+                            { display: 'Jákv klamydía, skilar rakningu, hefjum meðferð með doxylín, endurmat pn', output: 'Klamydíupróf reynist jákvætt. Skilar rakningarblaði. Hefjum meðferð með doxylín í kjölfarið. 1 tafla 2x á dag í 7 daga. Upplýsi um helstu aukaverkanir. Ekki með barn á brjósti. Forðast sólarljós. Endurmat ef lagast ekki' },
                         ]    
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
@@ -7281,26 +7285,43 @@ const PlanEye = [
                     
                 ], onRightClickOutput: 'Vogris. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'
             },
-            {
-                display: 'Conjunctivitis',
+            {   display: 'Conjunctivitis', 
                 subOptions: [
-                    {   display: 'NOS', subOptions: [
-                        { display: 'Greining', output: 'Conjunctivitis' },
-                        { display: 'Grunur', output: 'Grunur um conjunctivitis' }
+                { display: 'Greining', output: 'Conjunctivitis' },
+                { display: 'Grunur', output: 'Grunur conjunctivitis' },
+                { display: 'Fullmótuð plön', 
+                    subOptions: [
+                        { display: 'Viral - Ráð - Re ef versnar', output: 'Grunur um viral conjunctivitis. Ráðlegg obs næstu daga. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat' },
+                        { display: 'Viral - Ráð - Sýkladropar í gátt - Re ef versnar', output: 'Grunur um viral conjunctivitis. Ráðlegg obs næstu daga. Tekur oft 1-2 vikur að ganga yfir. Set sýkladropa í gáttina, nota ef mikill gröftur. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat' },
+                        { display: 'Bacterial - Ráð - Sýkladropar - Re ef versnar', output: 'Grunur um bacterial conjunctivitis. Ráðlegg sýkladropa næstu daga. Ef versnandi einkenni eða rauð flögg svo sem aukin ljósfælni, sjóntap eða miklir verkir þá þarf að hafa samband við lækni'},
+                        { display: 'Allergískur - Ráð (forðast trigger, augndropar, neftserar, ofnæmislyf) - Endurmat pn', output: 'Grunur um allergískan conjunctivitis. Veiti ráðleggingar. Forðast ofnæmisvald. Ofnæmisaugndropar líkt og zaditen fást í lausasölu. Taka ofnæmislyf líkt og loritin. Nefsterar geta líka hjálpað. Endurmat pn'}
                     ]
-                    },
-                    {   display: 'Viral', subOptions: [
-                        { display: 'Greining', output: 'Viral conjunctivitis' },
-                        { display: 'Grunur', output: 'Grunur um viral conjunctivitis' }
+                },
+                { display: 'Ráðleggingar', 
+                    subOptions: [
+                        { display: 'Ráð vegna allergísk conjunctivitis', output: 'Veiti ráðleggingar. Forðast ofnæmisvald. Ofnæmisaugndropar líkt og zaditen fást í lausasölu. Taka ofnæmislyf líkt og loritin. Nefsterar geta hjálpað' } 
+                    ]    
+                },
+                { display: 'Leiðbeiningar til skjólstæðings',
+                    subOptions: [
+                        
+                        { display: '', type: 'hyperlink', url: '' }
                     ]
-                    },
-                    {   display: 'Bacterial', subOptions: [
-                        { display: 'Greining', output: 'Bacterial conjunctivitis' },
-                        { display: 'Grunur', output: 'Grunur um bacterial conjunctivitis' },
-                        { display: 'Fullmótað plan', output: 'Grunur um bacterial conjunctivitis. Ráðlegg sýkladropa næstu daga. Ef versnandi einkenni eða rauð flögg svo sem aukin ljósfælni, sjóntap eða miklir verkir þá þarf að hafa samband við lækni'}
+                },
+                { display: 'Fræðsluefni lækna', 
+                    subOptions: [
+                        { display: 'Uptodate - Conjunctivitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/conjunctivitis' },
+                        { display: 'Uptodate - Allergic conjunctivitis: Clinical manifestations and diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/allergic-conjunctivitis-clinical-manifestations-and-diagnosis' },
+                        { display: 'Uptodate - Allergic conjunctivitis: Management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/allergic-conjunctivitis-management' },
+                        { display: '', type: 'hyperlink', url: '' }
+
+                        
                     ]
-                    }
-                ]
+                }
+
+
+                
+            ], onRightClickOutput: 'Grunur um viral conjunctivitis. Ráðlegg obs næstu daga. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat'
             }
         ]
     },
@@ -7312,54 +7333,61 @@ const PlanEye = [
             { display: 'Aðskotahlutur', 
                 subOptions: [
                     { display: 'Greining', output: 'Aðskotahlutur í auga' },
-                    { display: 'Grunur', output: 'Grunur um aðskotahlut í auga' }
+                    { display: 'Grunur', output: 'Grunur um aðskotahlut í auga' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Fjarlægi með nál - Sýkladropar - Re PN', output: 'Aðskotahlutur í auga. Fjarlægi með nál. Losnar vel frá. Ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (panodil og íbúfen) við óþægindum. Endurmat ef lagast ekki' } ,
+                            { display: 'Fjarlægi með nál - Ryðhringur - Ráð - Sýkladropar - Re PN', output: 'Aðskotahlutur í auga. Fjarlægi með nál. Losnar vel frá. Ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (panodil og íbúfen) við óþægindum. Ryðhringur frásogast yfirleitt á nokkrum dögum. Ef einkenni lagast ekki á >3 dögum og ryðhringur áfram til staðar kemur til greina að fá mat hjá augnlækni til að fjarlægja' } ,
+                            { display: 'Næst ekki að fjarlægja - Sýkladropa mýkja - Endurkoma í framhaldi', output: 'Aðskotahlutur í auga. Reyni að fjarlægja með nál en gengur ekki. Ráðlegg sýkladropa til að mýkja. Verkjalyf (panodil og íbúfen) við óþægindum. Fær endurkomutíma í framhaldi' },
+                            { display: 'Næst ekki að fjarlægja - Sýkladropa mýkja - Leitar á heilsugæsluna í framhaldi', output: 'Aðskotahlutur í auga. Reyni að fjarlægja með nál en gengur ekki. Ráðlegg sýkladropa til að mýkja. Verkjalyf (panodil og íbúfen) við óþægindum. Leitar á heilsugæsluna í framhaldi til að fjarlægja' }
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Corneal abrasions and foreign bodies: Clinical manifestations and diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/corneal-abrasions-and-corneal-foreign-bodies-clinical-manifestations-and-diagnosis' },
+                            { display: 'Uptodate - Corneal abrasions and foreign bodies: Management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/corneal-abrasions-and-corneal-foreign-bodies-management' }
+                        ]
+                    }
                 ]
             },
             { display: 'Corneal abrasion', 
                 subOptions: [
                     { display: 'Greining', output: 'Corneal abrasion' },
-                    { display: 'Grunur', output: 'Grunur um corneal abrasion' }
-                ]
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Ofnæmi'],
-        options: [
-            {
-                display: 'Ofnæmi',
-                subOptions: [
-                    {
-                        display: 'Ofnæmi',
+                    { display: 'Grunur', output: 'Grunur um corneal abrasion' },
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Greining', output: 'Ofnæmi' },
-                            { display: 'Grunur', output: 'Grunur um ofnæmi' }
+                            { display: 'Greining - Ráð - Sýkladropar - Endurmat PN', output: 'Corneal abrasion. Veiti ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (íbúfen og panodil) PN við óþægindum. Ef einkenni lagast ekki eða versna þá endurmat' } 
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: '', type: 'hyperlink', url: '' }
                         ]
                     },
-                    {
-                        display: 'Augu',
+                    { display: 'Fræðsluefni lækna', 
                         subOptions: [
-                            { display: 'Greining', output: 'Ofnæmiseinkenni frá augum' },
-                            { display: 'Grunur', output: 'Grunur um ofnæmiseinkenni frá augum' }
-                        ]
-                    },
-                    {
-                        display: 'Frjókornaofnæmi',
-                        subOptions: [
-                            { display: 'Greining', output: 'Frjókornaofnæmi' },
-                            { display: 'Grunur', output: 'Grunur um frjókornaofnæmi' }
-                        ]
-                    },
-                    {
-                        display: 'Dýraofnæmi',
-                        subOptions: [
-                            { display: 'Greining', output: 'Dýraofnæmi' },
-                            { display: 'Grunur', output: 'Grunur um dýraofnæmi' }
+                            { display: 'Uptodate - Corneal abrasions and foreign bodies: Clinical manifestations and diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/corneal-abrasions-and-corneal-foreign-bodies-clinical-manifestations-and-diagnosis' },
+                            { display: 'Uptodate - Corneal abrasions and foreign bodies: Management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/corneal-abrasions-and-corneal-foreign-bodies-management' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Corneal abrasion. Veiti ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (íbúfen og panodil) PN við óþægindum. Ef einkenni lagast ekki eða versna þá endurmat'
             }
         ]
     },
@@ -7490,14 +7518,14 @@ const SymptomsHeart = [
     {
         name: '',
         type: 'options',
-        display: ['Tímalengd', 'Viðtalstegund', 'Fyrri nótur'],
+        display: ['Viðtalstegund', 'Fyrri nótur'],
         options: [
-            timalengdButton,
             Viðtalstegund,
             FyrriNoturButton
             
         ]
     },
+    Timalengd2,
     {
         name: '',
         type: 'options',
@@ -7508,7 +7536,9 @@ const SymptomsHeart = [
                 subOptions: [
                     { display: 'Leitar vegna', output: 'Leitar vegna háþrýstings' },
                     { display: 'Eftirfylgd', output: 'Eftirfylgd með háþrýstingi' },
-                    { display: 'Grunur um háþrýsting', output: 'Grunur um háþrýsting. Mælt þrýstinginn hækkaðan heimafyrir' }
+                    { display: 'Háþrýstingseftirlit', output: 'Kemur í háþrýstingseftirlit' },
+                    { display: 'Grunur um háþrýsting', output: 'Grunur um háþrýsting' },
+                    { display: 'Grunur. Hækkaður heimafyrir', output: 'Grunur um háþrýsting. Mælt þrýstinginn hækkaðan heimafyrir' }
                 ],
                 onRightClickOutput: 'Ekki saga um háþrýsting'
             },
@@ -7516,8 +7546,8 @@ const SymptomsHeart = [
                 display: 'Heimamælingar',
                 subOptions: [
                     { display: 'Kemur með', output: 'Kemur með heimamælingar' },
-                    { display: 'Hækkaðar', output: 'Kemur með heimamælingar. Er oft að mælast yfir mörkum' },
-                    { display: 'Eðlilegar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' },
+                    { display: 'Kemur með hækkaðar mælingar', output: 'Kemur með heimamælingar. Er oft að mælast yfir mörkum' },
+                    { display: 'Kemur með eðlilegar mælingar', output: 'Kemur með heimamælingar. Flestar mælingar innan eðlilegra marka' },
                     {
                         display: 'Algeng gildi',
                         subOptions: [
@@ -9431,7 +9461,7 @@ const PlanHeart = [
     {
         name: '',
     type: 'options',
-    display: ['Metabolic syndrome', 'Obesity', 'Sykursýki II', 'Blóðfituröskun'],
+    display: ['Metabolic syndrome', 'Obesity', 'Sykursýki II', 'Kólesterólhækkun'],
     options: [
         {
             display: 'Metabolic syndrome',
@@ -9473,92 +9503,94 @@ const PlanHeart = [
             ]
         },
         {
-            display: 'Blóðfituröskun',
+            display: 'Kólesterólhækkun',
             subOptions: [
+                { display: 'Greining', output: 'Kólesterólhækkun' },
+                { display: 'Grunur', output: 'Grunur um kólesterólhækkun' },
                 {
-                    display: 'Kólesterólhækkun',
+                    display: 'Fullmótuð plön',
                     subOptions: [
-                        { display: 'Greining', output: 'Kólesterólhækkun' },
-                        { display: 'Grunur', output: 'Grunur um kólesterólhækkun' },
-                        {
-                            display: 'Fullmótuð plön',
+                        {}
+                    ]
+                },
+                {
+                    display: 'Ráðleggingar',
+                    subOptions: [
+                        { display: 'Fræðsla um mataræði og benecol', output: 'Fræðsla vegna kólesterólhækkunnar. Ráðlegg að kynna sér kólesterólmataræði hjartaverndar. Forðast mettaðar fitur. Auka trefjainntöku og fjölómettaðar fitusýrur. Egg í hófi. Rætt um benecol en það getur lækkað blóðfitur með því að binda þær í þörmum og á að taka eftir stærstu máltíð dagsins' },
+                        { display: 'Rætt um þyngdartap', output: 'Rætt um þyngdartap en það getur haft jákvæð áhrif á blóðfitur og heildar áhættu kransæðasjúkdóma. Yfirferð yfir helstu aðferðir á markaði við þyngdarstjórnun. Mataræði og hreyfing hornsteinn. Umræða um þyngdarstjórnunarlyf á markaði og niðurgreiðslukröfur sjúkratrygginga. Umræða um magaermi og bypass aðgerðir' },
+                        { display: 'Rætt um hreyfingu', output: 'Rætt um hreyfingu í samræmi við leiðbeiningar EL. Ráðlagt að allir hreyfa sig reglulega. Minnst 150 mín rösklega vikulega. Vöðvastyrking minnst 2x í viku' }
+                    ]
+                },
+                { display: 'Leiðbeiningar til skjólstæðings',
+                    subOptions: [
+                        { display: 'Hjartavernd - Bæklingur um kólesteról', type: 'hyperlink', url: 'https://hjarta.is/wp-content/uploads/2019/03/Kolesterol.pdf' },
+                        { display: 'Lyfja - Ráð og fræðsla', type: 'hyperlink', url: 'https://www.lyfja.is/fraedsla/fraedslugreinar/sjukdomar-og-kvillar/kolesterol' },
+                        { display: 'Uptodate - High cholesterol (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-cholesterol-the-basics' },
+                        { display: 'Uptodate - Can foods or supplements lower cholesterol? (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/can-foods-or-supplements-lower-cholesterol-the-basics' },
+                        { display: 'Uptodate - High cholesterol and lipids (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-cholesterol-and-lipids-beyond-the-basics' },
+                        { 
+                            display: 'Embætti Landslæknis - Ráðleggingarbæklingar um hreyfingu',
                             subOptions: [
-                                {}
-                            ]
-                        },
-                        {
-                            display: 'Ráðleggingar',
-                            subOptions: [
-                                { display: 'Fræðsla um mataræði og benecol', output: 'Fræðsla vegna kólesterólhækkunnar. Ráðlegg að kynna sér kólesterólmataræði hjartaverndar. Forðast mettaðar fitur. Auka trefjainntöku og fjölómettaðar fitusýrur. Egg í hófi. Rætt um benecol en það getur lækkað blóðfitur með því að binda þær í þörmum og á að taka eftir stærstu máltíð dagsins' },
-                                { display: 'Rætt um þyngdartap', output: 'Rætt um þyngdartap en það getur haft jákvæð áhrif á blóðfitur og heildar áhættu kransæðasjúkdóma. Yfirferð yfir helstu aðferðir á markaði við þyngdarstjórnun. Mataræði og hreyfing hornsteinn. Umræða um þyngdarstjórnunarlyf á markaði og niðurgreiðslukröfur sjúkratrygginga. Umræða um magaermi og bypass aðgerðir' },
-                                { display: 'Rætt um hreyfingu', output: 'Rætt um hreyfingu í samræmi við leiðbeiningar EL. Ráðlagt að allir hreyfa sig reglulega. Minnst 150 mín rösklega vikulega. Vöðvastyrking minnst 2x í viku' }
-                            ]
-                        },
-                        { display: 'Leiðbeiningar til skjólstæðings',
-                            subOptions: [
-                                { display: 'Hjartavernd - Bæklingur um kólesteról', type: 'hyperlink', url: 'https://hjarta.is/wp-content/uploads/2019/03/Kolesterol.pdf' },
-                                { display: 'Lyfja - Ráð og fræðsla', type: 'hyperlink', url: 'https://www.lyfja.is/fraedsla/fraedslugreinar/sjukdomar-og-kvillar/kolesterol' },
-                                { display: 'Uptodate - High cholesterol (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-cholesterol-the-basics' },
-                                { display: 'Uptodate - Can foods or supplements lower cholesterol? (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/can-foods-or-supplements-lower-cholesterol-the-basics' },
-                                { display: 'Uptodate - High cholesterol and lipids (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-cholesterol-and-lipids-beyond-the-basics' },
-                                { 
-                                    display: 'Embætti Landslæknis - Ráðleggingarbæklingar um hreyfingu',
-                                    subOptions: [
-                                    { display: 'Yfirlitssíða', type: 'hyperlink', url: 'https://island.is/hreyfing-radleggingar-landlaeknis' },
-                                    { display: 'Fullorðnir', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/6oIsSUCvoYtqOPSoavYBOu/24d89e0f5e20030e4e3939852f272281/Fullor_nir_R__l._hreyfing_og_kyrrseta_2024.pdf' },
-                                    { display: 'Börn', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/1X1jaPYtByGiT0gOKlFk71/9b3ddfa24de8d09b93d090a3ae41b2c9/B_rn_og_ungmenni_R__l._hreyfing_og_kyrrseta_2024.NYTT.pdf' },
-                                    { display: 'Eldra fólk', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/5rSDgldOlFECJsVWEAWgVi/81a99653ac2a6627b918e05315095fad/Eldra_f_lk_R__l._hreyfing_og_kyrrseta_2024.pdf' },
-                                    { display: 'Eftir meðgöngu / fæðingu', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/4iVozshW0JMbdJff7a5Mou/98bbf0eb1c06b57a0e300ba7e157eed1/Me_ganga_og_f__ing_R__l._hreyfing_og_kyrrseta_2024.pdf' },
-                                    { display: 'Börn með fötlun', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/71bnphVHsRpdN4dpvYVdI2/abd2aed7b0f0e83f5f4817496a18c07d/F_tlu__b_rn_og_ungmenni_R__l._hreyfing_og_kyrrseta_2024.NYTT.pdf' },
-                                    { display: 'Fullorðnir með fötlun', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/1THxNj82KY5tOuRy9GgiQE/482750e50e8637df6e460e72ecc306de/Fullor_nir_me__f_tlun_R__l._hreyfing_og_kyrrseta_2024.pdf' }
-                                    ]
-                                }
-                            ]
-                        },
-                        { display: 'Fræðsluefni lækna', 
-                            subOptions: [
-                                { display: 'Áhættureiknir hjartaverndar', type: 'hyperlink', url: 'http://risk.hjarta.is/risk_calculator/' },
-                                { display: 'AHA/ACC 2013 - 10 ára áhætta', type: 'hyperlink', url: 'https://www.mdcalc.com/calc/3398/ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc' },
-                                { display: 'Uptodate - Dýnamískt flæðirit fyrir meðhöndlun á háu LDL', type: 'hyperlink', url: 'https://pathways.uptodate.com/pathway/120059' },
-                                { display: 'Uptodate - Primary prevention with LDL therapy', type: 'hyperlink', url: 'https://www.uptodate.com/contents/low-density-lipoprotein-cholesterol-lowering-therapy-in-the-primary-prevention-of-cardiovascular-disease' },
-                                { display: 'Uptodate - Secondary prevention with LDL therapy', type: 'hyperlink', url: 'https://www.uptodate.com/contents/management-of-low-density-lipoprotein-cholesterol-ldl-c-in-the-secondary-prevention-of-cardiovascular-disease' }
+                            { display: 'Yfirlitssíða', type: 'hyperlink', url: 'https://island.is/hreyfing-radleggingar-landlaeknis' },
+                            { display: 'Fullorðnir', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/6oIsSUCvoYtqOPSoavYBOu/24d89e0f5e20030e4e3939852f272281/Fullor_nir_R__l._hreyfing_og_kyrrseta_2024.pdf' },
+                            { display: 'Börn', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/1X1jaPYtByGiT0gOKlFk71/9b3ddfa24de8d09b93d090a3ae41b2c9/B_rn_og_ungmenni_R__l._hreyfing_og_kyrrseta_2024.NYTT.pdf' },
+                            { display: 'Eldra fólk', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/5rSDgldOlFECJsVWEAWgVi/81a99653ac2a6627b918e05315095fad/Eldra_f_lk_R__l._hreyfing_og_kyrrseta_2024.pdf' },
+                            { display: 'Eftir meðgöngu / fæðingu', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/4iVozshW0JMbdJff7a5Mou/98bbf0eb1c06b57a0e300ba7e157eed1/Me_ganga_og_f__ing_R__l._hreyfing_og_kyrrseta_2024.pdf' },
+                            { display: 'Börn með fötlun', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/71bnphVHsRpdN4dpvYVdI2/abd2aed7b0f0e83f5f4817496a18c07d/F_tlu__b_rn_og_ungmenni_R__l._hreyfing_og_kyrrseta_2024.NYTT.pdf' },
+                            { display: 'Fullorðnir með fötlun', type: 'hyperlink', url: 'https://assets.ctfassets.net/8k0h54kbe6bj/1THxNj82KY5tOuRy9GgiQE/482750e50e8637df6e460e72ecc306de/Fullor_nir_me__f_tlun_R__l._hreyfing_og_kyrrseta_2024.pdf' }
                             ]
                         }
                     ]
                 },
-                {
-                    display: 'Hækkun á þríglýseríðum',
+                { display: 'Fræðsluefni lækna', 
                     subOptions: [
-                        { display: 'Greining', output: 'Hækkun á þríglýseríðum' },
-                        { display: 'Grunur', output: 'Grunur um hækkun á þríglýseríðum' },
-                        {
-                            display: 'Fullmótuð plön',
-                            subOptions: [
-                                { }
-                            ]
-                        },
-                        { display: 'Ráðleggingar', 
-                            subOptions: [
-                                { display: '', output: '' } 
-                            ]    
-                        },
-                        { display: 'Leiðbeiningar til skjólstæðings',
-                            subOptions: [
-                                
-                                { display: 'Uptodate - High triglycerides (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-triglycerides-the-basics' },
-                                { display: 'Uptodate - High cholesterol and lipids (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-cholesterol-and-lipids-beyond-the-basics' }
-                                
-                            ]
-                        },
-                        { display: 'Fræðsluefni lækna', 
-                            subOptions: [
-                                { display: 'Uptodate - Management of hypertriglyceridemia in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/hypertriglyceridemia-in-adults-management' }
-                            ]
-                        }
-
-                        
+                        { display: 'Áhættureiknir hjartaverndar', type: 'hyperlink', url: 'http://risk.hjarta.is/risk_calculator/' },
+                        { display: 'AHA/ACC 2013 - 10 ára áhætta', type: 'hyperlink', url: 'https://www.mdcalc.com/calc/3398/ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc' },
+                        { display: 'Uptodate - Dýnamískt flæðirit fyrir meðhöndlun á háu LDL', type: 'hyperlink', url: 'https://pathways.uptodate.com/pathway/120059' },
+                        { display: 'Uptodate - Primary prevention with LDL therapy', type: 'hyperlink', url: 'https://www.uptodate.com/contents/low-density-lipoprotein-cholesterol-lowering-therapy-in-the-primary-prevention-of-cardiovascular-disease' },
+                        { display: 'Uptodate - Secondary prevention with LDL therapy', type: 'hyperlink', url: 'https://www.uptodate.com/contents/management-of-low-density-lipoprotein-cholesterol-ldl-c-in-the-secondary-prevention-of-cardiovascular-disease' }
                     ]
                 }
+            ]
+        }
+    ]
+    },
+    {
+        name: '',
+    type: 'options',
+    display: ['Hækkun á þríglyceríðum'],
+    options: [
+        {
+            display: 'Hækkun á þríglýseríðum',
+            subOptions: [
+                { display: 'Greining', output: 'Hækkun á þríglýseríðum' },
+                { display: 'Grunur', output: 'Grunur um hækkun á þríglýseríðum' },
+                {
+                    display: 'Fullmótuð plön',
+                    subOptions: [
+                        { }
+                    ]
+                },
+                { display: 'Ráðleggingar', 
+                    subOptions: [
+                        { display: '', output: '' } 
+                    ]    
+                },
+                { display: 'Leiðbeiningar til skjólstæðings',
+                    subOptions: [
+                        
+                        { display: 'Uptodate - High triglycerides (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-triglycerides-the-basics' },
+                        { display: 'Uptodate - High cholesterol and lipids (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-cholesterol-and-lipids-beyond-the-basics' }
+                        
+                    ]
+                },
+                { display: 'Fræðsluefni lækna', 
+                    subOptions: [
+                        { display: 'Uptodate - Management of hypertriglyceridemia in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/hypertriglyceridemia-in-adults-management' }
+                    ]
+                }
+
+                
             ]
         }
     ]
@@ -21226,6 +21258,17 @@ const SymptomsTauga = [
     {
         name: '',
         type: 'options',
+        display: ['Viðtalstegund', 'Fyrri nótur'],
+        options: [
+            Viðtalstegund,
+            FyrriNoturButton
+            
+        ]
+    },
+    Timalengd2,
+    {
+        name: '',
+        type: 'options',
         display: ['Höfuðverkur', 'Svimi'],
         options: [
             { display: 'Höfuðverkur', output: 'Höfuðverkur' },
@@ -21798,8 +21841,36 @@ const PlanTauga = [
                         display: 'Tension',
                         subOptions: [
                             { display: 'Greining', output: 'Tension höfuðverkur' },
-                            { display: 'Grunur', output: 'Grunur um tension höfuðverk' }
-                        ]
+                            { display: 'Grunur', output: 'Grunur um tension höfuðverk' },
+                            { display: 'Fullmótuð plön', 
+                                subOptions: [
+                                    { display: 'Grunur - Ráð - Endurmat PN', output: 'Grunur um spennuhöfuðverk. Veiti ráðleggingar. Slökun. Regluleg hreyfing. Huga að líkamsstöðu. Getur prófað sjúkraþjálfun. Sálfræðimeðferð (CBT). Ef dugar illa má reyna t.d. amitryptiline. Endurmat pn' } 
+                                ]    
+                            },
+                            { display: 'Ráðleggingar', 
+                                subOptions: [
+                                    { display: '', output: '' } 
+                                ]    
+                            },
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    
+                                    { display: 'Lækning.is - Höfuðverkur yfirlitsgrein 2016 eftir Ólöf H Bjarnadóttur, tauga- og endurhæfingarlækni', type: 'hyperlink', url: 'https://laekning.is/wp-content/uploads/2023/10/Hofudverkur.-Almennar-upplysingar.pdf' },
+                                    { display: 'Lækning.is - Aðferðir til að koma í veg fyrir langivinnan höfuðverk (Ólöf H Bjarnadóttir 2015)', output: 'https://laekning.is/wp-content/uploads/2023/10/langvinnan-hofudverk-fyrirbyggjandi-almennt.pdf' }
+                                    
+                                ]
+                            },
+                            { display: 'Fræðsluefni lækna', 
+                                subOptions: [
+                                    { display: 'Uptodate - Tension-type headache in adults: Etiology, clinical features, and diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/tension-type-headache-in-adults-etiology-clinical-features-and-diagnosis' },
+                                    { display: 'Uptodate - Tension-type headache in adults: Acute treatment', type: 'hyperlink', url: 'https://www.uptodate.com/contents/tension-type-headache-in-adults-acute-treatment' },
+                                    { display: 'Uptodate - Tension-type headache in adults: Preventive treatment', type: 'hyperlink', url: 'https://www.uptodate.com/contents/tension-type-headache-in-adults-preventive-treatment' },
+                                    { display: 'Uptodate - Tension-type headache in children', type: 'hyperlink', url: 'https://www.uptodate.com/contents/tension-type-headache-in-children' },
+                                    { display: '', type: 'hyperlink', url: '' },
+                                    { display: '', type: 'hyperlink', url: '' }
+                                ]
+                            }
+                        ], onRightClickOutput: 'Grunur um spennuhöfuðverk. Veiti ráðleggingar. Slökun. Regluleg hreyfing. Huga að líkamsstöðu. Getur prófað sjúkraþjálfun. Sálfræðimeðferð (CBT). Ef dugar illa má reyna t.d. amitryptiline. Endurmat pn'
                     },
                     {
                         display: 'Cluster',
@@ -33368,10 +33439,16 @@ const pageDefinitions = {
         columns: [
             [
                 { id: 'einkenni', title: 'Einkenni', data: SymptomsTauga },
+                { id: 'einkenni', title: 'Svimi', data: SymptomsSvimi },
+                { id: 'kerfakonnun', title: 'Kerfakönnun', data: KerfakonnunSvimi },
+                { id: 'historyViral', title: 'Heilsufar', data: historySvimi },
+                { id: 'habits', title: 'Venjur', data: Habits },
+                { id: 'ofnaemi', title: 'Ofnæmi', data: OfnaemiData },
             ],
             [
-                { id: 'skodun', title: 'Skoðun', data: ExamsTauga },
+                { id: 'skodun', title: 'Taugaskoðun', data: ExamsTauga },
                 { id: 'heilataugaskodun', title: 'Heilataugaskoðun', data: HeilataugaskodunData },
+                { id: 'skodun', title: 'Svimaskoðun', data: ExamsSvimi },
             ],
             [
                 { id: 'plan', title: 'Álit og plan', data: PlanTauga },
