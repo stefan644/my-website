@@ -1348,9 +1348,14 @@ const Hlekkir = [
                             { display: 'Klukkupróf', type: 'hyperlink', url: 'https://throunarmidstod.is/library/Files/Klukkupr%c3%b3f.pdf' },
                             { display: 'Leiðbeiningar', type: 'hyperlink', url: 'https://throunarmidstod.is/library/Verkfaeri/MMSE-lei%c3%b0beiningar.pdf' }
                         ] 
+                    },
+                    { display: 'Innri vefur', 
+                        subOptions: [
+                            { display: 'Innri vefur', type: 'hyperlink', url: 'http://www.throunarmidstod.is/fraedsla' },
+                            { display: 'Fræðsla', type: 'hyperlink', url: '' },
+                            { display: '!fagfolk123!', type: 'hyperlink', url: '' }
+                        ] 
                     }
-
-
                 ]
             }
         ]
@@ -7291,7 +7296,7 @@ const PlanEye = [
                 { display: 'Grunur', output: 'Grunur conjunctivitis' },
                 { display: 'Fullmótuð plön', 
                     subOptions: [
-                        { display: 'Viral - Ráð - Re ef versnar', output: 'Grunur um viral conjunctivitis. Ráðlegg obs næstu daga. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat' },
+                        { display: 'Viral - Ráð - Re ef versnar', output: 'Grunur um viral conjunctivitis. Ráðlegg obs næstu daga. Sýklalyf duga yfirleitt skammt. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat' },
                         { display: 'Viral - Ráð - Sýkladropar í gátt - Re ef versnar', output: 'Grunur um viral conjunctivitis. Ráðlegg obs næstu daga. Tekur oft 1-2 vikur að ganga yfir. Set sýkladropa í gáttina, nota ef mikill gröftur. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat' },
                         { display: 'Bacterial - Ráð - Sýkladropar - Re ef versnar', output: 'Grunur um bacterial conjunctivitis. Ráðlegg sýkladropa næstu daga. Ef versnandi einkenni eða rauð flögg svo sem aukin ljósfælni, sjóntap eða miklir verkir þá þarf að hafa samband við lækni'},
                         { display: 'Allergískur - Ráð (forðast trigger, augndropar, neftserar, ofnæmislyf) - Endurmat pn', output: 'Grunur um allergískan conjunctivitis. Veiti ráðleggingar. Forðast ofnæmisvald. Ofnæmisaugndropar líkt og zaditen fást í lausasölu. Taka ofnæmislyf líkt og loritin. Nefsterar geta líka hjálpað. Endurmat pn'}
@@ -7388,6 +7393,44 @@ const PlanEye = [
                         ]
                     }
                 ], onRightClickOutput: 'Corneal abrasion. Veiti ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (íbúfen og panodil) PN við óþægindum. Ef einkenni lagast ekki eða versna þá endurmat'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Óþægindi'],
+        options: [
+            {
+                display: 'Óþægindi',
+                subOptions: [
+                    { display: 'Greining', output: '' },
+                    { display: 'Grunur', output: '' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Óþægindi - Engin skýring - Obs - Ef lagast ekki þá augnlæknir', output: 'Óþægindi frá auga. Engin skýring finnst við skoðun. Ráðlegg obs næstu daga. Notar gervitár eftir þörfum. Ef einkenni lagast ekki ráðlagt mat augnlæknis' },
+                            { display: 'Óþægindi - Engin skýring - Obs+sýkladropar - Ef lagast ekki þá augnlæknir', output: 'Óþægindi frá auga. Engin skýring finnst við skoðun. Reynum sýkladropa við einkennum. Ef einkenni lagast ekki ráðlagt mat augnlæknis'}
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    }
+                    
+                ],
+                onRightClickOutput: 'Óþægindi frá auga. Engin skýring finnst við skoðun. Ráðlegg obs næstu daga. Notar gervitár eftir þörfum. Ef einkenni lagast ekki ráðlagt mat augnlæknis'
             }
         ]
     },
@@ -11211,7 +11254,7 @@ const PlanMelting = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Grunur um viral gastroenteritis. Veiti almennar ráðleggingar. Passa vökvainntöku og næringu. Gengur yfirleitt yfir á 1-2 vikum. Endurmat ef lagast ekki eða fyrr ef versnar'
             },
             { display: 'Niðurgangur',
                 subOptions: [
@@ -11250,7 +11293,7 @@ const PlanMelting = [
                 subOptions: [
                     { display: 'Greining', output: 'Gallsteinar' },
                     { display: 'Grunur', output: 'Grunur um gallsteina' }
-                ]
+                ], onRightClickOutput: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum. Hefur samband að rannsóknum loknum. Ef einkenni versna í millitíðinni (svosem hiti eða mikill slappleiki) er mikilvægt að hafa samband'
             },
             {
                 display: 'Diverticulitis',
@@ -11278,7 +11321,7 @@ const PlanMelting = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ]
+                ], onRightClickOutput:'Grunur um diverticulitis. Fær viðeigandi ráðleggingar um meðferð. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar'
             },
             {
                 display: 'Endaþarmur',
@@ -18009,6 +18052,7 @@ const PlanHud = [
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Grunur, sýklalyf, fylgjast vel með, endurmat pn', output: 'Grunur um húðsýkingu. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' },
+                            { display: 'Grunur, sýklakrem, fylgjast vel með, endurmat pn', output: 'Grunur um húðsýkingu. Set sýklakrem í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' },
                             { display: 'Ekki hægt að útiloka, DDX þvagsýrugigt, sýklalyf, fylgjast vel með, endurmat pn', output: 'DDX húðsýking, þvagsýrugigt. Þar sem ekki hægt að útiloka sýkingu ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' }
                         ]
                     },
@@ -25371,7 +25415,7 @@ const PlanMeðganga = [
                             
                         ]
                     }
-                ]
+                ], onRightClickOutput:'Mastitis. Ráðlegg sýklalyf. Háir skammtar af dicloxacillin, 1gx4 í ca 7 daga. Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd. Endurmat ef versnar eða lagast ekki'
             }
         ]
     },
