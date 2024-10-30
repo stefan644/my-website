@@ -1383,6 +1383,23 @@ const Hlekkir = [
                 ]
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Símanúmer'],
+        options: [
+            {
+                display: 'Símanúmer',
+                subOptions: [
+                    { display: 'Ráðgjafasími LSH 543-3400', type: 'hyperlink', url: 'tel:5433400' },
+                    { display: '', type: 'hyperlink', url: '' },
+                    { display: '', type: 'hyperlink', url: '' },
+                    { display: '', type: 'hyperlink', url: '' }
+                    
+                ]
+            }
+        ]
     }
     
 ];
@@ -13921,6 +13938,17 @@ const PlanStodkerfi = [
 // Shoulder
 const SymptomsShoulder = [
     {
+        name: '',
+        type: 'options',
+        display: ['Viðtalstegund', 'Fyrri nótur'],
+        options: [
+            Viðtalstegund,
+            FyrriNoturButton
+            
+        ]
+    },
+    Timalengd2,
+    {
         name: '',  // No category name displayed
         type: 'options',
         display: ['Einkenni', 'Verkur', 'Óþægindi'],  // Four buttons in one row
@@ -13947,9 +13975,8 @@ const SymptomsShoulder = [
     {
         name: '',  // No category name displayed
         type: 'options',
-        display: ['Tímalengd', 'Onset', 'Áverki'],  // Four buttons in one row
+        display: ['Onset', 'Áverki'],  // Four buttons in one row
         options: [
-            timalengdButton,
             {
                 display: 'Onset',
                 subOptions: [
@@ -14096,82 +14123,121 @@ const ExamsShoulder = [
     {
         name: '',  // No category name displayed
         type: 'options',
-        display: ['Samhverfa', 'Afmyndun', 'Bólga', 'Húðbreytingar'],  // Buttons for inspection
+        display: ['Útlit', 'Þreifing', 'Hreyfigeta', 'Styrkur'],  // Buttons for inspection
         options: [
             {
-                display: 'Samhverfa',  // Button for assessing symmetry
+                display: 'Útlit',  
                 subOptions: [
-                    { display: 'Vinstri lægri', output: 'Vinstri öxl er lægri en sú hægri' },
-                    { display: 'Hægri lægri', output: 'Hægri öxl er lægri en sú vinstri' }
+                    {
+                        display: 'Samhverfa',  // Button for assessing symmetry
+                        subOptions: [
+                            { display: 'Vinstri lægri', output: 'Vinstri öxl er lægri en sú hægri' },
+                            { display: 'Hægri lægri', output: 'Hægri öxl er lægri en sú vinstri' }
+                        ],
+                        onRightClickOutput: 'Axlir samhverfar'
+                    },
+                    {
+                        display: 'Afmyndun',  // Button for identifying deformities
+                        subOptions: [
+                            { display: 'Clavicula', output: 'Afmyndun við clavicula' },
+                            { display: 'Acromion', output: 'Afmyndun við acromion' },
+                            { display: 'Scapula', output: 'Afmyndun við scapula' }
+                        ],
+                        onRightClickOutput: 'Engin afmyndun sjáanleg'
+                    },
+                    {
+                        display: 'Bólga',  // Button for detecting swelling
+                        subOptions: [
+                            { display: 'Efri hluti', output: 'Bólga á efri hluta axlar' },
+                            { display: 'Neðri hluti', output: 'Bólga á neðri hluta axlar' },
+                            { display: 'Við AC liði', output: 'Bólga yfir AC lið' }
+                        ],
+                        onRightClickOutput: 'Engin bólga'
+                    },
+                    {
+                        display: 'Húðbreytingar',  // Button for skin changes
+                        subOptions: [
+                            { display: 'Roði', output: 'Roði yfir öxlinni' },
+                            { display: 'Mar', output: 'Mar yfir öxlinni' },
+                            { display: 'Sár', output: 'Sár eða húðskemmdir yfir öxlinni' }
+                        ],
+                        onRightClickOutput: 'Engar húðbreytingar'
+                    }
                 ],
-                onRightClickOutput: 'Axlir samhverfar'
+                onRightClickOutput: 'Eðlilegt útlit. Axlir samhverfar. Ekki að sjá afmyndun eða áberandi bólgu'
             },
             {
-                display: 'Afmyndun',  // Button for identifying deformities
+                display: 'Þreifing',  // Button for palpation with tenderness locations
                 subOptions: [
-                    { display: 'Clavicula', output: 'Afmyndun við clavicula' },
-                    { display: 'Acromion', output: 'Afmyndun við acromion' },
-                    { display: 'Scapula', output: 'Afmyndun við scapula' }
+                    {
+                        display: 'Eymsli',  // Button for palpation with tenderness locations
+                        subOptions: [
+                            {
+                                display: 'AC lið',  // AC joint
+                                subOptions: [
+                                    { display: 'NOS', output: 'Eymsli við þreifingu yfir AC lið' },
+                                    { display: 'Væg', output: 'Væg eymsli við þreifingu yfir AC lið' },
+                                    { display: 'Mikil', output: 'Mikil eymsli við þreifingu yfir AC lið' }
+                                ],
+                                onRightClickOutput: 'Engin eymsli við þreifingu yfir AC lið'
+                            },
+                            {
+                                display: 'Framanvert',  // Front shoulder
+                                subOptions: [
+                                    { display: 'NOS', output: 'Eymsli framan á öxlinni' },
+                                    { display: 'Væg', output: 'Væg eymsli framan á öxlinni' },
+                                    { display: 'Mikil', output: 'Mikil eymsli framan á öxlinni' }
+                                ],
+                                onRightClickOutput: 'Engin eymsli framan á öxlinni'
+                            },
+                            {
+                                display: 'Aftanvert',  // Back shoulder
+                                subOptions: [
+                                    { display: 'NOS', output: 'Eymsli aftan á öxlinni' },
+                                    { display: 'Væg', output: 'Væg eymsli aftan á öxlinni' },
+                                    { display: 'Mikil', output: 'Mikil eymsli aftan á öxlinni' }
+                                ],
+                                onRightClickOutput: 'Engin eymsli aftan á öxlinni'
+                            },
+                            {
+                                display: 'Deltoid',  // Deltoid region
+                                subOptions: [
+                                    { display: 'NOS', output: 'Eymsli við þreifingu yfir deltoid svæði' },
+                                    { display: 'Væg', output: 'Væg eymsli við þreifingu yfir deltoid svæði' },
+                                    { display: 'Mikil', output: 'Mikil eymsli við þreifingu yfir deltoid svæði' }
+                                ],
+                                onRightClickOutput: 'Engin eymsli við þreifingu yfir deltoid svæði'
+                            },
+                            {
+                                display: 'Stutta biceps sin',  // Biceps tendon insertion
+                                subOptions: [
+                                    { display: 'NOS', output: 'Eymsli við þreifingu yfir stutta biceps sin' },
+                                    { display: 'Væg', output: 'Væg eymsli við þreifingu yfir stutta biceps sin' },
+                                    { display: 'Mikil', output: 'Mikil eymsli við þreifingu yfir stutta biceps sin' }
+                                ],
+                                onRightClickOutput: 'Engin eymsli við þreifingu yfir stutta biceps sin'
+                            }
+                        ],
+                        onRightClickOutput: 'Engin eymsli við þreifingu'  // General no tenderness output
+                    },
+                    {
+                        display: 'Crepitus',  // Button for detecting crepitus
+                        subOptions: [
+                            { display: 'Við hreyfingu', output: 'Crepitus við hreyfingu öxl' },
+                            { display: 'Án hreyfingar', output: 'Crepitus án hreyfingar' }
+                        ],
+                        onRightClickOutput: 'Enginn crepitus'
+                    },
+                    {
+                        display: 'Hiti',  // Button for detecting increased temperature
+                        subOptions: [
+                            { display: 'Aukin hiti', output: 'Aukin hiti yfir öxlinni' }
+                        ],
+                        onRightClickOutput: 'Engin hitaaukning'
+                    }
                 ],
-                onRightClickOutput: 'Engin afmyndun sjáanleg'
+                onRightClickOutput: 'Þreifing án athugasemda. Engin eymsli, crepitus eða aukin hitamyndun'  // General no tenderness output
             },
-            {
-                display: 'Bólga',  // Button for detecting swelling
-                subOptions: [
-                    { display: 'Efri hluti', output: 'Bólga á efri hluta axlar' },
-                    { display: 'Neðri hluti', output: 'Bólga á neðri hluta axlar' },
-                    { display: 'Við AC liði', output: 'Bólga yfir AC lið' }
-                ],
-                onRightClickOutput: 'Engin bólga'
-            },
-            {
-                display: 'Húðbreytingar',  // Button for skin changes
-                subOptions: [
-                    { display: 'Roði', output: 'Roði yfir öxlinni' },
-                    { display: 'Mar', output: 'Mar yfir öxlinni' },
-                    { display: 'Sár', output: 'Sár eða húðskemmdir yfir öxlinni' }
-                ],
-                onRightClickOutput: 'Engar húðbreytingar'
-            }
-        ]
-    },
-    // Second row: Palpation (Þreifing)
-    {
-        name: '',  // No category name displayed
-        type: 'options',
-        display: ['Eymsli', 'Crepitus', 'Hiti'],  // Buttons for palpation
-        options: [
-            {
-                display: 'Eymsli',  // Button for tenderness on palpation
-                subOptions: [
-                    { display: 'Við AC liði', output: 'Eymsli við þreifingu á AC lið' },
-                    { display: 'Framanvert', output: 'Eymsli framan á öxlinni' },
-                    { display: 'Aftanvert', output: 'Eymsli aftan á öxlinni' }
-                ],
-                onRightClickOutput: 'Engin eymsli við þreifingu'
-            },
-            {
-                display: 'Crepitus',  // Button for detecting crepitus
-                subOptions: [
-                    { display: 'Við hreyfingu', output: 'Crepitus við hreyfingu öxl' },
-                    { display: 'Án hreyfingar', output: 'Crepitus án hreyfingar' }
-                ],
-                onRightClickOutput: 'Enginn crepitus'
-            },
-            {
-                display: 'Hiti',  // Button for detecting increased temperature
-                subOptions: [
-                    { display: 'Aukin hiti', output: 'Aukin hiti yfir öxlinni' }
-                ],
-                onRightClickOutput: 'Engin hitaaukning'
-            }
-        ]
-    },
-    {
-        name: '',  // No category name displayed
-        type: 'options',
-        display: ['Hreyfigeta', 'Styrkur'],  // Main button for strength
-        options: [
             {
                 display: 'Hreyfigeta',  // Button for range of motion
                 subOptions: [
@@ -14261,62 +14327,68 @@ const ExamsShoulder = [
     {
         name: '',  // No category name displayed
         type: 'options',
-        display: ['Hawkins', 'Neer', 'Empty Can', 'Drop Arm'],  // Four buttons in one row
+        display: ['Hawkins', 'Empty Can', 'AC compression test', 'Önnur sértæk próf'],  // Four buttons in one row
         options: [
             {
                 display: 'Hawkins',
                 output: 'Hawkins próf jákvætt', // Left-click output
                 onRightClickOutput: 'Hawkins próf neikvætt' // Right-click output
             },
-            {
-                display: 'Neer',
-                output: 'Neer próf jákvætt', // Left-click output
-                onRightClickOutput: 'Neer próf neikvætt' // Right-click output
-            },
+            
             {
                 display: 'Empty Can',
-                output: 'Empty Can próf jákvætt', // Left-click output
-                onRightClickOutput: 'Empty Can próf neikvætt' // Right-click output
+                output: 'Empty can próf jákvætt', // Left-click output
+                onRightClickOutput: 'Empty can próf neikvætt' // Right-click output
             },
-            {
-                display: 'Drop Arm',
-                output: 'Drop Arm próf jákvætt', // Left-click output
-                onRightClickOutput: 'Drop Arm próf neikvætt' // Right-click output
-            }
-        ]
-    },
-    // Second row: Four buttons for shoulder tests
-    {
-        name: '',  // No category name displayed
-        type: 'options',
-        display: ['Lift Off', 'Bear Hug', 'External Rotation Lag Sign'],  // Three buttons in the second row
-        options: [
-            {
-                display: 'Lift Off',
-                output: 'Lift Off próf jákvætt', // Left-click output
-                onRightClickOutput: 'Lift Off próf neikvætt' // Right-click output
-            },
-            {
-                display: 'Bear Hug',
-                output: 'Bear Hug próf jákvætt', // Left-click output
-                onRightClickOutput: 'Bear Hug próf neikvætt' // Right-click output
-            },
-            {
-                display: 'External Rotation Lag Sign',
-                output: 'External Rotation Lag Sign próf jákvætt', // Left-click output
-                onRightClickOutput: 'External Rotation Lag Sign próf neikvætt' // Right-click output
-            }
-        ]
-    },
-    {
-        name: '',  // No category name displayed
-        type: 'options',
-        display: ['AC compression test'],  // Three buttons in the second row
-        options: [
             {
                 display: 'AC compression test',
                 output: 'AC compression próf jákvætt', // Left-click output
                 onRightClickOutput: 'AC compression próf neikvætt' // Right-click output
+            },
+            {
+                display: 'Önnur sértæk próf',  
+                subOptions: [
+                    {
+                        display: 'Neer',
+                        output: 'Neer próf jákvætt', // Left-click output
+                        onRightClickOutput: 'Neer próf neikvætt' // Right-click output
+                    },
+                    {
+                        display: 'Drop Arm',
+                        output: 'Drop Arm próf jákvætt', // Left-click output
+                        onRightClickOutput: 'Drop Arm próf neikvætt' // Right-click output
+                    },
+                    {
+                        display: 'Lift Off',
+                        output: 'Lift Off próf jákvætt', // Left-click output
+                        onRightClickOutput: 'Lift Off próf neikvætt' // Right-click output
+                    },
+                    {
+                        display: 'Bear Hug',
+                        output: 'Bear Hug próf jákvætt', // Left-click output
+                        onRightClickOutput: 'Bear Hug próf neikvætt' // Right-click output
+                    },
+                    {
+                        display: 'External Rotation Lag Sign',
+                        output: 'External Rotation Lag Sign próf jákvætt', // Left-click output
+                        onRightClickOutput: 'External Rotation Lag Sign próf neikvætt' // Right-click output
+                    }
+                ]
+            },
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Ítarefni axlarskoðun'],
+        options: [
+            {
+                display: 'Ítarefni axlarskoðun',
+                subOptions: [
+                    { display: 'Uptodate - Physical examination of the shoulder', type: 'hyperlink', url: 'https://www.uptodate.com/contents/physical-examination-of-the-shoulder' },
+                    { display: 'Axlarskoðun - Grein í læknablaði eftir þrjá bæklunarlækna', type: 'hyperlink', url: 'https://heilbrigdisvisindastofnun.hi.is/files/2022-09/Axlaskoðun.pdf' }
+                ]
             }
         ]
     }
@@ -14331,33 +14403,34 @@ const PlanShoulder = [
             {
                 display: 'Axlarmeinsemd',
                 subOptions: [
-                    {
-                        display: 'Stutt saga',
+                    { display: 'Greining', output: 'Axlarmeinsemd' },
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'NOS', output: 'Axlarmeinsemd. Stutt saga' },
-                            {
-                                display: 'Fullmótuð plön',
-                                subOptions: [
-                                    { display: 'Hvíld, RICE, bólgueyðandi, endurmatpn', output: 'Axlarmeinsemd. Stutt saga. RICE ráðleggingar. Verkjalyf eftir þörfum. Endurmat ef einkenni lagast ekki á næstu dögum' },
-                                    { display: 'Hvíld, RICE, bólgueyðandi, sjúkraþjálfun', output: 'Axlarmeinsemd. Stutt saga. RICE ráðleggingar. Verkjalyf eftir þörfum. Einnig tilvísun í sjúkraþjálfun' }
-                                ]
-                            }
+                            { display: 'Stutt saga, hvíld, RICE, bólgueyðandi, endurmatpn', output: 'Axlarmeinsemd. Stutt saga. RICE ráðleggingar. Verkjalyf eftir þörfum. Endurmat ef einkenni lagast ekki á næstu dögum' },
+                            { display: 'Stutt saga, hvíld, RICE, bólgueyðandi, sjúkraþjálfun', output: 'Axlarmeinsemd. Stutt saga. RICE ráðleggingar. Verkjalyf eftir þörfum. Einnig tilvísun í sjúkraþjálfun' },
+                            { display: 'Löng saga, RTG + ómskoðun, pantar símatíma', output: 'Axlarmeinsemd. Nokkuð löng saga. Ráðlegg RTG + ómskoðun. Pantar sér símatíma að rannsóknum loknum' },
+                            { display: 'Löng saga, segulómun, pantar símatíma', output: 'Axlarmeinsemd. Nokkuð löng saga. Ráðlegg segulómun. Pantar sér símatíma að rannsókn lokinni' }
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: '', type: 'hyperlink', url: '' }
                         ]
                     },
-                    {
-                        display: 'Löng saga',
+                    { display: 'Fræðsluefni lækna', 
                         subOptions: [
-                            { display: 'NOS', output: 'Axlarmeinsemd. Löng saga' },
-                            {
-                                display: 'Fullmótuð plön',
-                                subOptions: [
-                                    { display: 'RTG + ómskoðun, pantar símatíma', output: 'Axlarmeinsemd. Nokkuð löng saga. Ráðlegg RTG + ómskoðun. Pantar sér símatíma að rannsóknum loknum' },
-                                    { display: 'Segulómun, pantar símatíma', output: 'Axlarmeinsemd. Nokkuð löng saga. Ráðlegg segulómun. Pantar sér símatíma að rannsókn lokinni' }
-                                ]
-                            }
+                            { display: 'Uptodate - Evaluation of the adult with shoulder complaints', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-the-adult-with-shoulder-complaints' }
                         ]
                     }
-                ]
+                    
+                ],
+                onRightClickOutput: ''
             },
             {
                 display: 'Áverki',
@@ -14381,14 +14454,34 @@ const PlanShoulder = [
                     {
                         display: 'Fullmótuð plön',
                         subOptions: [
-                            { display: 'Verkjameðferð, sjúkraþjálfun', output: 'Impingement heilkenni. Ráðlegg verkjalyf og sjúkraþjálfun til að bæta hreyfistjórnun og styrk.' },
+                            {}
+                            /*{ display: 'Verkjameðferð, sjúkraþjálfun', output: 'Impingement heilkenni. Ráðlegg verkjalyf og sjúkraþjálfun til að bæta hreyfistjórnun og styrk.' },
                             { display: 'Viðvarandi, sterasprautu, ráðl, lyf í gáttina, endurmat', output: 'Impingement heilkenni. Viðvarandi einkenni. Ræðum meðferðamöguleika. Í samráði við skjólstæðing ákveðið að reyna sterainjection. Set lyf í gáttina og bóka nýjan tíma.' }
+                            */
+                        ]
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Subacromial shoulder impingement syndrome', type: 'hyperlink', url: 'https://www.uptodate.com/contents/subacromial-shoulder-impingement-syndrome' }
                         ]
                     }
+
+                    
                 ]
             },
             {
-                display: 'Aðrar greiningar',
+                /*display: 'Aðrar greiningar',
                 subOptions: [
                     {
                         display: 'Liðhlaup',
@@ -14571,6 +14664,7 @@ const PlanShoulder = [
                         ]
                     }
                 ]
+                    */
             }
         ]
     },
@@ -14583,8 +14677,7 @@ const PlanShoulder = [
             {
                 display: 'Ráðleggingar',
                 subOptions: [
-                    { display: 'Almennar ráðleggingar', output: 'Veiti almennar ráðleggingar fyrir öxl meiðsli. Ráðlegg verndandi meðferð, einkennameðferð og endurmat eftir 2-4 vikur ef engin framför.' },
-                    { display: 'Meðferðaráætlun', output: 'Sérstakar meðferðaráætlanir fyrir öxl vandamál eins og slitgigt, tognun eða liðbandaáverka.' }
+                    { }
                 ]
             },
             {
@@ -14623,8 +14716,8 @@ const PlanShoulder = [
             {
                 display: 'Sterainjection',
                 subOptions: [
-                    { display: 'Fengið áður', output: 'Saga um fyrri sterainj vegna axlarmeinsemdar' },
-                    { display: 'Set í gátt og endurkoma', output: 'Ráðlegg að reyna sterainj. Set lyfið í gáttina. Bóka nýjan tíma í sprautu' },
+                    { display: 'Fengið áður', output: 'Saga um fyrri sterasprautu vegna axlarmeinsemdar' },
+                    { display: 'Set í gátt og endurkoma', output: 'Ráðlegg að reyna sterasprautu. Set lyfið í gáttina. Bóka nýjan tíma í sprautu' },
                     {
                         display: 'Gef stera',
                         subOptions: [
@@ -24466,7 +24559,7 @@ const PlanAlcoholism = [
 
 // Gigt (Rheumatology)
 const SymptomsGigt = [
-    {
+    /*{
         name: '',
         type: 'options',
         display: ['Verkir', 'Bólga', 'Stífleiki', 'Aukin hiti', 'Þreyta'],
@@ -25195,12 +25288,12 @@ const SymptomsGigt = [
             ]
           }
         ]
-      }
+    }*/
       
     
 ];
 const ExamsGigt = [
-    {
+   /* {
         name: '',
         type: 'options',
         display: ['Útlit', 'Hreyfigeta', 'Þreifieymsl'],
@@ -25232,39 +25325,15 @@ const ExamsGigt = [
                 onRightClickOutput: 'Engin eymsl við þreifingu'
             }
         ]
-    }
+    }*/
 ];
 const PlanGigt = [
     {
         name: '',
         type: 'options',
-        display: ['Liðverkir', 'Þvagsýrugigt'],
+        display: ['Þvagsýrugigt'],
         options: [
-            {
-                display: 'Liðverkir',
-                subOptions: [
-                    {
-                        display: 'Greining',
-                        output: 'Liðverkir'
-                    },
-                    {
-                        display: 'Fullmótuð plön',
-                        subOptions: [
-                            {
-                                display: 'Grunur, gigtaruppvinnsla, pantar símatíma',
-                                output: 'Grunur um gigtarvanda. Ráðlegg röntgen og blóðprufur. Pantar sér símatíma fyrir niðurstöður'
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Hlekkir',
-                        subOptions: [
-                            {
-                            }
-                        ]
-                    }
-                ]
-            },
+            
             {
                 display: 'Þvagsýrugigt',
                 subOptions: [
