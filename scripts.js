@@ -1331,8 +1331,9 @@ const Hlekkir = [
                 display: 'Meðganga og brjóstagjöf',
                 subOptions: [
                     { display: 'Mæðravernd - Fróðleiksmolar HH', type: 'hyperlink', url: 'https://throunarmidstod.is/svid-thih/maedravernd/#Flipi3' },
-                    { display: 'Lyf á meðgöngu - Fróðleiksmoli HH', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/library/Files/Frodleiksmolar-2016/Lyf%20á%20meðgöngu%20april%202016.pdf' },
-                    { display: 'Sjúklingaleiðbeiningar Uptodate', type: 'hyperlink', url: 'https://www.uptodate.com/contents/common-breastfeeding-problems-beyond-the-basics' }
+                    { display: 'Lyf á meðgöngu - Fróðleiksmoli HH', type: 'hyperlink', url: 'https://throunarmidstod.is/library/contentfiles/Lyf%20á%20meðgöngu-%20%20%20%20pdf' },
+                    { display: 'Þunglyndis- og kvíðalyf á meðgöngu - Fróðleiksmoli HH', type: 'hyperlink', url: 'https://throunarmidstod.is/library/contentfiles/Þunglyndi%20-SSRI%20lyf%20á%20meðgöngu.pdf' },
+                    { display: 'Uptodate - Common breastfeeding problems (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/common-breastfeeding-problems-beyond-the-basics' }
                     
                 ]
             },
@@ -16514,6 +16515,24 @@ const SymptomsKnee = [
     {
         name: '',
         type: 'options',
+        display: ['Verkjalyf', 'Staðbundin verkjalyf'],
+        options: [
+            Verkjalyf,
+            {
+                display: 'Staðbundin verkjalyf',
+                onRightClickOutput: 'Ekki notað staðbundin verkjalyf svo sem voltaren',
+                subOptions: [
+                    { display: 'NOS', output: 'Notað staðbundin verkjalyf' },
+                    { display: 'Með góðum árangri', output: 'Notað staðbundin verkjalyf líkt og voltaren gel með góðum árangri' },
+                    { display: 'Með misgóðum árangri', output: 'Notað staðbundin verkjalyf líkt og voltaren gel með misgóðum árangri' },
+                    { display: 'Án árangurs', output: 'Notað staðbundin verkjalyf líkt og voltaren gel en það dugar ekki til' }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
         display: ['Hnjásaga', 'Aðgerð'],
         options: [
             {
@@ -16569,7 +16588,8 @@ const SymptomsKnee = [
             HitiSeinasta
             
         ]
-    }
+    },
+
 ];
 const ExamsKnee = [
     {
