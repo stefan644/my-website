@@ -23,12 +23,18 @@ const EmptyStructures = {
                 },
                 { display: 'Leiðbeiningar til skjólstæðings',
                     subOptions: [
-                        
+                        { display: '', type: 'hyperlink', url: '' },
+                        { display: '', type: 'hyperlink', url: '' },
+                        { display: '', type: 'hyperlink', url: '' },
+                        { display: '', type: 'hyperlink', url: '' },
                         { display: '', type: 'hyperlink', url: '' }
                     ]
                 },
                 { display: 'Fræðsluefni lækna', 
                     subOptions: [
+                        { display: '', type: 'hyperlink', url: '' },
+                        { display: '', type: 'hyperlink', url: '' },
+                        { display: '', type: 'hyperlink', url: '' },
                         { display: '', type: 'hyperlink', url: '' }
                     ]
                 }
@@ -3076,7 +3082,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Sinuseinkenni', 'Þrýstingur', 'Verkur', 'Leiðni'],
+        display: ['Sinuseinkenni', 'Þrýstingur', 'Verkur', 'Leiðni', 'Vont bragð'],
         options: [
             {
                 display: 'Sinuseinkenni',
@@ -3105,6 +3111,11 @@ const SymptomsViral = [
                     { display: 'Bæði', output: 'Leiðir út í bæði eyru' }
                 ],
                 onRightClickOutput: 'Leiðir ekki'
+            },
+            {
+                display: 'Vont bragð', 
+                output:  'Fundið fyrir vondu bragði í munni',
+                onRightClickOutput: 'Ekki fundið fyrir vondu bragði í munni'
             }
         ]
     },
@@ -3139,7 +3150,39 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Veikindi í kring', 'Nýleg veikindi', 'Ferðalag', 'Endurteknar sýkingar'],
+        display: ['Ó.E. Eyrnaskoðun', 'Óvær', 'Toga', 'Eyrnabarn', 'Rör'],
+        options: [
+            {
+                display: 'Ó.E. Eyrnaskoðun',
+                output: 'Óskað eftir að láta kíkja í eyru',
+                onRightClickOutput: 'Vilja ekki láta kíkja í eyru'
+            },
+            {
+                display: 'Óvær',
+                output: 'Verið óvær að nóttu til',
+                onRightClickOutput: 'Vær. Sefur vel á nóttunni'
+            },
+            {
+                display: 'Toga',
+                output: 'Verið að toga mikið í eyru',
+                onRightClickOutput: 'Ekki verið að toga mikið í eyru'
+            },
+            {
+                display: 'Eyrnabarn',
+                output: 'Eyrnabarn. Fengið tíðar eyrnabólgur',
+                onRightClickOutput: 'Ekki eyrnabarn'
+            },
+            {
+                display: 'Rör',
+                output: 'Með rör',
+                onRightClickOutput: 'Ekki með rör'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Veikindi í kring', 'Nýleg veikindi', 'Ferðalag'],
         options: [
             {
                 display: 'Veikindi í kring',
@@ -3236,17 +3279,7 @@ const SymptomsViral = [
                 display: 'Ferðalag',
                 output: 'Var að koma út ferðalagi erlendis',
                 onRightClickOutput: 'Ekki verið erlendis nýlega'
-            },
-            {
-                display: 'Endurteknar sýkingar',
-                subOptions: [
-                    { display: 'Endurteknar veirusýkingar', output: 'Verið að glíma við endurteknar veirusýkingar' },
-                    { display: 'Lungnabólgur', output: 'Fengið lungnabólgur endurtekið' },
-                    { display: 'Sinusita', output: 'Fengið endurtekna sinusita' },
-                    { display: 'Eyrnabólgur', output: 'Endurteknar eyrnabólgur' }
-                ],
-                onRightClickOutput: 'Ekki að glíma við endurteknar sýkingar'
-            } 
+            }
         ]
     },
     {
@@ -3442,7 +3475,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hitalækkandi', 'Verkjalyf', 'Hóstastillandi'],
+        display: ['Hitalækkandi', 'Verkjalyf', 'Hóstastillandi', 'Nefsterar'],
         options: [
             {
                 display: 'Hitalækkandi',
@@ -3511,6 +3544,28 @@ const SymptomsViral = [
                     }
                 ],
                 onRightClickOutput: 'Ekki notað hóstastillandi'
+            },
+            {
+                display: 'Nefsterar',
+                subOptions: [
+                    {
+                        display: 'NOS', 
+                        output: 'Notað nefstera'
+                    },
+                    {
+                        display: 'Með góðum árangri', 
+                        output: 'Notað nefstera með góðum árangri'
+                    },
+                    {
+                        display: 'Með vægum árangri', 
+                        output: 'Notað nefstera en dugar ekkert sérstaklega'
+                    },
+                    {
+                        display: 'Notað en finnst ekkert gera', 
+                        output: 'Notað nefstera en finnst ekkert gera'
+                    }
+                ],
+                onRightClickOutput: 'Ekki notað nefstera'
             }
         ]
     },
@@ -3525,7 +3580,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Lungnasjúkdómur', 'Reykingasaga', 'Ónæmisbæling'],
+        display: ['Lungnasjúkdómur', 'Reykingasaga'],
         options: [
             {
                 display: 'Lungnasjúkdómur',
@@ -3544,6 +3599,25 @@ const SymptomsViral = [
                     { display: 'Mikil', output: 'Mikil reykingarsaga' }
                 ],
                 onRightClickOutput: 'Ekki reykingasaga'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurteknar sýkingar', 'Ónæmisbæling'],
+        options: [
+            
+            {
+                display: 'Endurteknar sýkingar',
+                subOptions: [
+                    { display: 'Endurteknar veirusýkingar', output: 'Verið að glíma við endurteknar veirusýkingar' },
+                    { display: 'Streptokokka', output: 'Fengið endurteknar streptokokkasýkingar' },
+                    { display: 'Lungnabólgur', output: 'Fengið lungnabólgur endurtekið' },
+                    { display: 'Sinusita', output: 'Fengið endurtekna sinusita' },
+                    { display: 'Eyrnabólgur', output: 'Endurteknar eyrnabólgur' }
+                ],
+                onRightClickOutput: 'Ekki að glíma við endurteknar sýkingar'
             },
             {
                 display: 'Ónæmisbæling',
@@ -3619,38 +3693,6 @@ const SymptomsViral = [
                     }
                 ],
                 onRightClickOutput: 'Engin þekkt lyfjaofnæmi'
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Ó.E. Eyrnaskoðun', 'Óvær', 'Toga', 'Eyrnabarn', 'Rör'],
-        options: [
-            {
-                display: 'Ó.E. Eyrnaskoðun',
-                output: 'Óskað eftir að láta kíkja í eyru',
-                onRightClickOutput: 'Vilja ekki láta kíkja í eyru'
-            },
-            {
-                display: 'Óvær',
-                output: 'Verið óvær að nóttu til',
-                onRightClickOutput: 'Vær. Sefur vel á nóttunni'
-            },
-            {
-                display: 'Toga',
-                output: 'Verið að toga mikið í eyru',
-                onRightClickOutput: 'Ekki verið að toga mikið í eyru'
-            },
-            {
-                display: 'Eyrnabarn',
-                output: 'Eyrnabarn. Fengið tíðar eyrnabólgur',
-                onRightClickOutput: 'Ekki eyrnabarn'
-            },
-            {
-                display: 'Rör',
-                output: 'Með rör',
-                onRightClickOutput: 'Ekki með rör'
             }
         ]
     }
@@ -4357,7 +4399,8 @@ const PlanViral = [
         type: 'options',
         display: ['Hósti', 'Vírósa', 'Sinusitis', 'Lungnabólga'],
         options: [
-            { display: 'Hósti', 
+            { 
+                display: 'Hósti', 
                 subOptions: [
                     { display: 'NOS', output: 'Hósti' },
                     { display: 'Fullmótuð plön', 
@@ -4383,7 +4426,8 @@ const PlanViral = [
                     }
                 ]
             },
-            { display: 'Vírósa', 
+            { 
+                display: 'Vírósa', 
                 subOptions: [
                     { display: 'Greining', output: 'Vírósa' },
                     { display: 'Grunur', output: 'Grunur um byrjandi veirusýkingu' },
@@ -4395,11 +4439,28 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Sinusitis' },
                     { display: 'Grunur', output: 'Grunur um sinusitis' },
-                    { display: 'Fullmótað plan', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki' },
-                    { display: 'Hlekkir', 
+                    { display: 'Fullmótað plan', 
+                        subOptions: [
+                            { display: 'Grunur - Ráð - Sýklalyf - Re PN', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set sýklalyf í gáttina. Endurmat ef lagast ekki' },
+                            { display: 'Grunur - Ráð - Sýklalyf+nefsterar - Re PN', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki' },
+                            { display: 'Grunur - Ráð - Nefsterar - Sýklalyf í gátt ef lagast ekki - Re PN', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Notar nefsterana fyrst um sinn en ef einkenni fara ekki skánandi á nokkrum dögum ráðlagt að fara á sýklalyfjakúr. Endurmat ef mikil versnun eða ef einkenni lagast ekki þrátt fyrir meðferð' }
+                        ]
+
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Uptodate - Sinusitis in adults (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sinusitis-in-adults-the-basics' },
+                            { display: 'Uptodate - Sinusitis in adults (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-sinusitis-sinus-infection-beyond-the-basics' },
+                            { display: 'Uptodate - What you should know about antibiotics (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/what-you-should-know-about-antibiotics-the-basics' },
+                            { display: 'Uptodate - Sinusitis in children (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sinusitis-in-children-the-basics' },
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
                         subOptions: [
                             { display: 'Uptodate - Greining fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-sinusitis-and-rhinosinusitis-in-adults-clinical-manifestations-and-diagnosis' },
                             { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/uncomplicated-acute-sinusitis-and-rhinosinusitis-in-adults-treatment' },
+                            { display: 'Uptodate - Greining barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bacterial-rhinosinusitis-in-children-clinical-features-and-diagnosis' },
+                            { display: 'Uptodate - Meðferð barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bacterial-rhinosinusitis-in-children-microbiology-and-management' },
                             { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/skutabolga/' } 
                         ]
                     }
@@ -4419,13 +4480,11 @@ const PlanViral = [
                         },
                         { display: 'Leiðbeiningar til skjólstæðings',
                             subOptions: [
-    
                                 { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/pneumonia-in-adults-the-basics' },
                                 { display: 'Uptodate - Beyond the basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/pneumonia-in-adults-beyond-the-basics' }
-                                
                             ]
                         },
-                        { display: 'Hlekkir', 
+                        { display: 'Fræðsluefni lækna', 
                             subOptions: [
                                 { display: 'ÞÍH - Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/brad-berkjubolga-og-lungnabolga-hja-fullordnum-og-bornum/' },
                                 { display: 'Uptodate - Greining og meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-community-acquired-pneumonia-in-adults' },
@@ -4450,8 +4509,10 @@ const PlanViral = [
                     { display: 'Grunur', output: 'Grunur um bronchitis' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Grunur, ráð, endurmat ef lagast ekki', output: 'Berkjubólga. Veiti ráðleggingar. Tekur yfirleitt 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi. Endurmat eftir þörfum' },
-                            { display: 'Slæm einkenni, >6 vikur, empírísk sýklalyfjameðferð, endurmat ef lagast ekki', output: 'Berkjubólga. Veiti ráðleggingar. Þar sem einkenni slæm og staðið svona lengi ákveðið að reyna empírískan sýklalyfjakúr. Hefur samband ef lagast ekki' }
+                            { display: 'Grunur, ráð, endurmat ef lagast ekki', output: 'Berkjubólga. Veiti ráðleggingar. Tekur oft 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi. Endurmat eftir þörfum' },
+                            { display: 'Slæm einkenni, löng saga, empírísk sýklalyfjameðferð, endurmat ef lagast ekki', output: 'Grunur um berkjubólgu. Veiti ráðleggingar. Þar sem einkenni slæm og staðið svona lengi ákveðið að reyna empírískan sýklalyfjakúr. Hefur samband ef lagast ekki' },
+                            { display: 'Slæm einkenni, RTG, niðurstöður í sinni heilsugæslu', output: 'Grunur um berkjubólgu. Veiti ráðleggingar. Þar sem einkenni slæm og staðið svona lengi ákveðið að fá RTG af lungum. Fær niðurstöður á sinni heilsugæslu. Endurmat fyrr ef versnar eða lagast ekki' },
+                            { display: 'Slæm einkenni, RTG+sýklalyf, niðurstöður í sinni heilsugæslu', output: 'Grunur um berkjubólgu. Veiti ráðleggingar. Þar sem einkenni slæm og staðið svona lengi ákveðið að fá RTG af lungum. Set einnig sýklalyf í gáttina. Fær niðurstöður á sinni heilsugæslu. Endurmat fyrr ef versnar eða lagast ekki' }
                         ]
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
@@ -4468,7 +4529,7 @@ const PlanViral = [
                             { display: 'ÞÍH - Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/brad-berkjubolga-og-lungnabolga-hja-fullordnum-og-bornum/' }
                         ]
                     }
-                ], onRightClickOutput:'Berkjubólga. Veiti ráðleggingar. Tekur yfirleitt 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi. Endurmat eftir þörfum'
+                ], onRightClickOutput:'Berkjubólga. Veiti ráðleggingar. Tekur oft 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi. Endurmat eftir þörfum'
             },
             {
                 display: 'Bronchiolitis',
@@ -4648,7 +4709,7 @@ const PlanViral = [
                         subOptions: [
                             { display: 'Greining', output: 'Hand- foot and mouth' },
                             { display: 'Grunur', output: 'Grunur um hand- foot and mouth' },
-                            { display: 'Fullmótað plan', output: 'Grunur um hand- foot and mouth. Veiti almennar ráðleggingar. Stuðningsmeðferð. Endurmat pn' }
+                            { display: 'Fullmótað plan', output: 'Grunur um hand, foot and mouth disease. Veiti almennar ráðleggingar. Gengur yfir á nokkrum vikum. Sárin geta verið kvalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar oft takmarkað. Endurmat ef versnar eða lagast ekki' }
                         ]
                     },
                     {
@@ -4659,7 +4720,7 @@ const PlanViral = [
                             { display: 'Fullmótað plan', output: 'Grunur um herpangina. Veiti almennar ráðleggingar. Stuðningsmeðferð. Endurmat pn' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um enteroveirusýkingu. Veiti almennar ráðleggingar. Sárin geta verið kalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar oft takmarkað. Endurmat ef versnar eða lagast ekki'
+                ], onRightClickOutput: 'Grunur um enteroveirusýkingu. Veiti almennar ráðleggingar. Gengur yfir á nokkrum vikum. Sárin geta verið kvalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar oft takmarkað. Endurmat ef versnar eða lagast ekki'
             }
             
         ]
@@ -15805,9 +15866,10 @@ const PlanHand = [];
 
 // Back
 const SymptomsBack = [
-    /*
+    
     Vaktaheader,
     Timalengd2,
+    /*
     {
         name: '',
         type: 'options',
@@ -16066,14 +16128,132 @@ const SymptomsBack = [
         ]
     }*/
 ];
+const RaudFloggBak = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Þvag/hægðalosun', 'Söðuldoði', 'Næturvöknun', 'Hiti'],
+        options: [
+            {
+                display: 'Þvag/hægðalosun',
+                subOptions: [
+                    { 
+                        display: 'Þvag', output: 'Lýsir erfiðleikum við að losa þvag', onRightClickOutput: 'Ekki erfiðleikar við þvaglosun'
+
+                    },
+                    { 
+                        display: 'Hægðir', output:'Lýsir erfiðleikum við hægðalosun', onRightClickOutput: 'Ekki erfiðleikar við hægðalosun'
+
+                    }
+                ], onRightClickOutput: 'Neitar nytilkomnum erfiðleikum með þvag eða hægðalosun'
+            },
+            {
+                display: 'Söðuldoði', output: 'Lýsir söðuldoða', onRightClickOutput: 'Neitar söðuldoða'
+            },
+            {
+                display: 'Næturvöknun', output: 'Vaknað á nóttunni vegna einkenna', onRightClickOutput: 'Ekki að vakna á nóttunni vegna einkenna'
+            },
+            {
+                display: 'Hiti', 
+                subOptions:[
+                    {
+                        display: 'NOS', output: 'Fengið hita', onRightClickOutput: 'Ekki fengið hita'
+                    },
+                    {
+                        display: 'Tengir við flensueinkenni', output: 'Fengið hita en tengir við nýlega veirusýkingu'
+                    }
+                ], onRightClickOutput: 'Ekki fengið hita'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Þyngdartap', 'Krabbamein', 'Beinþynning', 'Sykursterar'],
+        options: [
+            {
+                display: 'Þyngdartap', output: 'Lýsir óútskýrðu þyngdartapi', onRightClickOutput: 'Ekki saga um óútskýrt þyngdartap'
+            },
+            {
+                display: 'Krabbamein', 
+                subOptions: [
+                    {
+                        display: 'NOS', output: 'Saga um krabbamein'
+                    },
+                    {
+                        display: 'Fyrra krabbamein, telst læknað',
+                        output: 'Saga um krabbamein. Farið í meðferð og telst læknað'
+                    },
+                    {
+                        display: 'Virkt krabbamein',
+                        output: 'Er með krabbamein'
+                    }
+                ], 
+                onRightClickOutput: 'Ekki saga um krabbamein'
+            },
+            {
+                display: 'Beinþynning', output: 'Saga um beinþynningu', onRightClickOutput: 'Ekki saga um beinþynningu'
+            },
+            {
+                display: 'Sykursterar', output: 'Saga um langvarandi sykursteranotkun', onRightClickOutput: 'Ekki saga um langvarandi sykursteranotkun'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Sprautufíkn', 'Ónæmisbæling', 'Aldur >60', 'Blóðþynning'],
+        options: [
+            {
+                display: 'Sprautufíkn', 
+                suboptions: [
+                    {
+                        display: 'Saga um', output: 'Saga um sprautufíkn'
+                    },
+                    {
+                        display: 'Í virkri neyslu',
+                        output: 'Sprautufíkn. Í virkri neyslu'
+                    }
+                ],
+                onRightClickOutput: 'Ekki saga um sprautufíkn'
+            },
+            {
+                display: 'Ónæmisbæling',
+                subOptions: [
+                    { display: 'NOS', output: 'Ónæmisbæling' },
+                    { display: 'Ónæmisbælandi lyf', output: 'Á ónæmisbælandi lyfjum' }
+                ],
+                onRightClickOutput: 'Engin ónæmisbæling'
+            },
+            {
+                display: 'Aldur >70', output:'Aldur >60', onRightClickOutput:'Aldur <60'
+            },
+            {
+                display: 'Blóðþynning', output:'Er á blóðþynningu', onRightClickOutput:'Ekki á blóðþynnandi'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Lagast ekki við stöðubreytingar'],
+        options: [
+            {
+                display: 'Lagast ekki við stöðubreytingar', 
+                output: 'Einkenni skána ekki við stöðubreytingar', 
+                onRightClickOutput:'Einkenni skána við stöðubreytingar'
+            }
+        ]
+    }
+];
 const ExamsBack = [
     {
         name: '',
         type: 'options',
-        display: ['Bak - Útlit', 'Þreifing', 'Hreyfigeta', 'SLR'],
+        display: ['Útlit', 'Þreifing', 'Hreyfigeta', 'SLR'],
         options: [
             {
-                        display: 'Bak - Útlit',
+                        display: 'Útlit',
                         subOptions: [
                             {
                                 display: 'Hryggskekkja',
@@ -16313,9 +16493,220 @@ const ExamsBack = [
                 onRightClickOutput: 'SLR neikvætt'
             }
         ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Distal skyn', 'Kraftar', 'Reflexar', 'Babinski'],
+        options: [
+            {
+                display: 'Distal skyn',
+                subOptions: [
+                    {}
+                ],
+                onRightClickOutput: 'Distal skyn gróft metið eðlilegt'
+            },
+            {
+                display: 'Kraftar',
+                subOptions: [
+                    {}
+                ],
+                onRightClickOutput: 'Vöðvastyrkur í neðri útlimum gróft metinn eðlilegur'
+            },
+            {
+                display: 'Reflexar',
+                subOptions: [
+                    { display: 'Hnjáreflex', output: '' },
+                    { display: 'Ökklareflex', output: '' }
+                ],
+                onRightClickOutput: 'Hnjá- og ökklareflexar eðlilegir'
+            },
+            {
+                display: 'Babinski',
+                subOptions: [
+                    { display: 'Jákvætt hægra megin', output: 'Babinski próf jákvætt (tær uppávið) hægra megin' },
+                    { display: 'Jákvætt vinstra megin', output: 'Babinski próf jákvætt (tær uppávið) vinstra megin' },
+                    { display: 'Jákvætt beggja vegna', output: 'Babinski próf jákvætt (tær uppávið) beggja vegna' }
+                ],
+                onRightClickOutput: 'Babinski próf neikvætt (tær niðurávið) beggja vegna'
+            }
+        ]
     }
 ];
-const PlanBack = [];
+const PlanBack = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Bakverkur', 'Brjósklos'],
+        options: [
+            {
+                display: '',
+                subOptions: [
+                    { display: 'Greining', output: 'Bakverkur' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { 
+                                display: 'Skammvinnur - Ráð - NSAIDS - Re PN', 
+                                output: 'Bakverkur. Einkenni staðið í stuttan tíma. Ekki rauð flögg. Veiti ráðleggingar. '
+                                +'70-90% lagast á innan við 7 vikum. Forðast rúmlegu en rannsóknir '
+                                +'hafa sýnt að það einungis seinkar bata. Því fyrr sem kemst í reglulega rútínu því betra. '
+                                +'Létt hreyfing svo sem ganga eða sund ráðlögð. Hitapokar og nudd getur hjálpað sem og sjúkraþjálfun. '
+                                +'Set NSAIDS í gáttina. Endurmat ef einkenni lagast ekki á næstu 2-4 vikum. Fyrr ef versnar' 
+                            },
+                            
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { 
+                                display: 'Ráðleggingar vegna akút bakverks', 
+                                output: 'Veiti ráðleggingar vegna skammvinns bakverks. Af þeim sem leita læknisaðstoðar '
+                                +'lagast 70-90% á innan við 7 vikum. Forðast rúmlegu en rannsóknir '
+                                +'hafa sýnt að það einungis seinkar bata. Því fyrr sem kemst í reglulega rútínu því betra. '
+                                +'Létt hreyfing svo sem ganga eða sund ráðlögð. Hitapokar og nudd getur hjálpað sem og sjúkraþjálfun. '
+                                +'Nálastungur og hnykkjun hafa sýnt takmarkaðan árangur í rannsóknum en má reyna. '
+                                +'Aðrir þættir/aðferðir líkt og jóga, kæling, tegund rúmdýnu, paraspinal injectionir o.fl. '
+                                +'hafa lítið verið rannsakaðar og/eða ekki sýnt fram á árangur. '
+                                +'Varðandi lyfjameðferð eru NSAIDS fyrstu línu meðferð. Oft notað með paracetamol og vöðvaslakandi '
+                                +'svosem norgesic. Stuttir kúrar af ópíataskyldum lyfjum líkt og parkódín má reyna ef annað dugar '
+                                +'ekki en forðast að vera á slíkum lyfjum lengi vegna m.a. ávanabindandi hættu ásamt þolmyndun og verkjanæmingu'
+                             } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: 'Uptodate - Low back pain in adults (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/low-back-pain-in-adults-the-basics' },
+                            { display: 'Uptodate - Low back pain in adults (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/low-back-pain-in-adults-beyond-the-basics' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Evaluation of low back pain in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-low-back-pain-in-adults' },
+                            { display: 'Uptodate - Treatment of acute low back pain', type: 'hyperlink', url: 'https://www.uptodate.com/contents/treatment-of-acute-low-back-pain' },
+                            { display: 'Landspítali - Tilmæli um myndgreiningu (Gæðaskjal frá 2011)', type: 'hyperlink', url: 'https://www.landspitali.is/lisalib/getfile.aspx?itemid=45EC5D0A-76F9-4667-91FC-0BCD4BBE5619&download=true' },
+                            {
+                                display: 'Landspítali - Dagur sjúkraþjálfara 2024',
+                                subOptions:[
+                                    {
+                                        display: 'Yfirlitssíða', type: 'hyperlink', url: 'https://www.landspitali.is/um-landspitala/fjolmidlatorg/frettir/stok-frett/2024/09/08/Verkir-i-mjobaki-fraedsla-a-althjodadegi-sjukrathjalfunar/'
+                                    },
+                                    { 
+                                        display: 'Mjóbaksverkir - Yfirlit', type: 'hyperlink', url: 'https://www.landspitali.is/lisalib/getfile.aspx?itemid=b03ac6e6-6dbe-11ef-b87b-005056bc7093'
+                                    },
+                                    { 
+                                        display: 'Mjóbaksverkir og sjúkraþjálfun', type: 'hyperlink', url: 'https://www.landspitali.is/lisalib/getfile.aspx?itemid=b03ac6e4-6dbe-11ef-b87b-005056bc7093'
+                                    },
+                                    { 
+                                        display: 'Æfingar og mjóbaksverkir', type: 'hyperlink', url: 'https://www.landspitali.is/lisalib/getfile.aspx?itemid=b03ac6e5-6dbe-11ef-b87b-005056bc7093'
+                                    },
+                                    { 
+                                        display: 'Mýtur og staðreyndir', type: 'hyperlink', url: 'https://www.landspitali.is/lisalib/getfile.aspx?itemid=b03ac6e7-6dbe-11ef-b87b-005056bc7093'
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                    
+                ],
+                onRightClickOutput: 'Bakverkur. Einkenni staðið í stuttan tíma. Ekki rauð flögg. Veiti ráðleggingar. '
+                                +'70-90% lagast á innan við 7 vikum. Forðast rúmlegu en rannsóknir '
+                                +'hafa sýnt að það einungis seinkar bata. Því fyrr sem kemst í reglulega rútínu því betra. '
+                                +'Létt hreyfing svo sem ganga eða sund ráðlögð. Hitapokar og nudd getur hjálpað sem og sjúkraþjálfun. '
+                                +'Set NSAIDS í gáttina. Endurmat ef einkenni lagast ekki á næstu 2-4 vikum. Fyrr ef versnar'
+            },
+            {
+                display: '',
+                subOptions: [
+                    { display: 'Greining', output: 'Brjósklos' },
+                    { display: 'Grunur', output: 'Grunur um brjósklos' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { 
+                                display: 'Grunur - Ráð - NSAIDS - Re PN', 
+                                output: 'Grunur um brjósklos í mjóbaki. Ekki rauð flögg. Veiti ráðleggingar. '
+                                +'Myndataka er ekki ráðlögð nema um rauð flögg sé að ræða eða þegar einkenni hafa staðið í >4-6 vikur. '
+                                +'Gott er að forðast þær hreyfingar sem gera einkenni verri. Oft er gott að hvíla sig fyrstu dagana en '
+                                +'ekki er ráðlagt að vera rúmliggjandi. Létt hreyfing svo sem ganga eða sund ráðlögð. Því fyrr sem '
+                                +'komist er í venjulega rútínu því betra. Set NSAIDS í gáttina en þau geta slegið á einkenni. '
+                                +'Flestir lagast að sjálfu sér á 6-8 vikum. Ef einkenni lagast ekki á þeim tíma er ráðlagt að hafa '
+                                +'samband. Fyrr ef versnar. Einnig getur sjúkraþjálfun verið að gagni'
+                             },
+                             {
+                                display: 'Ekki lagast - Myndataka - Pantar sér símatíma fyrir niðurstöður',
+                                output: 'Grunur um brjósklos í mjóbaki. Ekki að lagast þrátt fyrir konservatífa meðferð. '
+                                +'Ráðlegg myndgreiningu til að staðfesta greiningu og meta frekar alvarleika. '
+                                +'Pantar sér símatíma til að fá niðurstöður að rannsókn lokinni'
+                             },
+                             { 
+                                display: 'Grunur - Rauð flögg - Myndataka - Ráð - NSAIDS - Símatími til eftirfylgdar', 
+                                output: 'Grunur um brjósklos í mjóbaki. Þar sem rauð flögg ráðlögð myndgreining. Geri beiðni og veiti ráðleggingar. '
+                                +'Gott er að forðast þær hreyfingar sem gera einkenni verri. Oft er gott að hvíla sig fyrstu dagana en '
+                                +'ekki er ráðlagt að vera rúmliggjandi. Létt hreyfing svo sem ganga eða sund ráðlögð. Því fyrr sem '
+                                +'komist er í venjulega rútínu því betra. Set NSAIDS í gáttina en þau geta slegið á einkenni. '
+                                +'Flestir lagast að sjálfu sér á 6-8 vikum. Pantar sér símatíma til að fá niðurstöður að rannsókn lokinni. '
+                                +'Ef einkenni versna í millitíðinni er mikilvægt að hafa samband'
+                             }
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: 'Almenn ráð - stutt saga', output: 'Veiti ráðleggingar vegna gruns um brjósklos í mjóbaki. '
+                                +'Gott er að forðast þær hreyfingar sem gera einkenni verri. Oft er gott að hvíla sig fyrstu dagana en '
+                                +'ekki er ráðlagt að vera rúmliggjandi. Létt hreyfing svo sem ganga eða sund ráðlögð. Því fyrr sem '
+                                +'komist er í venjulega rútínu því betra. NSAIDS geta verið hjálpleg við einkennum. Einnig paracetamol +- orfenadrín (norgesic). '
+                                +'Ekki er mælt með ópíataverkjalyfjum. '
+                                +'Flestir lagast að sjálfu sér á 6-8 vikum. Ef einkenni lagast ekki á þeim tíma er ráðlagt að hafa '
+                                +'samband en þörf getur verið á myndgreiningu. Einnig getur sjúkraþjálfun verið að gagni. '
+                                +'Ef einkenni er áfram hammlandi þrátt fyrir a.m.k. 6 mánuði af sjúkraþjálfun getur aðgerð komið til greina'
+                            } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: 'Landspitali - Brjósklos í mjóbaki (yfirlit og ábendingar aðgerðar)', type: 'hyperlink', url: 'https://www.landspitali.is/lisalib/getfile.aspx?itemid=d4c33cef-43fd-11ed-a2eb-005056865b13' },
+                            { display: 'Heilsuvera.is - Brjósklos', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/brjosklos/' },
+                            { display: 'Orkuhúsið - Aðgerðarbæklingur', type: 'hyperlink', url: 'https://laeknastodin.orkuhusid.is/static/files/Skjol/Brjosklos-i-mjobaki/brjo-sklos-i-mjo-baki_baeklingur_word.pdf' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Acute lumbosacral radiculopathy: Etiology, clinical features, and diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-lumbosacral-radiculopathy-etiology-clinical-features-and-diagnosis' },
+                            { display: 'Uptodate - Acute lumbosacral radiculopathy: Treatment and prognosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-lumbosacral-radiculopathy-treatment-and-prognosis' },
+                            { display: 'Læknablaðið - Segulómun við greiningu lendahryggsverkja', type: 'hyperlink', url: 'https://www.laeknabladid.is/tolublod/2017/01/nr/6203' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    }
+                    
+                ],
+                onRightClickOutput: 'Grunur um brjósklos í mjóbaki. Ekki rauð flögg. Veiti ráðleggingar. '
+                                +'Myndataka er ekki ráðlögð nema um rauð flögg sé að ræða eða þegar einkenni hafa staðið í >4-6 vikur. '
+                                +'Gott er að forðast þær hreyfingar sem gera einkenni verri. Oft er gott að hvíla sig fyrstu dagana en '
+                                +'ekki er ráðlagt að vera rúmliggjandi. Létt hreyfing svo sem ganga eða sund ráðlögð. Því fyrr sem '
+                                +'komist er í venjulega rútínu því betra. Set NSAIDS í gáttina en þau geta slegið á einkenni. '
+                                +'Flestir lagast að sjálfu sér á 6-8 vikum. Ef einkenni lagast ekki á þeim tíma er ráðlagt að hafa '
+                                +'samband. Fyrr ef versnar. Einnig getur sjúkraþjálfun verið að gagni'
+            }
+        ]
+    },
+    {},{},{},
+    {
+        name: '',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            EndurmatButton,
+            EftirfylgdButton
+
+        ]
+    }
+];
 
 // Hip
 const SymptomsHip = [
@@ -33455,6 +33846,7 @@ const pageDefinitions = {
         columns: [
             [
                 { id: 'einkenni', title: 'Einkenni', data: SymptomsBack },
+                { id: 'einkenni', title: 'Rauð flögg', data: RaudFloggBak },
             ],
             [
                 { id: 'skodun', title: 'Skoðun', data: ExamsBack },
