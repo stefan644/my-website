@@ -219,10 +219,10 @@ const Timalengd2 = {
                         { display: '4d', output: '4d saga' },
                         { display: '5d', output: '5d saga' },
                         { display: '6d', output: '6d saga' },
-                        { display: '7d', output: '6d saga' },
-                        { display: '8d', output: '6d saga' },
-                        { display: '9d', output: '6d saga' },
-                        { display: '10d', output: '6d saga' }
+                        { display: '7d', output: '7d saga' },
+                        { display: '8d', output: '8d saga' },
+                        { display: '9d', output: '9d saga' },
+                        { display: '10d', output: '10d saga' }
                     ],
                     onRightClickOutput: 'Nokkra daga saga'
                 },
@@ -235,11 +235,11 @@ const Timalengd2 = {
                         { display: '1,5v', output: '1,5 vikna saga' },
                         { display: '2v', output: '2 vikna saga' },
                         { display: '3v', output: '3 vikna saga' },
-                        { display: '4v', output: '3 vikna saga' },
-                        { display: '5v', output: '3 vikna saga' },
-                        { display: '6v', output: '3 vikna saga' },
-                        { display: '7v', output: '3 vikna saga' },
-                        { display: '8v', output: '3 vikna saga' }
+                        { display: '4v', output: '4 vikna saga' },
+                        { display: '5v', output: '5 vikna saga' },
+                        { display: '6v', output: '6 vikna saga' },
+                        { display: '7v', output: '7 vikna saga' },
+                        { display: '8v', output: '8 vikna saga' }
                         
                     ],
                     onRightClickOutput: 'Nokkra vikna saga'
@@ -4431,7 +4431,28 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Vírósa' },
                     { display: 'Grunur', output: 'Grunur um byrjandi veirusýkingu' },
-                    { display: 'Fullmótað plan', output: 'Vírósa. Veiti viðeigandi ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar' }
+                    { 
+                        display: 'Fullmótuð plön', 
+                        subOptions: [
+                            {
+                                display: 'Vírósa - Ráð - Stuðningsmeðferð - Re PN',
+                                output: 'Vírósa. Veiti viðeigandi ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar'
+                            },
+                            {
+                                display: '"Viral wheeze" - Ráð - Ventolin - Stuðningsmeðferð - Re PN',
+                                output: 'Viral wheeze. Veiti ráðleggingar. Stuðningsmeðferð. Drekka vel. Hitalækkandi pn. Set ventolin (4-6x á dag eftir þörfum) í gáttina. Mikilvægt að fylgjast vel með barninu, ef versnandi einkenni (t.d. mikil andnauð, barnið nærist illa, mikill slappleiki) er mikilvægt að hafa samband sem og ef einkenni fara ekki skánandi á næstu dögum / vikum'
+                            },
+                            {
+                                display: '"Viral wheeze" - Ráð - Ventolin+flixotide - Stuðningsmeðferð - Re PN',
+                                output: 'Viral wheeze. Veiti ráðleggingar. Stuðningsmeðferð. Drekka vel. Hitalækkandi pn. Set ventolin (4-6x á dag eftir þörfum) og flixotide (125mg 2x2 í 1 viku og 1x2 í 1 viku) í gáttina. Mikilvægt að fylgjast vel með barninu, ef versnandi einkenni (t.d. mikil andnauð, barnið nærist illa, mikill slappleiki) er mikilvægt að hafa samband sem og ef einkenni fara ekki skánandi á næstu dögum / vikum'
+                            },
+                            {
+                                display: '"Viral wheeze" - Laslegt útlit - Bráðamóttaka barna',
+                                output: 'Viral wheeze. Lastlegt útlit. Tel ráðlegt að fá nánara mat á bráðamóttöku barna'
+                            }
+                        ],
+                         
+                    }
                 ], onRightClickOutput: 'Vírósa. Veiti viðeigandi ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar'
             },
             {
@@ -4439,7 +4460,7 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Greining', output: 'Sinusitis' },
                     { display: 'Grunur', output: 'Grunur um sinusitis' },
-                    { display: 'Fullmótað plan', 
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Grunur - Ráð - Sýklalyf - Re PN', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set sýklalyf í gáttina. Endurmat ef lagast ekki' },
                             { display: 'Grunur - Ráð - Sýklalyf+nefsterar - Re PN', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki' },
@@ -4538,8 +4559,9 @@ const PlanViral = [
                     { display: 'Grunur', output: 'Grunur um bronchiolitis' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Grunur, mild einkenni, ráðleggingar og stuðningsmeðferð, endurmat ef versnar annars re pn', output: 'Grunur um bronchiolitis. Algengast að RSV valdi. Mild einkenni. Ráðlegg stuðningsmeðferð. Passa að barnið drekki vel. Nota nefsugu til að fjarlægja slím úr nös. Má nota hitalækkandi pn. Endurmat ef einkenni versna eða lagast ekki á næstu dögum. Engin eftirfylgd ef skánandi' },
-                            { display: 'Grunur, >5 stig á Respiratory Severity Score, bmt barna', output: 'Grunur um bronchiolitis. Laslega útlítandi. Fær >5 stig á respiratory severity score. Ráðlegg nánara mat á bmt barna' }
+                            { display: 'Grunur - Mild einkenni - Ráðleggingar og stuðningsmeðferð - Endurmat ef versnar', output: 'Grunur um bronchiolitis. Algengast að RSV valdi. Mild einkenni. Ráðlegg stuðningsmeðferð. Passa að barnið drekki vel. Nota nefsugu til að fjarlægja slím úr nös. Má nota hitalækkandi pn. Endurmat ef einkenni versna eða lagast ekki á næstu dögum. Engin eftirfylgd ef skánandi' },
+                            { display: 'Grunur - Laslegt útlit - Bmt barna', output: 'Grunur um bronchiolitis. Laslega útlítandi. Ráðlegg nánara mat á bmt barna' },
+                            { display: 'Grunur - Laslegt útlit + >5 stig á Respiratory Severity Score - Bmt barna', output: 'Grunur um bronchiolitis. Laslega útlítandi. Fær >5 stig á respiratory severity score. Ráðlegg nánara mat á bmt barna' }
                     
                         ]
                     },
@@ -4959,6 +4981,23 @@ const PlanViral = [
                             {
                                 display: 'Lágskammta (30mg/kg)',
                                 subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 30, 80)
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Kaavepenin 50mg/ml',
+                        subOptions: [
+                            {
+                                display: 'Háskammta (80mg/kg)',
+                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 50mg/ml', 80, 50)
+                            },
+                            {
+                                display: 'Venjuleg (50mg/kg)',
+                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 50mg/ml', 50, 50)
+                            },
+                            {
+                                display: 'Lágskammta (30mg/kg)',
+                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 50mg/ml', 30, 50)
                             }
                         ]
                     },
@@ -7412,7 +7451,7 @@ const PlanEye = [
     {
         name: '',
         type: 'options',
-        display: ['Aðskotahlutur', 'Corneal abrasion'],
+        display: ['Aðskotahlutur', 'Corneal abrasion', 'Herpes'],
         options: [
             { display: 'Aðskotahlutur', 
                 subOptions: [
@@ -7472,6 +7511,42 @@ const PlanEye = [
                         ]
                     }
                 ], onRightClickOutput: 'Corneal abrasion. Veiti ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (íbúfen og panodil) PN við óþægindum. Ef einkenni lagast ekki eða versna þá endurmat'
+            },
+            {
+                display: '',
+                subOptions: [
+                    { display: 'Greining', output: 'Herpes oticus' },
+                    { display: 'Grunur', output: 'Grunur um herpessýkingu í auga' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Herpes simplex keratitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/herpes-simplex-keratitis' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    }
+                    
+                ],
+                onRightClickOutput: ''
             }
         ]
     },
@@ -18557,7 +18632,15 @@ const PlanHud = [
                         subOptions: [
                             { display: 'Grunur, sýklalyf, fylgjast vel með, endurmat pn', output: 'Grunur um húðsýkingu. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' },
                             { display: 'Grunur, sýklakrem, fylgjast vel með, endurmat pn', output: 'Grunur um húðsýkingu. Set sýklakrem í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' },
-                            { display: 'Ekki hægt að útiloka, DDX þvagsýrugigt, sýklalyf, fylgjast vel með, endurmat pn', output: 'DDX húðsýking, þvagsýrugigt. Þar sem ekki hægt að útiloka sýkingu ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' }
+                            { display: 'Ekki hægt að útiloka, DDX þvagsýrugigt, sýklalyf, fylgjast vel með, endurmat pn', output: 'DDX húðsýking, þvagsýrugigt. Þar sem ekki hægt að útiloka sýkingu ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' },
+                            {
+                                display: 'Sýking í naglbeð - Sýklalyf PO - Re PN',
+                                output: 'Sýking í naglbeð. Set sýklalyf í gáttina. Endurmat ef einkenni versna eða lagast ekki'
+                            },
+                            {
+                                display: 'Sýking í naglbeð - Sýklakrem - Re PN',
+                                output: 'Sýking í naglbeð. Þar sem einkenni væg ætti staðbundin meðferð að duga. Set sýklakrem í gáttina. Endurmat ef einkenni versna eða lagast ekki'
+                            }
                         ]
                     },
                     { display: 'Leiðbeiningar til skjólstæðings', 
@@ -18578,6 +18661,7 @@ const PlanHud = [
             }
         ]
     },
+    /*
     {
         name: '',
         type: 'options',
@@ -18841,6 +18925,7 @@ const PlanHud = [
             }
         ]
     },
+    */
     {},{},{},
     {
         name: '',
