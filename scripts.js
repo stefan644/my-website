@@ -11396,17 +11396,6 @@ const PlanMelting = [
                         subOptions: [
                             { display: '', output: '' } 
                         ]    
-                    },
-                    { display: 'Leiðbeiningar til skjólstæðings',
-                        subOptions: [
-                            
-                            { display: '', type: 'hyperlink', url: '' }
-                        ]
-                    },
-                    { display: 'Fræðsluefni lækna', 
-                        subOptions: [
-                            { display: '', type: 'hyperlink', url: '' }
-                        ]
                     }
                 ], onRightClickOutput: 'Grunur um viral gastroenteritis. Veiti almennar ráðleggingar. Passa vökvainntöku og næringu. Gengur yfirleitt yfir á 1-2 vikum. Endurmat ef lagast ekki eða fyrr ef versnar'
             },
@@ -11425,8 +11414,160 @@ const PlanMelting = [
                 display: 'Hægðatregða',
                 subOptions: [
                     { display: 'Greining', output: 'Hægðatregða' },
-                    { display: 'Grunur', output: 'Grunur um hægðatregðu' }
-                ]
+                    { display: 'Grunur', output: 'Grunur um hægðatregðu' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { 
+                                display: 'Grunur - Ráð - Movicol jr 2-4v - RE í framhaldi', output: 'Grunur um hægðatregðu. Veiti ráðleggingar. Mikilvægt að tryggja vökavinntöku, 1-2L á dag. Tryggja trefjainntöku með fjölbreyttu mataræði. '
+                                +'Ávextir, grænmeti og gróf matvæli (gróft brauð, hýðishrísgrjón, o.s.frv.). Döðlur og ávaxtagrautur getur einnig hjálpað sem og husk. Þar sem einkenni langvarandi og gengið illa með '
+                                +'lífstílsbreytingum ákveðið að hefja kúr með mocicol junior. Ráðlegg 2-4 vikna kúr. Endurmat í framhaldi'
+                            },
+                            { 
+                                display: 'Grunur - Ráð - RTG - Símatími', output: 'Grunur um hægðatregðu. Veiti ráðleggingar. Mikilvægt að tryggja vökavinntöku, 1-2L á dag. Tryggja trefjainntöku með fjölbreyttu mataræði. '
+                                +'Ávextir, grænmeti og gróf matvæli (gróft brauð, hýðishrísgrjón, o.s.frv.). Döðlur og ávaxtagrautur getur einnig hjálpað sem og husk. Þar sem einkenni langvarandi ákveðið að fá RTG '
+                                +'til staðfestingar. Símatími til eftirfylgdar'
+                            }  
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: 'Ráð fullorðnir', output: 'Veiti ráðleggingar við hægðatregðu. Mikilvægt að tryggja vökavinntöku, 1-2L á dag. Tryggja trefjainntöku með fjölbreyttu mataræði. '
+                                +'Ávextir, grænmeti og gróf matvæli (gróft brauð, hýðishrísgrjón, o.s.frv.). Döðlur og ávaxtagrautur getur einnig hjálpað. Ef gengur illa að bæta við trefjum með fjölbreyttu mataræði '
+                                +'er hægt að kaupa husk trefjaviðbót í apóteki. Önnur lyf sem eru oft notuð við hægðatregðu eru magnesíum, sorbitól, movicol o.fl. Reynt er að forðast lyf sem örva ristilinn svo sem senokot '
+                                +'og bisacodyl (dulcolax, microlax, toilax) vegna þess að þau geta verið ávanabindandi'
+                            } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Uptodate', 
+                                subOptions: [
+                                    { display: 'Constipation in children (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/constipation-in-children-the-basics' },
+                                    { display: 'Fecal incontinence in children (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/fecal-incontinence-in-children-the-basics' },
+                                    { display: 'Constipation in infants and children (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/constipation-in-infants-and-children-beyond-the-basics' },
+                                    { display: 'Constipation in adults (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/constipation-in-adults-the-basics' },
+                                    { display: 'High-fiber diet (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-fiber-diet-the-basics' },
+                                    { display: 'Constipation in adults (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/constipation-in-adults-beyond-the-basics' },
+                                    { display: 'High-fiber diet (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-fiber-diet-beyond-the-basics' },
+                                ]       
+                            },
+                            { display: 'Landspítali - Hægðatregða hjá börnum', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Barnaspitalinn/haegdatregda_hja_bornum_2022.pdf' },
+                            { display: 'Heilsugæslan - Trefjarík fæða (ráð við hægðatregðu)', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/um-hh/frettasafn/stok-frett/2020/11/27/Trefjarik-faeda-vinnur-a-tregdu/' },
+                            { display: 'Heilsuvera.is - Hægðatregða hjá börnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/haegdatregda-hja-bornum/' },
+                            { display: 'Heilsuvera.is - Hægðatregða hjá fullorðnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/haegdatregda-hja-fullordnum/' },
+                            { display: 'Klíníkin Ármúla - Hægðatregða, hvað er til ráða?', type: 'hyperlink', url: 'https://efnaskipti.klinikin.is/haegdatregda-hvad-er-til-rada/' },
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            {
+                                display: 'Uptodate',
+                                subOptions: [
+                                    { display: 'Uptodate - Etiology and evaluation of chronic constipation in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/etiology-and-evaluation-of-chronic-constipation-in-adults' },
+                                    { display: 'Uptodate - Management of chronic constipation in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/management-of-chronic-constipation-in-adults' },
+                                    { display: 'Uptodate - Constipation in the older adult', type: 'hyperlink', url: 'https://www.uptodate.com/contents/constipation-in-the-older-adult' },
+                                    { display: 'Uptodate - Recent-onset constipation in infants and children', type: 'hyperlink', url: 'https://www.uptodate.com/contents/recent-onset-constipation-in-infants-and-children' },
+                                    { display: 'Uptodate - Functional constipation in infants, children, and adolescents: Clinical features and diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/functional-constipation-in-infants-children-and-adolescents-clinical-features-and-diagnosis' },
+                                    { display: 'Uptodate - Chronic functional constipation and fecal incontinence in infants, children, and adolescents: Treatment', type: 'hyperlink', url: 'https://www.uptodate.com/contents/chronic-functional-constipation-and-fecal-incontinence-in-infants-children-and-adolescents-treatment' },
+                                    { display: 'Uptodate - Constipation in infants and children: Evaluation', type: 'hyperlink', url: 'https://www.uptodate.com/contents/constipation-in-infants-and-children-evaluation' },
+                                ]
+                            },
+                            { display: 'ÞÍH - Leiðbeiningar um lyfjaval við meltingarsjúkdómum', type: 'hyperlink', url: 'https://throunarmidstod.is/svid-thih/lyfjasvid/leidbeiningar-um-lyfjaval/meltingarsjukdomar/' },
+                            { display: 'Listi yfir helstu lyf við hægðatregðu (sérlyfjaskrá o.fl.)',
+                                subOptions: [
+                                    {
+                                        display: 'Senokot',
+                                        type: 'hyperlink',
+                                        url: 'https://www.lyfja.is/lyfjabokin/lyf/Senokot'
+                                    },
+                                    {
+                                        display: 'Magnesia medic',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/magnesia-medic-321a2244-aac8-df11-a1f6-0016e6045f8e'
+                                    },
+                                    {
+                                        display: 'Dulcolax',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/dulcolax-46132244-AAC8-DF11-A1F6-0016E6045F8E'
+                                    },
+                                    {
+                                        display: 'Toilax',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/toilax-30622759-AAC8-DF11-A1F6-0016E6045F8E'
+                                    },
+                                    {
+                                        display: 'Laxoberal',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/laxoberal-48192244-AAC8-DF11-A1F6-0016E6045F8E'
+                                    },
+                                    {
+                                        display: 'CitraFleet',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/citrafleet-B6EF7D98-D045-E211-AC24-001E4F17A1F7'
+                                    },
+                                    {
+                                        display: 'Picoprep',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/picoprep-7B621A4A-AAC8-DF11-A1F6-0016E6045F8E'
+                                    },
+                                    {
+                                        display: 'Medilax',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/medilax-5E1A2244-AAC8-DF11-A1F6-0016E6045F8E'
+                                    },
+                                    {
+                                        display: 'Movicol',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/movicol-651B2244-AAC8-DF11-A1F6-0016E6045F8E'
+                                    },
+                                    {
+                                        display: 'Movicol Junior (Heilsa)',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/movicol-junior-(heilsa)-692FA2C0-D1FD-EC11-8117-005056A1B61B'
+                                    },
+                                    {
+                                        display: 'Movicol Junior Neutral',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/movicol-junior-neutral-CB0A2932-2907-E811-80DB-00155D154609'
+                                    },
+                                    {
+                                        display: 'Moviprep',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/moviprep-661B2244-AAC8-DF11-A1F6-0016E6045F8E'
+                                    },
+                                    {
+                                        display: 'Plenvu',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/plenvu-DD2DD233-7E9F-E611-80D3-CE1550B700F3'
+                                    },
+                                    {
+                                        display: 'Microlax',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/microlax-E01A2244-AAC8-DF11-A1F6-0016E6045F8E'
+                                    },
+                                    {
+                                        display: 'Microlax (Heilsa)',
+                                        type: 'hyperlink',
+                                        url: 'https://www.serlyfjaskra.is/lyf/microlax-(heilsa)-D25FE941-4E54-ED11-811B-005056A1B61B'
+                                    },
+                                    {
+                                        display: 'Sorbitol',
+                                        type: 'hyperlink',
+                                        url: 'https://netverslun.lyfja.is/product/sorbitol-800mg-ml-70-500ml-lh'
+                                    },
+                                    {
+                                        display: 'Psyllium Husk (GM Husk)',
+                                        type: 'hyperlink',
+                                        url: 'https://netverslun.lyfja.is/product/gm-husk'
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ], onRightClickOutput: 'Grunur um hægðatregðu. Veiti ráðleggingar. Mikilvægt að tryggja vökavinntöku, 1-2L á dag. Tryggja trefjainntöku með fjölbreyttu mataræði. '
+                                +'Ávextir, grænmeti og gróf matvæli (gróft brauð, hýðishrísgrjón, o.s.frv.). Döðlur og ávaxtagrautur getur einnig hjálpað. Ef gengur illa að bæta við trefjum með fjölbreyttu mataræði '
+                                +'er hægt að kaupa husk trefjaviðbót í apóteki. Önnur lyf sem eru oft notuð við hægðatregðu eru magnesíum, sorbitól, movicol o.fl. Reynt er að forðast lyf sem örva ristilinn svo sem senokot '
+                                +'og bisacodyl (dulcolax, microlax, toilax) vegna þess að þau geta verið ávanabindandi. Endurmat eftir þörfum'
             },
             {
                 display: 'Bakflæði',
@@ -11446,7 +11587,37 @@ const PlanMelting = [
                 display: 'Gallsteinar',
                 subOptions: [
                     { display: 'Greining', output: 'Gallsteinar' },
-                    { display: 'Grunur', output: 'Grunur um gallsteina' }
+                    { display: 'Grunur', output: 'Grunur um gallsteina' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Grunur - Ómun + Bpr - Hefur sjálf/ur samband f. nðst', output: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum. Hefur samband að rannsóknum loknum. Ef einkenni versna í millitíðinni (svosem hiti eða mikill slappleiki) er mikilvægt að hafa samband' } 
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Landspítali - Gallblöðrutaka (Fræðsluefni)', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Skurdlaekningasvid/gallblodrutaka_2023.pdf' },
+                            { display: 'Heilsuvera.is - Gallsteinar', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/gallsteinar/' },
+                            { display: 'Uptodate - Gallstones (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/gallstones-the-basics' },
+                            { display: 'Uptodate - Choosing surgery to treat gallstones (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/choosing-surgery-to-treat-gallstones-the-basics' },
+                            { display: 'Uptodate - Gallstones (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/gallstones-beyond-the-basics' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Overview of gallstone disease in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-gallstone-disease-in-adults' },
+                            { display: 'Uptodate - Gallstones: Epidemiology, risk factors and prevention', type: 'hyperlink', url: 'https://www.uptodate.com/contents/gallstones-epidemiology-risk-factors-and-prevention' },
+                            { display: 'Uptodate - Overview of nonsurgical management of gallbladder stones', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-nonsurgical-management-of-gallbladder-stones' },
+                            { display: 'Uptodate - Approach to the management of gallstones', type: 'hyperlink', url: 'https://www.uptodate.com/contents/approach-to-the-management-of-gallstones' },
+                            { display: 'Uptodate - Choledocholithiasis: Clinical manifestations, diagnosis, and management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/choledocholithiasis-clinical-manifestations-diagnosis-and-management' },
+                            { display: 'Uptodate - Áhættuþættir gallsteina', type: 'hyperlink', url: 'https://www.uptodate.com/contents/image?imageKey=GAST/81139' },
+                            { display: 'Læknablaðið - Yfirlitsgrein 2020', type: 'hyperlink', url: 'https://www.laeknabladid.is/tolublod/2020/10/nr/7461' }
+                        ]
+                    }
                 ], onRightClickOutput: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum. Hefur samband að rannsóknum loknum. Ef einkenni versna í millitíðinni (svosem hiti eða mikill slappleiki) er mikilvægt að hafa samband'
             },
             {
@@ -11466,13 +11637,17 @@ const PlanMelting = [
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
-                            
-                            { display: 'Landspitali - Ristilpokabólga (Fræðslubæklingur)', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/ristilpokabolga_2018.pdf' }
+                            { display: 'Landspitali - Ristilpokabólga (Fræðslubæklingur)', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/ristilpokabolga_2018.pdf' },
+                            { display: 'Uptodate - Diverticulitis (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/diverticulitis-the-basics' },
+                            { display: 'Uptodate - Diverticular disease (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/diverticular-disease-beyond-the-basics' },
                         ]
                     },
                     { display: 'Fræðsluefni lækna', 
                         subOptions: [
-                            { display: '', type: 'hyperlink', url: '' }
+                            { display: 'Uptodate - Clinical manifestations and diagnosis of acute colonic diverticulitis in adults', type: 'hyperlink', url: 'https://www.uptodate.com/contents/clinical-manifestations-and-diagnosis-of-acute-colonic-diverticulitis-in-adults' },
+                            { display: 'Uptodate - Acute colonic diverticulitis: Outpatient management and follow-up', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-colonic-diverticulitis-outpatient-management-and-follow-up' },
+                            { display: 'Uptodate - Acute colonic diverticulitis: Surgical management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-colonic-diverticulitis-surgical-management' },
+                            { display: 'Uptodate - Colonic diverticulosis and diverticular disease: Epidemiology, risk factors, and pathogenesis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/colonic-diverticulosis-and-diverticular-disease-epidemiology-risk-factors-and-pathogenesis' },
                         ]
                     }
                 ], onRightClickOutput:'Grunur um diverticulitis. Fær viðeigandi ráðleggingar um meðferð. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar'
