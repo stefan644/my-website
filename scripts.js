@@ -1347,6 +1347,7 @@ const Hlekkir = [
                 display: 'ÞÍH (Verkfærakista, stramaverkefnið o.fl)',
                 subOptions: [
                     { display: 'Stramaverkefnið', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid' },
+                    { display: 'Stramabæklingur heilsugæslan', type: 'hyperlink', url: 'https://www.heilsugaeslan.is/lisalib/getfile.aspx?itemid=1bee761f-c268-11e8-941f-005056bc0bdb' },
                     { display: 'Verkfærakista ÞÍH', type: 'hyperlink', url: 'https://throunarmidstod.is/verkfaeri/' },
                     { display: 'PHQ9+GAD7', type: 'hyperlink', url: 'https://throunarmidstod.is/library/Verkfaeri/PHQ-%20og%20GAD-7%20(1).pdf' },
                     { display: 'MMSE', 
@@ -4796,7 +4797,7 @@ const PlanViral = [
                             { display: 'Uptodate - Mat á eyrnaverk börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-earache-in-children' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Eyrnaverkur. Ekki finnst skýring einkenna við skoðun. Mögulega byrjandi vírósa. Ráðlegg obs. Verkjalyf pn. Ef lagast ekki á næstu dögum/vikum þá endurmat eða mögulega mat HNE læknis'
             },
             {
                 display: 'Mergur', 
@@ -4804,13 +4805,13 @@ const PlanViral = [
                     { display: 'NOS', output: 'Eyrnamergur' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Merglosandi, endurkoma í hreinsun', output: 'Eyrnamergur. Frekar harður. Ráðlegg merglosandi dropa. Endurkoma í merghreinsun' },
+                            { display: 'Merglosandi, endurkoma í hreinsun', output: 'Eyrnamergur. Ráðlegg merglosandi dropa. Endurkoma í merghreinsun' },
                             { display: 'Merghreinsun á stofu', output: 'Eyrnamergur. Spúla hlustir. Endurmat pn' },
                             { display: 'Mergur, bóka hjá hjkfr', output: 'Eyrnamergur. Fær tíma hjá hjúkrunarfræðingi í merghreinsun' },
                             { display: 'Mergur, fer yfir til hjkfr', output: 'Eyrnamergur. Fer yfir til vakthafandi hjúkrunarfræðings í merghreinsun. Endurmat pn' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Eyrnamergur. Ráðlegg merglosandi dropa. Endurkoma í merghreinsun'
             },
             {
                 display: 'Otitis externa',
@@ -11406,6 +11407,35 @@ const PlanMelting = [
                         subOptions: [
                             { display: 'Stutt saga, stemmandi pn, endurmat ef lagast ekki', output: 'Niðurgangur. Stutt saga. Almennar ráðleggingar. Getur notað stemmandi lyf svo sem lóperamíð PN. Endurmat ef lagast ekki á næstu vikum' },
                             { display: 'Löng saga, hægðasýni', output: 'Niðurgangur. Löng saga. Ráðlegg hægðasýni til frekari greiningar' },
+                        ]
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Heilsugæslan - Niðurgangur og uppköst barna', type: 'hyperlink', url: 'https://heilsugaeslan.is/lisalib/getfile.aspx?itemid=3663' },
+                            { display: 'Heilsuvera.is - Niðurgangur hjá fullorðnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-fullordnum/' },
+                            { display: 'Heilsuvera.is - Niðurgangur hjá börnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-bornum/' },
+                            { display: 'EL - Ferðaráð', type: 'hyperlink', url: 'https://island.is/almenn-ferdarad-heilsa' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'ÞÍH - Leiðbeiningar um lyfjaval við meltingarsjúkdómum', type: 'hyperlink', url: 'https://throunarmidstod.is/svid-thih/lyfjasvid/leidbeiningar-um-lyfjaval/meltingarsjukdomar/' },
+                            { display: 'Uptodate - Bráður niðurgangur fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/approach-to-the-adult-with-acute-diarrhea-in-resource-abundant-settings' },
+                            { display: 'Uptodate - Krónískur niðurgangur fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/approach-to-the-adult-with-chronic-diarrhea-in-resource-abundant-settings' },
+                            { display: 'Uptodate - Bráður niðurgangur barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/diagnostic-approach-to-diarrhea-in-children-in-resource-abundant-settings' },
+                            { display: 'Uptodate - Krónískur niðurgangur barna >6 mánaða', type: 'hyperlink', url: 'https://www.uptodate.com/contents/approach-to-chronic-diarrhea-in-children-greater-than6-months-in-resource-abundant-settings' },
+                            { display: 'Uptodate - Krónískur niðurgangur barna <6 mánaða', type: 'hyperlink', url: 'https://www.uptodate.com/contents/approach-to-chronic-diarrhea-in-neonates-and-young-infants-less-than6-months' },
+                            { display: 'Uptodate - Travelers\' diarrhea: Treatment and prevention', type: 'hyperlink', url: 'https://www.uptodate.com/contents/travelers-diarrhea-treatment-and-prevention' },
                         ]
                     }
                 ]
