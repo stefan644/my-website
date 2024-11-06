@@ -6917,7 +6917,7 @@ const SymptomsEye = [
     {
         name: '',
         type: 'options',
-        display: ['Nýleg veirusýking', 'Dagleg áhrif', 'Sjón'],
+        display: ['Nýleg veirusýking', 'Dagleg áhrif', 'Gleraugu/linsur'],
         options: [
             {
                 display: 'Nýleg veirusýking',
@@ -6933,7 +6933,7 @@ const SymptomsEye = [
                 ]
             },
             {
-                display: 'Sjón',
+                display: 'Gleraugu/linsur',
                 subOptions: [
                     {
                         display: 'Gleraugu',
@@ -9459,20 +9459,36 @@ const PlanHeart = [
                                 display: 'Fyrsta greining (heimamælingar, blóðprufa, þvagprufa, hjartalínurit)',
                                 output: '\n\n'
                                     + 'Ráðlegg eftirfarandi vegna uppvinnslu á háþrýstingi:\n'
-                                    + '- Heimamælingar. Mikilvægt að eigir góðan upphandleggsmæli. Úlnliðsmælar gefa ónákvæm gildi. '
+                                    + '- Heimamælingar. Mikilvægt að eigir góðan upphandleggsmæli. Úlnliðsmælar gefa gjarnan ónákvæm gildi. '
                                     + 'Mælir blóðþrýstinginn eftir 5-10 mínútur í hvíld og skrifar niður á blað. 2-3 mælingar á dag nokkrum dögum fyrir næsta tíma.\n'
                                     + '- Færð tíma hjá hjúkrunarfræðingi kl X þann X til að taka hjartalínurit og stixa þvag. Kemur með þvagprufu með þér. '
                                     + 'Getur keypt þvagprufuglas í apóteki.\n'
-                                    + '- Blóðrannsókn. Þarft að mæta fastandi. Mátt ekki borða neitt sem inniheldur hitaeiningar a.m.k. 8klst fyrir rannsókn. Vatn er í lagi. Bóka þig þann X kl X.\n'
+                                    + '- Blóðrannsókn. Þarft að mæta fastandi. Mátt ekki borða neitt sem inniheldur hitaeiningar a.m.k. 8klst fyrir rannsókn. Vatn er í lagi. Pantar tíma í blóðrannsókn í gegnum afgreiðslu.\n'
                                     + '- Endurkoma. Færð tíma í endurkomu þann X kl X.'
                             },
-                            { display: 'Uptodate', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-hypertension-in-adults#H16080896' }
+                            { 
+                                display: 'Uptodate', 
+                                subOptions:
+                                [
+                                    {
+                                        display: 'Uptodate - yfirlitssíða', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-hypertension-in-adults#H16080896'
+                                    },
+                                    { display: 'High blood pressure in adults (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-blood-pressure-in-adults-the-basics' },
+                                    { display: 'Controlling your blood pressure through lifestyle (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/controlling-your-blood-pressure-through-lifestyle-the-basics' },
+                                    { display: 'High blood pressure in adults (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-blood-pressure-in-adults-beyond-the-basics' },
+                                    { display: 'High blood pressure, diet, and weight (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-blood-pressure-diet-and-weight-beyond-the-basics' },
+                                    { display: 'High blood pressure treatment in adults (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-blood-pressure-treatment-in-adults-beyond-the-basics' }
+                                ],
+                                
+                                 
+                            }
                         ]
                     },
                     { display: 'Fræðsluefni lækna', 
                         subOptions: [
                             { display: 'Uptodate - Greining og meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/overview-of-hypertension-in-adults' },
                             { display: 'Uptodate - Meðferðarval', type: 'hyperlink', url: 'https://www.uptodate.com/contents/choice-of-drug-therapy-in-primary-essential-hypertension#H3514635944' },
+                            { display: 'ÞÍH - Leiðbeiningar við greiningu og meðferð', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/hathrystingur/' },
                             { display: 'ÞÍH - Greining og lyfjaval', type: 'hyperlink', url: 'https://throunarmidstod.is/svid-thih/lyfjasvid/leidbeiningar-um-lyfjaval/hathrystingur/' },
                             { display: 'Embætti landlæknis - Háþrýstingur', type: 'hyperlink', url: 'https://throunarmidstod.is/library/Files/Háþrýstingur%20klínískar%20leiðbeiningar.pdf' }
 
@@ -11746,7 +11762,7 @@ const PlanMelting = [
                     { display: 'Grunur', output: 'Grunur um gallsteina' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Grunur - Ómun + Bpr - Hefur sjálf/ur samband f. nðst', output: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum. Hefur samband að rannsóknum loknum. Ef einkenni versna í millitíðinni (svosem hiti eða mikill slappleiki) er mikilvægt að hafa samband' } 
+                            { display: 'Grunur - Ómun + Bpr - Hefur sjálf/ur samband f. nðst', output: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum. Hefur samband að rannsóknum loknum. Ef einkenni versna í millitíðinni (t.d. hár hiti, miklir verkir, mikill slappleiki o.fl.) er mikilvægt að hafa samband' } 
                         ]    
                     },
                     { display: 'Ráðleggingar', 
@@ -11774,7 +11790,7 @@ const PlanMelting = [
                             { display: 'Læknablaðið - Yfirlitsgrein 2020', type: 'hyperlink', url: 'https://www.laeknabladid.is/tolublod/2020/10/nr/7461' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum. Hefur samband að rannsóknum loknum. Ef einkenni versna í millitíðinni (svosem hiti eða mikill slappleiki) er mikilvægt að hafa samband'
+                ], onRightClickOutput: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum. Hefur samband að rannsóknum loknum. Ef einkenni versna í millitíðinni (t.d. hár hiti, miklir verkir, mikill slappleiki o.fl.) er mikilvægt að hafa samband'
             },
             {
                 display: 'Diverticulitis',
@@ -11830,9 +11846,35 @@ const PlanMelting = [
                         display: 'Anal fissúra',
                         subOptions: [
                             { display: 'Greining', output: 'Anal fissúra' },
-                            { display: 'Grunur', output: 'Grunur um anal fissúru' }
-                        ],
-                        cancelText: ''
+                            { display: 'Grunur', output: 'Grunur um anal fissúru' },
+                            { display: 'Fullmótuð plön', 
+                                subOptions: [
+                                    { display: '', output: '' } 
+                                ]    
+                            },
+                            { display: 'Ráðleggingar', 
+                                subOptions: [
+                                    { display: '', output: '' } 
+                                ]    
+                            },
+                            { display: 'Leiðbeiningar til skjólstæðings',
+                                subOptions: [
+                                    { display: 'Uptodate - Anal fissure (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/anal-fissure-the-basics' },
+                                    { display: 'Uptodate - How to take a sitz bath (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/how-to-take-a-sitz-bath-the-basics' },
+                                    { display: 'Uptodate - High-fiber diet (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/high-fiber-diet-the-basics' },
+                                    { display: '', type: 'hyperlink', url: '' },
+                                    { display: '', type: 'hyperlink', url: '' }
+                                ]
+                            },
+                            { display: 'Fræðsluefni lækna', 
+                                subOptions: [
+                                    { display: 'Uptodate - Clinical manifestations, diagnosis, prevention', type: 'hyperlink', url: 'https://www.uptodate.com/contents/anal-fissure-clinical-manifestations-diagnosis-prevention' },
+                                    { display: 'Uptodate - Medical management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/anal-fissure-medical-management' },
+                                    { display: 'Uptodate - Surgical management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/anal-fissure-surgical-management' },
+                                    { display: '', type: 'hyperlink', url: '' }
+                                ]
+                            }
+                        ]
                     }
                     
                 ]
@@ -20731,7 +20773,37 @@ const PlanGed = [
                 display: 'Þunglyndi',
                 subOptions: [
                     { display: 'Grunur', output: 'Grunur um þunglyndi' },
-                    { display: 'Greining', output: 'Þunglyndi' }
+                    { display: 'Greining', output: 'Þunglyndi' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { 
+                                display: '', output: ''
+
+                            } 
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    }
                 ]
             },
             {
@@ -34126,7 +34198,7 @@ const pageDefinitions = {
                 { id: 'einkenni', title: 'Kviðverkur', data: SymptomsMelting },
                 //{ id: 'kerfakonnun', title: 'Kerfakönnun', data: KerfakonnunMelting },
                 { id: 'gynsaga', title: 'Gynsaga', data: Gynsaga },
-                { id: 'raudflogg', title: 'Rauð Flögg', data: RaudFloggMelting },
+                { id: 'einkenni', title: 'Rauð Flögg', data: RaudFloggMelting },
                 { id: 'historyViral', title: 'Heilsufar', data: historyMelting },
                 { id: 'lyf', title: 'Lyf', data: LyfData },
                 { id: 'habits', title: 'Venjur', data: Habits },
@@ -34360,7 +34432,8 @@ const pageDefinitions = {
         columns: [
             [
                 { id: 'einkenni', title: 'Einkenni', data: SymptomsGed },
-                { id: 'sigecaps', title: 'SIGECAPS', data: SIGECAPS },
+                { id: 'einkenni', title: 'SIGECAPS', data: SIGECAPS },
+                //{ id: 'sigecaps', title: 'SIGECAPS', data: SIGECAPS },
                 //{ id: 'risksuicide', title: 'Áhættuþættir sjálfsvíga', data: RiskSuicideData },
                 { id: 'felagssaga', title: 'Félagssaga', data: Felagssaga },
                 { id: 'gedheilsufar', title: 'Geðsaga', data: GedheilsufarData },
