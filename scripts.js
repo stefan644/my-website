@@ -4422,7 +4422,7 @@ const PlanViral = [
                     {
                         display: 'Leiðbeiningar til skjólstæðings',
                             subOptions:[
-                                
+                                { display: 'Uptodate - Cough in adults (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/cough-in-adults-the-basics' }
                             ]
                     }
                 ]
@@ -10694,11 +10694,19 @@ const SymptomsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Einkenni', 'Verkur', 'Meltingarónot'],
+        display: ['Einkenni', 'Verkur', 'Meltingarónot', 'Áverki'],
         options: [
             { display: 'Einkenni', output: 'Einkenni frá kvið' },
             { display: 'Verkur', output: 'Verkur', onRightClickOutput: 'Ekki verkur' },
-            { display: 'Meltingarónot', output: 'Meltingarónot', onRightClickOutput: 'Ekki meltingarónot' }
+            { display: 'Meltingarónot', output: 'Meltingarónot', onRightClickOutput: 'Ekki meltingarónot' },
+            {
+                display: 'Áverki',
+                onRightClickOutput: 'Ekki áverkasaga',
+                subOptions: [
+                    { display: 'Högg', output: 'Högg' },
+                    { display: 'Bylta', output: 'Bylta' }
+                ]
+            }
         ]
     },
     {
@@ -11006,21 +11014,6 @@ const SymptomsMelting = [
             { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Engin óþægindi' },
             { display: 'Blóð', output: 'Blóð í þvagi', onRightClickOutput: 'Ekki blóð í þvagi' },
             { display: 'Tregða', output: 'Þvagtregða', onRightClickOutput: 'Neitar þvagtregðu' }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Áverki'],
-        options: [
-            {
-                display: 'Áverki',
-                onRightClickOutput: 'Ekki áverkasaga',
-                subOptions: [
-                    { display: 'Högg', output: 'Högg' },
-                    { display: 'Bylta', output: 'Bylta' }
-                ]
-            }
         ]
     }
     
@@ -11397,6 +11390,33 @@ const PlanMelting = [
                         subOptions: [
                             { display: '', output: '' } 
                         ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            {
+                                display: 'Heimaleiðbeiningar við niðurgang',
+                                output: '\n\n'
+                                    + 'Eftirfarandi eru ráð við niðurgangspest sem staðið hefur í minna en 4 vikur:\n'
+                                    + '- Algengasta orsök eru sýkingar. Veirur eru lang algengastar. Þar á eftir koma bakteríusýkingar og amöbusýkingar. '
+                                    + 'Oftast lagast einkenni af sjálfu sér á nokkrum dögum/vikum. \n'
+                                    + '- Ræktun skilar jákvæðri niðurstöðu í minnihluta tilfella og er því sjaldnast framkvæmd snemma í gangi veikinda. Sýklalyf hafa yfirleitt lítið að segja.\n'
+                                    + '- Mikilvægt er að passa uppá næringarinntöku, sérstaklega vökvainntöku. Betra er að drekka '
+                                    + 'vökva með söltum en vatn. Einföld heimalausn s.kv. WHO er 1L vatn, 6 teskeiðar sykur, hálf teskeið salt. Sportdrykkir (t.d. gatorade, powerade) eru oft notaðir '
+                                    + 'í sama tilgangi en þeir eru ekki kjörlausn þar sem saltmagnið er gjarnan of lítið og sykurmagnið of hátt. '
+                                    + 'Þá er gott að borða salt og kalíumríka fæðu, svo sem banana, bullion, o.fl. Stemmandi lyf svo sem lóperamíð (imodium, immex o.fl.) geta hjálpað við einkennum.\n'
+                                    + '- Ef niðurgangur stendur í >4 vikur er ástæða til að rannsaka frekar. Ef verður mikil versnun eða koma fram rauð flögg '
+                                    + '(t.d. blóðugur niðurgangur, miklir kviðverkir, hár og langvarandi hiti, mikill slappleiki, merki um mikinn þurrk eða annað sem lýst ekki á) er mikilvægt að hafa samband'
+                            },
+                            { display: 'Heilsugæslan - Niðurgangur og uppköst barna', type: 'hyperlink', url: 'https://heilsugaeslan.is/lisalib/getfile.aspx?itemid=3663' },
+                            { display: 'Heilsuvera.is - Niðurgangur hjá fullorðnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-fullordnum/' },
+                            { display: 'Heilsuvera.is - Niðurgangur hjá börnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-bornum/' },
+                            { display: 'EL - Ferðaráð', type: 'hyperlink', url: 'https://island.is/almenn-ferdarad-heilsa' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            
+                        ]
                     }
                 ], onRightClickOutput: 'Grunur um viral gastroenteritis. Veiti almennar ráðleggingar. Passa vökvainntöku og næringu. Gengur yfirleitt yfir á 1-2 vikum. Endurmat ef lagast ekki eða fyrr ef versnar'
             },
@@ -11405,17 +11425,48 @@ const PlanMelting = [
                     { display: 'Greining', output: 'Niðurgangur' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
+                            {
+                                display: 'Stutt saga - Líklega víral - Ráð - Re PN',
+                                output: 'Skammvinnur niðurgangur, <4 vikur. Veiti ráðleggingar. Algengasta ástæða eru veirusýkingar. Lagast að sjálfu sér í meirihluta tilfella. Ræktun skilar sjaldan jákvæðri niðurstöðu og '
+                                +'sýklalyf hafa yfirleitt lítið að segja. Aðalatriði er að passa uppá næringarinntöku, sérstaklega vökvainntöku. Betra er að drekka '
+                                +'vökva með söltum en vatn. Einföld heimalausn s.kv. WHO er 1L vatn, 6 teskeiðar sykur, hálf teskeið salt. Sportdrykkir (t.d. gatorade, powerade) eru oft notaðir '
+                                +'í sama tilgangi en þeir eru ekki kjörlausn þar sem saltmagnið er gjarnan of lítið og sykurmagnið of hátt. Stemmandi lyf svo sem lóperamíð (imodium, immex o.fl.) geta hjálpað. '
+                                +'Ef niðurgangur stendur í >4 vikur er ástæða til að rannsaka frekar. Ef verður mikil versnun eða koma fram rauð flögg '
+                                +'(t.d. blóðugur niðurgangur, miklir kviðverkir, hár og langvarandi hiti, mikill slappleiki, merki um mikinn þurrk, o.fl.) er mikilvægt að hafa samband'
+                            },
                             { display: 'Stutt saga, stemmandi pn, endurmat ef lagast ekki', output: 'Niðurgangur. Stutt saga. Almennar ráðleggingar. Getur notað stemmandi lyf svo sem lóperamíð PN. Endurmat ef lagast ekki á næstu vikum' },
                             { display: 'Löng saga, hægðasýni', output: 'Niðurgangur. Löng saga. Ráðlegg hægðasýni til frekari greiningar' },
                         ]
                     },
                     { display: 'Ráðleggingar', 
                         subOptions: [
-                            { display: '', output: '' } 
+                            { 
+                                display: 'Almennar við bráðum niðurgangi án rauðra flagga', 
+                                output: 'Veiti ráðleggingar vegna niðurgangs. Algengasta ástæða eru veirusýkingar. Ræktun skilar jákvæðri niðurstöðu í minnihluta tilfella. '
+                                +'Sýklalyf hafa yfirleitt lítið að segja. Lagast að sjálfu sér í meirihluta tilfella. Aðalatriði er að passa uppá næringarinntöku, sérstaklega vökvainntöku. Betra er að drekka '
+                                +'vökva með söltum en vatn. Einföld heimalausn s.kv. WHO er 1L vatn, 6 teskeiðar sykur, hálf teskeið salt. Sportdrykkir (t.d. gatorade, powerade) eru oft notaðir '
+                                +'í sama tilgangi en þeir eru ekki kjörlausn þar sem saltmagnið er gjarnan of lítið og sykurmagnið of hátt. Stemmandi lyf svo sem lóperamíð geta hjálpað. '
+                                +'Ef niðurgangur stendur í >4 vikur er ástæða til að rannsaka frekar. Ef verður mikil versnun eða koma fram rauð flögg '
+                                +'(t.d. blóðugur niðurgangur, miklir kviðverkir, hár og langvarandi hiti, mikill slappleiki, merki um mikinn þurrk, o.fl.) er mikilvægt að hafa samband'
+                            } 
                         ]    
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
+                            {
+                                display: 'Heimaleiðbeiningar við niðurgang',
+                                output: '\n\n'
+                                    + 'Eftirfarandi eru ráð við niðurgangspest sem staðið hefur í minna en 4 vikur:\n'
+                                    + '- Algengasta orsök eru sýkingar. Veirur eru lang algengastar. Þar á eftir koma bakteríusýkingar og amöbusýkingar. '
+                                    + 'Oftast lagast einkenni af sjálfu sér á nokkrum dögum/vikum. \n'
+                                    + '- Ræktun skilar jákvæðri niðurstöðu í minnihluta tilfella og er því sjaldnast framkvæmd snemma í gangi veikinda. Sýklalyf hafa yfirleitt lítið að segja.\n'
+                                    + '- Mikilvægt er að passa uppá næringarinntöku, sérstaklega vökvainntöku. Betra er að drekka '
+                                    + 'vökva með söltum en vatn. Einföld heimalausn s.kv. WHO er 1L vatn, 6 teskeiðar sykur, hálf teskeið salt. Sportdrykkir (t.d. gatorade, powerade) eru oft notaðir '
+                                    + 'í sama tilgangi en þeir eru ekki kjörlausn þar sem saltmagnið er gjarnan of lítið og sykurmagnið of hátt. '
+                                    + 'Þá er gott að borða salt og kalíumríka fæðu, svo sem banana, bullion, o.fl. Stemmandi lyf svo sem lóperamíð (imodium, immex o.fl.) geta hjálpað við einkennum.\n'
+                                    + '- Ef niðurgangur stendur í >4 vikur er ástæða til að rannsaka frekar. Ef verður mikil versnun eða koma fram rauð flögg '
+                                    + '(t.d. blóðugur niðurgangur, miklir kviðverkir, hár og langvarandi hiti, mikill slappleiki, merki um mikinn þurrk eða annað sem lýst ekki á) er mikilvægt að hafa samband'
+                            },
                             { display: 'Heilsugæslan - Niðurgangur og uppköst barna', type: 'hyperlink', url: 'https://heilsugaeslan.is/lisalib/getfile.aspx?itemid=3663' },
                             { display: 'Heilsuvera.is - Niðurgangur hjá fullorðnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-fullordnum/' },
                             { display: 'Heilsuvera.is - Niðurgangur hjá börnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-bornum/' },
@@ -11438,7 +11489,12 @@ const PlanMelting = [
                             { display: 'Uptodate - Travelers\' diarrhea: Treatment and prevention', type: 'hyperlink', url: 'https://www.uptodate.com/contents/travelers-diarrhea-treatment-and-prevention' },
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Skammvinnur niðurgangur, <4 vikur. Veiti ráðleggingar. Algengasta ástæða eru veirusýkingar. Lagast að sjálfu sér í meirihluta tilfella. Ræktun skilar sjaldan jákvæðri niðurstöðu og '
+                                +'sýklalyf hafa yfirleitt lítið að segja. Aðalatriði er að passa uppá næringarinntöku, sérstaklega vökvainntöku. Betra er að drekka '
+                                +'vökva með söltum en vatn. Einföld heimalausn s.kv. WHO er 1L vatn, 6 teskeiðar sykur, hálf teskeið salt. Sportdrykkir (t.d. gatorade, powerade) eru oft notaðir '
+                                +'í sama tilgangi en þeir eru ekki kjörlausn þar sem saltmagnið er gjarnan of lítið og sykurmagnið of hátt. Stemmandi lyf svo sem lóperamíð (imodium, immex o.fl.) geta hjálpað. '
+                                +'Ef niðurgangur stendur í >4 vikur er ástæða til að rannsaka frekar. Ef verður mikil versnun eða koma fram rauð flögg '
+                                +'(t.d. blóðugur niðurgangur, miklir kviðverkir, hár og langvarandi hiti, mikill slappleiki, merki um mikinn þurrk, o.fl.) er mikilvægt að hafa samband'
             },
             {
                 display: 'Hægðatregða',
@@ -11603,8 +11659,78 @@ const PlanMelting = [
                 display: 'Bakflæði',
                 subOptions: [
                     { display: 'Greining', output: 'Bakflæði' },
-                    { display: 'Grunur', output: 'Grunur um bakflæði' }
-                ]
+                    { display: 'Grunur', output: 'Grunur um bakflæði' },
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Bakflæði - Ráð - PPI - Re PN', output: 'Grunur um bakflæðiseinkenni frá vélinda. Ekki koma fram rauð flögg í viðtali. Veiti ráðleggingar um mataræði, lífstíl o.fl. '
+                                +'Ráðlagt að prófa kúr af PPI. Set í gáttina. Endurmat ef einkenni lagast ekki sem og ef eru viðvarandi eða versna þrátt fyrir meðferð'
+                            },
+                            { display: 'Bakflæði - Ráð - PPI+magaspeglun - Hefur sjálfur samband', output: 'Grunur um bakflæðiseinkenni frá vélinda. Veiti ráðleggingar um mataræði, lífstíl o.fl. '
+                                +'Ákveðið að senda tilvísun í magaspeglun til nánari athugunar. Ráðlagt að prófa kúr af PPI. Set í gáttina. Hefur samband að rannsókn lokinni'
+                            },
+                            { display: 'Bakflæði - Ráð - Magaspeglun - Hefur sjálfur samband', output: 'Grunur um bakflæðiseinkenni frá vélinda. Veiti ráðleggingar um mataræði, lífstíl o.fl. '
+                                +'Ákveðið að senda tilvísun í magaspeglun til nánari athugunar. Hefur samband að rannsókn lokinni'
+                            }    
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: 'Ráðleggingar við bakflæði', output: 'Veiti ráðleggingar vegna bakflæði í vélinda. Rætt um orsakaþætti, mataræði, lífstíl, stress og meðferðamöguleika' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            {
+                                display: 'Heimaleiðbeiningar við bakflæði í vélinda',
+                                output: '\n\n'
+                                    + 'Eftirfarandi eru upplýsingar og ráð við bakflæði í vélinda. Algengt er að tengja bakflæðiseinkenni við sýrur í vélinda. Þó það sé stór þáttur er mikilvægt að átta sig á að bakflæðiseinkenni geta komið fram '
+                                    + 'af mörgum ástæðum. Þar má nefna aukið næmi/erting í neðri hluta vélinda, kvíði, stórar máltíðir o.fl. Það er verkefni hvers og eins að læra á eigin líkama til að vita hvað virkar best fyrir sig.\n'
+                                    + '- Matarvenjur. Ráðlagt er að gefa sér góðan tíma í að borða og passa sig að ekki borða of mikið í einu. Einnig er ráðlagt að forðast að borða mikið rétt fyrir háttinn. '
+                                    + 'Það getur hjálpað að hækka höfuðlag á rúmmi svo sýrur renna síður aftur uppí vélindað. Vinstri hliðarlega getur líka hjálpað.\n'
+                                    + '- Mataræði. Ráðlagt að forðast mjög fituríka fæðu (svo sem djúpsteiktan mat, feitar sósur, mikið smjör o.s.frv). Forðast sterka fæðu. Áfengi og kaffi í miklu magni ýtir undir bakflæðiseinkenni. Gosdrykkir geta einnig '
+                                    + 'ýtt undir bakflæði en kolsýran er þá talin orsakavaldurinn. Mikilvægt er að skoða eigið mynstur til að finna nákvæmlega hvaða fæðutegundir ýta undir bakflæði hjá hverjum og einum.\n'
+                                    + '- Lífstíll. Að vera í yfirþyngd getur ýtt undir bakflæðiseinkenni m.a. með því að auka þrýstinginn í kviðarholinu. Sama gildir með þröng föt og belti. Reykingar hafa neikvæð áhrif á bakflæðiseinkenni. '
+                                    + 'Regluleg hreyfing er mikilvæg og hefur jákvæð áhrif en ef stunduð er líkamsrækt í óhófi getur það stundum ýtt undir vandann.\n'
+                                    + '- Stress. Bæði stress og kvíði geta aukið á bakflæðiseinkenni á margvíslegan hátt. Þar má nefna að sýruframleiðsla eykst, fæða fer hægar í gegnum meltingarkerfið, næmi við sýru eykst og magavélindaopið virkar verr.\n'
+                                    + '- Lyf við bakflæði. Sýrustillandi lyf fást án lyfseðils í apóteki. Oftast er um að ræða sýrubindandi saltsambönd (rennie, gaviscon o.fl.). Ef það dugar illa eru prófuð s.k. prótónpumpuhemmlar (omeprazol, esomeprazol) í lágum skömmtum. '
+                                    + 'Þau fást einnig án lyfseðils í apóteki en fyrir lengri meðferðir þarf lyfseðil og er það gert í samráði við lækni.\n'
+                                    + '- Rannsóknir við bakflæði í vélinda. Oftast er ekki þörf á frekari rannsóknum við bakflæði í vélinda. Atriði sem tala fyrir að þörf sé á frekari rannsóknum eru m.a. '
+                                    + 'aldur >60 ára við upphaf einkenna, merki um blæðingu í meltingarvegi (kolsvartar hægðir, ferskt blóð í hægðum, blóðug uppköst, breytingar á blóðprufum), óútskýrt þyngdartap, erfiðleikar við kyngingu, fjölskyldusaga um ákveðin meltingarfærakrabbamein '
+                                    + 'o.fl. Einnig er stundum rannsakað ef áhættuþættir fyrir Barret\'s esophagus eru til staðar en þeir eru m.a. mikil einkenni samfellt í 5-10 ár, karlkyn, hvítur kynþáttur, yfirþyngd, hernía, reykingarsaga, fjölskyldusaga o.fl. '
+                                    + 'Tilvísun í magaspeglun er gerð í samráði við heimilislækni'
+                            },
+                            { display: 'Heilsuvera.is - Bakflæði', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/bakflaedi/' },
+                            {
+                                display: 'Uptodate',
+                                subOptions: [
+                                    { display: 'Acid reflux and GERD in adults (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acid-reflux-and-gerd-in-adults-the-basics' },
+                                    { display: 'Gastroesophageal reflux disease in adults (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/gastroesophageal-reflux-disease-in-adults-beyond-the-basics' },
+                                    { display: 'Acid reflux and GERD in children and teens (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acid-reflux-and-gerd-in-children-and-teens-the-basics' },
+                                    { display: 'Gastroesophageal reflux disease in children and adolescents (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/gastroesophageal-reflux-disease-in-children-and-adolescents-beyond-the-basics' },
+                                    { display: 'Spitting up and GERD in babies (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/spitting-up-and-gerd-in-babies-the-basics' },
+                                    { display: 'Acid reflux and GERD during pregnancy (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acid-reflux-and-gerd-during-pregnancy-the-basics' },
+                                    { display: 'Bland diet (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/bland-diet-the-basics' },
+                                    
+                                    
+                                ]
+                            },
+                            { display: 'Landspítali - Bakflæðisaðgerð (fræðslubæklingur)', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Skurdlaekningasvid/bakflaedisadgerd_2020.pdf' },
+                            { display: 'Landspítali - Vélindabakflæði og nissen aðgerð hjá börnum', type: 'hyperlink', url: 'https://www.landspitali.is/lisalib/getfile.aspx?itemid=70eee179-ac19-11e2-9ccc-005056be0005' },
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Greining fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/clinical-manifestations-and-diagnosis-of-gastroesophageal-reflux-in-adults' },
+                            { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/initial-management-of-gastroesophageal-reflux-disease-in-adults' },
+                            { display: 'Uptodate - Meðferðartregt bakflæði fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/approach-to-refractory-gastroesophageal-reflux-disease-in-adults' },
+                            { display: 'Uptodate - Greining barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/gastroesophageal-reflux-disease-in-children-and-adolescents-clinical-manifestations-and-diagnosis' },
+                            { display: 'Uptodate - Meðferð barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/gastroesophageal-reflux-disease-in-children-and-adolescents-management' },
+                            { display: 'Uptodate - Nýburar', type: 'hyperlink', url: 'https://www.uptodate.com/contents/gastroesophageal-reflux-in-infants' },
+                            
+                        ]
+                    }
+                ], onRightClickOutput: 'Grunur um bakflæðiseinkenni frá vélinda. Ekki koma fram rauð flögg í viðtali. Veiti ráðleggingar um mataræði, lífstíl o.fl. '
+                                +'Ráðlagt að prófa kúr af PPI. Set í gáttina. Endurmat ef einkenni lagast ekki sem og ef eru viðvarandi eða versna þrátt fyrir meðferð'
             }
         ]
     },    
