@@ -16317,6 +16317,120 @@ const SymptomsBack = [
     
     Vaktaheader,
     Timalengd2,
+    {
+        name: '',
+        type: 'options',
+        display: ['Komuástæða', 'Staðsetning', 'Leiðni'],
+        options: [
+            {
+                display: '',
+                subOptions: [
+                    { display: 'Bakverkur', output: 'Leitar vegna bakverks' },
+                    {
+                        display: 'Langvarandi bakverkur',
+                        output: 'Leitar vegna langvarandi sögu um bakverki'
+                    }
+                ],
+                onRightClickOutput: ''
+            },
+            {
+                display: '',
+                subOptions: [
+                    { display: 'Lendhrygg', output: 'Staðsettur á lendhryggjasvæði' },
+                    {
+                        display: 'Thorax',
+                        output: 'Staðsettur á thoraxsvæði'
+                    },
+                    {
+                        display: 'Gluteal',
+                        subOptions:
+                        [
+                            {
+                                display: 'Hægri',
+                                output: 'Staðsettur á gluteal svæði hægra megin'
+                            },
+                            {
+                                display: 'Vinstri',
+                                output: 'Staððsettur á gluteal svæði vinstra megin'
+                            },
+                            {
+                                display: 'Beggja vegna',
+                                output: 'Staðsettur á gluteal svæði beggja vegna'
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: ''
+            },
+            {
+                display:'',
+                subOptions: [
+                    {
+                        display: 'Nára',
+                        subOptions:
+                        [
+                            {
+                                display: 'Hægri',
+                                output: 'Leiðir út í nára hægra megin'
+                            },
+                            {
+                                display: 'Vinstri',
+                                output: 'Leiðir út í nára vinstra megin'
+                            },
+                            {
+                                display: 'Beggja vegna',
+                                output: 'Leiðir út í nára beggja vegna'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Fótlegg',
+                        subOptions:
+                        [
+                            {
+                                display: 'Hægri',
+                                output: 'Leiðir niður hægri fót'
+                            },
+                            {
+                                display: 'Vinstri',
+                                output: 'Leiðir niður vinstri fót'
+                            },
+                            {
+                                display: 'Beggja vegna',
+                                output: 'Leiðir niður fætur beggja vegna'
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Verkurinn leiðir ekki'
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Onset', 'Áverki'],
+        options: [
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: 'Hægt og rólega', output: 'Byrjaði hægt og rólega' },
+                    { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
+                    { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
+                ]
+            },
+            {
+                display: 'Áverki',
+                subOptions: [
+                    {
+                        display: 'Nýlegur áverki',
+                        output: 'Lenti nýlega í áverka'
+                    }
+                ],
+                onRightClickOutput: 'Ekkert sem kom fyrir'
+            }
+        ]
+    }
     /*
     {
         name: '',
@@ -16654,7 +16768,7 @@ const RaudFloggBak = [
         options: [
             {
                 display: 'Sprautufíkn', 
-                suboptions: [
+                subOptions: [
                     {
                         display: 'Saga um', output: 'Saga um sprautufíkn'
                     },
@@ -17078,7 +17192,7 @@ const PlanBack = [
                                 +'ekki er ráðlagt að vera rúmliggjandi. Létt hreyfing svo sem ganga eða sund ráðlögð. Því fyrr sem '
                                 +'komist er í venjulega rútínu því betra. Set NSAIDS í gáttina en þau geta slegið á einkenni. '
                                 +'Flestir lagast að sjálfu sér á 6-8 vikum. Ef einkenni lagast ekki á þeim tíma er ráðlagt að hafa '
-                                +'samband. Fyrr ef versnar. Einnig getur sjúkraþjálfun verið að gagni'
+                                +'samband. Fyrr ef versnar'
                              },
                              {
                                 display: 'Ekki lagast - Myndataka - Pantar sér símatíma fyrir niðurstöður',
@@ -17139,7 +17253,7 @@ const PlanBack = [
                                 +'ekki er ráðlagt að vera rúmliggjandi. Létt hreyfing svo sem ganga eða sund ráðlögð. Því fyrr sem '
                                 +'komist er í venjulega rútínu því betra. Set NSAIDS í gáttina en þau geta slegið á einkenni. '
                                 +'Flestir lagast að sjálfu sér á 6-8 vikum. Ef einkenni lagast ekki á þeim tíma er ráðlagt að hafa '
-                                +'samband. Fyrr ef versnar. Einnig getur sjúkraþjálfun verið að gagni'
+                                +'samband. Fyrr ef versnar'
             }
         ]
     },
@@ -34718,6 +34832,21 @@ function loadPage(page) {
         const myndbandHeader = document.createElement('h2');
         myndbandHeader.textContent = 'Sýningarmyndbönd';
         middleColumn.appendChild(myndbandHeader);
+
+        // Right column
+
+        // Disclaimer Header and Text
+        const disclaimerHeader = document.createElement('h2');
+        disclaimerHeader.textContent = 'Disclaimer';
+        disclaimerHeader.className = 'header-spacing';  // Add spacing class
+        rightColumn.appendChild(disclaimerHeader);
+
+        const disclaimerText = document.createElement('p');
+        disclaimerText.textContent = 
+            'QTnote er ætlað til að aðstoða lækna við skráningu. Engin gögn eru geymd á síðunni og ábyrgjumst við ekki ef skráning með einhverjum hætti skyldu tapast við notkun viðmótsins. '
+            + 'Einnig er mikilvægt að nefna að þar sem þetta er verkefni í virkri þróun geta komið fram villur sem við vinnum í að leiðrétta jafn óðum. Læknar sem nota viðmótið ábyrgjast alfarið að lokaskráning sé rétt.';
+        rightColumn.appendChild(disclaimerText);
+
     
         // Create the horizontal container and append the columns
         const horizontalContainer = document.createElement('div');
