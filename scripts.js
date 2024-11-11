@@ -2883,7 +2883,62 @@ const KerfakonnunData = [
             }
         ]
     }
-]; 
+];
+
+const Heilsuvera = [
+    {
+        name: '',
+    type: 'options',
+    display: ['Almennt','Háþrýstingslyf', 'Verkjalyf'],
+    options: [
+        {
+            display: 'Almennt',
+            subOptions: [
+                { 
+                    display: 'Hafnað - Pantið tíma', output: 'Ekki hægt að endurnýja lyf í gegnum heilsuveru. Vinsamlega pantið tíma hjá lækni í gegnum afgreiðslu'
+
+                },
+                { 
+                    display: 'Of stutt liðið frá síðustu endurnýjun', output: 'Lyfjaendurnýjun hafnað. Of stutt er liðið frá síðustu endurnýjun'
+
+                },
+                {
+                    display: 'Pantið tíma í afgreiðslu',
+                    output: 'Vinsamlega pantið tíma í gegnum afgreiðslu'
+                },
+                {
+                    display: 'Til óútleyst',
+                    output: 'Lyf er til óútleyst í apóteki'
+                }
+            ],
+            onRightClickOutput: ''
+        },
+        {
+            display: 'Háþrýstingslyf',
+            subOptions: [
+                { 
+                    display: 'Viðmið háþrýstingseftirlit', output: 'Upplýsingar við endurnýjun háþrýstingslyfja. Ráðlagt er að mæta til læknis í háþrýstingseftirlit árlega. Ef ' 
+                    + 'liðið er lengra síðan er ráðlagt að panta tíma í gegnum afgreiðslu'
+
+                },
+            ],
+            onRightClickOutput: 'Upplýsingar við endurnýjun háþrýstingslyfja. Ráðlagt er að mæta til læknis í háþrýstingseftirlit árlega. Ef ' 
+                    + 'liðið er lengra síðan er ráðlagt að panta tíma í gegnum afgreiðslu'
+        },
+        {
+            display: 'Verkjalyf',
+            subOptions: [
+                { 
+                    display: 'Ávanabindandi - Hafnað - Bókið tíma', output: 'Þar sem verkjalyf sem óskað er eftir endurnýjun á getur verið ávanabindandi getur endurnýjun ekki farið fram í gegnum heilsuveru. '
+                    + 'Vinsamlega pantið tíma hjá lækni í gegnum afgreiðslu'
+
+                },
+            ],
+            onRightClickOutput: ''
+        }
+    ]
+    }
+]
 
 // Viral symptoms
 const SymptomsViral = [
@@ -14908,7 +14963,7 @@ const PlanShoulder = [
     {
         name: '',
         type: 'options',
-        display: ['Axlarmeinsemd', 'Áverki', 'Impingement', 'Aðrar greiningar'],
+        display: ['Axlarmeinsemd', 'Tognun', 'Áverki', 'Impingement', 'Aðrar greiningar'],
         options: [
             {
                 display: 'Axlarmeinsemd',
@@ -14941,6 +14996,38 @@ const PlanShoulder = [
                     
                 ],
                 onRightClickOutput: ''
+            },
+            {
+                display: 'Tognun',
+                subOptions: [
+                    { display: 'Greining', output: 'Tognun á öxl' },
+                    { display: 'Grunur', output: 'Grunur um tognun á öxl'},
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Tognun - Hvíld - RICE+bólgueyðandi - Re PN', output: 'Tognun á öxl. Veiti ráðleggingar. RICE. Verkjalyf eftir þörfum. Endurmat ef einkenni lagast ekki á næstu dögum' },
+                            { display: 'Tognun - Hvíld - RICE+bólgueyðandi - Sjúkraþjálfun - Re PN', output: 'Tognun á öxl. Veiti ráðleggingar. RICE. Verkjalyf eftir þörfum. Tilvísun í sjúkraþjálfun. Endurmat ef einkenni lagast ekki á næstu dögum' },
+                            
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Evaluation of the adult with shoulder complaints', type: 'hyperlink', url: 'https://www.uptodate.com/contents/evaluation-of-the-adult-with-shoulder-complaints' }
+                        ]
+                    }
+                    
+                ],
+                onRightClickOutput: 'Tognun á öxl. Veiti ráðleggingar. RICE. Verkjalyf eftir þörfum. Endurmat ef einkenni lagast ekki á næstu dögum'
             },
             {
                 display: 'Áverki',
@@ -16320,12 +16407,13 @@ const SymptomsBack = [
     {
         name: '',
         type: 'options',
-        display: ['Komuástæða', 'Staðsetning', 'Leiðni'],
+        display: ['Komuástæða', 'Onset', 'Áverki', 'Fengið áður'],
         options: [
             {
                 display: '',
                 subOptions: [
-                    { display: 'Bakverkur', output: 'Leitar vegna bakverks' },
+                    { display: 'Bakverkur', output: 'Bakverkur' },
+                    { display: 'Leitar vegna bakverks', output: 'Leitar vegna bakverks' },
                     {
                         display: 'Langvarandi bakverkur',
                         output: 'Leitar vegna langvarandi sögu um bakverki'
@@ -16333,6 +16421,59 @@ const SymptomsBack = [
                 ],
                 onRightClickOutput: ''
             },
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: 'Hægt og rólega', output: 'Byrjaði hægt og rólega' },
+                    { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
+                    { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
+                ]
+            },
+            {
+                display: 'Áverki',
+                subOptions: [
+                    {
+                        display: 'Nýlegur áverki',
+                        output: 'Lenti nýlega í áverka'
+                    },
+                    {
+                        display: 'Lyfti þungu',
+                        output: 'Var að lyfta þungu þegar einkenni byrjuðu'
+                    }
+                ],
+                onRightClickOutput: 'Ekkert sem kom fyrir'
+            },
+            {
+                display: 'Fengið áður',
+                subOptions:
+                [
+                    {
+                        display: 'NOS',
+                        output: 'Hefur fengið sambærileg einkenni áður',
+                    },
+                    {
+                        display: 'Kannast við',
+                        output: 'Kannast við einkennin'
+                    },
+                    {
+                        display: 'Oft áður',
+                        output: 'Fengið sambærileg einkenni oft áður'
+                    },
+                    {
+                        display: 'Endurtekin köst',
+                        output: 'Saga um endurtekin bakverkjaköst'
+                    }
+                ],
+                
+                onRightClickOutput: 'Aldrei fundið fyrir sambærilegum einkennum áður'
+            },
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Staðsetning', 'Leiðni', 'Versnar', 'Skánar', 'Severity'],
+        options: [
             {
                 display: '',
                 subOptions: [
@@ -16402,32 +16543,85 @@ const SymptomsBack = [
                         ]
                     }
                 ],
-                onRightClickOutput: 'Verkurinn leiðir ekki'
+                onRightClickOutput: 'Leiðir ekki'
+            },
+            {
+                display: 'Versnar',
+                subOptions: [
+                    { display: 'Við hreyfingu', output: 'Versnar við hreyfingu' },
+                    { display: 'Við setu', output: 'Versnar við að sitja' },
+                    { display: 'Við standandi stöðu', output: 'Versnar við að standa' },
+                    { display: 'Við framhalla', output: 'Versnar við að halla sér fram' },
+                    { display: 'Við bakhalla', output: 'Versnar við að halla sér aftur' },
+                    { display: 'Við lyftingu', output: 'Versnar við að lyfta þungu' },
+                    {
+                        display: 'Næturlagi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Versnar á nóttunni' },
+                            { display: 'Vaknar vegna verkja', output: 'Vaknar á nóttunni vegna verkja' },
+                            { display: 'Sofnar ekki og vaknar', output: 'Á erfitt með svefn vegna verkja' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekkert sem gerir verkinn verri'
+            },
+            {
+                display: 'Skánar',
+                subOptions: [
+                    { display: 'Við hvíld', output: 'Skánar við hvíld' },
+                    { display: 'Við liggjandi stöðu', output: 'Skánar við að leggjast' },
+                    { display: 'Við hita', output: 'Skánar við hita' },
+                    { display: 'Við teygjur', output: 'Skánar við teygjur' },
+                    { display: 'Við verkjalyf', output: 'Skánar við töku verkjalyfja' }
+                ],
+                onRightClickOutput: 'Ekkert sem gerir verkinn betri'
+            },
+            {
+                display: 'Severity',
+                subOptions: [
+                    { display: '1', output: 'Skalar verkinn 1/10' },
+                    { display: '2', output: 'Skalar verkinn 2/10' },
+                    { display: '3', output: 'Skalar verkinn 3/10' },
+                    { display: '4', output: 'Skalar verkinn 4/10' },
+                    { display: '5', output: 'Skalar verkinn 5/10' },
+                    { display: '6', output: 'Skalar verkinn 6/10' },
+                    { display: '7', output: 'Skalar verkinn 7/10' },
+                    { display: '8', output: 'Skalar verkinn 8/10' },
+                    { display: '9', output: 'Skalar verkinn 9/10' },
+                    { display: '10', output: 'Skalar verkinn 10/10' }
+                ]
             }
         ]
     },
     {
         name: '',
         type: 'options',
-        display: ['Onset', 'Áverki'],
+        display: ['Verkjalyf'],
+        options: [
+            Verkjalyf
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Fyrri áverkar', 'Aðgerðasaga'],
         options: [
             {
-                display: 'Onset',
+                display: 'Fyrri áverkar',
                 subOptions: [
-                    { display: 'Hægt og rólega', output: 'Byrjaði hægt og rólega' },
-                    { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
-                    { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
-                ]
+                    { display: 'Samfallsbrot', output: 'Saga um samfallsbrot á hrygg' },
+                    { display: 'Brot', output: 'Saga um brot á hrygg' }
+                ],
+                onRightClickOutput: 'Engin saga um fyrri áverka á hrygg'
             },
             {
-                display: 'Áverki',
+                display: 'Aðgerðasaga',
                 subOptions: [
-                    {
-                        display: 'Nýlegur áverki',
-                        output: 'Lenti nýlega í áverka'
-                    }
+                    { display: 'NOS', output: 'Aðgerðasaga á baki' },
+                    { display: 'Hryggspenging', output: 'Saga um hryggspengingu' },
+                    { display: 'Brjósklosaðgerð', output: 'Saga um aðgerð vegna brjóskloss' }
                 ],
-                onRightClickOutput: 'Ekkert sem kom fyrir'
+                onRightClickOutput: 'Engin saga um aðgerðir á baki'
             }
         ]
     }
@@ -34291,6 +34485,7 @@ const pageDefinitions = {
             ],
             [
                 { id: 'rannsoknir', title: 'Rannsóknarniðurstöður', data: RannsoknData },
+                { id: 'einkenni', title: 'Heilsuvera', data: Heilsuvera },
             ],
             [
                 // Empty column
