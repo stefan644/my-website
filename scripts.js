@@ -1391,25 +1391,424 @@ const Hlekkir = [
                 ]
             }
         ]
-    },
+    }
+    
+    
+];
+const Simanumer = [
     {
         name: '',
         type: 'options',
-        display: ['Símanúmer'],
+        display: ['LSH', 'Myndgreining', 'Apótek'],
         options: [
             {
-                display: 'Símanúmer',
+                display: 'LSH',
                 subOptions: [
-                    { display: 'Ráðgjafasími LSH 543-3400', type: 'hyperlink', url: 'tel:5433400' },
-                    { display: '', type: 'hyperlink', url: '' },
-                    { display: '', type: 'hyperlink', url: '' },
-                    { display: '', type: 'hyperlink', url: '' }
+                    { display: 'Samskiptaleiðir LSH (Yfirlitssíða)', type: 'hyperlink', url: 'https://www.landspitali.is/um-landspitala/hafdu-samband/samskiptaleidir/'},
+                    { display: 'Ráðgjafasími 543-3400', type: 'hyperlink', url: 'tel:5433400' }
+                ]
+            },
+            {
+                display: 'Myndgreining',
+                subOptions: [
+                    { display: 'Orkuhúsið - 520-0100', type: 'hyperlink', url: 'tel:5200100' },
+                    { display: 'Röntgen Domus - 551 9333', type: 'hyperlink', url: 'tel:5519333' },
                     
+                    
+                ]
+            },
+            {
+                display: 'Apótek',
+                subOptions: [
+                    {
+                        display: 'Lyfjaver - 5336101', type: 'hyperlink', url: 'tel:5336101'
+                    },
+                    {
+                        display: 'Lyfja - Höfuðborgarsvæðið',
+                        subOptions: [
+                            {
+                                display: 'Árbær - 5674201',
+                                type: 'hyperlink',
+                                url: 'tel:5674201'
+                            },
+                            {
+                                display: 'Garðatorg - 5651321',
+                                type: 'hyperlink',
+                                url: 'tel:5651321'
+                            },
+                            {
+                                display: 'Grafarholt - 5174451',
+                                type: 'hyperlink',
+                                url: 'tel:5174451'
+                            },
+                            {
+                                display: 'Grandi - 5123772',
+                                type: 'hyperlink',
+                                url: 'tel:5123772'
+                            },
+                            {
+                                display: 'Hafnarstræti - 5524050',
+                                type: 'hyperlink',
+                                url: 'tel:5524050'
+                            },
+                            {
+                                display: 'Hólagarður - 5772610',
+                                type: 'hyperlink',
+                                url: 'tel:5772610'
+                            },
+                            {
+                                display: 'Lágmúli - 5332303',
+                                type: 'hyperlink',
+                                url: 'tel:5332303'
+                            },
+                            {
+                                display: 'Lyfja Heyrn - 5189500',
+                                type: 'hyperlink',
+                                url: 'tel:5189500'
+                            },
+                            {
+                                display: 'Mosfellsbær - 4160101',
+                                type: 'hyperlink',
+                                url: 'tel:4160101'
+                            },
+                            {
+                                display: 'Nýbýlavegur - 5272757',
+                                type: 'hyperlink',
+                                url: 'tel:5272757'
+                            },
+                            {
+                                display: 'Skeifan - 5564800',
+                                type: 'hyperlink',
+                                url: 'tel:5564800'
+                            },
+                            {
+                                display: 'Skrifstofa Lyfju - 5303800',
+                                type: 'hyperlink',
+                                url: 'tel:5303800'
+                            },
+                            {
+                                display: 'Smáralind - 5305802',
+                                type: 'hyperlink',
+                                url: 'tel:5305802'
+                            },
+                            {
+                                display: 'Smáratorg - 5645610',
+                                type: 'hyperlink',
+                                url: 'tel:5645610'
+                            },
+                            {
+                                display: 'Spöngin - 5773502',
+                                type: 'hyperlink',
+                                url: 'tel:5773502'
+                            }                                    
+                        ]
+                    },
+                    {
+                        display: 'Lyfja - Landsbyggðin',
+                        subOptions: [
+                            {
+                                display: 'Akureyri - 4613921',
+                                type: 'hyperlink',
+                                url: 'tel:4613921'
+                            },
+                            {
+                                display: 'Blönduós - 4535700',
+                                type: 'hyperlink',
+                                url: 'tel:4535700'
+                            },
+                            {
+                                display: 'Borgarnes - 4371268',
+                                type: 'hyperlink',
+                                url: 'tel:4371268'
+                            },
+                            {
+                                display: 'Búðardalur - 4372268',
+                                type: 'hyperlink',
+                                url: 'tel:4372268'
+                            },
+                            {
+                                display: 'Djúpivogur - 4711809',
+                                type: 'hyperlink',
+                                url: 'tel:4711809'
+                            },
+                            {
+                                display: 'Egilsstaðir - 4711273',
+                                type: 'hyperlink',
+                                url: 'tel:4711273'
+                            },
+                            {
+                                display: 'Eskifjörður - 5715760',
+                                type: 'hyperlink',
+                                url: 'tel:5715760'
+                            },
+                            {
+                                display: 'Grundarfjörður - 4381141',
+                                type: 'hyperlink',
+                                url: 'tel:4381141'
+                            },
+                            {
+                                display: 'Höfn - 5174451',
+                                type: 'hyperlink',
+                                url: 'tel:5174451'
+                            },
+                            {
+                                display: 'Húsavík - 4641242',
+                                type: 'hyperlink',
+                                url: 'tel:4641242'
+                            },
+                            {
+                                display: 'Hvammstangi - 4535700',
+                                type: 'hyperlink',
+                                url: 'tel:4535700'
+                            },
+                            {
+                                display: 'Ísafjörður - 4565442',
+                                type: 'hyperlink',
+                                url: 'tel:4565442'
+                            },
+                            {
+                                display: 'Kópasker - 4641242',
+                                type: 'hyperlink',
+                                url: 'tel:4641242'
+                            },
+                            {
+                                display: 'Mývatn - 4641242',
+                                type: 'hyperlink',
+                                url: 'tel:4641242'
+                            },
+                            {
+                                display: 'Neskaupstaður - 5715760',
+                                type: 'hyperlink',
+                                url: 'tel:5715760'
+                            },
+                            {
+                                display: 'Patreksfjörður - 4565442',
+                                type: 'hyperlink',
+                                url: 'tel:4565442'
+                            },
+                            {
+                                display: 'Raufarhöfn - 4641242',
+                                type: 'hyperlink',
+                                url: 'tel:4641242'
+                            },
+                            {
+                                display: 'Reykjanesbær - 4216566',
+                                type: 'hyperlink',
+                                url: 'tel:4216566'
+                            },
+                            {
+                                display: 'Reyðarfjörður - 5715760',
+                                type: 'hyperlink',
+                                url: 'tel:5715760'
+                            },
+                            {
+                                display: 'Sauðárkrókur - 4535700',
+                                type: 'hyperlink',
+                                url: 'tel:4535700'
+                            },
+                            {
+                                display: 'Selfoss - 4823920',
+                                type: 'hyperlink',
+                                url: 'tel:4823920'
+                            },
+                            {
+                                display: 'Setberg - 5552302',
+                                type: 'hyperlink',
+                                url: 'tel:5552302'
+                            },
+                            {
+                                display: 'Seyðisfjörður - 4711273',
+                                type: 'hyperlink',
+                                url: 'tel:4711273'
+                            },
+                            {
+                                display: 'Skagaströnd - 4535700',
+                                type: 'hyperlink',
+                                url: 'tel:4535700'
+                            },
+                            {
+                                display: 'Stykkishólmur - 4381141',
+                                type: 'hyperlink',
+                                url: 'tel:4381141'
+                            },
+                            {
+                                display: 'Stöðvarfjörður - 4711809',
+                                type: 'hyperlink',
+                                url: 'tel:4711809'
+                            },
+                            {
+                                display: 'Þingeyri - 4568420',
+                                type: 'hyperlink',
+                                url: 'tel:4568420'
+                            },
+                            {
+                                display: 'Þórshöfn - 4641242',
+                                type: 'hyperlink',
+                                url: 'tel:4641242'
+                            }
+                            
+                        ]
+                    },
+                    {
+                        display: 'Apótekarinn - Höfuðborgarsvæðið',
+                        subOptions: [
+                            {
+                                display: 'Austurver - 5812101',
+                                type: 'hyperlink',
+                                url: 'tel:5812101'
+                            },
+                            {
+                                display: 'Bíldshöfði - 5272582',
+                                type: 'hyperlink',
+                                url: 'tel:5272582'
+                            },
+                            {
+                                display: 'Fjarðarkaupum - 5556801',
+                                type: 'hyperlink',
+                                url: 'tel:5556801'
+                            },
+                            {
+                                display: 'Hamraborg - 5540101',
+                                type: 'hyperlink',
+                                url: 'tel:5540101'
+                            },
+                            {
+                                display: 'Helluhrauni - 5543010',
+                                type: 'hyperlink',
+                                url: 'tel:5543010'
+                            },
+                            {
+                                display: 'Höfði (Húsagnahöllinni) - 5687041',
+                                type: 'hyperlink',
+                                url: 'tel:5687041'
+                            },
+                            {
+                                display: 'Kirkjusandur - 5162013',
+                                type: 'hyperlink',
+                                url: 'tel:5162013'
+                            },
+                            {
+                                display: 'Mosfellsbær - 5666640',
+                                type: 'hyperlink',
+                                url: 'tel:5666640'
+                            },
+                            {
+                                display: 'Mjódd - 5172522',
+                                type: 'hyperlink',
+                                url: 'tel:5172522'
+                            },
+                            {
+                                display: 'Salavegur - 5343032',
+                                type: 'hyperlink',
+                                url: 'tel:5343032'
+                            },
+                            {
+                                display: 'Skipholt - 5517222',
+                                type: 'hyperlink',
+                                url: 'tel:5517222'
+                            },
+                            {
+                                display: 'Vallakór - 5343082',
+                                type: 'hyperlink',
+                                url: 'tel:5343082'
+                            }
+                            
+                        ]
+                    },
+                    {
+                        display: 'Apótekarinn - Landsbyggðin',
+                        subOptions: [
+                            {
+                                display: 'Dalvík - 4603456',
+                                type: 'hyperlink',
+                                url: 'tel:4603456'
+                            },
+                            {
+                                display: 'Fjarðarkaupum - 5556801',
+                                type: 'hyperlink',
+                                url: 'tel:5556801'
+                            },
+                            {
+                                display: 'Hafnarstræti, Akureyri - 4603456',
+                                type: 'hyperlink',
+                                url: 'tel:4603456'
+                            },
+                            {
+                                display: 'Hella - 4875030',
+                                type: 'hyperlink',
+                                url: 'tel:4875030'
+                            },
+                            {
+                                display: 'Hólmavík - 4512552',
+                                type: 'hyperlink',
+                                url: 'tel:4512552'
+                            },
+                            {
+                                display: 'Hrísey - 4622444',
+                                type: 'hyperlink',
+                                url: 'tel:4622444'
+                            },
+                            {
+                                display: 'Hveragerði - 4834349',
+                                type: 'hyperlink',
+                                url: 'tel:4834349'
+                            },
+                            {
+                                display: 'Keflavík - 4213944',
+                                type: 'hyperlink',
+                                url: 'tel:4213944'
+                            },
+                            {
+                                display: 'Selfoss - 4821206',
+                                type: 'hyperlink',
+                                url: 'tel:4821206'
+                            },
+                            {
+                                display: 'Skagaströnd - 4512432',
+                                type: 'hyperlink',
+                                url: 'tel:4512432'
+                            },
+                            {
+                                display: 'Þórshöfn - 4835030',
+                                type: 'hyperlink',
+                                url: 'tel:4835030'
+                            },
+                            {
+                                display: 'Vestmannaeyjar - 4813902',
+                                type: 'hyperlink',
+                                url: 'tel:4813902'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Lyf og heilsa',
+                        subOptions: [
+                            {
+                                display: 'Lyf & heilsa Granda - 5614604',
+                                type: 'hyperlink',
+                                url: 'tel:5614604'
+                            },
+                            {
+                                display: 'Lyf & heilsa Kringlan - 5689935',
+                                type: 'hyperlink',
+                                url: 'tel:5689935'
+                            },
+                            {
+                                display: 'Lyf & heilsa Glerártorgi - 4615802',
+                                type: 'hyperlink',
+                                url: 'tel:4615802'
+                            },
+                            {
+                                display: 'Lyf & heilsa Firði - 5551600',
+                                type: 'hyperlink',
+                                url: 'tel:5551600'
+                            }
+                        ]
+                    }
                 ]
             }
         ]
     }
-    
 ];
 
 
@@ -2909,6 +3308,10 @@ const Heilsuvera = [
                 {
                     display: 'Til óútleyst',
                     output: 'Lyf er til óútleyst í apóteki'
+                },
+                {
+                    display: 'Ekki áður ávísað af stofnun',
+                    output: 'Lyfi hefur ekki áður verið ávísað af stofnun. Vinsamlegast pantið tíma hjá lækni til að skoða nánar'
                 }
             ],
             onRightClickOutput: ''
@@ -34496,6 +34899,7 @@ const pageDefinitions = {
         columns: [
             [
                 { id: 'hlekkir', title: 'Hlekkir', data: Hlekkir },
+                { id: 'hlekkir', title: 'Símanúmer', data: Simanumer }
             ],
             [],
             [],
