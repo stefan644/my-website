@@ -656,3 +656,17 @@ main {
 .form-description {
     margin-bottom: 30px; /* Adjust this value for specific elements like "Hafðu Samband" */
 }
+
+.stack-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack the name (mini header) above the buttons */
+    gap: 5px; /* Space between name and buttons */
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap; /* Ensure buttons flow inline or wrap if needed */
+    gap: 10px; /* Maintain spacing between buttons */
+}
+
+
