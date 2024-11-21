@@ -156,6 +156,7 @@ main {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 7px; /* Add margin to separate rows */
 }
 
 .data-row span {
@@ -384,13 +385,25 @@ main {
 }
 
 .data-row {
-    margin-bottom: px;
+    margin-bottom: 5px;
 }
 
 .item-label {
     font-weight: bold;
     margin-bottom: 5px;
+    cursor: pointer; /* Indicates interactivity */
+    display: inline; /* Make the label only as wide as its content */
 }
+
+
+.collapsible-group {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* Dropdown container */
 .dropdown {
