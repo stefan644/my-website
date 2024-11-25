@@ -21,6 +21,7 @@
     <header>
         <h1>QTnote</h1>
         <nav class="page-navigation">
+            <button onclick="loadPage('Settings')">Stillingar</button>
             <button onclick="loadPage('Upplýsingar')">Upplýsingar</button>
             <button onclick="loadPage('Hlekkir')">Fræðsluefni</button>
             <button onclick="loadPage('Almennt')">Almennt/Í vinnslu</button>
@@ -69,6 +70,13 @@
     <main>
         <div id="content-section" class="flex-container-row">
             <!-- Page content will be dynamically loaded here -->
+        </div>
+        <div id="settings-section" style="display: none;">
+            <h2>Settings</h2>
+            <div class="settings-option">
+                <label for="note-mode">Note Mode:</label>
+                <button id="noteModeToggle" onclick="toggleNoteMode()">Simple Note</button>
+            </div>
         </div>
         <div class="text-editor-container">
             <div class="text-editor-buttons">

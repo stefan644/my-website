@@ -396,6 +396,8 @@ main {
 }
 
 
+
+
 .collapsible-group {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
@@ -455,6 +457,8 @@ main {
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 0px; /* Gives the button a rounded appearance */
+    margin-bottom: -10px; /* Reduce space below the header */
+    margin-top: -60px;    /* Reduce space above the header */
 }
 
 /* Hover effect to make it look like a button */
@@ -683,3 +687,24 @@ main {
 }
 
 
+#settings-section {
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#noteModeToggle {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#noteModeToggle:hover {
+    background-color: #0056b3;
+}
