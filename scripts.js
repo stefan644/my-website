@@ -2917,7 +2917,7 @@ const Hlekkir = [
     {
         name: '',
         type: 'options',
-        display: ['Meðganga og brjóstagjöf', 'ÞÍH (MMSE, PHQ9, stramaverkefnið o.fl)'],
+        display: ['Meðganga og brjóstagjöf', 'ÞÍH (MMSE, PHQ9, stramaverkefnið o.fl)', 'Minnisuppvinnsla'],
         options: [
             {
                 display: 'Meðganga og brjóstagjöf',
@@ -2951,7 +2951,15 @@ const Hlekkir = [
                         ] 
                     }
                 ]
+            },
+            {
+                display: 'Minnisuppvinnsla',
+                subOptions: [
+                    { display: 'Handbók minnismóttökunnar', type: 'hyperlink', url: 'https://1drv.ms/b/c/adc5bc1773f511d1/EVwvx1_ZZNtFucHpnmgCqIgBw4qKS-4mNNLR556QaUqAxg?e=agBAQi' },
+                    
+                ]
             }
+            
         ]
     },
     {
@@ -2985,7 +2993,7 @@ const Simanumer = [
     {
         name: '',
         type: 'options',
-        display: ['LSH', 'Myndgreining', 'Apótek'],
+        display: ['LSH', 'Myndgreining', 'Rannsókn', 'Apótek'],
         options: [
             {
                 display: 'LSH',
@@ -2997,10 +3005,35 @@ const Simanumer = [
             {
                 display: 'Myndgreining',
                 subOptions: [
-                    { display: 'Orkuhúsið - 520-0100', type: 'hyperlink', url: 'tel:5200100' },
+                    { 
+                        display: 'Orkuhúsið',
+                        subOptions: [
+                            { display: 'Aðalsími - 520-0100', type: 'hyperlink', url: 'tel:5200100' },
+                            { display: 'Afgreiðsla - 520-0170', type: 'hyperlink', url: 'tel:5200170' },
+                            { display: 'Vakt - 520-0175', type: 'hyperlink', url: 'tel:5200175' },
+                            { display: 'Arnþór Guðjónsson - 520-0181', type: 'hyperlink', url: 'tel:5200181' },
+                            { display: 'Árni Grímur Sigurðsson - 520-0183', type: 'hyperlink', url: 'tel:5200183' },
+                            { display: 'Áskell Löve - 520-0181', type: 'hyperlink', url: 'tel:5200181' },
+                            { display: 'Helgi Már Jónsson - 520-0180', type: 'hyperlink', url: 'tel:5200180' },
+                            { display: 'Hildur Einarsdóttir - 520-0178', type: 'hyperlink', url: 'tel:5200178' }
+                        ]
+                    },
                     { display: 'Röntgen Domus - 551 9333', type: 'hyperlink', url: 'tel:5519333' },
+                    { display: 'Fossvogi - 543 8300', type: 'hyperlink', url: 'tel:5438300' },
+                    { display: 'Hringbraut - 543 8000', type: 'hyperlink', url: 'tel:5438000' }
                     
                     
+                ]
+            },
+            {
+                display: 'Rannsókn',
+                subOptions: [
+                    { display: 'Ónæmisfræði, Hringbraut - 543 5800', type: 'hyperlink', url: 'tel:5435800' },
+                    { display: 'Rannsóknarkjarni klínískrar lífeðlisfræði, Hringbraut - 543 5000', type: 'hyperlink', url: 'tel:5435000' },
+                    { display: 'Rannsóknarkjarni klínískrar lífeðlisfræði, Fossvogi - 543 5600', type: 'hyperlink', url: 'tel:5435600' },
+                    { display: 'Sýklafræði, við Barónsstíg - 543 5650', type: 'hyperlink', url: 'tel:5435650' },
+                    { display: 'Vefjameinafræði, við Barónsstíg - 543 8066', type: 'hyperlink', url: 'tel:5438066' },
+                    { display: 'Veirufræði, Ármúla 1a - 543 5900', type: 'hyperlink', url: 'tel:5435900' }
                 ]
             },
             {
@@ -3390,6 +3423,9 @@ const Simanumer = [
                                 url: 'tel:5551600'
                             }
                         ]
+                    },
+                    {
+                        display: 'Sjúkrahúsapótek (Hringbraut) - 5438234', type: 'hyperlink', url: 'tel:5438234'
                     }
                 ]
             }
@@ -5070,8 +5106,7 @@ const SymptomsViral = [
         options: [
             {
                 display: 'Ó.E. Eyrnaskoðun',
-                output: 'Óskað eftir að láta kíkja í eyru',
-                onRightClickOutput: 'Vilja ekki láta kíkja í eyru'
+                output: 'Óskað eftir að láta kíkja í eyru'
             },
             {
                 display: 'Óvær',
@@ -10309,7 +10344,7 @@ const RannsoknirHeart = [
 ];
 const PlanHeart = [
     {
-        name: '',
+        name: 'Greiningar',
         type: 'options',
         display: ['Háþrýstingur', 'Brjóstverkur', 'Hjartsláttaróregla', 'Mæði'],
         options: [
@@ -10679,9 +10714,8 @@ const PlanHeart = [
         }
     ]
     },
-    {},{},{},
     {
-        name: '',
+        name: 'Áætlanir',
         type: 'options',
         display: ['Ráðleggingar','Heimamælingar', 'Hjartalínurit', 'Þvagprufa'],
         options: [
@@ -11333,10 +11367,8 @@ const PlanHeart = [
             { display: 'BMT', output: 'Vísa á bráðamóttöku' }
         ]
     },
-    
-    {},{},{},
     {
-        name: '',
+        name: 'Eftirfylgd',
         type: 'options',
         display: ['Endurmat', 'Eftirfylgd'],
         options: [
@@ -35115,6 +35147,10 @@ function generateWeightSuboptions(medicationName, dosagePerKg, concentration) {
 }
 // Function to calculate dosage output based on medication, dosage per kg, and weight
 function calculateDosage(medicationName, dosagePerKg, weight, concentration) {
+
+    // Convert the first letter of medicationName to lowercase
+    medicationName = medicationName.charAt(0).toLowerCase() + medicationName.slice(1);
+
     // Ensure concentration is a number
     concentration = Number(concentration);
     
@@ -37314,6 +37350,9 @@ function handleTitleRightClick(event, title, sectionId) {
         case 'Augnsaga':
             insertText('Sjón alltaf verið góð. Engir augnsjúkdómar eða fjölskyldusaga um slíka. Notar hvorki gleraugu né linsur', sectionId);
              break;
+        case 'Kerfakonnun':
+            insertText('Gróf kerfakönnun án athugasemda. Ekki nætursviti, þyngdartap, brjóstverkur, mæði, kviðverkur, hægðabreyting eða þvaglátareinkenni', sectionId);
+             break;
         /*default:
             insertText(`Right-clicked on: ${title}`, sectionId);*/
     }
@@ -38379,6 +38418,10 @@ document.addEventListener('keydown', function(event) {
             case 'b': // Ctrl + Shift + B for Venjur
                 event.preventDefault();
                 handleTitleRightClick(event, 'Venjur', 'habits');
+                break;
+            case 'k': // Ctrl + K for Kerfakönnun
+                event.preventDefault();
+                handleTitleRightClick(event, 'Kerfakonnun', 'kerfakonnun');
                 break;
         }
     }
