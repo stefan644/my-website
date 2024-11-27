@@ -2917,7 +2917,7 @@ const Hlekkir = [
     {
         name: '',
         type: 'options',
-        display: ['Meðganga og brjóstagjöf', 'ÞÍH (MMSE, PHQ9, stramaverkefnið o.fl)', 'Minnisuppvinnsla'],
+        display: ['Meðganga og brjóstagjöf', 'ÞÍH (MMSE, PHQ9, stramaverkefnið o.fl)'],
         options: [
             {
                 display: 'Meðganga og brjóstagjöf',
@@ -2951,7 +2951,15 @@ const Hlekkir = [
                         ] 
                     }
                 ]
-            },
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Minnisuppvinnsla'],
+        options: [
             {
                 display: 'Minnisuppvinnsla',
                 subOptions: [
@@ -2986,8 +2994,6 @@ const Hlekkir = [
             }
         ]
     }
-    
-    
 ];
 const Simanumer = [
     {
@@ -3428,6 +3434,18 @@ const Simanumer = [
                         display: 'Sjúkrahúsapótek (Hringbraut) - 5438234', type: 'hyperlink', url: 'tel:5438234'
                     }
                 ]
+            }
+        ]
+    }
+];
+const Skjöl = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Vörtumeðferð'],
+        options: [
+            {
+                display: 'Vörtumeðferð', type: 'hyperlink', url: 'https://1drv.ms/b/c/adc5bc1773f511d1/EV6l8nKNqVhOjGNZ0kBNZDwBGkYvuCqLN7GGkK56MdGDlg?e=hvKUuW'
             }
         ]
     }
@@ -8158,7 +8176,7 @@ const LyfAuga = [
 ];
 const ExamsEye = [
     {
-        name: '',
+        name: 'Aðgerðir',
         type: 'options',
         display: ['Deyfi og lita'],
         options: [
@@ -8166,11 +8184,28 @@ const ExamsEye = [
         ]
     },
     {
-        name: '',
+        name: 'Auga / glæra',
         type: 'options',
-        display: ['Conjunctival injection', 'Aðskotahlutur', 'Rispa'],
+        display: ['Roði í glæru', 'Aðskotahlutur', 'Rispa'],
         options: [
-            { display: 'Injection', output: 'Conjunctival injection', onRightClickOutput: 'Ekki roði í glæru' },
+            { 
+                display: 'Roði í glæru',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        output: 'Roði í glæru'
+                    },
+                    {
+                        display: 'Vægur',
+                        output: 'Vægur roði í glæru'
+                    },
+                    {
+                        display: 'Mikill',
+                        output: 'Mikill roði í glæru'
+                    }
+                ], 
+                onRightClickOutput: 'Ekki roði í glæru' 
+            },
             {
                 display: 'Aðskotahlutur',
                 subOptions: [
@@ -8204,13 +8239,40 @@ const ExamsEye = [
         ]
     },
     {
-        name: '',
+        name: 'Augnlok',
         type: 'options',
-        display: ['Roði á augnloki', 'Nabbi'],
+        display: ['Roði', 'Hnúður/þykkildi', 'Graftarnabbi'],
         options: [
-            { display: 'Roði á augnloki', output: 'Roði á augnloki', onRightClickOutput: 'Ekki áberandi roði á augnloki' },
+            { 
+                display: 'Roði', 
+                subOptions:[
+                    {
+                        display: 'NOS', output: 'Roði á augnloki'
+                    },
+                    {
+                        display: 'Vægur', output: 'Vægur roði á augnloki'
+                    },
+                    {
+                        display: 'Mikill', output: 'Mikill roði á augnloki'
+                    }
+                ], onRightClickOutput: 'Ekki áberandi roði á augnloki' 
+            },
             {
-                display: 'Nabbi',
+                display: 'Hnúður/þykkildi', 
+                subOptions:[
+                    {
+                        display: 'NOS',  output: 'Sést hnúður'
+                    },
+                    {
+                        display: 'Lítill',  output: 'Lítill hnúður'
+                    },
+                    {
+                        display: 'Áberandi',  output: 'Áberandi hnúður'
+                    }
+                ], onRightClickOutput: 'Ekki að sjá hnúð/þykkildi'
+            },
+            {
+                display: 'Graftarnabbi',
                 subOptions: [
                     { display: 'Að innanverðu', output: 'Gratarnabbi sést innanvert á augnloki' },
                     { display: 'Að utanverðu', output: 'Graftarnabbi sést utanvert á augnloki' }
@@ -8220,7 +8282,7 @@ const ExamsEye = [
         ]
     },
     {
-        name: '',
+        name: 'Sjón',
         type: 'options',
         display: ['Sjónskerpa'],
         options: [
@@ -8292,7 +8354,7 @@ const ExamsEye = [
 ];
 const PlanEye = [
     {
-        name: '',
+        name: 'Greiningar',
         type: 'options',
         display: ['Blepharitis', 'Vogris', 'Conjunctivitis'],
         options: [
@@ -8499,9 +8561,8 @@ const PlanEye = [
             }
         ]
     },
-    {},{},{},
     {
-        name: '',
+        name: 'Áætlanir',
         type: 'options',
         display: ['Ráðleggingar', 'Sýkladropar', 'Ofnæmislyf'],
         options: [
@@ -8596,9 +8657,8 @@ const PlanEye = [
             
         ]
     },
-    {},{},{},
     {
-        name: '',
+        name: 'Eftirfylgd',
         type: 'options',
         display: ['Endurmat', 'Eftirfylgd'],
         options: [
@@ -9867,7 +9927,7 @@ const RannsoknirHeart = [
                     },
                     {
                         display: 'Atrial fibrillation',
-                        output: 'Hjartalínurit sýnir óreglulegan, hraðan takt, engin P-bylgja'
+                        output: 'Hjartalínurit sýnir óreglulega-óreglulegan takt. Engar P-bylgjur'
                     },
                     {
                         display: 'Ventricular tachycardia',
@@ -20571,7 +20631,7 @@ const PlanHud = [
     {
         name: 'Sýking',
         type: 'options',
-        display: ['Húðsýking'],
+        display: ['Húðsýking', 'Varta'],
         options: [
             {
                 display: 'Húðsýking',
@@ -20608,7 +20668,41 @@ const PlanHud = [
                         ]
                     }
                 ]
-            }  
+            },
+            {
+                display: 'Varta',
+                subOptions: [
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Heimameðferð', output: 'Veiti ráðleggingar um heimameðferð á vörtum. Fá með sér útprentað blað með leiðbeiningum. Endurmat ef lagast ekki' } 
+                        ]    
+                    },
+                    { display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Vörtumeðferðarskjal', type: 'hyperlink', url: 'https://1drv.ms/b/c/adc5bc1773f511d1/EV6l8nKNqVhOjGNZ0kBNZDwBGkYvuCqLN7GGkK56MdGDlg?e=hvKUuW' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' },
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    }
+                    
+                ],
+                onRightClickOutput: 'Veiti ráðleggingar um heimameðferð á vörtum. Fá með sér útprentað blað með leiðbeiningum. Endurmat ef lagast ekki'
+            }
         ]
     },
     {
@@ -37528,7 +37622,8 @@ const pageDefinitions = {
         columns: [
             [
                 { id: 'hlekkir', title: 'Uppflettirit', data: Hlekkir },
-                { id: 'hlekkir', title: 'Símanúmer', data: Simanumer }
+                { id: 'hlekkir', title: 'Símanúmer', data: Simanumer },
+                { id: 'hlekkir', title: 'Skjöl', data: Skjöl }
             ],
             [],
             [],
@@ -38488,8 +38583,11 @@ function insertText(text, sectionId) {
 // It's important to be able to navigate the journal when there's lots of data
 // Shortcuts above call this function.
 function insertHeader(sectionId) {
+    
     //sectionId = getEffectiveSectionId(sectionId);
     const textbox = document.getElementById('journalTextbox');
+    textHistory.push(textbox.value); 
+    redoHistory = []; // Clear redo history as new actions invalidate the redo stack
     let currentText = textbox.value;
     let sectionHeader = getSectionHeader(sectionId);
 

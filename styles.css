@@ -123,15 +123,21 @@ main {
 /* Creates a clickable area in the top left corner of the textbox. Used to enlarge and delarge */
 .clickable-area {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 10px; /* Increase size for better clickability */
-    height: 10px;
+    top: -12px;
+    left: -30px;
+    width: 15px; /* Increase size for better clickability */
+    height: 15px;
     cursor: pointer;
     z-index: 10;
     background-color: transparent; /* Make it invisible */
 }
 
+/* Add a pseudo-element for the arrow */
+.clickable-area::before {
+    content: "⛶"; /* Or use a different Unicode arrow symbol */
+    font-size: 30px;
+    color: #666;
+}
 
 #journalTextbox.enlarged {
     width: 910px;  /* Double the width */
