@@ -3469,7 +3469,15 @@ const Vottord = [
             {
                 display: 'VVV',
                 subOptions: [
-                    { display: 'Framlenging', output: 'Framlengi VVV' }
+                    { display: 'Framlenging', output: 'Framlengi VVV' },
+                    { 
+                        display: 'Afgreitt í gegnum heilsuveru',
+                        output: 'Vottorð afgreitt í gegnum heilsuveru'
+                    },
+                    {
+                        display: 'Í samráði við ritara',
+                        output: 'Vottorð afgreitt í samráði við ritara'
+                    }
                 ],
                 cancelText: ''
             },
@@ -4925,7 +4933,7 @@ const Heilsuvera = [
     {
         name: '',
     type: 'options',
-    display: ['Almennt','Háþrýstingslyf', 'Verkjalyf'],
+    display: ['Almennt','Háþrýstingslyf', 'Verkjalyf', 'Vottorð'],
     options: [
         {
             display: 'Almennt',
@@ -4973,6 +4981,34 @@ const Heilsuvera = [
                     + 'Vinsamlega pantið tíma hjá lækni í gegnum afgreiðslu'
 
                 },
+            ],
+            onRightClickOutput: ''
+        },
+        {
+            display: 'Vottorð',
+            subOptions: [
+                { 
+                    display: 'Veikindavottorð - Sækja í afgreiðslu', output: 'Sækir veikindavottorð í afgreiðslu'
+                },
+            ],
+            onRightClickOutput: ''
+        }
+    ]
+    },
+    {
+        name: '',
+    type: 'options',
+    display: ['Lyfseðill'],
+    options: [
+        {
+            display: 'Lyfseðill',
+            subOptions: [
+                { 
+                    display: 'Set í gáttina', output: 'Set lyfseðil í gáttina'
+                },
+                { 
+                    display: 'Set fjölnota í gáttina', output: 'Set fjölnota lyfseðil í gáttina'
+                }
             ],
             onRightClickOutput: ''
         }
