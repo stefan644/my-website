@@ -6652,14 +6652,15 @@ const PlanViral = [
                             { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/skutabolga/' } 
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki'
+                ], onRightClickSubOptions: generateSinusitisOptions()
             },
             {
                 display: 'Lungnabólga',
                     subOptions: [
-                        { display: 'Grunur - Sýklalyf - Endurmat ef lagast ekki', output: 'Grunur um lungnabólgu. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki' },
-                        { display: 'Get ekki útilokað - Myndataka+blóðprufur - Sýklalyf í gáttina - Símaeftirfylgd', output: 'Get ekki útilokað m.a. lungnabólgu. Ráðlegg blóðprufur og lungnamynd. Set sýklalyf í gáttina, leysir út ef versnandi einkenni á meðan beðið eftir niðurstöðum. Símatími til eftirfylgdar. Ef mikil versnun þá endurmat fyrr eða bráðamóttaka' },
-                        { display: 'Grunur - Treysti ekki heim - Bráðamóttaka', output: 'Grunur um lungnabólgu. Treysti skjólstæðing ekki í outpatient meðferð. Fer á bráðamóttöku' },
+                        {
+                            display: 'Plan',
+                            subOptions: generateLungnabolgaOptions()
+                        },
                         { display: 'Leiðbeiningar til skjólstæðings',
                             subOptions: [
                                 { display: 'Uptodate - Basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/pneumonia-in-adults-the-basics' },
@@ -6675,7 +6676,7 @@ const PlanViral = [
                             ]
                         }
                         
-                    ], onRightClickOutput: 'Grunur um lungnabólgu. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki'
+                    ], onRightClickSubOptions: generateLungnabolgaOptions()
             }
         ]
     },
@@ -35470,6 +35471,93 @@ function composeSkurdurOutput(selections) {
     }
     return output;
 }
+
+// Lungnabólga
+function generateLungnabolgaOptions() {
+    return generateTreatmentOptions();
+}
+function generateTreatmentOptions() {
+    const treatmentOptions = [
+        { display: 'Sýklalyf', value: 'Ráðlegg sýklalyfjameðferð.' },
+        { display: 'RTG', value: 'Ráðlegg röntgenmynd af lungum.' },
+        { display: 'RTG+BPR', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu.' },
+        { display: 'RTG+Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum. Hefjum sýklalyfjameðferð.' },
+        { display: 'RTG+BPR+Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu. Hefjum sýklalyfjameðferð.' },
+        { display: 'BMT', value: 'Treysti ekki í outpatient meðferð. Vísa á bráðamóttöku' }
+    ];
+
+    return treatmentOptions.map(option => {
+        if (option.display === 'BMT') {
+            // For 'BMT', directly compose and assign the output
+            return {
+                display: option.display,
+                output: composeLungnabolgaOutput(option.value, '') // Empty follow-up text
+            };
+        } else {
+            // For other options, proceed as before
+            return {
+                display: option.display,
+                subOptions: generateLungnabolgaFollowUpOptions(option.value)
+            };
+        }
+    });
+}
+function generateLungnabolgaFollowUpOptions(treatmentText) {
+    const followUpOptions = [
+        { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
+        { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar.' },
+        { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar.' },
+        { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu.' }
+    ];
+
+    return followUpOptions.map(option => ({
+        display: option.display,
+        output: composeLungnabolgaOutput(treatmentText, option.value)
+    }));
+}
+function composeLungnabolgaOutput(treatmentText, followUpText) {
+    let output = `Grunur um lungnabólgu. ${treatmentText}`;
+    if (followUpText && followUpText.trim() !== '') {
+        output += ` ${followUpText}`;
+    }
+    return output;
+}
+
+// Sinusitis
+function generateSinusitisOptions() {
+    return generateSinusitisTreatmentOptions();
+}
+function generateSinusitisTreatmentOptions() {
+    const treatmentOptions = [
+        { display: 'Sýklalyf', value: 'Set sýklalyf í gáttina.' },
+        { display: 'Sýklalyf og nefsterar', value: 'Set sýklalyf og nefstera í gáttina.' },
+        { display: 'Nefsterar', value: 'Set nefstera í gáttina. Beðið með sýklalyfjameðferð.' },
+        { display: 'Nefsterar + sýklalyf í gátt', value: 'Set sýklalyf og nefstera í gáttina. Byrjar að nota nefsterana en leysir út sýklalyf ef ekki skánandi á næstu dögum.' }
+    ];
+
+    return treatmentOptions.map(option => ({
+        display: option.display,
+        subOptions: generateSinusitisFollowUpOptions(option.value)
+    }));
+}
+function generateSinusitisFollowUpOptions(treatmentText) {
+    const followUpOptions = [
+        { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
+        { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar.' },
+        { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar.' },
+        { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu.' }
+    ];
+
+    return followUpOptions.map(option => ({
+        display: option.display,
+        output: composeSinusitisOutput(treatmentText, option.value)
+    }));
+}
+function composeSinusitisOutput(treatmentText, followUpText) {
+    return `Grunur um sinusitis. Veiti ráðleggingar og fræðslu. ${treatmentText} ${followUpText}`;
+}
+
+
 
 // Eiturlyf
 function generateInitialDrugOptions() {
