@@ -6042,7 +6042,7 @@ const ExamsViral = [
                 onRightClickOutput: 'Hlustir líta eðlilega út beggja vegna'
             }
             
-        ]
+        ], onRightClickOutput: 'Engin roði á hljóðhimnum'
     },
     {
         name: 'Lungu',
@@ -6652,14 +6652,14 @@ const PlanViral = [
                             { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/skutabolga/' } 
                         ]
                     }
-                ], onRightClickSubOptions: generateSinusitisOptions()
+                ], onRightClickSubOptions: PlanSinusitis()
             },
             {
                 display: 'Lungnabólga',
                     subOptions: [
                         {
                             display: 'Plan',
-                            subOptions: generateLungnabolgaOptions()
+                            subOptions: PlanLungnabolga()
                         },
                         { display: 'Leiðbeiningar til skjólstæðings',
                             subOptions: [
@@ -6676,7 +6676,7 @@ const PlanViral = [
                             ]
                         }
                         
-                    ], onRightClickSubOptions: generateLungnabolgaOptions()
+                    ], onRightClickSubOptions: PlanLungnabolga()
             }
         ]
     },
@@ -6818,9 +6818,18 @@ const PlanViral = [
             {
                 display: 'Eyrnabólga',
                 subOptions: [
-                    { display: 'Sýklalyf - Re ef lagast ekki', output: 'Otitis media. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki' },
-                    { display: 'Rofin himna - Sýklalyf - Re eftir 3-4 vikur', output: 'Otitis media. Grunur um rof á hljóðhimnu. Ráðlegg sýklalyfjameðferð. Ráðlagt endurmat eftir 3-4 vikur til að staðfesta að hljóðhimna hafi gróið. Endurmat fyrr ef lagast ekki eða versnar' },
-                    { display: 'Sýkladropar - Re ef lagast ekki', output: 'Otitis media. Ráðlegg sýkladropa. Endurmat ef lagast ekki' },
+                    {
+                        display: 'Fullmótuð plön',
+                        subOptions: [
+                            { display: 'Sýklalyf - Re ef lagast ekki', output: 'Otitis media. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Rofin himna - Sýklalyf - Re eftir 3-4 vikur', output: 'Otitis media. Grunur um rof á hljóðhimnu. Ráðlegg sýklalyfjameðferð. Ráðlagt endurmat eftir 3-4 vikur til að staðfesta að hljóðhimna hafi gróið. Endurmat fyrr ef lagast ekki eða versnar' },
+                            { display: 'Sýkladropar - Re ef lagast ekki', output: 'Otitis media. Ráðlegg sýkladropa. Endurmat ef lagast ekki' }
+                        ]
+                    },
+                    {
+                        display: 'Plan',
+                        subOptions: PlanEyrnabólga()
+                    },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             { display: 'Uptodate - Basics börn', type: 'hyperlink', url: 'https://www.uptodate.com/contents/ear-infections-in-children-the-basics' },
@@ -6875,137 +6884,7 @@ const PlanViral = [
         options: [
             {
                 display: 'Sýklamixtúra',
-                subOptions: [
-                    {
-                        display: 'Amoxicillin 50mg/ml',
-                        subOptions: [
-                            {
-                                display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 50mg/ml', 80, 50)
-                            },
-                            {
-                                display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 50mg/ml', 50, 50)
-                            },
-                            {
-                                display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 50mg/ml', 30, 50)
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Amoxicillin 100mg/ml',
-                        subOptions: [
-                            {
-                                display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 100mg/ml', 80, 100)
-                            },
-                            {
-                                display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 100mg/ml', 50, 100)
-                            },
-                            {
-                                display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxicillin mixtúru 100mg/ml', 30, 100)
-                            },
-                            {
-                                display: 'Hlekkir',
-                                subOptions: [
-                                    {
-                                        display: 'Sérlyfjaskrá Amoxicillin Sandoz 100mg/ml SMPC',
-                                        type: 'hyperlink',
-                                        url: 'https://old.serlyfjaskra.is/FileRepos/894258b5-41e4-ed11-8120-005056a1b61b/Amoxicillin_Sandoz_SmPC.pdf'
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Amoxicillin comp 80mg/ml',
-                        subOptions: [
-                            {
-                                display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 80, 80)
-                            },
-                            {
-                                display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 50, 80)
-                            },
-                            {
-                                display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 30, 80)
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Kaavepenin 50mg/ml',
-                        subOptions: [
-                            {
-                                display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 50mg/ml', 80, 50)
-                            },
-                            {
-                                display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 50mg/ml', 50, 50)
-                            },
-                            {
-                                display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 50mg/ml', 30, 50)
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Kaavepenin 100mg/ml',
-                        subOptions: [
-                            {
-                                display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 80, 100)
-                            },
-                            {
-                                display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 50, 100)
-                            },
-                            {
-                                display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 30, 100)
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Cefalexin 50mg/ml',
-                        subOptions: [
-                            {
-                                display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 80, 50)
-                            },
-                            {
-                                display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 50, 50)
-                            },
-                            {
-                                display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 30, 50)
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Cefalexin 100mg/ml',
-                        subOptions: [
-                            {
-                                display: 'Háskammta (80mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 80, 100)
-                            },
-                            {
-                                display: 'Venjuleg (50mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 50, 100)
-                            },
-                            {
-                                display: 'Lágskammta (30mg/kg)',
-                                subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 30, 100)
-                            }
-                        ]
-                    }
-                ]
+                subOptions: Sýklamixtúra()
             }
         ]
     }
@@ -7014,96 +6893,124 @@ const historyViralData = [
     {
         name: '',
         type: 'options',
-        display: ['HTN', 'DM', 'IHD', 'Offita', 'Áfengi'],
+        display: ['Undirliggjandi sjúkdómur', 'Lungnasjúkdómur'],
         options: [
             {
-                display: 'HTN',
-                output: 'Saga um háþrýsting',
-                onRightClickOutput: 'Ekki saga um háþrýsting'
-            },
-            {
-                display: 'DM',
-                output: 'Saga um sykursýki',
-                onRightClickOutput: 'Ekki saga um sykursýki'
-            },
-            {
-                display: 'IHD',
-                output: 'Saga um kransæðasjúkdóm',
-                onRightClickOutput: 'Ekki saga um kransæðasjúkdóm'
-            },
-            {
-                display: 'Offita',
-                output: 'Saga um offitu',
-                onRightClickOutput: 'Ekki saga um offitu'
-            },
-            {
-                display: 'Áfengi',
+                display: 'Undirliggjandi sjúkdómur',
                 subOptions: [
-                    { display: 'Áfengi', output: 'Saga um áfengismisnotkun' },
-                    { display: 'Áfengi, meðferð, edrú', output: 'Saga um áfengismisnotkun. Farið í meðferð, nú edrú' },
-                    { display: 'Áfengi, meðferð, drekkur enn', output: 'Saga um áfengismisnotkun. Farið í meðferð, drekkur enn' }
+                    {
+                        display: 'Háþrýstingur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Saga um háþrýsting' },
+                            { display: 'Vel stjórnað', output: 'Háþrýstingur. Vel meðhöndlaður' },
+                            { display: 'Illa stjórnað', output: 'Háþrýstingur. Ekki nægilega góð blóðþrýstingsstjórnun' }
+                        ]
+                    },
+                    {
+                        display: 'Sykursýki', output: 'Saga um sykursýki'
+                    },
+                    {
+                        display: 'Krabbamein', output: 'Saga um krabbamein'
+                    }
                 ],
-                onRightClickOutput: 'Ekki saga um áfengismisnotkun'
+                onRightClickOutput: 'Engir undirliggjandi sjúkdómar'
+            },
+            {
+                display: 'Lungnasjúkdómur',
+                subOptions: [
+                    { display: 'NOS', output: 'Saga um lungnasjúkdóm' },
+                    { display: 'Astma', output: 'Saga um astma' },
+                    { display: 'COPD', output: 'Saga um COPD' }
+                ],
+                onRightClickOutput: 'Ekki undirliggjandi lungnasjúkdómur'
             }
         ]
-    },
-    {
+        },
+        {
         name: '',
         type: 'options',
-        display: ['Kæfisvefn', 'Nýrnasjúkdóm', 'Astmi', 'COPD'],
+        display: ['Nýleg veikindi', 'Endurteknar sýkingar', 'Ónæmisbæling'],
         options: [
             {
-                display: 'Kæfisvefn',
-                output: 'Saga um kæfisvefn',
-                onRightClickOutput: 'Ekki saga um kæfisvefn'
-            },
-            {
-                display: 'Nýrnasjúkdóm',
-                output: 'Saga um nýrnasjúkdóm',
-                onRightClickOutput: 'Ekki saga um nýrnasjúkdóm'
-            },
-            {
-                display: 'Astmi',
-                output: 'Saga um astma',
-                onRightClickOutput: 'Ekki saga um astma'
-            },
-            {
-                display: 'COPD',
-                output: 'Saga um langvinna lungnateppu',
-                onRightClickOutput: 'Ekki saga um langvinna lungnateppu'
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Sinusitar', 'Eyrnabólgur', 'Ólétta', 'Ónæmisbælandi'],
-        options: [
-            {
-                display: 'Sinusitar',
-                output: 'Saga um endurteknar kinnholusýkingar',
-                onRightClickOutput: 'Ekki saga um endurteknar kinnholusýkingar'
-            },
-            {
-                display: 'Eyrnabólgur',
-                output: 'Saga um endurteknar eyrnabólgur',
-                onRightClickOutput: 'Ekki saga um endurteknar eyrnabólgur'
-            },
-            {
-                display: 'Ólétta',
+                display: 'Nýleg veikindi',
                 subOptions: [
-                    { display: 'Fyrsta þriðjung', output: 'Ófrísk, á fyrsta þriðjungi meðgöngu' },
-                    { display: 'Öðrum þriðjung', output: 'Ófrísk, á öðrum þriðjungi meðgöngu' },
-                    { display: 'Þriðja þriðjung', output: 'Ófrísk, á þriðja þriðjungi meðgöngu' }
+                    {
+                        display: 'Veirusýking',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Er að jafna sig á veirusýkingu'
+                            },
+                            {
+                                display: 'Endurteknar veirusýkingar',
+                                output: 'Verið að glíma við endurteknar veirusýkingar nýlega'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Bakteríusýking',
+                        subOptions: [
+                            {
+                                display: 'NOS',
+                                output: 'Er að jafna sig á bakteríusýkingu'
+                            },
+                            {
+                                display: 'Lungnabólga',
+                                output: 'Er að jafna sig á lungnabólgu'
+                            },
+                            {
+                                display: 'Sinusitis',
+                                output: 'Er að jafna sig á sinusitis'
+                            },
+                            {
+                                display: 'Pyelonephritis',
+                                output: 'Er að jafna sig á pyelonephritis'
+                            },
+                            {
+                                display: 'Diverticulitis',
+                                output: 'Er að jafna sig á diverticulitis'
+                            },
+                            {
+                                display: 'Húðsýking',
+                                output: 'Er að jafna sig á húðsýkingu'
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Undirliggjandi sjúkdómi',
+                        subOptions: [
+                            { display: 'NOS', output: 'Skjólstæðingur verið slæmur af sínum undirliggjandi sjúkdómi uppá síðkastið' },
+                            { display: 'Gigt', output: 'Skjólstæðingur verið slæmur af sinni undirliggjandi gigt uppá síðkastið' },
+                            { display: 'Astma', output: 'Skjólstæðingur verið slæmur af sínum undirliggjandi astma uppá síðkastið' },
+                            { display: 'COPD', output: 'Skjólstæðingur verið slæmur af sínni undirliggjandi lungnateppu sjúkdómi uppá síðkastið' },
+                            { display: 'Sykursýki', output: 'Skjólstæðingur verið slæmur af sinni undirliggjandi sykursýki uppá síðkastið' },
+                            { display: 'Hjartabilun', output: 'Skjólstæðingur verið slæmur af sinni undirliggjandi hjartabilun uppá síðkastið' }
+                        ]
+                    }
                 ],
-                onRightClickOutput: 'Ekki ófrísk'
+                onRightClickOutput: 'Ekki verið að glíma við veikindi nýlega'
             },
             {
-                display: 'Ónæmisbælandi',
-                output: 'Er á ónæmisbælandi meðferð',
-                onRightClickOutput: 'Ekki á ónæmisbælandi meðferð'
+                display: 'Endurteknar sýkingar',
+                subOptions: [
+                    { display: 'Endurteknar veirusýkingar', output: 'Verið að glíma við endurteknar veirusýkingar', onRightClickOutput: 'Ekki saga um endurteknar veirusýkingar' },
+                    { display: 'Streptokokka', output: 'Fengið endurteknar streptokokkasýkingar', onRightClickOutput: 'Ekki saga um streptokokkasýkingar' },
+                    { display: 'Lungnabólgur', output: 'Fengið lungnabólgur endurtekið', onRightClickOutput: 'Ekki saga um lungnabólgu' },
+                    { display: 'Sinusita', output: 'Fengið endurtekna sinusita', onRightClickOutput: 'Ekki saga um sinusita' },
+                    { display: 'Eyrnabólgur', output: 'Endurteknar eyrnabólgur', onRightClickOutput:'Ekki saga um eyrnabólgur' }
+                ],
+                onRightClickOutput: 'Ekki mikið að fá sýkingar'
+            },
+            {
+                display: 'Ónæmisbæling',
+                subOptions: [
+                    { display: 'NOS', output: 'Ónæmisbæling' },
+                    { display: 'Ónæmisbælandi lyf', output: 'Á ónæmisbælandi lyfjum' }
+                ],
+                onRightClickOutput: 'Engin ónæmisbæling'
             }
-        ]
+            
+        ], onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunnin'
     }
 ];
 const RannsoknirViral = [
@@ -7397,6 +7304,207 @@ const RaudFloggViral = [
         ]
     }
 ];
+function PlanLungnabolga() {
+    // Helper function to compose the final output
+    function composeLungnabolgaOutput(treatmentText, followUpText) {
+        let output = `Grunur um lungnabólgu. ${treatmentText}`;
+        if (followUpText && followUpText.trim() !== '') {
+            output += ` ${followUpText}`;
+        }
+        return output;
+    }
+
+    // Helper function to generate follow-up options
+    function generateLungnabolgaFollowUpOptions(treatmentText) {
+        const followUpOptions = [
+            { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
+            { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar.' },
+            { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar.' },
+            { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' }
+        ];
+
+        return followUpOptions.map(option => ({
+            display: option.display,
+            output: composeLungnabolgaOutput(treatmentText, option.value)
+        }));
+    }
+
+    // Helper function to generate treatment options
+    function generateTreatmentOptions() {
+        const treatmentOptions = [
+            { display: 'Sýklalyf', value: 'Ráðlegg sýklalyfjameðferð.' },
+            { display: 'RTG', value: 'Ráðlegg röntgenmynd af lungum.' },
+            { display: 'RTG+BPR', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu.' },
+            { display: 'RTG+Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum. Hefjum sýklalyfjameðferð.' },
+            { display: 'RTG+BPR+Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu. Hefjum sýklalyfjameðferð.' },
+            { display: 'BMT', value: 'Treysti ekki í outpatient meðferð. Vísa á bráðamóttöku' }
+        ];
+
+        return treatmentOptions.map(option => {
+            if (option.display === 'BMT') {
+                // For 'BMT', directly compose and assign the output
+                return {
+                    display: option.display,
+                    output: composeLungnabolgaOutput(option.value, '') // Empty follow-up text
+                };
+            } else {
+                // For other options, proceed as before
+                return {
+                    display: option.display,
+                    subOptions: generateLungnabolgaFollowUpOptions(option.value)
+                };
+            }
+        });
+    }
+
+    // This function returns the top-level array of suboptions (treatment options)
+    function generateLungnabolgaOptions() {
+        return generateTreatmentOptions();
+    }
+
+    // IMPORTANT: Instead of returning a full data structure, just return the suboptions array
+    return generateLungnabolgaOptions();
+}
+function PlanSinusitis() {
+    // Helper function to compose the final output
+    function composeSinusitisOutput(treatmentText, followUpText) {
+        return `Grunur um sinusitis. Veiti ráðleggingar og fræðslu. ${treatmentText} ${followUpText}`;
+    }
+
+    // Helper function to generate follow-up options
+    function generateSinusitisFollowUpOptions(treatmentText) {
+        const followUpOptions = [
+            { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
+            { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar.' },
+            { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar.' },
+            { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu.' }
+        ];
+
+        return followUpOptions.map(option => ({
+            display: option.display,
+            output: composeSinusitisOutput(treatmentText, option.value)
+        }));
+    }
+
+    // Helper function to generate treatment options
+    function generateSinusitisTreatmentOptions() {
+        const treatmentOptions = [
+            { display: 'Sýklalyf', value: 'Set sýklalyf í gáttina.' },
+            { display: 'Sýklalyf og nefsterar', value: 'Set sýklalyf og nefstera í gáttina.' },
+            { display: 'Nefsterar', value: 'Set nefstera í gáttina. Beðið með sýklalyfjameðferð.' },
+            { display: 'Nefsterar + sýklalyf í gátt', value: 'Set sýklalyf og nefstera í gáttina. Byrjar að nota nefsterana en leysir út sýklalyf ef ekki skánandi á næstu dögum.' }
+        ];
+
+        return treatmentOptions.map(option => ({
+            display: option.display,
+            subOptions: generateSinusitisFollowUpOptions(option.value)
+        }));
+    }
+
+    // Helper function to initiate the flow of generating options
+    function generateSinusitisOptions() {
+        return generateSinusitisTreatmentOptions();
+    }
+
+    // Return just the suboptions array from generateSinusitisOptions
+    return generateSinusitisOptions();
+}
+function PlanEyrnabólga() {
+    ///////////////////////////////
+    // Helper Functions
+    ///////////////////////////////
+
+    // Follow-up options
+    function generateEyrnabólgaFollowUpOptions(prefixText) {
+        return [
+            {
+                display: 'Endurmat ef versnar',
+                output: `${prefixText} Endurmat ef versnar eða lagast ekki.`
+            },
+            {
+                display: 'Símatími',
+                output: `${prefixText} Fær símatíma til eftirfylgdar. Hafa samband fyrr ef versnun í millitíðinni.`
+            },
+            {
+                display: 'Nýr tími',
+                output: `${prefixText} Fær tíma til eftirfylgdar. Hafa samband fyrr ef versnun í millitíðinni.`
+            },
+            {
+                display: 'Eftirfylgd á sinni heilsugæslu',
+                output: `${prefixText} Eftirfylgd á sinni heilsugæslu.`
+            },
+            {
+                display: '3-4 vikur til að meta gróanda',
+                output: `${prefixText} Endurmat ef versnar eða lagast ekki. Ráðlagt að mæta í skoðun eftir 3-4 vikur til að staðfesta að hljóðhimna hafi gróið.`
+            }
+        ];
+    }
+
+    // This function will modify the structure returned by Sýklamixtúra()
+    // so that every final node with 'output' is replaced with follow-up options.
+    function attachFollowUpsToSyklamixtura(array, prefixText) {
+        return array.map(item => {
+            if (item.subOptions) {
+                // Recurse into subOptions
+                return {
+                    ...item,
+                    subOptions: attachFollowUpsToSyklamixtura(item.subOptions, prefixText)
+                };
+            } else if (item.output) {
+                // This is a final leaf node from Sýklamixtúra with direct output
+                // Instead of final output, we now present follow-up options
+                return {
+                    display: item.display,
+                    subOptions: generateEyrnabólgaFollowUpOptions(`${prefixText} ${item.output}`)
+                };
+            } else {
+                // If neither subOptions nor output is defined (unlikely), return as is
+                return item;
+            }
+        });
+    }
+
+    // Second-level options for Eyrnabólga
+    function generateSecondLevelOptions(prefixText) {
+        return [
+            {
+                display: 'Sýklalyf p.o.',
+                subOptions: generateEyrnabólgaFollowUpOptions(`${prefixText} Set sýklalyf í gáttina.`)
+            },
+            {
+                display: 'Sýklamixtúra',
+                // Call existing Sýklamixtúra() function
+                // Then transform its leaves to attach follow-ups
+                subOptions: attachFollowUpsToSyklamixtura(Sýklamixtúra(), prefixText)
+            },
+            {
+                display: 'Sýkladropar',
+                subOptions: generateEyrnabólgaFollowUpOptions(`${prefixText} Set sýkladropa í gáttina.`)
+            }
+        ];
+    }
+
+    // First-level options: Unilateral, Bilateral, Unilateral með rofi
+    // Each leads to the second-level options with an initial prefix text
+    function generateFirstLevelOptions() {
+        return [
+            {
+                display: 'Unilateral',
+                subOptions: generateSecondLevelOptions('Unilateral otitis media. Veiti viðeigandi ráðleggingar.')
+            },
+            {
+                display: 'Bilateral',
+                subOptions: generateSecondLevelOptions('Bilateral otitis media. Veiti viðeigandi ráðleggingar.')
+            },
+            {
+                display: 'Unilateral með rofi',
+                subOptions: generateSecondLevelOptions('Unilateral otitis media með rofi. Veiti viðeigandi ráðleggingar.')
+            }
+        ];
+    }
+
+    return generateFirstLevelOptions();
+}
 
 // Getnaðarvarnaráðgjöf
 const SymptomsContraception = [
@@ -35253,60 +35361,195 @@ function calculateBMI(height, weight) {
     const bmi = weight / (heightInMeters * heightInMeters);
     return bmi.toFixed(1).replace('.', ','); // Replace dot with comma for BMI
 }
-
 // Sýklamixtúra
 // Function to generate weight-based suboptions and exact dosage values
-function generateWeightSuboptions(medicationName, dosagePerKg, concentration) {
+function Sýklamixtúra() {
+    // Helper function to calculate the dosage output based on medication, dosage per kg, and weight
+    function calculateDosage(medicationName, dosagePerKg, weight, concentration) {
+        // Convert the first letter of medicationName to lowercase
+        medicationName = medicationName.charAt(0).toLowerCase() + medicationName.slice(1);
+
+        // Ensure concentration is a number
+        concentration = Number(concentration);
+        
+        // Check if concentration is valid
+        if (!concentration) {
+            return `Error: Invalid concentration for ${medicationName}.`;
+        }
+
+        const totalDailyDose = dosagePerKg * weight; // Total mg per day
+        const dosePerDose = totalDailyDose / 3; // Split into 3 doses per day
+        const dosePerMl = dosePerDose / concentration; // Calculate ml per dose
+
+        // Check if dosePerMl is a valid number
+        if (isNaN(dosePerMl)) {
+            return `Error: Unable to calculate dose per ml for ${medicationName}.`;
+        }
+
+        return `Set ${medicationName} í gáttina. Þyngd ${weight} kg. Notum ${dosagePerKg} mg/kg í þremur aðskildum skömmtum. Skammtastærð því ${dosePerMl.toFixed(1)} ml (${dosePerDose.toFixed(0)} mg) 3x á dag. Heildarskammtur ${totalDailyDose} mg á sólahring.`;
+    }
+
+    // Helper function to generate weight-based suboptions and exact dosage values
+    function generateWeightSuboptions(medicationName, dosagePerKg, concentration) {
+        return [
+            {
+                display: '1-10 kg',
+                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                    display: `${i + 1} kg`,
+                    output: calculateDosage(medicationName, dosagePerKg, i + 1, concentration)
+                }))
+            },
+            {
+                display: '11-20 kg',
+                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                    display: `${i + 11} kg`,
+                    output: calculateDosage(medicationName, dosagePerKg, i + 11, concentration)
+                }))
+            },
+            {
+                display: '21-30 kg',
+                subOptions: Array.from({ length: 10 }, (_, i) => ({
+                    display: `${i + 21} kg`,
+                    output: calculateDosage(medicationName, dosagePerKg, i + 21, concentration)
+                }))
+            }
+        ];
+    }
+
+    // Now we return the entire array of antibiotics and their dosing options
     return [
         {
-            display: '1-10 kg',
-            subOptions: Array.from({ length: 10 }, (_, i) => ({
-                display: `${i + 1} kg`,
-                output: calculateDosage(medicationName, dosagePerKg, i + 1, concentration)
-            }))
+            display: 'Amoxicillin 50mg/ml',
+            subOptions: [
+                {
+                    display: 'Háskammta (80mg/kg)',
+                    subOptions: generateWeightSuboptions('Amoxicillin mixtúru 50mg/ml', 80, 50)
+                },
+                {
+                    display: 'Venjuleg (50mg/kg)',
+                    subOptions: generateWeightSuboptions('Amoxicillin mixtúru 50mg/ml', 50, 50)
+                },
+                {
+                    display: 'Lágskammta (30mg/kg)',
+                    subOptions: generateWeightSuboptions('Amoxicillin mixtúru 50mg/ml', 30, 50)
+                }
+            ]
         },
         {
-            display: '11-20 kg',
-            subOptions: Array.from({ length: 10 }, (_, i) => ({
-                display: `${i + 11} kg`,
-                output: calculateDosage(medicationName, dosagePerKg, i + 11, concentration)
-            }))
+            display: 'Amoxicillin 100mg/ml',
+            subOptions: [
+                {
+                    display: 'Háskammta (80mg/kg)',
+                    subOptions: generateWeightSuboptions('Amoxicillin mixtúru 100mg/ml', 80, 100)
+                },
+                {
+                    display: 'Venjuleg (50mg/kg)',
+                    subOptions: generateWeightSuboptions('Amoxicillin mixtúru 100mg/ml', 50, 100)
+                },
+                {
+                    display: 'Lágskammta (30mg/kg)',
+                    subOptions: generateWeightSuboptions('Amoxicillin mixtúru 100mg/ml', 30, 100)
+                },
+                {
+                    display: 'Hlekkir',
+                    subOptions: [
+                        {
+                            display: 'Sérlyfjaskrá Amoxicillin Sandoz 100mg/ml SMPC',
+                            type: 'hyperlink',
+                            url: 'https://old.serlyfjaskra.is/FileRepos/894258b5-41e4-ed11-8120-005056a1b61b/Amoxicillin_Sandoz_SmPC.pdf'
+                        }
+                    ]
+                }
+            ]
         },
         {
-            display: '21-30 kg',
-            subOptions: Array.from({ length: 10 }, (_, i) => ({
-                display: `${i + 21} kg`,
-                output: calculateDosage(medicationName, dosagePerKg, i + 21, concentration)
-            }))
+            display: 'Amoxicillin comp 80mg/ml',
+            subOptions: [
+                {
+                    display: 'Háskammta (80mg/kg)',
+                    subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 80, 80)
+                },
+                {
+                    display: 'Venjuleg (50mg/kg)',
+                    subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 50, 80)
+                },
+                {
+                    display: 'Lágskammta (30mg/kg)',
+                    subOptions: generateWeightSuboptions('Amoxicillin comp mixtúru 80mg/ml', 30, 80)
+                }
+            ]
+        },
+        {
+            display: 'Kaavepenin 50mg/ml',
+            subOptions: [
+                {
+                    display: 'Háskammta (80mg/kg)',
+                    subOptions: generateWeightSuboptions('Kaavepenin mixtúru 50mg/ml', 80, 50)
+                },
+                {
+                    display: 'Venjuleg (50mg/kg)',
+                    subOptions: generateWeightSuboptions('Kaavepenin mixtúru 50mg/ml', 50, 50)
+                },
+                {
+                    display: 'Lágskammta (30mg/kg)',
+                    subOptions: generateWeightSuboptions('Kaavepenin mixtúru 50mg/ml', 30, 50)
+                }
+            ]
+        },
+        {
+            display: 'Kaavepenin 100mg/ml',
+            subOptions: [
+                {
+                    display: 'Háskammta (80mg/kg)',
+                    subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 80, 100)
+                },
+                {
+                    display: 'Venjuleg (50mg/kg)',
+                    subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 50, 100)
+                },
+                {
+                    display: 'Lágskammta (30mg/kg)',
+                    subOptions: generateWeightSuboptions('Kaavepenin mixtúru 100mg/ml', 30, 100)
+                }
+            ]
+        },
+        {
+            display: 'Cefalexin 50mg/ml',
+            subOptions: [
+                {
+                    display: 'Háskammta (80mg/kg)',
+                    subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 80, 50)
+                },
+                {
+                    display: 'Venjuleg (50mg/kg)',
+                    subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 50, 50)
+                },
+                {
+                    display: 'Lágskammta (30mg/kg)',
+                    subOptions: generateWeightSuboptions('Cefalexin mixtúru 50mg/ml', 30, 50)
+                }
+            ]
+        },
+        {
+            display: 'Cefalexin 100mg/ml',
+            subOptions: [
+                {
+                    display: 'Háskammta (80mg/kg)',
+                    subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 80, 100)
+                },
+                {
+                    display: 'Venjuleg (50mg/kg)',
+                    subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 50, 100)
+                },
+                {
+                    display: 'Lágskammta (30mg/kg)',
+                    subOptions: generateWeightSuboptions('Cefalexin mixtúru 100mg/ml', 30, 100)
+                }
+            ]
         }
     ];
 }
-// Function to calculate dosage output based on medication, dosage per kg, and weight
-function calculateDosage(medicationName, dosagePerKg, weight, concentration) {
 
-    // Convert the first letter of medicationName to lowercase
-    medicationName = medicationName.charAt(0).toLowerCase() + medicationName.slice(1);
-
-    // Ensure concentration is a number
-    concentration = Number(concentration);
-    
-    // Check if concentration is valid
-    if (!concentration) {
-        return `Error: Invalid concentration for ${medicationName}.`;
-    }
-
-    const totalDailyDose = dosagePerKg * weight; // Total mg per day
-    const dosePerDose = totalDailyDose / 3; // Split into 3 doses per day
-
-    const dosePerMl = dosePerDose / concentration; // Calculate ml per dose
-
-    // Check if dosePerMl is a valid number
-    if (isNaN(dosePerMl)) {
-        return `Error: Unable to calculate dose per ml for ${medicationName}.`;
-    }
-
-    return `Set ${medicationName} í gáttina. Þyngd ${weight} kg. Notum ${dosagePerKg} mg/kg í þremur aðskildum skömmtum. Skammtastærð því ${dosePerMl.toFixed(1)} ml (${dosePerDose.toFixed(0)} mg) 3x á dag. Heildarskammtur ${totalDailyDose} mg á sólahring.`;
-}
 
 // Heilsufar
 // Function to generate year intervals, year, month, and treatment suboptions
@@ -35471,93 +35714,6 @@ function composeSkurdurOutput(selections) {
     }
     return output;
 }
-
-// Lungnabólga
-function generateLungnabolgaOptions() {
-    return generateTreatmentOptions();
-}
-function generateTreatmentOptions() {
-    const treatmentOptions = [
-        { display: 'Sýklalyf', value: 'Ráðlegg sýklalyfjameðferð.' },
-        { display: 'RTG', value: 'Ráðlegg röntgenmynd af lungum.' },
-        { display: 'RTG+BPR', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu.' },
-        { display: 'RTG+Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum. Hefjum sýklalyfjameðferð.' },
-        { display: 'RTG+BPR+Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu. Hefjum sýklalyfjameðferð.' },
-        { display: 'BMT', value: 'Treysti ekki í outpatient meðferð. Vísa á bráðamóttöku' }
-    ];
-
-    return treatmentOptions.map(option => {
-        if (option.display === 'BMT') {
-            // For 'BMT', directly compose and assign the output
-            return {
-                display: option.display,
-                output: composeLungnabolgaOutput(option.value, '') // Empty follow-up text
-            };
-        } else {
-            // For other options, proceed as before
-            return {
-                display: option.display,
-                subOptions: generateLungnabolgaFollowUpOptions(option.value)
-            };
-        }
-    });
-}
-function generateLungnabolgaFollowUpOptions(treatmentText) {
-    const followUpOptions = [
-        { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
-        { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar.' },
-        { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar.' },
-        { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu.' }
-    ];
-
-    return followUpOptions.map(option => ({
-        display: option.display,
-        output: composeLungnabolgaOutput(treatmentText, option.value)
-    }));
-}
-function composeLungnabolgaOutput(treatmentText, followUpText) {
-    let output = `Grunur um lungnabólgu. ${treatmentText}`;
-    if (followUpText && followUpText.trim() !== '') {
-        output += ` ${followUpText}`;
-    }
-    return output;
-}
-
-// Sinusitis
-function generateSinusitisOptions() {
-    return generateSinusitisTreatmentOptions();
-}
-function generateSinusitisTreatmentOptions() {
-    const treatmentOptions = [
-        { display: 'Sýklalyf', value: 'Set sýklalyf í gáttina.' },
-        { display: 'Sýklalyf og nefsterar', value: 'Set sýklalyf og nefstera í gáttina.' },
-        { display: 'Nefsterar', value: 'Set nefstera í gáttina. Beðið með sýklalyfjameðferð.' },
-        { display: 'Nefsterar + sýklalyf í gátt', value: 'Set sýklalyf og nefstera í gáttina. Byrjar að nota nefsterana en leysir út sýklalyf ef ekki skánandi á næstu dögum.' }
-    ];
-
-    return treatmentOptions.map(option => ({
-        display: option.display,
-        subOptions: generateSinusitisFollowUpOptions(option.value)
-    }));
-}
-function generateSinusitisFollowUpOptions(treatmentText) {
-    const followUpOptions = [
-        { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
-        { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar.' },
-        { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar.' },
-        { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu.' }
-    ];
-
-    return followUpOptions.map(option => ({
-        display: option.display,
-        output: composeSinusitisOutput(treatmentText, option.value)
-    }));
-}
-function composeSinusitisOutput(treatmentText, followUpText) {
-    return `Grunur um sinusitis. Veiti ráðleggingar og fræðslu. ${treatmentText} ${followUpText}`;
-}
-
-
 
 // Eiturlyf
 function generateInitialDrugOptions() {
