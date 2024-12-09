@@ -2884,14 +2884,9 @@ const PlanGastroenteritis = {
 const PlanConjunctivitis = {   
     display: 'Conjunctivitis', 
     subOptions: [
-        { display: 'Viral - Ráð', output: 'Grunur um viral conjunctivitis. Ráðlegg obs næstu daga. Sýklalyf duga yfirleitt skammt. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat' },
-        { display: 'Viral - Ráð - Sýkladropar í gátt', output: 'Grunur um viral conjunctivitis. Ráðlegg obs næstu daga. Tekur oft 1-2 vikur að ganga yfir. Set sýkladropa í gáttina, nota ef mikill gröftur. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat' },
-        { display: 'Bacterial - Ráð - Sýkladropar', output: 'Grunur um bacterial conjunctivitis. Ráðlegg sýkladropa næstu daga. Ef versnandi einkenni eða rauð flögg svo sem aukin ljósfælni, sjóntap eða miklir verkir þá þarf að hafa samband við lækni'},
-        { display: 'Allergískur - Ráð', output: 'Grunur um allergískan conjunctivitis. Veiti ráðleggingar. Forðast ofnæmisvald. Ofnæmisaugndropar líkt og zaditen fást í lausasölu. Taka ofnæmislyf líkt og loritin. Nefsterar geta líka hjálpað. Endurmat pn'},
-        { display: 'Ráðleggingar', 
-        subOptions: [
-            { display: 'Ráð vegna allergísk conjunctivitis', output: 'Veiti ráðleggingar. Forðast ofnæmisvald. Ofnæmisaugndropar líkt og zaditen fást í lausasölu. Taka ofnæmislyf líkt og loritin. Nefsterar geta hjálpað' } 
-        ]    
+        {
+            display: 'Plan',
+            subOptions: PlanConjunctivitisF()
         },
         { display: 'Leiðbeiningar til skjólstæðings',
         subOptions: [
@@ -2904,13 +2899,83 @@ const PlanConjunctivitis = {
             { display: 'Uptodate - Conjunctivitis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/conjunctivitis' },
             { display: 'Uptodate - Allergic conjunctivitis: Clinical manifestations and diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/allergic-conjunctivitis-clinical-manifestations-and-diagnosis' },
             { display: 'Uptodate - Allergic conjunctivitis: Management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/allergic-conjunctivitis-management' },
-            { display: '', type: 'hyperlink', url: '' }
-
-            
         ]
     }
-], onRightClickOutput: 'Grunur um viral conjunctivitis. Ráðlegg obs næstu daga. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Forðast linsunotkun þar til sýking er yfirstaðin. Ef ný eða versnandi einkenni þá endurmat'
+], onRightClickOutput: 'Grunur um viral conjunctivitis. Veiti viðeigandi ráðleggingar. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Ef ný eða versnandi einkenni þá endurmat.'
 };
+function PlanConjunctivitisF() {
+    ///////////////////////////////
+    // Helper Functions
+    ///////////////////////////////
+
+    // Final follow-up options (used by NOS, Viral, Bacterial)
+    function generateConjunctivitisFollowUpOptions(prefixText) {
+        const followUpOptions = [
+            { display: 'Endurmat ef versnar', value: 'Ef ný eða versnandi einkenni þá endurmat.' },
+            { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar. Ef ný eða versnandi einkenni þá endurmat fyrr.' },
+            { display: 'Nýr tími', value: 'Fær nýjan tíma ef þarf. Ef ný eða versnandi einkenni þá endurmat fyrr.' },
+            { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu. Ef ný eða versnandi einkenni þá endurmat.' }
+        ];
+
+        return followUpOptions.map(option => ({
+            display: option.display,
+            output: `${prefixText} ${option.value}`.trim()
+        }));
+    }
+
+    // Second-level options for treatment (NOS, Viral, Bacterial)
+    function generateTreatmentSecondLevel(prefixText) {
+        const secondLevelOptions = [
+            {
+                display: 'Ráð, engin sýklalyf',
+                action: ''
+            },
+            { display: 'Sýkladropar', action: 'Set sýkladropa í gátt.' },
+            { display: 'Sýkladropar í gátt, nota ef mikill gröftur', action: 'Set sýkladropa í gáttina. Nota ef mikill gröftur.' },
+            { display: 'Sýnataka', action: 'Tökum strok í ræktun.' },
+            { display: 'Sýnataka + Sýkladropar', action: 'Tökum strok í ræktun. Set sýkladropa í gátt.' }
+        ];
+
+        return secondLevelOptions.map(opt => {
+            const newPrefix = `${prefixText} ${opt.action}`.trim();
+            return {
+                display: opt.display,
+                subOptions: generateConjunctivitisFollowUpOptions(newPrefix)
+            };
+        });
+    }
+
+    // First-level options: NOS, Viral, Bacterial, Allergískan
+    function generateConjunctivitisOptions() {
+        const firstLevelOptions = [
+            { display: 'NOS', prefixCondition: 'conjunctivitis' },
+            { display: 'Viral', prefixCondition: 'viral conjunctivitis' },
+            { display: 'Bacterial', prefixCondition: 'bacterial conjunctivitis' }
+        ];
+
+        // NOS, Viral, Bacterial logic: same as before
+        const mappedFirstLevel = firstLevelOptions.map(opt => {
+            let prefix = `Grunur um ${opt.prefixCondition}. Veiti viðeigandi ráðleggingar. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit.`;
+            return {
+                display: opt.display,
+                subOptions: generateTreatmentSecondLevel(prefix.trim())
+            };
+        });
+
+        // Add Allergískan option with a direct output, no follow-up or second-level
+        mappedFirstLevel.push({
+            display: 'Allergískur',
+            output: 'Grunur um allergískan conjunctivitis. Veiti ráðleggingar. Forðast ofnæmisvald. Ofnæmisaugndropar líkt og zaditen fást í lausasölu. Taka ofnæmislyf líkt og loritin. Nefsterar geta líka hjálpað. Endurmat pn'
+        });
+
+        return mappedFirstLevel;
+    }
+
+    return generateConjunctivitisOptions();
+}
+
+
+
 
 // Hlekkir (Links)
 const Hlekkir = [
@@ -6553,9 +6618,10 @@ const PlanViral = [
             {
                 display: 'Herpes',
                 subOptions: [
-                    { display: 'Grunur - Fræðsla - Lyf', output: 'Grunur um herpes. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Endurmat PN' },
-                    { display: 'Grunur - Sýnataka - Fræðsla - Lyf - Símatími fyrir niðurstöður', output: 'Grunur um herpes. Tökum sýni í ræktun/pcr. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Fær símatíma fyrir niðurstöður rannsókna' },
-                    { display: 'Grunur - Sýnataka - Fræðsla - Lyf - Niðurstöður á sinni heilsugæslu', output: 'Grunur um herpes. Tökum sýni í ræktun/pcr. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Pantar sér símatíma á sinni heilsugæslu fyrir niðurstöður' },
+                    {
+                        display: 'Plan',
+                        subOptions: PlanHerpes()
+                    },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             
@@ -6568,7 +6634,7 @@ const PlanViral = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um herpes. Veiti ráðleggingar og fræðslu. Veiran leggst í dvala og getur komið fram á álagstímum. Set veirulyf í gáttina. Endurmat PN'
+                ], onRightClickSubOptions: PlanHerpes()
             },
             {
                 display: 'Enterovirus',
@@ -6597,7 +6663,7 @@ const PlanViral = [
                             { display: 'Fullmótað plan', output: 'Grunur um herpangina. Veiti almennar ráðleggingar. Stuðningsmeðferð. Endurmat pn' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um enteroveirusýkingu. Veiti almennar ráðleggingar. Gengur yfir á nokkrum vikum. Sárin geta verið kvalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar takmarkað. Endurmat ef versnar eða lagast ekki'
+                ], onRightClickOutput: 'Grunur um enteroveirusýkingu. Veiti viðeingandi ráðleggingar. Gengur yfir á nokkrum vikum. Sárin geta verið kvalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar takmarkað. Endurmat ef versnar eða lagast ekki'
             }
             
         ]
@@ -6688,10 +6754,10 @@ const PlanViral = [
             {
                 display: 'Bronchitis',
                 subOptions: [
-                    { display: 'Grunur - Ráð - Re pn', output: 'Berkjubólga. Veiti ráðleggingar. Tekur oft 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi. Endurmat eftir þörfum' },
-                    { display: 'Slæm einkenni - Löng saga - Empírísk sýklalyfjameðferð - Re pn', output: 'Grunur um berkjubólgu. Veiti ráðleggingar. Þar sem einkenni slæm og staðið svona lengi ákveðið að reyna empírískan sýklalyfjakúr. Hefur samband ef lagast ekki' },
-                    { display: 'Slæm einkenni - RTG - Niðurstöður á sinni heilsugæslu', output: 'Grunur um berkjubólgu. Veiti ráðleggingar. Þar sem einkenni slæm og staðið svona lengi ákveðið að fá RTG af lungum. Fær niðurstöður á sinni heilsugæslu. Endurmat fyrr ef versnar eða lagast ekki' },
-                    { display: 'Slæm einkenni - RTG+sýklalyf - Niðurstöður á sinni heilsugæslu', output: 'Grunur um berkjubólgu. Veiti ráðleggingar. Þar sem einkenni slæm og staðið svona lengi ákveðið að fá RTG af lungum. Set einnig sýklalyf í gáttina. Fær niðurstöður á sinni heilsugæslu. Endurmat fyrr ef versnar eða lagast ekki' },
+                    {   
+                        display: 'Plan',
+                        subOptions: PlanBronchitis()
+                    },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
 
@@ -7307,7 +7373,15 @@ const RaudFloggViral = [
 function PlanLungnabolga() {
     // Helper function to compose the final output
     function composeLungnabolgaOutput(treatmentText, followUpText) {
-        let output = `Grunur um lungnabólgu. ${treatmentText}`;
+        let prefix = 'Grunur um lungnabólgu.'; 
+        // Check if this is an uncertain case
+        if (treatmentText.startsWith('|UNCERTAIN|')) {
+            prefix = 'Get ekki útilokað byrjandi lungnabólgu.'; 
+            // Remove the marker from treatmentText
+            treatmentText = treatmentText.replace('|UNCERTAIN|', '');
+        }
+
+        let output = `${prefix} ${treatmentText}`;
         if (followUpText && followUpText.trim() !== '') {
             output += ` ${followUpText}`;
         }
@@ -7318,8 +7392,8 @@ function PlanLungnabolga() {
     function generateLungnabolgaFollowUpOptions(treatmentText) {
         const followUpOptions = [
             { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
-            { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar.' },
-            { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar.' },
+            { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
+            { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
             { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' }
         ];
 
@@ -7332,10 +7406,11 @@ function PlanLungnabolga() {
     // Helper function to generate treatment options
     function generateTreatmentOptions() {
         const treatmentOptions = [
-            { display: 'Sýklalyf', value: 'Ráðlegg sýklalyfjameðferð.' },
+            { display: 'Sýklalyf', value: 'Set sýklalyf í gáttina.' },
             { display: 'RTG', value: 'Ráðlegg röntgenmynd af lungum.' },
-            { display: 'RTG+BPR', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu.' },
             { display: 'RTG+Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum. Hefjum sýklalyfjameðferð.' },
+            { display: 'RTG+BPR', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu.' },
+            { display: 'RTG+BPR+Sýklalyf í gátt ef ekki skánandi', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu. Set sýklalyf í gáttina. Leysir út ef ekki skánandi á næstu dögum.' },
             { display: 'RTG+BPR+Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu. Hefjum sýklalyfjameðferð.' },
             { display: 'BMT', value: 'Treysti ekki í outpatient meðferð. Vísa á bráðamóttöku' }
         ];
@@ -7347,8 +7422,16 @@ function PlanLungnabolga() {
                     display: option.display,
                     output: composeLungnabolgaOutput(option.value, '') // Empty follow-up text
                 };
+            } else if (option.display === 'RTG+BPR' || option.display === 'RTG+BPR+Sýklalyf í gátt ef ekki skánandi' || option.display === 'RTG') {
+                // Replace 'Grunur um lungnabólgu.' with 'Get ekki útilokað byrjandi lungnabólgu.'
+                // We do this by adding the |UNCERTAIN| marker
+                const modifiedValue = `|UNCERTAIN|${option.value}`;
+                return {
+                    display: option.display,
+                    subOptions: generateLungnabolgaFollowUpOptions(modifiedValue)
+                };
             } else {
-                // For other options, proceed as before
+                // Normal behavior for other options
                 return {
                     display: option.display,
                     subOptions: generateLungnabolgaFollowUpOptions(option.value)
@@ -7357,12 +7440,10 @@ function PlanLungnabolga() {
         });
     }
 
-    // This function returns the top-level array of suboptions (treatment options)
     function generateLungnabolgaOptions() {
         return generateTreatmentOptions();
     }
 
-    // IMPORTANT: Instead of returning a full data structure, just return the suboptions array
     return generateLungnabolgaOptions();
 }
 function PlanSinusitis() {
@@ -7505,6 +7586,167 @@ function PlanEyrnabólga() {
 
     return generateFirstLevelOptions();
 }
+function PlanBronchitis() {
+    ///////////////////////////////
+    // Helper Functions
+    ///////////////////////////////
+
+    // Final follow-up options
+    function generateBronchitisFollowUpOptions(prefixText) {
+        const followUpOptions = [
+            { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
+            { display: 'Fær símatíma', value: 'Fær símatíma til eftirfylgdar. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
+            { display: 'Pantar sjálf/ur tíma', value: 'Pantar sér tíma að rannsóknum loknum til að fá niðurstöður. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
+            { display: 'Fær viðtalstíma', value: 'Fær tíma til eftirfylgdar. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
+            { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' }
+        ];
+
+        return followUpOptions.map(option => ({
+            display: option.display,
+            // Append the follow-up text to prefix
+            output: `${prefixText} ${option.value}`.trim()
+        }));
+    }
+
+    // Antibiotic reason step for oral antibiotics
+    // Map the reasons to a more narrative text
+    function generateAntibioticReasonOptions(prefixText) {
+        const reasons = [
+            { display: 'Vegna langvarandi einkenna', narrative: 'Þar sem einkenni staðið lengi ráðlagt að reyna sýklalyfjameðferð.' },
+            { display: 'Vegna veikindalegs útlits', narrative: 'Þar sem skjólstæðingur veikindalegur er ráðlagt að reyna sýklalyfjameðferð.' },
+            { display: 'Vegna ónæmisbælingar', narrative: 'Þar sem skjólstæðingur ónæmisbældur ráðlegg ég sýklalyfjameðferð.' },
+            { display: 'Vegna undirliggjandi lungnasjúkdóms', narrative: 'Þar sem skjólstæðingur er með undirliggjandi lungnasjúkdóm ráðlegg ég sýklalyfjameðferð.' },
+            { display: 'Vegna lungnahlustunar', narrative: 'Þar sem lungnahlustun gróf ráðlögð sýklalyfjameðferð.' }
+        ];
+
+        return reasons.map(reason => ({
+            display: reason.display,
+            // After selecting reason, append the narrative and go to follow-up
+            subOptions: generateBronchitisFollowUpOptions(`${prefixText} ${reason.narrative}`)
+        }));
+    }
+
+    // If no antibiotic reason step is needed, go directly to follow-up
+    function generateDirectFollowUp(prefixText) {
+        return generateBronchitisFollowUpOptions(prefixText);
+    }
+
+    // First-level options:
+    // Ráðleggingar og stuðningsmeðferð,
+    // Sýklalyf, RTG + Sýklalyf, RTG + Sýklalyf í gátt,
+    // RTG + BPR + Sýklalyf, RTG + BPR + Sýklalyf í gátt
+    const treatmentOptions = [
+        { display: 'Ráðleggingar og stuðningsmeðferð', value: 'Tekur oft 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi.' },
+        { display: 'Sýklalyf', value: '' }, 
+        { display: 'RTG + Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum.' },
+        { display: 'RTG + Sýklalyf í gátt', value: 'Ráðlegg röntgenmynd af lungum. Set sýklalyf í gáttina. Leysir út ef fer ekki skánandi á næstu dögum / vikum.' },
+        { display: 'RTG + BPR + Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu.' },
+        { display: 'RTG + BPR + Sýklalyf í gátt', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu. Set sýklalyf í gáttina. Leysir út ef fer ekki skánandi á næstu dögum / vikum.' }
+    ];
+
+    // Identify which options need antibiotic reason step:
+    // Sýklalyf, RTG + Sýklalyf, RTG + BPR + Sýklalyf => oral antibiotics
+    // The others either have no antibiotics or antibiotics í gátt.
+
+    function generateBronchitisOptions() {
+        return treatmentOptions.map(option => {
+            let prefix = `Grunur um berkjubólgu. Veiti viðeigandi ráðleggingar.`; 
+
+            // Always start with "Grunur um berkjubólgu."
+            // Append treatment text (if any)
+            if (option.value && option.value.trim() !== '') {
+                prefix += ` ${option.value}`;
+            }
+
+            const hasSyklaLyf = option.display.includes('Sýklalyf');
+            const hasIGatt = option.display.includes('í gátt');
+
+            // If includes oral sýklalyf (not í gátt):
+            // We have antibiotic reason step before follow-up
+            if (hasSyklaLyf && !hasIGatt) {
+                // Sýklalyf alone: "Hefjum sýklalyfjameðferð." needed?
+                // Since Sýklalyf option is just '', we add a line
+                if (option.display === 'Sýklalyf') {
+                    prefix += '';
+                } else {
+                    // For RTG + Sýklalyf or RTG + BPR + Sýklalyf, prefix already states we start sýklalyfjameðferð?
+                    prefix += '';
+                }
+                return {
+                    display: option.display,
+                    subOptions: generateAntibioticReasonOptions(prefix.trim())
+                };
+            }
+
+            // If it's ráðleggingar og stuðningsmeðferð or sýklalyf í gátt variants, go directly to follow-up
+            return {
+                display: option.display,
+                subOptions: generateDirectFollowUp(prefix.trim())
+            };
+        });
+    }
+
+    return generateBronchitisOptions();
+}
+function PlanHerpes() {
+    ///////////////////////////////
+    // Helper Functions
+    ///////////////////////////////
+
+    // Final follow-up options (similar to lungnabólga)
+    function generateHerpesFollowUpOptions(prefixText) {
+        const followUpOptions = [
+            { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
+            { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar.' },
+            { display: 'Pantar sjálf/ur tíma', value: 'Pantar tíma til að fá niðurstöður úr rannsóknum.' },
+            { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar.' },
+            { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu.' }
+        ];
+
+        return followUpOptions.map(option => ({
+            display: option.display,
+            output: `${prefixText} ${option.value}`.trim()
+        }));
+    }
+
+    // We have three first-level options: Sýnataka, Veirulyf, Sýnataka og veirulyf.
+    // Always start with "Grunur um herpes. Veiti viðeigandi ráðleggingar."
+    // Then append based on choice:
+    // - If Sýnataka: append "Tökum strok í ræktun."
+    // - If Veirulyf: append "Set veirulyf í gáttina."
+    // - If Sýnataka og veirulyf: append both "Tökum strok í ræktun." and "Set veirulyf í gáttina."
+
+    const treatmentOptions = [
+        { display: 'Veirulyf', value: { synataka: false, veirulyf: true } },
+        { display: 'Sýnataka', value: { synataka: true, veirulyf: false } },
+        { display: 'Sýnataka og veirulyf', value: { synataka: true, veirulyf: true } }
+    ];
+
+    function generateHerpesOptions() {
+        return treatmentOptions.map(option => {
+            let prefix = 'Grunur um herpes. Veiti viðeigandi ráðleggingar og fræðslu.';
+            
+            // Append based on selection
+            if (option.value.synataka) {
+                prefix += ' Tökum strok í ræktun.';
+            }
+            if (option.value.veirulyf) {
+                prefix += ' Set veirulyf í gáttina.';
+            }
+
+            // After deciding prefix, go directly to follow-up options
+            return {
+                display: option.display,
+                subOptions: generateHerpesFollowUpOptions(prefix.trim())
+            };
+        });
+    }
+
+    return generateHerpesOptions();
+}
+
+
+
 
 // Getnaðarvarnaráðgjöf
 const SymptomsContraception = [
@@ -12771,7 +13013,7 @@ const ExamsMelting = [
                 ],
                 onRightClickOutput: 'Engin ör'
             }
-        ]
+        ], onRightClickOutput: 'Kviður mjúkur og eymslalaus'
     },    
     {
         name: '',
@@ -13021,7 +13263,8 @@ const ExamsMelting = [
                 
                 onRightClickSubOptions: [
                     {display: 'Eðlilegt útlit', output: 'Eðlilegt ytra útlit á endaþarmi. Engin sár, roði eða merki um lesionir.'},
-                    {display: 'Ekki framkvæmd', output: 'Endaþarmsskoðun ekki framkvæmd'}
+                    {display: 'Ekki framkvæmd', output: 'Endaþarmsskoðun ekki framkvæmd'},
+                    {display: 'Ekki framkvæmd að ósk skjólstæðings', output: 'Endaþarmsskoðun ekki framkvæmd að ósk skjólstæðings'}
                 ]
             },
             {
@@ -37488,6 +37731,13 @@ function createButtons(container, data, sectionId) {
                 groupContainer.style.maxHeight = groupContainer.scrollHeight + "px";
             }
         });
+
+        // Now that everything is set, reveal the #content-section
+        const contentSection = document.getElementById('content-section');
+        if (contentSection) {
+            contentSection.style.visibility = 'visible';
+            contentSection.style.opacity = '1';
+        }
     }, 0);
 }
 function toggleCollapsibleGroup(groupContainer) {
@@ -37846,6 +38096,7 @@ function handleTitleRightClick(event, title, sectionId) {
             insertText(`Right-clicked on: ${title}`, sectionId);*/
     }
 }
+
 
 
 // Functions to create the pages
@@ -38373,6 +38624,7 @@ const pageDefinitions = {
 
 function loadPage(page) {
     const container = document.getElementById('content-section');
+    container.style.opacity = '0';
     container.innerHTML = '';
 
     if (page === 'Upplýsingar') {
@@ -38673,7 +38925,9 @@ function loadPage(page) {
                     alert('Eitthvað fór úrskeiðis. Vinsamlegast reyndu aftur.');
                 });
         }
-        // Existing code for 'Upplýsingar' page ends here
+        container.style.visibility = 'visible';
+        container.style.opacity = '1';
+        
     } else if (page === 'Settings') {
         // Clear previous content
         container.innerHTML = '';
@@ -38703,6 +38957,10 @@ function loadPage(page) {
     
         // Append settings section to the container
         container.appendChild(settingsSection);
+
+        // Render visible
+        container.style.visibility = 'visible';
+        container.style.opacity = '1';
     }
     
     else {
@@ -38727,6 +38985,12 @@ function loadPage(page) {
     
         container.appendChild(horizontalContainer);
     }
+
+    // For pages without createButtons(), once you're done appending elements:
+    // Use requestAnimationFrame to ensure the initial state (opacity=0) is applied
+    requestAnimationFrame(() => {
+        container.style.opacity = '1';
+    });
 }
 
 

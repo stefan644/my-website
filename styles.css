@@ -714,3 +714,12 @@ main {
 #noteModeToggle:hover {
     background-color: #0056b3;
 }
+
+
+#content-section {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Keep visibility: visible; unless you have a good reason to hide it completely */
+    visibility: visible; 
+}
+
