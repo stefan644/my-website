@@ -2593,7 +2593,7 @@ const HBA1c = {
                 { display: '120 mmol/mol (13.1%)', output: 'HbA1c 120 mmol/mol (13.1%)' }
             ]
         }
-    ]
+    ], onRightClickOutput: 'HbA1c innan eðlilegra marka'
 };
 const CRP = {
     display: 'CRP',
@@ -2846,12 +2846,6 @@ const CRP = {
 const PlanGastroenteritis = {
     display: 'Gastroenteritis',
     subOptions: [
-        { display: 'Viral - Ráð', output: 'Grunur um viral gastroenteritis. Veiti almennar ráðleggingar. Passa vökvainntöku og næringu. Gengur yfirleitt yfir á 1-2 vikum. Endurmat ef lagast ekki eða fyrr ef versnar' },
-        { display: 'Ráðleggingar', 
-            subOptions: [
-                { display: '', output: '' } 
-            ]    
-        },
         { display: 'Leiðbeiningar til skjólstæðings',
             subOptions: [
                 {
@@ -2872,11 +2866,6 @@ const PlanGastroenteritis = {
                 { display: 'Heilsuvera.is - Niðurgangur hjá fullorðnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-fullordnum/' },
                 { display: 'Heilsuvera.is - Niðurgangur hjá börnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-bornum/' },
                 { display: 'EL - Ferðaráð', type: 'hyperlink', url: 'https://island.is/almenn-ferdarad-heilsa' },
-                { display: '', type: 'hyperlink', url: '' },
-                { display: '', type: 'hyperlink', url: '' },
-                { display: '', type: 'hyperlink', url: '' },
-                { display: '', type: 'hyperlink', url: '' },
-                
             ]
         }
     ], onRightClickOutput: 'Grunur um viral gastroenteritis. Veiti almennar ráðleggingar. Passa vökvainntöku og næringu. Gengur yfirleitt yfir á 1-2 vikum. Endurmat ef lagast ekki eða fyrr ef versnar'
@@ -6611,9 +6600,24 @@ const PlanViral = [
             {
                 display: 'Mónó',
                 subOptions: [
-                    { display: 'Greining', output: 'Mónónúkleósa' },
-                    { display: 'Grunur', output: 'Grunur um mónónúkleósu' }
-                ]
+                    { display: 'Plan', 
+                        subOptions: PlanMononucleosis()    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Uptodate - Mononucleosis (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/mononucleosis-the-basics' },
+                            { display: 'Uptodate - Infectious mononucleosis (mono) in adults and adolescents (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/infectious-mononucleosis-mono-in-adults-and-adolescents-beyond-the-basics' },
+
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Infectious mononucleosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/infectious-mononucleosis' },
+                            { display: 'Uptodate - Epstein-Barr virus', type: 'hyperlink', url: 'https://www.uptodate.com/contents/clinical-manifestations-and-treatment-of-epstein-barr-virus-infection' },
+
+                        ]
+                    }
+                ], onRightClickSubOptions: PlanMononucleosis()
             },
             {
                 display: 'Herpes',
@@ -6663,7 +6667,7 @@ const PlanViral = [
                             { display: 'Fullmótað plan', output: 'Grunur um herpangina. Veiti almennar ráðleggingar. Stuðningsmeðferð. Endurmat pn' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um enteroveirusýkingu. Veiti viðeingandi ráðleggingar. Gengur yfir á nokkrum vikum. Sárin geta verið kvalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar takmarkað. Endurmat ef versnar eða lagast ekki'
+                ], onRightClickOutput: 'Grunur um enteroveirusýkingu. Veiti viðeigandi ráðleggingar. Gengur yfir á nokkrum vikum. Sárin geta verið kvalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar takmarkað. Endurmat ef versnar eða lagast ekki'
             }
             
         ]
@@ -6698,9 +6702,10 @@ const PlanViral = [
             {
                 display: 'Sinusitis',
                 subOptions: [
-                    { display: 'Sýklalyf - Re PN', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set sýklalyf í gáttina. Endurmat ef lagast ekki' },
-                    { display: 'Sýklalyf+nefsterar - Re PN', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef lagast ekki' },
-                    { display: 'Nefsterar - Sýklalyf í gátt ef lagast ekki - Re PN', output: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Notar nefsterana fyrst um sinn en ef einkenni fara ekki skánandi á nokkrum dögum ráðlagt að fara á sýklalyfjakúr. Endurmat ef mikil versnun eða ef einkenni lagast ekki þrátt fyrir meðferð' },
+                    {
+                        display: 'Plan',
+                        subOptions: PlanSinusitis()
+                    },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             { display: 'Uptodate - Sinusitis in adults (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sinusitis-in-adults-the-basics' },
@@ -6718,7 +6723,7 @@ const PlanViral = [
                             { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/skutabolga/' } 
                         ]
                     }
-                ], onRightClickSubOptions: PlanSinusitis()
+                ], onRightClickSubOptions: PlanSinusitis() /*Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki*/
             },
             {
                 display: 'Lungnabólga',
@@ -7743,6 +7748,42 @@ function PlanHerpes() {
     }
 
     return generateHerpesOptions();
+}
+function PlanMononucleosis() {
+    ///////////////////////////////
+    // Helper Functions
+    ///////////////////////////////
+
+    // Final follow-up options (similar to lungnabólga)
+    function generateMononucleosisFollowUpOptions(prefixText) {
+        const followUpOptions = [
+            { display: 'Endurmat ef versnar', value: 'Ef ný eða versnandi einkenni þá endurmat.' },
+            { display: 'Símatími', value: 'Fær símatíma til eftirfylgdar. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
+            { display: 'Nýr tími', value: 'Fær tíma til eftirfylgdar. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
+            { display: 'Eftirfylgd á sinni heilsugæslu', value: 'Eftirfylgd á sinni heilsugæslu. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' }
+        ];
+
+        return followUpOptions.map(option => ({
+            display: option.display,
+            output: `${prefixText} ${option.value}`.trim()
+        }));
+    }
+
+    // First-level option: Blóðrannsókn
+    // After selecting it, go directly to follow-ups.
+    // Base text: "Grunur um mónónúkleósu. Fáum blóðprufu með m.a. mónóspot og lifrarprufum til nánari greininga."
+    // Follow-up options will append their text at the end.
+    function generateMononucleosisOptions() {
+        const prefix = `Grunur um mónónúkleósu. Fáum blóðprufu með m.a. mónóspot og lifrarprufum til nánari greininga.`;
+        return [
+            {
+                display: 'Blóðrannsókn',
+                subOptions: generateMononucleosisFollowUpOptions(prefix)
+            }
+        ];
+    }
+
+    return generateMononucleosisOptions();
 }
 
 
@@ -13353,9 +13394,9 @@ const PlanMelting = [
         display: ['Gastroenteritis', 'Niðurgangur', 'Hægðatregða', 'Bakflæði'],
         options: [
             PlanGastroenteritis,
-            { display: 'Niðurgangur',
+            { 
+                display: 'Niðurgangur',
                 subOptions: [
-                    { display: 'Greining', output: 'Niðurgangur' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             {
@@ -13404,10 +13445,6 @@ const PlanMelting = [
                             { display: 'Heilsuvera.is - Niðurgangur hjá fullorðnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-fullordnum/' },
                             { display: 'Heilsuvera.is - Niðurgangur hjá börnum', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/nidurgangur-hja-bornum/' },
                             { display: 'EL - Ferðaráð', type: 'hyperlink', url: 'https://island.is/almenn-ferdarad-heilsa' },
-                            { display: '', type: 'hyperlink', url: '' },
-                            { display: '', type: 'hyperlink', url: '' },
-                            { display: '', type: 'hyperlink', url: '' },
-                            { display: '', type: 'hyperlink', url: '' },
                             
                         ]
                     },
@@ -13423,9 +13460,8 @@ const PlanMelting = [
                         ]
                     }
                 ], onRightClickOutput: 'Skammvinnur niðurgangur, <4 vikur. Veiti ráðleggingar. Algengasta ástæða eru veirusýkingar. Lagast að sjálfu sér í meirihluta tilfella. Ræktun skilar sjaldan jákvæðri niðurstöðu og '
-                                +'sýklalyf hafa yfirleitt lítið að segja. Aðalatriði er að passa uppá næringarinntöku, sérstaklega vökvainntöku. Betra er að drekka '
-                                +'vökva með söltum en vatn. Einföld heimalausn s.kv. WHO er 1L vatn, 6 teskeiðar sykur, hálf teskeið salt. Sportdrykkir (t.d. gatorade, powerade) eru oft notaðir '
-                                +'í sama tilgangi en þeir eru ekki kjörlausn þar sem saltmagnið er gjarnan of lítið og sykurmagnið of hátt. Stemmandi lyf svo sem lóperamíð (imodium, immex o.fl.) geta hjálpað. '
+                                +'sýklalyf hafa yfirleitt lítið að segja. Passa næringar og vökvainntöku. Betra er að drekka '
+                                +'vökva með söltum en vatn. Einföld heimalausn s.kv. WHO er 1L vatn, 6 teskeiðar sykur, hálf teskeið salt. Stemmandi lyf eftir þörfum. '
                                 +'Ef niðurgangur stendur í >4 vikur er ástæða til að rannsaka frekar. Ef verður mikil versnun eða koma fram rauð flögg '
                                 +'(t.d. blóðugur niðurgangur, miklir kviðverkir, hár og langvarandi hiti, mikill slappleiki, merki um mikinn þurrk, o.fl.) er mikilvægt að hafa samband'
             },
@@ -13451,8 +13487,8 @@ const PlanMelting = [
                     { display: 'Ráðleggingar', 
                         subOptions: [
                             { display: 'Ráð fullorðnir', output: 'Veiti ráðleggingar við hægðatregðu. Mikilvægt að tryggja vökavinntöku, 1-2L á dag. Tryggja trefjainntöku með fjölbreyttu mataræði. '
-                                +'Ávextir, grænmeti og gróf matvæli (gróft brauð, hýðishrísgrjón, o.s.frv.). Döðlur og ávaxtagrautur getur einnig hjálpað. Ef gengur illa að bæta við trefjum með fjölbreyttu mataræði '
-                                +'er hægt að kaupa husk trefjaviðbót í apóteki. Önnur lyf sem eru oft notuð við hægðatregðu eru magnesíum, sorbitól, movicol o.fl. Reynt er að forðast lyf sem örva ristilinn svo sem senokot '
+                                +'Ávextir, grænmeti og gróf matvæli (gróft brauð, hýðishrísgrjón, o.s.frv.). Döðlur og ávaxtagrautur getur einnig hjálpað. Hægt að kaupa husk trefjaviðbót í apóteki. '
+                                +'Önnur lyf sem eru oft notuð við hægðatregðu eru magnesíum, sorbitól, movicol o.fl. Reynt er að forðast lyf sem örva ristilinn svo sem senokot '
                                 +'og bisacodyl (dulcolax, microlax, toilax) vegna þess að þau geta verið ávanabindandi'
                             } 
                         ]    
@@ -13584,8 +13620,8 @@ const PlanMelting = [
                         ]
                     }
                 ], onRightClickOutput: 'Grunur um hægðatregðu. Veiti ráðleggingar. Mikilvægt að tryggja vökavinntöku, 1-2L á dag. Tryggja trefjainntöku með fjölbreyttu mataræði. '
-                                +'Ávextir, grænmeti og gróf matvæli (gróft brauð, hýðishrísgrjón, o.s.frv.). Döðlur og ávaxtagrautur getur einnig hjálpað. Ef gengur illa að bæta við trefjum með fjölbreyttu mataræði '
-                                +'er hægt að kaupa husk trefjaviðbót í apóteki. Önnur lyf sem eru oft notuð við hægðatregðu eru magnesíum, sorbitól, movicol o.fl. Reynt er að forðast lyf sem örva ristilinn svo sem senokot '
+                                +'Ávextir, grænmeti og gróf matvæli (gróft brauð, hýðishrísgrjón, o.s.frv.). Döðlur og ávaxtagrautur getur einnig hjálpað. Hægt að kaupa husk trefjaviðbót í apóteki. '
+                                +'Önnur lyf sem eru oft notuð við hægðatregðu eru magnesíum, sorbitól, movicol o.fl. Reynt er að forðast lyf sem örva ristilinn svo sem senokot '
                                 +'og bisacodyl (dulcolax, microlax, toilax) vegna þess að þau geta verið ávanabindandi. Endurmat eftir þörfum'
             },
             {
@@ -13849,8 +13885,6 @@ const PlanMelting = [
             {
                 display: 'Blöðrubólga',
                 subOptions: [
-                    { display: 'Greining', output: 'Blöðrubólga' },
-                    { display: 'Grunur', output: 'Grunur um blöðrubólgu' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Drekka vel. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband' } 
@@ -38089,9 +38123,12 @@ function handleTitleRightClick(event, title, sectionId) {
         case 'Augnsaga':
             insertText('Sjón alltaf verið góð. Engir augnsjúkdómar eða fjölskyldusaga um slíka. Notar hvorki gleraugu né linsur', sectionId);
              break;
-        case 'Kerfakonnun':
+        case 'Kerfakönnun':
             insertText('Gróf kerfakönnun án athugasemda. Ekki nætursviti, þyngdartap, brjóstverkur, mæði, kviðverkur, hægðabreyting eða þvaglátareinkenni', sectionId);
              break;
+        case 'Áhættuþættir kransæðasjúkdóms':
+            insertText('Ekki reykingasaga. Ekki saga um háþrýsting. Ekki í yfirþyngd. Ekki saga um sykursýki. Ekki þekkt blóðfituröskun. Neikvæð ættarsaga', sectionId);
+            break;
         /*default:
             insertText(`Right-clicked on: ${title}`, sectionId);*/
     }
