@@ -1529,7 +1529,6 @@ const BMIButton ={
     ],
     onRightClickOutput: 'BMI innan eðlilegra marka'
 };
-
 const ExamAlmennt = {
     name: 'Almennt',
     type: 'options',
@@ -2462,7 +2461,6 @@ const ExamHjarta1 = {
 };
 
 // Centralized buttons - Studies
-
 const HBA1c = {
     display: 'HbA1c',
     subOptions: [
@@ -2963,9 +2961,6 @@ function PlanConjunctivitisF() {
     return generateConjunctivitisOptions();
 }
 
-
-
-
 // Hlekkir (Links)
 const Hlekkir = [
     {
@@ -3047,7 +3042,46 @@ const Hlekkir = [
                 ]
             }
         ]
+    },
+    {
+        name: 'Stoðkerfi',
+        type: 'options',
+        display: ['Stoðkerfisvandamál', 'Liðástungur'],
+        options: [
+            {
+                display: 'Stoðkerfisvandamál',
+                subOptions: [
+                    { display: 'Sportnetdoc.dk - Greiningar, æfingar o.fl.', type: 'hyperlink', url: 'https://www.sportnetdoc.dk/' }
+                ]
+            },
+            {
+                display: 'Liðástungur',
+                subOptions: [
+                    { display: 'Rheumtutor - Kennslumyndbönd í liðástungum', type: 'hyperlink', url: 'https://www.rheumtutor.com' }
+                    
+                ]
+            },
+            
+        ]
+    },
+    {
+        name: 'Tauga',
+        type: 'options',
+        display: ['Taugaskoðun'],
+        options: [
+            {
+                display: 'Taugaskoðun',
+                subOptions: [
+                    { display: 'NeurologicExam - Kennslumyndbönd frá taugalæknum í Utah og Nebraska USA', type: 'hyperlink', url: 'https://neurologicexam.med.utah.edu/adult/html/home_exam.html?fbclid=IwY2xjawHFOLpleHRuA2FlbQIxMAABHaf-xwaROVHx3ASqOgaMGaiSEndDVzG1X6R7ZiGETjiUqcHCYqrsBiGAuQ_aem_1UZuK96IaNB2NY2kuJxCaw' },
+                    { display: 'Neurosymptoms - Síða fyrir functional taugavandamál', type: 'hyperlink', url: 'https://neurosymptoms.org/en/?fbclid=IwY2xjawHFOLhleHRuA2FlbQIxMAABHT9Xiv2LV-wk4rT0bDL3vwitcwn1j3kfzGe_C3Q7s6BkCplZ1NcRrNEzUA_aem_E9bj5wrbPM67MPbBTtKbVA' }
+                    
+                ]
+            }
+            
+        ]
     }
+
+    
 ];
 const Simanumer = [
     {
@@ -7786,9 +7820,6 @@ function PlanMononucleosis() {
     return generateMononucleosisOptions();
 }
 
-
-
-
 // Getnaðarvarnaráðgjöf
 const SymptomsContraception = [
     {
@@ -8300,7 +8331,7 @@ const SymptomsEye = [
     {
         name: 'Annað',
         type: 'options',
-        display: ['Nýleg veirusýking', 'Dagleg áhrif', 'Gleraugu/linsur'],
+        display: ['Nýleg veirusýking', 'Dagleg áhrif'],
         options: [
             {
                 display: 'Nýleg veirusýking',
@@ -8314,22 +8345,6 @@ const SymptomsEye = [
                     { display: 'Akstur', output: 'Truflar við akstur', onRightClickOutput: 'Truflar ekki við akstur' },
                     { display: 'Lestur', output: 'Truflar við lestur', onRightClickOutput: 'Truflar ekki við lestur' }
                 ]
-            },
-            {
-                display: 'Gleraugu/linsur',
-                subOptions: [
-                    {
-                        display: 'Gleraugu',
-                        output: 'Notar gleraugu',
-                        onRightClickOutput: 'Notar ekki gleraugu'
-                    },
-                    {
-                        display: 'Linsur',
-                        output: 'Notar linsur',
-                        onRightClickOutput: 'Notar ekki linsur'
-                    }
-                ],
-                onRightClickOutput: 'Notar hvorki gleraugu né linsur'
             }
             
         ]
@@ -8395,11 +8410,22 @@ const HistoryEye = [
                 onRightClickOutput: 'Engin fyrri saga um augnsjúkdóma'
             },
             {
-                display: 'Gleraugu/Linsur',
+                display: 'Gleraugu/linsur',
                 subOptions: [
-                    { display: 'Notar gleraugu', output: 'Notar gleraugu', onRightClickOutput: 'Notar ekki gleraugu' },
-                    { display: 'Notar linsur', output: 'Notar linsur', onRightClickOutput: 'Notar ekki linsur' },
-                    { display: 'Skiptist á milli', output: 'Skiptist á milli gleraugna og linsa'}
+                    {
+                        display: 'Gleraugu',
+                        output: 'Notar gleraugu',
+                        onRightClickOutput: 'Notar ekki gleraugu'
+                    },
+                    {
+                        display: 'Linsur',
+                        output: 'Notar linsur',
+                        onRightClickOutput: 'Notar ekki linsur'
+                    },
+                    {
+                        display: 'Bæði til skiptis',
+                        output: 'Notar gleraugu og linsur til skiptis'
+                    }
                 ],
                 onRightClickOutput: 'Notar hvorki gleraugu né linsur'
             }
@@ -8435,7 +8461,7 @@ const HistoryEye = [
     
 ];
 const LyfAuga = [
-    {
+    /*{
         name: '',
         type: 'options',
         display: ['Glákulyf', 'Sýklalyf', 'Bólgueyðandi lyf', 'Steralyf'],
@@ -8599,7 +8625,7 @@ const LyfAuga = [
                 ]
             }
         ]
-    }
+    }*/
     
 ];
 const ExamsEye = [
@@ -8782,31 +8808,24 @@ const ExamsEye = [
 ];
 const PlanEye = [
     {
-        name: 'Greiningar',
+        name: 'Augnlok',
         type: 'options',
-        display: ['Blepharitis', 'Vogris', 'Conjunctivitis'],
+        display: ['Blepharitis', 'Vogris'],
         options: [
             { display: 'Blepharitis', 
                 subOptions: [
-                    { display: 'Greining', output: 'Blepharitis' },
-                    { display: 'Grunur', output: 'Grunur um blepharitis' },
-                    { display: 'Fullmótað plan', 
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Grunur - Bakstrar - Re pn', output: 'Grunur um blepharitis. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'} ,
-                            { display: 'Grunur - Bakstrar - Sýkladropar í gátt - Re pn', output: 'Grunur um blepharitis. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Set sýkladropa í gáttina, leysir út ef þarf. Endurmat ef versnar eða lagast ekki' } 
+                            { display: 'Bakstrar - Re pn', output: 'Grunur um blepharitis. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'} ,
+                            { display: 'Bakstrar - Sýkladropar í gátt - Re pn', output: 'Grunur um blepharitis. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Set sýkladropa í gáttina, leysir út ef þarf. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Stungið á - Bakstrar - Sýkladropar - Re pn', output: 'Grunur um blepharitis. Stungið á graftarnabba. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Þar sem stungið ráðlagt að nota sýkladropa næstu daga. Endurmat ef versnar eða lagast ekki' }
                         ]
-                    },
-                    { display: 'Ráðleggingar', 
-                        subOptions: [
-                            { display: 'Blepharitis', output: 'Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag' } 
-                        ]    
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             
                             { display: 'Sjónlag - Hvarmabólga', type: 'hyperlink', url: 'https://www.sjonlag.is/Frodleikur/Augnsjukdomar/Hvarmabolga/' },
                             { display: 'American Optometric Associatoion - Blepharitis', type: 'hyperlink', url: 'https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/blepharitis' }
-                            
                         ]
                     },
                     { display: 'Fræðsluefni lækna', 
@@ -8818,22 +8837,15 @@ const PlanEye = [
             },
             { display: 'Vogris', 
                 subOptions: [
-                    { display: 'Greining', output: 'Vogris' },
-                    { display: 'Grunur', output: 'Grunur um vogris' },
-                    { display: 'Fullmótað plan', 
+                    { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Greining - Bakstrar - Re pn', output: 'Vogris. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'} ,
-                            { display: 'Greining - Bakstrar - Sýkladropar í gátt - Re pn', output: 'Vogris. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Set sýkladropa í gáttina, leysir út ef þarf. Endurmat ef versnar eða lagast ekki' } 
+                            { display: 'Bakstrar - Re pn', output: 'Vogris. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'} ,
+                            { display: 'Bakstrar - Sýkladropar í gátt - Re pn', output: 'Vogris. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Set sýkladropa í gáttina, leysir út ef þarf. Endurmat ef versnar eða lagast ekki' },
+                            { display: 'Stungið á - Bakstrar - Sýkladropar - Re pn', output: 'Vogris. Stungið á graftarnabba. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Þar sem stungið ráðlagt að nota sýkladropa næstu daga. Endurmat ef versnar eða lagast ekki' }
                         ]
-                    },
-                    { display: 'Ráðleggingar', 
-                        subOptions: [
-                            { display: 'Vogris', output: 'Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag' } 
-                        ]    
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
-                            
                             { display: 'Sjónlag - Hvarmabólga', type: 'hyperlink', url: 'https://www.sjonlag.is/Frodleikur/Augnsjukdomar/Hvarmabolga/' }
                         ]
                     },
@@ -8845,19 +8857,16 @@ const PlanEye = [
                     }
                     
                 ], onRightClickOutput: 'Vogris. Fræðsla. Heitir bakstrar kjörmeðferð. Korter í senn 4x á dag. Endurmat ef versnar eða lagast ekki'
-            },
-            PlanConjunctivitis
+            }
         ]
     },
     {
-        name: '',
+        name: 'Auga',
         type: 'options',
-        display: ['Aðskotahlutur', 'Corneal abrasion', 'Herpes'],
+        display: ['Aðskotahlutur', 'Corneal abrasion', 'Conjunctivitis'],
         options: [
             { display: 'Aðskotahlutur', 
                 subOptions: [
-                    { display: 'Greining', output: 'Aðskotahlutur í auga' },
-                    { display: 'Grunur', output: 'Grunur um aðskotahlut í auga' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Fjarlægi með nál - Sýkladropar - Re PN', output: 'Aðskotahlutur í auga. Fjarlægi með nál. Losnar vel frá. Ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (panodil og íbúfen) við óþægindum. Endurmat ef lagast ekki' } ,
@@ -8866,35 +8875,28 @@ const PlanEye = [
                             { display: 'Næst ekki að fjarlægja - Sýkladropa mýkja - Leitar á heilsugæsluna í framhaldi', output: 'Aðskotahlutur í auga. Reyni að fjarlægja með nál en gengur ekki. Ráðlegg sýkladropa til að mýkja. Verkjalyf (panodil og íbúfen) við óþægindum. Leitar á heilsugæsluna í framhaldi til að fjarlægja' }
                         ]    
                     },
-                    { display: 'Ráðleggingar', 
-                        subOptions: [
-                            { display: '', output: '' } 
-                        ]    
-                    },
-                    { display: 'Leiðbeiningar til skjólstæðings',
+                    /*{ display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             
                             { display: '', type: 'hyperlink', url: '' }
                         ]
-                    },
+                    },*/
                     { display: 'Fræðsluefni lækna', 
                         subOptions: [
                             { display: 'Uptodate - Corneal abrasions and foreign bodies: Clinical manifestations and diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/corneal-abrasions-and-corneal-foreign-bodies-clinical-manifestations-and-diagnosis' },
                             { display: 'Uptodate - Corneal abrasions and foreign bodies: Management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/corneal-abrasions-and-corneal-foreign-bodies-management' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Aðskotahlutur í auga. Fjarlægi með nál. Losnar vel frá. Ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (panodil og íbúfen) við óþægindum. Endurmat ef lagast ekki'
             },
             { display: 'Corneal abrasion', 
                 subOptions: [
-                    { display: 'Greining', output: 'Corneal abrasion' },
-                    { display: 'Grunur', output: 'Grunur um corneal abrasion' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Greining - Ráð - Sýkladropar - Endurmat PN', output: 'Corneal abrasion. Veiti ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (íbúfen og panodil) PN við óþægindum. Ef einkenni lagast ekki eða versna þá endurmat' } 
                         ]    
                     },
-                    { display: 'Ráðleggingar', 
+                    /*{ display: 'Ráðleggingar', 
                         subOptions: [
                             { display: '', output: '' } 
                         ]    
@@ -8904,7 +8906,7 @@ const PlanEye = [
                             
                             { display: '', type: 'hyperlink', url: '' }
                         ]
-                    },
+                    },*/
                     { display: 'Fræðsluefni lækna', 
                         subOptions: [
                             { display: 'Uptodate - Corneal abrasions and foreign bodies: Clinical manifestations and diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/corneal-abrasions-and-corneal-foreign-bodies-clinical-manifestations-and-diagnosis' },
@@ -8913,11 +8915,47 @@ const PlanEye = [
                     }
                 ], onRightClickOutput: 'Corneal abrasion. Veiti ráðleggingar. Hornhimna grær frekar fljótt. Ráðlegg sýkladropa næstu daga. Verkjalyf (íbúfen og panodil) PN við óþægindum. Ef einkenni lagast ekki eða versna þá endurmat'
             },
+            PlanConjunctivitis
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Óþægindi', /*'Herpes' */],
+        options: [
+            {
+                display: 'Óþægindi',
+                subOptions: [
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
+                            { display: 'Óþægindi - Engin skýring - Obs - Ef lagast ekki þá augnlæknir', output: 'Óþægindi frá auga. Engin skýring finnst við skoðun. Ráðlegg obs næstu daga. Notar gervitár eftir þörfum. Ef einkenni lagast ekki ráðlagt mat augnlæknis' },
+                            { display: 'Óþægindi - Engin skýring - Obs+sýkladropar - Ef lagast ekki þá augnlæknir', output: 'Óþægindi frá auga. Engin skýring finnst við skoðun. Reynum sýkladropa við einkennum. Ef einkenni lagast ekki ráðlagt mat augnlæknis'}
+                        ]    
+                    },
+                    /*{ display: 'Ráðleggingar', 
+                        subOptions: [
+                            { display: '', output: '' } 
+                        ]    
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    },
+                    { display: 'Fræðsluefni lækna', 
+                        subOptions: [
+                            { display: '', type: 'hyperlink', url: '' }
+                        ]
+                    }*/
+                    
+                ],
+                onRightClickOutput: 'Óþægindi frá auga. Engin skýring finnst við skoðun. Ráðlegg obs næstu daga. Notar gervitár eftir þörfum. Ef einkenni lagast ekki ráðlagt mat augnlæknis'
+            },
+            /*
             {
                 display: '',
                 subOptions: [
-                    { display: 'Greining', output: 'Herpes oticus' },
-                    { display: 'Grunur', output: 'Grunur um herpessýkingu í auga' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: '', output: '' } 
@@ -8948,48 +8986,10 @@ const PlanEye = [
                     
                 ],
                 onRightClickOutput: ''
-            }
+            }*/
         ]
     },
-    {
-        name: '',
-        type: 'options',
-        display: ['Óþægindi'],
-        options: [
-            {
-                display: 'Óþægindi',
-                subOptions: [
-                    { display: 'Greining', output: '' },
-                    { display: 'Grunur', output: '' },
-                    { display: 'Fullmótuð plön', 
-                        subOptions: [
-                            { display: 'Óþægindi - Engin skýring - Obs - Ef lagast ekki þá augnlæknir', output: 'Óþægindi frá auga. Engin skýring finnst við skoðun. Ráðlegg obs næstu daga. Notar gervitár eftir þörfum. Ef einkenni lagast ekki ráðlagt mat augnlæknis' },
-                            { display: 'Óþægindi - Engin skýring - Obs+sýkladropar - Ef lagast ekki þá augnlæknir', output: 'Óþægindi frá auga. Engin skýring finnst við skoðun. Reynum sýkladropa við einkennum. Ef einkenni lagast ekki ráðlagt mat augnlæknis'}
-                        ]    
-                    },
-                    { display: 'Ráðleggingar', 
-                        subOptions: [
-                            { display: '', output: '' } 
-                        ]    
-                    },
-                    { display: 'Leiðbeiningar til skjólstæðings',
-                        subOptions: [
-                            
-                            { display: '', type: 'hyperlink', url: '' }
-                        ]
-                    },
-                    { display: 'Fræðsluefni lækna', 
-                        subOptions: [
-                            { display: '', type: 'hyperlink', url: '' }
-                        ]
-                    }
-                    
-                ],
-                onRightClickOutput: 'Óþægindi frá auga. Engin skýring finnst við skoðun. Ráðlegg obs næstu daga. Notar gervitár eftir þörfum. Ef einkenni lagast ekki ráðlagt mat augnlæknis'
-            }
-        ]
-    },
-    {
+    /*{
         name: 'Áætlanir',
         type: 'options',
         display: ['Ráðleggingar', 'Sýkladropar', 'Ofnæmislyf'],
@@ -9094,7 +9094,7 @@ const PlanEye = [
             EftirfylgdButton
 
         ]
-    }
+    }*/
 ];
 const RaudFloggEye =[
     {
@@ -12678,7 +12678,7 @@ const SymptomsMelting = [
     {
         name: '',
         type: 'options',
-        display: ['Slappleiki', 'Höfuðverkur'],
+        display: ['Slappleiki', 'Höfuðverkur', 'Bakverkur'],
         options: [
             {
                 display: 'Slappleiki',
@@ -12713,6 +12713,14 @@ const SymptomsMelting = [
                         output: 'Lýsir töluverðum höfuðverk'
                     }
                 ], onRightClickOutput: 'Neitar höfuðverk'
+            },
+            { 
+                display: 'Bakverkur', 
+                subOptions: [
+                    { display: 'Nýtilkominn', output: 'Lýsir nýtilkomnum bakverk' },
+                    { display: 'Langvarandi, ekki breyting', output: 'Með langvarandi bakverki. Ekki nýtilkominn verkur' }
+                ],
+                onRightClickOutput: 'Ekki nýtilkominn bakverkur'
             }
         ]
     },
@@ -13887,7 +13895,7 @@ const PlanMelting = [
                 subOptions: [
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Drekka vel. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband' } 
+                            { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti viðeigandi ráðleggingar. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband' } 
                         ]    
                     },
                     { display: 'Ráðleggingar', 
@@ -13913,7 +13921,7 @@ const PlanMelting = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Drekka vel. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband'
+                ], onRightClickOutput: 'Grunur um blöðrubólgu. Veiti viðeigandi ráðleggingar. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband'
             },
             {
                 display: 'Pyelonephritis',
@@ -14512,7 +14520,7 @@ const Gynsaga = [
         
       ],
     },
-  ];
+];
 const historyMelting = [
     {
         name: '',
@@ -16269,21 +16277,38 @@ const SymptomsShoulder = [
     },
     Timalengd2,
     {
-        name: '',  // No category name displayed
+        name: 'Staðsetning',  // No category name displayed
         type: 'options',
-        display: ['Einkenni', 'Verkur', 'Óþægindi'],  // Four buttons in one row
+        display: ['Hægri', 'Vinstri', 'Beggja vegna'],  // Four buttons in one row
         options: [
+            { display: 'Hægri', output: 'Einkenni frá hægri öxl' },  // Right shoulder symptom
+            { display: 'Vinstri', output: 'Einkenni frá vinstri öxl' },
+            { display: 'Beggja vegna', output: 'Einkenni frá báðum öxlum' }
+        ]
+    },
+    {
+        name: 'Einkenni',  // No category name displayed
+        type: 'options',
+        display: ['Verkur', 'Óþægindi'],  // Four buttons in one row
+        options: [
+
             {
-                display: 'Einkenni',  // Main button for symptoms
+                display: 'Verkur',
                 subOptions: [
-                    { display: 'Hægri', output: 'Einkenni frá hægri öxl' },  // Right shoulder symptom
-                    { display: 'Vinstri', output: 'Einkenni frá vinstri öxl' }  // Left shoulder symptom
-                ]
-            },
-            {
-                display: 'Verkur',  // Main button for pain
-                output: 'Verkur',  // Left-click output for indicating pain
-                onRightClickOutput: 'Ekki verkur'  // Right-click output for no pain
+                    {
+                        display: 'NOS',
+                        output: 'Verkur'
+                    },
+                    {
+                        display: 'Vægur',
+                        output: 'Vægur verkur'
+                    },
+                    {
+                        display: 'Mikill verkur',
+                        output: 'Mikill verkur'
+                    }
+                ],  
+                onRightClickOutput: 'Neitar verk'  
             },
             {
                 display: 'Óþægindi',  // Main button for pain
@@ -16293,49 +16318,7 @@ const SymptomsShoulder = [
         ]
     },
     {
-        name: '',  // No category name displayed
-        type: 'options',
-        display: ['Onset', 'Áverki'],  // Four buttons in one row
-        options: [
-            {
-                display: 'Onset',
-                subOptions: [
-                    { display: 'Hægt og rólega', output: 'Byrjaði hægt og rólega' },
-                    { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
-                    { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
-                ]
-            },
-            {
-                display: 'Áverki',
-                onRightClickOutput: 'Ekki áverkasaga',
-                subOptions: [
-                    {
-                        display: 'Rak sig í',
-                        subOptions: [
-                            { display: 'NOS', output: 'Rak sig í' },
-                            { display: 'Í vinnu', output: 'Rak sig í vinnunni' },
-                            { display: 'Á leið til vinnu', output: 'Rak sig í á leið til vinnu' },
-                            { display: 'Heimafyrir', output: 'Rak sig í heimafyrir' }
-                        ]
-                    },
-                    {
-                        display: 'Snúningsáverki',
-                        subOptions: [
-                            { display: 'NOS', output: 'Snéri uppá öxlina' },
-                            { display: 'Í vinnu', output: 'Snéri uppá öxl í vinnunni' },
-                            { display: 'Á leið til vinnu', output: 'Snéri uppá öxl á leið til vinnu' },
-                            { display: 'Heimafyrir', output: 'Snéri uppá öxlina heimafyrir' }
-                        ]
-                    },
-                    {
-                        display: 'Íþróttaáverki', output: 'Íþróttaáverki'
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        name: '',
+        name: 'SOCRATES',
         type: 'options',
         display: ['Staðsetning', 'Character', 'Leiðni', 'Versnar', 'Severity'],
         options: [
@@ -16401,7 +16384,49 @@ const SymptomsShoulder = [
         ]
     },
     {
-        name: '',
+        name: '',  // No category name displayed
+        type: 'options',
+        display: ['Onset', 'Áverki'],  // Four buttons in one row
+        options: [
+            {
+                display: 'Onset',
+                subOptions: [
+                    { display: 'Hægt og rólega', output: 'Byrjaði hægt og rólega' },
+                    { display: 'Skyndilega', output: 'Byrjaði skyndilega' },
+                    { display: 'Kemur og fer', output: 'Einkenni koma og fara' }
+                ]
+            },
+            {
+                display: 'Áverki',
+                onRightClickOutput: 'Ekki áverkasaga',
+                subOptions: [
+                    {
+                        display: 'Rak sig í',
+                        subOptions: [
+                            { display: 'NOS', output: 'Rak sig í' },
+                            { display: 'Í vinnu', output: 'Rak sig í vinnunni' },
+                            { display: 'Á leið til vinnu', output: 'Rak sig í á leið til vinnu' },
+                            { display: 'Heimafyrir', output: 'Rak sig í heimafyrir' }
+                        ]
+                    },
+                    {
+                        display: 'Snúningsáverki',
+                        subOptions: [
+                            { display: 'NOS', output: 'Snéri uppá öxlina' },
+                            { display: 'Í vinnu', output: 'Snéri uppá öxl í vinnunni' },
+                            { display: 'Á leið til vinnu', output: 'Snéri uppá öxl á leið til vinnu' },
+                            { display: 'Heimafyrir', output: 'Snéri uppá öxlina heimafyrir' }
+                        ]
+                    },
+                    {
+                        display: 'Íþróttaáverki', output: 'Íþróttaáverki'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: 'Saga',
         type: 'options',
         display: ['Axlarsaga', 'Aðgerð'],
         options: [
@@ -21485,18 +21510,37 @@ const PlanHud = [
     {
         name: 'Sýking',
         type: 'options',
-        display: ['Húðsýking', 'Varta'],
+        display: ['Húðsýking', 'Naglbeð'],
         options: [
             {
                 display: 'Húðsýking',
                 subOptions: [
-                    { display: 'Greining', output: 'Húðsýking' },
-                    { display: 'Grunur', output: 'Grunur um húðsýkingu' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Grunur, sýklalyf, fylgjast vel með, endurmat pn', output: 'Grunur um húðsýkingu. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' },
                             { display: 'Grunur, sýklakrem, fylgjast vel með, endurmat pn', output: 'Grunur um húðsýkingu. Set sýklakrem í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' },
-                            { display: 'Ekki hægt að útiloka, DDX þvagsýrugigt, sýklalyf, fylgjast vel með, endurmat pn', output: 'DDX húðsýking, þvagsýrugigt. Þar sem ekki hægt að útiloka sýkingu ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' },
+                            { display: 'Ekki hægt að útiloka, DDX þvagsýrugigt, sýklalyf, fylgjast vel með, endurmat pn', output: 'DDX húðsýking, þvagsýrugigt. Þar sem ekki hægt að útiloka sýkingu ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum' }
+                        ]
+                    },
+                    { display: 'Leiðbeiningar til skjólstæðings', 
+                        subOptions: [
+                            { display: 'Landspítali - Fræðslubæklingur Húðsýkingar', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Lyflaekningasvid/Hudsyking.pdf' },
+                        ]
+                    },
+                    { display: 'Fræðsluefni og ítarefni lækna', 
+                        subOptions: [
+                            { display: 'Uptodate - Greining', type: 'hyperlink', url: 'https://www.uptodate.com/contents/cellulitis-and-skin-abscess-epidemiology-microbiology-clinical-manifestations-and-diagnosis' },
+                            { display: 'Uptodate - Meðferð Fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-cellulitis-and-erysipelas-in-adults-treatment' },
+                            { display: 'Strama - Impetigo, erysipelas, sýkt fótasár', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/hrudurgeit-impetigo-heimakoma-erysipelas-sarasyking-sykt-fotasar/' }
+                        ]
+                    }
+                ], onRightClickOutput: 'Grunur um húðsýkingu. Set sýklalyf í gáttina. Fylgjast vel með, ef aukinn roði, auknir verkir, hiti eða annarskonar versnun þrátt fyrir meðferð þá endurmat sem og ef lagast ekki á næstu dögum'
+            },
+            {
+                display: 'Naglbeð',
+                subOptions: [
+                    { display: 'Fullmótuð plön', 
+                        subOptions: [
                             {
                                 display: 'Sýking í naglbeð - Sýklalyf PO - Re PN',
                                 output: 'Sýking í naglbeð. Set sýklalyf í gáttina. Endurmat ef einkenni versna eða lagast ekki'
@@ -21517,42 +21561,43 @@ const PlanHud = [
                             { display: 'Uptodate - Greining', type: 'hyperlink', url: 'https://www.uptodate.com/contents/cellulitis-and-skin-abscess-epidemiology-microbiology-clinical-manifestations-and-diagnosis' },
                             { display: 'Uptodate - Meðferð Fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-cellulitis-and-erysipelas-in-adults-treatment' },
                             { display: 'Strama - Impetigo, erysipelas, sýkt fótasár', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/hrudurgeit-impetigo-heimakoma-erysipelas-sarasyking-sykt-fotasar/' }
-                        
-                            
                         ]
                     }
-                ]
-            },
+                ], onRightClickOutput: 'Sýking í naglbeð. Set sýklalyf í gáttina. Endurmat ef einkenni versna eða lagast ekki'
+            }
+        ]
+    },
+    {
+        name: 'Húðbreyting',
+        type: 'options',
+        display: ['Varta'],
+        options: [
             {
                 display: 'Varta',
                 subOptions: [
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Heimameðferð', output: 'Veiti ráðleggingar um heimameðferð á vörtum. Fá með sér útprentað blað með leiðbeiningum. Endurmat ef lagast ekki' } 
+                            { display: 'Heimameðferð', output: 'Veiti ráðleggingar um heimameðferð á vörtum. Fá með sér útprentað blað með leiðbeiningum. Endurmat ef lagast ekki' }
                         ]    
                     },
-                    { display: 'Ráðleggingar', 
+                    /*{ display: 'Ráðleggingar', 
                         subOptions: [
                             { display: '', output: '' } 
                         ]    
-                    },
+                    },*/
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             { display: 'Vörtumeðferðarskjal', type: 'hyperlink', url: 'https://1drv.ms/b/c/adc5bc1773f511d1/EV6l8nKNqVhOjGNZ0kBNZDwBGkYvuCqLN7GGkK56MdGDlg?e=hvKUuW' },
-                            { display: '', type: 'hyperlink', url: '' },
-                            { display: '', type: 'hyperlink', url: '' },
-                            { display: '', type: 'hyperlink', url: '' },
-                            { display: '', type: 'hyperlink', url: '' }
                         ]
                     },
-                    { display: 'Fræðsluefni lækna', 
+                    /*{ display: 'Fræðsluefni lækna', 
                         subOptions: [
                             { display: '', type: 'hyperlink', url: '' },
                             { display: '', type: 'hyperlink', url: '' },
                             { display: '', type: 'hyperlink', url: '' },
                             { display: '', type: 'hyperlink', url: '' }
                         ]
-                    }
+                    }*/
                     
                 ],
                 onRightClickOutput: 'Veiti ráðleggingar um heimameðferð á vörtum. Fá með sér útprentað blað með leiðbeiningum. Endurmat ef lagast ekki'
@@ -21614,10 +21659,10 @@ const PlanHud = [
                 display: '',
                 subOptions: [
                     {
-                        display: 'Flow',
-                        subOptions: generateSkurdurOptions()
+                        display: 'Plan',
+                        subOptions: PlanSkurður()
                     },
-                    { display: 'Fullmótuð plön', 
+                    /*{ display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: '', output: '' } 
                         ]    
@@ -21643,13 +21688,203 @@ const PlanHud = [
                             { display: '', type: 'hyperlink', url: '' },
                             { display: '', type: 'hyperlink', url: '' }
                         ]
-                    }
+                    }*/
                     
                 ],
-                onRightClickSubOptions: generateSkurdurOptions()
+                onRightClickSubOptions: PlanSkurður()
                 
             }
             
+        ]
+    },
+    {
+        name: 'Áætlanir',
+        type: 'options',
+        display: ['Sterakrem', 'Sýklakrem', 'Sveppakrem'],
+        options: [
+            {
+                display: 'Sterakrem',
+                subOptions: [
+                    {
+                        display: 'Very high potency',
+                        subOptions: [
+                            {
+                                display: 'Dermovat húðlausn (0.5 mg/ml)',
+                                subOptions: generateCreamActions('dermovat húðlausn (0.5mg/ml)')
+                            },
+                            {
+                                display: 'Dermovat krem (0.5 mg/g)',
+                                subOptions: generateCreamActions('dermovat krem (0.5mg/g)')
+                            },
+                            {
+                                display: 'Dermovat smyrsli (0.5 mg/g)',
+                                subOptions: generateCreamActions('dermovat smyrsli (0.5mg/g)')
+                            }
+                        ]
+                    },
+                    {
+                        display: 'High potency',
+                        subOptions: [
+                            {
+                                display: 'Betnovat húðlausn (1 mg/ml)',
+                                subOptions: generateCreamActions('betnovat húðlausn (1mg/ml)')
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Medium potency',
+                        subOptions: [
+                            {
+                                display: 'Elocon húðlausn (0.1%)',
+                                subOptions: generateCreamActions('elocon húðlausn (0.1%)')
+                            },
+                            {
+                                display: 'Elocon krem (0.1%)',
+                                subOptions: generateCreamActions('elocon krem (0.1%)')
+                            },
+                            {
+                                display: 'Elocon smyrsli (0.1%)',
+                                subOptions: generateCreamActions('elocon smyrsli (0.1%)')
+                            },
+                            {
+                                display: 'Ovixan krem (1 mg/g)',
+                                subOptions: generateCreamActions('ovixan krem (1mg/g)')
+                            },
+                            {
+                                display: 'Ovixan húðlausn (1 mg/g)',
+                                subOptions: generateCreamActions('ovixan húðlausn (1mg/g)')
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Medium to low potency',
+                        subOptions: [
+                            {
+                                display: 'Locoid húðlausn (1 mg/ml)',
+                                subOptions: generateCreamActions('locoid húðlausn (1mg/ml)')
+                            },
+                            {
+                                display: 'Locoid krem (1 mg/g)',
+                                subOptions: generateCreamActions('locoid krem (1mg/g)')
+                            },
+                            {
+                                display: 'Locoid smyrsli (1 mg/g)',
+                                subOptions: generateCreamActions('locoid smyrsli (1mg/g)')
+                            },
+                            {
+                                display: 'Locoid Crelo húðfleyti (0.1%)',
+                                subOptions: generateCreamActions('locoid crelo húðfleyti (0.1%)')
+                            },
+                            {
+                                display: 'Locoid Lipid krem (1 mg/g)',
+                                subOptions: generateCreamActions('locoid lipid krem (1mg/g)')
+                            }
+                        ]
+                    },
+                    {
+                        display: 'Low potency',
+                        subOptions: [
+                            {
+                                display: 'Hydrokortison Evolan krem (10 mg/g)',
+                                subOptions: generateCreamActions('hydrokortison evolan krem (10mg/g)')
+                            },
+                            {
+                                display: 'Mildison Lipid krem (10 mg/g)',
+                                subOptions: generateCreamActions('mildison lipid krem (10mg/g)')
+                            },
+                            {
+                                display: 'Mildison Lipid (Heilsa) krem (10 mg/g)',
+                                subOptions: generateCreamActions('mildison lipid (heilsa) krem (10mg/g)')
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                display: 'Sýklakrem',
+                subOptions: [
+                    {
+                        display: 'Fucidin krem (20 mg/g)',
+                        subOptions: generateCreamActions('fucidin krem (20 mg/g)')
+                    },
+                    {
+                        display: 'Fucidin smyrsli (20 mg/g)',
+                        subOptions: generateCreamActions('fucidin smyrsli (20 mg/g)')
+                    },
+                    {
+                        display: 'Fucidin-Hydrocortison krem (20 + 10 mg)',
+                        subOptions: generateCreamActions('fucidin-hydrocortison krem (20 + 10 mg)')
+                    },
+                    {
+                        display: 'Bactroban smyrsli (20 mg/g)',
+                        subOptions: generateCreamActions('bactroban smyrsli (20 mg/g)')
+                    }
+                ]
+            },
+            {
+                display: 'Sveppakrem',
+                subOptions: [
+                    {
+                        display: 'Daktacort krem',
+                        subOptions: generateCreamActions('Daktacort krem')
+                    },
+                    {
+                        display: 'Pevione krem (1%)',
+                        subOptions: generateCreamActions('Pevione krem (1%)')
+                    },
+                    {
+                        display: 'Pevaryl krem (10 mg/g)',
+                        subOptions: generateCreamActions('Pevaryl krem (10 mg/g)')
+                    },
+                    {
+                        display: 'Canesten krem (10 mg/g)',
+                        subOptions: generateCreamActions('Canesten krem (10 mg/g)')
+                    },
+                    {
+                        display: 'Lamisil krem (10 mg/g)',
+                        subOptions: generateCreamActions('Lamisil krem (10 mg/g)')
+                    },
+                    {
+                        display: 'Lamisil Once húðlausn (10 mg/g)',
+                        subOptions: generateCreamActions('Lamisil Once húðlausn (10 mg/g)')
+                    },
+                    {
+                        display: 'Amorolfin Alvogen lyfjalakk á neglur (5%)',
+                        subOptions: generateCreamActions('Amorolfin Alvogen lyfjalakk á neglur (5%)')
+                    },
+                    {
+                        display: 'Amorolfin Apofri lyfjalakk á neglur (5%)',
+                        subOptions: generateCreamActions('Amorolfin Apofri lyfjalakk á neglur (5%)')
+                    },
+                    {
+                        display: 'Dermatin hársápa (20 mg/g)',
+                        subOptions: generateCreamActions('Dermatin hársápa (20 mg/g)')
+                    },
+                    {
+                        display: 'Fungoral hársápa (20 mg/ml)',
+                        subOptions: generateCreamActions('Fungoral hársápa (20 mg/ml)')
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Notkun', 'Meðferðarlengd'],
+        options: [
+            {
+                display: 'Notkun',
+                subOptions: [
+                    { display: 'Eftir þörfum', output: 'Notar eftir þörfum' },
+                    { display: '1x á dag', output: 'Notar 1x á dag' },
+                    { display: '2x á dag', output: 'Notar 2x á dag' },
+                    { display: '3x á dag', output: 'Notar 3x á dag' },
+                    { display: '1-2x á dag', output: 'Notar 1-2x á dag' },
+                    { display: '2-3x á dag', output: 'Notar 2-3x á dag' }
+                ]
+            },
+            Meðferðarlengd
         ]
     },
     /*
@@ -21917,198 +22152,84 @@ const PlanHud = [
         ]
     },
     */
-    
-    {
-        name: 'Annað',
-        type: 'options',
-        display: ['Sterakrem', 'Sýklakrem', 'Sveppakrem'],
-        options: [
-            {
-                display: 'Sterakrem',
-                subOptions: [
-                    {
-                        display: 'Very high potency',
-                        subOptions: [
-                            {
-                                display: 'Dermovat húðlausn (0.5 mg/ml)',
-                                subOptions: generateCreamActions('dermovat húðlausn (0.5mg/ml)')
-                            },
-                            {
-                                display: 'Dermovat krem (0.5 mg/g)',
-                                subOptions: generateCreamActions('dermovat krem (0.5mg/g)')
-                            },
-                            {
-                                display: 'Dermovat smyrsli (0.5 mg/g)',
-                                subOptions: generateCreamActions('dermovat smyrsli (0.5mg/g)')
-                            }
-                        ]
-                    },
-                    {
-                        display: 'High potency',
-                        subOptions: [
-                            {
-                                display: 'Betnovat húðlausn (1 mg/ml)',
-                                subOptions: generateCreamActions('betnovat húðlausn (1mg/ml)')
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Medium potency',
-                        subOptions: [
-                            {
-                                display: 'Elocon húðlausn (0.1%)',
-                                subOptions: generateCreamActions('elocon húðlausn (0.1%)')
-                            },
-                            {
-                                display: 'Elocon krem (0.1%)',
-                                subOptions: generateCreamActions('elocon krem (0.1%)')
-                            },
-                            {
-                                display: 'Elocon smyrsli (0.1%)',
-                                subOptions: generateCreamActions('elocon smyrsli (0.1%)')
-                            },
-                            {
-                                display: 'Ovixan krem (1 mg/g)',
-                                subOptions: generateCreamActions('ovixan krem (1mg/g)')
-                            },
-                            {
-                                display: 'Ovixan húðlausn (1 mg/g)',
-                                subOptions: generateCreamActions('ovixan húðlausn (1mg/g)')
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Medium to low potency',
-                        subOptions: [
-                            {
-                                display: 'Locoid húðlausn (1 mg/ml)',
-                                subOptions: generateCreamActions('locoid húðlausn (1mg/ml)')
-                            },
-                            {
-                                display: 'Locoid krem (1 mg/g)',
-                                subOptions: generateCreamActions('locoid krem (1mg/g)')
-                            },
-                            {
-                                display: 'Locoid smyrsli (1 mg/g)',
-                                subOptions: generateCreamActions('locoid smyrsli (1mg/g)')
-                            },
-                            {
-                                display: 'Locoid Crelo húðfleyti (0.1%)',
-                                subOptions: generateCreamActions('locoid crelo húðfleyti (0.1%)')
-                            },
-                            {
-                                display: 'Locoid Lipid krem (1 mg/g)',
-                                subOptions: generateCreamActions('locoid lipid krem (1mg/g)')
-                            }
-                        ]
-                    },
-                    {
-                        display: 'Low potency',
-                        subOptions: [
-                            {
-                                display: 'Hydrokortison Evolan krem (10 mg/g)',
-                                subOptions: generateCreamActions('hydrokortison evolan krem (10mg/g)')
-                            },
-                            {
-                                display: 'Mildison Lipid krem (10 mg/g)',
-                                subOptions: generateCreamActions('mildison lipid krem (10mg/g)')
-                            },
-                            {
-                                display: 'Mildison Lipid (Heilsa) krem (10 mg/g)',
-                                subOptions: generateCreamActions('mildison lipid (heilsa) krem (10mg/g)')
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                display: 'Sýklakrem',
-                subOptions: [
-                    {
-                        display: 'Fucidin krem (20 mg/g)',
-                        subOptions: generateCreamActions('fucidin krem (20 mg/g)')
-                    },
-                    {
-                        display: 'Fucidin smyrsli (20 mg/g)',
-                        subOptions: generateCreamActions('fucidin smyrsli (20 mg/g)')
-                    },
-                    {
-                        display: 'Fucidin-Hydrocortison krem (20 + 10 mg)',
-                        subOptions: generateCreamActions('fucidin-hydrocortison krem (20 + 10 mg)')
-                    },
-                    {
-                        display: 'Bactroban smyrsli (20 mg/g)',
-                        subOptions: generateCreamActions('bactroban smyrsli (20 mg/g)')
-                    }
-                ]
-            },
-            {
-                display: 'Sveppakrem',
-                subOptions: [
-                    {
-                        display: 'Daktacort krem',
-                        subOptions: generateCreamActions('Daktacort krem')
-                    },
-                    {
-                        display: 'Pevione krem (1%)',
-                        subOptions: generateCreamActions('Pevione krem (1%)')
-                    },
-                    {
-                        display: 'Pevaryl krem (10 mg/g)',
-                        subOptions: generateCreamActions('Pevaryl krem (10 mg/g)')
-                    },
-                    {
-                        display: 'Canesten krem (10 mg/g)',
-                        subOptions: generateCreamActions('Canesten krem (10 mg/g)')
-                    },
-                    {
-                        display: 'Lamisil krem (10 mg/g)',
-                        subOptions: generateCreamActions('Lamisil krem (10 mg/g)')
-                    },
-                    {
-                        display: 'Lamisil Once húðlausn (10 mg/g)',
-                        subOptions: generateCreamActions('Lamisil Once húðlausn (10 mg/g)')
-                    },
-                    {
-                        display: 'Amorolfin Alvogen lyfjalakk á neglur (5%)',
-                        subOptions: generateCreamActions('Amorolfin Alvogen lyfjalakk á neglur (5%)')
-                    },
-                    {
-                        display: 'Amorolfin Apofri lyfjalakk á neglur (5%)',
-                        subOptions: generateCreamActions('Amorolfin Apofri lyfjalakk á neglur (5%)')
-                    },
-                    {
-                        display: 'Dermatin hársápa (20 mg/g)',
-                        subOptions: generateCreamActions('Dermatin hársápa (20 mg/g)')
-                    },
-                    {
-                        display: 'Fungoral hársápa (20 mg/ml)',
-                        subOptions: generateCreamActions('Fungoral hársápa (20 mg/ml)')
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Notkun', 'Meðferðarlengd'],
-        options: [
-            {
-                display: 'Notkun',
-                subOptions: [
-                    { display: 'Eftir þörfum', output: 'Notar eftir þörfum' },
-                    { display: '1x á dag', output: 'Notar 1x á dag' },
-                    { display: '2x á dag', output: 'Notar 2x á dag' },
-                    { display: '3x á dag', output: 'Notar 3x á dag' },
-                    { display: '1-2x á dag', output: 'Notar 1-2x á dag' },
-                    { display: '2-3x á dag', output: 'Notar 2-3x á dag' }
-                ]
-            },
-            Meðferðarlengd
-        ]
-    }
 ];
+function PlanSkurður() {
+    // Function to compose the final output based on selections
+    function composeSkurdurOutput(selections) {
+        let output = 'Skurður. ';
+        if (selections.closureMethod === 'Límt') {
+            output += 'Ákveðið að líma. Passa að blotni ekki næstu daga. Endurmat eftir þörfum. Ef sýkingarmerki endurmat fyrr.';
+        } else if (selections.closureMethod === 'Saumað') {
+            output += `Sauma ${selections.sporCount} spor með ${selections.threadType.toLowerCase()}. `;
+            output += `Ráðlögð ${selections.saumataka.toLowerCase()}. `;
+            output += 'Ef koma fram sýkingarmerki endurmat fyrr';
+        }
+        return output;
+    }
+
+    // Function to generate suture removal time options
+    function generateSaumatakaOptions(threadType, sporCount) {
+        const saumatakaOptions = [
+            'Saumataka eftir 7 daga',
+            'Saumataka eftir 10 daga',
+            'Saumataka eftir 5-7 daga',
+            'Saumataka eftir 7-10 daga',
+            'Saumataka eftir 10-14 daga'
+        ];
+        return saumatakaOptions.map(saumataka => ({
+            display: saumataka,
+            output: composeSkurdurOutput({
+                closureMethod: 'Saumað',
+                threadType,
+                sporCount,
+                saumataka
+            })
+        }));
+    }
+
+    // Function to generate 'spor' (stitch count) options based on the selected thread type
+    function generateSporOptions(threadType) {
+        const sporCounts = Array.from({ length: 10 }, (_, i) => i + 1); // 1 to 10
+        return sporCounts.map(count => ({
+            display: `${count} spor`,
+            subOptions: generateSaumatakaOptions(threadType, count)
+        }));
+    }
+
+    // Function to generate thread options when 'Saumað' is selected
+    function generateSaumadurOptions() {
+        const threadSizes = [
+            'Ethylon 1.0',
+            'Ethylon 2.0',
+            'Ethylon 3.0',
+            'Ethylon 4.0',
+            'Ethylon 5.0',
+            'Ethylon 6.0',
+            'Ethylon 7.0'
+        ];
+        return threadSizes.map(thread => ({
+            display: thread,
+            subOptions: generateSporOptions(thread)
+        }));
+    }
+
+    // Function to generate the initial options for Skurður
+    function generateSkurdurOptions() {
+        return [
+            {
+                display: 'Saumað',
+                subOptions: generateSaumadurOptions()
+            },
+            {
+                display: 'Límt',
+                output: composeSkurdurOutput({ closureMethod: 'Límt' })
+            }
+        ];
+    }
+
+    // Return the entire structure from PlanSkurður
+    return generateSkurdurOptions();
+}
 
 // Geð (Psychiatric problems)
 const SymptomsGed = [
@@ -22986,7 +23107,7 @@ const ExamsGed = [
 ];
 const PlanGed = [
     {
-        name: '',
+        name: 'Greiningar',
         type: 'options',
         display: ['Andleg vanlíðan', 'Þunglyndi', 'Kvíði', 'OCD'],
         options: [
@@ -23123,9 +23244,8 @@ const PlanGed = [
             }
         ]
     },
-    {},{},{},
     {
-        name: '',
+        name: 'Áætlanir',
         type: 'options',
         display: ['Ráðleggingar', 'Sálfræðimeðferð', 'ADHD'],
         options: [
@@ -24402,9 +24522,8 @@ const PlanGed = [
             }
         ]
     },
-    {},{},{},
     {
-        name: '',
+        name: 'Eftirfylgd',
         type: 'options',
         display: ['Endurmat', 'Eftirfylgd'],
         options: [
@@ -28278,30 +28397,32 @@ const PlanGigt = [
             {
                 display: 'Þvagsýrugigt',
                 subOptions: [
-                    { display: 'Greining', output: 'Þvagsýrugigt' },
-                    { display: 'Grunur', output: 'Grunur um þvagsýrugigt' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Brátt þvagsýrugigtarkast', 
                                 subOptions: [
-                                    { display: 'Grunur, NSAIDS, ráðleggingar, endurmat ef lagast ekki', output: 'Grunur um þvagsýrugigt. Ráðlegg háa skammta af NSAIDS. Endurmat ef einkenni versna eða lagast ekki' },
+                                    { display: 'Grunur, NSAIDS, ráðleggingar, endurmat ef lagast ekki', output: 'Grunur um þvagsýrugigt. Veiti viðeigandi ráðleggingar og fræðslu. Ráðlegg háa skammta af NSAIDS. Gengur yfirleitt yfir á nokkrum dögum. Endurmat ef einkenni versna eða lagast ekki' },
                                     { display: 'Colchicine, ráðleggingar, endurmat ef lagast ekki', output: 'Grunur um þvagsýrugigtarkast. Ráðlegg colchicine. Meðferð í samræmi við sérlyfjaskrá. 0,5mg 2-3x á sólahring. Má hefja meðferð með 1,0mg upphafsskamt. Hámark 6mg í meðferðarlotu (lágmark 72klst á milli meðferðarlota). Endurmat ef einkenni lagast ekki eða versnar, sem og ef aukaverkanir af colchicine' },
                                     { display: 'NSAID óþol, sterar PO', output: 'Grunur um þvagsýrugigtarkast. Þar sem óþol fyrir NSAIDS ákveðið að nota sterameðferð. Meðferð í samræmi við uptodate. Prednisolon 40mg daglega þar til einkenni yfirstaðin. Yfirleitt dugar 5-10 daga meðferð og er þá ekki þörf á niðurtröppun. Skjólstæðingur fær viðeigandi fræðslu um mögulegar aukaverkanir stera. Endurmat ef versnar eða lagast ekki' }
                                 ]    
                             },
-                            { display: 'Endurtekin þvagsýrugigtarköst', 
+                            /*{ display: 'Endurtekin þvagsýrugigtarköst', 
                                 subOptions: [
                                     { display: '', output: '' },
                                     { display: '', output: '' } 
                                 ]    
+                            },*/
+                            {
+                                display: 'Óviss greining - DECT (t.d. hjartavernd)',
+                                output: 'Grunur um þvagsýrugigt. Þar sem óvissa í greiningu ákveðið að senda beiðni í DECT (Dual Energy CT). Rannsóknin m.a. framkvæmd hjá hjartavernd'
                             }
                         ]    
                     },
-                    { display: 'Ráðleggingar', 
+                    /*{ display: 'Ráðleggingar', 
                         subOptions: [
                             { display: '', output: '' } 
                         ]    
-                    },
+                    },*/
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             {
@@ -28333,7 +28454,7 @@ const PlanGigt = [
                     }
                     
                 ],
-                onRightClickOutput: ''
+                onRightClickOutput: 'Grunur um þvagsýrugigt. Veiti viðeigandi ráðleggingar og fræðslu. Ráðlegg háa skammta af NSAIDS. Gengur yfirleitt yfir á nokkrum dögum. Endurmat ef einkenni versna eða lagast ekki'
             }
         ]
     }
@@ -28352,16 +28473,14 @@ const PlanMeðganga = [
                 display: 'Ógleði á meðgöngu',
                 subOptions: [
                     {
-                        display: 'Greining',
-                        output: 'Ógleði á meðgöngu'
-                    },
-                    {
-                        display: 'Grunur',
-                        output: 'Grunur ógleði á meðgöngu'
-                    },
-                    {
                         display: 'Fullmótuð plön',
                         subOptions: [
+                            {
+                                display: 'Ráðleggingar - Endurmat ef lagast ekki',
+                                output: 'Ógleði á meðgöngu. Veiti viðeigandi ráðleggingar. Borða litlar máltíðir í senn. Hrísgrjón, banani, ristað brauð o.fl. Velja frekar lytkarminni mat sem triggerar ekki ógleði. '
+                                + 'Ekki sterkan eða mjög feitan mat. Gott að hafa kex eða snarl á náttborði. Drekka milli máltíða frekar en með máltíð. Engifer getur hjálpað við ógleði. Ráðlagt að taka B6 vítamín eða borða mat með B6 (hnetur, bananar o.fl). '
+                                + 'Ef ofangreind ráð duga ekki er hægt að prófa lyf svo sem Xonvea eða bæta við ógleðisstillandi. Ef versnun (t.d. heldur engu niðri, merki um ofþornun, kviðverkir, þyngdartap o.fl.) er mikilvægt að hafa samband'
+                            },
                             {
                                 display: 'Svæsin, reynum Xonvea',
                                 output: 'Svæsin ógleði á meðgöngu. Heimaráð dugað takmarkað. Reynum xonvea'
@@ -28377,29 +28496,23 @@ const PlanMeðganga = [
                             { display: 'Xonvea - Sérlyfjaskrá SMPC', type: 'hyperlink', url: 'https://old.serlyfjaskra.is/FileRepos/273b4970-da28-ef11-8122-80f82c6a84ee/Xonvea_SmPC.pdf' }
                         ]
                     }
-                ]
+                ], onRightClickOutput: 'Ógleði á meðgöngu. Veiti viðeigandi ráðleggingar. Borða litlar máltíðir í senn. Hrísgrjón, banani, ristað brauð o.fl. Velja frekar lytkarminni mat sem triggerar ekki ógleði. '
+                                + 'Ekki sterkan eða mjög feitan mat. Gott að hafa kex eða snarl á náttborði. Drekka milli máltíða frekar en með máltíð. Engifer getur hjálpað við ógleði. Ráðlagt að taka B6 vítamín eða borða mat með B6 (hnetur, bananar o.fl). '
+                                + 'Ef ofangreind ráð duga ekki er hægt að prófa lyf svo sem Xonvea eða bæta við ógleðisstillandi. Ef versnun (t.d. heldur engu niðri, merki um ofþornun, kviðverkir, þyngdartap o.fl.) er mikilvægt að hafa samband'
             },
             {
                 display: 'Mastitis',
                 subOptions: [
                     {
-                        display: 'Greining',
-                        output: 'Mastitis'
-                    },
-                    {
-                        display: 'Grunur',
-                        output: 'Grunur um mastitis'
-                    },
-                    {
                         display: 'Fullmótuð plön',
                         subOptions: [
                             {
-                                display: 'Greining, ráðleggingar, sýklalyf, endurmat ef versnar/lagast ekki',
-                                output: 'Mastitis. Ráðlegg sýklalyf. Háir skammtar af dicloxacillin, 1gx4 í ca 7 daga. Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd. Endurmat ef versnar eða lagast ekki'
+                                display: 'Ráð - Sýklalyf - RE PN',
+                                output: 'Grunur um mastitis. Ráðlegg sýklalyf. Háir skammtar af dicloxacillin, 1gx4 í ca 7 daga. Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd. Endurmat ef versnar eða lagast ekki'
                             },
                             {
-                                display: 'Væg einkenni/stutt saga, ráðleggingar, sýklalyf (dicloxacillin) ef lagast ekki',
-                                output: 'Mastitis. Væg einkenni og stutt saga. Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd. Ef lagast ekki á 1-2 dögum leysir hún út sýklalyf úr gáttinni (dicloxacillin 1gx4 í 5-7 daga). Endurmat ef versnar eða lagast ekki á sýklalyfjameðferð'
+                                display: 'Væg einkenni - Ráð - Sýklalyf í gátt (dicloxacillin) - RE PN',
+                                output: 'Grunur um mastitis. Væg einkenni og stutt saga. Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd. Ef lagast ekki á 1-2 dögum leysir hún út sýklalyf úr gáttinni (dicloxacillin 1gx4 í 5-7 daga). Endurmat ef versnar eða lagast ekki á sýklalyfjameðferð'
                             }
                         ]
 
@@ -28428,10 +28541,11 @@ const PlanMeðganga = [
                             
                         ]
                     }
-                ], onRightClickOutput:'Mastitis. Ráðlegg sýklalyf. Háir skammtar af dicloxacillin, 1gx4 í ca 7 daga. Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd. Endurmat ef versnar eða lagast ekki'
+                ], onRightClickOutput:'Grunur um mastitis. Ráðlegg sýklalyf. Háir skammtar af dicloxacillin, 1gx4 í ca 7 daga. Veiti fræðslu og ráðleggingar. Drekka vel. Vera í víðum brjóstahaldara. Forðast að nota pumpu og nippluskjöld. Mikilvægt að láta barnið drekka úr brjóstinu til að minnka þrýsting. Verkjalyf íbúfen og panodil ásamt heitum/köldum bökstrum við verkjum. Má nudda léttilega en forðast dýpra nudd. Endurmat ef versnar eða lagast ekki'
             }
         ]
     },
+    /*
     {},{},{},
     {
         name: '',
@@ -28460,8 +28574,7 @@ const PlanMeðganga = [
             EftirfylgdButton
 
         ]
-    }
-
+    }*/
 ];
 
 // General data (habits, allergies, etc)
@@ -35922,76 +36035,6 @@ function generateCreamActions(medicationName) {
     ];
 }
 
-// Skurður
-// Function to generate the initial options for Skurður
-function generateSkurdurOptions() {
-    return [
-        {
-            display: 'Saumað',
-            subOptions: generateSaumadurOptions()
-        },
-        {
-            display: 'Límt',
-            output: composeSkurdurOutput({ closureMethod: 'Límt' })
-        }
-    ];
-}
-// Function to generate thread options when 'Saumað' is selected
-function generateSaumadurOptions() {
-    const threadSizes = [
-        'Ethylon 1.0',
-        'Ethylon 2.0',
-        'Ethylon 3.0',
-        'Ethylon 4.0',
-        'Ethylon 5.0',
-        'Ethylon 6.0',
-        'Ethylon 7.0'
-    ];
-    return threadSizes.map(thread => ({
-        display: thread,
-        subOptions: generateSporOptions(thread)
-    }));
-}
-// Function to generate 'spor' (stitch count) options based on the selected thread type
-function generateSporOptions(threadType) {
-    const sporCounts = Array.from({ length: 10 }, (_, i) => i + 1); // Generates numbers from 1 to 10
-    return sporCounts.map(count => ({
-        display: `${count} spor`,
-        subOptions: generateSaumatakaOptions(threadType, count)
-    }));
-}
-// Function to generate suture removal time options
-function generateSaumatakaOptions(threadType, sporCount) {
-    const saumatakaOptions = [
-        'Saumataka eftir 7 daga',
-        'Saumataka eftir 10 daga',
-        'Saumataka eftir 5-7 daga',
-        'Saumataka eftir 7-10 daga',
-        'Saumataka eftir 10-14 daga'
-    ];
-    return saumatakaOptions.map(saumataka => ({
-        display: saumataka,
-        output: composeSkurdurOutput({
-            closureMethod: 'Saumað',
-            threadType,
-            sporCount,
-            saumataka
-        })
-    }));
-}
-// Function to compose the final output based on selections
-function composeSkurdurOutput(selections) {
-    let output = 'Skurður. ';
-    if (selections.closureMethod === 'Límt') {
-        output += 'Ákveðið að líma. Passa að blotni ekki næstu daga. Endurmat eftir þörfum. Ef sýkingarmerki endurmat fyrr.';
-    } else if (selections.closureMethod === 'Saumað') {
-        output += `Sauma ${selections.sporCount} spor með ${selections.threadType.toLowerCase()}. `;
-        output += `Ráðlögð ${selections.saumataka.toLowerCase()}. `;
-        output += 'Ef koma fram sýkingarmerki endurmat fyrr';
-    }
-    return output;
-}
-
 // Eiturlyf
 function generateInitialDrugOptions() {
     const drugs = ['Kannabis', 'Amfetamín', 'Kókaín', 'Sveppir', 'LSD', 'Ópíöt', 'Benzolyf'];
@@ -38531,12 +38574,12 @@ const pageDefinitions = {
     'Hud': {
         columns: [
             [
-                { id: 'einkenni', title: 'Húðbreyting', data: SymptomsHud },
-                { id: 'einkenni', title: 'Skurður', data: SymptomsSkurdur },
+                /*{ id: 'einkenni', title: 'Húðbreyting', data: SymptomsHud },
+                { id: 'einkenni', title: 'Skurður', data: SymptomsSkurdur },*/
             ],
             [
-                { id: 'skodun', title: 'Skoðun', data: ExamsHud },
-                { id: 'lifsmork', title: 'Lífsmörk', data: LifsmorkData },
+                /*{ id: 'skodun', title: 'Skoðun', data: ExamsHud },
+                { id: 'lifsmork', title: 'Lífsmörk', data: LifsmorkData },*/
             ],
             [
                 { id: 'plan', title: 'Álit og plan', data: PlanHud },
@@ -38567,20 +38610,20 @@ const pageDefinitions = {
     'Tauga': {
         columns: [
             [
-                { id: 'einkenni', title: 'Einkenni', data: SymptomsTauga },
+                /*{ id: 'einkenni', title: 'Einkenni', data: SymptomsTauga },
                 { id: 'einkenni', title: 'Svimi', data: SymptomsSvimi },
                 { id: 'kerfakonnun', title: 'Kerfakönnun', data: KerfakonnunSvimi },
                 { id: 'historyViral', title: 'Heilsufar', data: historySvimi },
                 { id: 'habits', title: 'Venjur', data: Habits },
-                { id: 'ofnaemi', title: 'Ofnæmi', data: OfnaemiData },
+                { id: 'ofnaemi', title: 'Ofnæmi', data: OfnaemiData },*/
             ],
             [
-                { id: 'skodun', title: 'Taugaskoðun', data: ExamsTauga },
+                /*{ id: 'skodun', title: 'Taugaskoðun', data: ExamsTauga },
                 { id: 'heilataugaskodun', title: 'Heilataugaskoðun', data: HeilataugaskodunData },
-                { id: 'skodun', title: 'Svimaskoðun', data: ExamsSvimi },
+                { id: 'skodun', title: 'Svimaskoðun', data: ExamsSvimi },*/
             ],
             [
-                { id: 'plan', title: 'Álit og plan', data: PlanTauga },
+                //{ id: 'plan', title: 'Álit og plan', data: PlanTauga },
             ],
         ],
     },
@@ -38618,7 +38661,7 @@ const pageDefinitions = {
     },
     'Innkirtla': {
         columns: [
-            [
+            /*[
                 { id: 'einkenni', title: 'Einkenni', data: SymptomsInnkirtla },
                 { id: 'lyf', title: 'Lyf', data: LyfInnkirtla },
             ],
@@ -38628,14 +38671,14 @@ const pageDefinitions = {
             ],
             [
                 { id: 'plan', title: 'Álit og plan', data: PlanInnkirtla },
-            ],
+            ],*/
         ],
     },
     'Meðganga': {
         columns: [
             [
                 { id: 'einkenni', title: 'Einkenni', data: SymptomsMeðganga },
-                { id: 'lyf', title: 'Lyf', data: LyfData },
+                //{ id: 'lyf', title: 'Lyf', data: LyfData },
             ],
             [
                 { id: 'skodun', title: 'Skoðun', data: ExamsMeðganga },
