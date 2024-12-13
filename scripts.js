@@ -7633,7 +7633,7 @@ function PlanBronchitis() {
     // Final follow-up options
     function generateBronchitisFollowUpOptions(prefixText) {
         const followUpOptions = [
-            { display: 'Endurmat ef versnar', value: 'Endurmat ef versnar eða lagast ekki.' },
+            { display: 'Endurmat ef versnar', value: 'Ef ný eða versnandi einkenni þá endurmat.' },
             { display: 'Fær símatíma', value: 'Fær símatíma til eftirfylgdar. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
             { display: 'Pantar sjálf/ur tíma', value: 'Pantar sér tíma að rannsóknum loknum til að fá niðurstöður. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
             { display: 'Fær viðtalstíma', value: 'Fær tíma til eftirfylgdar. Ef mikil versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku.' },
@@ -7642,86 +7642,108 @@ function PlanBronchitis() {
 
         return followUpOptions.map(option => ({
             display: option.display,
-            // Append the follow-up text to prefix
             output: `${prefixText} ${option.value}`.trim()
         }));
     }
 
-    // Antibiotic reason step for oral antibiotics
-    // Map the reasons to a more narrative text
+    // Antibiotic reason options (for when we actually start oral antibiotics now)
+    // If NOS is chosen, no narrative appended
     function generateAntibioticReasonOptions(prefixText) {
         const reasons = [
-            { display: 'Vegna langvarandi einkenna', narrative: 'Þar sem einkenni staðið lengi ráðlagt að reyna sýklalyfjameðferð.' },
-            { display: 'Vegna veikindalegs útlits', narrative: 'Þar sem skjólstæðingur veikindalegur er ráðlagt að reyna sýklalyfjameðferð.' },
-            { display: 'Vegna ónæmisbælingar', narrative: 'Þar sem skjólstæðingur ónæmisbældur ráðlegg ég sýklalyfjameðferð.' },
-            { display: 'Vegna undirliggjandi lungnasjúkdóms', narrative: 'Þar sem skjólstæðingur er með undirliggjandi lungnasjúkdóm ráðlegg ég sýklalyfjameðferð.' },
-            { display: 'Vegna lungnahlustunar', narrative: 'Þar sem lungnahlustun gróf ráðlögð sýklalyfjameðferð.' }
+            { display: 'NOS', narrative: '' },
+            { display: 'Vegna langvarandi einkenna', narrative: 'Þar sem einkenni staðið lengi er ráðlagt að reyna sýklalyfjameðferð.' },
+            { display: 'Vegna veikindalegs útlits', narrative: 'Vegna veikindalegs útlits ráðlagt að reyna sýklalyfjameðferð.' },
+            { display: 'Vegna ónæmisbælingar', narrative: 'Vegna ónæmisbælingar ráðlagt að reyna sýklalyfjameðferð.' },
+            { display: 'Vegna undirliggjandi lungnasjúkdóms', narrative: 'Vegna undirliggjandi lungnasjúkdóms ráðlagt að reyna sýklalyfjameðferð.' },
+            { display: 'Vegna lungnahlustunar', narrative: 'Vegna grófrar lungnahlustunar ráðlagt að reyna sýklalyfjameðferð.' }
         ];
 
-        return reasons.map(reason => ({
-            display: reason.display,
-            // After selecting reason, append the narrative and go to follow-up
-            subOptions: generateBronchitisFollowUpOptions(`${prefixText} ${reason.narrative}`)
-        }));
+        return reasons.map(reason => {
+            const finalText = reason.narrative ? `${prefixText} ${reason.narrative}`.trim() : prefixText;
+            return {
+                display: reason.display,
+                subOptions: generateBronchitisFollowUpOptions(finalText)
+            };
+        });
     }
 
-    // If no antibiotic reason step is needed, go directly to follow-up
+    // Study reason options (for RTG / RTG+BPR or placing antibiotics in pharmacy)
+    // If NOS is chosen, we do not prepend any reason text and do not lowercase 'Ráðlegg'.
+    function generateStudyReasonOptions(prefixText, instruction) {
+        const reasons = [
+            { display: 'NOS' },
+            { display: 'Vegna langvarandi einkenna' },
+            { display: 'Vegna grófrar lungnahlustunar' },
+            { display: 'Vegna undirliggjandi sjúkdóms' },
+            { display: 'Vegna ónæmisbælingar' },
+            { display: 'Vegna erfiðleika að útiloka lungnabólgu' }
+        ];
+
+        return reasons.map(reason => {
+            let finalText;
+            if (reason.display === 'NOS') {
+                // Keep original instruction casing
+                finalText = `${prefixText} ${instruction}`.trim();
+            } else {
+                // Convert "Ráðlegg" to "ráðlegg" for continuity
+                const modifiedInstruction = instruction.replace(/^Ráðlegg/, 'ráðlegg');
+                finalText = `${prefixText} ${reason.display} ${modifiedInstruction}`.trim();
+            }
+
+            return {
+                display: reason.display,
+                subOptions: generateBronchitisFollowUpOptions(finalText)
+            };
+        });
+    }
+
+    // Direct follow-up if no reason step is needed
     function generateDirectFollowUp(prefixText) {
         return generateBronchitisFollowUpOptions(prefixText);
     }
 
-    // First-level options:
-    // Ráðleggingar og stuðningsmeðferð,
-    // Sýklalyf, RTG + Sýklalyf, RTG + Sýklalyf í gátt,
-    // RTG + BPR + Sýklalyf, RTG + BPR + Sýklalyf í gátt
     const treatmentOptions = [
-        { display: 'Ráðleggingar og stuðningsmeðferð', value: 'Tekur oft 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi.' },
-        { display: 'Sýklalyf', value: '' }, 
-        { display: 'RTG + Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum.' },
-        { display: 'RTG + Sýklalyf í gátt', value: 'Ráðlegg röntgenmynd af lungum. Set sýklalyf í gáttina. Leysir út ef fer ekki skánandi á næstu dögum / vikum.' },
-        { display: 'RTG + BPR + Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu.' },
-        { display: 'RTG + BPR + Sýklalyf í gátt', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufu. Set sýklalyf í gáttina. Leysir út ef fer ekki skánandi á næstu dögum / vikum.' }
+        { display: 'Ráðleggingar og stuðningsmeðferð', value: 'Tekur oft 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi.', type: 'none' },
+        { display: 'Sýklalyf', value: '', type: 'antibiotic' },
+        { display: 'RTG', value: 'Ráðlegg röntgenmynd af lungum.', type: 'study' },
+        { display: 'RTG + Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum.', type: 'antibiotic' },
+        { display: 'RTG + Sýklalyf í gátt', value: 'Ráðlegg röntgenmynd af lungum. Set sýklalyf í gáttina. Leysir út ef fer ekki skánandi á næstu dögum / vikum.', type: 'study' },
+        { display: 'RTG + BPR', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufum.', type: 'study' },
+        { display: 'RTG + BPR + Sýklalyf', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufum.', type: 'antibiotic' },
+        { display: 'RTG + BPR + Sýklalyf í gátt', value: 'Ráðlegg röntgenmynd af lungum ásamt blóðprufum. Set sýklalyf í gáttina. Leysir út ef fer ekki skánandi á næstu dögum / vikum.', type: 'study' }
     ];
-
-    // Identify which options need antibiotic reason step:
-    // Sýklalyf, RTG + Sýklalyf, RTG + BPR + Sýklalyf => oral antibiotics
-    // The others either have no antibiotics or antibiotics í gátt.
 
     function generateBronchitisOptions() {
         return treatmentOptions.map(option => {
             let prefix = `Grunur um berkjubólgu. Veiti viðeigandi ráðleggingar.`; 
 
-            // Always start with "Grunur um berkjubólgu."
-            // Append treatment text (if any)
+            // Add treatment details if any
+            let instruction = '';
             if (option.value && option.value.trim() !== '') {
-                prefix += ` ${option.value}`;
+                instruction = option.value.trim();
             }
 
-            const hasSyklaLyf = option.display.includes('Sýklalyf');
-            const hasIGatt = option.display.includes('í gátt');
-
-            // If includes oral sýklalyf (not í gátt):
-            // We have antibiotic reason step before follow-up
-            if (hasSyklaLyf && !hasIGatt) {
-                // Sýklalyf alone: "Hefjum sýklalyfjameðferð." needed?
-                // Since Sýklalyf option is just '', we add a line
-                if (option.display === 'Sýklalyf') {
-                    prefix += '';
-                } else {
-                    // For RTG + Sýklalyf or RTG + BPR + Sýklalyf, prefix already states we start sýklalyfjameðferð?
-                    prefix += '';
-                }
+            if (option.type === 'none') {
+                // No reason needed, go directly to follow-up
+                const finalPrefix = instruction ? `${prefix} ${instruction}`.trim() : prefix;
                 return {
                     display: option.display,
-                    subOptions: generateAntibioticReasonOptions(prefix.trim())
+                    subOptions: generateDirectFollowUp(finalPrefix)
+                };
+            } else if (option.type === 'antibiotic') {
+                // Antibiotic reason step
+                const finalPrefix = instruction ? `${prefix} ${instruction}`.trim() : prefix;
+                return {
+                    display: option.display,
+                    subOptions: generateAntibioticReasonOptions(finalPrefix)
+                };
+            } else if (option.type === 'study') {
+                // Study reason step
+                return {
+                    display: option.display,
+                    subOptions: generateStudyReasonOptions(prefix, instruction)
                 };
             }
-
-            // If it's ráðleggingar og stuðningsmeðferð or sýklalyf í gátt variants, go directly to follow-up
-            return {
-                display: option.display,
-                subOptions: generateDirectFollowUp(prefix.trim())
-            };
         });
     }
 
