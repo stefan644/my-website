@@ -6672,7 +6672,7 @@ const PlanViral = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ], onRightClickSubOptions: PlanHerpes()
+                ], onRightClickOutput: 'Grunur um herpes. Veiti viðeigandi ráðleggingar. Set veirulyf í gáttina. Endurmat eftir þörfum'
             },
             {
                 display: 'Enterovirus',
@@ -6757,7 +6757,7 @@ const PlanViral = [
                             { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/skutabolga/' } 
                         ]
                     }
-                ], onRightClickSubOptions: PlanSinusitis() /*Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki*/
+                ], onRightClickOutput: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki'
             },
             {
                 display: 'Lungnabólga',
@@ -6781,7 +6781,7 @@ const PlanViral = [
                             ]
                         }
                         
-                    ], onRightClickSubOptions: PlanLungnabolga()
+                    ], onRightClickOutput: 'Grunur um lungnabólgu. Set sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki.'
             }
         ]
     },
