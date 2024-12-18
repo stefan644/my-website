@@ -6983,7 +6983,7 @@ const PlanViral = [
         ]
     },
     {
-        name: 'Annað',
+        name: 'Áætlanir',
         type: 'options',
         display: ['Sýklamixtúra'],
         options: [
@@ -35962,7 +35962,6 @@ function Sýklamixtúra() {
     ];
 }
 
-
 // Heilsufar
 // Function to generate year intervals, year, month, and treatment suboptions
 function generateYearIntervals(diagnosis, diagnosisWord, treatWord) {
@@ -36913,9 +36912,6 @@ function addOrthostatismButton(parentElement) {
     parentElement.appendChild(orthostatismButton);
 }
 
-
-
-
 // Modals to create button structure for user contribution. Used in the page "Upplýsingar (Information)
 // These functions won't be used when user editing becomes available.
 // Just want to highlight the importance of users being able to edit on the page. 
@@ -37701,6 +37697,7 @@ function shouldRedirectToEinkenni(sectionId) {
     return sectionsToRedirect.includes(sectionId);
 }
 
+let currentPage = '';
 
 // Create buttons and manage sections
 function createButtons(container, data, sectionId) {
@@ -38166,6 +38163,18 @@ function handleTitleRightClick(event, title, sectionId) {
     event.preventDefault(); // Prevent the default right-click context menu
     console.log('Right-clicked on title:', title); // Debugging line
 
+    // Check if the title is Skoðun and change output based on the currently loaded page
+    if (title === 'Skoðun') {
+        if (currentPage === 'Vírósa') {
+            insertText('Ekki bráðveikindalegt útlit. Ekki roði í koki. Ekki eitlastækkanir á hálssvæði. Hljóðhimnur eðlilegar beggja vegna. Lungnahlustun hrein. Ekki brak, wheezing eða önnur aukahljóð.', sectionId);
+        } /*else {
+            // Default or other page-specific text for Skoðun here if desired
+            insertText('', sectionId);
+        }*/
+        return; // Stop here, no need to continue the switch below
+    }
+
+    // Existing switch for other titles:
     switch (title) {
         case 'Lyf':
             insertText('Tekur engin lyf að staðaldri', sectionId);
@@ -38178,26 +38187,28 @@ function handleTitleRightClick(event, title, sectionId) {
             break;
         case 'Ofnæmi':
             insertText('Engin þekkt ofnæmi', sectionId);
-            break;6
+            break;
         case 'Augnlyf':
             insertText('Engin augnlyf', sectionId);
-             break;
+            break;
         case 'Geðsaga':
             insertText('Engin fyrri saga um geðsjúkdóma', sectionId);
-             break;
+            break;
         case 'Augnsaga':
             insertText('Sjón alltaf verið góð. Engir augnsjúkdómar eða fjölskyldusaga um slíka. Notar hvorki gleraugu né linsur', sectionId);
-             break;
+            break;
         case 'Kerfakönnun':
             insertText('Gróf kerfakönnun án athugasemda. Ekki nætursviti, þyngdartap, brjóstverkur, mæði, kviðverkur, hægðabreyting eða þvaglátareinkenni', sectionId);
-             break;
+            break;
         case 'Áhættuþættir kransæðasjúkdóms':
             insertText('Ekki reykingasaga. Ekki saga um háþrýsting. Ekki í yfirþyngd. Ekki saga um sykursýki. Ekki þekkt blóðfituröskun. Neikvæð ættarsaga', sectionId);
             break;
-        /*default:
-            insertText(`Right-clicked on: ${title}`, sectionId);*/
+        case 'Lífsmörk':
+            insertText ('Mettar >96%. Púls innan eðlilegra marka', sectionId);
+            break;
     }
 }
+
 
 
 
@@ -38725,6 +38736,7 @@ const pageDefinitions = {
 };
 
 function loadPage(page) {
+    currentPage = page; // Store current page
     const container = document.getElementById('content-section');
     container.style.opacity = '0';
     container.innerHTML = '';
