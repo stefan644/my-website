@@ -38869,7 +38869,7 @@ function loadPage(page) {
         const lysingText = document.createElement('p');
         lysingText.innerHTML = 
             'Vinstri smellur gefur jákvæð einkenni og hægri smellur neikvæð einkenni. Ef skilgreina þarf nánar kemur fram fellilisti. '
-            + 'Texti fer alltaf á réttan stað, undir sinn "Header". Þannig er einfalt að viðhalda nótustrúktúr þó að atriði séu ekki skráð í nákvæmlega réttri röð. '
+            + 'Undir stillingarflipa er hægt að stilla á nákvæma innsetningu en þá verða til fleirri undirflokkar (lyf, heilsufar o.fl.). Texti fer alltaf á réttan stað, undir sinn "Header". Þannig er einfalt að viðhalda nótustrúktúr þó að atriði frá mismunandi köflum séu ekki skráð í nákvæmlega réttri röð. '
             + 'Hægt er að ýta á header eða nota flýtileiðir á takkaborði til að staðsetja sig rétt í nótunni og byrja þannig beint að skrifa. '
             + 'Ef fylla á t.d. inn rannsóknir myndi notandinn ýta á Ctrl + R og byrja síðan beint að skrifa inn sínar rannsóknaniðurstöður.'
             + ' Með þessu móti er einfalt fyrir notenda að byrja að skrifa í mismunandi köflum án þess að þurfa að fara og leita með músabendlinum í nótuglugganum til að '
@@ -38922,6 +38922,25 @@ function loadPage(page) {
         const myndbandHeader = document.createElement('h2');
         myndbandHeader.textContent = 'Sýningarmyndbönd';
         middleColumn.appendChild(myndbandHeader);
+
+        // Create a container for the video
+        const videoContainer = document.createElement('div');
+        videoContainer.className = 'video-container';
+
+        // Create the iframe element for the YouTube video
+        const iframe = document.createElement('iframe');
+        iframe.width = '560';
+        iframe.height = '315';
+        iframe.src = 'https://www.youtube.com/embed/HOMsezN_OFQ';
+        iframe.title = 'YouTube video player';
+        iframe.frameBorder = '0';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+
+        // Append the iframe to the container, and then the container to the middle column
+        videoContainer.appendChild(iframe);
+        middleColumn.appendChild(videoContainer);
+
 
         // Right column
 
