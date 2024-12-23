@@ -3533,7 +3533,7 @@ const Skjöl = [
         display: ['Vörtumeðferð'],
         options: [
             {
-                display: 'Vörtumeðferð', type: 'hyperlink', url: 'https://1drv.ms/b/c/adc5bc1773f511d1/EV6l8nKNqVhOjGNZ0kBNZDwBGkYvuCqLN7GGkK56MdGDlg?e=hvKUuW'
+                display: 'Vörtumeðferð', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Vortumedferd.pdf'
             }
         ]
     }
