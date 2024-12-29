@@ -1314,6 +1314,10 @@ const Venjur = {
                 {
                     display: 'Aldrei reykt',
                     output: 'Aldrei reykt'
+                },
+                {
+                    display: 'Engin reykingarsaga',
+                    output: 'Engin reykingarsaga'
                 }
             ],
         },
@@ -5788,12 +5792,11 @@ const SymptomsViral = [
                 onRightClickOutput: 'Ekki notað nefstera'
             }
         ]
-    }
-    /*,
+    },
     ...Heilsufar,
     Venjur,
     Lyf,
-    Ofnæmi*/
+    Ofnæmi
     
 ];
 const ExamsViral = [
@@ -39095,6 +39098,92 @@ function loadPage(page) {
         container.style.visibility = 'visible';
         container.style.opacity = '1';
     }
+    else if (page === 'Settings') {
+        // ... existing code for Settings ...
+    }
+    // -------------------------------------
+    // Add a special case for "Vírósa" here:
+    // -------------------------------------
+    else if (page === 'Vírósa') {
+        currentPage = page; // If you track the current page
+        const container = document.getElementById('content-section');
+        container.style.opacity = '0';
+        container.innerHTML = '';
+    
+        // Main horizontal container for columns
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.className = 'horizontal-sections';
+    
+        // --- LEFT COLUMN ---
+        const leftColumn = document.createElement('div');
+        leftColumn.className = 'column left-column';
+    
+        // (1) Make the left column 30% wider:
+        leftColumn.style.flex = '1.7'; // The others will be 1 by default
+    
+        // Big top-level header for left column
+        const mainHeader = document.createElement('h2');
+        mainHeader.textContent = 'Vírósa';
+        leftColumn.appendChild(mainHeader);
+    
+        // Subcolumn wrapper (two subcolumns)
+        const leftSubcolumnWrapper = document.createElement('div');
+        leftSubcolumnWrapper.className = 'column-content';
+    
+        // Create a simple section (without a duplicate <h2>)
+        const einkenniSection = document.createElement('div');
+        einkenniSection.id = 'einkenni-section';
+    
+        // Container for the buttons
+        const einkenniContainer = document.createElement('div');
+        einkenniContainer.id = 'einkenni';
+        einkenniSection.appendChild(einkenniContainer);
+    
+        // Generate the collapsible buttons for SymptomsViral
+        createButtons(einkenniContainer, SymptomsViral, 'einkenni');
+    
+        // Place the section in the subcolumn wrapper
+        leftSubcolumnWrapper.appendChild(einkenniSection);
+    
+        // Finally, add the wrapper to the left column
+        leftColumn.appendChild(leftSubcolumnWrapper);
+    
+        // --- MIDDLE COLUMN ---
+        const middleColumn = document.createElement('div');
+        middleColumn.className = 'column middle-column';
+        // The middle column keeps flex = 1 (the default)
+    
+        // Headings for "Skoðun", "Lífsmörk", "Rannsóknir"
+        const skodunSection = createSectionWithData('skodun', 'Skoðun', ExamsViral);
+        middleColumn.appendChild(skodunSection);
+    
+        const lifsmorkSection = createSectionWithData('lifsmork', 'Lífsmörk', LifsmorkData);
+        middleColumn.appendChild(lifsmorkSection);
+    
+        const rannsoknirSection = createSectionWithData('rannsoknir', 'Rannsóknir', RannsoknirViral);
+        middleColumn.appendChild(rannsoknirSection);
+    
+        // --- RIGHT COLUMN ---
+        const rightColumn = document.createElement('div');
+        rightColumn.className = 'column right-column';
+        // Also flex = 1 by default
+    
+        // Heading for "Álit og plan"
+        const planSection = createSectionWithData('plan', 'Álit og plan', PlanViral);
+        rightColumn.appendChild(planSection);
+    
+        // Put all columns side by side
+        horizontalContainer.appendChild(leftColumn);
+        horizontalContainer.appendChild(middleColumn);
+        horizontalContainer.appendChild(rightColumn);
+    
+        // Attach to the container and reveal
+        container.appendChild(horizontalContainer);
+        container.style.visibility = 'visible';
+        container.style.opacity = '1';
+    
+        return; // Prevent falling back to the generic code
+    }
     
     else {
         const pageDef = pageDefinitions[page];
@@ -39306,7 +39395,7 @@ document.addEventListener('keydown', function(event) {
                 break;
             case 'k': // Ctrl + K for Kerfakönnun
                 event.preventDefault();
-                handleTitleRightClick(event, 'Kerfakonnun', 'kerfakonnun');
+                handleTitleRightClick(event, 'Kerfakönnun', 'kerfakonnun');
                 break;
         }
     }

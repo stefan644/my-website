@@ -456,16 +456,18 @@ main {
 
 /* Basic styling for the titles */
 .clickable-title {
-    display: inline-block;
-    padding: 0px 4px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 0px; /* Gives the button a rounded appearance */
+    display: block;
+    width: 100%;
     margin-bottom: -10px; /* Reduce space below the header */
-    margin-top: -60px;    /* Reduce space above the header */
-}
+    margin-top: -15px;    /* Reduce space above the header */
+    text-align: center;     /* Inherit or force center if needed */
+  }
+  
+  .clickable-title h2 {
+    margin: 0;
+    padding: 20px 0;        /* or whatever vertical spacing you want */
+  }
+  
 
 /* Hover effect to make it look like a button */
 .clickable-title:hover {
@@ -737,4 +739,50 @@ main {
     left:0;
     width:100%;
     height:100%;
+}
+
+/* Column specific*/
+.horizontal-sections {
+    display: flex;
+    align-items: stretch;           /* Columns match the tallest one */
+    gap: 20px;
+    
+    /* Thick line on the far left & far right edges */
+    border-left: 4px solid rgba(128, 128, 128, 0.3);
+    border-right: 4px solid rgba(128, 128, 128, 0.3);
+
+    /* Optional: ensures columns never get too short.
+       Adjust as needed or use a full-height approach. */
+    min-height: 500px;
+}
+
+/* Each main column */
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    padding: 10px;
+}
+
+/* Thick line between each main column.
+   (.column + .column) means "every column after the first one" */
+.column + .column {
+    border-left: 4px solid rgba(128,128,128,0.3);
+}
+
+/* Center the <h2> within each column and remove default margin */
+.column h2 {
+    margin-bottom: -10px; /* Reduce space below the header */
+    margin-top: -15px;    /* Reduce space above the header */
+    padding: 20px 0;  /* vertical spacing around the header */
+    text-align: center;
+}
+
+/* The container inside the left column that actually splits the content. */
+.left-column .column-content {
+    margin-top: 20px;          /* so the subcolumn rule doesn't start under the <h2> */
+    column-count: 2;           /* two subcolumns */
+    column-gap: 2em;           /* spacing between subcolumns */
+    column-rule: 2px solid rgba(128,128,128,0.3); /* thin line between subcolumns */
 }
