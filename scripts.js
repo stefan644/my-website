@@ -1084,7 +1084,7 @@ const Næring = {
         }
         
         
-    ], onRightClickOutput: 'Borðar og drekkur vel'
+    ], onRightClickOutput: 'Nærist vel'
 };
 const Verkjalyf = {
     display: 'Verkjalyf',
@@ -1147,7 +1147,7 @@ const Heilsufar = [
             ],
             onRightClickOutput: 'Ekki undirliggjandi lungnasjúkdómur'
         }
-    ]
+    ], onRightClickOutput: 'Skjólstæðingur heilsuhraustur í gruninn'
     },
     {
     name: '',
@@ -1238,8 +1238,50 @@ const Heilsufar = [
 const Ofnæmi = {
     name: 'Ofnæmi',
     type: 'options',
-    display: ['Lyfjaofnæmi'],
+    display: ['Umhverfi', 'Lyf', 'Fæða', 'Skordýr'],
     options: [
+        {
+            display: 'Umhverfisofnæmi',
+            subOptions: [
+                {
+                    display: 'Frjókorn',
+                    subOptions: [
+                        { display: 'NOS', output: 'Frjókornaofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um frjókornaofnæmi' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir frjókornum' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt frjókornaofnæmi'
+                },
+                {
+                    display: 'Rykmaurar',
+                    subOptions: [
+                        { display: 'NOS', output: 'Rykmauraofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um rykmauraofnæmi' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir rykmaurum' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt rykmauraofnæmi'
+                },
+                {
+                    display: 'Dýr',
+                    subOptions: [
+                        { display: 'NOS', output: 'Dýraofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um dýraofnæmi' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir dýrum' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt dýraofnæmi'
+                },
+                {
+                    display: 'Mygla',
+                    subOptions: [
+                        { display: 'NOS', output: 'Mygluofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um mygluofnæmi' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir myglu' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt mygluofnæmi'
+                }
+            ],
+            onRightClickOutput: 'Engin þekkt ofnæmi'
+        },
         {
             display: 'Lyfjaofnæmi',
             subOptions: [
@@ -1290,6 +1332,113 @@ const Ofnæmi = {
                 }
             ],
             onRightClickOutput: 'Engin þekkt lyfjaofnæmi'
+        },
+        {
+            display: 'Fæðuofnæmi/óþol',
+            subOptions: [
+                {
+                    display: 'Hnetur',
+                    subOptions: [
+                        { display: 'NOS', output: 'Hnetuofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um hnetuofnæmi' },
+                        { display: 'Óþol', output: 'Óþol fyrir hnetum' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir hnetum' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt hnetuofnæmi'
+                },
+                {
+                    display: 'Skelfiskur',
+                    subOptions: [
+                        { display: 'NOS', output: 'Skelfiskofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um skelfiskofnæmi' },
+                        { display: 'Óþol', output: 'Óþol fyrir skelfiski' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir skelfiski' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt skelfiskofnæmi'
+                },
+                {
+                    display: 'Mjólkurvörur',
+                    subOptions: [
+                        { display: 'NOS', output: 'Mjólkurvöruofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um mjólkurvöruofnæmi' },
+                        { display: 'Óþol', output: 'Óþol fyrir mjólkurvörum' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir mjólkurvörum' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt mjólkurvöruofnæmi'
+                },
+                {
+                    display: 'Egg',
+                    subOptions: [
+                        { display: 'NOS', output: 'Eggjaofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um eggjaofnæmi' },
+                        { display: 'Óþol', output: 'Óþol fyrir eggjum' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir eggjum' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt eggjaofnæmi'
+                },
+                {
+                    display: 'Glúten',
+                    subOptions: [
+                        { display: 'NOS', output: 'Glútenofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um glútenofnæmi' },
+                        { display: 'Óþol', output: 'Óþol fyrir glúteni' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir glúteni' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt glútenofnæmi'
+                }
+            ],
+            onRightClickOutput: 'Engin þekkt fæðuofnæmi eða óþol'
+        },
+        {
+            display: 'Skordýraofnæmi',
+            subOptions: [
+                {
+                    display: 'Skordýr',
+                    subOptions: [
+                        { display: 'NOS', output: 'Skordýraofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um skordýraofnæmi' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir skordýrum' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt ofnæmi fyrir skordýrum'
+                },
+                {
+                    display: 'Býflugur',
+                    subOptions: [
+                        { display: 'NOS', output: 'Býfluguofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um býfluguofnæmi' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir býflugum' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt býfluguofnæmi'
+                },
+                {
+                    display: 'Geitungar',
+                    subOptions: [
+                        { display: 'NOS', output: 'Geitungaofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um geitungaofnæmi' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir geitungum' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt geitungaofnæmi'
+                },
+                {
+                    display: 'Moskitó',
+                    subOptions: [
+                        { display: 'NOS', output: 'Moskitóofnæmi' },
+                        { display: 'Grunur', output: 'Grunur um moskitóofnæmi' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir moskitó' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt moskitóofnæmi'
+                },
+                {
+                    display: 'Lúsmý',
+                    subOptions: [
+                        { display: 'NOS', output: 'Ofnæmi fyrir lúsmý' },
+                        { display: 'Grunur', output: 'Grunur um ofnæmi fyrir lúsmý' },
+                        { display: 'Bráðaofnæmi', output: 'Þekkt bráðaofnæmi fyrir lúsmý' }
+                    ],
+                    onRightClickOutput: 'Ekki þekkt ofnæmi fyrir lúsmý'
+                }
+            ],
+            onRightClickOutput: 'Ekki þekkt skordýraofnæmi'
         }
     ], onRightClickOutput: 'Engin þekkt ofnæmi'
 };
@@ -1391,22 +1540,73 @@ const Venjur = {
     
     onRightClickOutput: 'Reykir ekki'
 };
-const Lyf = {
-    name: 'Lyf',
-    type: 'options',
-    display: ['Lyf'],
-    options: [
-        {
-            display: 'Lyf',
-            subOptions: [
-                { display: 'Háþrýstingslyf', output: 'Er á háþrýstingslyfjum' },
-                { display: 'Púst að staðaldri', output: 'Tekur púst að staðaldri' },
-                { display: 'Sykursýkislyf', output: 'Er á sykursýkislyfjum' }
-            ],
-            onRightClickOutput: 'Tekur engin lyf að staðaldri'
+const Lyf = [
+    {
+      name: 'Lyf',
+      type: 'options',
+      display: ['Háþrýsting', 'Blóðfitu', 'Blóðþynnandi'],
+      options: [
+        { display: 'Háþrýsting', output: 'Er á háþrýstingslyfjum', onRightClickOutput: 'Ekki á háþrýstingslyfjum' },
+        { display: 'Blóðfitu', output: 'Er á blóðfitulækkandi', onRightClickOutput: 'Ekki á blóðfitulækkandi' },
+        { display: 'Blóðþynnandi', output: 'Er á blóðþynnandi', onRightClickOutput: 'Ekki á blóðþynnandi' }
+      ],
+      onRightClickOutput: 'Tekur engin lyf að staðaldri'
+    },
+    {
+      name: '',
+      type: 'options',
+      display: ['Sykursýki', 'Sterar', 'NSAIDS'],
+      options: [
+        { display: 'Sykursýki', output: 'Er á sykursýkislyfjum', onRightClickOutput: 'Ekki á sykursýkislyfjum' },
+        { display: 'Sterar', output: 'Er á steratöflum að staðaldri', onRightClickOutput: 'Tekur ekki stera að staðaldri' },
+        { 
+            display: 'NSAIDS', 
+            output: 'Tekur bólgueyðandi', 
+            onRightClickSubOptions:
+            [
+                {
+                    display: 'Ekki á bólgueyðandi',
+                    output: 'Ekki á bólgueyðandi að staðaldri'
+                },
+                {
+                    display: 'Má ekki taka',
+                    output: 'Má ekki taka bólgueyðandi'
+                }
+            ]
         }
-    ], onRightClickOutput: 'Tekur engin lyf að staðaldri'
-};
+      ]
+    },
+    {
+      name: '',
+      type: 'options',
+      display: ['PPI', 'Skjaldkirtil', 'Flogaveiki'],
+      options: [
+        { display: 'PPI', output: 'Er á PPI', onRightClickOutput: 'Ekki á PPI' },
+        { display: 'Skjaldkirtilslyf', output: 'Er á skjaldkirtilslyfjum', onRightClickOutput: 'Ekki á skjaldkirtilslyfjum' },
+        { display: 'Flogaveiki', output: 'Er á flogaveikilyfjum', onRightClickOutput: 'Ekki á flogaveikilyfjum' }
+      ]
+    },
+    {
+      name: '',
+      type: 'options',
+      display: ['Astma', 'Ofnæmi', 'Púst'],
+      options: [
+        { display: 'Astma', output: 'Er á astmalyfjum', onRightClickOutput: 'Ekki á astmalyfjum' },
+        { display: 'Ofnæmi', output: 'Er á ofnæmislyfjum', onRightClickOutput: 'Ekki á ofnæmislyfjum' },
+        { display: 'Púst að staðaldri', output: 'Tekur púst að staðaldri', onRightClickOutput: 'Engin púst að staðaldri' }
+      ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Nefsterar'],
+        options: [
+          { display: 'Nefsterar', output: 'Er á nefsterum að staðaldri', onRightClickOutput: 'Ekki á nefsterum' }
+        ]
+      }
+  ];
+  
+  
 
 // Centralized buttons - Exams
 const Háræðafylling = {
@@ -2462,6 +2662,62 @@ const ExamHjarta1 = {
             onRightClickOutput: 'Ekki merki um hálsvenustasa'
         }            
     ], onRightClickOutput: 'Hjartahlustun sýnir S1-S2 án auka- eða óhljóða'
+};
+const ExamEye1 = {
+    name: 'Auga / glæra',
+    type: 'options',
+    collapsed: true,
+    display: ['Roði í glæru', 'Aðskotahlutur', 'Rispa'],
+    options: [
+        { 
+            display: 'Roði í glæru',
+            subOptions: [
+                {
+                    display: 'NOS',
+                    output: 'Roði í glæru'
+                },
+                {
+                    display: 'Vægur',
+                    output: 'Vægur roði í glæru'
+                },
+                {
+                    display: 'Mikill',
+                    output: 'Mikill roði í glæru'
+                }
+            ], 
+            onRightClickOutput: 'Ekki roði í glæru' 
+        },
+        {
+            display: 'Aðskotahlutur',
+            subOptions: [
+                { display: 'Í glæru', output: 'Sést aðskotahlutur í glæru' },
+                { display: 'Á hornhimnu', output: 'Sést aðskotahlutur á hornhimnu' }
+            ],
+            onRightClickOutput: 'Ekki að sjá aðskotahlut'
+        },
+        {
+            display: 'Rispa',
+            subOptions: [
+                {
+                    display: 'Rispa',
+                    subOptions: [
+                        { display: 'Í glæru', output: 'Sést rispa á glæru' },
+                        { display: 'Á hornhimnu', output: 'Sést rispa á hornhimnu' }
+                    ],
+                    onRightClickOutput: 'Ekki sést rispa eða merki um áverka'
+                },
+                {
+                    display: 'Litarupptaka',
+                    subOptions: [
+                        { display: 'Í glæru', output: 'Sést aukin litarupptaka á glæru' },
+                        { display: 'Á hornhimnu', output: 'Sést aukin litarupptaka á hornhimnu' }
+                    ],
+                    onRightClickOutput: 'Ekki sést rispa eða merki um áverka'
+                }
+            ],
+            onRightClickOutput: 'Ekki sést rispa í glæru eða á horhimnu'
+        }
+    ], onRightClickOutput: 'Augu líta eðlilega út. Ekki að sjá áberandi roða í glæru'
 };
 
 // Centralized buttons - Studies
@@ -5122,14 +5378,19 @@ const SymptomsViral = [
     },
     Timalengd2,
     {
-        name: '',
+        name: 'Viral',
         type: 'options',
         display: ['Flensueinkenni', 'Kvef'],
         options: [
             {
                 display: 'Flensueinkenni',
-                output: 'Flensueinkenni',
-                onRightClickOutput: 'Ekki flensueinkenni'
+                subOptions: [
+                    { display: 'NOS', output: 'Flensueinkenni' },
+                    { display: 'Væg', output: 'Væg flensueinkenni' },
+                    { display: 'Mikil', output: 'Mikil flensueinkenni' },
+                    { display: 'Í upphafi veikinda', output: 'Flensueinkenni í upphafi veikinda en þau yfirstaðin nú' }
+                ],
+                onRightClickOutput: 'Ekki kvef'
             },
             {
                 display: 'Kvef',
@@ -5180,7 +5441,7 @@ const SymptomsViral = [
     {
         name: 'Ennisholur',
         type: 'options',
-        display: ['Sinuseinkenni', 'Þrýstingur', 'Verkur', 'Leiðni', 'Vont bragð'],
+        display: ['Sinuseinkenni', 'Þrýstingur', 'Verkur'],
         options: [
             {
                 display: 'Sinuseinkenni',
@@ -5200,7 +5461,14 @@ const SymptomsViral = [
                     { display: 'Mikill', output: 'Mikill verkur' }
                 ],
                 onRightClickOutput: 'Ekki verkur'
-            },
+            }
+        ], onRightClickOutput: 'Neitar einkennum frá ennisholum'
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Leiðni', 'Vont bragð'],
+        options: [
             {
                 display: 'Leiðni',
                 subOptions: [
@@ -5423,6 +5691,7 @@ const SymptomsViral = [
     {
         name: 'Húð',
         type: 'options',
+        collapsed: true,
         display: ['Útbrot', 'Byrjuðu', 'Kláði'],
         options: [
             {
@@ -5460,12 +5729,12 @@ const SymptomsViral = [
                 ],
                 onRightClickOutput: 'Ekki fundið fyrir kláða'
             }
-        ]
+        ], onRightClickOutput: 'Ekki tekið eftir útbrotum eða öðrum húðeinkennum'
     },
     {
         name: 'Umhverfi',
         type: 'options',
-        display: ['Veikindi í kring', 'Ferðalag'],
+        display: ['Veikindi í kring', 'Ferðalag erlendis'],
         options: [
             {
                 display: 'Veikindi í kring',
@@ -5694,7 +5963,7 @@ const SymptomsViral = [
                 ],
                 onRightClickOutput: 'Neitar fyrri sýklalyfjakúrum vegna núverandi veikinda'
             }
-        ]
+        ], onRightClickOutput: 'Ekki tekið nein lyf í núverandi veikindum'
     },
     {
         name: '',
@@ -5795,7 +6064,7 @@ const SymptomsViral = [
     },
     ...Heilsufar,
     Venjur,
-    Lyf,
+    ...Lyf,
     Ofnæmi
     
 ];
@@ -6559,7 +6828,8 @@ const ExamsViral = [
     },
     ExamHjarta1,
     ExamKvidur1,
-    ExamKvidur2
+    ExamKvidur2,
+    ExamEye1
     /*
     {
         name: '',
@@ -6842,8 +7112,8 @@ const PlanViral = [
             {
                 display: 'Versnun á COPD',
                 subOptions: [
-                    { display: 'Sýklalyf', output: 'Grunur um versnun á COPD. Í ljósi einkenna ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Endurmat ef lagast ekki' },
-                    { display: 'Sýkalyf og sterar', output: 'Grunur um versnun á COPD. Ráðlegg sýklalyf og stuttan sterakúr. Set hvoru tveggja í gáttina. Endurmat ef lagast ekki' },
+                    { display: 'Sýklalyf', output: 'Grunur um versnun á COPD. Í ljósi einkenna ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki' },
+                    { display: 'Sýkalyf og sterar', output: 'Grunur um versnun á COPD. Ráðlegg sýklalyf og stuttan sterakúr. Set hvoru tveggja í gáttina. Endurmat ef versnar eða lagast ekki' },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             { display: 'Uptodate - Beyond the basics', type: 'hyperlink', url: 'https://www.uptodate.com/contents/chronic-obstructive-pulmonary-disease-copd-treatments-beyond-the-basics' },   
@@ -6858,7 +7128,7 @@ const PlanViral = [
                             { display: 'Læknablaðið - Yfirlitsgrein 2015', type: 'hyperlink', url: 'https://www.laeknabladid.is/tolublod/2015/0708/nr/5555' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um versnun á COPD. Í ljósi einkenna ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Endurmat ef lagast ekki'
+                ], onRightClickOutput: 'Grunur um versnun á COPD. Í ljósi einkenna ráðlögð sýklalyfjameðferð. Set sýklalyf í gáttina. Endurmat versnar eða ef lagast ekki'
             },
             {
                 display: 'Astmi',
@@ -7844,6 +8114,8 @@ function PlanMononucleosis() {
 
     return generateMononucleosisOptions();
 }
+
+
 
 // Getnaðarvarnaráðgjöf
 const SymptomsContraception = [
