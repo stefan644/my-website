@@ -427,7 +427,8 @@ const Hiti = {
             { display: 'Sveiflukennt í gegnum veikindi', output: 'Verið með hita af og á í gegnum veikindin' },
             { display: 'Hár hiti og rúmliggjandi', output: 'Verið með háan hita, mestu rúmliggjandi' }
         ],
-        onRightClickOutput: 'Ekki fengið hita'
+        onRightClickOutput: 'Ekki fengið hita',
+        onCtrlClickOutput: 'Hiti'
 };
 const HitiAlgeng = {
     display: 'Algeng gildi',
@@ -1084,7 +1085,8 @@ const Næring = {
         }
         
         
-    ], onRightClickOutput: 'Nærist vel'
+    ], onRightClickOutput: 'Nærist vel',
+    onCtrlClickOutput: 'Nærist verr en vanalega'
 };
 const Verkjalyf = {
     display: 'Verkjalyf',
@@ -1110,7 +1112,8 @@ const Verkjalyf = {
             output: 'Ekki notað verkjalyf. Segist ekki geta tekið töflur'
         }
     ],
-    onRightClickOutput: 'Ekki notað verkjalyf'
+    onRightClickOutput: 'Ekki notað verkjalyf',
+    onCtrlClickOutput: 'Notað verkjalyf'
 };
 const Heilsufar = [
     {
@@ -5397,7 +5400,8 @@ const SymptomsViral = [
                     { display: 'Mikil', output: 'Mikil flensueinkenni' },
                     { display: 'Í upphafi veikinda', output: 'Flensueinkenni í upphafi veikinda en þau yfirstaðin nú' }
                 ],
-                onRightClickOutput: 'Ekki kvef'
+                onRightClickOutput: 'Ekki kvef',
+                onCtrlClickOutput: 'Flensueinkenni'
             },
             {
                 display: 'Kvef',
@@ -5407,7 +5411,8 @@ const SymptomsViral = [
                     { display: 'Mikið', output: 'Mikil kvefeinkenni' },
                     { display: 'Í upphafi veikinda', output: 'Kvefeinkenni í upphafi veikinda en þau yfirstaðin nú' }
                 ],
-                onRightClickOutput: 'Ekki kvef'
+                onRightClickOutput: 'Ekki kvef',
+                onCtrlClickOutput: 'Kvefeinkenni'
             }
         ]
     },
@@ -5426,12 +5431,14 @@ const SymptomsViral = [
                     { display: 'Veruleg. Raddbreyting. Getur varla kyngt', output: 'Verulega mikil hálssærindi. Lýsir raddbreytingu. Getur varla kyngt munnvatni' },
                     { display: 'Í upphafi veikinda', output: 'Hálssærindi í upphafi veikinda en þau yfirstaðin nú' }
                 ],
-                onRightClickOutput: 'Neitar hálssærindum'
+                onRightClickOutput: 'Neitar hálssærindum',
+                onCtrlClickOutput: 'Hálssærindi'
             },
             {
                 display: 'Hæsi',
                 output: 'Hæsi',
-                onRightClickOutput: 'Ekki hæsi'
+                onRightClickOutput: 'Ekki hæsi',
+                onCtrlClickOutput: 'Hæsi'
             },
             {
                 display: 'Munnangur',
@@ -5441,7 +5448,8 @@ const SymptomsViral = [
                     { display: 'Mikill', output: 'Mikill munnangur' },
                     { display: 'Svæsinn, getur lítið borðað', output: 'Svæsinn munnangur. Hefur lítið getað borðað vegna þessa' }
                 ],
-                onRightClickOutput: 'Ekki munnangur'
+                onRightClickOutput: 'Ekki munnangur',
+                onCtrlClickOutput: 'Munnangur'
             }
         ], onRightClickOutput: 'Neitar hálssærindum'
     },
@@ -5457,7 +5465,8 @@ const SymptomsViral = [
                     { display: 'Vinstra megin', output: 'Einkenni frá ennisholum vinstra megin' },
                     { display: 'Beggja vegna', output: 'Einkenni frá ennisholum beggja vegna' }
                 ],
-                onRightClickOutput: 'Ekki þrýstingur yfir ennisholum'
+                onRightClickOutput: 'Ekki þrýstingur yfir ennisholum',
+                onCtrlClickOutput: 'Sinuseinkenni'
             },
             { display: 'Þrýstingur', output: 'Þrýstingur', onRightClickOutput: 'Ekki þrýstingur'},
             { display: 'Verkur', 
@@ -5467,7 +5476,8 @@ const SymptomsViral = [
                     { display: 'Vægur', output: 'Vægur verkur' },
                     { display: 'Mikill', output: 'Mikill verkur' }
                 ],
-                onRightClickOutput: 'Ekki verkur'
+                onRightClickOutput: 'Ekki verkur',
+                onCtrlClickOutput: 'Verkur'
             }
         ], onRightClickOutput: 'Neitar einkennum frá ennisholum'
     },
@@ -5483,7 +5493,8 @@ const SymptomsViral = [
                     { display: 'Vinstra eyra', output: 'Leiðir út í vinstra eyra' },
                     { display: 'Bæði', output: 'Leiðir út í bæði eyru' }
                 ],
-                onRightClickOutput: 'Leiðir ekki'
+                onRightClickOutput: 'Leiðir ekki',
+                onCtrlClickOutput: 'Leiðir út í eyru'
             },
             {
                 display: 'Vont bragð', 
@@ -5504,7 +5515,8 @@ const SymptomsViral = [
                     { display: 'Vinstri', output: 'Einkenni frá vinstra eyra' },
                     { display: 'Beggja vegna', output: 'Einkenni frá báðum eyrum' }
                 ],
-                onRightClickOutput: 'Ekki einkenni frá eyrum'
+                onRightClickOutput: 'Ekki einkenni frá eyrum',
+                onCtrlClickOutput: 'Einkenni frá eyrum'
             },
             { display: 'Óþægindi', output: 'Óþægindi', onRightClickOutput: 'Ekki óþægindi'},
             { display: 'Verkur', 
@@ -5514,7 +5526,8 @@ const SymptomsViral = [
                     { display: 'Vægur', output: 'Vægur verkur' },
                     { display: 'Mikill', output: 'Mikill verkur' }
                 ],
-                onRightClickOutput: 'Ekki verkur'
+                onRightClickOutput: 'Ekki verkur',
+                onCtrlClickOutput: 'Verkur'
             },
             { display: 'Hella', output: 'Hella', onRightClickOutput: 'Ekki hella'},
             { display: 'Gröftur', output: 'Lekur gröftur', onRightClickOutput: 'Ekki gröftur'}
@@ -5565,7 +5578,8 @@ const SymptomsViral = [
                     { display: 'Mikill', output: 'Mikill hósti' },
                     { display: 'Slæmur, heldur fyrir vöku', output: 'Slæmur hósti. Heldur fyrir vöku á næturna' }
                 ],
-                onRightClickOutput: 'Ekki verið með hósta'
+                onRightClickOutput: 'Ekki verið með hósta',
+                onCtrlClickOutput: 'Hósti'
             },
             {
                 display: 'Uppgangur',
@@ -5631,7 +5645,8 @@ const SymptomsViral = [
                         display: 'Mikið aukin',
                         output: 'Fundið fyrir mikilli mæði'
                     }
-                ], onRightClickOutput: 'Neitar mæði'
+                ], onRightClickOutput: 'Neitar mæði',
+                onCtrlClickOutput: 'Aukin mæði'
             }
         ]
     },
@@ -5666,7 +5681,8 @@ const SymptomsViral = [
                         display: 'Töluverður',
                         output: 'Lýsir töluverðum slappleika'
                     }
-                ], onRightClickOutput: 'Ekki áberandi slappleiki'
+                ], onRightClickOutput: 'Ekki áberandi slappleiki',
+                onCtrlClickOutput: 'Slappleiki'
             },
             {
                 display: 'Höfuðverkur',
@@ -5683,7 +5699,8 @@ const SymptomsViral = [
                         display: 'Mikill',
                         output: 'Lýsir töluverðum höfuðverk'
                     }
-                ], onRightClickOutput: 'Neitar höfuðverk'
+                ], onRightClickOutput: 'Neitar höfuðverk',
+                onCtrlClickOutput: 'Höfuðverkur'
             }
         ]
     },
@@ -5712,7 +5729,8 @@ const SymptomsViral = [
                     { display: 'Efri útlimir', output: 'Útbrot á efri útlimum' },
                     { display: 'Neðri útlimir', output: 'Útbrot á neðri útlimum' },
                     { display: 'Efri og neðri útlimir', output: 'Útbrot á efri og neðri útlimum' }
-                ], onRightClickOutput: 'Ekki tekið eftir útbrotum'
+                ], onRightClickOutput: 'Ekki tekið eftir útbrotum',
+                onCtrlClickOutput: 'Útbrot'
             },
             {
                 display: 'Byrjuðu',
@@ -5734,7 +5752,8 @@ const SymptomsViral = [
                     { display: 'Vægur', output: 'Vægur kláði' },
                     { display: 'Mikill', output: 'Mikill kláði' }
                 ],
-                onRightClickOutput: 'Ekki fundið fyrir kláða'
+                onRightClickOutput: 'Ekki fundið fyrir kláða',
+                onCtrlClickOutput: 'Kláði'
             }
         ], onRightClickOutput: 'Ekki tekið eftir útbrotum eða öðrum húðeinkennum'
     },
@@ -5773,7 +5792,8 @@ const SymptomsViral = [
 
                     
                 ],
-                onRightClickOutput: 'Ekki aðrir verið veikir í kring'
+                onRightClickOutput: 'Ekki aðrir verið veikir í kring',
+                onCtrlClickOutput: 'Aðrir verið veikir í kringum skjólstæðing'
             },
             {
                 display: 'Ferðalag',
@@ -5879,7 +5899,8 @@ const SymptomsViral = [
                         ]
                     }
                 ],
-                onRightClickOutput: 'Ekki tekið sýklalyf nýlega'
+                onRightClickOutput: 'Ekki tekið sýklalyf nýlega',
+                onCtrlClickOutput: 'Er að taka sýklalyf'
             },
             {
                 display: 'Tímalengd',
@@ -5997,7 +6018,8 @@ const SymptomsViral = [
                         output: 'Ekki notað hitalækkandi. Segist ekki geta tekið töflur'
                     }
                 ],
-                onRightClickOutput: 'Ekki notað hitalækkandi'
+                onRightClickOutput: 'Ekki notað hitalækkandi',
+                onCtrlClickOutput: 'Notað hitalækkandi'
             },
             Verkjalyf,
             {
@@ -6043,7 +6065,8 @@ const SymptomsViral = [
                         ], onRightClickOutput: 'Tekið SEM mixtúru við hósta. Ekki slegið nægilega vel á'
                     }
                 ],
-                onRightClickOutput: 'Ekki notað hóstastillandi'
+                onRightClickOutput: 'Ekki notað hóstastillandi',
+                onCtrlClickOutput: 'Notað hóstastillandi'
             },
             {
                 display: 'Nefsterar',
@@ -6065,7 +6088,8 @@ const SymptomsViral = [
                         output: 'Notað nefstera en finnst ekkert gera'
                     }
                 ],
-                onRightClickOutput: 'Ekki notað nefstera'
+                onRightClickOutput: 'Ekki notað nefstera',
+                onCtrlClickOutput: 'Notað nefstera'
             }
         ]
     },
@@ -38159,33 +38183,36 @@ function createButton(row, item, displayText, index, sectionId) {
 }
 function handleButtonClick(event, item, displayText, index, button, sectionId) {
     sectionId = getEffectiveSectionId(sectionId);
-    // Remove any existing popup
     removeExistingPopup();
 
-    ensureHeader(sectionId); // Automatically ensure the header is added
+    ensureHeader(sectionId); // Make sure the correct header is inserted first
 
     if (item.type === 'options') {
-        // Find the selected option
         const selectedOption = item.options[index];
 
         if (selectedOption) {
+            // 1) Check for Ctrl+Click and if the data has onCtrlClickOutput
+            if (event.ctrlKey && selectedOption.onCtrlClickOutput) {
+                event.preventDefault(); 
+                insertText(selectedOption.onCtrlClickOutput, sectionId);
+                return; // Stop here, don't trigger normal click logic
+            }
+
+            // 2) Normal left-click logic if not Ctrl-click
             if (selectedOption.output === 'OPEN_LIFSMORK_MODAL') {
-                openLifsmorkModal(); // Open the Lífsmörk modal
+                openLifsmorkModal(); 
             } else if (selectedOption.output === 'OPEN_ORTHOSTATISM_MODAL') {
-                openOrthostatismModal(); // Open the Orthostatism modal
+                openOrthostatismModal();
             } else if (selectedOption.type === 'hyperlink' && selectedOption.url) {
-                // Handle hyperlink at the first level
-                window.open(selectedOption.url, '_blank'); // Open the hyperlink in a new tab
+                window.open(selectedOption.url, '_blank');
             } else if (selectedOption.subOptions) {
-                // If there are suboptions, open a popup
                 createPopup(event, selectedOption, button, false, sectionId);
             } else if (selectedOption.output) {
-                // Insert the output text if present
                 insertText(selectedOption.output, sectionId);
             }
         }
     } else {
-        // Default behavior for other buttons
+        // If it's not type 'options', handle as a normal button
         handleDefaultButtonClick(item, displayText, index, sectionId);
     }
 }
