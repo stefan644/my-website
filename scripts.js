@@ -1471,7 +1471,8 @@ const Venjur = {
                     display: 'Engin reykingarsaga',
                     output: 'Engin reykingarsaga'
                 }
-            ],
+            ],onCtrlClickOutput: 'Reykingasaga',
+            onCtrlRightClickOutput: 'Engin reykingarsaga'
         },
         {
             display: 'Pakkaár',
@@ -38218,16 +38219,23 @@ function handleButtonClick(event, item, displayText, index, button, sectionId) {
 }
 function handleButtonRightClick(event, item, displayText, index, button, sectionId) {
     sectionId = getEffectiveSectionId(sectionId);
-    // Remove any existing popup
     removeExistingPopup();
 
-    ensureHeader(sectionId); // Automatically ensure the header is added
+    ensureHeader(sectionId);
 
     if (item.type === 'options') {
-        // Find the selected option
         const selectedOption = item.options[index];
-
         if (selectedOption) {
+            // Place your new check for Ctrl+RightClick here:
+            
+            // 1) Check if user is pressing Ctrl AND there's onCtrlRightClickOutput
+            if (event.ctrlKey && selectedOption.onCtrlRightClickOutput) {
+                event.preventDefault();  // prevent context menu
+                insertText(selectedOption.onCtrlRightClickOutput, sectionId);
+                return;  // Stop here so we don't trigger normal right-click logic
+            }
+
+            // 2) Otherwise, your existing right-click logic
             if (selectedOption.onRightClickSubOptions) {
                 createPopup(event, selectedOption, button, true, sectionId);
             } else if (selectedOption.onRightClickOutput) {
@@ -38235,7 +38243,6 @@ function handleButtonRightClick(event, item, displayText, index, button, section
             }
         }
     } else {
-        // Default behavior for other buttons
         handleDefaultButtonRightClick(item, displayText);
     }
 }
