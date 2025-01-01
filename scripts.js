@@ -3790,11 +3790,18 @@ const Skjöl = [
     {
         name: '',
         type: 'options',
-        display: ['Vörtumeðferð'],
+        display: ['Vörtumeðferð', 'Leikskólalæknisfræði', 'Blóðsykurslyf'],
         options: [
             {
                 display: 'Vörtumeðferð', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Vortumedferd.pdf'
+            },
+            {
+                display: 'Leikskólalæknisfræði', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Leikskolalaeknisfraedi.pdf'
+            },
+            {
+                display: 'Blóðsykurslyf', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Blóðsykurlækkandi Lyf - DMII - Endurskoðað.pdf'
             }
+            
         ]
     }
 ];
