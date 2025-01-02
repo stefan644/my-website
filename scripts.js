@@ -1548,6 +1548,7 @@ const Lyf = [
     {
       name: 'Lyf',
       type: 'options',
+      collapsed: true,
       display: ['Háþrýsting', 'Blóðfitu', 'Blóðþynnandi'],
       options: [
         { display: 'Háþrýsting', output: 'Er á háþrýstingslyfjum', onRightClickOutput: 'Ekki á háþrýstingslyfjum' },
