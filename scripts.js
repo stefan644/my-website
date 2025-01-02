@@ -187,10 +187,11 @@ const Vaktaheader = {
         
     ]
 }
-const Timalengd2 = {
+const Timalengd2 = [
+{
     name: '',
     type: 'options',
-    display: ['Klst', 'Dagar', 'Vikur', 'Mánuðir', 'Ár'],
+    display: ['Klst', 'Dagar', 'Vikur'],
     options: [
                 {
                     display: 'Klst',
@@ -246,7 +247,15 @@ const Timalengd2 = {
                         
                     ],
                     onRightClickOutput: 'Nokkra vikna saga'
-                },
+                }
+        
+    ]
+},
+{
+    name: '',
+    type: 'options',
+    display: ['Mánuðir', 'Ár'],
+    options: [
                 {
                     display: 'Mánuðir',
                     subOptions: [
@@ -273,9 +282,9 @@ const Timalengd2 = {
                     ],
                     onRightClickOutput: 'Einhverja ára saga'
                 }
-        
     ]
-};
+}
+];
 const FyrriNoturButton ={
     display: 'Fyrri nótur',
     subOptions: [
@@ -5388,7 +5397,7 @@ const SymptomsViral = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: 'Viral',
         type: 'options',
@@ -5536,7 +5545,7 @@ const SymptomsViral = [
         ], onRightClickOutput: 'Neitar einkennum frá eyrum'
     },
     {
-        name: '',
+        name: 'Eyrnabarn',
         type: 'options',
         display: ['Ó.E. Eyrnaskoðun', 'Óvær', 'Toga', 'Eyrnabarn', 'Rör'],
         options: [
@@ -5564,7 +5573,7 @@ const SymptomsViral = [
                 output: 'Með rör',
                 onRightClickOutput: 'Ekki með rör'
             }
-        ]
+        ], onRightClickOutput: 'Ekki eyrnabarn'
     },
     {
         name: 'Öndunarfæri',
@@ -5998,7 +6007,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Hitalækkandi', 'Verkjalyf', 'Hóstastillandi', 'Nefsterar'],
+        display: ['Hitalækkandi', 'Verkjalyf', 'Hóstastillandi'],
         options: [
             {
                 display: 'Hitalækkandi',
@@ -6069,7 +6078,14 @@ const SymptomsViral = [
                 ],
                 onRightClickOutput: 'Ekki notað hóstastillandi',
                 onCtrlClickOutput: 'Notað hóstastillandi'
-            },
+            }
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Nefsterar'],
+        options: [
             {
                 display: 'Nefsterar',
                 subOptions: [
@@ -8429,7 +8445,7 @@ const SymptomsEye = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: 'Komuástæða',
         type: 'options',
@@ -9451,7 +9467,7 @@ const SymptomsHeart = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: '',
         type: 'options',
@@ -12423,7 +12439,7 @@ const SymptomsMelting = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: 'Komuástæða',
         type: 'options',
@@ -16605,7 +16621,7 @@ const SymptomsShoulder = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: 'Staðsetning',  // No category name displayed
         type: 'options',
@@ -17477,7 +17493,7 @@ const PlanShoulder = [
 // Elbow
 const SymptomsElbow = [
     Vaktaheader,
-    Timalengd2,
+    ...Timalengd2,
     {
         name: '',
         type: 'options',
@@ -18512,7 +18528,7 @@ const PlanHand = [];
 const SymptomsBack = [
     
     Vaktaheader,
-    Timalengd2,
+    ...Timalengd2,
     {
         name: '',
         type: 'options',
@@ -19599,7 +19615,7 @@ const SymptomsKnee = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: '',
         type: 'options',
@@ -20365,7 +20381,7 @@ const SymptomsAnkle = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: '',
         type: 'options',
@@ -22573,7 +22589,7 @@ const SymptomsGed = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: 'Geðeinkenni',
         type: 'options',
@@ -25011,7 +25027,7 @@ const SymptomsTauga = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: '',
         type: 'options',
@@ -34375,7 +34391,7 @@ const SymptomsUrinary = [
             
         ]
     },
-    Timalengd2,
+    ...Timalengd2,
     {
         name: 'Komuástæða',
         type: 'options',
@@ -39433,7 +39449,7 @@ function loadPage(page) {
         leftColumn.className = 'column left-column';
     
         // (1) Make the left column 30% wider:
-        leftColumn.style.flex = '1.7'; // The others will be 1 by default
+        leftColumn.style.flex = '1.5'; // The others will be 1 by default
     
         // Big top-level header for left column
         const mainHeader = document.createElement('h2');
