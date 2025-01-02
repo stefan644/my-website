@@ -1155,23 +1155,14 @@ const Heilsufar = [
     {
     name: '',
     type: 'options',
-    display: ['Nýleg veikindi', 'Endurteknar sýkingar', 'Ónæmisbæling'],
+    display: ['Nýleg veikindi', 'Endurteknar sýkingar'],
     options: [
         {
             display: 'Nýleg veikindi',
             subOptions: [
                 {
                     display: 'Veirusýking',
-                    subOptions: [
-                        {
-                            display: 'NOS',
-                            output: 'Er að jafna sig á veirusýkingu'
-                        },
-                        {
-                            display: 'Endurteknar veirusýkingar',
-                            output: 'Verið að glíma við endurteknar veirusýkingar nýlega'
-                        }
-                    ]
+                    output: 'Er að jafna sig á veirusýkingu'
                 },
                 {
                     display: 'Bakteríusýking',
@@ -1214,7 +1205,8 @@ const Heilsufar = [
                     ]
                 }
             ],
-            onRightClickOutput: 'Ekki verið að glíma við veikindi nýlega'
+            onRightClickOutput: 'Ekki verið að glíma við veikindi nýlega',
+            onCtrlClickOutput: 'Er að jafna sig á veirusýkingu'
         },
         {
             display: 'Endurteknar sýkingar',
@@ -1225,8 +1217,16 @@ const Heilsufar = [
                 { display: 'Sinusita', output: 'Fengið endurtekna sinusita', onRightClickOutput: 'Ekki saga um sinusita' },
                 { display: 'Eyrnabólgur', output: 'Endurteknar eyrnabólgur', onRightClickOutput:'Ekki saga um eyrnabólgur' }
             ],
-            onRightClickOutput: 'Ekki mikið að fá sýkingar'
-        },
+            onRightClickOutput: 'Ekki mikið að fá sýkingar',
+            onCtrlClickOutput: 'Verið að fá endurteknar pestir'
+        }
+    ], onRightClickOutput: 'Skjólstæðingur heilsuhraustur í grunnin'
+},
+{
+    name: '',
+    type: 'options',
+    display: ['Ónæmisbæling'],
+    options: [
         {
             display: 'Ónæmisbæling',
             subOptions: [
