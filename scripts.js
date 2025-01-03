@@ -6223,7 +6223,8 @@ const ExamsViral = [
                         output: 'Áberandi eitlastækkanir á hálssvæði'
                     }
                 ],
-                onRightClickOutput: 'Ekki eitlastækkanir á hálssvæði' 
+                onRightClickOutput: 'Ekki eitlastækkanir á hálssvæði',
+                onCtrlClickOutput: 'Eitlastækkanir á hálssvæði'
             },
             {
                 display: 'Eymsli',
@@ -6258,7 +6259,8 @@ const ExamsViral = [
                         ], onRightClickOutput: 'Engin eymsli við þreifingu yfir hálskirtlum'
                     }
                     
-                ], onRightClickOutput: 'Engin eymsli við þreifingu á hálseitlum'
+                ], onRightClickOutput: 'Engin eymsli við þreifingu á hálseitlum',
+                onCtrlClickOutput: 'Eymsli við þreifingu á hálssvæði'
             }
         ]
     },
