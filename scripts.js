@@ -6187,7 +6187,9 @@ const ExamsViral = [
                     { display: 'NOS', output: 'Roði í koki' },
                     { display: 'Vægur', output: 'Vægur roði í koki' },
                     { display: 'Mikill', output: 'Mikill roði í koki' }
-                ], onRightClickOutput: 'Ekki roði í koki' },
+                ], onRightClickOutput: 'Ekki roði í koki',
+                onCtrlClickOutput: 'Roði í koki'
+            },
             { display: 'Gröftur á hálskirtlum', output: 'Gröftur á hálskirtlum', onRightClickOutput: 'Ekki gröftur á hálskirtlum' },
             { display: 'Hálskirtlar stórir', output: 'Hálskirtlar stórir', onRightClickOutput: 'Ekki áberandi stórir hálskirtlar' },
             { display: 'Blöðrukennd útbrot', 
