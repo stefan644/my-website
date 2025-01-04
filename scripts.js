@@ -6977,7 +6977,8 @@ const PlanViral = [
 
                         ]
                     }
-                ], onRightClickSubOptions: PlanMononucleosis()
+                ], onRightClickSubOptions: PlanMononucleosis(),
+                onCtrlClickSubOptions: PlanMononucleosis()
             },
             {
                 display: 'Herpes',
@@ -6998,7 +6999,8 @@ const PlanViral = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um herpes. Veiti viðeigandi ráðleggingar. Set veirulyf í gáttina. Endurmat eftir þörfum'
+                ], onRightClickOutput: 'Grunur um herpes. Veiti viðeigandi ráðleggingar. Set veirulyf í gáttina. Endurmat eftir þörfum',
+                onCtrlClickSubOptions: PlanHerpes()
             },
             {
                 display: 'Enterovirus',
@@ -7083,7 +7085,8 @@ const PlanViral = [
                             { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/skutabolga/' } 
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki'
+                ], onRightClickOutput: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki',
+                onCtrlClickSubOptions: PlanSinusitis()
             },
             {
                 display: 'Lungnabólga',
@@ -7107,7 +7110,8 @@ const PlanViral = [
                             ]
                         }
                         
-                    ], onRightClickOutput: 'Grunur um lungnabólgu. Set sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki.'
+                    ], onRightClickOutput: 'Grunur um lungnabólgu. Set sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki.',
+                    onCtrlClickSubOptions: PlanLungnabolga()
             }
         ]
     },
@@ -7137,7 +7141,8 @@ const PlanViral = [
                             { display: 'ÞÍH - Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/brad-berkjubolga-og-lungnabolga-hja-fullordnum-og-bornum/' }
                         ]
                     }
-                ], onRightClickOutput:'Berkjubólga. Veiti ráðleggingar. Tekur oft 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi. Endurmat eftir þörfum'
+                ], onRightClickOutput:'Berkjubólga. Veiti ráðleggingar. Tekur oft 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi. Endurmat eftir þörfum',
+                onCtrlClickSubOptions: PlanBronchitis()
             },
             {
                 display: 'Bronchiolitis',
@@ -7276,7 +7281,8 @@ const PlanViral = [
                             { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/brad-mideyrnabolga/' }
                         ]
                     }
-                ], onRightClickOutput: 'Otitis media. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki'
+                ], onRightClickOutput: 'Otitis media. Ráðlegg sýklalyfjameðferð. Endurmat ef versnar eða lagast ekki',
+                onCtrlClickSubOptions: PlanEyrnabólga()
             },
             {
                 display: 'Eyrnaverkur',
@@ -7972,8 +7978,8 @@ function PlanBronchitis() {
         }));
     }
 
-    // Antibiotic reason options (for when we actually start oral antibiotics now)
-    // If NOS is chosen, no narrative appended
+    // Antibiotic reason options (for when we actually start oral antibiotics)
+    // If NOS is chosen, we now explicitly add "Hefjum sýklalyfjameðferð." so output indicates antibiotic usage
     function generateAntibioticReasonOptions(prefixText) {
         const reasons = [
             { display: 'NOS', narrative: '' },
@@ -7985,7 +7991,13 @@ function PlanBronchitis() {
         ];
 
         return reasons.map(reason => {
-            const finalText = reason.narrative ? `${prefixText} ${reason.narrative}`.trim() : prefixText;
+            // If reason is NOS, we explicitly add "Hefjum sýklalyfjameðferð." to prefix
+            let finalText;
+            if (reason.display === 'NOS') {
+                finalText = `${prefixText} Hefjum sýklalyfjameðferð.`.trim();
+            } else {
+                finalText = reason.narrative ? `${prefixText} ${reason.narrative}`.trim() : prefixText;
+            }
             return {
                 display: reason.display,
                 subOptions: generateBronchitisFollowUpOptions(finalText)
@@ -7994,7 +8006,7 @@ function PlanBronchitis() {
     }
 
     // Study reason options (for RTG / RTG+BPR or placing antibiotics in pharmacy)
-    // If NOS is chosen, we do not prepend any reason text and do not lowercase 'Ráðlegg'.
+    // If NOS is chosen, no reason text; we keep instruction casing. Otherwise we prepend reason and convert Ráðlegg -> ráðlegg.
     function generateStudyReasonOptions(prefixText, instruction) {
         const reasons = [
             { display: 'NOS' },
@@ -8028,6 +8040,7 @@ function PlanBronchitis() {
         return generateBronchitisFollowUpOptions(prefixText);
     }
 
+    // Treatment options
     const treatmentOptions = [
         { display: 'Ráðleggingar og stuðningsmeðferð', value: 'Tekur oft 4-6 vikur að ganga yfir. Sýklalyf duga yfirleitt skammt. Stuðningsmeðferð og hóstastillandi.', type: 'none' },
         { display: 'Sýklalyf', value: '', type: 'antibiotic' },
@@ -8058,6 +8071,7 @@ function PlanBronchitis() {
                 };
             } else if (option.type === 'antibiotic') {
                 // Antibiotic reason step
+                // Even if NOS is chosen, we still mention "Hefjum sýklalyfjameðferð." in generateAntibioticReasonOptions
                 const finalPrefix = instruction ? `${prefix} ${instruction}`.trim() : prefix;
                 return {
                     display: option.display,
@@ -38213,16 +38227,34 @@ function handleButtonClick(event, item, displayText, index, button, sectionId) {
         const selectedOption = item.options[index];
 
         if (selectedOption) {
-            // 1) Check for Ctrl+Click and if the data has onCtrlClickOutput
+            // 1) Check if it's Ctrl + Click and the data has onCtrlClickSubOptions
+            if (event.ctrlKey && selectedOption.onCtrlClickSubOptions) {
+                event.preventDefault(); 
+                // Create a popup for the onCtrlClickSubOptions
+                createPopup(
+                    event, 
+                    // pass selectedOption as normal, 
+                    // but we want to use onCtrlClickSubOptions instead of subOptions
+                    { 
+                      ...selectedOption, 
+                      subOptions: selectedOption.onCtrlClickSubOptions
+                    }, 
+                    button, 
+                    false,           // not right-click
+                    sectionId
+                );
+                return;  // Stop here, so we don't do the normal left-click logic
+            }
+
             if (event.ctrlKey && selectedOption.onCtrlClickOutput) {
                 event.preventDefault(); 
                 insertText(selectedOption.onCtrlClickOutput, sectionId);
                 return; // Stop here, don't trigger normal click logic
             }
 
-            // 2) Normal left-click logic if not Ctrl-click
+            // 2) Normal left-click logic (existing)
             if (selectedOption.output === 'OPEN_LIFSMORK_MODAL') {
-                openLifsmorkModal(); 
+                openLifsmorkModal();
             } else if (selectedOption.output === 'OPEN_ORTHOSTATISM_MODAL') {
                 openOrthostatismModal();
             } else if (selectedOption.type === 'hyperlink' && selectedOption.url) {
@@ -38234,7 +38266,7 @@ function handleButtonClick(event, item, displayText, index, button, sectionId) {
             }
         }
     } else {
-        // If it's not type 'options', handle as a normal button
+        // If the item is not type 'options', handle it as a normal button
         handleDefaultButtonClick(item, displayText, index, sectionId);
     }
 }
