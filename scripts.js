@@ -1618,7 +1618,7 @@ const Lyf = [
           { display: 'Nefsterar', output: 'Er á nefsterum að staðaldri', onRightClickOutput: 'Ekki á nefsterum' }
         ]
       }
-  ];
+];
   
   
 
@@ -3637,134 +3637,113 @@ const Simanumer = [
                         ]
                     },
                     {
-                        display: 'Apótekarinn - Höfuðborgarsvæðið',
-                        subOptions: [
-                            {
-                                display: 'Austurver - 5812101',
-                                type: 'hyperlink',
-                                url: 'tel:5812101'
-                            },
-                            {
-                                display: 'Bíldshöfði - 5272582',
-                                type: 'hyperlink',
-                                url: 'tel:5272582'
-                            },
-                            {
-                                display: 'Fjarðarkaupum - 5556801',
-                                type: 'hyperlink',
-                                url: 'tel:5556801'
-                            },
-                            {
-                                display: 'Hamraborg - 5540101',
-                                type: 'hyperlink',
-                                url: 'tel:5540101'
-                            },
-                            {
-                                display: 'Helluhrauni - 5543010',
-                                type: 'hyperlink',
-                                url: 'tel:5543010'
-                            },
-                            {
-                                display: 'Höfði (Húsagnahöllinni) - 5687041',
-                                type: 'hyperlink',
-                                url: 'tel:5687041'
-                            },
-                            {
-                                display: 'Kirkjusandur - 5162013',
-                                type: 'hyperlink',
-                                url: 'tel:5162013'
-                            },
-                            {
-                                display: 'Mosfellsbær - 5666640',
-                                type: 'hyperlink',
-                                url: 'tel:5666640'
-                            },
-                            {
-                                display: 'Mjódd - 5172522',
-                                type: 'hyperlink',
-                                url: 'tel:5172522'
-                            },
-                            {
-                                display: 'Salavegur - 5343032',
-                                type: 'hyperlink',
-                                url: 'tel:5343032'
-                            },
-                            {
-                                display: 'Skipholt - 5517222',
-                                type: 'hyperlink',
-                                url: 'tel:5517222'
-                            },
-                            {
-                                display: 'Vallakór - 5343082',
-                                type: 'hyperlink',
-                                url: 'tel:5343082'
-                            }
-                            
+                        "display": "Apótekarinn - Höfuðborgarsvæðið",
+                        "subOptions": [
+                          {
+                            "display": "Austurver - 5812100",
+                            "type": "hyperlink",
+                            "url": "tel:5812100"
+                          },
+                          {
+                            "display": "Bíldshöfði - 5272582",
+                            "type": "hyperlink",
+                            "url": "tel:5272582"
+                          },
+                          {
+                            "display": "Fjarðarkaupum - 5556801",
+                            "type": "hyperlink",
+                            "url": "tel:5556801"
+                          },
+                          {
+                            "display": "Hamraborg - 5540101",
+                            "type": "hyperlink",
+                            "url": "tel:5540101"
+                          },
+                          {
+                            "display": "Helluhrauni - 5343001",
+                            "type": "hyperlink",
+                            "url": "tel:5343001"
+                          },
+                          {
+                            "display": "Höfði (Húsagnahöllinni) - 5687041",
+                            "type": "hyperlink",
+                            "url": "tel:5687041"
+                          },
+                          {
+                            "display": "Kirkjusandur - 5162013",
+                            "type": "hyperlink",
+                            "url": "tel:5162013"
+                          },
+                          {
+                            "display": "Mosfellsbær - 5666640",
+                            "type": "hyperlink",
+                            "url": "tel:5666640"
+                          },
+                          {
+                            "display": "Mjódd - 5172522",
+                            "type": "hyperlink",
+                            "url": "tel:5172522"
+                          },
+                          {
+                            "display": "Salavegur - 5343032",
+                            "type": "hyperlink",
+                            "url": "tel:5343032"
+                          },
+                          {
+                            "display": "Skipholt - 5517222",
+                            "type": "hyperlink",
+                            "url": "tel:5517222"
+                          },
+                          {
+                            "display": "Vallakór - 5343082",
+                            "type": "hyperlink",
+                            "url": "tel:5343082"
+                          }
                         ]
                     },
                     {
-                        display: 'Apótekarinn - Landsbyggðin',
-                        subOptions: [
-                            {
-                                display: 'Dalvík - 4603456',
-                                type: 'hyperlink',
-                                url: 'tel:4603456'
-                            },
-                            {
-                                display: 'Fjarðarkaupum - 5556801',
-                                type: 'hyperlink',
-                                url: 'tel:5556801'
-                            },
-                            {
-                                display: 'Hafnarstræti, Akureyri - 4603456',
-                                type: 'hyperlink',
-                                url: 'tel:4603456'
-                            },
-                            {
-                                display: 'Hella - 4875030',
-                                type: 'hyperlink',
-                                url: 'tel:4875030'
-                            },
-                            {
-                                display: 'Hólmavík - 4512552',
-                                type: 'hyperlink',
-                                url: 'tel:4512552'
-                            },
-                            {
-                                display: 'Hrísey - 4622444',
-                                type: 'hyperlink',
-                                url: 'tel:4622444'
-                            },
-                            {
-                                display: 'Hveragerði - 4834349',
-                                type: 'hyperlink',
-                                url: 'tel:4834349'
-                            },
-                            {
-                                display: 'Keflavík - 4213944',
-                                type: 'hyperlink',
-                                url: 'tel:4213944'
-                            },
-                            {
-                                display: 'Selfoss - 4821206',
-                                type: 'hyperlink',
-                                url: 'tel:4821206'
-                            },
-                            {
-                                display: 'Skagaströnd - 4512432',
-                                type: 'hyperlink',
-                                url: 'tel:4512432'
-                            },
-                            {
-                                display: 'Þórshöfn - 4835030',
-                                type: 'hyperlink',
-                                url: 'tel:4835030'
-                            },
-                            {
-                                display: 'Vestmannaeyjar - 4813902',
-                                type: 'hyperlink',
-                                url: 'tel:4813902'
-                            }
+                        "display": "Apótekarinn - Landsbyggðin",
+                        "subOptions": [
+                          {
+                            "display": "Dalvík - 4603456",
+                            "type": "hyperlink",
+                            "url": "tel:4603456"
+                          },
+                          {
+                            "display": "Fjarðarkaupum - 5556801",
+                            "type": "hyperlink",
+                            "url": "tel:5556801"
+                          },
+                          {
+                            "display": "Hafnarstræti, Akureyri - 4603456",
+                            "type": "hyperlink",
+                            "url": "tel:4603456"
+                          },
+                          {
+                            "display": "Hella - 5687041",
+                            "type": "hyperlink",
+                            "url": "tel:5687041"
+                          },
+                          {
+                            "display": "Hveragerði - 4834349",
+                            "type": "hyperlink",
+                            "url": "tel:4834349"
+                          },
+                          {
+                            "display": "Keflavík - 4213944",
+                            "type": "hyperlink",
+                            "url": "tel:4213944"
+                          },
+                          {
+                            "display": "Selfoss - 4821206",
+                            "type": "hyperlink",
+                            "url": "tel:4821206"
+                          },
+                          {
+                            "display": "Vestmannaeyjar - 4813902",
+                            "type": "hyperlink",
+                            "url": "tel:4813902"
+                          }
                         ]
                     },
                     {

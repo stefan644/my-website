@@ -401,7 +401,11 @@ main {
     display: inline; /* Make the label only as wide as its content */
 }
 
-
+.item-label-container { /*Change the spacing for the name property*/
+    margin: -7px 0; /* or whatever vertical spacing you like */
+    margin-bottom: -4px; /* or whatever spacing you prefer */
+  }
+  
 
 
 .collapsible-group {
