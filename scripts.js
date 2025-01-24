@@ -3286,8 +3286,9 @@ const Hlekkir = [
             {
                 display: 'Minnisuppvinnsla',
                 subOptions: [
-                    { display: 'Handbók minnismóttökunnar', type: 'hyperlink', url: 'https://1drv.ms/b/c/adc5bc1773f511d1/EVwvx1_ZZNtFucHpnmgCqIgBw4qKS-4mNNLR556QaUqAxg?e=agBAQi' },
-                    
+                    { display: 'Handbók minnismóttökunnar', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Handbók minnismóttökunnar- 4. útgáfa.pdf' },
+                    { display: 'Gátlisti lækna fyrir fyrstu komu á minnismóttöku', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Gátlisti lækna fyrir fyrstu komu á minnismóttöku.docx' },
+                    { display: 'ACB calculator (Áhættureiknir lyfja sem auka byltuhættu, rugl o.fl. hjá eldra fólki)', type: 'hyperlink', url: 'https://www.acbcalc.com/' },
                 ]
             }
             
@@ -3793,6 +3794,17 @@ const Skjöl = [
             },
             {
                 display: 'Blóðsykurslyf', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Blóðsykurlækkandi Lyf - DMII - Endurskoðað.pdf'
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hvenær hjálpa sýklalyf?'],
+        options: [
+            {
+                display: 'Sýklalyf', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Sýklalyf HVE.pdf'
             }
             
         ]
@@ -5390,7 +5402,7 @@ const SymptomsViral = [
                     { display: 'Mikil', output: 'Mikil flensueinkenni' },
                     { display: 'Í upphafi veikinda', output: 'Flensueinkenni í upphafi veikinda en þau yfirstaðin nú' }
                 ],
-                onRightClickOutput: 'Ekki kvef',
+                onRightClickOutput: 'Ekki flensueinkenni',
                 onCtrlClickOutput: 'Flensueinkenni'
             },
             {
@@ -17118,7 +17130,7 @@ const PlanShoulder = [
                     }
                     
                 ],
-                onRightClickOutput: ''
+                onRightClickOutput: 'Axlarmeinsemd. Stutt saga. RICE ráðleggingar. Verkjalyf eftir þörfum. Endurmat ef einkenni lagast ekki á næstu dögum'
             },
             {
                 display: 'Tognun',
@@ -38470,34 +38482,46 @@ function createNestedSubPopup(subOption, parentButton, sectionId, depth, isRight
     document.addEventListener('click', handleClickOutsideSubPopup);
 }
 function createPopupButton(popup, subOption, parentButton, sectionId, depth) {
+    // 1) If subOption has "title", render a heading (non-clickable)
+    if (subOption.title) {
+        const heading = document.createElement('div');
+        heading.textContent = subOption.title;
+        heading.className = 'suboption-heading'; // CSS class for styling if desired
+
+        // No click or contextmenu handlers => non-clickable
+
+        popup.appendChild(heading);
+        return; 
+    }
+
+    // 2) Otherwise, render the normal clickable button
     const btn = document.createElement('button');
     btn.textContent = subOption.display;
     btn.style.display = 'block';
     btn.style.margin = '5px 0';
 
+    // If it's a hyperlink, open in new tab
     if (subOption.type === 'hyperlink' && subOption.url) {
-        // Handle as hyperlink
         btn.onclick = (e) => {
-            e.stopPropagation(); // Prevent closing popup on click
-            window.open(subOption.url, '_blank'); // Open link in a new tab
+            e.stopPropagation();
+            window.open(subOption.url, '_blank');
         };
     } else {
-        // Left click event for popup button
+        // Normal subOption that inserts text or opens nested subOptions
         btn.onclick = (e) => {
-            e.stopPropagation(); // Prevent closing popup on button click
+            e.stopPropagation();
             handleSubOptionClick(subOption, sectionId, popup, btn, depth);
         };
-
-        // Right click event for popup button
         btn.oncontextmenu = (e) => {
-            e.preventDefault(); // Prevent the context menu from appearing
-            e.stopPropagation(); // Prevent closing popup on right-click
+            e.preventDefault();
+            e.stopPropagation();
             handleSubOptionRightClick(subOption, sectionId, popup, btn, depth);
         };
     }
 
     popup.appendChild(btn);
 }
+
 // Left-click handler for titles (only inserts the section header if not already present)
 function handleTitleLeftClick(event, title, sectionId) {
     console.log('Left-clicked on title:', title); // Debugging line
@@ -39450,55 +39474,75 @@ function loadPage(page) {
     // Add a special case for "Vírósa" here:
     // -------------------------------------
     else if (page === 'Vírósa') {
-        currentPage = page; // If you track the current page
+        currentPage = page;
         const container = document.getElementById('content-section');
         container.style.opacity = '0';
         container.innerHTML = '';
     
-        // Main horizontal container for columns
+        // Main 3-column container
         const horizontalContainer = document.createElement('div');
         horizontalContainer.className = 'horizontal-sections';
     
-        // --- LEFT COLUMN ---
+        //------------------------------------------
+        // 1. LEFT COLUMN
+        //------------------------------------------
         const leftColumn = document.createElement('div');
         leftColumn.className = 'column left-column';
+        leftColumn.style.flex = '1.5'; // Make left column wider if you like
     
-        // (1) Make the left column 30% wider:
-        leftColumn.style.flex = '1.5'; // The others will be 1 by default
+        // A) Create a "section" DIV to hold heading + subcolumns 
+        //    so the <h2> is styled like the rest
+        const virusaSection = document.createElement('div');
+        virusaSection.id = 'einkenni-section'; 
+        // (id optional, but it mimics how createSection(...) does it)
     
-        // Big top-level header for left column
-        const mainHeader = document.createElement('h2');
-        mainHeader.textContent = 'Vírósa';
-        leftColumn.appendChild(mainHeader);
+        // B) Create the clickable-title container for "Vírósa"
+        const virusaHeadingContainer = document.createElement('div');
+        virusaHeadingContainer.className = 'clickable-title'; 
+        // This matches how createSection() builds headings
     
-        // Subcolumn wrapper (two subcolumns)
+        // Insert <h2> with same styling as other columns
+        const virusaHeading = document.createElement('h2');
+        virusaHeading.textContent = 'Vírósa';
+        virusaHeadingContainer.appendChild(virusaHeading);
+    
+        // Attach left/right click handlers, but point them at sectionId = "einkenni"
+        virusaHeadingContainer.onclick = (event) => {
+          handleTitleLeftClick(event, 'Vírósa', 'einkenni');
+        };
+        virusaHeadingContainer.oncontextmenu = (event) => {
+          event.preventDefault();
+          handleTitleRightClick(event, 'Vírósa', 'einkenni');
+        };
+    
+        // Add the heading container to our virusaSection
+        virusaSection.appendChild(virusaHeadingContainer);
+    
+        // C) Now build the split sub-columns inside .column-content
         const leftSubcolumnWrapper = document.createElement('div');
         leftSubcolumnWrapper.className = 'column-content';
+        // “column-count:2” is already in your CSS for .left-column .column-content
     
-        // Create a simple section (without a duplicate <h2>)
-        const einkenniSection = document.createElement('div');
-        einkenniSection.id = 'einkenni-section';
-    
-        // Container for the buttons
         const einkenniContainer = document.createElement('div');
-        einkenniContainer.id = 'einkenni';
-        einkenniSection.appendChild(einkenniContainer);
-    
-        // Generate the collapsible buttons for SymptomsViral
+        einkenniContainer.id = 'einkenni'; 
         createButtons(einkenniContainer, SymptomsViral, 'einkenni');
     
-        // Place the section in the subcolumn wrapper
-        leftSubcolumnWrapper.appendChild(einkenniSection);
+        // Append einkenniContainer into the subcolumns
+        leftSubcolumnWrapper.appendChild(einkenniContainer);
     
-        // Finally, add the wrapper to the left column
-        leftColumn.appendChild(leftSubcolumnWrapper);
+        // Finally, add the subcolumn wrapper to the virusaSection
+        virusaSection.appendChild(leftSubcolumnWrapper);
     
-        // --- MIDDLE COLUMN ---
+        // Then place virusaSection inside leftColumn
+        leftColumn.appendChild(virusaSection);
+    
+        //------------------------------------------
+        // 2. MIDDLE COLUMN
+        //------------------------------------------
         const middleColumn = document.createElement('div');
         middleColumn.className = 'column middle-column';
-        // The middle column keeps flex = 1 (the default)
     
-        // Headings for "Skoðun", "Lífsmörk", "Rannsóknir"
+        // Build your other sections with createSectionWithData
         const skodunSection = createSectionWithData('skodun', 'Skoðun', ExamsViral);
         middleColumn.appendChild(skodunSection);
     
@@ -39508,27 +39552,29 @@ function loadPage(page) {
         const rannsoknirSection = createSectionWithData('rannsoknir', 'Rannsóknir', RannsoknirViral);
         middleColumn.appendChild(rannsoknirSection);
     
-        // --- RIGHT COLUMN ---
+        //------------------------------------------
+        // 3. RIGHT COLUMN
+        //------------------------------------------
         const rightColumn = document.createElement('div');
         rightColumn.className = 'column right-column';
-        // Also flex = 1 by default
     
-        // Heading for "Álit og plan"
         const planSection = createSectionWithData('plan', 'Álit og plan', PlanViral);
         rightColumn.appendChild(planSection);
     
-        // Put all columns side by side
+        //------------------------------------------
+        // Attach all columns
+        //------------------------------------------
         horizontalContainer.appendChild(leftColumn);
         horizontalContainer.appendChild(middleColumn);
         horizontalContainer.appendChild(rightColumn);
     
-        // Attach to the container and reveal
         container.appendChild(horizontalContainer);
         container.style.visibility = 'visible';
         container.style.opacity = '1';
-    
-        return; // Prevent falling back to the generic code
+        return;
     }
+    
+
     
     else {
         const pageDef = pageDefinitions[page];

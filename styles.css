@@ -790,3 +790,10 @@ main {
     column-gap: 2em;           /* spacing between subcolumns */
     column-rule: 2px solid rgba(128,128,128,0.3); /* thin line between subcolumns */
 }
+
+.suboption-heading {
+    font-weight: bold;
+    margin: 6px 0 4px;
+    border-bottom: 1px solid #ddd;
+    /* or whatever look you prefer */
+}
