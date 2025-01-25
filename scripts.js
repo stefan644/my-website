@@ -1128,7 +1128,8 @@ const Heilsufar = [
     {
     name: 'Heilsufar',
     type: 'options',
-    display: ['Undirliggjandi sjúkdómur', 'Lungnasjúkdómur'],
+    collapsed: true,
+    display: ['Undirliggjandi sjkd', 'Lungnasjúkdómur'],
     options: [
         {
             display: 'Undirliggjandi sjúkdómur',
@@ -5538,6 +5539,7 @@ const SymptomsViral = [
     {
         name: 'Eyrnabarn',
         type: 'options',
+        collapsed: true,
         display: ['Ó.E. Eyrnaskoðun', 'Óvær', 'Toga', 'Eyrnabarn', 'Rör'],
         options: [
             {
@@ -5807,6 +5809,7 @@ const SymptomsViral = [
     {
         name: 'Fyrri lyfjameðferðir',
         type: 'options',
+        collapsed: true,
         display: ['Sýklalyf', 'Tímalengd', 'Fyrri kúrar'],
         options: [
             {
