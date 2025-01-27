@@ -3802,11 +3802,27 @@ const Skjöl = [
     {
         name: '',
         type: 'options',
-        display: ['Hvenær hjálpa sýklalyf?'],
+        display: ['Hvenær hjálpa sýklalyf?', 'Kíghósti'],
         options: [
             {
                 display: 'Sýklalyf', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Sýklalyf HVE.pdf'
+            },
+            {
+                display: 'Kíghósti',
+                subOptions: [
+                    {
+                        display: 'Hvenær hjálpa sýklalyf? (Leiðb. EL)', 
+                        
+                        type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Sýklalyfjameðferð vegna kíghósta.pdf'
+                    },
+                    {
+                        display: 'Leiðbeiningar fyrir heilbrigðisstarfsfólk ef kíghósti greinist í skóla', 
+                        
+                        type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Leiðbeiningar fyrir heilbrigðisstarfsfólk ef kíghósti greinist í skóla.pdf'
+                    }
+                ]
             }
+            
             
         ]
     }
