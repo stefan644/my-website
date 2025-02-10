@@ -3369,7 +3369,8 @@ const Simanumer = [
                 display: 'LSH',
                 subOptions: [
                     { display: 'Samskiptaleiðir LSH (Yfirlitssíða)', type: 'hyperlink', url: 'https://www.landspitali.is/um-landspitala/hafdu-samband/samskiptaleidir/'},
-                    { display: 'Ráðgjafasími 543-3400', type: 'hyperlink', url: 'tel:5433400' }
+                    { display: 'Ráðgjafasími 543-3400', type: 'hyperlink', url: 'tel:5433400' },
+                    { display: 'Fjarskiptalæknir BMT 543-2112', type: 'hyperlink', url: 'tel:5432112' }
                 ]
             },
             {
