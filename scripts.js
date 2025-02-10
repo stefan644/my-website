@@ -6943,7 +6943,7 @@ const PlanViral = [
                 subOptions: [
                     {
                         display: 'Vírósa - Ráð - Stuðningsmeðferð - Re PN',
-                        output: 'Vírósa. Veiti viðeigandi ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar'
+                        output: 'Vírósa. Veiti ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar'
                     },
                     {
                         display: '"Viral wheeze" - Ráð - Ventolin - Stuðningsmeðferð - Re PN',
@@ -6957,7 +6957,7 @@ const PlanViral = [
                         display: '"Viral wheeze" - Laslegt útlit - Bráðamóttaka barna',
                         output: 'Viral wheeze. Lastlegt útlit. Tel ráðlegt að fá nánara mat á bráðamóttöku barna'
                     }
-                ], onRightClickOutput: 'Vírósa. Veiti viðeigandi ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar'
+                ], onRightClickOutput: 'Vírósa. Veiti ráðleggingar. Stuðningsmeðferð. Endurmat ef lagast ekki eða versnar'
             },
             PlanConjunctivitis,
             PlanGastroenteritis
