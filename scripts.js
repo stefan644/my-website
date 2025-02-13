@@ -5503,7 +5503,7 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Leiðni', 'Vont bragð'],
+        display: ['Leiðni', 'Vont bragð', 'Hor'],
         options: [
             {
                 display: 'Leiðni',
@@ -5519,6 +5519,19 @@ const SymptomsViral = [
                 display: 'Vont bragð', 
                 output:  'Fundið fyrir vondu bragði í munni',
                 onRightClickOutput: 'Ekki fundið fyrir vondu bragði í munni'
+            },
+            {
+                display: 'Hor',
+                subOptions: [
+                    {
+                        display: 'Litað',
+                        output: 'Litað hor'
+                    },
+                    {
+                        display: 'Litað og blóð',
+                        output: 'Litað hor með blóði'
+                    }
+                ], onRightClickOutput: 'Glært hor'
             }
         ], onRightClickOutput: 'Neitar einkennum frá ennisholum'
     },
@@ -7178,6 +7191,7 @@ const PlanViral = [
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
+                            { display: 'Heilsuvera - Ennis- og kinnholusýking', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/syking-i-ennis-og-kinnholum/' },
                             { display: 'Uptodate - Sinusitis in adults (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/sinusitis-in-adults-the-basics' },
                             { display: 'Uptodate - Sinusitis in adults (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-sinusitis-sinus-infection-beyond-the-basics' },
                             { display: 'Uptodate - What you should know about antibiotics (Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/what-you-should-know-about-antibiotics-the-basics' },
