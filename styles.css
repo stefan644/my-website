@@ -36,6 +36,7 @@ main {
     flex-direction: column;
     flex: 1;
     padding: 20px;
+    padding-bottom: 320px; /* Adjust as needed */
     position: relative;
     overflow-y: auto;
 }

@@ -1128,7 +1128,6 @@ const Heilsufar = [
     {
     name: 'Heilsufar',
     type: 'options',
-    collapsed: true,
     display: ['Undirliggjandi sjkd', 'Lungnasjúkdómur'],
     options: [
         {
@@ -3163,7 +3162,7 @@ const PlanConjunctivitis = {
             { display: 'Uptodate - Allergic conjunctivitis: Management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/allergic-conjunctivitis-management' },
         ]
     }
-], onRightClickOutput: 'Grunur um viral conjunctivitis. Veiti viðeigandi ráðleggingar. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Ef ný eða versnandi einkenni þá endurmat.'
+], onRightClickOutput: 'Grunur um viral conjunctivitis. Veiti ráðleggingar. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit. Ef ný eða versnandi einkenni þá endurmat.'
 };
 function PlanConjunctivitisF() {
     ///////////////////////////////
@@ -3217,7 +3216,7 @@ function PlanConjunctivitisF() {
 
         // NOS, Viral, Bacterial logic: same as before
         const mappedFirstLevel = firstLevelOptions.map(opt => {
-            let prefix = `Grunur um ${opt.prefixCondition}. Veiti viðeigandi ráðleggingar. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit.`;
+            let prefix = `Grunur um ${opt.prefixCondition}. Veiti ráðleggingar. Tekur oft 1-2 vikur að ganga yfir. Getur hjálpað að nota kalda bakstra / augndropa. Hreinlæti mikilvægt til að fyrirbyggja smit.`;
             return {
                 display: opt.display,
                 subOptions: generateTreatmentSecondLevel(prefix.trim())
@@ -6966,8 +6965,58 @@ const PlanViral = [
     {
         name: '',
         type: 'options',
-        display: ['Mónó', 'Herpes', 'Enterovirus'],
+        display: ['Croup','Mónó', 'Herpes', 'Enterovirus'],
         options: [
+            {
+                display: 'Croup',
+                subOptions: [
+                    /*{ display: 'Plan', 
+                        subOptions: SteroidsCroup()    
+                    },*/
+                    {
+                        display: 'Plan',
+                        subOptions: [
+                          {
+                            display: 'Mild einkenni - Ráð - Endurmat PN',
+                            output:
+                              'Grunur um croup. Mild einkenni. Veiti ráðleggingar. Hitalækkandi. Halda vel að vökva. ' +
+                              'Kallt loft og gufa geta hjálpað við einkennum. Fylgjast vel með barninu, ef einkenni ' +
+                              'fara versnandi er mikilvægt að hafa samband eða leita á bráðamóttöku barna'
+                          },
+                          {
+                            display: 'Mild einkenni - Ráð - Sterar - Endurmat PN',
+                            // Call SteroidsCroup with the wrapper so that each leaf's output is inserted into the full text.
+                            subOptions: SteroidsCroup(wrapSteroidOutput)
+                          },
+                          {
+                            display: 'BMT barna',
+                            output:
+                              'Grunur um croup. Þar sem alvarleg einkenni ráðlagt nánara mat á bráðamóttöku barna'
+                          }
+                        ]
+                      },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Heilsuvera - Barkabólga', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/barkabolga/' },
+                            { display: 'Landspítali - Barkabólga hjá barni', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Barnaspitalinn/barkabolga_hja_barni_2021.pdf' },
+                            { display: 'Uptodate - Croup (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-the-basics' },
+                            { display: 'Uptodate - Croup (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-in-infants-and-children-beyond-the-basics' },
+                        ]
+                    },
+                    { display: 'Uppflettirit', 
+                        subOptions: [
+                            { display: 'Westley Croup Score (MDCALC)', type: 'hyperlink', url: 'https://www.mdcalc.com/calc/677/westley-croup-score' },
+                            { display: 'Uptodate - Croup diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-clinical-features-evaluation-and-diagnosis' },
+                            { display: 'Uptodate - Croup management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-management' },
+                            { display: 'Uptodate - Fæðirit meðferð', type: 'hyperlink', url: 'https://www.uptodate.com/contents/image/print?imageKey=PEDS/100747&topicKey=6004&source=outline_link&search=' },
+                            
+                        ]
+                    }
+                ], onRightClickOutput: 'Grunur um croup. Mild einkenni. Veiti ráðleggingar. Hitalækkandi. Halda vel að vökva. '+
+                'Kallt loft og gufa geta hjálpað við einkennum. Fylgjast vel með barninu, ef einkenni fara versnandi er mikilvægt að '+
+                'hafa samband',
+                onCtrlClickSubOptions: SteroidsCroup()
+            },
             {
                 display: 'Mónó',
                 subOptions: [
@@ -7010,7 +7059,7 @@ const PlanViral = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um herpes. Veiti viðeigandi ráðleggingar. Set veirulyf í gáttina. Endurmat eftir þörfum',
+                ], onRightClickOutput: 'Grunur um herpes. Veiti ráðleggingar. Set veirulyf í gáttina. Endurmat eftir þörfum',
                 onCtrlClickSubOptions: PlanHerpes()
             },
             {
@@ -7040,7 +7089,7 @@ const PlanViral = [
                             { display: 'Fullmótað plan', output: 'Grunur um herpangina. Veiti almennar ráðleggingar. Stuðningsmeðferð. Endurmat pn' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um enteroveirusýkingu. Veiti viðeigandi ráðleggingar. Gengur yfir á nokkrum vikum. Sárin geta verið kvalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar takmarkað. Endurmat ef versnar eða lagast ekki'
+                ], onRightClickOutput: 'Grunur um enteroveirusýkingu. Veiti ráðleggingar. Gengur yfir á nokkrum vikum. Sárin geta verið kvalarfull og getur stundum haft áhrif á næringarinntöku. Verkjalyf PO best, staðbundin meðferð dugar takmarkað. Endurmat ef versnar eða lagast ekki'
             }
             
         ]
@@ -7326,13 +7375,17 @@ const PlanViral = [
         ]
     },
     {
-        name: 'Áætlanir',
+        name: 'Hjálpartæki',
         type: 'options',
-        display: ['Sýklamixtúra'],
+        display: ['Sýklamixtúra', 'Croup sterareiknir'],
         options: [
             {
                 display: 'Sýklamixtúra',
                 subOptions: Sýklamixtúra()
+            },
+            {
+                display: 'Croup sterareiknir',
+                subOptions: SteroidsCroup()
             }
         ]
     }
@@ -7953,15 +8006,15 @@ function PlanEyrnabólga() {
         return [
             {
                 display: 'Unilateral',
-                subOptions: generateSecondLevelOptions('Unilateral otitis media. Veiti viðeigandi ráðleggingar.')
+                subOptions: generateSecondLevelOptions('Unilateral otitis media. Veiti ráðleggingar.')
             },
             {
                 display: 'Bilateral',
-                subOptions: generateSecondLevelOptions('Bilateral otitis media. Veiti viðeigandi ráðleggingar.')
+                subOptions: generateSecondLevelOptions('Bilateral otitis media. Veiti ráðleggingar.')
             },
             {
                 display: 'Unilateral með rofi',
-                subOptions: generateSecondLevelOptions('Unilateral otitis media með rofi. Veiti viðeigandi ráðleggingar.')
+                subOptions: generateSecondLevelOptions('Unilateral otitis media með rofi. Veiti ráðleggingar.')
             }
         ];
     }
@@ -8065,7 +8118,7 @@ function PlanBronchitis() {
 
     function generateBronchitisOptions() {
         return treatmentOptions.map(option => {
-            let prefix = `Grunur um berkjubólgu. Veiti viðeigandi ráðleggingar.`; 
+            let prefix = `Grunur um berkjubólgu. Veiti ráðleggingar.`; 
 
             // Add treatment details if any
             let instruction = '';
@@ -8136,7 +8189,7 @@ function PlanHerpes() {
 
     function generateHerpesOptions() {
         return treatmentOptions.map(option => {
-            let prefix = 'Grunur um herpes. Veiti viðeigandi ráðleggingar og fræðslu.';
+            let prefix = 'Grunur um herpes. Veiti ráðleggingar og fræðslu.';
             
             // Append based on selection
             if (option.value.synataka) {
@@ -14270,7 +14323,7 @@ const PlanMelting = [
                 subOptions: [
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti viðeigandi ráðleggingar. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband' } 
+                            { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband' } 
                         ]    
                     },
                     { display: 'Ráðleggingar', 
@@ -14296,7 +14349,7 @@ const PlanMelting = [
                             { display: '', type: 'hyperlink', url: '' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um blöðrubólgu. Veiti viðeigandi ráðleggingar. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband'
+                ], onRightClickOutput: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband'
             },
             {
                 display: 'Pyelonephritis',
@@ -18311,7 +18364,7 @@ const PlanElbow = [
                         { display: 'Grunur', output: 'Grunur um epicondylitis' },
                         { display: 'Fullmótuð plön', 
                             subOptions: [
-                                { display: 'Grunur, ráðleggingar, sjúkraþjálfun, re pn ', output: 'Grunur um epicondylitis. Veiti viðeigandi ráðleggingar. Lagast yfirleitt af sjálfu sér. Forðast álag sem eykur á einkenni. Kæling og verkjalyf pn. Fær beiðni í sjúkraþjálfun. Endurmat eftir þörfum' }
+                                { display: 'Grunur, ráðleggingar, sjúkraþjálfun, re pn ', output: 'Grunur um epicondylitis. Veiti ráðleggingar. Lagast yfirleitt af sjálfu sér. Forðast álag sem eykur á einkenni. Kæling og verkjalyf pn. Fær beiðni í sjúkraþjálfun. Endurmat eftir þörfum' }
                             ]    
                         },
                         { display: 'Ráðleggingar', 
@@ -28776,7 +28829,7 @@ const PlanGigt = [
                         subOptions: [
                             { display: 'Brátt þvagsýrugigtarkast', 
                                 subOptions: [
-                                    { display: 'Grunur, NSAIDS, ráðleggingar, endurmat ef lagast ekki', output: 'Grunur um þvagsýrugigt. Veiti viðeigandi ráðleggingar og fræðslu. Ráðlegg háa skammta af NSAIDS. Gengur yfirleitt yfir á nokkrum dögum. Endurmat ef einkenni versna eða lagast ekki' },
+                                    { display: 'Grunur, NSAIDS, ráðleggingar, endurmat ef lagast ekki', output: 'Grunur um þvagsýrugigt. Veiti ráðleggingar og fræðslu. Ráðlegg háa skammta af NSAIDS. Gengur yfirleitt yfir á nokkrum dögum. Endurmat ef einkenni versna eða lagast ekki' },
                                     { display: 'Colchicine, ráðleggingar, endurmat ef lagast ekki', output: 'Grunur um þvagsýrugigtarkast. Ráðlegg colchicine. Meðferð í samræmi við sérlyfjaskrá. 0,5mg 2-3x á sólahring. Má hefja meðferð með 1,0mg upphafsskamt. Hámark 6mg í meðferðarlotu (lágmark 72klst á milli meðferðarlota). Endurmat ef einkenni lagast ekki eða versnar, sem og ef aukaverkanir af colchicine' },
                                     { display: 'NSAID óþol, sterar PO', output: 'Grunur um þvagsýrugigtarkast. Þar sem óþol fyrir NSAIDS ákveðið að nota sterameðferð. Meðferð í samræmi við uptodate. Prednisolon 40mg daglega þar til einkenni yfirstaðin. Yfirleitt dugar 5-10 daga meðferð og er þá ekki þörf á niðurtröppun. Skjólstæðingur fær viðeigandi fræðslu um mögulegar aukaverkanir stera. Endurmat ef versnar eða lagast ekki' }
                                 ]    
@@ -28829,7 +28882,7 @@ const PlanGigt = [
                     }
                     
                 ],
-                onRightClickOutput: 'Grunur um þvagsýrugigt. Veiti viðeigandi ráðleggingar og fræðslu. Ráðlegg háa skammta af NSAIDS. Gengur yfirleitt yfir á nokkrum dögum. Endurmat ef einkenni versna eða lagast ekki'
+                onRightClickOutput: 'Grunur um þvagsýrugigt. Veiti ráðleggingar og fræðslu. Ráðlegg háa skammta af NSAIDS. Gengur yfirleitt yfir á nokkrum dögum. Endurmat ef einkenni versna eða lagast ekki'
             }
         ]
     }
@@ -28852,7 +28905,7 @@ const PlanMeðganga = [
                         subOptions: [
                             {
                                 display: 'Ráðleggingar - Endurmat ef lagast ekki',
-                                output: 'Ógleði á meðgöngu. Veiti viðeigandi ráðleggingar. Borða litlar máltíðir í senn. Hrísgrjón, banani, ristað brauð o.fl. Velja frekar lytkarminni mat sem triggerar ekki ógleði. '
+                                output: 'Ógleði á meðgöngu. Veiti ráðleggingar. Borða litlar máltíðir í senn. Hrísgrjón, banani, ristað brauð o.fl. Velja frekar lytkarminni mat sem triggerar ekki ógleði. '
                                 + 'Ekki sterkan eða mjög feitan mat. Gott að hafa kex eða snarl á náttborði. Drekka milli máltíða frekar en með máltíð. Engifer getur hjálpað við ógleði. Ráðlagt að taka B6 vítamín eða borða mat með B6 (hnetur, bananar o.fl). '
                                 + 'Ef ofangreind ráð duga ekki er hægt að prófa lyf svo sem Xonvea eða bæta við ógleðisstillandi. Ef versnun (t.d. heldur engu niðri, merki um ofþornun, kviðverkir, þyngdartap o.fl.) er mikilvægt að hafa samband'
                             },
@@ -28871,7 +28924,7 @@ const PlanMeðganga = [
                             { display: 'Xonvea - Sérlyfjaskrá SMPC', type: 'hyperlink', url: 'https://old.serlyfjaskra.is/FileRepos/273b4970-da28-ef11-8122-80f82c6a84ee/Xonvea_SmPC.pdf' }
                         ]
                     }
-                ], onRightClickOutput: 'Ógleði á meðgöngu. Veiti viðeigandi ráðleggingar. Borða litlar máltíðir í senn. Hrísgrjón, banani, ristað brauð o.fl. Velja frekar lytkarminni mat sem triggerar ekki ógleði. '
+                ], onRightClickOutput: 'Ógleði á meðgöngu. Veiti ráðleggingar. Borða litlar máltíðir í senn. Hrísgrjón, banani, ristað brauð o.fl. Velja frekar lytkarminni mat sem triggerar ekki ógleði. '
                                 + 'Ekki sterkan eða mjög feitan mat. Gott að hafa kex eða snarl á náttborði. Drekka milli máltíða frekar en með máltíð. Engifer getur hjálpað við ógleði. Ráðlagt að taka B6 vítamín eða borða mat með B6 (hnetur, bananar o.fl). '
                                 + 'Ef ofangreind ráð duga ekki er hægt að prófa lyf svo sem Xonvea eða bæta við ógleðisstillandi. Ef versnun (t.d. heldur engu niðri, merki um ofþornun, kviðverkir, þyngdartap o.fl.) er mikilvægt að hafa samband'
             },
@@ -36314,6 +36367,123 @@ function Sýklamixtúra() {
         }
     ];
 }
+
+// Sterareiknir CROUP
+// Updated SteroidsCroup accepts an optional wrapper function.
+function SteroidsCroup(wrapper) {
+    // Helper function to calculate the steroid dose.
+    function calculateSteroidDosage(medicationName, dosagePerKg, weight, maxDose) {
+      let calculatedDose = dosagePerKg * weight;
+      if (calculatedDose > maxDose) {
+        calculatedDose = maxDose;
+      }
+      const formattedDosage = dosagePerKg.toString().replace('.', ',');
+      let output = `Ráðlegg stakann skammt af ${medicationName}. Notum ${formattedDosage} mg/kg. Þyngd ${weight} kg. Skammtur því ${calculatedDose.toFixed(1)} mg.`;
+      
+      // If a wrapper function is provided, use it.
+      if (wrapper && typeof wrapper === 'function') {
+        output = wrapper(output);
+      }
+      return output;
+    }
+  
+    // Helper to generate weight-based suboptions.
+    function generateWeightSuboptionsSteroid(medicationName, dosagePerKg, maxDose) {
+      return [
+        {
+          display: '1-10 kg',
+          subOptions: Array.from({ length: 10 }, (_, i) => ({
+            display: `${i + 1} kg`,
+            output: calculateSteroidDosage(medicationName, dosagePerKg, i + 1, maxDose)
+          }))
+        },
+        {
+          display: '11-20 kg',
+          subOptions: Array.from({ length: 10 }, (_, i) => ({
+            display: `${i + 11} kg`,
+            output: calculateSteroidDosage(medicationName, dosagePerKg, i + 11, maxDose)
+          }))
+        },
+        {
+          display: '21-30 kg',
+          subOptions: Array.from({ length: 10 }, (_, i) => ({
+            display: `${i + 21} kg`,
+            output: calculateSteroidDosage(medicationName, dosagePerKg, i + 21, maxDose)
+          }))
+        },
+        {
+          display: '31-40 kg',
+          subOptions: Array.from({ length: 10 }, (_, i) => ({
+            display: `${i + 31} kg`,
+            output: calculateSteroidDosage(medicationName, dosagePerKg, i + 31, maxDose)
+          }))
+        }
+      ];
+    }
+  
+    return [
+      {
+        display: 'Dexamethasone',
+        subOptions: [
+          {
+            display: '0,15 mg/kg',
+            subOptions: generateWeightSuboptionsSteroid('Dexamethasone', 0.15, 10)
+          },
+          {
+            display: '0,3 mg/kg',
+            subOptions: generateWeightSuboptionsSteroid('Dexamethasone', 0.3, 10)
+          },
+          {
+            display: '0,45 mg/kg',
+            subOptions: generateWeightSuboptionsSteroid('Dexamethasone', 0.45, 10)
+          },
+          {
+            display: '0,6 mg/kg',
+            subOptions: generateWeightSuboptionsSteroid('Dexamethasone', 0.6, 10)
+          }
+        ]
+      },
+      {
+        display: 'Budesonide',
+        subOptions: [
+          {
+            display: '0,15 mg/kg',
+            subOptions: generateWeightSuboptionsSteroid('Budesonide', 0.15, 10)
+          },
+          {
+            display: '0,3 mg/kg',
+            subOptions: generateWeightSuboptionsSteroid('Budesonide', 0.3, 10)
+          },
+          {
+            display: '0,45 mg/kg',
+            subOptions: generateWeightSuboptionsSteroid('Budesonide', 0.45, 10)
+          },
+          {
+            display: '0,6 mg/kg',
+            subOptions: generateWeightSuboptionsSteroid('Budesonide', 0.6, 10)
+          }
+        ]
+      },
+      {
+        display: 'Prednisolon',
+        subOptions: [
+          {
+            display: '1 mg/kg',
+            subOptions: generateWeightSuboptionsSteroid('Prednisolon', 1, 60)
+          }
+        ]
+      }
+    ];
+  }
+  
+  // Define a wrapper function that inserts the steroid output into the full text.
+  function wrapSteroidOutput(steroidOutput) {
+    return "Grunur um croup. Veiti ráðleggingar. Hitalækkandi. Halda vel að vökva. " +
+           "Kallt loft og gufa geta hjálpað við einkennum. " +
+           steroidOutput +
+           " Fylgjast vel með barninu, ef einkenni fara versnandi er mikilvægt að hafa samband eða leita á bráðamóttöku barna";
+  }
+  
 
 // Heilsufar
 // Function to generate year intervals, year, month, and treatment suboptions
