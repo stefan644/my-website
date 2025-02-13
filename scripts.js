@@ -5480,8 +5480,8 @@ const SymptomsViral = [
             {
                 display: 'Sinuseinkenni',
                 subOptions: [
-                    { display: 'Hægra megin', output: 'Einkenni frá ennisholum hægra megin' },
-                    { display: 'Vinstra megin', output: 'Einkenni frá ennisholum vinstra megin' },
+                    { display: 'Hægra megin', output: 'Einkenni frá ennisholum. Meira hægra megin' },
+                    { display: 'Vinstra megin', output: 'Einkenni frá ennisholum. Meira vinstra megin' },
                     { display: 'Beggja vegna', output: 'Einkenni frá ennisholum beggja vegna' }
                 ],
                 onRightClickOutput: 'Ekki þrýstingur yfir ennisholum',
@@ -6889,6 +6889,54 @@ const ExamsViral = [
             }
         ], onRightClickOutput: 'Lungnahlustun hrein. Ekki brak, wheezing eða önnur aukahljóð'
     },
+    {
+        name: '',
+        type: 'options',
+        display: ['Inndrættir', 'Stridor'],
+        options: [
+            {
+                display: 'Inndrættir',
+                subOptions: [
+                    { 
+                        display: 'Vægir', 
+                        output: 'Vægir inndrættir' 
+                    },
+                    { 
+                        display: 'Miðlungs', 
+                        output: 'Miðlungs inndrættir' 
+                    },
+                    { 
+                        display: 'Miklir', 
+                        output: 'Miklir inndrættir' 
+                    }
+                ],
+                onRightClickOutput: 'Brjóstkassi hreyfist eðlilega við öndun. Engir inndrættir'
+            },
+            {
+                display: 'Stridor',
+                subOptions: [
+                    {
+                        display: 'Við áreynslu',
+                        output: 'Stridor við áreynslu'
+                    },
+                    {
+                        display: 'I hvíld',
+                        subOptions: [
+                            {
+                                display: 'Vægur',
+                                output: 'Vægur stridor í hvíld'
+                            },
+                            {
+                                display: 'Aberandi',
+                                output: 'Aberandi stridor í hvíld'
+                            }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Engin merki um stridor'
+            }
+        ]
+    },
     ExamHjarta1,
     ExamKvidur1,
     ExamKvidur2,
@@ -6977,14 +7025,14 @@ const PlanViral = [
                         display: 'Plan',
                         subOptions: [
                           {
-                            display: 'Mild einkenni - Ráð - Endurmat PN',
+                            display: 'Stuðningsmeðferð og ráð',
                             output:
-                              'Grunur um croup. Mild einkenni. Veiti ráðleggingar. Hitalækkandi. Halda vel að vökva. ' +
+                              'Grunur um croup. Veiti ráðleggingar. Hitalækkandi. Halda vel að vökva. ' +
                               'Kallt loft og gufa geta hjálpað við einkennum. Fylgjast vel með barninu, ef einkenni ' +
                               'fara versnandi er mikilvægt að hafa samband eða leita á bráðamóttöku barna'
                           },
                           {
-                            display: 'Mild einkenni - Ráð - Sterar - Endurmat PN',
+                            display: 'Stuðningsmeðferð, ráð, Sterar',
                             // Call SteroidsCroup with the wrapper so that each leaf's output is inserted into the full text.
                             subOptions: SteroidsCroup(wrapSteroidOutput)
                           },
