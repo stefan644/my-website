@@ -7108,7 +7108,7 @@ const PlanViral = [
     {
         name: 'Öndunarfæri',
         type: 'options',
-        display: ['Hósti', 'Sinusitis', 'Lungnabólga'],
+        display: ['Hósti', 'Sinusitis', 'Lungnabólga', 'Croup'],
         options: [
             { 
                 display: 'Hósti', 
@@ -7184,6 +7184,56 @@ const PlanViral = [
                         
                     ], onRightClickOutput: 'Grunur um lungnabólgu. Set sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki.',
                     onCtrlClickSubOptions: PlanLungnabolga()
+            },
+            {
+                display: 'Croup',
+                subOptions: [
+                    /*{ display: 'Plan', 
+                        subOptions: SteroidsCroup()    
+                    },*/
+                    {
+                        display: 'Plan',
+                        subOptions: [
+                          {
+                            display: 'Stuðningsmeðferð og ráð',
+                            output:
+                              'Grunur um croup. Veiti ráðleggingar. Hitalækkandi. Halda vel að vökva. ' +
+                              'Kallt loft og gufa geta hjálpað við einkennum. Fylgjast vel með barninu, ef einkenni ' +
+                              'fara versnandi er mikilvægt að hafa samband eða leita á bráðamóttöku barna'
+                          },
+                          {
+                            display: 'Stuðningsmeðferð, ráð, Sterar',
+                            // Call SteroidsCroup with the wrapper so that each leaf's output is inserted into the full text.
+                            subOptions: SteroidsCroup(wrapSteroidOutput)
+                          },
+                          {
+                            display: 'BMT barna',
+                            output:
+                              'Grunur um croup. Þar sem alvarleg einkenni ráðlagt nánara mat á bráðamóttöku barna'
+                          }
+                        ]
+                      },
+                    { display: 'Leiðbeiningar til skjólstæðings',
+                        subOptions: [
+                            { display: 'Heilsuvera - Barkabólga', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/barkabolga/' },
+                            { display: 'Landspítali - Barkabólga hjá barni', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Barnaspitalinn/barkabolga_hja_barni_2021.pdf' },
+                            { display: 'Uptodate - Croup (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-the-basics' },
+                            { display: 'Uptodate - Croup (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-in-infants-and-children-beyond-the-basics' },
+                        ]
+                    },
+                    { display: 'Uppflettirit', 
+                        subOptions: [
+                            { display: 'Westley Croup Score (MDCALC)', type: 'hyperlink', url: 'https://www.mdcalc.com/calc/677/westley-croup-score' },
+                            { display: 'Uptodate - Croup diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-clinical-features-evaluation-and-diagnosis' },
+                            { display: 'Uptodate - Croup management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-management' },
+                            { display: 'Uptodate - Fæðirit meðferð', type: 'hyperlink', url: 'https://www.uptodate.com/contents/image/print?imageKey=PEDS/100747&topicKey=6004&source=outline_link&search=' },
+                            
+                        ]
+                    }
+                ], onRightClickOutput: 'Grunur um croup. Mild einkenni. Veiti ráðleggingar. Hitalækkandi. Halda vel að vökva. '+
+                'Kallt loft og gufa geta hjálpað við einkennum. Fylgjast vel með barninu, ef einkenni fara versnandi er mikilvægt að '+
+                'hafa samband',
+                onCtrlClickSubOptions: SteroidsCroup()
             }
         ]
     },
@@ -7265,63 +7315,6 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Grunur - Spírómetría - Ventolin pn - Endurmat í framhaldi', output: 'Grunur um astma. Ráðlegg spírómetríu. Hefjum meðferð með ventolin til reynslu. Mikilvægt að taki ekki ventolin sama dag og fer í rannsóknina (a.m.k. 4-6klst þurfa að líða á milli). Endurmat í framhaldi' }
                 ]
-            }
-        ]
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Croup'],
-        options: [
-            {
-                display: 'Croup',
-                subOptions: [
-                    /*{ display: 'Plan', 
-                        subOptions: SteroidsCroup()    
-                    },*/
-                    {
-                        display: 'Plan',
-                        subOptions: [
-                          {
-                            display: 'Stuðningsmeðferð og ráð',
-                            output:
-                              'Grunur um croup. Veiti ráðleggingar. Hitalækkandi. Halda vel að vökva. ' +
-                              'Kallt loft og gufa geta hjálpað við einkennum. Fylgjast vel með barninu, ef einkenni ' +
-                              'fara versnandi er mikilvægt að hafa samband eða leita á bráðamóttöku barna'
-                          },
-                          {
-                            display: 'Stuðningsmeðferð, ráð, Sterar',
-                            // Call SteroidsCroup with the wrapper so that each leaf's output is inserted into the full text.
-                            subOptions: SteroidsCroup(wrapSteroidOutput)
-                          },
-                          {
-                            display: 'BMT barna',
-                            output:
-                              'Grunur um croup. Þar sem alvarleg einkenni ráðlagt nánara mat á bráðamóttöku barna'
-                          }
-                        ]
-                      },
-                    { display: 'Leiðbeiningar til skjólstæðings',
-                        subOptions: [
-                            { display: 'Heilsuvera - Barkabólga', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/barkabolga/' },
-                            { display: 'Landspítali - Barkabólga hjá barni', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Barnaspitalinn/barkabolga_hja_barni_2021.pdf' },
-                            { display: 'Uptodate - Croup (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-the-basics' },
-                            { display: 'Uptodate - Croup (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-in-infants-and-children-beyond-the-basics' },
-                        ]
-                    },
-                    { display: 'Uppflettirit', 
-                        subOptions: [
-                            { display: 'Westley Croup Score (MDCALC)', type: 'hyperlink', url: 'https://www.mdcalc.com/calc/677/westley-croup-score' },
-                            { display: 'Uptodate - Croup diagnosis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-clinical-features-evaluation-and-diagnosis' },
-                            { display: 'Uptodate - Croup management', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-management' },
-                            { display: 'Uptodate - Fæðirit meðferð', type: 'hyperlink', url: 'https://www.uptodate.com/contents/image/print?imageKey=PEDS/100747&topicKey=6004&source=outline_link&search=' },
-                            
-                        ]
-                    }
-                ], onRightClickOutput: 'Grunur um croup. Mild einkenni. Veiti ráðleggingar. Hitalækkandi. Halda vel að vökva. '+
-                'Kallt loft og gufa geta hjálpað við einkennum. Fylgjast vel með barninu, ef einkenni fara versnandi er mikilvægt að '+
-                'hafa samband',
-                onCtrlClickSubOptions: SteroidsCroup()
             }
         ]
     },
