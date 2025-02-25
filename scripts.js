@@ -6327,7 +6327,12 @@ const ExamsViral = [
                             {
                                 display: 'Gröftur, roði og útbungandi',
                                 output: 'Lekur gröftur úr hægra eyra. Sést glitta í hljóðhimnu sem er útbungandi með roða'
+                            },
+                            {
+                                display: 'Sést ekki vegna mergs',
+                                output: 'Hægri hljóðhimna sést ekki vegna eyrnamergs'
                             }
+                            
                         ], onRightClickOutput: 'Enginn roði á hægri hljóðhimnu'
                     },
                     {
@@ -6349,6 +6354,10 @@ const ExamsViral = [
                             {
                                 display: 'Gröftur, roði og útbungandi',
                                 output: 'Lekur gröftur úr vinstra eyra. Sést glitta í hljóðhimnu sem er útbungandi með roða'
+                            },
+                            {
+                                display: 'Sést ekki vegna mergs',
+                                output: 'Vinstri hljóðhimna sést ekki vegna eyrnamergs'
                             }
                         ],onRightClickOutput: 'Enginn roði á vinstri hljóðhimnu'
                     },
@@ -14222,16 +14231,13 @@ const PlanMelting = [
             {
                 display: 'Gallsteinar',
                 subOptions: [
-                    { display: 'Greining', output: 'Gallsteinar' },
-                    { display: 'Grunur', output: 'Grunur um gallsteina' },
+                    {
+                        display: 'Plan',
+                        subOptions: PlanGallsteinar()
+                    },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Grunur - Ómun + Bpr - Hefur sjálf/ur samband f. nðst', output: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum. Hefur samband að rannsóknum loknum. Ef einkenni versna í millitíðinni (t.d. hár hiti, miklir verkir, mikill slappleiki o.fl.) er mikilvægt að hafa samband' } 
-                        ]    
-                    },
-                    { display: 'Ráðleggingar', 
-                        subOptions: [
-                            { display: '', output: '' } 
                         ]    
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
@@ -14254,7 +14260,8 @@ const PlanMelting = [
                             { display: 'Læknablaðið - Yfirlitsgrein 2020', type: 'hyperlink', url: 'https://www.laeknabladid.is/tolublod/2020/10/nr/7461' }
                         ]
                     }
-                ], onRightClickOutput: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum. Hefur samband að rannsóknum loknum. Ef einkenni versna í millitíðinni (t.d. hár hiti, miklir verkir, mikill slappleiki o.fl.) er mikilvægt að hafa samband'
+                ], onRightClickSubOptions: PlanGallsteinar(),
+                onCtrlClickSubOptions: PlanGallsteinar()
             },
             {
                 display: 'Diverticulitis',
@@ -14263,12 +14270,12 @@ const PlanMelting = [
                     { display: 'Grunur', output: 'Grunur um diverticulitis' },
                     { display: 'Fullmótuð plön',
                         subOptions: [
-                            { display: 'Grunur - Ráð - Sýklalyf í gáttina - Endurmat ef versnar', output: 'Grunur um diverticulitis. Fær viðeigandi ráðleggingar um meðferð. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar' } 
+                            { display: 'Grunur - Ráð - Sýklalyf í gáttina - Endurmat ef versnar', output: 'Grunur um diverticulitis. Fær ráðleggingar um meðferð. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar' } 
                         ] 
                     },
                     { display: 'Ráðleggingar', 
                         subOptions: [
-                            { display: 'Fljótandi fæði - Sýklalyf í gáttina', output: 'Fær viðeigandi ráðleggingar um meðferð diverticulitis. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar' } 
+                            { display: 'Fljótandi fæði - Sýklalyf í gáttina', output: 'Fær ráðleggingar um meðferð diverticulitis. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar' } 
                         ]    
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
@@ -14286,7 +14293,7 @@ const PlanMelting = [
                             { display: 'Uptodate - Colonic diverticulosis and diverticular disease: Epidemiology, risk factors, and pathogenesis', type: 'hyperlink', url: 'https://www.uptodate.com/contents/colonic-diverticulosis-and-diverticular-disease-epidemiology-risk-factors-and-pathogenesis' },
                         ]
                     }
-                ], onRightClickOutput:'Grunur um diverticulitis. Fær viðeigandi ráðleggingar um meðferð. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar'
+                ], onRightClickOutput:'Grunur um diverticulitis. Fær ráðleggingar um meðferð. Ráðlegg fljótandi fæði fyrstu dagana. Ekki alltaf þörf á sýklalyfjum en set í gáttina, leysir út ef lagast ekki. Endurmat ef versnar'
             },
             {
                 display: 'Endaþarmur',
@@ -14401,6 +14408,29 @@ const PlanMelting = [
                             { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband' } 
                         ]    
                     },
+                    {
+                        display: 'Tilbúnar nótur', 
+                        subOptions: [
+                            { 
+                                display: 'Þekkir einkennin - Ekki rauð flögg - Sýklalyf', output: 'Grunur um blöðrubólgu. Tíð þvaglát og óþægindi. '+
+                                        'Fengið áður og þekkir einkennin. Ekki hiti eða '+
+                                        'verkir yfir nýrnastað. Veiti ráðleggingar. Set '+
+                                        'sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt '+
+                                        'að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, '+
+                                        'mikill slappleiki) er mikilvægt að hafa samband' 
+                            },
+                            { 
+                                display: 'Grunur - Ekki rauð flögg - Sýklalyf', output: 'Grunur um blöðrubólgu. Tíð þvaglát og óþægindi. '+
+                                        'Ekki hiti eða '+
+                                        'verkir yfir nýrnastað. Veiti ráðleggingar. Set '+
+                                        'sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt '+
+                                        'að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, '+
+                                        'mikill slappleiki) er mikilvægt að hafa samband' 
+                            }
+                        ]
+
+                    },
+
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             
@@ -15773,6 +15803,79 @@ const RannsoknirMelting = [
         ]
     }
 ];
+function PlanGallsteinar() {
+    ///////////////////////////////
+    // 1) Compose Final Output for Gallstones
+    ///////////////////////////////
+    function composeGallsteinarOutput(prefixText, followUpText) {
+        let output = prefixText.trim();
+        if (followUpText && followUpText.trim() !== '') {
+            output += ' ' + followUpText.trim();
+        }
+        // Always append the warning line about worsening
+        output += ' Ef einkenni versna í millitíðinni (t.d. hár hiti, miklir verkir, mikill slappleiki o.fl.) er mikilvægt að hafa samband.';
+        return output;
+    }
+
+    ///////////////////////////////
+    // 2) Generate Follow-Up Options (second level)
+    ///////////////////////////////
+    // We remove "Endurmat ef versnar" and add "Hefur sjálfur samband"
+    // Each option appends its text to prefixText, then we forcibly append the warning line in composeGallsteinarOutput
+    function generateGallsteinarFollowUpOptions(prefixText) {
+        const followUpOptions = [
+            { 
+                display: 'Hefur sjálfur samband', 
+                value: 'Skjólstæðingur hefur sjálfur samband að rannsóknum loknum.' 
+            },
+            { 
+                display: 'Símatími', 
+                value: 'Fær símatíma til eftirfylgdar.' 
+            },
+            { 
+                display: 'Nýr tími', 
+                value: 'Fær nýjan tíma til eftirfylgdar.' 
+            },
+            { 
+                display: 'Eftirfylgd á sinni heilsugæslu', 
+                value: 'Eftirfylgd á sinni heilsugæslu.' 
+            }
+        ];
+
+        return followUpOptions.map(option => ({
+            display: option.display,
+            output: composeGallsteinarOutput(prefixText, option.value)
+        }));
+    }
+
+    ///////////////////////////////
+    // 3) First-Level Options for PlanGallsteinar
+    ///////////////////////////////
+    // "Ómun" and "Ómun+Blóðprufa", each leading to follow-up
+    function generateGallsteinarOptions() {
+        const options = [
+            { 
+                display: 'Ómun', 
+                prefix: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB.' 
+            },
+            { 
+                display: 'Ómun+Blóðprufa', 
+                prefix: 'Grunur um gallsteina. Ráðlegg ómskoðun LGB. Einnig blóðprufa með m.a. lifrarensímum.' 
+            }
+        ];
+
+        return options.map(option => ({
+            display: option.display,
+            subOptions: generateGallsteinarFollowUpOptions(option.prefix)
+        }));
+    }
+
+    ///////////////////////////////
+    // 4) Return the first-level array
+    ///////////////////////////////
+    return generateGallsteinarOptions();
+}
+
 
 // Stoðkerfi (Musculoskeletal system)
 const SymptomsStodkerfi = [
@@ -18516,7 +18619,7 @@ const PlanElbow = [
                     { display: 'Grunur', output: 'Áverki á olnboga. Grunur um brot' },
                     { display: 'Fullmótuð plön', 
                         subOptions: [
-                            { display: 'Get illa útilokað, myndataka, ef neikv meðhöndla sem tognun, endurmat ef versnar/lagast ekki, engin eftirfylgd', output: 'Áverki á olnboga. Grunur um tognun en get illa útilokað brot. Ráðlegg myndatöku. Ef reynist neikvætt meðhöndla sem tognun. Fær viðeigandi ráðleggingar. RICE og verkjalyf. Endurmat ef einkenni versna eða lagast ekki. Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs' },
+                            { display: 'Get illa útilokað, myndataka, ef neikv meðhöndla sem tognun, endurmat ef versnar/lagast ekki, engin eftirfylgd', output: 'Áverki á olnboga. Grunur um tognun en get illa útilokað brot. Ráðlegg myndatöku. Ef reynist neikvætt meðhöndla sem tognun. Fær ráðleggingar. RICE og verkjalyf. Endurmat ef einkenni versna eða lagast ekki. Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs' },
                             { display: 'Get illa útilokað, bráðamóttaka', output: 'Áverki á olnboga. Get illa útilokað brot. Vísa á bráðamóttöku' }
                         ]    
                     },
@@ -23795,11 +23898,11 @@ const PlanGed = [
                 subOptions: [
                     { 
                         display: 'Ráðleggingar um greiningu', 
-                        output: 'Veiti ráðleggingar um meðferð- og greiningu ADHD. Fær viðeigandi blöð til skimunar ásamt tvöföldum endurkomutíma til að fara yfir niðurstöður og e.t.v. senda tilvísun' 
+                        output: 'Veiti ráðleggingar um meðferð- og greiningu ADHD. Fær blöð til skimunar ásamt tvöföldum endurkomutíma til að fara yfir niðurstöður og e.t.v. senda tilvísun' 
                     },
                     { 
                         display: 'Tilvísun heilsugæslan ADHD', 
-                        output: 'Tilvísun á ADHD teymi heilsugæslunnar. Fyllum út matskvarða og sendi viðeigandi fylgiskjöl' 
+                        output: 'Tilvísun á ADHD teymi heilsugæslunnar. Fyllum út matskvarða og sendi fylgiskjöl' 
                     },
                     {
                         display: 'Hlekkir',
@@ -28901,7 +29004,7 @@ const PlanGigt = [
                                 subOptions: [
                                     { display: 'Grunur, NSAIDS, ráðleggingar, endurmat ef lagast ekki', output: 'Grunur um þvagsýrugigt. Veiti ráðleggingar og fræðslu. Ráðlegg háa skammta af NSAIDS. Gengur yfirleitt yfir á nokkrum dögum. Endurmat ef einkenni versna eða lagast ekki' },
                                     { display: 'Colchicine, ráðleggingar, endurmat ef lagast ekki', output: 'Grunur um þvagsýrugigtarkast. Ráðlegg colchicine. Meðferð í samræmi við sérlyfjaskrá. 0,5mg 2-3x á sólahring. Má hefja meðferð með 1,0mg upphafsskamt. Hámark 6mg í meðferðarlotu (lágmark 72klst á milli meðferðarlota). Endurmat ef einkenni lagast ekki eða versnar, sem og ef aukaverkanir af colchicine' },
-                                    { display: 'NSAID óþol, sterar PO', output: 'Grunur um þvagsýrugigtarkast. Þar sem óþol fyrir NSAIDS ákveðið að nota sterameðferð. Meðferð í samræmi við uptodate. Prednisolon 40mg daglega þar til einkenni yfirstaðin. Yfirleitt dugar 5-10 daga meðferð og er þá ekki þörf á niðurtröppun. Skjólstæðingur fær viðeigandi fræðslu um mögulegar aukaverkanir stera. Endurmat ef versnar eða lagast ekki' }
+                                    { display: 'NSAID óþol, sterar PO', output: 'Grunur um þvagsýrugigtarkast. Þar sem óþol fyrir NSAIDS ákveðið að nota sterameðferð. Meðferð í samræmi við uptodate. Prednisolon 40mg daglega þar til einkenni yfirstaðin. Yfirleitt dugar 5-10 daga meðferð og er þá ekki þörf á niðurtröppun. Skjólstæðingur fær fræðslu um mögulegar aukaverkanir stera. Endurmat ef versnar eða lagast ekki' }
                                 ]    
                             },
                             /*{ display: 'Endurtekin þvagsýrugigtarköst', 
