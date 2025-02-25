@@ -5407,7 +5407,7 @@ const SymptomsViral = [
     },
     ...Timalengd2,
     {
-        name: 'Viral',
+        name: 'Öndunarfæri',
         type: 'options',
         display: ['Flensueinkenni', 'Kvef'],
         options: [
@@ -5432,6 +5432,92 @@ const SymptomsViral = [
                 ],
                 onRightClickOutput: 'Ekki kvef',
                 onCtrlClickOutput: 'Kvefeinkenni'
+            }
+        ], onRightClickOutput: 'Neitar öndunarfæraeinkennum'
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Hósti', 'Uppgangur'],
+        options: [
+            
+            {
+                display: 'Hósti',
+                subOptions: [
+                    { display: 'NOS', output: 'Hósti' },
+                    { display: 'Vægur', output: 'Vægur hósti' },
+                    { display: 'Mikill', output: 'Mikill hósti' },
+                    { display: 'Slæmur, heldur fyrir vöku', output: 'Slæmur hósti. Heldur fyrir vöku á næturna' }
+                ],
+                onRightClickOutput: 'Ekki verið með hósta',
+                onCtrlClickOutput: 'Hósti'
+            },
+            {
+                display: 'Uppgangur',
+                subOptions: [
+                    {
+                        display: 'NOS',
+                        subOptions: [
+                            { display: 'NOS', output: 'Uppgangur' },
+                            { display: 'Litaður', output: 'Litaður uppgangur'},
+                            { display: 'Glær', output: 'Glærlitaður uppgangur' },
+                            { display: 'Grænleitur', output: 'Grænleitur uppgangur' },
+                            { display: 'Gulgrænn', output: 'Gulgrænn uppgangur' }
+                        ]
+                    },
+                    {
+                        display: 'Vægur',
+                        subOptions: [
+                            { display: 'NOS', output: 'Vægur uppgangur' },
+                            { display: 'Litaður', output: 'VÆgur litaður uppgangur'},
+                            { display: 'Glær', output: 'Vægur glærlitaður uppgangur' },
+                            { display: 'Grænleitur', output: 'Vægur grænleitur uppgangur' },
+                            { display: 'Gulgrænn', output: 'Vægur gulgrænn uppgangur' }
+                        ]
+                    },
+                    {
+                        display: 'Mikill',
+                        subOptions: [
+                            { display: 'NOS', output: 'Mikill uppgangur' },
+                            { display: 'Litaður', output: 'Mikill litaður uppgangur'},
+                            { display: 'Glær', output: 'Mikill glærlitaður uppgangur' },
+                            { display: 'Grænleitur', output: 'Mikill grænleitur uppgangur' },
+                            { display: 'Gulgrænn', output: 'Mikill gulgrænn uppgangur' }
+                        ]
+                    }
+                ],
+                onRightClickOutput: 'Ekki uppgangur'
+            }
+            
+        ]
+    },
+    {
+        name: '',
+        type: 'options',
+        display: ['Takverkur', 'Mæði'],
+        options: [
+            {
+                display: 'Takverkur',
+                output: 'Fundið fyrir takverk',
+                onRightClickOutput: 'Ekki fundið fyrir takverk'
+            },
+            {
+                display: 'Mæði',
+                subOptions:[
+                    {
+                        display: 'NOS',
+                        output: 'Fundið fyrir aukinnri mæði'
+                    },
+                    {
+                        display: 'Vægt aukin',
+                        output: 'Fundið fyrir aðeins meiri mæði en vanalega'
+                    },
+                    {
+                        display: 'Mikið aukin',
+                        output: 'Fundið fyrir mikilli mæði'
+                    }
+                ], onRightClickOutput: 'Neitar mæði',
+                onCtrlClickOutput: 'Aukin mæði'
             }
         ]
     },
@@ -5473,6 +5559,19 @@ const SymptomsViral = [
         ], onRightClickOutput: 'Neitar hálssærindum'
     },
     {
+        name: '',
+        type: 'options',
+        display: ['Ó.E. Streptesti'],
+        options: [
+            
+            {
+                display: 'Ó.E. Streptesti',
+                output: 'Óskað eftir streptesti',
+                onRightClickOutput: 'Streptest afþakkað'
+            }
+        ]
+    },
+    {
         name: 'Ennisholur',
         type: 'options',
         display: ['Sinuseinkenni', 'Þrýstingur', 'Verkur'],
@@ -5480,11 +5579,11 @@ const SymptomsViral = [
             {
                 display: 'Sinuseinkenni',
                 subOptions: [
-                    { display: 'Hægra megin', output: 'Einkenni frá ennisholum. Meira hægra megin' },
-                    { display: 'Vinstra megin', output: 'Einkenni frá ennisholum. Meira vinstra megin' },
-                    { display: 'Beggja vegna', output: 'Einkenni frá ennisholum beggja vegna' }
+                    { display: 'Hægra megin', output: 'Sinuseinkenni. Meira hægra megin' },
+                    { display: 'Vinstra megin', output: 'Sinuseinkenni. Meira vinstra megin' },
+                    { display: 'Beggja vegna', output: 'Sinuseinkenni beggja vegna' }
                 ],
-                onRightClickOutput: 'Ekki þrýstingur yfir ennisholum',
+                onRightClickOutput: 'Neitar sinuseinkennum',
                 onCtrlClickOutput: 'Sinuseinkenni'
             },
             { display: 'Þrýstingur', output: 'Þrýstingur', onRightClickOutput: 'Ekki þrýstingur'},
@@ -5498,12 +5597,12 @@ const SymptomsViral = [
                 onRightClickOutput: 'Ekki verkur',
                 onCtrlClickOutput: 'Verkur'
             }
-        ], onRightClickOutput: 'Neitar einkennum frá ennisholum'
+        ], onRightClickOutput: 'Neitar sinuseinkennum'
     },
     {
         name: '',
         type: 'options',
-        display: ['Leiðni', 'Vont bragð', 'Hor'],
+        display: ['Leiðni', 'Vont bragð', 'Slím'],
         options: [
             {
                 display: 'Leiðni',
@@ -5521,17 +5620,17 @@ const SymptomsViral = [
                 onRightClickOutput: 'Ekki fundið fyrir vondu bragði í munni'
             },
             {
-                display: 'Hor',
+                display: 'Slím',
                 subOptions: [
                     {
                         display: 'Litað',
-                        output: 'Litað hor'
+                        output: 'Litað slím'
                     },
                     {
                         display: 'Litað og blóð',
-                        output: 'Litað hor með blóði'
+                        output: 'Litað slím með blóði'
                     }
-                ], onRightClickOutput: 'Glært hor'
+                ], onRightClickOutput: 'Ekki áberandi aukin slímmyndun'
             }
         ], onRightClickOutput: 'Neitar einkennum frá ennisholum'
     },
@@ -5596,92 +5695,6 @@ const SymptomsViral = [
                 onRightClickOutput: 'Ekki með rör'
             }
         ], onRightClickOutput: 'Ekki eyrnabarn'
-    },
-    {
-        name: 'Öndunarfæri',
-        type: 'options',
-        display: ['Hósti', 'Uppgangur'],
-        options: [
-            
-            {
-                display: 'Hósti',
-                subOptions: [
-                    { display: 'NOS', output: 'Hósti' },
-                    { display: 'Vægur', output: 'Vægur hósti' },
-                    { display: 'Mikill', output: 'Mikill hósti' },
-                    { display: 'Slæmur, heldur fyrir vöku', output: 'Slæmur hósti. Heldur fyrir vöku á næturna' }
-                ],
-                onRightClickOutput: 'Ekki verið með hósta',
-                onCtrlClickOutput: 'Hósti'
-            },
-            {
-                display: 'Uppgangur',
-                subOptions: [
-                    {
-                        display: 'NOS',
-                        subOptions: [
-                            { display: 'NOS', output: 'Uppgangur' },
-                            { display: 'Litaður', output: 'Litaður uppgangur'},
-                            { display: 'Glær', output: 'Glærlitaður uppgangur' },
-                            { display: 'Grænleitur', output: 'Grænleitur uppgangur' },
-                            { display: 'Gulgrænn', output: 'Gulgrænn uppgangur' }
-                        ]
-                    },
-                    {
-                        display: 'Vægur',
-                        subOptions: [
-                            { display: 'NOS', output: 'Vægur uppgangur' },
-                            { display: 'Litaður', output: 'VÆgur litaður uppgangur'},
-                            { display: 'Glær', output: 'Vægur glærlitaður uppgangur' },
-                            { display: 'Grænleitur', output: 'Vægur grænleitur uppgangur' },
-                            { display: 'Gulgrænn', output: 'Vægur gulgrænn uppgangur' }
-                        ]
-                    },
-                    {
-                        display: 'Mikill',
-                        subOptions: [
-                            { display: 'NOS', output: 'Mikill uppgangur' },
-                            { display: 'Litaður', output: 'Mikill litaður uppgangur'},
-                            { display: 'Glær', output: 'Mikill glærlitaður uppgangur' },
-                            { display: 'Grænleitur', output: 'Mikill grænleitur uppgangur' },
-                            { display: 'Gulgrænn', output: 'Mikill gulgrænn uppgangur' }
-                        ]
-                    }
-                ],
-                onRightClickOutput: 'Ekki uppgangur'
-            }
-            
-        ], onRightClickOutput: 'Neitar öndunarfæraeinkennum'
-    },
-    {
-        name: '',
-        type: 'options',
-        display: ['Takverkur', 'Mæði'],
-        options: [
-            {
-                display: 'Takverkur',
-                output: 'Fundið fyrir takverk',
-                onRightClickOutput: 'Ekki fundið fyrir takverk'
-            },
-            {
-                display: 'Mæði',
-                subOptions:[
-                    {
-                        display: 'NOS',
-                        output: 'Fundið fyrir aukinnri mæði'
-                    },
-                    {
-                        display: 'Vægt aukin',
-                        output: 'Fundið fyrir aðeins meiri mæði en vanalega'
-                    },
-                    {
-                        display: 'Mikið aukin',
-                        output: 'Fundið fyrir mikilli mæði'
-                    }
-                ], onRightClickOutput: 'Neitar mæði',
-                onCtrlClickOutput: 'Aukin mæði'
-            }
-        ]
     },
     {
         name: 'Almenn',
@@ -14386,11 +14399,6 @@ const PlanMelting = [
                     { display: 'Fullmótuð plön', 
                         subOptions: [
                             { display: 'Grunur, ráðleggingar, empírísk meðferð, endurmat ef lagast ekki', output: 'Grunur um blöðrubólgu. Veiti ráðleggingar. Set sýklalyf í gáttina. Ef lagast ekki á meðferð ráðlagt að skila þvagsýni. Ef versnun eða system einkenni (hár hiti, mikill slappleiki) er mikilvægt að hafa samband' } 
-                        ]    
-                    },
-                    { display: 'Ráðleggingar', 
-                        subOptions: [
-                            { display: '', output: '' } 
                         ]    
                     },
                     { display: 'Leiðbeiningar til skjólstæðings',
