@@ -5561,13 +5561,32 @@ const SymptomsViral = [
     {
         name: '',
         type: 'options',
-        display: ['Ó.E. Streptesti'],
+        display: ['Ó.E. Streptesti', 'Heimapróf'],
         options: [
             
             {
                 display: 'Ó.E. Streptesti',
                 output: 'Óskað eftir streptesti',
                 onRightClickOutput: 'Streptest afþakkað'
+            },
+            {
+                display: 'Heimapróf',
+                output: 'Streptest jákvætt heimafyrir',
+                onRightClickSubOptions: [
+                    {
+                        display: 'Neikvætt',
+                        output: 'Streptest neikvætt heimafyrir'
+                    },
+                    {
+                        display: 'Órætt',
+                        output: 'Streptest órætt heimafyrir'
+                    },
+                    {
+                        display: 'Ekki tekið',
+                        output: 'Ekki tekið streptest heima'
+                    }
+                ],
+                onCtrlRightClickOutput: 'Streptest neikvætt heimafyrir'
             }
         ]
     },
