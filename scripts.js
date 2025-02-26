@@ -5498,8 +5498,21 @@ const SymptomsViral = [
         options: [
             {
                 display: 'Takverkur',
-                output: 'Fundið fyrir takverk',
-                onRightClickOutput: 'Ekki fundið fyrir takverk'
+                subOptions:[
+                    {
+                        display: 'NOS',
+                        output: 'Fundið fyrir takverk'
+                    },
+                    {
+                        display: 'Vægur',
+                        output: 'Fundið fyrir vægum takverk'
+                    },
+                    {
+                        display: 'Miklum',
+                        output: 'Fundið fyrir miklum takverk'
+                    }
+                ], onRightClickOutput: 'Ekki fundið fyrir takverk',
+                onCtrlClickOutput: 'Fundið fyrir takverk'
             },
             {
                 display: 'Mæði',
@@ -34316,9 +34329,61 @@ const LifsmorkData = [
                             }
                             return pulse;
                         })()
+                    },
+                    {
+                        display: 'Púls 121-140 sl/mín',
+                        subOptions: (function() {
+                            let pulse = [];
+                            for (let i = 121; i <= 140; i += 1) {
+                                pulse.push({
+                                    display: `${i} sl/mín`,
+                                    output: `Púls ${i} sl/mín`
+                                });
+                            }
+                            return pulse;
+                        })()
+                    },
+                    {
+                        display: 'Púls 141-160 sl/mín',
+                        subOptions: (function() {
+                            let pulse = [];
+                            for (let i = 141; i <= 160; i += 1) {
+                                pulse.push({
+                                    display: `${i} sl/mín`,
+                                    output: `Púls ${i} sl/mín`
+                                });
+                            }
+                            return pulse;
+                        })()
+                    },
+                    {
+                        display: 'Púls 161-180 sl/mín',
+                        subOptions: (function() {
+                            let pulse = [];
+                            for (let i = 161; i <= 180; i += 1) {
+                                pulse.push({
+                                    display: `${i} sl/mín`,
+                                    output: `Púls ${i} sl/mín`
+                                });
+                            }
+                            return pulse;
+                        })()
+                    },
+                    {
+                        display: 'Púls 181-200 sl/mín',
+                        subOptions: (function() {
+                            let pulse = [];
+                            for (let i = 181; i <= 200; i += 1) {
+                                pulse.push({
+                                    display: `${i} sl/mín`,
+                                    output: `Púls ${i} sl/mín`
+                                });
+                            }
+                            return pulse;
+                        })()
                     }
                 ],
-                onRightClickOutput: 'Púls eðl'
+                onRightClickOutput: 'Púls innan eðlilegra marka'
             },
             {
                 display: 'Mettun',
@@ -34358,7 +34423,7 @@ const LifsmorkData = [
                         })()
                     }
                 ],
-                onRightClickOutput: 'Mettar vel'
+                onRightClickOutput: 'Mettar >96%'
             },
             {
                 display: 'Öndunartíðni',
