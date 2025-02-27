@@ -3358,6 +3358,21 @@ const Hlekkir = [
 
     
 ];
+const Staðsetningar = [
+    {
+        name: '',
+        type: 'options',
+        display: ['Röntgen Domus', 'Augnlæknar'],
+        options: [
+            {
+                display: 'Röntgen Domus', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Staðsetning Röntgen Dómus.pdf'
+            },
+            {
+                display: 'Augnlæknar', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Dæmi um augnlæknastofur.pdf'
+            }
+        ]
+    }
+];
 const Simanumer = [
     {
         name: '',
@@ -39201,7 +39216,9 @@ const pageDefinitions = {
                 { id: 'hlekkir', title: 'Símanúmer', data: Simanumer },
                 { id: 'hlekkir', title: 'Skjöl', data: Skjöl }
             ],
-            [],
+            [
+                { id: 'hlekkir', title: 'Staðsetningar', data: Staðsetningar }
+            ],
             [],
         ],
     },
