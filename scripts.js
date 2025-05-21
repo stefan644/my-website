@@ -371,6 +371,9 @@ const EftirfylgdButton = {
                 
             ]
         },
+        { display: 'Á sinni heilsugæslu', output: 'Hefur samband við sína heilsugæslu að rannsókn lokinni. Ef versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku' },
+        { display: 'Hjá sínum heimilislækni', output: 'Hefur samband við sinn heimilislækni að rannsókn lokinni. Ef versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku' },
+        { display: 'Á tíma á heilsugæslu fljótlega', output: 'Á bókaðann tíma á sinni heilsugæslu fljótlega. Ef versnun í millitíðinni er mikilvægt að hafa samband eða leita á bráðamóttöku' },
         { display: 'Engin eftirfylgd', output: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'}
     ],
     onRightClickOutput: 'Ekki fyrirhuguð frekari eftirfylgd að hálfu undirritaðs'
@@ -7458,6 +7461,7 @@ const PlanViral = [
                 subOptions: [
                     { display: 'Grunur - Meðferð - Re pn', output: 'Grunur um streptokokkasýkingu í hálsi. Set sýklalyf í gáttina. Veiti ráðleggingar. Nota verkjalyf og t.d. strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' },
                     { display: 'Jákv streptest - Meðferð - Re pn', output: 'Streptokkasýking í hálsi. Streptest jákvætt. Set sýklalyf í gáttina. Veiti ráðleggingar. Nota verkjalyf og t.d. strepsils pn. Önnur heimaráð svo sem að skola með saltvatni, te og/eða köld matvæli geta hjálpað við einkennum. Endurmat ef versnar eða lagast ekki' },
+                    { display: 'Strep barn', output: 'Grunur um streptokokkasýkingu í hálsi. Set sýklalyf í gáttina. Veiti ráðleggingar. Nota hitalækkandi eftir þörfum. Fylgjast vel með barninu. Ef nærist mjög illa eða versnandi þrátt fyrir meðferð mikilvægt að hafa samband eða leita á bráðamóttöku barna'},
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
                             { display: 'Uptodate - Basics fullorðnir', type: 'hyperlink', url: 'https://www.uptodate.com/contents/strep-throat-in-adults-the-basics' },
@@ -7558,6 +7562,15 @@ const PlanViral = [
                 display: 'Croup sterareiknir',
                 subOptions: SteroidsCroup()
             }
+        ]
+    },
+    {
+        name: 'Eftirfylgd',
+        type: 'options',
+        display: ['Endurmat', 'Eftirfylgd'],
+        options: [
+            EndurmatButton,
+            EftirfylgdButton
         ]
     }
 ];
