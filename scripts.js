@@ -7266,7 +7266,7 @@ const PlanViral = [
                             { display: 'Uptodate - Meðferð fullorðna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/uncomplicated-acute-sinusitis-and-rhinosinusitis-in-adults-treatment' },
                             { display: 'Uptodate - Greining barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bacterial-rhinosinusitis-in-children-clinical-features-and-diagnosis' },
                             { display: 'Uptodate - Meðferð barna', type: 'hyperlink', url: 'https://www.uptodate.com/contents/acute-bacterial-rhinosinusitis-in-children-microbiology-and-management' },
-                            { display: 'Strama', type: 'hyperlink', url: 'https://throunarmidstod.is/leidbeiningar/strama-verkefnid/skutabolga/' } 
+                            { display: 'Strama', type: 'hyperlink', url: 'https://raw.githubusercontent.com/stefan644/my-website/main/pdfs/Ráðleggingar um meðferð algengra sýkinga utan spítala 2026.pdf' } 
                         ]
                     }
                 ], onRightClickOutput: 'Grunur um sinusitis. Veiti ráðleggingar og fræðslu. Set nefstera og sýklalyf í gáttina. Endurmat ef versnar eða lagast ekki',
@@ -7327,8 +7327,8 @@ const PlanViral = [
                       },
                     { display: 'Leiðbeiningar til skjólstæðings',
                         subOptions: [
-                            { display: 'Heilsuvera - Barkabólga', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/barkabolga/' },
-                            { display: 'Landspítali - Barkabólga hjá barni', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Barnaspitalinn/barkabolga_hja_barni_2021.pdf' },
+                            { display: 'Heilsuvera - Barkabólga', type: 'hyperlink', url: 'https://www.heilsuvera.is/markhopar/sjukdomar-fravik-einkenni/barkahosti/' },
+                            //{ display: 'Landspítali - Barkabólga hjá barni', type: 'hyperlink', url: 'https://www.landspitali.is/library/Sameiginlegar-skrar/Gagnasafn/Sjuklingar-og-adstandendur/Sjuklingafraedsla---Upplysingarit/Barnaspitalinn/barkabolga_hja_barni_2021.pdf' },
                             { display: 'Uptodate - Croup (The Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-the-basics' },
                             { display: 'Uptodate - Croup (Beyond the Basics)', type: 'hyperlink', url: 'https://www.uptodate.com/contents/croup-in-infants-and-children-beyond-the-basics' },
                         ]
@@ -39759,6 +39759,7 @@ function loadPage(page) {
         const lysingText = document.createElement('p');
         lysingText.innerHTML = 
             'Vinstri smellur gefur jákvæð einkenni og hægri smellur neikvæð einkenni. Ef skilgreina þarf nánar kemur fram fellilisti. '
+            + 'Ef notandi vill gera einfalda innsetningu þá heldur hann inni ctrl á meðan hann vinstri- eða hægri smellir. '
             + 'Undir stillingarflipa er hægt að stilla á nákvæma innsetningu en þá verða til fleirri undirflokkar (lyf, heilsufar o.fl.). Texti fer alltaf á réttan stað, undir sinn "Header". Þannig er einfalt að viðhalda nótustrúktúr þó að atriði frá mismunandi köflum séu ekki skráð í nákvæmlega réttri röð. '
             + 'Hægt er að ýta á header eða nota flýtileiðir á takkaborði til að staðsetja sig rétt í nótunni og byrja þannig beint að skrifa. '
             + 'Ef fylla á t.d. inn rannsóknir myndi notandinn ýta á Ctrl + R og byrja síðan beint að skrifa inn sínar rannsóknaniðurstöður.'
